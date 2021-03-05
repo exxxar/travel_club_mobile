@@ -12,6 +12,21 @@
     <meta name="keywords"
           content="android, application template, pwa, mobile template, progressive web app, mobile ui kit, ui kit, mobilekit, mobile html template, cordova, phonegap"/>
 
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Travel Club" />
+    <meta property="og:description" content="Сеть туристических агенств - Travel Club" />
+    <meta property="og:url" content="https://m.travel-club.tours" />
+    <meta property="og:site_name" content="Group Import" />
+    <meta property="og:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
+    <meta property="og:image:width" content="790" />
+    <meta property="og:image:height" content="808" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Сеть туристических агенств - Travel Club" />
+    <meta name="twitter:title" content="Сеть туристических агенств - Travel Club" />
+    <meta name="twitter:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
 
 </head>
 

@@ -9,7 +9,7 @@
             </div>
 
             <div>
-                <button type="button" class="btn btn-orange rounded mr-1" data-toggle="modal"
+                <button type="button" class="btn btn-orange rounded mr-1" data-toggle="modal" aria-label="О Travel Club"
                         data-target="#AboutModal"><i class="far fa-question-circle"></i>
                 </button>
             </div>
