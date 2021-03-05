@@ -5,10 +5,10 @@ return [
     'manifest' => [
         'name' => env('APP_NAME', 'TravelClub'),
         'short_name' => 'TravelClub',
-        'start_url' => '/',
+        'start_url' => 'https://m.travel-club.tours/m/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
-        'display' => 'standalone',
+        'display' => 'portrait',
         'orientation'=> 'any',
         'status_bar'=> 'black',
         'icons' => [

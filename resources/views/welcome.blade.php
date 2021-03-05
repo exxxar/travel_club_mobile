@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ asset('/css/assets/app.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="description"
-          content="Mobilekit Bootstrap 4 Based Mobile UI Kit Template for Mobile Devices. Use it for pwa projects, mobile apps and mobile websites">
+          content="Сеть туристических агенств - Travel Club">
     <meta name="keywords"
-          content="android, application template, pwa, mobile template, progressive web app, mobile ui kit, ui kit, mobilekit, mobile html template, cordova, phonegap"/>
+          content="Сеть туристических агенств - Travel Club: Донецк, Ростов-на-Дону"/>
 
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:locale:alternate" content="en_US" />
@@ -27,6 +27,8 @@
     <meta name="twitter:description" content="Сеть туристических агенств - Travel Club" />
     <meta name="twitter:title" content="Сеть туристических агенств - Travel Club" />
     <meta name="twitter:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
 </head>
 
@@ -66,7 +68,7 @@
                 <ul class="heroList">
                     <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
-                        Подбор индивидуальных туров
+                        Подбор туров для каждого
                     </li>
                     <li>
                         <ion-icon name="checkmark-outline"></ion-icon>
@@ -89,7 +91,7 @@
 
 
             <div class="buttonWrapper">
-                <a href="https://themeforest.net/item/mobilekit-bootstrap-4-based-mobile-ui-kit-template/25384264"
+                <a href="/m/"
                    class="btn btn-orange mr-4 d-flex justify-content-center align-items-center" target="_blank">
                     <ion-icon name="cart-outline"></ion-icon>
                     Попробовать
@@ -106,7 +108,7 @@
             <div class="qrBlock" style="display: none;">
                 <img src="{{asset('/img/qr.jpg')}}" alt="qr" class="qr">
                 <div class="text">
-                    <strong>View on your <br>Mobile Device</strong> Scan the QR code to <br>view on your mobile device
+                    <strong>Посмотреть на своём телефоне.</strong> Сканируй QR-код для установки приложения
                 </div>
             </div>
 
@@ -133,12 +135,12 @@
 
 <div class="qr-button">
     <a href="javascript:;" class="close-button">
-        <ion-icon name="close-circle"></ion-icon>
+        <i class="far fa-times-circle"></i>
     </a>
     <img src="{{asset('/img/qr.jpg')}}" alt="qr" class="qr">
     <div class="text">
         <div class="qr-text">
-            Scan the QR code to view on your mobile device
+            Сканируй QR-код для установки моб. приложения
         </div>
     </div>
 </div>
@@ -403,7 +405,7 @@
     <div class="container">
         Copyright © <a href="https://donbassit.ru" target="_blank">DoIT</a> 2020. All Rights Reserved.
         <a href="#" class="gotopButton">
-            <ion-icon name="arrow-up"></ion-icon>
+            <i class="fas fa-arrow-up"></i>
         </a>
     </div>
 </div>
@@ -411,7 +413,7 @@
 
 <div class="sidebar">
     <a href="#" class="toggleButton sidebarTrigger">
-        <ion-icon name="arrow-forward-outline"></ion-icon>
+        <i class="fas fa-arrow-right"></i>
     </a>
     <div class="sidebarTitle">
        Наши продукты
@@ -445,23 +447,23 @@
 
 <div class="mobileDetected">
     <div class="in">
-        <div><img src="assets/img/logo.png" alt="logo" class="logo"></div>
-        <h3 style="font-weight: bold; color: #1F1212;">Mobilekit</h3>
-        Tap button to live preview.
+        <div><img src="/img/travel/logo-1.png" alt="logo" class="logo"></div>
+        <h3 style="font-weight: bold; color: #1F1212;">Travel Club Family</h3>
+        Попробуйте перейти на мобильную версию приложения
         <div class="mt-5 p-4">
             <div class="row">
                 <div class="col-12 mb-3">
                     <a href="/view8/index.html" class="btn btn-secondary btn-block" target="_blank"
                        style="height: 56px">
                         <ion-icon name="eye-outline"></ion-icon>
-                        Live Preview
+                       Попробовать
                     </a>
                 </div>
                 <div class="col-12">
-                    <a href="https://themeforest.net/item/mobilekit-bootstrap-4-based-mobile-ui-kit-template/25384264"
+                    <a href="https://donbassit.ru"
                        class="btn btn-success btn-block" target="_blank" style="height: 56px;">
                         <ion-icon name="cart-outline"></ion-icon>
-                        Buy Now
+                        Хочу себе такое
                     </a>
                 </div>
             </div>
