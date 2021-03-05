@@ -33,6 +33,7 @@
         "vue-echo": "^1.0.2",
         "vue-ionicons": "^3.0.5",
         "vue-owl-carousel": "^2.0.3",
+        "vue-pwa-install": "^1.1.0",
         "vue-tawk": "^1.0.1",
         "vue-the-mask": "^0.11.1",
         "vue-yandex-maps": "^0.10.9"
