@@ -119,20 +119,6 @@
                             </div>
 
 
-                        <li>
-                            <a href="#rules" data-target="#android-add-to-home-screen" data-toggle="modal" class="item" aria-label="Установить на телефон">
-                                <div class="icon-box bg-orange">
-                                    <i class="fas fa-landmark"></i>
-                                </div>
-                                <div class="in">
-                                    <div>Установить на телефон</div>
-
-                                </div>
-                            </a>
-                        </li>
-
-
-
                     </ul>
 
 

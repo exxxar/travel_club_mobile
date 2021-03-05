@@ -60,8 +60,8 @@
     @laravelPWA
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/theme.min.css') }}">
 
 </head>
 
@@ -88,7 +88,7 @@
 <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
 <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
 
-<script src="{{asset('/js/app.js')}}"></script>
+<script src="{{asset('/js/app.min.js')}}"></script>
 <script src="{{asset('/js/assets/app.js')}}"></script>
 
 </body>

@@ -9,40 +9,40 @@ return [
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
         'display' => 'standalone',
-        'orientation'=> 'any',
+        'orientation'=> 'portrait',
         'status_bar'=> 'black',
         'icons' => [
             '72x72' => [
                 'path' => '/img/icons/icon-72x72.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '96x96' => [
                 'path' => '/img/icons/icon-96x96.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '128x128' => [
                 'path' => '/img/icons/icon-128x128.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '144x144' => [
                 'path' => '/img/icons/icon-144x144.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '152x152' => [
                 'path' => '/img/icons/icon-152x152.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '192x192' => [
                 'path' => '/img/icons/icon-192x192.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '384x384' => [
                 'path' => '/img/icons/icon-384x384.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
             '512x512' => [
                 'path' => '/img/icons/icon-512x512.png',
-                'purpose' => 'any'
+                'purpose' => 'any maskable'
             ],
         ],
         'splash' => [
@@ -59,12 +59,12 @@ return [
         ],
         'shortcuts' => [
             [
-                'name' => 'Shortcut Link 1',
-                'description' => 'Shortcut Link 1 Description',
+                'name' => 'Travel Club',
+                'description' => 'Туристический сайт Travel Club Family',
                 'url' => '/m/',
                 'icons' => [
-                    "src" => "/img/icons/icon-72x72.png",
-                    "purpose" => "any"
+                    "src" => "/img/icons/icon-96x96.png",
+                    "purpose" => "any maskable"
                 ]
             ],
 
