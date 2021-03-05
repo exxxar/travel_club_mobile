@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
 
-Route::view('/m/', 'page.index')->name("index");
+Route::view('/m/', 'pages.index')->name("index");
 
 Route::view('/m/about',"pages.about")->name("about");
 Route::view('/m/contact',"pages.contact")->name("contact");
