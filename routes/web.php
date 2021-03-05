@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name("desktop");
 
+Route::get('/offline', function (){
+    return "offline page";
+})->name("offline");
 
 
 Route::view('/m/', 'pages.index')->name("index");
