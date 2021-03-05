@@ -112,8 +112,8 @@
                                     </h5>
                                 </div>
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input dark-mode-switch" id="darkmodeswitch">
-                                    <label class="custom-control-label" for="darkmodeswitch"></label>
+                                    <input type="checkbox" class="custom-control-input dark-mode-switch" id="darkmodeswitch-2">
+                                    <label class="custom-control-label" for="darkmodeswitch-2"></label>
                                 </div>
 
                             </div>
