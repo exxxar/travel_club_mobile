@@ -1,0 +1,145 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.btn-orange {
+    background-color: orange;
+    border:1px orange solid;
+
+
+    color: white;
+
+    &:hover {
+        background-color: darkorange;
+    }
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+
+@import '~@icon/ionicons/ionicons.css';
+
+@import "index";
+
+.btn-orange {
+    background: #fe9500 !important;
+    border-color: #fe9500 !important;
+    color: #ffffff !important;
+}
+
+
+svg:not(:root).svg-inline--fa {
+    font-size: 32px;
+}
+
+
+
+.dark-mode-active {
+    .header-large-title {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px !important;
+        box-sizing: border-box;
+    }
+
+    .preloader {
+        background: black !important;
+    }
+    .appHeader {
+        i {
+            font-size: 20px;
+            color:white;
+        }
+    }
+
+    .appBottomMenu {
+        i {
+            font-size:25px;
+            color:white;
+        }
+    }
+
+
+    .coming-soon-img {
+        background: url(/img/travel/coming-soon-dark.png);
+    }
+
+
+}
+
+.coming-soon-img {
+    height: 75px;
+    width: 100%;
+    background: url(/img/travel/coming-soon.png);
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    transform: rotate(
+            -7deg
+    );
+    transition: 1s;
+}
+
+.sidebar-img.coming-soon-img {
+    position: absolute;
+    width: 84px;
+    bottom: -52px;
+    right: 32px;
+}
+
+.header-large-title {
+    background: rgba(255,255,255,0.8);
+    padding: 10px !important;
+    box-sizing: border-box;
+}
+
+
+.appHeader {
+    i {
+        font-size: 20px;
+        color:black;
+    }
+}
+
+.appBottomMenu {
+    i {
+        font-size:25px;
+        color:black;
+    }
+}
+
+.footer-svg {
+    svg {
+        overflow: initial !important;
+    }
+}
+
+
+.card-with-blue-line {
+    overflow: hidden;
+    &:after {
+        content: attr(text);
+        font-size: 18px;
+        width: 306px;
+        height: 50px;
+        background: linear-gradient(#1d8cf8, #5eacff, #004dc7);
+        position: absolute;
+        transform: rotate(
+                45deg
+        );
+        right: -87px;
+        top: 42px;
+        box-shadow: 1px 1px 3px 0px #777777;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+}

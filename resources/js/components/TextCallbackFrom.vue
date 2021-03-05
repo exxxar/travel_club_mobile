@@ -1,0 +1,150 @@
+<template>
+    <div class="card mb-3">
+        <form @submit="sendRequest" class="card-body">
+            <h5 class="card-title">Форма обратной связи</h5>
+            <div class="form-group boxed">
+                <div class="input-wrapper">
+                    <input type="text" name="name" class="form-control" v-model="name" placeholder="Ваше Ф.И.О." required>
+                    <i class="clear-input">
+                        <i class="far fa-times-circle"></i>
+                    </i>
+                </div>
+            </div>
+
+            <div class="form-group boxed">
+                <div class="input-wrapper">
+                    <select name="question-type" v-model="type" class="form-control" required>
+                        <option v-for="(option,index) in question_types" :value="index">
+                            {{option}}
+                        </option>
+                    </select>
+                    <i class="clear-input">
+                        <i class="far fa-times-circle"></i>
+                    </i>
+                </div>
+            </div>
+
+            <div class="form-group boxed">
+                <div class="input-wrapper">
+                    <select name="question-type" v-model="city" class="form-control" required>
+                        <option v-for="(option,index) in cities" :value="index">
+                            {{option}}
+                        </option>
+                    </select>
+                    <i class="clear-input">
+                        <i class="far fa-times-circle"></i>
+                    </i>
+                </div>
+            </div>
+
+            <div class="form-group boxed">
+                <div class="input-wrapper">
+                    <input type="text" name="phone" class="form-control" v-if="city==0" v-model="phone"
+                           pattern="[\+]\d{2} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
+                           maxlength="19"
+                           v-mask="['+38 (###) ###-##-##']"
+                           placeholder="Номер телефона" required>
+                    <input type="text" name="phone" class="form-control" v-if="city==1" v-model="phone"
+                           pattern="[\+]\d{1} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
+                           maxlength="19"
+                           v-mask="['+7 (###) ###-##-##']"
+                           placeholder="Номер телефона" required>
+                    <i class="clear-input">
+                        <i class="far fa-times-circle"></i>
+                    </i>
+                </div>
+            </div>
+
+            <div class="form-group boxed">
+                <div class="input-wrapper">
+                  <textarea name="message" v-model="message" class="form-control"
+                            placeholder="Текст сообщения" required></textarea>
+                    <i class="clear-input">
+                        <i class="far fa-times-circle"></i>
+                    </i>
+                </div>
+            </div>
+
+            <div class="form-group mb-2">
+                <voice-callback-form :phone="phone" :cansend="cansend"></voice-callback-form>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-orange mr-1 mb-1 w-100">
+                    <i class="icon ion-md-mail"></i>
+                    Отправить
+                </button>
+            </div>
+            <div class="form-group mb-2">
+
+                <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
+                    <i class="icon ion-ios-filing"></i>
+                    Пользовательское соглашение!
+                </a>
+
+            </div>
+
+
+        </form>
+    </div>
+</template>
+<script>
+    import {mask} from 'vue-the-mask'
+
+
+    export default {
+        data() {
+            return {
+                name: localStorage.getItem("food_first_name", ''),
+                phone: localStorage.getItem("fastoran_phone", ''),
+                type: 0,
+                city: 0,
+                message: '',
+                cansend:false,
+                cities:[
+                  "Донецк",
+                  "Ростов-на-Дону"
+                ],
+                question_types: [
+                    "Вопросы по туру",
+                    "Вопросы по перелету",
+                    "Вопросы по отелю",
+                    "Стать партнером",
+                    "Реклама и продвижение",
+                    "Другие вопросы"
+                ]
+            };
+        },
+        methods: {
+
+            sendRequest: function (e) {
+                e.preventDefault();
+                this.cansend = true;
+                axios
+                    .post('../api/v1/wish', {
+                        from: this.name,
+                        phone: this.phone,
+                        message: "*" + this.question_types[this.type] + "*:\n" + this.message
+                    })
+                    .then(response => {
+                        this.sendMessage("Сообщение успешно отправлено");
+                        $('#contactModalBox').modal('hide')
+                        this.name = "";
+                        this.phone = "";
+                        this.message = "";
+                        this.cansend = false;
+                    })
+
+
+            },
+            sendMessage(message) {
+                this.$notify({
+                    group: 'info',
+                    type: 'success',
+                    title: 'Отправка сообщений Fastoran',
+                    text: message
+                });
+            },
+        },
+        directives: {mask}
+    }
+</script>

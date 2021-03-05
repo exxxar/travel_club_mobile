@@ -1,0 +1,156 @@
+<template>
+    <!-- App Sidebar -->
+    <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+
+                    <!-- profile box -->
+                    <div class="profileBox">
+                        <div class="image-wrapper">
+                            <img src="/img/travel/logo-1.png" alt="image" class="imaged">
+                        </div>
+                        <div class="in" data-toggle="modal" data-target="#ContactModal">
+                            <strong>Travel Club</strong>
+                            <div class="text-muted">
+                                <i class="fas fa-map-marker-alt"></i>
+                                г. Донецк
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal" aria-label="Закрыть боковое меню">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                    <!-- * profile box -->
+
+                    <ul class="listview flush transparent no-line image-listview mt-2">
+                        <li>
+                            <a href="/m/profile" class="item" aria-label="профиль пользователя" >
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-user-alt"></i>
+                                </div>
+                                <div class="in">
+                                    Личный кабинет
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/m/tours" class="item" aria-label="Доступные туры" >
+                                <div class="icon-box bg-orange">
+                                    <i class="far fa-compass"></i>
+                                </div>
+                                <div class="in">
+                                    Подобрать путешествие
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/m/flies" class="item" aria-label="Доступные перелеты" >
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-plane-departure"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Подобрать авиобилеты</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/m/adventure" class="item" aria-label="Подобрать туры по России">
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Подобрать туры по России</div>
+
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/m/maintenance" class="item" aria-label="TravelClub Family">
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="in">
+                                    <div>TravelClub Family</div>
+                                    <div class="coming-soon-img sidebar-img"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#contact" data-target="#ContactModal" data-toggle="modal" class="item" aria-label="Форма контактной информации">
+                                <div class="icon-box bg-orange">
+                                    <i class="far fa-address-book"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Контакты</div>
+
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="item" aria-label="Политика конфиденциальности">
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Политика конфиденциальности</div>
+
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <div class="card-body d-flex justify-content-between align-items-end">
+                                <div>
+                                    <h6 class="card-subtitle">Используй удобства!</h6>
+                                    <h5 class="card-title mb-0 d-flex align-items-center justify-content-between">
+                                        Ночная тема
+                                    </h5>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input dark-mode-switch" id="darkmodeswitch">
+                                    <label class="custom-control-label" for="darkmodeswitch"></label>
+                                </div>
+
+                            </div>
+
+
+                    </ul>
+
+
+                </div>
+
+                <!-- sidebar buttons -->
+                <div class="sidebar-buttons">
+
+
+                    <a rel="noreferrer" href="https://t.me/travelclubtours" target="_blank" class="button" aria-label="мы в телеграм">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+
+                    <a rel="noreferrer" href="https://www.instagram.com/travelclub_tours" target="_blank"
+                       class="button" aria-label="мы в иснтаграм">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a rel="noreferrer" href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
+                       target="_blank" class="button" aria-label="наш контакт в вотспап">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                </div>
+                <!-- * sidebar buttons -->
+            </div>
+        </div>
+    </div>
+    <!-- * App Sidebar -->
+</template>
+<script>
+    export default {}
+</script>
+<style lang="scss">
+
+</style>
