@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Jenssegers\Agent\Facades\Agent;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if (Agent::isMobile())
+        return redirect()->route("index");
+
     return view('welcome');
 });
+
 
 
 Route::view('/m/',"pages.index")->name("index");
