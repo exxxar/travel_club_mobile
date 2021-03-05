@@ -50,10 +50,7 @@ if (!mix.inProduction()) {
 if (mix.inProduction()) {
 
     mix.js('resources/js/app.js', 'public/js')
-        .combine([
-            'public/js/app.js',
-            'resources/assets/js/app.js'
-        ], 'public/js/app.js')
+        .js('resources/assets/js/app.js', 'public/js/assets')
         .sass('resources/sass/app.scss', 'public/css')
         .combine([
             'resources/assets/css/style.css',
