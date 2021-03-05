@@ -3,16 +3,16 @@
         <!-- App Header -->
         <div class="appHeader bg-primary scrolled" v-if="!search">
             <div class="left">
-                <a href="#" class="headerButton" data-toggle="modal" data-target="#sidebarPanel">
+                <a href="#"  aria-label="Боковое меню" class="headerButton" data-toggle="modal" data-target="#sidebarPanel">
                     <i class="fas fa-bars"></i>
                 </a>
             </div>
-            <div class="pageTitle">
-                Discover
+            <div class="pageTitle text-black-50">
+                Главная страница
             </div>
             <div class="right">
-                <a href="javascript:;" class="headerButton toggle-searchbox">
-                   <!-- <ion-icon name="search-outline"></ion-icon>-->
+                <a href="javascript:;" class="headerButton toggle-searchbox"  aria-label="Поиск">
+                    <i class="fas fa-search"></i>
                 </a>
             </div>
         </div>
@@ -24,10 +24,10 @@
                 <div class="form-group searchbox">
                     <input type="text" class="form-control" placeholder="Search...">
                     <i class="input-icon">
-                       <!-- <ion-icon name="search-outline"></ion-icon>-->
+                        <i class="fas fa-search"></i>
                     </i>
                     <a href="javascript:;" class="ml-1 close toggle-searchbox">
-                        <!--<ion-icon name="close-circle"></ion-icon>-->
+                        <i class="far fa-times-circle"></i>
                     </a>
                 </div>
             </form>

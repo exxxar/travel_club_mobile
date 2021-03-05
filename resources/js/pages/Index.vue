@@ -25,7 +25,7 @@
 
                 <div class="item">
                     <div class="card">
-                        <a href="/m/tours" class="travel-card">
+                        <a href="/m/tours" class="travel-card" aria-label="Подобрать путеествие">
                             <img src="/img/travel/1.png" class="card-img-top" alt="image">
                         </a>
 
@@ -37,7 +37,7 @@
 
                 <div class="item">
                     <div class="card">
-                        <a href="/m/flies" class="travel-card">
+                        <a href="/m/flies" class="travel-card" aria-label="Подобрать авиобилеты">
                             <img src="/img/travel/2.png" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
@@ -49,7 +49,7 @@
 
                 <div class="item">
                     <div class="card">
-                        <a href="/m/hotels" class="travel-card">
+                        <a href="/m/hotels" class="travel-card" aria-label="Подобрать отель">
                             <img src="/img/travel/3.png" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
@@ -61,7 +61,7 @@
 
                 <div class="item">
                     <div class="card card-with-blue-line" text="Новинка">
-                        <a href="/m/adventure" class="travel-card">
+                        <a href="/m/adventure" class="travel-card" aria-label="Туры по России">
                             <img src="/img/travel/4.png" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
@@ -110,7 +110,7 @@
 
                         Вам также будут доступны реальные отзывы на каждый объект размещения.
                     </p>
-                    <a href="app-components.html" class="btn btn-orange w-100">
+                    <a href="app-components.html" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
                     </a>
@@ -129,7 +129,7 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="app-pages.html" class="btn btn-orange w-100">
+                    <a href="app-pages.html" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
                     </a>
@@ -148,7 +148,7 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="app-pages.html" class="btn btn-orange w-100">
+                    <a href="app-pages.html" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
 
@@ -205,25 +205,25 @@
             <div class="mt-2">
 
                 <a href="https://t.me/travelclubtours" rel="noreferrer" target="_blank"
-                   class="btn btn-icon btn-lg btn-twitter">
+                   class="btn btn-icon btn-lg btn-twitter" aria-label="Ссылка на телеграм">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
 
                 <a href="https://www.instagram.com/travelclub_tours" rel="noreferrer" target="_blank"
-                   class="btn btn-icon btn-lg btn-instagram">
+                   class="btn btn-icon btn-lg btn-instagram" aria-label="Ссылка на инстаграм">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
-                   target="_blank" rel="noreferrer" class="btn btn-icon btn-lg btn-whatsapp">
+                   target="_blank" rel="noreferrer" class="btn btn-icon btn-lg btn-whatsapp" aria-label="Ссылка на вотсап">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" rel="noreferrer" class="btn btn-icon btn-lg btn-secondary goTop">
+                <a href="#" rel="noreferrer" class="btn btn-icon btn-lg btn-secondary goTop" aria-label="Переход к верху сайта">
                     <i class="fas fa-arrow-up"></i>
                 </a>
             </div>
 
 
-            <button type="button" class="btn btn-orange rounded mt-5" data-toggle="modal" data-target="#ContactModal">
+            <button type="button" class="btn btn-orange rounded mt-5" data-toggle="modal" data-target="#ContactModal" aria-label="Модальное окно контактов">
                 Наши контакты
             </button>
 
