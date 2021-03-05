@@ -19,18 +19,23 @@ Route::get('/', function () {
         return redirect()->route("index");
 
     return view('welcome');
-});
+})->name("desktop");
 
 
+Route::get('/m/', function () {
+    if (!Agent::isMobile())
+        return redirect()->route("desktop");
 
-Route::view('/m/',"pages.index")->name("index");
-Route::view('/m/about',"pages.about")->name("about");
-Route::view('/m/contact',"pages.contact")->name("contact");
-Route::view('/m/chat',"pages.chat")->name("chat");
-Route::view('/m/faq',"pages.faq")->name("faq");
+    return view('page.index');
+})->name("index");
 
-Route::view('/m/tours',"pages.tours")->name("tours");
-Route::view('/m/adventure',"pages.adventure")->name("adventure");
-Route::view('/m/hotels',"pages.hotels")->name("hotels");
-Route::view('/m/flies',"pages.flies")->name("flies");
-Route::view('/m/maintenance',"pages.maintenance")->name("maintenance");
+Route::view('/m/about', "pages.about")->name("about");
+Route::view('/m/contact', "pages.contact")->name("contact");
+Route::view('/m/chat', "pages.chat")->name("chat");
+Route::view('/m/faq', "pages.faq")->name("faq");
+
+Route::view('/m/tours', "pages.tours")->name("tours");
+Route::view('/m/adventure', "pages.adventure")->name("adventure");
+Route::view('/m/hotels', "pages.hotels")->name("hotels");
+Route::view('/m/flies', "pages.flies")->name("flies");
+Route::view('/m/maintenance', "pages.maintenance")->name("maintenance");
