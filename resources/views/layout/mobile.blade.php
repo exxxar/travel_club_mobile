@@ -60,8 +60,8 @@
     @laravelPWA
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ env("APP_DEBUG")?asset('/css/app.css'):asset('/css/app.min.css') }}">
-    <link rel="stylesheet" href="{{ env("APP_DEBUG")?asset('/css/theme.css'):asset('/css/theme.min.css') }}">
+    <link rel="stylesheet" href="{{ env("APP_DEBUG")?asset('/css/app.css'):asset('/css/app.min.css') }}?ver={{env("APP_VERSION")}}">
+    <link rel="stylesheet" href="{{ env("APP_DEBUG")?asset('/css/theme.css'):asset('/css/theme.min.css') }}?ver={{env("APP_VERSION")}}">
 
 </head>
 
@@ -88,8 +88,8 @@
 <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
 <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
 
-<script src="{{env("APP_DEBUG")?asset('/js/app.js'):asset('/js/app.min.js')}}"></script>
-<script src="{{asset('/js/assets/app.js')}}"></script>
+<script src="{{env("APP_DEBUG")?asset('/js/app.js'):asset('/js/app.min.js')}}?ver={{env("APP_VERSION")}}"></script>
+<script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}"></script>
 
 </body>
 
