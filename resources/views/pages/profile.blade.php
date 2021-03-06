@@ -5,7 +5,6 @@
 
     <profile-page></profile-page>
 
-    <bottom-menu></bottom-menu>
 
 @endsection
 

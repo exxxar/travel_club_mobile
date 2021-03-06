@@ -34,6 +34,7 @@ Route::view('/m/chat',"pages.chat")->name("chat");
 Route::view('/m/faq',"pages.faq")->name("faq");
 
 Route::view('/m/tours',"pages.tours")->name("tours");
+Route::view('/m/profile',"pages.profile")->name("profile");
 Route::view('/m/adventure',"pages.adventure")->name("adventure");
 Route::view('/m/hotels',"pages.hotels")->name("hotels");
 Route::view('/m/flies',"pages.flies")->name("flies");

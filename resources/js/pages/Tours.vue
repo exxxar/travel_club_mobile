@@ -6,7 +6,7 @@
         <header-anim-section/>
 
         <div class="section full mt-2">
-            <div class="section-title">Путешествия</div>
+            <h1 class="section-title">Путешествия</h1>
 
 
             <div data-sletat-module-id="19a07720-bf7d-489e-be04-21b7dc89eff7"

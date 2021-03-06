@@ -6,7 +6,7 @@
 
         <header-anim-section/>
         <div class="section full mt-2">
-            <div class="section-title">Поиск Авио билетов</div>
+            <h1 class="section-title">Поиск Авио билетов</h1>
             <div id="__biletix__wl__" class="w-100 mb-0" style="margin-top: 0px;z-index: 0 !important;"></div>
         </div>
 

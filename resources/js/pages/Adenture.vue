@@ -7,10 +7,10 @@
         <header-anim-section/>
 
         <div class="section full mt-2">
-            <div class="section-title">Туры по России</div>
+            <h1 class="section-title">Туры по России</h1>
 
 
-            <div class="s-partnership" style="display:none;margin-top:0px;min-height: 200px">
+            <div class="s-partnership">
                 d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D
             </div>
 
@@ -37,3 +37,9 @@
 <script>
     export default {}
 </script>
+
+<style lang="scss">
+    #stellsPartner1 {
+        height: 560px !important;
+    }
+</style>
