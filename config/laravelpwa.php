@@ -8,7 +8,7 @@ return [
         'start_url' => 'https://m.travel-club.tours/m/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
-        'display' => 'standalone',
+        'display' => 'fullscreen',
         'orientation'=> 'portrait',
         'status_bar'=> 'black',
         'icons' => [
