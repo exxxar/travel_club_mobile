@@ -5204,10 +5204,8 @@ textarea,.form-control {
 }
 
 .notification-box {
-    position: fixed;
-    left: 0;
-    top: -100%;
-    right: 0;
+    position: relative;
+
     width: 100%;
     z-index: 9999;
     transition: 0.3s all;
@@ -6671,12 +6669,9 @@ body.dark-mode-active .modalbox .modal-dialog .modal-content .modal-header .moda
 }
 
 body.dark-mode-active .notification-box {
-    position: fixed;
-    left: 0;
-    top: -100%;
-    right: 0;
+    position: relative;
     width: 100%;
-    z-index: 9999;
+    z-index: 9999999999999999;
     transition: 0.3s all
 }
 
@@ -6717,7 +6712,8 @@ body.dark-mode-active .notification-dialog.android-style .notification-footer .n
 }
 
 body.dark-mode-active .notification-dialog.ios-style {
-    background: #0a1320
+    background: #0a1320;
+    border:2px white solid;
 }
 
 body.dark-mode-active .notification-dialog.ios-style .icon-box {

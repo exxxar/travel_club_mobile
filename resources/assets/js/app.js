@@ -70,3 +70,5 @@ $('.owl-carousel').each(function() {
     });
 });
 
+$(".ymaps-2-1-78-gototech").attr("rel","noreferrer");
+

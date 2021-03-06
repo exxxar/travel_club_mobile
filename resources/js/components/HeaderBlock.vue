@@ -12,7 +12,7 @@
             </div>
             <div class="right">
                 <a href="javascript:;" class="headerButton toggle-searchbox"  aria-label="Поиск">
-                    <i class="fas fa-search"></i>
+                  <!--  <i class="fas fa-search"></i>-->
                 </a>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="form-group searchbox">
                     <input type="text" class="form-control" placeholder="Search...">
                     <i class="input-icon">
-                        <i class="fas fa-search"></i>
+                    <!--    <i class="fas fa-search"></i>-->
                     </i>
                     <a href="javascript:;" class="ml-1 close toggle-searchbox">
                         <i class="far fa-times-circle"></i>

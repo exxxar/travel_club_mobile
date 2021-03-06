@@ -175,12 +175,14 @@
 
                 </div>
 
-                <div id="countDown" class="mb-5">
-                    <div>655<span>Days</span></div>
-                    <div>19<span>Hours</span></div>
-                    <div>49<span>Minutes</span></div>
-                    <div>58<span>Seconds</span></div>
-                </div>
+
+                <vue-countdown id="countDown" class="mb-5" :time="200 * 24 * 60 * 60 * 1000"
+                               v-slot="{ days, hours, minutes, seconds }">
+                    <div>{{ days }}<span>Дней</span></div>
+                    <div>{{ hours }}<span>Часов</span></div>
+                    <div>{{ minutes }} <span>Минут</span></div>
+                    <div>{{ seconds }} <span>Секунд</span></div>
+                </vue-countdown>
 
 
             </div>
@@ -200,7 +202,7 @@
 
 
             <div>Разработано команией Donbass IT</div>
-           Доступные технологии для вашего бизнеса;)
+            Доступные технологии для вашего бизнеса;)
 
             <div class="mt-2">
 
@@ -214,16 +216,19 @@
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
-                   target="_blank" rel="noreferrer" class="btn btn-icon btn-lg btn-whatsapp" aria-label="Ссылка на вотсап">
+                   target="_blank" rel="noreferrer" class="btn btn-icon btn-lg btn-whatsapp"
+                   aria-label="Ссылка на вотсап">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" rel="noreferrer" class="btn btn-icon btn-lg btn-secondary goTop" aria-label="Переход к верху сайта">
+                <a href="#" rel="noreferrer" class="btn btn-icon btn-lg btn-secondary goTop"
+                   aria-label="Переход к верху сайта">
                     <i class="fas fa-arrow-up"></i>
                 </a>
             </div>
 
 
-            <button type="button" class="btn btn-orange rounded mt-5" data-toggle="modal" data-target="#ContactModal" aria-label="Модальное окно контактов">
+            <button type="button" class="btn btn-orange rounded mt-5" data-toggle="modal" data-target="#ContactModal"
+                    aria-label="Модальное окно контактов">
                 Наши контакты
             </button>
 
@@ -238,10 +243,24 @@
 
 </template>
 <script>
+    import VueCountdown from '@chenfengyuan/vue-countdown';
     import carousel from 'vue-owl-carousel'
 
     export default {
-        components: {carousel},
+        mounted() {
+
+        },
+        methods:{
+          test(){
+              console.log("Test");
+              this.$notify({
+                  title: 'Important message',
+                  text: 'Hello user!',
+                  group: 'main'
+              });
+          }
+        },
+        components: {carousel, VueCountdown},
     }
 </script>
 <style lang="scss">

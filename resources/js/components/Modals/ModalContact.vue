@@ -52,7 +52,7 @@
                         </div>
                         <div class="tab-pane fade" id="home-2" role="tabpanel">
                             <p>Социалистическая 11 оф 2А
-                                <button class="btn btn-link" @click="showOnMap(0)">Показать на карте</button>
+                                <button class="btn btn-link" @click="showOnMap(2)">Показать на карте</button>
                             </p>
                             <p>8 800 222-89-68</p>
                             <p>travelclubrnd@bk.ru</p>
@@ -94,36 +94,36 @@
                     version: '2.1'
                 },
 
-                center: [54, 39],
+                center: [48.017686, 37.801844],
                 locations: [
                     {
-                        coords: [54, 39],
+                        coords: [48.017686, 37.801844],
                         markerIcon: {
                             layout: 'default#imageWithContent',
                             imageHref: '../img/travel/logo-1.png',
-                            imageSize: [43, 60],
+                            imageSize: [53, 70],
                             imageOffset: [0, 0],
 
                         }
                     },
 
                     {
-                        coords: [57, 41],
+                        coords: [48.002929, 37.802194],
                         markerIcon: {
                             layout: 'default#imageWithContent',
                             imageHref: '../img/travel/logo-1.png',
-                            imageSize: [43, 60],
+                            imageSize: [53, 70],
                             imageOffset: [0, 0],
 
                         }
                     },
 
                     {
-                        coords: [54, 41],
+                        coords: [47.217476, 39.700415],
                         markerIcon: {
                             layout: 'default#imageWithContent',
                             imageHref: '../img/travel/logo-1.png',
-                            imageSize: [43, 60],
+                            imageSize: [53, 70],
                             imageOffset: [0, 0],
                         }
                     }

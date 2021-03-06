@@ -8,6 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+window.eventBus = new Vue();
+
+import Notifications from 'vue-notification'
+
+Vue.use(Notifications)
+
 import VueRecord from '@codekraft-studio/vue-record'
 
 Vue.use(VueRecord)
@@ -23,6 +29,11 @@ import VuePwaInstallPlugin from "vue-pwa-install";
 
 Vue.use(VuePwaInstallPlugin);
 
+
+
+
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -37,7 +48,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('bottom-menu', require('./components/BottomMenu.vue').default);
 Vue.component('header-block', require('./components/HeaderBlock.vue').default);
 Vue.component('modals-block', require('./components/ModalsBlock.vue').default);
-Vue.component('notification-bar', require('./components/NotificationBar.vue').default);
+Vue.component('travel-notification', require('./components/TravelNotification.vue').default);
 Vue.component('preloader', require('./components/Preloader.vue').default);
 Vue.component('sidebar', require('./components/SideBar.vue').default);
 

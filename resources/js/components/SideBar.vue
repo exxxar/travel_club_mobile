@@ -119,6 +119,15 @@
                             </div>
 
 
+
+                        <li>
+                            <a href="https://travel-club.tours" target="_blank"  class="item" aria-label="Полная версия">
+                                <div class="in">
+                                    <div>Полная версия сайта</div>
+
+                                </div>
+                            </a>
+                        </li>
                     </ul>
 
 
