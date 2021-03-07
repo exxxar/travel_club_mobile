@@ -8,7 +8,43 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import Vuex from 'vuex';
+
 Vue.use(Vuex);
+
+import {ValidationProvider, extend, ValidationObserver} from 'vee-validate';
+import {required, email} from 'vee-validate/dist/rules';
+
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
+extend('email', {
+    ...email,
+    message: 'Поле E-mail должно быть действительным адресом электронной почты'
+});
+extend('required', {
+    ...required,
+    message: 'Это поле обязательно к заполнению'
+});
+extend('min', {
+    validate(value, args) {
+        return value.length >= args.length;
+    },
+    params: ['length'],
+    message: 'Это поле должно содержать {length} или более знаков'
+});
+
+extend('phone', {
+    validate(value, args) {
+        return value.length >= 18;
+    },
+    message: 'Это поле должно быть действительным номером телефона'
+});
+extend('password', {
+    params: ['target'],
+    validate(value, {target}) {
+        return value === target;
+    },
+    message: 'Подтверждение пароля не совпадает с введённым паролем'
+});
 
 import store from './store';
 
@@ -66,6 +102,7 @@ Vue.component('tours-page', require('./pages/Tours.vue').default);
 Vue.component('hotels-page', require('./pages/Hotels.vue').default);
 Vue.component('flies-page', require('./pages/Flies.vue').default);
 Vue.component('tour-search-page', require('./pages/TourSearch.vue').default);
+Vue.component('avia-search-page', require('./pages/AviaSearch.vue').default);
 
 const app = new Vue({
     store,

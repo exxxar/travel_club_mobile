@@ -1,35 +1,25 @@
 <template>
     <div>
-        <baloon-anim class="mt-5"></baloon-anim>
+        <baloon-anim class="mt-5"/>
 
-        <div class="section">
-            <div class="section-title text-center blue-brush w-100">
-                <h1 class="text-center w-100">Дбро пожаловать</h1>
+        <tour-start/>
+        <tour-country/>
+        <tour-filter/>
+        <tour-order/>
 
-            </div>
-            <div class="section-title text-center orange-brush w-100">
-                <h1 class="text-center w-100">модуль подбора туров</h1>
-
-            </div>
-        </div>
-
-        <div class="section mt-2">
-            <p class="text-justify">Надоело искать, подбирать туры и следить за их ценой самостоятельно? Мы предлагаем заполнить заявку на
-                подбор туров и наши менеджеры сделают всё за Вас!</p>
-        </div>
-
-        <tour-country></tour-country>
-        <tour-filter></tour-filter>
+        <footer-anim-section class="mt-5"/>
     </div>
 </template>
 <script>
     import TourCountry from '../components/TravelSearch/Country'
     import TourFilter from '../components/TravelSearch/TourFilter'
+    import TourStart from '../components/TravelSearch/Start'
     import BaloonAnim from '../components/BaloonAnim'
+    import TourOrder from '../components/TravelSearch/Order'
 
     export default {
         components: {
-            TourCountry, BaloonAnim, TourFilter
+            TourCountry, BaloonAnim, TourFilter, TourOrder, TourStart
         }
 
     }
@@ -52,8 +42,8 @@
         background: url('/img/travel/blue-brush.svg') no-repeat;
         background-position: center center;
 
-    h1 {
-        font-weight: 100;
-    }
+        h1 {
+            font-weight: 100;
+        }
     }
 </style>

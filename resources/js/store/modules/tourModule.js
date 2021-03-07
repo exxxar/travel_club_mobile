@@ -142,40 +142,41 @@ export default {
         getCountries({commit}, payload) {
             commit('isCountriesLoading', true);
             axios.get('/getCountries/' + payload.town_id).then((response) => {
-                commit('getCountries', response.data.res);
+                commit('getCountries', response.data);
                 commit('isCountriesLoading', false);
             });
         },
         getCities({commit}, payload) {
             commit('isCitiesLoading', true);
             axios.get('/getCities/' + payload).then((response) => {
-                commit('getCities', response.data.res);
+
+                commit('getCities', response.data);
                 commit('isCitiesLoading', false);
             });
         },
         async getHotels({commit}, payload) {
             commit('isHotelsLoading', true);
             await axios.get('/getHotels/' + payload.country_id + '/' + payload.town_id + '/' + payload.star_id).then((response) => {
-                commit('getHotels', response.data.res);
+                commit('getHotels', response.data);
                 commit('isHotelsLoading', false);
             });
 
         },
         getHotelStars({commit}, payload) {
             axios.get('/getHotelStars/' + payload.country_id + '/' + payload.town_id).then((response) => {
-                commit('getHotelStars', response.data.res);
+                commit('getHotelStars', response.data);
             });
         },
         getTourOperators({commit}, payload) {
             commit('isTourOperatorsLoading', true);
             axios.get('/getTourOperators/' + payload.city_id + '/' + payload.country_id).then((response) => {
-                commit('getTourOperators', response.data.res);
+                commit('getTourOperators', response.data);
                 commit('isTourOperatorsLoading', false);
             });
         },
         getTourDates({commit}, payload) {
             axios.get('/getTourDates/' + payload.city_id + '/' + payload.country_id).then((response) => {
-                commit('getTourDates', response.data.res);
+                commit('getTourDates', response.data);
             });
         },
 

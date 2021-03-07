@@ -24,30 +24,14 @@
                 </div>
             </div>
 
-            <div class="form-group boxed">
-                <div class="input-wrapper">
-                    <select name="question-type" v-model="city" class="form-control" required>
-                        <option v-for="(option,index) in cities" :value="index">
-                            {{option}}
-                        </option>
-                    </select>
-                    <i class="clear-input">
-                        <i class="far fa-times-circle"></i>
-                    </i>
-                </div>
-            </div>
+
 
             <div class="form-group boxed">
                 <div class="input-wrapper">
-                    <input type="text" name="phone" class="form-control" v-if="city==0" v-model="phone"
+                    <input type="text" name="phone" class="form-control"  v-model="phone"
                            pattern="[\+]\d{2} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
                            maxlength="19"
-                           v-mask="['+38 (###) ###-##-##']"
-                           placeholder="Номер телефона" required>
-                    <input type="text" name="phone" class="form-control" v-if="city==1" v-model="phone"
-                           pattern="[\+]\d{1} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
-                           maxlength="19"
-                           v-mask="['+7 (###) ###-##-##']"
+                           v-mask="['+# (###) ###-##-##','+## (###) ###-##-##']"
                            placeholder="Номер телефона" required>
                     <i class="clear-input">
                         <i class="far fa-times-circle"></i>

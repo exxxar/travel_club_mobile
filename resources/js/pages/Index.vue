@@ -110,7 +110,7 @@
 
                         Вам также будут доступны реальные отзывы на каждый объект размещения.
                     </p>
-                    <a href="app-components.html" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
+                    <a href="/m/tour-search" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
                     </a>
@@ -129,7 +129,7 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="app-pages.html" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
+                    <a href="/m/avia-search" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
                     </a>
@@ -148,7 +148,7 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="app-pages.html" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
+                    <a href="/m/tour-search" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
 

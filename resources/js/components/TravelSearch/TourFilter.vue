@@ -1,46 +1,257 @@
 <template>
-    <div class="section mb-2" style="height:100vh">
-        <div class="section-title">Поиск тура</div>
+    <div class="section">
+        <h4 class="section-title">Выбираем путешествие</h4>
+        <p>Для начала стоит определиться с местом отправления</p>
 
-        <h4 class="multiselect-title">Куда</h4>
-        <multiselect
-            v-model="resort_country"
-            :options="countries"
-            :option-height="25"
-            placeholder="Выберете страну"
-            :show-labels="false"
-            :maxHeight="200"
-            label="Name"
-            track-by="Name"
-            :loading="isCountriesLoading"
-            :disabled="isCountriesLoading"
-            :allow-empty="false"
-            @input="chooseResortCountry"
-        >
-            <template slot="singleLabel" slot-scope="props">
-                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
-                <span class="option__desc">
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Куда</h4>
+            <multiselect
+                v-model="resort_country"
+                :options="countries"
+                :option-height="25"
+                placeholder="Выберете страну"
+                :show-labels="false"
+                :maxHeight="200"
+                label="Name"
+                track-by="Name"
+                :loading="isCountriesLoading"
+                :disabled="isCountriesLoading"
+                :allow-empty="false"
+                @input="chooseResortCountry"
+            >
+                <template slot="singleLabel" slot-scope="props">
+                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                    <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
-            </template>
-            <template slot="option" slot-scope="props">
-                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
-                <span class="option__desc">
+                </template>
+                <template slot="option" slot-scope="props">
+                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                    <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
-            </template>
-        </multiselect>
+                </template>
+            </multiselect>
+        </div>
+
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Курорт</h4>
+            <multiselect
+                :value="resorts"
+                :options="cities"
+                placeholder="Введите название курорта"
+                :show-labels="false"
+                :limit="2"
+                :maxHeight="200"
+                label="Name"
+                track-by="Name"
+                :multiple="true" :close-on-select="false" :clear-on-select="false"
+                :loading="isCountriesLoading || isCitiesLoading"
+                :disabled="isCountriesLoading || isCitiesLoading"
+                @input="chooseResorts"
+                @select="whateverResort"
+                @remove="removeResort"
+                :preselectFirst="true"
+            >
+                <template slot="limit"><span class="multiselect__single"> и ещё {{ resorts.length-2 }} {{resorts.length-2 | pluralizeResorts}}</span>
+                </template>
+                <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single"
+                                                                                         v-if="values.length>3 && !isOpen">{{ values.length }} {{values.length | pluralizeResorts }} {{values.length | pluralizeChoose}}</span>
+                </template>
+            </multiselect>
+        </div>
+
+
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Выбор отеля</h4>
+            <multiselect
+                :value="chosen_hotels"
+                :options="hotels"
+                placeholder="Введите название отеля"
+                :show-labels="false"
+                :limit="2"
+                :maxHeight="200"
+                label="Name"
+                track-by="Name"
+                :multiple="true" :close-on-select="false" :clear-on-select="false"
+                :loading="isCountriesLoading || isHotelsLoading"
+                :disabled="isCountriesLoading || isHotelsLoading"
+                @input="chooseHotel"
+                @remove="removeHotels"
+                :preselectFirst="true"
+            >
+                <template slot="limit"><span class="multiselect__single"> и ещё {{ chosen_hotels.length-2 }} {{chosen_hotels.length-2 | pluralizeHotels}}</span>
+                </template>
+                <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single"
+                                                                                         v-if="values.length>3 && !isOpen">{{ values.length }} {{values.length | pluralizeHotels}} {{values.length | pluralizeChoose}}</span>
+                </template>
+                <template slot="singleLabel" slot-scope="props">
+                                    <span class="option__desc">
+                                        <span class="option__title">{{ props.option.Name }}</span>
+                                        <span class="option__title" style="float:right"
+                                              v-if="props.option.CommonRate!=0">{{ props.option.CommonRate }}</span>
+                                        <span class="values__hotel-rating" style="float:right"
+                                              v-if="props.option.StarName">{{ props.option.StarName }}</span>
+                                    </span>
+                </template>
+                <template slot="option" slot-scope="props">
+                    <div class="option__desc">
+                        <span class="option__title">{{ props.option.Name }}</span>
+                        <span class="option__title" style="float:right" v-if="props.option.CommonRate!=0">{{ props.option.CommonRate }}</span>
+                        <span class="values__hotel-rating" style="float:right" v-if="props.option.StarName">{{ props.option.StarName }}</span>
+                    </div>
+                </template>
+            </multiselect>
+        </div>
+
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Туроператоры</h4>
+            <multiselect
+                v-model="chosen_tour_operators"
+                :options="tour_operators"
+                placeholder="Введите название туроператора"
+                :show-labels="false"
+                :limit="2"
+                :maxHeight="200"
+                label="Name"
+                track-by="Name"
+                :multiple="true" :close-on-select="false" :clear-on-select="false"
+                :loading="isCountriesLoading || isTourOperatorsLoading"
+                :disabled="isCountriesLoading || isTourOperatorsLoading"
+                @input="chooseTourOperator"
+                @remove="removeTourOperators"
+                :preselectFirst="true"
+            >
+                <template slot="limit"><span class="multiselect__single"> и ещё {{ chosen_tour_operators.length-2 }} {{chosen_tour_operators.length-2 | pluralizeTourOperators}}</span>
+                </template>
+                <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single"
+                                                                                         v-if="values.length>3 && !isOpen">{{ values.length }} {{values.length | pluralizeTourOperators}} {{values.length | pluralizeChoose}}</span>
+                </template>
+            </multiselect>
+        </div>
+
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Интервал дат вылета</h4>
+            <VueHotelDatepicker
+                :startDate="start"
+                :endDate="end"
+                :placeholder="'Интервал дат вылета'"
+                :format="'DD-MM-YYYY'"
+                :weekList="['Вс.', 'Пн.', 'Вт.', 'Ср.', 'Чт.', 'Пт.', 'Сб.']"
+                :monthList="['Янв.', 'Фев.', 'Мар.', 'Апр.', 'Май.', 'Июн.', 'Июл.', 'Авг.', 'Сен.', 'Окт', 'Ноя.', 'Дек.']"
+                :fromText="'С'"
+                :toText="'По'"
+                :resetText="'Очистить'"
+                :confirmText="'Подтвердить'"
+                @update="changeDateRange"
+                @reset="resetDateRange"
+            />
+        </div>
+
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Взрослые</h4>
+            <div class="d-flex align-items-center justify-content-between flex-nowrap">
+                <button type="button" class="btn btn-orange mr-2" :disabled="adults===1"
+                        @click="decrementAdults()">-
+                </button>
+                <input type="number" class="form-control" name="qty" v-model="adults" step="1" min="1"
+                       @change="changeAdults">
+                <button type="button" class="btn btn-orange ml-2"
+                        @click="incrementAdults()">+
+                </button>
+
+            </div>
+        </div>
+
+        <div class="input-wrapper mt-2">
+            <h4 class="multiselect-title">Дети</h4>
+            <div class="d-flex align-items-center justify-content-between flex-nowrap">
+                <button type="button" class="btn btn-orange mr-2" :disabled="children===0"
+                        @click="decrementChildren()">-
+                </button>
+                <input type="number" class="form-control" name="qty" v-model="children" step="1" min="0"
+                       @change="changeChildren">
+                <button type="button" class="btn btn-orange ml-2"
+                        @click="incrementChildren()">+
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="input-wrapper mt-2">
+            <div class="d-flex align-items-center justify-content-between flex-nowrap">
+                <div class="p-1">
+                    <h4 class="multiselect-title">Цена от</h4>
+                    <input type="number" class="form-control" v-model="price_from" step="1"
+                           min="0" @input="changePriceFrom">
+                </div>
+                <div class="p-1">
+                    <h4 class="multiselect-title">Цена до</h4>
+
+
+                    <input type="number" class="form-control" v-model="price_to" step="1"
+                           min="0" @change="changePriceTo">
+                </div>
+            </div>
+        </div>
+
+        <div class="input-wrapper mt-2">
+            <div class="d-flex align-items-center justify-content-between flex-nowrap">
+                <div class="p-1 w-100">
+                    <h4 class="multiselect-title">Ночей от</h4>
+
+                    <multiselect
+                        v-model="nights_from"
+                        :options="nights"
+                        :option-height="25"
+                        placeholder="От"
+                        :show-labels="false"
+                        :maxHeight="200"
+                        :allow-empty="false"
+                        :searchable="false"
+
+                        @input="changeNightsFrom"
+                    />
+                </div>
+
+
+                <div class="p-1 w-100">
+                    <h4 class="multiselect-title">Ночей до</h4>
+                    <multiselect
+                        v-model="nights_to"
+                        :options="nights"
+                        :option-height="25"
+                        placeholder="До"
+                        :show-labels="false"
+                        :maxHeight="200"
+                        :allow-empty="false"
+                        :searchable="false"
+
+                        @input="changeNightsTo"
+                    />
+                </div>
+            </div>
+        </div>
 
 
     </div>
+
+
 </template>
 
 <script>
 
     import Multiselect from 'vue-multiselect'
+    import VueHotelDatepicker from '@northwalker/vue-hotel-datepicker'
+    import 'vue-hotel-datepicker/dist/vueHotelDatepicker.css';
+
+    import "vue-multiselect/dist/vue-multiselect.min.css"
 
     export default {
-        components: {Multiselect},
+        components: {
+            Multiselect, VueHotelDatepicker
+        },
         name: "Tour",
         data() {
             return {
@@ -485,3 +696,33 @@
             }
     }
 </script>
+
+<style lang="scss">
+    .multiselect__tag {
+
+        background: #ffa500 !important;
+
+        span {
+            color: black !important;
+        }
+    }
+
+    .multiselect__tag-icon:after {
+        color: #000000 !important;
+    }
+
+    .vhd-container {
+        width: 100%;
+
+        .vhd-input {
+            width: 100%;
+            text-align: center;
+        }
+
+        .vhd-picker {
+            width: 100% !important;
+            border-radius: 0px;
+            text-align: center;
+        }
+    }
+</style>

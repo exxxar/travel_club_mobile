@@ -70,6 +70,18 @@
  * Date: 2020-02-25T01:19:32.769Z
  */
 
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
+/**
+  * vee-validate v3.4.5
+  * (c) 2020 Abdelrahman Awad
+  * @license MIT
+  */
+
 /**
  *  StartAudioContext.js
  *  @author Yotam Mann

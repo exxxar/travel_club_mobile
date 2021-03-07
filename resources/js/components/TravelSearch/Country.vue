@@ -1,32 +1,25 @@
 <template>
-    <div class="section country-section">
+    <div class="section mt-5 mb-5">
         <h4 class="section-title">Выбираем страну вылета</h4>
         <p>Для начала стоит определиться с местом отправления</p>
         <div class="row mt-2">
-            <div class="col-6">
-                <img src="/img/travel/ukraine1.png" alt="" class="img-fluid rounded-country" v-if="country===0">
-                <img src="/img/travel/ukraine0.png" alt="" class="img-fluid rounded-country" v-else>
+            <div class="col-6" @click="country=0">
+                <div class="country-block">
+                    <img src="/img/travel/ukraine1.png" alt="" class="img-fluid rounded-country country-checked"
+                         v-if="country===0">
+                    <img src="/img/travel/ukraine0.png" alt="" class="img-fluid rounded-country" v-else>
+                    <h4 class="country-title">Украина</h4>
+                </div>
             </div>
-            <div class="col-6">
-                <img src="/img/travel/russia1.png" alt="" class="img-fluid rounded-country" v-if="country===1">
-                <img src="/img/travel/russia0.png" alt="" class="img-fluid rounded-country" v-else>
+            <div class="col-6" @click="country=1">
+                <div class="country-block">
+                    <img src="/img/travel/russia1.png" alt="" class="img-fluid rounded-country country-checked"
+                         v-if="country===1">
+                    <img src="/img/travel/russia0.png" alt="" class="img-fluid rounded-country" v-else>
+                    <h4 class="country-title">Россия</h4>
+                </div>
             </div>
         </div>
-
-        <div class="input-list mt-2">
-            <div class="custom-control custom-radio custom-radio-country">
-                <input type="radio" id="radio-country-1" name="radio-country" class="custom-control-input "
-                       @click="country=0" checked>
-                <label class="custom-control-label" for="radio-country-1">Украина</label>
-            </div>
-            <div class="custom-control custom-radio custom-radio-country">
-                <input type="radio" id="radio-country-2" name="radio-country" class="custom-control-input custom-radio-country"
-                       @click="country=1">
-                <label class="custom-control-label" for="radio-country-2">Россия</label>
-            </div>
-
-        </div>
-
 
 
     </div>
@@ -43,41 +36,50 @@
 
 <style lang="scss">
 
-    .rounded-country {
-        border-radius: 115px !important;
+    .country-block {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
+
+    .rounded-country {
+        filter: drop-shadow(2px 1px 6px white);
+    }
+
+    .input-list .custom-control:after {
+        content: none !important;;
+    }
+
     .country-section {
-        height: 100vh;
-        padding: 0 16px;
+        padding: 50px 16px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         flex-direction: column;
     }
-    .custom-radio-country {
 
-        background: orange;
-        border-radius: 30px;
+
+    .country-title {
+        text-align: center;
         color: white;
-        margin-bottom: 9px;
+        z-index: 1;
 
-        label {
-            text-transform:uppercase;
-            font-weight: 900;
-        }
-        input:checked ~ label{
-            background: #001e48;
-            border-radius: 30px;
-            color: white;
+        font-weight: 900;
+        text-transform: uppercase;
 
-            border: 4px orange solid;
-        }
+        position: absolute;
+        width: 100%;
 
-        input:not(:checked) ~ label {
-            border-radius: 30px;
-            border: 4px #001e48 solid;
-        }
+        /* margin-top: -60px; */
 
+        font-size: 16px;
+        bottom: 20px;
+
+    }
+
+    .country-checked ~ .country-title {
+        color: orange;
     }
 </style>

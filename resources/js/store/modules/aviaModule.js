@@ -105,7 +105,7 @@ export default {
         async getAviaCities({commit}, payload) {
             commit('isAviaCitiesLoading', true);
             await axios.get('/getAviaCities/'+payload).then((response) => {
-                commit('getAviaCities', response.data.res);
+                commit('getAviaCities', response.data);
                 commit('isAviaCitiesLoading', false);
             });
         },
