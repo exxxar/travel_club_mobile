@@ -77,6 +77,7 @@ Vue.component('adventure-page', require('./pages/Adenture.vue').default);
 Vue.component('tours-page', require('./pages/Tours.vue').default);
 Vue.component('hotels-page', require('./pages/Hotels.vue').default);
 Vue.component('flies-page', require('./pages/Flies.vue').default);
+Vue.component('tour-search-page', require('./pages/TourSearch.vue').default);
 
 
 /**
