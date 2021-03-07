@@ -7,6 +7,10 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vuex from 'vuex';
+Vue.use(Vuex);
+
+import store from './store';
 
 window.eventBus = new Vue();
 
@@ -24,25 +28,9 @@ Vue.use(Tawk, {
     tawkSrc: 'https://embed.tawk.to/6011a65ac31c9117cb73211e/1et2f3ktl/default'
 })
 
-
 import VuePwaInstallPlugin from "vue-pwa-install";
 
 Vue.use(VuePwaInstallPlugin);
-
-
-
-
-
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 //Components
 Vue.component('bottom-menu', require('./components/BottomMenu.vue').default);
@@ -79,13 +67,7 @@ Vue.component('hotels-page', require('./pages/Hotels.vue').default);
 Vue.component('flies-page', require('./pages/Flies.vue').default);
 Vue.component('tour-search-page', require('./pages/TourSearch.vue').default);
 
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 const app = new Vue({
+    store,
     el: '#wrapper',
 });

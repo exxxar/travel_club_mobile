@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/@chenfengyuan/vue-countdown/dist/vue-countdown.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@chenfengyuan/vue-countdown/dist/vue-countdown.js ***!
@@ -8496,39 +8508,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeaderBlock.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HeaderBlock.vue?vue&type=script&lang=js& ***!
@@ -14039,6 +14018,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Multiselect: vue_multiselect__WEBPACK_IMPORTED_MODULE_0___default.a
   },
+  name: "Tour",
   data: function data() {
     return {
       resort_country: null,
@@ -14071,6 +14051,507 @@ __webpack_require__.r(__webpack_exports__);
         language: 'Elixir'
       }]
     };
+  },
+  created: function created() {
+    this.$store.dispatch('getCountries', {
+      town_id: 0
+    });
+
+    for (var i = 1; i < 31; i++) {
+      this.nights.push(i);
+    }
+  },
+  mounted: function mounted() {
+    this.adults = this.tourModule.adults;
+    this.children = this.tourModule.children;
+    this.price_from = this.tourModule.price_from;
+    this.price_to = this.tourModule.price_to;
+    this.nights_from = this.tourModule.nights_from;
+    this.nights_to = this.tourModule.nights_to;
+    this.start = this.tourModule.date_range.start;
+    this.end = this.tourModule.date_range.end;
+
+    if (this.tourModule.resort_country) {
+      this.resort_country = this.tourModule.resort_country;
+      this.$store.dispatch('getCities', this.resort_country.Id); // this.$store.dispatch('getHotels', {country_id:this.resort_country.Id});
+
+      this.$store.dispatch('getTourOperators', {
+        city_id: '832',
+        country_id: this.resort_country.Id
+      });
+      this.$store.dispatch('getTourDates', {
+        city_id: '832',
+        country_id: this.resort_country.Id
+      }); //если есть выбранные курорты
+
+      if (this.tourModule.resorts.length > 0 && this.tourModule.resorts[0].Name != 'Любой') {
+        this.resorts = this.tourModule.resorts;
+        var town_id = '';
+        this.resorts.forEach(function (item) {
+          town_id += '' + item.Id + ',';
+        });
+        town_id = town_id.slice(0, -1); //поиск отелей по городам-курортам
+
+        this.$store.dispatch('getHotels', {
+          country_id: this.resort_country.Id,
+          town_id: town_id,
+          star_id: '0'
+        });
+      } else {
+        this.resorts = this.tourModule.resorts; //если городов-курортов не выбрано, то поиск отелей по стране
+
+        this.$store.dispatch('getHotels', {
+          country_id: this.resort_country.Id,
+          town_id: '0',
+          star_id: '0'
+        });
+      } //если есть выбранные отели
+
+
+      if (this.tourModule.hotels.length > 0) {
+        // фильтруем выбранные отели по городам курортам
+        //т.е если выбранные отели находятся в выборке отелей по городам-курортам
+        this.chosen_hotels = this.tourModule.hotels; // this.chosen_hotels = this.tourModule.hotels.filter( item =>
+        // {
+        //     console.log('фильтруем выбранные отели по городам курортам')
+        //     if(this.hotels.indexOf(item) !== -1)
+        //     {
+        //         return true;
+        //     }
+        // });
+        // this.$store.dispatch('changeHotels', this.chosen_hotels)
+        // this.chosen_hotels = this.tourModule.hotels
+      } // else {
+      //     //если городов-курортов не выбрано, то поиск отелей по стране
+      //     this.$store.dispatch('getHotels', {country_id:this.resort_country.Id, town_id:'', star_id:''});
+      // }
+      //если есть выбранные туроператоры
+
+
+      if (this.tourModule.tour_operators.length > 0) {
+        this.chosen_tour_operators = this.tourModule.tour_operators;
+      }
+    }
+  },
+  computed: {
+    menu: function menu() {
+      return this.$store.getters.menu;
+    },
+    tourModule: function tourModule() {
+      return this.$store.getters.tourModule;
+    },
+    preloader: function preloader() {
+      return this.$store.getters.preloader;
+    },
+    //dictionaries Sletat.ru
+    countries: function countries() {
+      return this.$store.getters.countries;
+    },
+    cities: function cities() {
+      return this.$store.getters.cities;
+    },
+    hotels: function hotels() {
+      return this.$store.getters.hotels;
+    },
+    hotel_stars: function hotel_stars() {
+      return this.$store.getters.hotel_stars;
+    },
+    tour_operators: function tour_operators() {
+      return this.$store.getters.tour_operators;
+    },
+    tour_dates: function tour_dates() {
+      return this.$store.getters.tour_dates;
+    },
+    // adults() {
+    //     return this.$store.getters.adults;
+    // },
+    // children() {
+    //     return this.$store.getters.children;
+    // },
+    //loadings
+    isCountriesLoading: function isCountriesLoading() {
+      return this.$store.getters.isCountriesLoading;
+    },
+    isCitiesLoading: function isCitiesLoading() {
+      return this.$store.getters.isCitiesLoading;
+    },
+    isHotelsLoading: function isHotelsLoading() {
+      return this.$store.getters.isHotelsLoading;
+    },
+    isTourOperatorsLoading: function isTourOperatorsLoading() {
+      return this.$store.getters.isTourOperatorsLoading;
+    }
+  },
+  filters: {
+    pluralizeResorts: function pluralizeResorts(n) {
+      if (n === 1) {
+        return 'курорт';
+      }
+
+      if (n > 1 && n < 5) {
+        return 'курорта';
+      }
+
+      if (n > 4 && n < 20) {
+        return 'курортов';
+      }
+
+      if (n > 19) {
+        var last = n % 10;
+
+        if (last === 1) {
+          return 'курорт';
+        }
+
+        if (last > 1 && last < 5) {
+          return 'курорта';
+        }
+
+        if (last > 4 && last < 10 && last === 0) {
+          return 'курортов';
+        }
+
+        return 'курортов';
+      }
+
+      return 'курортов';
+    },
+    pluralizeHotels: function pluralizeHotels(n) {
+      if (n === 1) {
+        return 'отель';
+      }
+
+      if (n > 1 && n < 5) {
+        return 'отеля';
+      }
+
+      if (n > 4 && n < 20) {
+        return 'отелей';
+      }
+
+      if (n > 19) {
+        var last = n % 10;
+
+        if (last === 1) {
+          return 'отель';
+        }
+
+        if (last > 1 && last < 5) {
+          return 'отеля';
+        }
+
+        if (last > 4 && last < 10 && last === 0) {
+          return 'отелей';
+        }
+
+        return 'отелей';
+      }
+
+      return 'отелей';
+    },
+    pluralizeTourOperators: function pluralizeTourOperators(n) {
+      if (n === 1) {
+        return 'туроператор';
+      }
+
+      if (n > 1 && n < 5) {
+        return 'туроператора';
+      }
+
+      if (n > 4 && n < 20) {
+        return 'туроператоров';
+      }
+
+      if (n > 19) {
+        var last = n % 10;
+
+        if (last === 1) {
+          return 'туроператор';
+        }
+
+        if (last > 1 && last < 5) {
+          return 'туроператора';
+        }
+
+        if (last > 4 && last < 10 && last === 0) {
+          return 'туроператоров';
+        }
+
+        return 'туроператоров';
+      }
+
+      return 'туроператоров';
+    },
+    pluralizeChoose: function pluralizeChoose(n) {
+      if (n === 1) {
+        return 'выбран';
+      }
+
+      return 'выбрано';
+    }
+  },
+  methods: {
+    chooseResortCountry: function chooseResortCountry() {
+      this.$store.dispatch('changeResortCountry', this.resort_country);
+      this.resorts = [{
+        Name: 'Любой'
+      }];
+      this.chosen_hotels = [{
+        Name: 'Любой'
+      }];
+      this.chosen_tour_operators = [{
+        Name: 'Любой'
+      }];
+      this.$store.dispatch('changeResorts', this.resorts);
+      this.$store.dispatch('changeHotels', this.chosen_hotels);
+      this.$store.dispatch('changeTourOperator', this.chosen_tour_operators);
+      this.$store.dispatch('getCities', this.resort_country.Id);
+      this.$store.dispatch('getHotels', {
+        country_id: this.resort_country.Id,
+        town_id: '0',
+        star_id: '0'
+      });
+      this.$store.dispatch('getTourOperators', {
+        city_id: '832',
+        country_id: this.resort_country.Id
+      });
+      this.$store.dispatch('getTourDates', {
+        city_id: '832',
+        country_id: this.resort_country.Id
+      }); // this.$store.dispatch('getCities', {id:this.resort_country.Id});
+      // this.$store.dispatch('getHotels', {id:this.resort_country.Id});
+      // this.$store.dispatch('getHotelStars', {id:this.resort_country.Id});
+      // this.$store.dispatch('getTourOperators', {city_id:'832', country_id:this.resort_country.Id});
+      // this.$store.dispatch('getTourDates', {city_id:'832', country_id:this.resort_country.Id});
+    },
+    chooseResorts: function chooseResorts(value) {
+      var _this = this;
+
+      this.resorts = value;
+
+      if (this.resorts.length > 0) {
+        if (value[this.resorts.length - 1].Name === 'Любой') {
+          this.resorts = [{
+            Name: 'Любой'
+          }]; // this.$store.dispatch('getHotels', {country_id:this.resort_country.Id, town_id:'', star_id:''});
+
+          this.$store.dispatch('changeResorts', this.resorts);
+        } else {
+          this.resorts = this.resorts.filter(function (item) {
+            if (item.Name !== 'Любой') {
+              return true;
+            }
+          });
+          this.$store.dispatch('changeResorts', this.resorts);
+          var town_id = '';
+          this.resorts.forEach(function (item) {
+            town_id += '' + item.Id + ',';
+          });
+          town_id = town_id.slice(0, -1); //поиск отелей по городам-курортам
+
+          this.$store.dispatch('getHotels', {
+            country_id: this.resort_country.Id,
+            town_id: town_id,
+            star_id: '0'
+          }).then(function () {
+            // фильтруем выбранные отели по городам курортам
+            _this.chosen_hotels = _this.chosen_hotels.filter(function (item) {
+              if (_this.hotels.findIndex(function (i) {
+                return i.Id == item.Id;
+              }) !== -1) {
+                return true;
+              }
+            });
+
+            _this.$store.dispatch('changeHotels', _this.chosen_hotels);
+          });
+        }
+      }
+    },
+    chooseHotel: function chooseHotel(value) {
+      this.chosen_hotels = value;
+
+      if (value[this.chosen_hotels.length - 1].Name === 'Любой') {
+        this.chosen_hotels = [{
+          Name: 'Любой'
+        }];
+      } else {
+        this.chosen_hotels = this.chosen_hotels.filter(function (item) {
+          if (item.Name !== 'Любой') {
+            return true;
+          }
+        });
+      }
+
+      this.$store.dispatch('changeHotels', this.chosen_hotels);
+    },
+    chooseTourOperator: function chooseTourOperator(value) {
+      this.chosen_tour_operators = value;
+
+      if (value[this.chosen_tour_operators.length - 1].Name === 'Любой') {
+        this.chosen_tour_operators = [{
+          Name: 'Любой'
+        }];
+      } else {
+        this.chosen_tour_operators = this.chosen_tour_operators.filter(function (item) {
+          if (item.Name !== 'Любой') {
+            return true;
+          }
+        });
+      }
+
+      this.$store.dispatch('changeTourOperator', this.chosen_tour_operators);
+    },
+    whateverResort: function whateverResort(actionName) {
+      if (actionName.Name == 'Любой') {
+        this.$store.dispatch('getHotels', {
+          country_id: this.resort_country.Id,
+          town_id: '0',
+          star_id: '0'
+        });
+      } // else {
+      // console.log('notactionName')
+      // this.resorts = this.resorts.filter(item=>{
+      //     if(item.Name !== 'Любой')
+      //     {
+      //         return true;
+      //     }
+      // })
+      // }
+
+    },
+    removeResort: function removeResort(removedOption, id) {
+      if (removedOption.Name != 'Любой') {
+        if (this.resorts.length == 1) {
+          console.log('1', this.resorts);
+          this.resorts.push({
+            Name: 'Любой'
+          });
+          this.$store.dispatch('changeResorts', this.resorts);
+          this.$store.dispatch('getHotels', {
+            country_id: this.resort_country.Id,
+            town_id: '0',
+            star_id: '0'
+          });
+          console.log('2', this.resorts);
+        }
+      } else {
+        console.log('here');
+        console.log('1', this.resorts);
+        this.resorts.push({
+          Name: 'Любой'
+        });
+        console.log('2', this.resorts); // this.resorts.push({Name: 'Любой'});
+      }
+    },
+    removeHotels: function removeHotels(removedOption, id) {
+      if (removedOption.Name != 'Любой') {
+        console.log('remove option');
+
+        if (this.chosen_hotels.length == 1) {
+          console.log('remove push');
+          this.chosen_hotels.push({
+            Name: 'Любой'
+          });
+          this.$store.dispatch('changeHotels', this.chosen_hotels);
+        }
+      } else {
+        console.log('remove hotels');
+        this.chosen_hotels.push({
+          Name: 'Любой'
+        });
+      }
+    },
+    removeTourOperators: function removeTourOperators(removedOption, id) {
+      if (removedOption.Name != 'Любой') {
+        if (this.chosen_tour_operators.length == 1) {
+          this.chosen_tour_operators.push({
+            Name: 'Любой'
+          });
+          this.$store.dispatch('changeTourOperators', this.chosen_tour_operators);
+        }
+      } else {
+        this.chosen_tour_operators.push({
+          Name: 'Любой'
+        });
+      }
+    },
+    // whateverHotel(actionName){
+    //     // if (actionName.Name=='Любой') {
+    //     //     this.chosen_hotels=[{Name: 'Любой'}];
+    //     // }
+    //     // else {
+    //     //     this.chosen_hotels = this.chosen_hotels.filter(item=>{
+    //     //         if(item.Name != 'Любой')
+    //     //         {
+    //     //             return true
+    //     //         }
+    //     //     })
+    //     // }
+    // }
+    incrementAdults: function incrementAdults() {
+      this.$store.dispatch("incAdults");
+      this.adults = this.tourModule.adults;
+    },
+    decrementAdults: function decrementAdults() {
+      this.$store.dispatch("decAdults");
+      this.adults = this.tourModule.adults;
+    },
+    incrementChildren: function incrementChildren() {
+      this.$store.dispatch("incChildren");
+      this.children = this.tourModule.children;
+    },
+    decrementChildren: function decrementChildren() {
+      this.$store.dispatch("decChildren");
+      this.children = this.tourModule.children;
+    },
+    changeChildren: function changeChildren() {
+      this.$store.dispatch("changeChildren", this.children);
+      this.children = this.tourModule.children;
+    },
+    changeAdults: function changeAdults() {
+      this.$store.dispatch("changeAdults", this.adults);
+      this.adults = this.tourModule.adults;
+    },
+    changePriceFrom: function changePriceFrom() {
+      this.$store.dispatch("changePriceFrom", this.price_from);
+      this.price_from = this.tourModule.price_from;
+    },
+    changePriceTo: function changePriceTo() {
+      this.$store.dispatch("changePriceTo", this.price_to);
+      this.price_to = this.tourModule.price_to;
+    },
+    changeNightsFrom: function changeNightsFrom() {
+      this.$store.dispatch("changeNightsFrom", this.nights_from);
+      this.nights_from = this.tourModule.nights_from;
+
+      if (this.nights_from > this.nights_to) {
+        this.nights_to = this.nights_from;
+        this.$store.dispatch("changeNightsTo", this.nights_to);
+      }
+    },
+    changeNightsTo: function changeNightsTo() {
+      this.$store.dispatch("changeNightsTo", this.nights_to);
+      this.nights_to = this.tourModule.nights_to;
+
+      if (this.nights_to < this.nights_from) {
+        this.nights_from = this.nights_to;
+        this.$store.dispatch("changeNightsFrom", this.nights_from);
+      }
+    },
+    changeDateRange: function changeDateRange(date_object) {
+      this.$store.dispatch("changeDateRange", date_object);
+    },
+    resetDateRange: function resetDateRange() {
+      var d1 = new Date();
+      this.start = ("0" + d1.getDate()).slice(-2) + "/" + ("0" + (d1.getMonth() + 1)).slice(-2) + "/" + d1.getFullYear();
+      var d2 = new Date(new Date().setDate(new Date().getDate() + 7));
+      this.end = ("0" + d2.getDate()).slice(-2) + "/" + ("0" + (d2.getMonth() + 1)).slice(-2) + "/" + d2.getFullYear();
+      this.$store.dispatch("changeDateRange", {
+        start: this.start,
+        end: this.end
+      });
+    }
   }
 });
 
@@ -51113,6 +51594,765 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : undefined
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/setimmediate/setImmediate.js":
 /*!***************************************************!*\
   !*** ./node_modules/setimmediate/setImmediate.js ***!
@@ -52732,53 +53972,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header" }, [
       _c("h5", { staticClass: "modal-title" }, [_vm._v("Share")])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
     ])
   }
 ]
@@ -85024,6 +86217,1271 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/vuex/dist/vuex.esm.js":
+/*!********************************************!*\
+  !*** ./node_modules/vuex/dist/vuex.esm.js ***!
+  \********************************************/
+/*! exports provided: default, Store, createLogger, createNamespacedHelpers, install, mapActions, mapGetters, mapMutations, mapState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLogger", function() { return createLogger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+function applyMixin (Vue) {
+  var version = Number(Vue.version.split('.')[0]);
+
+  if (version >= 2) {
+    Vue.mixin({ beforeCreate: vuexInit });
+  } else {
+    // override init and inject vuex init procedure
+    // for 1.x backwards compatibility.
+    var _init = Vue.prototype._init;
+    Vue.prototype._init = function (options) {
+      if ( options === void 0 ) options = {};
+
+      options.init = options.init
+        ? [vuexInit].concat(options.init)
+        : vuexInit;
+      _init.call(this, options);
+    };
+  }
+
+  /**
+   * Vuex init hook, injected into each instances init hooks list.
+   */
+
+  function vuexInit () {
+    var options = this.$options;
+    // store injection
+    if (options.store) {
+      this.$store = typeof options.store === 'function'
+        ? options.store()
+        : options.store;
+    } else if (options.parent && options.parent.$store) {
+      this.$store = options.parent.$store;
+    }
+  }
+}
+
+var target = typeof window !== 'undefined'
+  ? window
+  : typeof global !== 'undefined'
+    ? global
+    : {};
+var devtoolHook = target.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+function devtoolPlugin (store) {
+  if (!devtoolHook) { return }
+
+  store._devtoolHook = devtoolHook;
+
+  devtoolHook.emit('vuex:init', store);
+
+  devtoolHook.on('vuex:travel-to-state', function (targetState) {
+    store.replaceState(targetState);
+  });
+
+  store.subscribe(function (mutation, state) {
+    devtoolHook.emit('vuex:mutation', mutation, state);
+  }, { prepend: true });
+
+  store.subscribeAction(function (action, state) {
+    devtoolHook.emit('vuex:action', action, state);
+  }, { prepend: true });
+}
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+function find (list, f) {
+  return list.filter(f)[0]
+}
+
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+function deepCopy (obj, cache) {
+  if ( cache === void 0 ) cache = [];
+
+  // just return if obj is immutable value
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+
+  // if obj is hit, it is in circular structure
+  var hit = find(cache, function (c) { return c.original === obj; });
+  if (hit) {
+    return hit.copy
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  // put the copy into cache at first
+  // because we want to refer it in recursive deepCopy
+  cache.push({
+    original: obj,
+    copy: copy
+  });
+
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key], cache);
+  });
+
+  return copy
+}
+
+/**
+ * forEach for object
+ */
+function forEachValue (obj, fn) {
+  Object.keys(obj).forEach(function (key) { return fn(obj[key], key); });
+}
+
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+function isPromise (val) {
+  return val && typeof val.then === 'function'
+}
+
+function assert (condition, msg) {
+  if (!condition) { throw new Error(("[vuex] " + msg)) }
+}
+
+function partial (fn, arg) {
+  return function () {
+    return fn(arg)
+  }
+}
+
+// Base data struct for store's module, package with some attribute and method
+var Module = function Module (rawModule, runtime) {
+  this.runtime = runtime;
+  // Store some children item
+  this._children = Object.create(null);
+  // Store the origin module object which passed by programmer
+  this._rawModule = rawModule;
+  var rawState = rawModule.state;
+
+  // Store the origin module's state
+  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
+};
+
+var prototypeAccessors = { namespaced: { configurable: true } };
+
+prototypeAccessors.namespaced.get = function () {
+  return !!this._rawModule.namespaced
+};
+
+Module.prototype.addChild = function addChild (key, module) {
+  this._children[key] = module;
+};
+
+Module.prototype.removeChild = function removeChild (key) {
+  delete this._children[key];
+};
+
+Module.prototype.getChild = function getChild (key) {
+  return this._children[key]
+};
+
+Module.prototype.hasChild = function hasChild (key) {
+  return key in this._children
+};
+
+Module.prototype.update = function update (rawModule) {
+  this._rawModule.namespaced = rawModule.namespaced;
+  if (rawModule.actions) {
+    this._rawModule.actions = rawModule.actions;
+  }
+  if (rawModule.mutations) {
+    this._rawModule.mutations = rawModule.mutations;
+  }
+  if (rawModule.getters) {
+    this._rawModule.getters = rawModule.getters;
+  }
+};
+
+Module.prototype.forEachChild = function forEachChild (fn) {
+  forEachValue(this._children, fn);
+};
+
+Module.prototype.forEachGetter = function forEachGetter (fn) {
+  if (this._rawModule.getters) {
+    forEachValue(this._rawModule.getters, fn);
+  }
+};
+
+Module.prototype.forEachAction = function forEachAction (fn) {
+  if (this._rawModule.actions) {
+    forEachValue(this._rawModule.actions, fn);
+  }
+};
+
+Module.prototype.forEachMutation = function forEachMutation (fn) {
+  if (this._rawModule.mutations) {
+    forEachValue(this._rawModule.mutations, fn);
+  }
+};
+
+Object.defineProperties( Module.prototype, prototypeAccessors );
+
+var ModuleCollection = function ModuleCollection (rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.register([], rawRootModule, false);
+};
+
+ModuleCollection.prototype.get = function get (path) {
+  return path.reduce(function (module, key) {
+    return module.getChild(key)
+  }, this.root)
+};
+
+ModuleCollection.prototype.getNamespace = function getNamespace (path) {
+  var module = this.root;
+  return path.reduce(function (namespace, key) {
+    module = module.getChild(key);
+    return namespace + (module.namespaced ? key + '/' : '')
+  }, '')
+};
+
+ModuleCollection.prototype.update = function update$1 (rawRootModule) {
+  update([], this.root, rawRootModule);
+};
+
+ModuleCollection.prototype.register = function register (path, rawModule, runtime) {
+    var this$1 = this;
+    if ( runtime === void 0 ) runtime = true;
+
+  if ((true)) {
+    assertRawModule(path, rawModule);
+  }
+
+  var newModule = new Module(rawModule, runtime);
+  if (path.length === 0) {
+    this.root = newModule;
+  } else {
+    var parent = this.get(path.slice(0, -1));
+    parent.addChild(path[path.length - 1], newModule);
+  }
+
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, function (rawChildModule, key) {
+      this$1.register(path.concat(key), rawChildModule, runtime);
+    });
+  }
+};
+
+ModuleCollection.prototype.unregister = function unregister (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  var child = parent.getChild(key);
+
+  if (!child) {
+    if ((true)) {
+      console.warn(
+        "[vuex] trying to unregister module '" + key + "', which is " +
+        "not registered"
+      );
+    }
+    return
+  }
+
+  if (!child.runtime) {
+    return
+  }
+
+  parent.removeChild(key);
+};
+
+ModuleCollection.prototype.isRegistered = function isRegistered (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+
+  if (parent) {
+    return parent.hasChild(key)
+  }
+
+  return false
+};
+
+function update (path, targetModule, newModule) {
+  if ((true)) {
+    assertRawModule(path, newModule);
+  }
+
+  // update target module
+  targetModule.update(newModule);
+
+  // update nested modules
+  if (newModule.modules) {
+    for (var key in newModule.modules) {
+      if (!targetModule.getChild(key)) {
+        if ((true)) {
+          console.warn(
+            "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
+            'manual reload is needed'
+          );
+        }
+        return
+      }
+      update(
+        path.concat(key),
+        targetModule.getChild(key),
+        newModule.modules[key]
+      );
+    }
+  }
+}
+
+var functionAssert = {
+  assert: function (value) { return typeof value === 'function'; },
+  expected: 'function'
+};
+
+var objectAssert = {
+  assert: function (value) { return typeof value === 'function' ||
+    (typeof value === 'object' && typeof value.handler === 'function'); },
+  expected: 'function or object with "handler" function'
+};
+
+var assertTypes = {
+  getters: functionAssert,
+  mutations: functionAssert,
+  actions: objectAssert
+};
+
+function assertRawModule (path, rawModule) {
+  Object.keys(assertTypes).forEach(function (key) {
+    if (!rawModule[key]) { return }
+
+    var assertOptions = assertTypes[key];
+
+    forEachValue(rawModule[key], function (value, type) {
+      assert(
+        assertOptions.assert(value),
+        makeAssertionMessage(path, key, type, value, assertOptions.expected)
+      );
+    });
+  });
+}
+
+function makeAssertionMessage (path, key, type, value, expected) {
+  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
+  if (path.length > 0) {
+    buf += " in module \"" + (path.join('.')) + "\"";
+  }
+  buf += " is " + (JSON.stringify(value)) + ".";
+  return buf
+}
+
+var Vue; // bind on install
+
+var Store = function Store (options) {
+  var this$1 = this;
+  if ( options === void 0 ) options = {};
+
+  // Auto install if it is not done yet and `window` has `Vue`.
+  // To allow users to avoid auto-installation in some cases,
+  // this code should be placed here. See #731
+  if (!Vue && typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+  }
+
+  if ((true)) {
+    assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
+    assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
+    assert(this instanceof Store, "store must be called with the new operator.");
+  }
+
+  var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
+  var strict = options.strict; if ( strict === void 0 ) strict = false;
+
+  // store internal state
+  this._committing = false;
+  this._actions = Object.create(null);
+  this._actionSubscribers = [];
+  this._mutations = Object.create(null);
+  this._wrappedGetters = Object.create(null);
+  this._modules = new ModuleCollection(options);
+  this._modulesNamespaceMap = Object.create(null);
+  this._subscribers = [];
+  this._watcherVM = new Vue();
+  this._makeLocalGettersCache = Object.create(null);
+
+  // bind commit and dispatch to self
+  var store = this;
+  var ref = this;
+  var dispatch = ref.dispatch;
+  var commit = ref.commit;
+  this.dispatch = function boundDispatch (type, payload) {
+    return dispatch.call(store, type, payload)
+  };
+  this.commit = function boundCommit (type, payload, options) {
+    return commit.call(store, type, payload, options)
+  };
+
+  // strict mode
+  this.strict = strict;
+
+  var state = this._modules.root.state;
+
+  // init root module.
+  // this also recursively registers all sub-modules
+  // and collects all module getters inside this._wrappedGetters
+  installModule(this, state, [], this._modules.root);
+
+  // initialize the store vm, which is responsible for the reactivity
+  // (also registers _wrappedGetters as computed properties)
+  resetStoreVM(this, state);
+
+  // apply plugins
+  plugins.forEach(function (plugin) { return plugin(this$1); });
+
+  var useDevtools = options.devtools !== undefined ? options.devtools : Vue.config.devtools;
+  if (useDevtools) {
+    devtoolPlugin(this);
+  }
+};
+
+var prototypeAccessors$1 = { state: { configurable: true } };
+
+prototypeAccessors$1.state.get = function () {
+  return this._vm._data.$$state
+};
+
+prototypeAccessors$1.state.set = function (v) {
+  if ((true)) {
+    assert(false, "use store.replaceState() to explicit replace store state.");
+  }
+};
+
+Store.prototype.commit = function commit (_type, _payload, _options) {
+    var this$1 = this;
+
+  // check object-style commit
+  var ref = unifyObjectStyle(_type, _payload, _options);
+    var type = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+
+  var mutation = { type: type, payload: payload };
+  var entry = this._mutations[type];
+  if (!entry) {
+    if ((true)) {
+      console.error(("[vuex] unknown mutation type: " + type));
+    }
+    return
+  }
+  this._withCommit(function () {
+    entry.forEach(function commitIterator (handler) {
+      handler(payload);
+    });
+  });
+
+  this._subscribers
+    .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+    .forEach(function (sub) { return sub(mutation, this$1.state); });
+
+  if (
+    ( true) &&
+    options && options.silent
+  ) {
+    console.warn(
+      "[vuex] mutation type: " + type + ". Silent option has been removed. " +
+      'Use the filter functionality in the vue-devtools'
+    );
+  }
+};
+
+Store.prototype.dispatch = function dispatch (_type, _payload) {
+    var this$1 = this;
+
+  // check object-style dispatch
+  var ref = unifyObjectStyle(_type, _payload);
+    var type = ref.type;
+    var payload = ref.payload;
+
+  var action = { type: type, payload: payload };
+  var entry = this._actions[type];
+  if (!entry) {
+    if ((true)) {
+      console.error(("[vuex] unknown action type: " + type));
+    }
+    return
+  }
+
+  try {
+    this._actionSubscribers
+      .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+      .filter(function (sub) { return sub.before; })
+      .forEach(function (sub) { return sub.before(action, this$1.state); });
+  } catch (e) {
+    if ((true)) {
+      console.warn("[vuex] error in before action subscribers: ");
+      console.error(e);
+    }
+  }
+
+  var result = entry.length > 1
+    ? Promise.all(entry.map(function (handler) { return handler(payload); }))
+    : entry[0](payload);
+
+  return new Promise(function (resolve, reject) {
+    result.then(function (res) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.after; })
+          .forEach(function (sub) { return sub.after(action, this$1.state); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in after action subscribers: ");
+          console.error(e);
+        }
+      }
+      resolve(res);
+    }, function (error) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.error; })
+          .forEach(function (sub) { return sub.error(action, this$1.state, error); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in error action subscribers: ");
+          console.error(e);
+        }
+      }
+      reject(error);
+    });
+  })
+};
+
+Store.prototype.subscribe = function subscribe (fn, options) {
+  return genericSubscribe(fn, this._subscribers, options)
+};
+
+Store.prototype.subscribeAction = function subscribeAction (fn, options) {
+  var subs = typeof fn === 'function' ? { before: fn } : fn;
+  return genericSubscribe(subs, this._actionSubscribers, options)
+};
+
+Store.prototype.watch = function watch (getter, cb, options) {
+    var this$1 = this;
+
+  if ((true)) {
+    assert(typeof getter === 'function', "store.watch only accepts a function.");
+  }
+  return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
+};
+
+Store.prototype.replaceState = function replaceState (state) {
+    var this$1 = this;
+
+  this._withCommit(function () {
+    this$1._vm._data.$$state = state;
+  });
+};
+
+Store.prototype.registerModule = function registerModule (path, rawModule, options) {
+    if ( options === void 0 ) options = {};
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+    assert(path.length > 0, 'cannot register the root module by using registerModule.');
+  }
+
+  this._modules.register(path, rawModule);
+  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+  // reset store to update getters...
+  resetStoreVM(this, this.state);
+};
+
+Store.prototype.unregisterModule = function unregisterModule (path) {
+    var this$1 = this;
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  this._modules.unregister(path);
+  this._withCommit(function () {
+    var parentState = getNestedState(this$1.state, path.slice(0, -1));
+    Vue.delete(parentState, path[path.length - 1]);
+  });
+  resetStore(this);
+};
+
+Store.prototype.hasModule = function hasModule (path) {
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  return this._modules.isRegistered(path)
+};
+
+Store.prototype.hotUpdate = function hotUpdate (newOptions) {
+  this._modules.update(newOptions);
+  resetStore(this, true);
+};
+
+Store.prototype._withCommit = function _withCommit (fn) {
+  var committing = this._committing;
+  this._committing = true;
+  fn();
+  this._committing = committing;
+};
+
+Object.defineProperties( Store.prototype, prototypeAccessors$1 );
+
+function genericSubscribe (fn, subs, options) {
+  if (subs.indexOf(fn) < 0) {
+    options && options.prepend
+      ? subs.unshift(fn)
+      : subs.push(fn);
+  }
+  return function () {
+    var i = subs.indexOf(fn);
+    if (i > -1) {
+      subs.splice(i, 1);
+    }
+  }
+}
+
+function resetStore (store, hot) {
+  store._actions = Object.create(null);
+  store._mutations = Object.create(null);
+  store._wrappedGetters = Object.create(null);
+  store._modulesNamespaceMap = Object.create(null);
+  var state = store.state;
+  // init all modules
+  installModule(store, state, [], store._modules.root, true);
+  // reset vm
+  resetStoreVM(store, state, hot);
+}
+
+function resetStoreVM (store, state, hot) {
+  var oldVm = store._vm;
+
+  // bind store public getters
+  store.getters = {};
+  // reset local getters cache
+  store._makeLocalGettersCache = Object.create(null);
+  var wrappedGetters = store._wrappedGetters;
+  var computed = {};
+  forEachValue(wrappedGetters, function (fn, key) {
+    // use computed to leverage its lazy-caching mechanism
+    // direct inline function use will lead to closure preserving oldVm.
+    // using partial to return function with only arguments preserved in closure environment.
+    computed[key] = partial(fn, store);
+    Object.defineProperty(store.getters, key, {
+      get: function () { return store._vm[key]; },
+      enumerable: true // for local getters
+    });
+  });
+
+  // use a Vue instance to store the state tree
+  // suppress warnings just in case the user has added
+  // some funky global mixins
+  var silent = Vue.config.silent;
+  Vue.config.silent = true;
+  store._vm = new Vue({
+    data: {
+      $$state: state
+    },
+    computed: computed
+  });
+  Vue.config.silent = silent;
+
+  // enable strict mode for new vm
+  if (store.strict) {
+    enableStrictMode(store);
+  }
+
+  if (oldVm) {
+    if (hot) {
+      // dispatch changes in all subscribed watchers
+      // to force getter re-evaluation for hot reloading.
+      store._withCommit(function () {
+        oldVm._data.$$state = null;
+      });
+    }
+    Vue.nextTick(function () { return oldVm.$destroy(); });
+  }
+}
+
+function installModule (store, rootState, path, module, hot) {
+  var isRoot = !path.length;
+  var namespace = store._modules.getNamespace(path);
+
+  // register in namespace map
+  if (module.namespaced) {
+    if (store._modulesNamespaceMap[namespace] && ("development" !== 'production')) {
+      console.error(("[vuex] duplicate namespace " + namespace + " for the namespaced module " + (path.join('/'))));
+    }
+    store._modulesNamespaceMap[namespace] = module;
+  }
+
+  // set state
+  if (!isRoot && !hot) {
+    var parentState = getNestedState(rootState, path.slice(0, -1));
+    var moduleName = path[path.length - 1];
+    store._withCommit(function () {
+      if ((true)) {
+        if (moduleName in parentState) {
+          console.warn(
+            ("[vuex] state field \"" + moduleName + "\" was overridden by a module with the same name at \"" + (path.join('.')) + "\"")
+          );
+        }
+      }
+      Vue.set(parentState, moduleName, module.state);
+    });
+  }
+
+  var local = module.context = makeLocalContext(store, namespace, path);
+
+  module.forEachMutation(function (mutation, key) {
+    var namespacedType = namespace + key;
+    registerMutation(store, namespacedType, mutation, local);
+  });
+
+  module.forEachAction(function (action, key) {
+    var type = action.root ? key : namespace + key;
+    var handler = action.handler || action;
+    registerAction(store, type, handler, local);
+  });
+
+  module.forEachGetter(function (getter, key) {
+    var namespacedType = namespace + key;
+    registerGetter(store, namespacedType, getter, local);
+  });
+
+  module.forEachChild(function (child, key) {
+    installModule(store, rootState, path.concat(key), child, hot);
+  });
+}
+
+/**
+ * make localized dispatch, commit, getters and state
+ * if there is no namespace, just use root ones
+ */
+function makeLocalContext (store, namespace, path) {
+  var noNamespace = namespace === '';
+
+  var local = {
+    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (( true) && !store._actions[type]) {
+          console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      return store.dispatch(type, payload)
+    },
+
+    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (( true) && !store._mutations[type]) {
+          console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      store.commit(type, payload, options);
+    }
+  };
+
+  // getters and state object must be gotten lazily
+  // because they will be changed by vm update
+  Object.defineProperties(local, {
+    getters: {
+      get: noNamespace
+        ? function () { return store.getters; }
+        : function () { return makeLocalGetters(store, namespace); }
+    },
+    state: {
+      get: function () { return getNestedState(store.state, path); }
+    }
+  });
+
+  return local
+}
+
+function makeLocalGetters (store, namespace) {
+  if (!store._makeLocalGettersCache[namespace]) {
+    var gettersProxy = {};
+    var splitPos = namespace.length;
+    Object.keys(store.getters).forEach(function (type) {
+      // skip if the target getter is not match this namespace
+      if (type.slice(0, splitPos) !== namespace) { return }
+
+      // extract local getter type
+      var localType = type.slice(splitPos);
+
+      // Add a port to the getters proxy.
+      // Define as getter property because
+      // we do not want to evaluate the getters in this time.
+      Object.defineProperty(gettersProxy, localType, {
+        get: function () { return store.getters[type]; },
+        enumerable: true
+      });
+    });
+    store._makeLocalGettersCache[namespace] = gettersProxy;
+  }
+
+  return store._makeLocalGettersCache[namespace]
+}
+
+function registerMutation (store, type, handler, local) {
+  var entry = store._mutations[type] || (store._mutations[type] = []);
+  entry.push(function wrappedMutationHandler (payload) {
+    handler.call(store, local.state, payload);
+  });
+}
+
+function registerAction (store, type, handler, local) {
+  var entry = store._actions[type] || (store._actions[type] = []);
+  entry.push(function wrappedActionHandler (payload) {
+    var res = handler.call(store, {
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload);
+    if (!isPromise(res)) {
+      res = Promise.resolve(res);
+    }
+    if (store._devtoolHook) {
+      return res.catch(function (err) {
+        store._devtoolHook.emit('vuex:error', err);
+        throw err
+      })
+    } else {
+      return res
+    }
+  });
+}
+
+function registerGetter (store, type, rawGetter, local) {
+  if (store._wrappedGetters[type]) {
+    if ((true)) {
+      console.error(("[vuex] duplicate getter key: " + type));
+    }
+    return
+  }
+  store._wrappedGetters[type] = function wrappedGetter (store) {
+    return rawGetter(
+      local.state, // local state
+      local.getters, // local getters
+      store.state, // root state
+      store.getters // root getters
+    )
+  };
+}
+
+function enableStrictMode (store) {
+  store._vm.$watch(function () { return this._data.$$state }, function () {
+    if ((true)) {
+      assert(store._committing, "do not mutate vuex store state outside mutation handlers.");
+    }
+  }, { deep: true, sync: true });
+}
+
+function getNestedState (state, path) {
+  return path.reduce(function (state, key) { return state[key]; }, state)
+}
+
+function unifyObjectStyle (type, payload, options) {
+  if (isObject(type) && type.type) {
+    options = payload;
+    payload = type;
+    type = type.type;
+  }
+
+  if ((true)) {
+    assert(typeof type === 'string', ("expects string as the type, but found " + (typeof type) + "."));
+  }
+
+  return { type: type, payload: payload, options: options }
+}
+
+function install (_Vue) {
+  if (Vue && _Vue === Vue) {
+    if ((true)) {
+      console.error(
+        '[vuex] already installed. Vue.use(Vuex) should be called only once.'
+      );
+    }
+    return
+  }
+  Vue = _Vue;
+  applyMixin(Vue);
+}
+
+/**
+ * Reduce the code which written in Vue.js for getting the state.
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} states # Object's item can be a function which accept state and getters for param, you can do something for state and getters in it.
+ * @param {Object}
+ */
+var mapState = normalizeNamespace(function (namespace, states) {
+  var res = {};
+  if (( true) && !isValidMap(states)) {
+    console.error('[vuex] mapState: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(states).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedState () {
+      var state = this.$store.state;
+      var getters = this.$store.getters;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
+        if (!module) {
+          return
+        }
+        state = module.context.state;
+        getters = module.context.getters;
+      }
+      return typeof val === 'function'
+        ? val.call(this, state, getters)
+        : state[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for committing the mutation
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} mutations # Object's item can be a function which accept `commit` function as the first param, it can accept another params. You can commit mutation and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapMutations = normalizeNamespace(function (namespace, mutations) {
+  var res = {};
+  if (( true) && !isValidMap(mutations)) {
+    console.error('[vuex] mapMutations: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(mutations).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedMutation () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      // Get the commit method from store
+      var commit = this.$store.commit;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
+        if (!module) {
+          return
+        }
+        commit = module.context.commit;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [commit].concat(args))
+        : commit.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for getting the getters
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} getters
+ * @return {Object}
+ */
+var mapGetters = normalizeNamespace(function (namespace, getters) {
+  var res = {};
+  if (( true) && !isValidMap(getters)) {
+    console.error('[vuex] mapGetters: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(getters).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    // The namespace has been mutated by normalizeNamespace
+    val = namespace + val;
+    res[key] = function mappedGetter () {
+      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
+        return
+      }
+      if (( true) && !(val in this.$store.getters)) {
+        console.error(("[vuex] unknown getter: " + val));
+        return
+      }
+      return this.$store.getters[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for dispatch the action
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} actions # Object's item can be a function which accept `dispatch` function as the first param, it can accept anthor params. You can dispatch action and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapActions = normalizeNamespace(function (namespace, actions) {
+  var res = {};
+  if (( true) && !isValidMap(actions)) {
+    console.error('[vuex] mapActions: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(actions).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedAction () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      // get dispatch function from store
+      var dispatch = this.$store.dispatch;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
+        if (!module) {
+          return
+        }
+        dispatch = module.context.dispatch;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [dispatch].concat(args))
+        : dispatch.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+/**
+ * Rebinding namespace param for mapXXX function in special scoped, and return them by simple object
+ * @param {String} namespace
+ * @return {Object}
+ */
+var createNamespacedHelpers = function (namespace) { return ({
+  mapState: mapState.bind(null, namespace),
+  mapGetters: mapGetters.bind(null, namespace),
+  mapMutations: mapMutations.bind(null, namespace),
+  mapActions: mapActions.bind(null, namespace)
+}); };
+
+/**
+ * Normalize the map
+ * normalizeMap([1, 2, 3]) => [ { key: 1, val: 1 }, { key: 2, val: 2 }, { key: 3, val: 3 } ]
+ * normalizeMap({a: 1, b: 2, c: 3}) => [ { key: 'a', val: 1 }, { key: 'b', val: 2 }, { key: 'c', val: 3 } ]
+ * @param {Array|Object} map
+ * @return {Object}
+ */
+function normalizeMap (map) {
+  if (!isValidMap(map)) {
+    return []
+  }
+  return Array.isArray(map)
+    ? map.map(function (key) { return ({ key: key, val: key }); })
+    : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
+}
+
+/**
+ * Validate whether given map is valid or not
+ * @param {*} map
+ * @return {Boolean}
+ */
+function isValidMap (map) {
+  return Array.isArray(map) || isObject(map)
+}
+
+/**
+ * Return a function expect two param contains namespace and map. it will normalize the namespace and then the param's function will handle the new namespace and the map.
+ * @param {Function} fn
+ * @return {Function}
+ */
+function normalizeNamespace (fn) {
+  return function (namespace, map) {
+    if (typeof namespace !== 'string') {
+      map = namespace;
+      namespace = '';
+    } else if (namespace.charAt(namespace.length - 1) !== '/') {
+      namespace += '/';
+    }
+    return fn(namespace, map)
+  }
+}
+
+/**
+ * Search a special module from store by namespace. if module not exist, print error message.
+ * @param {Object} store
+ * @param {String} helper
+ * @param {String} namespace
+ * @return {Object}
+ */
+function getModuleByNamespace (store, helper, namespace) {
+  var module = store._modulesNamespaceMap[namespace];
+  if (( true) && !module) {
+    console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
+  }
+  return module
+}
+
+// Credits: borrowed code from fcomb/redux-logger
+
+function createLogger (ref) {
+  if ( ref === void 0 ) ref = {};
+  var collapsed = ref.collapsed; if ( collapsed === void 0 ) collapsed = true;
+  var filter = ref.filter; if ( filter === void 0 ) filter = function (mutation, stateBefore, stateAfter) { return true; };
+  var transformer = ref.transformer; if ( transformer === void 0 ) transformer = function (state) { return state; };
+  var mutationTransformer = ref.mutationTransformer; if ( mutationTransformer === void 0 ) mutationTransformer = function (mut) { return mut; };
+  var actionFilter = ref.actionFilter; if ( actionFilter === void 0 ) actionFilter = function (action, state) { return true; };
+  var actionTransformer = ref.actionTransformer; if ( actionTransformer === void 0 ) actionTransformer = function (act) { return act; };
+  var logMutations = ref.logMutations; if ( logMutations === void 0 ) logMutations = true;
+  var logActions = ref.logActions; if ( logActions === void 0 ) logActions = true;
+  var logger = ref.logger; if ( logger === void 0 ) logger = console;
+
+  return function (store) {
+    var prevState = deepCopy(store.state);
+
+    if (typeof logger === 'undefined') {
+      return
+    }
+
+    if (logMutations) {
+      store.subscribe(function (mutation, state) {
+        var nextState = deepCopy(state);
+
+        if (filter(mutation, prevState, nextState)) {
+          var formattedTime = getFormattedTime();
+          var formattedMutation = mutationTransformer(mutation);
+          var message = "mutation " + (mutation.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
+          logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
+          logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
+          endMessage(logger);
+        }
+
+        prevState = nextState;
+      });
+    }
+
+    if (logActions) {
+      store.subscribeAction(function (action, state) {
+        if (actionFilter(action, state)) {
+          var formattedTime = getFormattedTime();
+          var formattedAction = actionTransformer(action);
+          var message = "action " + (action.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c action', 'color: #03A9F4; font-weight: bold', formattedAction);
+          endMessage(logger);
+        }
+      });
+    }
+  }
+}
+
+function startMessage (logger, message, collapsed) {
+  var startMessage = collapsed
+    ? logger.groupCollapsed
+    : logger.group;
+
+  // render
+  try {
+    startMessage.call(logger, message);
+  } catch (e) {
+    logger.log(message);
+  }
+}
+
+function endMessage (logger) {
+  try {
+    logger.groupEnd();
+  } catch (e) {
+    logger.log('—— log end ——');
+  }
+}
+
+function getFormattedTime () {
+  var time = new Date();
+  return (" @ " + (pad(time.getHours(), 2)) + ":" + (pad(time.getMinutes(), 2)) + ":" + (pad(time.getSeconds(), 2)) + "." + (pad(time.getMilliseconds(), 3)))
+}
+
+function repeat (str, times) {
+  return (new Array(times + 1)).join(str)
+}
+
+function pad (num, maxLength) {
+  return repeat('0', maxLength - num.toString().length) + num
+}
+
+var index = {
+  Store: Store,
+  install: install,
+  version: '3.6.2',
+  mapState: mapState,
+  mapMutations: mapMutations,
+  mapGetters: mapGetters,
+  mapActions: mapActions,
+  createNamespacedHelpers: createNamespacedHelpers,
+  createLogger: createLogger
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -85097,14 +87555,16 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_notification__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-notification */ "./node_modules/vue-notification/dist/index.js");
-/* harmony import */ var vue_notification__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_notification__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @codekraft-studio/vue-record */ "./node_modules/@codekraft-studio/vue-record/dist/VueRecord.umd.js");
-/* harmony import */ var _codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vue_tawk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-tawk */ "./node_modules/vue-tawk/dist/vue-tawk.js");
-/* harmony import */ var vue_tawk__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_tawk__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_pwa_install__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-pwa-install */ "./node_modules/vue-pwa-install/dist/vue-pwa-install.common.js");
-/* harmony import */ var vue_pwa_install__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_pwa_install__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var vue_notification__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-notification */ "./node_modules/vue-notification/dist/index.js");
+/* harmony import */ var vue_notification__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_notification__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @codekraft-studio/vue-record */ "./node_modules/@codekraft-studio/vue-record/dist/VueRecord.umd.js");
+/* harmony import */ var _codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_tawk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-tawk */ "./node_modules/vue-tawk/dist/vue-tawk.js");
+/* harmony import */ var vue_tawk__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_tawk__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vue_pwa_install__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-pwa-install */ "./node_modules/vue-pwa-install/dist/vue-pwa-install.common.js");
+/* harmony import */ var vue_pwa_install__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_pwa_install__WEBPACK_IMPORTED_MODULE_5__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -85113,26 +87573,20 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+Vue.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
 window.eventBus = new Vue();
 
-Vue.use(vue_notification__WEBPACK_IMPORTED_MODULE_0___default.a);
+Vue.use(vue_notification__WEBPACK_IMPORTED_MODULE_2___default.a);
 
-Vue.use(_codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_1___default.a);
+Vue.use(_codekraft_studio_vue_record__WEBPACK_IMPORTED_MODULE_3___default.a);
 
-Vue.use(vue_tawk__WEBPACK_IMPORTED_MODULE_2___default.a, {
+Vue.use(vue_tawk__WEBPACK_IMPORTED_MODULE_4___default.a, {
   tawkSrc: 'https://embed.tawk.to/6011a65ac31c9117cb73211e/1et2f3ktl/default'
 });
 
-Vue.use(vue_pwa_install__WEBPACK_IMPORTED_MODULE_3___default.a);
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]); //Components
+Vue.use(vue_pwa_install__WEBPACK_IMPORTED_MODULE_5___default.a); //Components
 
 Vue.component('bottom-menu', __webpack_require__(/*! ./components/BottomMenu.vue */ "./resources/js/components/BottomMenu.vue")["default"]);
 Vue.component('header-block', __webpack_require__(/*! ./components/HeaderBlock.vue */ "./resources/js/components/HeaderBlock.vue")["default"]);
@@ -85163,13 +87617,8 @@ Vue.component('tours-page', __webpack_require__(/*! ./pages/Tours.vue */ "./reso
 Vue.component('hotels-page', __webpack_require__(/*! ./pages/Hotels.vue */ "./resources/js/pages/Hotels.vue")["default"]);
 Vue.component('flies-page', __webpack_require__(/*! ./pages/Flies.vue */ "./resources/js/pages/Flies.vue")["default"]);
 Vue.component('tour-search-page', __webpack_require__(/*! ./pages/TourSearch.vue */ "./resources/js/pages/TourSearch.vue")["default"]);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 var app = new Vue({
+  store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
   el: '#wrapper'
 });
 
@@ -85203,6 +87652,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.baseURL = 'https://m.travel-club.tours/api/v1';
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -85546,75 +87996,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShareActionSheet_vue_vue_type_template_id_4e6e1b86___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShareActionSheet_vue_vue_type_template_id_4e6e1b86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ExampleComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -87837,6 +90218,689 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tours_vue_vue_type_template_id_5c70b83c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/store/index.js":
+/*!*************************************!*\
+  !*** ./resources/js/store/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _modules_tourModule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tourModule */ "./resources/js/store/modules/tourModule.js");
+/* harmony import */ var _modules_aviaModule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/aviaModule */ "./resources/js/store/modules/aviaModule.js");
+
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+  namespaced: true,
+  modules: {
+    tourModule: _modules_tourModule__WEBPACK_IMPORTED_MODULE_2__["default"],
+    aviaModule: _modules_aviaModule__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }
+}));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/aviaModule.js":
+/*!**************************************************!*\
+  !*** ./resources/js/store/modules/aviaModule.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    aviaModule: JSON.parse(localStorage.getItem("aviaModule")) || {
+      name: '',
+      phone: '',
+      adults: 1,
+      city_from: null,
+      city_to: null,
+      children_under_12: 0,
+      children_under_2: 0,
+      depart_date: new Date(),
+      return_date: null,
+      is_multi_city: false,
+      routes: [],
+      //city_from, city_to, departure_date
+      avia_class: 'Эконом класс'
+    },
+    aviaCities: [],
+    avia_step1: true,
+    avia_step2: false,
+    avia_step3: false,
+    avia_steps: JSON.parse(localStorage.getItem("aviaModuleSteps")) || {
+      step1: false,
+      step2: false,
+      step3: false
+    }
+  },
+  // getters
+  getters: {
+    aviaModule: function aviaModule(state) {
+      return state.aviaModule;
+    },
+    aviaCities: function aviaCities(state) {
+      return state.aviaCities;
+    },
+    isAviaCitiesLoading: function isAviaCitiesLoading(state) {
+      return state.isAviaCitiesLoading;
+    },
+    avia_step1: function avia_step1(state) {
+      return state.avia_step1;
+    },
+    avia_step2: function avia_step2(state) {
+      return state.avia_step2;
+    },
+    avia_step3: function avia_step3(state) {
+      return state.avia_step3;
+    },
+    avia_steps: function avia_steps(state) {
+      return state.avia_steps;
+    }
+  },
+  // actions
+  actions: {
+    sendAviaModuleOrder: function sendAviaModuleOrder(_ref, payload) {
+      var commit = _ref.commit;
+      return axios.post('/sendAviaModuleOrder', payload);
+    },
+    changeAviaName: function changeAviaName(_ref2, payload) {
+      var commit = _ref2.commit;
+      commit('changeAviaName', payload);
+    },
+    changeAviaPhone: function changeAviaPhone(_ref3, payload) {
+      var commit = _ref3.commit;
+      commit('changeAviaPhone', payload);
+    },
+    changeAviaSteps: function changeAviaSteps(_ref4, payload) {
+      var commit = _ref4.commit;
+      commit('changeAviaSteps', payload);
+    },
+    changeAviaStep1: function changeAviaStep1(_ref5, payload) {
+      var commit = _ref5.commit;
+      commit('changeAviaStep1', payload);
+    },
+    changeAviaStep2: function changeAviaStep2(_ref6, payload) {
+      var commit = _ref6.commit;
+      commit('changeAviaStep2', payload);
+    },
+    changeAviaStep3: function changeAviaStep3(_ref7, payload) {
+      var commit = _ref7.commit;
+      commit('changeAviaStep3', payload);
+    },
+    changeCityFrom: function changeCityFrom(_ref8, payload) {
+      var commit = _ref8.commit;
+      commit('changeCityFrom', payload);
+    },
+    changeCityTo: function changeCityTo(_ref9, payload) {
+      var commit = _ref9.commit;
+      commit('changeCityTo', payload);
+    },
+    changeAviaAdults: function changeAviaAdults(_ref10, payload) {
+      var commit = _ref10.commit;
+      commit('changeAviaAdults', payload);
+    },
+    changeChildrenUnder12: function changeChildrenUnder12(_ref11, payload) {
+      var commit = _ref11.commit;
+      commit('changeChildrenUnder12', payload);
+    },
+    changeChildrenUnder2: function changeChildrenUnder2(_ref12, payload) {
+      var commit = _ref12.commit;
+      commit('changeChildrenUnder2', payload);
+    },
+    changeDepartDate: function changeDepartDate(_ref13, payload) {
+      var commit = _ref13.commit;
+      commit('changeDepartDate', payload);
+    },
+    changeReturnDate: function changeReturnDate(_ref14, payload) {
+      var commit = _ref14.commit;
+      commit('changeReturnDate', payload);
+    },
+    changeClass: function changeClass(_ref15, payload) {
+      var commit = _ref15.commit;
+      commit('changeClass', payload);
+    },
+    getAviaCities: function getAviaCities(_ref16, payload) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                commit = _ref16.commit;
+                commit('isAviaCitiesLoading', true);
+                _context.next = 4;
+                return axios.get('/getAviaCities/' + payload).then(function (response) {
+                  commit('getAviaCities', response.data.res);
+                  commit('isAviaCitiesLoading', false);
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    incAviaAdults: function incAviaAdults(_ref17) {
+      var commit = _ref17.commit;
+      commit('incrementAviaAdults');
+    },
+    decAviaAdults: function decAviaAdults(_ref18) {
+      var commit = _ref18.commit;
+      commit('decrementAviaAdults');
+    },
+    incChildrenUnder12: function incChildrenUnder12(_ref19) {
+      var commit = _ref19.commit;
+      commit('incrementChildrenUnder12');
+    },
+    decChildrenUnder12: function decChildrenUnder12(_ref20) {
+      var commit = _ref20.commit;
+      commit('decrementChildrenUnder12');
+    },
+    incChildrenUnder2: function incChildrenUnder2(_ref21) {
+      var commit = _ref21.commit;
+      commit('incrementChildrenUnder2');
+    },
+    decChildrenUnder2: function decChildrenUnder2(_ref22) {
+      var commit = _ref22.commit;
+      commit('decrementChildrenUnder2');
+    }
+  },
+  // mutations
+  mutations: {
+    changeAviaName: function changeAviaName(state, payload) {
+      state.aviaModule.name = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeAviaPhone: function changeAviaPhone(state, payload) {
+      state.aviaModule.phone = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeAviaStep1: function changeAviaStep1(state, payload) {
+      state.avia_step1 = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeAviaStep2: function changeAviaStep2(state, payload) {
+      state.avia_step2 = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeAviaStep3: function changeAviaStep3(state, payload) {
+      state.avia_step3 = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeCityFrom: function changeCityFrom(state, payload) {
+      state.aviaModule.city_from = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeCityTo: function changeCityTo(state, payload) {
+      state.aviaModule.city_to = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    getAviaCities: function getAviaCities(state, payload) {
+      state.aviaCities = payload;
+    },
+    changeAviaAdults: function changeAviaAdults(state, payload) {
+      state.aviaModule.adults = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeChildrenUnder12: function changeChildrenUnder12(state, payload) {
+      state.aviaModule.children_under_12 = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeChildrenUnder2: function changeChildrenUnder2(state, payload) {
+      state.aviaModule.children_under_2 = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeDepartDate: function changeDepartDate(state, payload) {
+      state.aviaModule.depart_date = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeReturnDate: function changeReturnDate(state, payload) {
+      state.aviaModule.return_date = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    changeClass: function changeClass(state, payload) {
+      state.aviaModule.avia_class = payload;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    incrementAviaAdults: function incrementAviaAdults(state) {
+      state.aviaModule.adults++;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    decrementAviaAdults: function decrementAviaAdults(state) {
+      state.aviaModule.adults--;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    incrementChildrenUnder12: function incrementChildrenUnder12(state) {
+      state.aviaModule.children_under_12++;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    decrementChildrenUnder12: function decrementChildrenUnder12(state) {
+      state.aviaModule.children_under_12--;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    incrementChildrenUnder2: function incrementChildrenUnder2(state) {
+      state.aviaModule.children_under_2++;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    decrementChildrenUnder2: function decrementChildrenUnder2(state) {
+      state.aviaModule.children_under_2--;
+      localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
+    },
+    isAviaCitiesLoading: function isAviaCitiesLoading(state, payload) {
+      state.isAviaCitiesLoading = payload;
+    },
+    changeAviaSteps: function changeAviaSteps(state, payload) {
+      state.avia_steps[payload.key] = payload.value;
+      localStorage.setItem("aviaModuleSteps", JSON.stringify(state.avia_steps));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/tourModule.js":
+/*!**************************************************!*\
+  !*** ./resources/js/store/modules/tourModule.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    tourModule: JSON.parse(localStorage.getItem("tourModule")) || {
+      name: '',
+      phone: '',
+      country: 'Россия',
+      resort_country: {
+        Id: 150,
+        Name: "Россия",
+        Alias: "Russia",
+        Flags: 8,
+        HasTickets: true,
+        HotelIsNotInStop: true,
+        IsProVisa: false,
+        IsVisa: false,
+        OriginalName: "Russia",
+        Rank: 0,
+        TicketsIncluded: true
+      },
+      resorts: [{
+        Name: 'Любой'
+      }],
+      hotels: [{
+        Name: 'Любой'
+      }],
+      //[]
+      meal: [{
+        Name: 'Любое'
+      }],
+      // []
+      price_from: 0,
+      price_to: 0,
+      adults: 1,
+      children: 0,
+      tour_operators: [{
+        Name: 'Любой'
+      }],
+      date_range: {
+        start: new Date(),
+        end: new Date(new Date().setDate(new Date().getDate() + 1))
+      },
+      nights_from: 1,
+      nights_to: 10
+    },
+    countries: [],
+    cities: [],
+    hotels: [],
+    hotel_stars: [],
+    tour_operators: [],
+    tour_dates: [],
+    isCountriesLoading: false,
+    isCitiesLoading: false,
+    isHotelsLoading: false,
+    isTourOperatorsLoading: false
+  },
+  // getters
+  getters: {
+    tourModule: function tourModule(state) {
+      return state.tourModule;
+    },
+    countries: function countries(state) {
+      return state.countries;
+    },
+    cities: function cities(state) {
+      return state.cities;
+    },
+    hotels: function hotels(state) {
+      return state.hotels;
+    },
+    hotel_stars: function hotel_stars(state) {
+      return state.hotel_stars;
+    },
+    tour_operators: function tour_operators(state) {
+      return state.tour_operators;
+    },
+    tour_dates: function tour_dates(state) {
+      return state.tour_dates;
+    },
+    isCountriesLoading: function isCountriesLoading(state) {
+      return state.isCountriesLoading;
+    },
+    isCitiesLoading: function isCitiesLoading(state) {
+      return state.isCitiesLoading;
+    },
+    isHotelsLoading: function isHotelsLoading(state) {
+      return state.isHotelsLoading;
+    },
+    isTourOperatorsLoading: function isTourOperatorsLoading(state) {
+      return state.isTourOperatorsLoading;
+    }
+  },
+  // actions
+  actions: {
+    sendTourModuleOrder: function sendTourModuleOrder(_ref, payload) {
+      var commit = _ref.commit;
+
+      try {
+        return axios.post('sendTourModuleOrder', payload); // commit('sendTourModuleOrder', payload)
+      } catch (error) {
+        console.log(error);
+        throw error;
+      }
+    },
+    changeName: function changeName(_ref2, payload) {
+      var commit = _ref2.commit;
+      commit('changeName', payload);
+    },
+    changePhone: function changePhone(_ref3, payload) {
+      var commit = _ref3.commit;
+      commit('changePhone', payload);
+    },
+    changeCountry: function changeCountry(_ref4, payload) {
+      var commit = _ref4.commit;
+      commit('changeCountry', payload);
+    },
+    changeResortCountry: function changeResortCountry(_ref5, payload) {
+      var commit = _ref5.commit;
+      commit('changeResortCountry', payload);
+    },
+    changeResorts: function changeResorts(_ref6, payload) {
+      var commit = _ref6.commit;
+      commit('changeResorts', payload);
+    },
+    changeHotels: function changeHotels(_ref7, payload) {
+      var commit = _ref7.commit;
+      commit('changeHotels', payload);
+    },
+    changeMeal: function changeMeal(_ref8, payload) {
+      var commit = _ref8.commit;
+      commit('changeMeal', payload);
+    },
+    changePriceFrom: function changePriceFrom(_ref9, payload) {
+      var commit = _ref9.commit;
+      commit('changePriceFrom', payload);
+    },
+    changePriceTo: function changePriceTo(_ref10, payload) {
+      var commit = _ref10.commit;
+      commit('changePriceTo', payload);
+    },
+    changeAdults: function changeAdults(_ref11, payload) {
+      var commit = _ref11.commit;
+      commit('changeAdults', payload);
+    },
+    changeChildren: function changeChildren(_ref12, payload) {
+      var commit = _ref12.commit;
+      commit('changeChildren', payload);
+    },
+    changeTourOperator: function changeTourOperator(_ref13, payload) {
+      var commit = _ref13.commit;
+      commit('changeTourOperator', payload);
+    },
+    changeDateRange: function changeDateRange(_ref14, payload) {
+      var commit = _ref14.commit;
+      commit('changeDateRange', payload);
+    },
+    changeNightsFrom: function changeNightsFrom(_ref15, payload) {
+      var commit = _ref15.commit;
+      commit('changeNightsFrom', payload);
+    },
+    changeNightsTo: function changeNightsTo(_ref16, payload) {
+      var commit = _ref16.commit;
+      commit('changeNightsTo', payload);
+    },
+    getCountries: function getCountries(_ref17, payload) {
+      var commit = _ref17.commit;
+      commit('isCountriesLoading', true);
+      axios.get('/getCountries/' + payload.town_id).then(function (response) {
+        commit('getCountries', response.data.res);
+        commit('isCountriesLoading', false);
+      });
+    },
+    getCities: function getCities(_ref18, payload) {
+      var commit = _ref18.commit;
+      commit('isCitiesLoading', true);
+      axios.get('/getCities/' + payload).then(function (response) {
+        commit('getCities', response.data.res);
+        commit('isCitiesLoading', false);
+      });
+    },
+    getHotels: function getHotels(_ref19, payload) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                commit = _ref19.commit;
+                commit('isHotelsLoading', true);
+                _context.next = 4;
+                return axios.get('/getHotels/' + payload.country_id + '/' + payload.town_id + '/' + payload.star_id).then(function (response) {
+                  commit('getHotels', response.data.res);
+                  commit('isHotelsLoading', false);
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    getHotelStars: function getHotelStars(_ref20, payload) {
+      var commit = _ref20.commit;
+      axios.get('/getHotelStars/' + payload.country_id + '/' + payload.town_id).then(function (response) {
+        commit('getHotelStars', response.data.res);
+      });
+    },
+    getTourOperators: function getTourOperators(_ref21, payload) {
+      var commit = _ref21.commit;
+      commit('isTourOperatorsLoading', true);
+      axios.get('/getTourOperators/' + payload.city_id + '/' + payload.country_id).then(function (response) {
+        commit('getTourOperators', response.data.res);
+        commit('isTourOperatorsLoading', false);
+      });
+    },
+    getTourDates: function getTourDates(_ref22, payload) {
+      var commit = _ref22.commit;
+      axios.get('/getTourDates/' + payload.city_id + '/' + payload.country_id).then(function (response) {
+        commit('getTourDates', response.data.res);
+      });
+    },
+    incAdults: function incAdults(_ref23) {
+      var commit = _ref23.commit;
+      commit('incrementAdults');
+    },
+    decAdults: function decAdults(_ref24) {
+      var commit = _ref24.commit;
+      commit('decrementAdults');
+    },
+    incChildren: function incChildren(_ref25) {
+      var commit = _ref25.commit;
+      commit('incrementChildren');
+    },
+    decChildren: function decChildren(_ref26) {
+      var commit = _ref26.commit;
+      commit('decrementChildren');
+    }
+  },
+  // mutations
+  mutations: {
+    changeName: function changeName(state, payload) {
+      state.tourModule.name = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changePhone: function changePhone(state, payload) {
+      state.tourModule.phone = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeCountry: function changeCountry(state, payload) {
+      state.tourModule.country = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeResortCountry: function changeResortCountry(state, payload) {
+      state.tourModule.resort_country = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeResorts: function changeResorts(state, payload) {
+      state.tourModule.resorts = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeHotels: function changeHotels(state, payload) {
+      state.tourModule.hotels = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeMeal: function changeMeal(state, payload) {
+      state.tourModule.meal = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changePriceFrom: function changePriceFrom(state, payload) {
+      state.tourModule.price_from = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changePriceTo: function changePriceTo(state, payload) {
+      state.tourModule.price_to = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeAdults: function changeAdults(state, payload) {
+      state.tourModule.adults = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeChildren: function changeChildren(state, payload) {
+      state.tourModule.children = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeTourOperator: function changeTourOperator(state, payload) {
+      state.tourModule.tour_operators = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeDateRange: function changeDateRange(state, payload) {
+      state.tourModule.date_range = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeNightsFrom: function changeNightsFrom(state, payload) {
+      state.tourModule.nights_from = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    changeNightsTo: function changeNightsTo(state, payload) {
+      state.tourModule.nights_to = payload;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    getCountries: function getCountries(state, payload) {
+      state.countries = payload;
+    },
+    getCities: function getCities(state, payload) {
+      state.cities = payload;
+      state.cities.unshift({
+        Name: 'Любой'
+      });
+    },
+    getHotels: function getHotels(state, payload) {
+      payload.forEach(function (item) {
+        if (item.StarName.length == 2) {
+          item.StarName = item.StarName.slice(0, -1);
+        }
+      });
+      state.hotels = payload;
+      state.hotels.unshift({
+        Name: 'Любой'
+      });
+    },
+    getHotelStars: function getHotelStars(state, payload) {
+      state.hotel_stars = payload;
+    },
+    getTourOperators: function getTourOperators(state, payload) {
+      state.tour_operators = payload;
+      state.tour_operators.unshift({
+        Name: 'Любой'
+      });
+    },
+    getTourDates: function getTourDates(state, payload) {
+      state.tour_dates = payload;
+    },
+    incrementAdults: function incrementAdults(state) {
+      state.tourModule.adults++;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    decrementAdults: function decrementAdults(state) {
+      state.tourModule.adults--;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    incrementChildren: function incrementChildren(state) {
+      state.tourModule.children++;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    decrementChildren: function decrementChildren(state) {
+      state.tourModule.children--;
+      localStorage.setItem("tourModule", JSON.stringify(state.tourModule));
+    },
+    isCountriesLoading: function isCountriesLoading(state, payload) {
+      state.isCountriesLoading = payload;
+    },
+    isCitiesLoading: function isCitiesLoading(state, payload) {
+      state.isCitiesLoading = payload;
+    },
+    isHotelsLoading: function isHotelsLoading(state, payload) {
+      state.isHotelsLoading = payload;
+    },
+    isTourOperatorsLoading: function isTourOperatorsLoading(state, payload) {
+      state.isTourOperatorsLoading = payload;
+    }
+  }
+});
 
 /***/ }),
 
