@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class  SletatRuApi
 {
 
-    const SLETAT_RU_API_URL = "'http://module.sletat.ru/Main.svc";
+    const SLETAT_RU_API_URL = "https://module.sletat.ru/Main.svc";
 
     public static function getDepartCities()
     {
