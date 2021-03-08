@@ -81,7 +81,8 @@
 </div>
 
 
-
+<!--End of Tawk.to Script-->
+<script src="https://embed.tawk.to/6011a65ac31c9117cb73211e/1et2f3ktl" async></script>
 <script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
 <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
 <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
