@@ -447,14 +447,13 @@
 
 <div class="mobileDetected">
     <div class="in">
-        <div><img src="/img/travel/logo-1.png" alt="logo" class="logo"></div>
+        <div><img src="/img/travel/logo-1.png" alt="logo" class="logo" style="width: 50px; height: 80px; object-fit: contain"></div>
         <h3 style="font-weight: bold; color: #1F1212;">Travel Club Family</h3>
         Попробуйте перейти на мобильную версию приложения
         <div class="mt-5 p-4">
             <div class="row">
                 <div class="col-12 mb-3">
-                    <a href="/view8/index.html" class="btn btn-secondary btn-block" target="_blank"
-                       style="height: 56px">
+                    <a href="/m/" class="btn btn-secondary btn-block" style="height: 56px">
                         <ion-icon name="eye-outline"></ion-icon>
                        Попробовать
                     </a>

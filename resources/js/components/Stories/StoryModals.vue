@@ -3,8 +3,8 @@
         <StoryModalImage
             v-if="current"
             :index="current"
-            :image="stories[current].image"
-            :time="stories[current].time"
+            :image="stories[current-1].image"
+            :time="stories[current-1].time"
             :progress="progress"
 
         />
@@ -80,22 +80,24 @@
 </script>
 
 <style lang="scss">
-    .swap-history-left {
+
+
+    .modal.show.stories ~ .swap-history-left {
         position: fixed;
         z-index: 9999;
         top: 100px;
         left: 0;
-        width: 50px;
+        width: 150px;
         height: 500px;
 
     }
 
-    .swap-history-right {
+    .modal.show.stories ~ .swap-history-right {
         position: fixed;
         z-index: 9999;
         top: 100px;
         right: 0;
-        width: 50px;
+        width: 150px;
         height: 500px;
 
     }
