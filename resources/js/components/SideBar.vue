@@ -17,7 +17,8 @@
                                 г. Донецк
                             </div>
                         </div>
-                        <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal" aria-label="Закрыть боковое меню">
+                        <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal"
+                           aria-label="Закрыть боковое меню">
                             <i class="fas fa-times"></i>
                         </a>
                     </div>
@@ -25,7 +26,7 @@
 
                     <ul class="listview flush transparent no-line image-listview mt-2">
                         <li>
-                            <a href="/m/profile" class="item" aria-label="профиль пользователя" >
+                            <a href="/m/profile" class="item" aria-label="профиль пользователя">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-user-alt"></i>
                                 </div>
@@ -36,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/m/tours" class="item" aria-label="Доступные туры" >
+                            <a href="/m/tours" class="item" aria-label="Доступные туры">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-compass"></i>
                                 </div>
@@ -46,7 +47,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/m/flies" class="item" aria-label="Доступные перелеты" >
+                            <a href="/m/flies" class="item" aria-label="Доступные перелеты">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-plane-departure"></i>
                                 </div>
@@ -80,7 +81,8 @@
                         </li>
 
                         <li>
-                            <a href="#contact" data-target="#ContactModal" data-toggle="modal" class="item" aria-label="Форма контактной информации">
+                            <a href="#contact" data-target="#ContactModal" data-toggle="modal" class="item"
+                               aria-label="Форма контактной информации">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-address-book"></i>
                                 </div>
@@ -91,9 +93,22 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a href="#contact" data-toggle="modal" aria-label="О Travel Club"
+                               data-target="#AboutModal" class="item">
+                                <div class="icon-box bg-orange">
+                                    <i class="far fa-address-book"></i>
+                                </div>
+                                <div class="in">
+                                    <div>О Нас</div>
+
+                                </div>
+                            </a>
+                        </li>
 
                         <li>
-                            <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="item" aria-label="Политика конфиденциальности">
+                            <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="item"
+                               aria-label="Политика конфиденциальности">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-landmark"></i>
                                 </div>
@@ -106,23 +121,23 @@
 
 
                         <div class="card-body d-flex justify-content-between align-items-end">
-                                <div>
-                                    <h6 class="card-subtitle">Используй удобства!</h6>
-                                    <h5 class="card-title mb-0 d-flex align-items-center justify-content-between">
-                                        Ночная тема
-                                    </h5>
-                                </div>
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input dark-mode-switch" id="darkmodeswitch-2">
-                                    <label class="custom-control-label" for="darkmodeswitch-2"></label>
-                                </div>
-
+                            <div>
+                                <h6 class="card-subtitle">Используй удобства!</h6>
+                                <h5 class="card-title mb-0 d-flex align-items-center justify-content-between">
+                                    Ночная тема
+                                </h5>
+                            </div>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input dark-mode-switch"
+                                       id="darkmodeswitch-2">
+                                <label class="custom-control-label" for="darkmodeswitch-2"></label>
                             </div>
 
+                        </div>
 
 
                         <li>
-                            <a href="https://travel-club.tours" target="_blank"  class="item" aria-label="Полная версия">
+                            <a href="https://travel-club.tours" target="_blank" class="item" aria-label="Полная версия">
                                 <div class="in">
                                     <div>Полная версия сайта</div>
 
@@ -138,7 +153,8 @@
                 <div class="sidebar-buttons">
 
 
-                    <a rel="noreferrer" href="https://t.me/travelclubtours" target="_blank" class="button" aria-label="мы в телеграм">
+                    <a rel="noreferrer" href="https://t.me/travelclubtours" target="_blank" class="button"
+                       aria-label="мы в телеграм">
                         <i class="fab fa-telegram-plane"></i>
                     </a>
 
@@ -146,7 +162,8 @@
                        class="button" aria-label="мы в иснтаграм">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a rel="noreferrer" href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
+                    <a rel="noreferrer"
+                       href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
                        target="_blank" class="button" aria-label="наш контакт в вотспап">
                         <i class="fab fa-whatsapp"></i>
                     </a>
