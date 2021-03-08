@@ -14,7 +14,7 @@
     <meta property="og:title" content="Travel Club" />
     <meta property="og:description" content="Сеть туристических агенств - Travel Club" />
     <meta property="og:url" content="https://m.travel-club.tours" />
-    <meta property="og:site_name" content="Group Import" />
+    <meta property="og:site_name" content="Travel Club" />
     <meta property="og:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
     <meta property="og:image:width" content="790" />
     <meta property="og:image:height" content="808" />
@@ -25,7 +25,7 @@
 
 
     <meta name="description"
-          content="Доставка самой вкусной еды из ресторанов и заведений общественного питания города Донецк и города Макеевка. Доставка продуктов, цветов, медикаментов, а также вызов курьера!">
+          content="Сеть туристических агенств - Travel Club">
     <title>TravelClub</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=contain"/>

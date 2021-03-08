@@ -19,7 +19,7 @@
     <meta property="og:title" content="Travel Club" />
     <meta property="og:description" content="Сеть туристических агенств - Travel Club" />
     <meta property="og:url" content="https://m.travel-club.tours" />
-    <meta property="og:site_name" content="Group Import" />
+    <meta property="og:site_name" content="Travel Club" />
     <meta property="og:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
     <meta property="og:image:width" content="790" />
     <meta property="og:image:height" content="808" />
