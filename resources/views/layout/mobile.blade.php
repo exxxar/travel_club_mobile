@@ -42,7 +42,10 @@
     <link rel="apple-touch-icon" sizes="167x167" href="{{asset('img/icons/icon-152x152.png')}}">
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <meta content='yes' name='mobile-web-app-capable'/>
+
     <meta name="theme-color" content="#000000">
 
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
