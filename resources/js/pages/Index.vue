@@ -95,6 +95,7 @@
             </div>
         </div>
 
+        <story-list/>
 
         <div class="section mt-3 mb-3">
             <div class="card">
