@@ -15,13 +15,13 @@
     <meta property="og:description" content="Сеть туристических агенств - Travel Club" />
     <meta property="og:url" content="https://m.travel-club.tours" />
     <meta property="og:site_name" content="Travel Club" />
-    <meta property="og:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
+    <meta property="og:image" content="https://m.travel-club.tours/img/icons/icon-72x72.png" />
     <meta property="og:image:width" content="790" />
     <meta property="og:image:height" content="808" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="Сеть туристических агенств - Travel Club" />
     <meta name="twitter:title" content="Сеть туристических агенств - Travel Club" />
-    <meta name="twitter:image" content="https://m.travel-club.tours/img/travel/logo-1.png" />
+    <meta name="twitter:image" content="https://m.travel-club.tours/img/icons/icon-72x72.png" />
 
 
     <meta name="description"
@@ -29,8 +29,6 @@
     <title>TravelClub</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=contain"/>
-
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
     <meta name="keywords" content="туризм"/>
     <!-- Favicons -->
@@ -41,15 +39,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('img/icons/icon-192x192.png')}}">
     <link rel="apple-touch-icon" sizes="167x167" href="{{asset('img/icons/icon-152x152.png')}}">
 
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <meta content='yes' name='mobile-web-app-capable'/>
 
     <meta name="theme-color" content="#000000">
 
-    <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon/192x192.png">
+    <link rel="icon" type="image/png" href="img/icons/icon-72x72.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-72x72.png">
 
     <link href="{{asset('img/icons/splash-2048x2732.png')}}" sizes="2048x2732" rel="apple-touch-startup-image"/>
     <link href="{{asset('img/icons/splash-1668x2224.png')}}" sizes="1668x2224" rel="apple-touch-startup-image"/>
@@ -85,8 +81,7 @@
 </div>
 
 
-<!--End of Tawk.to Script-->
-<script src="https://embed.tawk.to/6011a65ac31c9117cb73211e/1et2f3ktl"></script>
+
 <script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
 <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
 <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
