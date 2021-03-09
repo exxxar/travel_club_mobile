@@ -69,8 +69,6 @@
 
 <div id="wrapper">
 
-    <preloader></preloader>
-
     @yield("content")
 
     <sidebar></sidebar>

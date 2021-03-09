@@ -94,6 +94,18 @@
                         </li>
 
                         <li>
+                            <a href="/m/promo" class="item" aria-label="Promocodes">
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-ad"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Промокоды</div>
+                                    <div class="coming-soon-img sidebar-img"></div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="#contact" data-toggle="modal" aria-label="О Travel Club"
                                data-target="#AboutModal" class="item">
                                 <div class="icon-box bg-orange">
@@ -105,6 +117,9 @@
                                 </div>
                             </a>
                         </li>
+
+
+
 
                         <li>
                             <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="item"

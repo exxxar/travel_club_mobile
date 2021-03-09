@@ -1,6 +1,10 @@
 @extends('layout.mobile')
 
 @section('content')
+
+    <preloader time="3000"></preloader>
+
+
     <header-block></header-block>
 
     <flies-page></flies-page>

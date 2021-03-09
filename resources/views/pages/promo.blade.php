@@ -5,7 +5,7 @@
 
     <header-block></header-block>
 
-    <adventure-page></adventure-page>
+    <promo-page></promo-page>
 
     <bottom-menu></bottom-menu>
 

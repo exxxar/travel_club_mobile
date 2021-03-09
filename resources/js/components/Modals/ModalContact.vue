@@ -150,6 +150,6 @@
 </script>
 <style lang="scss">
     .ymap-container {
-        height: 300px;
+        height: 600px;
     }
 </style>

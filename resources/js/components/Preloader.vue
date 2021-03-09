@@ -3154,8 +3154,9 @@
             }
         },
         mounted() {
-            setTimeout(() => {
+            let timeout = setTimeout(() => {
                 this.is_hidden = true;
+                clearTimeout(timeout);
             }, this.time)
         },
         name: "Preloader"

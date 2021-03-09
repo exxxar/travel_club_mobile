@@ -266,8 +266,12 @@
 </script>
 <style lang="scss">
     .owl-item {
+        display: flex;
+        justify-content: center;
         .item {
             padding: 40px;
+            width:100%;
+            //min-width: 480px;
 
             .travel-card {
 

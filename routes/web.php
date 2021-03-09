@@ -38,6 +38,7 @@ Route::view('/m/profile',"pages.profile")->name("profile");
 Route::view('/m/adventure',"pages.adventure")->name("adventure");
 Route::view('/m/hotels',"pages.hotels")->name("hotels");
 Route::view('/m/flies',"pages.flies")->name("flies");
+Route::view('/m/promo',"pages.promo")->name("promo");
 Route::view('/m/maintenance',"pages.maintenance")->name("maintenance");
 Route::view('/m/tour-search',"pages.tour-search")->name("tour-search");
 Route::view('/m/avia-search',"pages.avia-search")->name("avia-search");
