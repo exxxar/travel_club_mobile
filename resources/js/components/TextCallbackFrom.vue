@@ -195,8 +195,8 @@
             padding: 10px;
 
             label {
-                width: 90px;
-                height: 90px;
+                width: 70px;
+                height: 70px;
                 background: #fff;
                 border: 3px solid #d3d3d3;
                 border-radius: 50%;
@@ -204,7 +204,7 @@
                 justify-content: center;
                 align-items: center;
                 color: #d3d3d3;
-                font-size: 36px;
+                font-size: 24px;
             }
 
             input {
