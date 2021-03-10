@@ -44,8 +44,8 @@
 
     <meta name="theme-color" content="#000000">
 
-    <link rel="icon" type="image/png" href="img/icons/icon-72x72.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-72x72.png">
+    <link rel="icon" type="image/png" href="/img/icons/icon-72x72.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/icon-72x72.png">
 
     <link href="{{asset('img/icons/splash-2048x2732.png')}}" sizes="2048x2732" rel="apple-touch-startup-image"/>
     <link href="{{asset('img/icons/splash-1668x2224.png')}}" sizes="1668x2224" rel="apple-touch-startup-image"/>

@@ -58,11 +58,6 @@ import VueRecord from '@codekraft-studio/vue-record'
 
 Vue.use(VueRecord)
 
-import Tawk from 'vue-tawk'
-
-Vue.use(Tawk, {
-    tawkSrc: 'https://embed.tawk.to/6011a65ac31c9117cb73211e/1et2f3ktl/default'
-})
 
 import VuePwaInstallPlugin from "vue-pwa-install";
 

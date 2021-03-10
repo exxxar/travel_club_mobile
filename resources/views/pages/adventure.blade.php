@@ -1,7 +1,7 @@
 @extends('layout.mobile')
 
 @section('content')
-    <preloader :time="3000"></preloader>
+    <preloader :time="3500"></preloader>
 
     <header-block></header-block>
 

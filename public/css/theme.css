@@ -1,7 +1,9 @@
-@import url("inc/bootstrap/bootstrap.min.css");@import url("inc/owl-carousel/owl.carousel.min.css");@import url("inc/owl-carousel/owl.theme.default.css");@import url("https://fonts.googleapis.com/css?family=Inter:400,500,700&amp;display=swap");
+@import url("inc/bootstrap/bootstrap.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Inter:400,500,700&amp;display=swap");
 
 body {
-    font-family: "Inter",sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     line-height: 1.55rem;
     letter-spacing: -.015rem;
@@ -19,7 +21,7 @@ body {
 }
 
 ::selection {
-    background: rgba(30,116,253,0.3)
+    background: rgba(30, 116, 253, 0.3)
 }
 
 a {
@@ -28,7 +30,7 @@ a {
     outline: 0 !important
 }
 
-a:hover,a:active,a:focus {
+a:hover, a:active, a:focus {
     outline: 0 !important;
     color: #1E74FD;
     text-decoration: none
@@ -38,7 +40,7 @@ button {
     outline: 0 !important
 }
 
-button:hover,button:active,button:focus {
+button:hover, button:active, button:focus {
     outline: 0 !important
 }
 
@@ -54,7 +56,7 @@ button:hover,button:active,button:focus {
     z-index: 999;
     background: #FFF;
     color: #141515;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .appHeader:before {
@@ -79,18 +81,19 @@ button:hover,button:active,button:focus {
     box-shadow: none
 }
 
-.appHeader .left,.appHeader .right {
+.appHeader .left, .appHeader .right {
     height: 56px;
     display: flex;
     align-items: center;
     position: absolute
 }
 
-.appHeader .left .icon,.appHeader .left ion-icon,.appHeader .right .icon,.appHeader .right ion-icon {
+.appHeader .left .icon, .appHeader .left ion-icon, .appHeader .right .icon, .appHeader .right ion-icon {
     font-size: 26px;
-    --ionicon-stroke-width: 36px}
+    --ionicon-stroke-width: 36px
+}
 
-.appHeader .left .headerButton,.appHeader .right .headerButton {
+.appHeader .left .headerButton, .appHeader .right .headerButton {
     min-width: 36px;
     height: 56px;
     display: flex;
@@ -101,14 +104,14 @@ button:hover,button:active,button:focus {
     position: relative
 }
 
-.appHeader .left .headerButton .btn,.appHeader .right .headerButton .btn {
+.appHeader .left .headerButton .btn, .appHeader .right .headerButton .btn {
     font-size: 16px;
     height: 32px;
     padding: 0px 14px;
     font-weight: 400
 }
 
-.appHeader .left .headerButton:active,.appHeader .right .headerButton:active {
+.appHeader .left .headerButton:active, .appHeader .right .headerButton:active {
     opacity: 0.6
 }
 
@@ -136,11 +139,11 @@ button:hover,button:active,button:focus {
     color: #fff
 }
 
-.appHeader.text-light .headerButton,.appHeader.text-light .pageTitle {
+.appHeader.text-light .headerButton, .appHeader.text-light .pageTitle {
     color: #fff
 }
 
-.appHeader.bg-primary,.appHeader.bg-secondary,.appHeader.bg-success,.appHeader.bg-warning,.appHeader.bg-danger,.appHeader.bg-info,.appHeader.bg-light,.appHeader.bg-dark {
+.appHeader.bg-primary, .appHeader.bg-secondary, .appHeader.bg-success, .appHeader.bg-warning, .appHeader.bg-danger, .appHeader.bg-info, .appHeader.bg-light, .appHeader.bg-dark {
     border: 0
 }
 
@@ -157,7 +160,7 @@ button:hover,button:active,button:focus {
     align-items: center;
     background: #fff;
     z-index: 1000;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .header-large-title {
@@ -195,7 +198,7 @@ button:hover,button:active,button:focus {
     background: #FFF;
     min-height: 56px;
     border-bottom-color: #E1E1E1;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .appHeader.scrolled.is-active .pageTitle {
@@ -382,7 +385,7 @@ button:hover,button:active,button:focus {
     text-align: center
 }
 
-.appBottomMenu .item .icon,.appBottomMenu .item ion-icon {
+.appBottomMenu .item .icon, .appBottomMenu .item ion-icon {
     display: inline-flex;
     margin: 1px auto 3px auto;
     font-size: 26px;
@@ -414,7 +417,7 @@ button:hover,button:active,button:focus {
     margin-right: -10px
 }
 
-.appBottomMenu .item .action-button .icon,.appBottomMenu .item .action-button ion-icon {
+.appBottomMenu .item .action-button .icon, .appBottomMenu .item .action-button ion-icon {
     color: #FFF !important;
     margin: 0 !important;
     line-height: 0 !important
@@ -436,12 +439,12 @@ button:hover,button:active,button:focus {
     background: transparent
 }
 
-.appBottomMenu .item.active .icon,.appBottomMenu .item.active ion-icon,.appBottomMenu .item.active strong {
+.appBottomMenu .item.active .icon, .appBottomMenu .item.active ion-icon, .appBottomMenu .item.active strong {
     color: #1E74FD !important;
     font-weight: 500
 }
 
-.appBottomMenu .item:hover .icon,.appBottomMenu .item:hover ion-icon,.appBottomMenu .item:hover strong {
+.appBottomMenu .item:hover .icon, .appBottomMenu .item:hover ion-icon, .appBottomMenu .item:hover strong {
     color: #141515
 }
 
@@ -454,7 +457,7 @@ button:hover,button:active,button:focus {
     opacity: .7
 }
 
-.appBottomMenu.text-light .item .icon,.appBottomMenu.text-light .item ion-icon,.appBottomMenu.text-light .item strong {
+.appBottomMenu.text-light .item .icon, .appBottomMenu.text-light .item ion-icon, .appBottomMenu.text-light .item strong {
     color: #FFF
 }
 
@@ -462,15 +465,15 @@ button:hover,button:active,button:focus {
     opacity: 1
 }
 
-.appBottomMenu.text-light .item.active .icon,.appBottomMenu.text-light .item.active ion-icon,.appBottomMenu.text-light .item.active strong {
+.appBottomMenu.text-light .item.active .icon, .appBottomMenu.text-light .item.active ion-icon, .appBottomMenu.text-light .item.active strong {
     color: #FFF !important
 }
 
-.appBottomMenu.bg-primary,.appBottomMenu.bg-secondary,.appBottomMenu.bg-success,.appBottomMenu.bg-warning,.appBottomMenu.bg-danger,.appBottomMenu.bg-info,.appBottomMenu.bg-light,.appBottomMenu.bg-dark {
+.appBottomMenu.bg-primary, .appBottomMenu.bg-secondary, .appBottomMenu.bg-success, .appBottomMenu.bg-warning, .appBottomMenu.bg-danger, .appBottomMenu.bg-info, .appBottomMenu.bg-light, .appBottomMenu.bg-dark {
     border: 0
 }
 
-.appBottomMenu.bg-primary .item:before,.appBottomMenu.bg-secondary .item:before,.appBottomMenu.bg-success .item:before,.appBottomMenu.bg-warning .item:before,.appBottomMenu.bg-danger .item:before,.appBottomMenu.bg-info .item:before,.appBottomMenu.bg-light .item:before,.appBottomMenu.bg-dark .item:before {
+.appBottomMenu.bg-primary .item:before, .appBottomMenu.bg-secondary .item:before, .appBottomMenu.bg-success .item:before, .appBottomMenu.bg-warning .item:before, .appBottomMenu.bg-danger .item:before, .appBottomMenu.bg-info .item:before, .appBottomMenu.bg-light .item:before, .appBottomMenu.bg-dark .item:before {
     display: none
 }
 
@@ -529,7 +532,7 @@ button:hover,button:active,button:focus {
     font-weight: 700
 }
 
-.content-header,.content-footer {
+.content-header, .content-footer {
     font-size: 11px;
     color: #A1A1A2;
     padding-left: 0;
@@ -542,12 +545,12 @@ button:hover,button:active,button:focus {
     padding-right: 16px
 }
 
-.section.full .content-header,.section.full .content-footer {
+.section.full .content-header, .section.full .content-footer {
     padding-left: 16px;
     padding-right: 16px
 }
 
-.section.full .wide-block .content-header,.section.full .wide-block .content-footer {
+.section.full .wide-block .content-header, .section.full .wide-block .content-footer {
     padding-left: 0;
     padding-right: 0
 }
@@ -564,7 +567,7 @@ button:hover,button:active,button:focus {
     align-items: center;
     position: relative;
     background: orange;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     position: fixed;
     z-index: 100;
     left: 0;
@@ -594,7 +597,7 @@ button:hover,button:active,button:focus {
     height: 42px;
     border: 2px solid #FFF;
     object-fit: contain;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .profileBox .in {
@@ -610,7 +613,7 @@ button:hover,button:active,button:focus {
 
 .profileBox .in .text-muted {
     font-size: 14px;
-    color: rgba(255,255,255,0.5) !important
+    color: rgba(255, 255, 255, 0.5) !important
 }
 
 .sidebar-buttons {
@@ -637,8 +640,8 @@ button:hover,button:active,button:focus {
     color: #141515
 }
 
-.sidebar-buttons .button:hover,.sidebar-buttons .button:active {
-    background: rgba(225,225,225,0.2)
+.sidebar-buttons .button:hover, .sidebar-buttons .button:active {
+    background: rgba(225, 225, 225, 0.2)
 }
 
 .sidebar-buttons:last-child {
@@ -656,12 +659,12 @@ button:hover,button:active,button:focus {
     height: 36px;
     right: 10px;
     top: 50%;
-    color: rgba(255,255,255,0.5) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
     margin-top: -18px
 }
 
 .close-sidebar-button:active {
-    background: rgba(255,255,255,0.1)
+    background: rgba(255, 255, 255, 0.1)
 }
 
 .action-group {
@@ -680,11 +683,11 @@ button:hover,button:active,button:focus {
     text-align: center;
     font-size: 11px;
     line-height: 1em;
-    color: rgba(255,255,255,0.7)
+    color: rgba(255, 255, 255, 0.7)
 }
 
 .action-group .action-button .iconbox {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     width: 38px;
     height: 38px;
     margin: 0 auto 8px auto;
@@ -717,27 +720,27 @@ button:hover,button:active,button:focus {
     padding-top: env(safe-area-inset-top)
 }
 
-.panelbox-left .listview>li,.panelbox-right .listview>li {
+.panelbox-left .listview > li, .panelbox-right .listview > li {
     padding: 10px 16px
 }
 
-.panelbox-left .link-listview>li,.panelbox-right .link-listview>li {
+.panelbox-left .link-listview > li, .panelbox-right .link-listview > li {
     padding: 0
 }
 
-.panelbox-left .link-listview>li a,.panelbox-right .link-listview>li a {
+.panelbox-left .link-listview > li a, .panelbox-right .link-listview > li a {
     padding: 10px 36px 10px 16px
 }
 
-.panelbox-left .image-listview>li,.panelbox-right .image-listview>li {
+.panelbox-left .image-listview > li, .panelbox-right .image-listview > li {
     padding: 0
 }
 
-.panelbox-left .image-listview>li .item,.panelbox-right .image-listview>li .item {
+.panelbox-left .image-listview > li .item, .panelbox-right .image-listview > li .item {
     padding: 10px 16px
 }
 
-.panelbox-left .image-listview>li a.item,.panelbox-right .image-listview>li a.item {
+.panelbox-left .image-listview > li a.item, .panelbox-right .image-listview > li a.item {
     padding-right: 36px
 }
 
@@ -780,7 +783,7 @@ button:hover,button:active,button:focus {
     padding-bottom: env(safe-area-inset-bottom)
 }
 
-.fixed-footer>div {
+.fixed-footer > div {
     width: 100%
 }
 
@@ -794,8 +797,8 @@ button:hover,button:active,button:focus {
 
 .footer-link {
     padding: 0;
-    border-top: 1px solid rgba(225,225,225,0.5);
-    border-bottom: 1px solid rgba(225,225,225,0.5);
+    border-top: 1px solid rgba(225, 225, 225, 0.5);
+    border-bottom: 1px solid rgba(225, 225, 225, 0.5);
     margin-left: -16px;
     margin-right: -16px;
     display: flex;
@@ -827,7 +830,7 @@ button:hover,button:active,button:focus {
     align-items: center;
     justify-content: center;
     border: 1px solid #E1E1E1;
-    background: rgba(225,225,225,0.3);
+    background: rgba(225, 225, 225, 0.3);
     font-size: 10px
 }
 
@@ -852,7 +855,7 @@ button:hover,button:active,button:focus {
     margin-right: -8px
 }
 
-.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12 {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
     padding-left: 8px;
     padding-right: 8px
 }
@@ -1137,18 +1140,18 @@ button:hover,button:active,button:focus {
     padding-right: 40px !important
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     color: #141515;
     margin: 0 0 10px 0;
     letter-spacing: -0.02em;
     line-height: 1.3em
 }
 
-h1 small,h2 small,h3 small,h4 small,h5 small,h6 small {
-    color: rgba(20,21,21,0.6)
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: rgba(20, 21, 21, 0.6)
 }
 
-h1 .badge,h2 .badge,h3 .badge,h4 .badge,h5 .badge,h6 .badge {
+h1 .badge, h2 .badge, h3 .badge, h4 .badge, h5 .badge, h6 .badge {
     line-height: 1em
 }
 
@@ -1201,7 +1204,7 @@ mark {
     font-size: 34px
 }
 
-strong,b {
+strong, b {
     font-weight: 500
 }
 
@@ -1229,7 +1232,7 @@ strong,b {
     margin-bottom: 3px
 }
 
-.page-title .link:hover,.page-title .link:active {
+.page-title .link:hover, .page-title .link:active {
     opacity: 0.8
 }
 
@@ -1268,7 +1271,8 @@ figure.codebox code {
 }
 
 ion-icon {
-    --ionicon-stroke-width: 32px}
+    --ionicon-stroke-width: 32px
+}
 
 .demoIcons {
     font-size: 32px;
@@ -1429,37 +1433,37 @@ ion-icon {
     font-weight: 400
 }
 
-.badge-primary,a.badge-primary {
+.badge-primary, a.badge-primary {
     background: #1E74FD !important
 }
 
-.badge-secondary,a.badge-secondary {
+.badge-secondary, a.badge-secondary {
     background: #6C7C94 !important
 }
 
-.badge-success,a.badge-success {
+.badge-success, a.badge-success {
     background: #34C759 !important
 }
 
-.badge-danger,a.badge-danger {
+.badge-danger, a.badge-danger {
     background: #EC4433 !important
 }
 
-.badge-warning,a.badge-warning {
+.badge-warning, a.badge-warning {
     background: #FE9500 !important;
     color: #FFF
 }
 
-.badge-info,a.badge-info {
+.badge-info, a.badge-info {
     background: #592BCA !important
 }
 
-.badge-light,a.badge-light {
-    background: rgba(255,255,255,0.6) !important;
+.badge-light, a.badge-light {
+    background: rgba(255, 255, 255, 0.6) !important;
     color: #141515
 }
 
-.badge-dark,a.badge-dark {
+.badge-dark, a.badge-dark {
     background: #222 !important
 }
 
@@ -1543,7 +1547,7 @@ ion-icon {
     color: #A1A1A2 !important
 }
 
-.listview>li {
+.listview > li {
     padding: 8px 16px;
     display: block;
     align-items: center;
@@ -1552,11 +1556,11 @@ ion-icon {
     min-height: 50px
 }
 
-.listview>li .item {
+.listview > li .item {
     position: relative
 }
 
-.listview>li:after {
+.listview > li:after {
     content: "";
     display: block;
     position: absolute;
@@ -1567,27 +1571,27 @@ ion-icon {
     background: #E1E1E1
 }
 
-.listview>li:last-child:after {
+.listview > li:last-child:after {
     display: none
 }
 
-.listview>li footer,.listview>li header {
+.listview > li footer, .listview > li header {
     font-size: 12px;
     margin: 0;
     line-height: 1.2em
 }
 
-.listview>li footer {
+.listview > li footer {
     color: #4F5050;
     margin-top: 3px
 }
 
-.listview>li header {
+.listview > li header {
     margin-bottom: 3px
 }
 
-.listview>li.divider-title {
-    background: rgba(225,225,225,0.5);
+.listview > li.divider-title {
+    background: rgba(225, 225, 225, 0.5);
     margin-top: -1px;
     border-top: 1px solid #E1E1E1;
     border-bottom: 1px solid #E1E1E1;
@@ -1597,7 +1601,7 @@ ion-icon {
     color: #4F5050
 }
 
-.listview>li.divider-title:after {
+.listview > li.divider-title:after {
     display: none
 }
 
@@ -1610,16 +1614,16 @@ ion-icon {
     background: transparent
 }
 
-.simple-listview>li {
+.simple-listview > li {
     display: flex
 }
 
-.link-listview>li {
+.link-listview > li {
     padding: 0;
     min-height: auto
 }
 
-.link-listview>li a {
+.link-listview > li a {
     padding: 8px 36px 8px 16px;
     min-height: 50px;
     display: flex;
@@ -1629,7 +1633,7 @@ ion-icon {
     color: #141515 !important
 }
 
-.link-listview>li a:after {
+.link-listview > li a:after {
     background-image: url("data:image/svg+xml,%0A%3Csvg width='10px' height='16px' viewBox='0 0 10 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='Listview' transform='translate(-112.000000, -120.000000)' stroke='%23A1A1A2' stroke-width='2.178'%3E%3Cpolyline id='Path' points='114 122 120 128 114 134'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center center;
@@ -1643,20 +1647,20 @@ ion-icon {
     margin-top: -8px
 }
 
-.link-listview>li a:active {
-    background: rgba(225,225,225,0.3)
+.link-listview > li a:active {
+    background: rgba(225, 225, 225, 0.3)
 }
 
-.image-listview>li {
+.image-listview > li {
     padding: 0;
     min-height: auto
 }
 
-.image-listview>li:after {
+.image-listview > li:after {
     left: 68px
 }
 
-.image-listview>li .item {
+.image-listview > li .item {
     padding: 10px 16px;
     width: 100%;
     min-height: 50px;
@@ -1664,7 +1668,7 @@ ion-icon {
     align-items: center
 }
 
-.image-listview>li .item .image {
+.image-listview > li .item .image {
     min-width: 36px;
     max-width: 36px;
     width: 36px;
@@ -1673,7 +1677,7 @@ ion-icon {
     margin-right: 16px
 }
 
-.image-listview>li .item .icon-box {
+.image-listview > li .item .icon-box {
     min-width: 36px;
     max-width: 36px;
     width: 36px;
@@ -1688,27 +1692,27 @@ ion-icon {
     font-size: 14px;
 }
 
-.image-listview>li .item .icon-box.bg-primary,.image-listview>li .item .icon-box.bg-secondary,.image-listview>li .item .icon-box.bg-success,.image-listview>li .item .icon-box.bg-danger,.image-listview>li .item .icon-box.bg-warning,.image-listview>li .item .icon-box.bg-info,.image-listview>li .item .icon-box.bg-dark,.image-listview>li .item .icon-box.bg-light {
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12)
+.image-listview > li .item .icon-box.bg-primary, .image-listview > li .item .icon-box.bg-secondary, .image-listview > li .item .icon-box.bg-success, .image-listview > li .item .icon-box.bg-danger, .image-listview > li .item .icon-box.bg-warning, .image-listview > li .item .icon-box.bg-info, .image-listview > li .item .icon-box.bg-dark, .image-listview > li .item .icon-box.bg-light {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12)
 }
 
-.image-listview>li .item .in {
+.image-listview > li .item .in {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%
 }
 
-.image-listview>li a.item {
+.image-listview > li a.item {
     color: #141515 !important;
     padding-right: 36px
 }
 
-.image-listview>li a.item:active {
-    background: rgba(225,225,225,0.3)
+.image-listview > li a.item:active {
+    background: rgba(225, 225, 225, 0.3)
 }
 
-.image-listview>li a.item:after {
+.image-listview > li a.item:after {
     background-image: url("data:image/svg+xml,%0A%3Csvg width='10px' height='16px' viewBox='0 0 10 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='Listview' transform='translate(-112.000000, -120.000000)' stroke='%23A1A1A2' stroke-width='2.178'%3E%3Cpolyline id='Path' points='114 122 120 128 114 134'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center center;
@@ -1722,35 +1726,35 @@ ion-icon {
     margin-top: -8px
 }
 
-.image-listview.text>li:after {
+.image-listview.text > li:after {
     left: 16px
 }
 
-.image-listview.media>li {
+.image-listview.media > li {
     border-bottom: 1px solid #E1E1E1
 }
 
-.image-listview.media>li:last-child {
+.image-listview.media > li:last-child {
     border-bottom: 0
 }
 
-.image-listview.media>li .imageWrapper {
+.image-listview.media > li .imageWrapper {
     margin-right: 16px
 }
 
-.image-listview.media>li:after {
+.image-listview.media > li:after {
     display: none
 }
 
-.listview.no-line>li:after,.listview.no-line .item :after {
+.listview.no-line > li:after, .listview.no-line .item :after {
     display: none
 }
 
-.listview.no-space>li .item {
+.listview.no-space > li .item {
     padding: 0
 }
 
-.multi-level>a:after {
+.multi-level > a:after {
     transform: rotate(90deg)
 }
 
@@ -1761,19 +1765,19 @@ ion-icon {
     display: none
 }
 
-.multi-level ul>li {
+.multi-level ul > li {
     border: 0 !important
 }
 
-.multi-level ul>li:after {
+.multi-level ul > li:after {
     height: 0
 }
 
-.multi-level ul>li a,.multi-level ul>li .item {
+.multi-level ul > li a, .multi-level ul > li .item {
     padding-left: 68px !important
 }
 
-.multi-level.active>a:after {
+.multi-level.active > a:after {
     transform: rotate(-90deg)
 }
 
@@ -1781,11 +1785,11 @@ ion-icon {
     padding-bottom: 8px
 }
 
-.link-listview .link-listview a,.link-listview .link-listview .item,.link-listview .image-listview a,.link-listview .image-listview .item {
+.link-listview .link-listview a, .link-listview .link-listview .item, .link-listview .image-listview a, .link-listview .image-listview .item {
     padding-left: 16px !important
 }
 
-.link-listview .image-listview.media>li {
+.link-listview .image-listview.media > li {
     border: 0
 }
 
@@ -1801,7 +1805,7 @@ ion-icon {
     padding-left: 0 !important
 }
 
-.image-listview.text .link-listview a,.image-listview.text .link-listview .item,.image-listview.text .image-listview a,.image-listview.text .image-listview .item {
+.image-listview.text .link-listview a, .image-listview.text .link-listview .item, .image-listview.text .image-listview a, .image-listview.text .image-listview .item {
     padding-left: 16px !important
 }
 
@@ -1809,7 +1813,7 @@ ion-icon {
     padding-left: 80px !important
 }
 
-.image-listview.media .link-listview a,.image-listview.media .link-listview .item,.image-listview.media .image-listview a,.image-listview.media .image-listview .item {
+.image-listview.media .link-listview a, .image-listview.media .link-listview .item, .image-listview.media .image-listview a, .image-listview.media .image-listview .item {
     padding-left: 96px !important
 }
 
@@ -1817,7 +1821,7 @@ ion-icon {
     background: #ffffff;
     border-radius: 6px;
     border: 0;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .card .card-body {
@@ -1840,11 +1844,11 @@ ion-icon {
     margin-bottom: 8px
 }
 
-.card .listview>li:first-child .item {
+.card .listview > li:first-child .item {
     border-radius: 6px 6px 0 0
 }
 
-.card .listview>li:last-child .item {
+.card .listview > li:last-child .item {
     border-radius: 0 0 6px 6px
 }
 
@@ -1872,7 +1876,7 @@ ion-icon {
 }
 
 .card .card-img-overlay {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 6px
 }
 
@@ -1881,24 +1885,24 @@ ion-icon {
 }
 
 .card .card-img-overlay .card-text {
-    color: rgba(255,255,255,0.7)
+    color: rgba(255, 255, 255, 0.7)
 }
 
-.card.bg-primary,.card.bg-secondary,.card.bg-danger,.card.bg-success,.card.bg-warning,.card.bg-info,.card.bg-dark {
+.card.bg-primary, .card.bg-secondary, .card.bg-danger, .card.bg-success, .card.bg-warning, .card.bg-info, .card.bg-dark {
     border: 0
 }
 
-.card.bg-primary .card-title,.card.bg-secondary .card-title,.card.bg-danger .card-title,.card.bg-success .card-title,.card.bg-warning .card-title,.card.bg-info .card-title,.card.bg-dark .card-title {
+.card.bg-primary .card-title, .card.bg-secondary .card-title, .card.bg-danger .card-title, .card.bg-success .card-title, .card.bg-warning .card-title, .card.bg-info .card-title, .card.bg-dark .card-title {
     color: #fff
 }
 
-.card.bg-primary .card-text,.card.bg-secondary .card-text,.card.bg-danger .card-text,.card.bg-success .card-text,.card.bg-warning .card-text,.card.bg-info .card-text,.card.bg-dark .card-text {
-    color: rgba(255,255,255,0.7)
+.card.bg-primary .card-text, .card.bg-secondary .card-text, .card.bg-danger .card-text, .card.bg-success .card-text, .card.bg-warning .card-text, .card.bg-info .card-text, .card.bg-dark .card-text {
+    color: rgba(255, 255, 255, 0.7)
 }
 
-.card.bg-primary .card-header,.card.bg-secondary .card-header,.card.bg-danger .card-header,.card.bg-success .card-header,.card.bg-warning .card-header,.card.bg-info .card-header,.card.bg-dark .card-header {
+.card.bg-primary .card-header, .card.bg-secondary .card-header, .card.bg-danger .card-header, .card.bg-success .card-header, .card.bg-warning .card-header, .card.bg-info .card-header, .card.bg-dark .card-header {
     color: #fff;
-    border-bottom: 1px solid rgba(255,255,255,0.15)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
 }
 
 .card.bg-light {
@@ -1937,7 +1941,7 @@ ion-icon {
 }
 
 .btn.shadowed {
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08) !important
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08) !important
 }
 
 .btn-lg {
@@ -2000,12 +2004,12 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
     background: #0564fd !important;
     border-color: #0564fd !important
 }
 
-.btn-primary.disabled,.btn-primary:disabled {
+.btn-primary.disabled, .btn-primary:disabled {
     background: #1E74FD;
     border-color: #1E74FD;
     opacity: 0.5
@@ -2017,12 +2021,12 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active,.btn-secondary.active {
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active {
     background: #617085 !important;
     border-color: #617085 !important
 }
 
-.btn-secondary.disabled,.btn-secondary:disabled {
+.btn-secondary.disabled, .btn-secondary:disabled {
     background: #6C7C94;
     border-color: #6C7C94;
     opacity: 0.5
@@ -2034,12 +2038,12 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-success:hover,.btn-success:focus,.btn-success:active,.btn-success.active {
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
     background: #2fb350 !important;
     border-color: #2fb350 !important
 }
 
-.btn-success.disabled,.btn-success:disabled {
+.btn-success.disabled, .btn-success:disabled {
     background: #34C759;
     border-color: #34C759;
     opacity: 0.5
@@ -2051,12 +2055,12 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-danger:hover,.btn-danger:focus,.btn-danger:active,.btn-danger.active {
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
     background: #ea2f1c !important;
     border-color: #ea2f1c !important
 }
 
-.btn-danger.disabled,.btn-danger:disabled {
+.btn-danger.disabled, .btn-danger:disabled {
     background: #EC4433;
     border-color: #EC4433;
     opacity: 0.5
@@ -2069,12 +2073,12 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-warning:hover,.btn-warning:focus,.btn-warning:active,.btn-warning.active {
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
     background: #e58600 !important;
     border-color: #e58600 !important
 }
 
-.btn-warning.disabled,.btn-warning:disabled {
+.btn-warning.disabled, .btn-warning:disabled {
     background: #FE9500;
     border-color: #FE9500;
     opacity: 0.5
@@ -2090,12 +2094,12 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-info:hover,.btn-info:focus,.btn-info:active,.btn-info.active {
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
     background: #5027b5 !important;
     border-color: #5027b5 !important
 }
 
-.btn-info.disabled,.btn-info:disabled {
+.btn-info.disabled, .btn-info:disabled {
     background: #592BCA;
     border-color: #592BCA;
     opacity: 0.5
@@ -2107,32 +2111,32 @@ ion-icon {
     color: #ffffff !important
 }
 
-.btn-dark:hover,.btn-dark:focus,.btn-dark:active,.btn-dark.active {
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active {
     background: #262626 !important;
     border-color: #262626 !important
 }
 
-.btn-dark.disabled,.btn-dark:disabled {
+.btn-dark.disabled, .btn-dark:disabled {
     background: #333;
     border-color: #333;
     opacity: 0.5
 }
 
 .btn-light {
-    background: rgba(255,255,255,0.5) !important;
-    border-color: rgba(255,255,255,0.5) !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
     color: #ffffff !important;
     color: #141515 !important
 }
 
-.btn-light:hover,.btn-light:focus,.btn-light:active,.btn-light.active {
-    background: rgba(242,242,242,0.5) !important;
-    border-color: rgba(242,242,242,0.5) !important
+.btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.active {
+    background: rgba(242, 242, 242, 0.5) !important;
+    border-color: rgba(242, 242, 242, 0.5) !important
 }
 
-.btn-light.disabled,.btn-light:disabled {
-    background: rgba(255,255,255,0.5);
-    border-color: rgba(255,255,255,0.5);
+.btn-light.disabled, .btn-light:disabled {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
     opacity: 0.5
 }
 
@@ -2144,8 +2148,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-primary:hover,.btn-outline-primary:active {
-    background: rgba(30,116,253,0.15) !important;
+.btn-outline-primary:hover, .btn-outline-primary:active {
+    background: rgba(30, 116, 253, 0.15) !important;
     border-color: #1E74FD !important;
     color: #1E74FD !important
 }
@@ -2156,7 +2160,7 @@ ion-icon {
     border-color: #1E74FD !important
 }
 
-.btn-outline-primary.disabled,.btn-outline-primary:disabled {
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
     color: #1E74FD !important;
     border-color: #1E74FD !important;
     background: transparent !important;
@@ -2171,8 +2175,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-secondary:hover,.btn-outline-secondary:active {
-    background: rgba(108,124,148,0.15) !important;
+.btn-outline-secondary:hover, .btn-outline-secondary:active {
+    background: rgba(108, 124, 148, 0.15) !important;
     border-color: #6C7C94 !important;
     color: #6C7C94 !important
 }
@@ -2183,7 +2187,7 @@ ion-icon {
     border-color: #6C7C94 !important
 }
 
-.btn-outline-secondary.disabled,.btn-outline-secondary:disabled {
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
     color: #6C7C94 !important;
     border-color: #6C7C94 !important;
     background: transparent !important;
@@ -2198,8 +2202,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-success:hover,.btn-outline-success:active {
-    background: rgba(52,199,89,0.15) !important;
+.btn-outline-success:hover, .btn-outline-success:active {
+    background: rgba(52, 199, 89, 0.15) !important;
     border-color: #34C759 !important;
     color: #34C759 !important
 }
@@ -2210,7 +2214,7 @@ ion-icon {
     border-color: #34C759 !important
 }
 
-.btn-outline-success.disabled,.btn-outline-success:disabled {
+.btn-outline-success.disabled, .btn-outline-success:disabled {
     color: #34C759 !important;
     border-color: #34C759 !important;
     background: transparent !important;
@@ -2225,8 +2229,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-danger:hover,.btn-outline-danger:active {
-    background: rgba(236,68,51,0.15) !important;
+.btn-outline-danger:hover, .btn-outline-danger:active {
+    background: rgba(236, 68, 51, 0.15) !important;
     border-color: #EC4433 !important;
     color: #EC4433 !important
 }
@@ -2237,7 +2241,7 @@ ion-icon {
     border-color: #EC4433 !important
 }
 
-.btn-outline-danger.disabled,.btn-outline-danger:disabled {
+.btn-outline-danger.disabled, .btn-outline-danger:disabled {
     color: #EC4433 !important;
     border-color: #EC4433 !important;
     background: transparent !important;
@@ -2252,8 +2256,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-warning:hover,.btn-outline-warning:active {
-    background: rgba(254,149,0,0.15) !important;
+.btn-outline-warning:hover, .btn-outline-warning:active {
+    background: rgba(254, 149, 0, 0.15) !important;
     border-color: #FE9500 !important;
     color: #FE9500 !important
 }
@@ -2264,7 +2268,7 @@ ion-icon {
     border-color: #FE9500 !important
 }
 
-.btn-outline-warning.disabled,.btn-outline-warning:disabled {
+.btn-outline-warning.disabled, .btn-outline-warning:disabled {
     color: #FE9500 !important;
     border-color: #FE9500 !important;
     background: transparent !important;
@@ -2279,8 +2283,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-info:hover,.btn-outline-info:active {
-    background: rgba(89,43,202,0.15) !important;
+.btn-outline-info:hover, .btn-outline-info:active {
+    background: rgba(89, 43, 202, 0.15) !important;
     border-color: #592BCA !important;
     color: #592BCA !important
 }
@@ -2291,7 +2295,7 @@ ion-icon {
     border-color: #592BCA !important
 }
 
-.btn-outline-info.disabled,.btn-outline-info:disabled {
+.btn-outline-info.disabled, .btn-outline-info:disabled {
     color: #592BCA !important;
     border-color: #592BCA !important;
     background: transparent !important;
@@ -2306,8 +2310,8 @@ ion-icon {
     transition: 0.2s all
 }
 
-.btn-outline-light:hover,.btn-outline-light:active {
-    background: rgba(255,255,255,0.15) !important;
+.btn-outline-light:hover, .btn-outline-light:active {
+    background: rgba(255, 255, 255, 0.15) !important;
     border-color: #fff !important;
     color: #fff !important
 }
@@ -2318,7 +2322,7 @@ ion-icon {
     border-color: #fff !important
 }
 
-.btn-outline-light.disabled,.btn-outline-light:disabled {
+.btn-outline-light.disabled, .btn-outline-light:disabled {
     color: #fff !important;
     border-color: #fff !important;
     background: transparent !important;
@@ -2340,13 +2344,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-primary:active,.btn-text-primary.active {
-    background: rgba(30,116,253,0.15) !important;
+.btn-text-primary:active, .btn-text-primary.active {
+    background: rgba(30, 116, 253, 0.15) !important;
     border-color: transparent !important;
     color: #1E74FD !important
 }
 
-.btn-text-primary.disabled,.btn-text-primary:disabled {
+.btn-text-primary.disabled, .btn-text-primary:disabled {
     color: #1E74FD !important;
     border-color: #1E74FD !important;
     background: transparent !important;
@@ -2364,13 +2368,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-secondary:active,.btn-text-secondary.active {
-    background: rgba(108,124,148,0.15) !important;
+.btn-text-secondary:active, .btn-text-secondary.active {
+    background: rgba(108, 124, 148, 0.15) !important;
     border-color: transparent !important;
     color: #6C7C94 !important
 }
 
-.btn-text-secondary.disabled,.btn-text-secondary:disabled {
+.btn-text-secondary.disabled, .btn-text-secondary:disabled {
     color: #6C7C94 !important;
     border-color: #6C7C94 !important;
     background: transparent !important;
@@ -2388,13 +2392,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-success:active,.btn-text-success.active {
-    background: rgba(52,199,89,0.15) !important;
+.btn-text-success:active, .btn-text-success.active {
+    background: rgba(52, 199, 89, 0.15) !important;
     border-color: transparent !important;
     color: #34C759 !important
 }
 
-.btn-text-success.disabled,.btn-text-success:disabled {
+.btn-text-success.disabled, .btn-text-success:disabled {
     color: #34C759 !important;
     border-color: #34C759 !important;
     background: transparent !important;
@@ -2412,13 +2416,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-danger:active,.btn-text-danger.active {
-    background: rgba(236,68,51,0.15) !important;
+.btn-text-danger:active, .btn-text-danger.active {
+    background: rgba(236, 68, 51, 0.15) !important;
     border-color: transparent !important;
     color: #EC4433 !important
 }
 
-.btn-text-danger.disabled,.btn-text-danger:disabled {
+.btn-text-danger.disabled, .btn-text-danger:disabled {
     color: #EC4433 !important;
     border-color: #EC4433 !important;
     background: transparent !important;
@@ -2436,13 +2440,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-warning:active,.btn-text-warning.active {
-    background: rgba(254,149,0,0.15) !important;
+.btn-text-warning:active, .btn-text-warning.active {
+    background: rgba(254, 149, 0, 0.15) !important;
     border-color: transparent !important;
     color: #FE9500 !important
 }
 
-.btn-text-warning.disabled,.btn-text-warning:disabled {
+.btn-text-warning.disabled, .btn-text-warning:disabled {
     color: #FE9500 !important;
     border-color: #FE9500 !important;
     background: transparent !important;
@@ -2460,13 +2464,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-info:active,.btn-text-info.active {
-    background: rgba(89,43,202,0.15) !important;
+.btn-text-info:active, .btn-text-info.active {
+    background: rgba(89, 43, 202, 0.15) !important;
     border-color: transparent !important;
     color: #592BCA !important
 }
 
-.btn-text-info.disabled,.btn-text-info:disabled {
+.btn-text-info.disabled, .btn-text-info:disabled {
     color: #592BCA !important;
     border-color: #592BCA !important;
     background: transparent !important;
@@ -2478,9 +2482,9 @@ ion-icon {
     color: #fff
 }
 
-.btn-text-light:hover,.btn-text-light:active,.btn-text-light.active {
+.btn-text-light:hover, .btn-text-light:active, .btn-text-light.active {
     color: #fff;
-    background: rgba(255,255,255,0.1)
+    background: rgba(255, 255, 255, 0.1)
 }
 
 .btn-text-dark {
@@ -2494,13 +2498,13 @@ ion-icon {
     background: transparent
 }
 
-.btn-text-dark:active,.btn-text-dark.active {
-    background: rgba(20,21,21,0.15) !important;
+.btn-text-dark:active, .btn-text-dark.active {
+    background: rgba(20, 21, 21, 0.15) !important;
     border-color: transparent !important;
     color: #141515 !important
 }
 
-.btn-text-dark.disabled,.btn-text-dark:disabled {
+.btn-text-dark.disabled, .btn-text-dark:disabled {
     color: #141515 !important;
     border-color: #141515 !important;
     background: transparent !important;
@@ -2516,7 +2520,7 @@ ion-icon {
     background: #39579b
 }
 
-.btn-facebook:hover,.btn-facebook:active {
+.btn-facebook:hover, .btn-facebook:active {
     background: #324d88
 }
 
@@ -2530,7 +2534,7 @@ ion-icon {
     background: #049ff6
 }
 
-.btn-twitter:hover,.btn-twitter:active {
+.btn-twitter:hover, .btn-twitter:active {
     background: #048fdd
 }
 
@@ -2544,7 +2548,7 @@ ion-icon {
     background: #df237b
 }
 
-.btn-instagram:hover,.btn-instagram:active {
+.btn-instagram:hover, .btn-instagram:active {
     background: #cb1e6f
 }
 
@@ -2558,7 +2562,7 @@ ion-icon {
     background: #0075aa
 }
 
-.btn-linkedin:hover,.btn-linkedin:active {
+.btn-linkedin:hover, .btn-linkedin:active {
     background: #006391
 }
 
@@ -2572,7 +2576,7 @@ ion-icon {
     background: #923cff
 }
 
-.btn-twitch:hover,.btn-twitch:active {
+.btn-twitch:hover, .btn-twitch:active {
     background: #8423ff
 }
 
@@ -2586,7 +2590,7 @@ ion-icon {
     background: #0ad561
 }
 
-.btn-whatsapp:hover,.btn-whatsapp:active {
+.btn-whatsapp:hover, .btn-whatsapp:active {
     background: #09bd56
 }
 
@@ -2600,7 +2604,7 @@ ion-icon {
     background: #FF0000
 }
 
-.btn-youtube:hover,.btn-youtube:active {
+.btn-youtube:hover, .btn-youtube:active {
     background: #e60000
 }
 
@@ -2614,7 +2618,7 @@ ion-icon {
     background: #292929
 }
 
-.btn-amazon:hover,.btn-amazon:active {
+.btn-amazon:hover, .btn-amazon:active {
     background: #1c1c1c
 }
 
@@ -2628,7 +2632,7 @@ ion-icon {
     background: #7DD159
 }
 
-.btn-android:hover,.btn-android:active {
+.btn-android:hover, .btn-android:active {
     background: #6dcb45
 }
 
@@ -2642,7 +2646,7 @@ ion-icon {
     background: #000
 }
 
-.btn-apple:hover,.btn-apple:active {
+.btn-apple:hover, .btn-apple:active {
     background: #222
 }
 
@@ -2656,7 +2660,7 @@ ion-icon {
     background: #EC4989
 }
 
-.btn-dribbble:hover,.btn-dribbble:active {
+.btn-dribbble:hover, .btn-dribbble:active {
     background: #ea327a
 }
 
@@ -2670,7 +2674,7 @@ ion-icon {
     background: #00A8F3
 }
 
-.btn-skype:hover,.btn-skype:active {
+.btn-skype:hover, .btn-skype:active {
     background: #0096da
 }
 
@@ -2684,7 +2688,7 @@ ion-icon {
     background: #F12A2C
 }
 
-.btn-pinterest:hover,.btn-pinterest:active {
+.btn-pinterest:hover, .btn-pinterest:active {
     background: #ef1214
 }
 
@@ -2698,7 +2702,7 @@ ion-icon {
     background: #005CFF
 }
 
-.btn-dropbox:hover,.btn-dropbox:active {
+.btn-dropbox:hover, .btn-dropbox:active {
     background: #0053e6
 }
 
@@ -2712,7 +2716,7 @@ ion-icon {
     background: #F99400
 }
 
-.btn-bitcoin:hover,.btn-bitcoin:active {
+.btn-bitcoin:hover, .btn-bitcoin:active {
     background: #e08500
 }
 
@@ -2726,7 +2730,7 @@ ion-icon {
     background: #323131
 }
 
-.btn-github:hover,.btn-github:active {
+.btn-github:hover, .btn-github:active {
     background: #252424
 }
 
@@ -2762,7 +2766,7 @@ ion-icon {
 }
 
 .accordion .accordion-header .btn:active {
-    background: rgba(225,225,225,0.3) !important
+    background: rgba(225, 225, 225, 0.3) !important
 }
 
 .accordion .accordion-header .btn:after {
@@ -2862,12 +2866,12 @@ ion-icon {
     color: #A1A1A2
 }
 
-.modal.action-sheet .close-button:hover,.modal.action-sheet .close-button:active {
+.modal.action-sheet .close-button:hover, .modal.action-sheet .close-button:active {
     color: #4F5050
 }
 
 .modal.action-sheet .modal-content {
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     border: 0;
     border-radius: 0;
     padding-bottom: env(safe-area-inset-bottom)
@@ -2904,11 +2908,11 @@ ion-icon {
     margin: 0
 }
 
-.action-button-list>li {
+.action-button-list > li {
     display: block
 }
 
-.action-button-list>li .btn {
+.action-button-list > li .btn {
     padding: 0;
     display: flex;
     width: 100%;
@@ -2922,49 +2926,49 @@ ion-icon {
     padding: 10px 16px
 }
 
-.action-button-list>li .btn:active,.action-button-list>li .btn.active {
-    background: rgba(225,225,225,0.3)
+.action-button-list > li .btn:active, .action-button-list > li .btn.active {
+    background: rgba(225, 225, 225, 0.3)
 }
 
-.action-button-list>li .btn.text-primary {
+.action-button-list > li .btn.text-primary {
     color: #1E74FD !important
 }
 
-.action-button-list>li .btn.text-secondary {
+.action-button-list > li .btn.text-secondary {
     color: #6C7C94 !important
 }
 
-.action-button-list>li .btn.text-danger {
+.action-button-list > li .btn.text-danger {
     color: #EC4433 !important
 }
 
-.action-button-list>li .btn.text-success {
+.action-button-list > li .btn.text-success {
     color: #34C759 !important
 }
 
-.action-button-list>li .btn.text-warning {
+.action-button-list > li .btn.text-warning {
     color: #FE9500 !important
 }
 
-.action-button-list>li .btn.text-info {
+.action-button-list > li .btn.text-info {
     color: #592BCA !important
 }
 
-.action-button-list>li .btn.text-light {
+.action-button-list > li .btn.text-light {
     color: #FFF !important
 }
 
-.action-button-list>li .btn.text-dark {
+.action-button-list > li .btn.text-dark {
     color: #141515 !important
 }
 
-.action-button-list>li .btn>span {
+.action-button-list > li .btn > span {
     display: flex;
     align-items: center;
     justify-content: flex-start
 }
 
-.action-button-list>li .btn .icon,.action-button-list>li .btn ion-icon {
+.action-button-list > li .btn .icon, .action-button-list > li .btn ion-icon {
     width: 24px !important;
     height: 24px;
     display: inline-flex;
@@ -2976,7 +2980,7 @@ ion-icon {
     line-height: 1em
 }
 
-.action-button-list>li.action-divider {
+.action-button-list > li.action-divider {
     height: 1px;
     background: #E1E1E1
 }
@@ -2992,7 +2996,7 @@ ion-icon {
     padding-bottom: 0
 }
 
-.action-sheet.inset .action-button-list>li:last-child .btn {
+.action-sheet.inset .action-button-list > li:last-child .btn {
     border-radius: 0 0 16px 16px !important
 }
 
@@ -3030,8 +3034,8 @@ ion-icon {
     font-size: 15px
 }
 
-.dialogbox .modal-dialog .modal-content .btn-list .btn:hover,.dialogbox .modal-dialog .modal-content .btn-list .btn:focus,.dialogbox .modal-dialog .modal-content .btn-list .btn:active,.dialogbox .modal-dialog .modal-content .btn-list .btn.active {
-    background: rgba(225,225,225,0.3) !important
+.dialogbox .modal-dialog .modal-content .btn-list .btn:hover, .dialogbox .modal-dialog .modal-content .btn-list .btn:focus, .dialogbox .modal-dialog .modal-content .btn-list .btn:active, .dialogbox .modal-dialog .modal-content .btn-list .btn.active {
+    background: rgba(225, 225, 225, 0.3) !important
 }
 
 .dialogbox .modal-dialog .modal-content .btn-list .btn:last-child {
@@ -3052,8 +3056,8 @@ ion-icon {
     font-size: 15px
 }
 
-.dialogbox .modal-dialog .modal-content .btn-inline .btn:hover,.dialogbox .modal-dialog .modal-content .btn-inline .btn:focus,.dialogbox .modal-dialog .modal-content .btn-inline .btn:active,.dialogbox .modal-dialog .modal-content .btn-inline .btn.active {
-    background: rgba(225,225,225,0.3) !important
+.dialogbox .modal-dialog .modal-content .btn-inline .btn:hover, .dialogbox .modal-dialog .modal-content .btn-inline .btn:focus, .dialogbox .modal-dialog .modal-content .btn-inline .btn:active, .dialogbox .modal-dialog .modal-content .btn-inline .btn.active {
+    background: rgba(225, 225, 225, 0.3) !important
 }
 
 .dialogbox .modal-dialog .modal-content .btn-inline .btn:last-child {
@@ -3186,7 +3190,7 @@ ion-icon {
     height: 100vh;
     overflow: auto;
     padding-top: env(safe-area-inset-top);
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -5px rgba(0,0,0,0.2)
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)
 }
 
 .panelbox .modal-dialog .modal-content .modal-header {
@@ -3196,7 +3200,7 @@ ion-icon {
     align-items: center;
     justify-content: space-between;
     min-height: 56px;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     margin-bottom: 6px
 }
 
@@ -3236,15 +3240,15 @@ ion-icon {
     border-radius: 6px
 }
 
-.dropdown .dropdown-menu,.dropup .dropdown-menu {
+.dropdown .dropdown-menu, .dropup .dropdown-menu {
     border: 1px solid transparent;
     min-width: 120px;
     padding: 8px 0;
     border-radius: 6px;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
-.dropdown .dropdown-menu .dropdown-item,.dropup .dropdown-menu .dropdown-item {
+.dropdown .dropdown-menu .dropdown-item, .dropup .dropdown-menu .dropdown-item {
     padding: 12px 16px;
     line-height: 1.2em;
     color: #141515;
@@ -3253,28 +3257,28 @@ ion-icon {
     align-items: center
 }
 
-.dropdown .dropdown-menu .dropdown-item:hover,.dropdown .dropdown-menu .dropdown-item:active,.dropup .dropdown-menu .dropdown-item:hover,.dropup .dropdown-menu .dropdown-item:active {
-    background: rgba(225,225,225,0.5);
+.dropdown .dropdown-menu .dropdown-item:hover, .dropdown .dropdown-menu .dropdown-item:active, .dropup .dropdown-menu .dropdown-item:hover, .dropup .dropdown-menu .dropdown-item:active {
+    background: rgba(225, 225, 225, 0.5);
     color: #141515
 }
 
-.dropdown .dropdown-menu .dropdown-divider,.dropup .dropdown-menu .dropdown-divider {
+.dropdown .dropdown-menu .dropdown-divider, .dropup .dropdown-menu .dropdown-divider {
     border-top: 1px solid #E1E1E1
 }
 
-.dropdown .dropdown-menu .dropdown-header,.dropup .dropdown-menu .dropdown-header {
+.dropdown .dropdown-menu .dropdown-header, .dropup .dropdown-menu .dropdown-header {
     padding: 9px 16px;
     color: #4F5050;
     font-weight: 400;
     font-size: 11px
 }
 
-.dropdown .dropdown-menu .text,.dropup .dropdown-menu .text {
+.dropdown .dropdown-menu .text, .dropup .dropdown-menu .text {
     padding: 9px 16px;
     color: #4F5050
 }
 
-.dropdown .dropdown-menu .icon,.dropdown .dropdown-menu ion-icon,.dropup .dropdown-menu .icon,.dropup .dropdown-menu ion-icon {
+.dropdown .dropdown-menu .icon, .dropdown .dropdown-menu ion-icon, .dropup .dropdown-menu .icon, .dropup .dropdown-menu ion-icon {
     margin-right: 10px;
     width: 22px;
     height: 22px;
@@ -3326,7 +3330,7 @@ ion-icon {
 }
 
 .bg-light {
-    background: rgba(255,255,255,0.5) !important
+    background: rgba(255, 255, 255, 0.5) !important
 }
 
 .bg-dark {
@@ -3339,7 +3343,7 @@ a.bg-primary {
     color: #FFF !important
 }
 
-a.bg-primary:hover,a.bg-primary:active {
+a.bg-primary:hover, a.bg-primary:active {
     background: #0564fd !important
 }
 
@@ -3348,7 +3352,7 @@ a.bg-secondary {
     color: #FFF !important
 }
 
-a.bg-secondary:hover,a.bg-secondary:active {
+a.bg-secondary:hover, a.bg-secondary:active {
     background: #617085 !important
 }
 
@@ -3357,7 +3361,7 @@ a.bg-success {
     color: #FFF !important
 }
 
-a.bg-success:hover,a.bg-success:active {
+a.bg-success:hover, a.bg-success:active {
     background: #2fb350 !important
 }
 
@@ -3366,7 +3370,7 @@ a.bg-danger {
     color: #FFF !important
 }
 
-a.bg-danger:hover,a.bg-danger:active {
+a.bg-danger:hover, a.bg-danger:active {
     background: #ea2f1c !important
 }
 
@@ -3375,7 +3379,7 @@ a.bg-warning {
     color: #FFF !important
 }
 
-a.bg-warning:hover,a.bg-warning:active {
+a.bg-warning:hover, a.bg-warning:active {
     background: #e58600 !important
 }
 
@@ -3384,16 +3388,16 @@ a.bg-info {
     color: #FFF !important
 }
 
-a.bg-info:hover,a.bg-info:active {
+a.bg-info:hover, a.bg-info:active {
     background: #5027b5 !important
 }
 
 a.bg-light {
-    background: rgba(255,255,255,0.5) !important
+    background: rgba(255, 255, 255, 0.5) !important
 }
 
-a.bg-light:hover,a.bg-light:active {
-    background: rgba(242,242,242,0.5) !important
+a.bg-light:hover, a.bg-light:active {
+    background: rgba(242, 242, 242, 0.5) !important
 }
 
 a.bg-dark {
@@ -3401,39 +3405,39 @@ a.bg-dark {
     color: #FFF !important
 }
 
-a.bg-dark:hover,a.bg-dark:active {
+a.bg-dark:hover, a.bg-dark:active {
     background: #151515 !important
 }
 
-.text-primary,a.text-primary {
+.text-primary, a.text-primary {
     color: #1E74FD !important
 }
 
-.text-secondary,a.text-secondary {
+.text-secondary, a.text-secondary {
     color: #6C7C94 !important
 }
 
-.text-success,a.text-success {
+.text-success, a.text-success {
     color: #34C759 !important
 }
 
-.text-danger,a.text-danger {
+.text-danger, a.text-danger {
     color: #EC4433 !important
 }
 
-.text-warning,a.text-warning {
+.text-warning, a.text-warning {
     color: #FE9500 !important
 }
 
-.text-info,a.text-info {
+.text-info, a.text-info {
     color: #592BCA !important
 }
 
-.text-light,a.text-light {
+.text-light, a.text-light {
     color: #FFF !important
 }
 
-.text-dark,a.text-dark {
+.text-dark, a.text-dark {
     color: #141515 !important
 }
 
@@ -3760,7 +3764,7 @@ a.bg-dark:hover,a.bg-dark:active {
     font-weight: 500
 }
 
-.table td,.table th {
+.table td, .table th {
     border-top: 1px solid #E1E1E1
 }
 
@@ -3773,24 +3777,24 @@ a.bg-dark:hover,a.bg-dark:active {
     border-top: 0
 }
 
-.table-dark td,.table-dark th {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7)
+.table-dark td, .table-dark th {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7)
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background: rgba(225,225,225,0.4)
+    background: rgba(225, 225, 225, 0.4)
 }
 
 .table-bordered {
     border-radius: 0px
 }
 
-.table-bordered td,.table-bordered th {
+.table-bordered td, .table-bordered th {
     border-color: #E1E1E1
 }
 
-textarea,.form-control {
+textarea, .form-control {
     background-clip: padding-box;
     background-image: linear-gradient(transparent, transparent);
     -webkit-appearance: none;
@@ -3836,7 +3840,7 @@ textarea,.form-control {
     display: none
 }
 
-.form-group .clear-input:hover,.form-group .clear-input:active {
+.form-group .clear-input:hover, .form-group .clear-input:active {
     opacity: 0.8
 }
 
@@ -3857,7 +3861,7 @@ textarea,.form-control {
     margin: 0
 }
 
-.form-group.basic .form-control,.form-group.basic .custom-select {
+.form-group.basic .form-control, .form-group.basic .custom-select {
     background: transparent;
     border: none;
     border-bottom: 1px solid #E1E1E1;
@@ -3868,7 +3872,7 @@ textarea,.form-control {
     font-size: 15px
 }
 
-.form-group.basic .form-control:focus,.form-group.basic .custom-select:focus {
+.form-group.basic .form-control:focus, .form-group.basic .custom-select:focus {
     border-bottom-color: #1E74FD;
     box-shadow: inset 0 -1px 0 0 #1E74FD
 }
@@ -3965,7 +3969,7 @@ textarea,.form-control {
     bottom: 0;
     right: 0;
     overflow: hidden;
-    background-color: rgba(225,225,225,0.2);
+    background-color: rgba(225, 225, 225, 0.2);
     background-size: 45px 58px;
     border: 1px solid #E1E1E1;
     border-radius: 6px;
@@ -3992,7 +3996,8 @@ textarea,.form-control {
 }
 
 .custom-file-upload label span ion-icon {
-    --ionicon-stroke-width: 32px;font-size: 48px;
+    --ionicon-stroke-width: 32px;
+    font-size: 48px;
     color: #A1A1A2
 }
 
@@ -4024,7 +4029,7 @@ textarea,.form-control {
     position: absolute;
     left: 50%;
     top: calc(50% + -22px);
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     transform: translate(-50%, -50%)
 }
 
@@ -4060,7 +4065,7 @@ textarea,.form-control {
 
 .nav-tabs.style1 {
     border: 0;
-    background: rgba(225,225,225,0.4);
+    background: rgba(225, 225, 225, 0.4);
     border-radius: 6px;
     display: flex
 }
@@ -4092,7 +4097,7 @@ textarea,.form-control {
     margin: 4px !important
 }
 
-.nav-tabs.style1 .nav-item .nav-link .icon,.nav-tabs.style1 .nav-item .nav-link ion-icon {
+.nav-tabs.style1 .nav-item .nav-link .icon, .nav-tabs.style1 .nav-item .nav-link ion-icon {
     margin-right: 8px;
     margin-left: 8px;
     line-height: 1em;
@@ -4101,7 +4106,7 @@ textarea,.form-control {
 
 .nav-tabs.style1 .nav-item .nav-link.active {
     color: #141515;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .nav-tabs.lined {
@@ -4140,7 +4145,7 @@ textarea,.form-control {
     border-bottom-color: 2px solid
 }
 
-.nav-tabs.lined .nav-item .nav-link .icon,.nav-tabs.lined .nav-item .nav-link ion-icon {
+.nav-tabs.lined .nav-item .nav-link .icon, .nav-tabs.lined .nav-item .nav-link ion-icon {
     margin-right: 8px;
     margin-left: 8px;
     line-height: 1em;
@@ -4192,8 +4197,6 @@ textarea,.form-control {
 }
 
 
-
-
 .custom-control .custom-control-input:checked ~ .custom-control-label:after {
     width: 16px;
     height: 16px;
@@ -4235,10 +4238,10 @@ textarea,.form-control {
 }
 
 .input-list .custom-control-label:active {
-    background: rgba(225,225,225,0.3)
+    background: rgba(225, 225, 225, 0.3)
 }
 
-.input-list .custom-control-label:before,.input-list .custom-control-label:after {
+.input-list .custom-control-label:before, .input-list .custom-control-label:after {
     top: 50%;
     left: 16px;
     transform: translate(0%, -50%);
@@ -4280,11 +4283,11 @@ textarea,.form-control {
     left: 3px;
     top: 4px;
     background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15),0 2px 1px 0 rgba(0,0,0,0.05)
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 2px 1px 0 rgba(0, 0, 0, 0.05)
 }
 
 .custom-switch .custom-control-label:active:before {
-    background: rgba(225,225,225,0.5) !important
+    background: rgba(225, 225, 225, 0.5) !important
 }
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label:before {
@@ -4317,7 +4320,7 @@ textarea,.form-control {
     padding: 10px 16px;
     background: #FFF;
     border-radius: 16px 16px 16px 0;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     color: #141515;
     display: inline-block;
     margin-top: 4px;
@@ -4521,7 +4524,7 @@ textarea,.form-control {
     border-radius: 100px
 }
 
-.chip .chip-delete:hover,.chip .chip-delete:active {
+.chip .chip-delete:hover, .chip .chip-delete:active {
     opacity: 1
 }
 
@@ -4700,7 +4703,7 @@ textarea,.form-control {
     background: #fff;
     border-bottom: 1px solid #FFF;
     position: fixed;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     left: 0;
     top: -50%;
     right: 0;
@@ -4747,7 +4750,7 @@ textarea,.form-control {
     top: 0
 }
 
-.search-result li>.item,.search-result li>a {
+.search-result li > .item, .search-result li > a {
     padding-top: 20px;
     padding-bottom: 20px
 }
@@ -4790,7 +4793,7 @@ textarea,.form-control {
     right: 0
 }
 
-.carousel-button-footer>div {
+.carousel-button-footer > div {
     width: 100%
 }
 
@@ -4983,25 +4986,25 @@ textarea,.form-control {
     color: #141515
 }
 
-.extraHeader.bg-primary .form-wizard-section:before,.extraHeader.bg-secondary .form-wizard-section:before,.extraHeader.bg-success .form-wizard-section:before,.extraHeader.bg-danger .form-wizard-section:before,.extraHeader.bg-warning .form-wizard-section:before,.extraHeader.bg-dark .form-wizard-section:before {
+.extraHeader.bg-primary .form-wizard-section:before, .extraHeader.bg-secondary .form-wizard-section:before, .extraHeader.bg-success .form-wizard-section:before, .extraHeader.bg-danger .form-wizard-section:before, .extraHeader.bg-warning .form-wizard-section:before, .extraHeader.bg-dark .form-wizard-section:before {
     background: transparent
 }
 
-.extraHeader.bg-primary .form-wizard-section .button-item strong,.extraHeader.bg-secondary .form-wizard-section .button-item strong,.extraHeader.bg-success .form-wizard-section .button-item strong,.extraHeader.bg-danger .form-wizard-section .button-item strong,.extraHeader.bg-warning .form-wizard-section .button-item strong,.extraHeader.bg-dark .form-wizard-section .button-item strong {
-    background: rgba(255,255,255,0.4);
+.extraHeader.bg-primary .form-wizard-section .button-item strong, .extraHeader.bg-secondary .form-wizard-section .button-item strong, .extraHeader.bg-success .form-wizard-section .button-item strong, .extraHeader.bg-danger .form-wizard-section .button-item strong, .extraHeader.bg-warning .form-wizard-section .button-item strong, .extraHeader.bg-dark .form-wizard-section .button-item strong {
+    background: rgba(255, 255, 255, 0.4);
     color: #FFF
 }
 
-.extraHeader.bg-primary .form-wizard-section .button-item p,.extraHeader.bg-secondary .form-wizard-section .button-item p,.extraHeader.bg-success .form-wizard-section .button-item p,.extraHeader.bg-danger .form-wizard-section .button-item p,.extraHeader.bg-warning .form-wizard-section .button-item p,.extraHeader.bg-dark .form-wizard-section .button-item p {
-    color: rgba(255,255,255,0.7)
+.extraHeader.bg-primary .form-wizard-section .button-item p, .extraHeader.bg-secondary .form-wizard-section .button-item p, .extraHeader.bg-success .form-wizard-section .button-item p, .extraHeader.bg-danger .form-wizard-section .button-item p, .extraHeader.bg-warning .form-wizard-section .button-item p, .extraHeader.bg-dark .form-wizard-section .button-item p {
+    color: rgba(255, 255, 255, 0.7)
 }
 
-.extraHeader.bg-primary .form-wizard-section .button-item.active strong,.extraHeader.bg-secondary .form-wizard-section .button-item.active strong,.extraHeader.bg-success .form-wizard-section .button-item.active strong,.extraHeader.bg-danger .form-wizard-section .button-item.active strong,.extraHeader.bg-warning .form-wizard-section .button-item.active strong,.extraHeader.bg-dark .form-wizard-section .button-item.active strong {
-    background: rgba(0,0,0,0.5);
+.extraHeader.bg-primary .form-wizard-section .button-item.active strong, .extraHeader.bg-secondary .form-wizard-section .button-item.active strong, .extraHeader.bg-success .form-wizard-section .button-item.active strong, .extraHeader.bg-danger .form-wizard-section .button-item.active strong, .extraHeader.bg-warning .form-wizard-section .button-item.active strong, .extraHeader.bg-dark .form-wizard-section .button-item.active strong {
+    background: rgba(0, 0, 0, 0.5);
     color: #fff
 }
 
-.extraHeader.bg-primary .form-wizard-section .button-item.active p,.extraHeader.bg-secondary .form-wizard-section .button-item.active p,.extraHeader.bg-success .form-wizard-section .button-item.active p,.extraHeader.bg-danger .form-wizard-section .button-item.active p,.extraHeader.bg-warning .form-wizard-section .button-item.active p,.extraHeader.bg-dark .form-wizard-section .button-item.active p {
+.extraHeader.bg-primary .form-wizard-section .button-item.active p, .extraHeader.bg-secondary .form-wizard-section .button-item.active p, .extraHeader.bg-success .form-wizard-section .button-item.active p, .extraHeader.bg-danger .form-wizard-section .button-item.active p, .extraHeader.bg-warning .form-wizard-section .button-item.active p, .extraHeader.bg-dark .form-wizard-section .button-item.active p {
     color: #FFF
 }
 
@@ -5023,8 +5026,8 @@ textarea,.form-control {
 .adbox.fixed .closebutton {
     width: 24px;
     height: 24px;
-    background: rgba(0,0,0,0.4);
-    color: rgba(255,255,255,0.5);
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5047,16 +5050,16 @@ textarea,.form-control {
     height: 250px
 }
 
-.windowsphone-detection,.ios-detection,.android-detection,.non-mobile-detection {
+.windowsphone-detection, .ios-detection, .android-detection, .non-mobile-detection {
     display: none
 }
 
-.windowsphone-detection.is-active,.ios-detection.is-active,.android-detection.is-active,.non-mobile-detection.is-active {
+.windowsphone-detection.is-active, .ios-detection.is-active, .android-detection.is-active, .non-mobile-detection.is-active {
     display: block
 }
 
 .fab-button .fab {
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     width: 56px;
     height: 56px;
     display: flex;
@@ -5067,12 +5070,13 @@ textarea,.form-control {
     color: #fff !important
 }
 
-.fab-button .fab>ion-icon {
+.fab-button .fab > ion-icon {
     font-size: 26px;
     transition: .2s all;
-    --ionicon-stroke-width: 42px}
+    --ionicon-stroke-width: 42px
+}
 
-.fab-button .fab:hover,.fab-button .fab:active {
+.fab-button .fab:hover, .fab-button .fab:active {
     background: #1E74FD
 }
 
@@ -5083,11 +5087,11 @@ textarea,.form-control {
     padding: 0px 24px
 }
 
-.fab-button.text .fab>ion-icon {
+.fab-button.text .fab > ion-icon {
     margin-right: 6px
 }
 
-.fab-button.animate.dropdown.show .fab ion-icon[name=add],.fab-button.animate.dropdown.show .fab ion-icon[name=add-sharp],.fab-button.animate.dropdown.show .fab ion-icon[name=add-outline] {
+.fab-button.animate.dropdown.show .fab ion-icon[name=add], .fab-button.animate.dropdown.show .fab ion-icon[name=add-sharp], .fab-button.animate.dropdown.show .fab ion-icon[name=add-outline] {
     transform: rotate(45deg)
 }
 
@@ -5118,15 +5122,16 @@ textarea,.form-control {
     color: #fff;
     margin: 14px 0;
     border-radius: 100%;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
-.fab-button .dropdown-menu .dropdown-item:hover,.fab-button .dropdown-menu .dropdown-item:active {
+.fab-button .dropdown-menu .dropdown-item:hover, .fab-button .dropdown-menu .dropdown-item:active {
     background: #1E74FD
 }
 
 .fab-button .dropdown-menu .dropdown-item ion-icon {
-    --ionicon-stroke-width: 32px;line-height: 1em;
+    --ionicon-stroke-width: 32px;
+    line-height: 1em;
     margin-right: 0;
     color: #fff !important;
     width: 24px !important;
@@ -5147,7 +5152,7 @@ textarea,.form-control {
     padding: 4px 12px;
     line-height: 1.5em;
     border-radius: 6px;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .fab-button.bottom-right {
@@ -5198,7 +5203,7 @@ textarea,.form-control {
     margin-top: env(safe-area-inset-top)
 }
 
-.fab-button.top-right .dropdown-menu .dropdown-item p,.fab-button.bottom-right .dropdown-menu .dropdown-item p {
+.fab-button.top-right .dropdown-menu .dropdown-item p, .fab-button.bottom-right .dropdown-menu .dropdown-item p {
     left: auto;
     right: 58px
 }
@@ -5218,7 +5223,7 @@ textarea,.form-control {
 
 .notification-dialog.android-style {
     background: #ffffff;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
     padding: 16px 16px
 }
 
@@ -5267,7 +5272,7 @@ textarea,.form-control {
     color: #A1A1A2
 }
 
-.notification-dialog.android-style .notification-header .close-button:hover,.notification-dialog.android-style .notification-header .close-button:active {
+.notification-dialog.android-style .notification-header .close-button:hover, .notification-dialog.android-style .notification-header .close-button:active {
     color: #4F5050
 }
 
@@ -5327,9 +5332,9 @@ textarea,.form-control {
     border-right: 0
 }
 
-.notification-dialog.android-style .notification-footer .notification-button:hover,.notification-dialog.android-style .notification-footer .notification-button:active {
+.notification-dialog.android-style .notification-footer .notification-button:hover, .notification-dialog.android-style .notification-footer .notification-button:active {
     color: #0564fd;
-    background: rgba(225,225,225,0.3)
+    background: rgba(225, 225, 225, 0.3)
 }
 
 .notification-dialog.ios-style {
@@ -5337,7 +5342,7 @@ textarea,.form-control {
     background: #3b4859;
     padding: 0;
     border-radius: 10px;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .notification-dialog.ios-style .notification-header {
@@ -5345,7 +5350,7 @@ textarea,.form-control {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 10px 10px 0 0
 }
 
@@ -5373,7 +5378,7 @@ textarea,.form-control {
     display: inline-flex;
     align-items: center;
     margin-right: 6px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 11px
 }
 
@@ -5388,7 +5393,7 @@ textarea,.form-control {
     opacity: 0.5
 }
 
-.notification-dialog.ios-style .notification-header .close-button:hover,.notification-dialog.ios-style .notification-header .close-button:active {
+.notification-dialog.ios-style .notification-header .close-button:hover, .notification-dialog.ios-style .notification-header .close-button:active {
     opacity: 0.7
 }
 
@@ -5406,7 +5411,7 @@ textarea,.form-control {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    color: rgba(255,255,255,0.75)
+    color: rgba(255, 255, 255, 0.75)
 }
 
 .notification-dialog.ios-style .notification-content .subtitle {
@@ -5422,7 +5427,7 @@ textarea,.form-control {
 }
 
 .notification-dialog.ios-style .notification-footer {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0px -16px -16px -16px;
     padding: 0;
     display: flex;
@@ -5436,7 +5441,7 @@ textarea,.form-control {
     align-items: center;
     justify-content: center;
     font-size: 13px;
-    border-right: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 6px
 }
 
@@ -5451,9 +5456,9 @@ textarea,.form-control {
     border-right: 0
 }
 
-.notification-dialog.ios-style .notification-footer .notification-button:hover,.notification-dialog.ios-style .notification-footer .notification-button:active {
+.notification-dialog.ios-style .notification-footer .notification-button:hover, .notification-dialog.ios-style .notification-footer .notification-button:active {
     color: #0564fd;
-    background: rgba(255,255,255,0.02)
+    background: rgba(255, 255, 255, 0.02)
 }
 
 .toast-box {
@@ -5468,7 +5473,7 @@ textarea,.form-control {
     transition: 0.2s all;
     background: #2b3543;
     font-size: 13px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
     padding: 10px 16px;
     line-height: 1.4em;
     display: flex;
@@ -5661,7 +5666,7 @@ textarea,.form-control {
 
 .comment-box .imaged {
     margin: 0 auto 10px auto;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .comment-box .card-title {
@@ -5706,7 +5711,7 @@ textarea,.form-control {
 .pagination.pagination-secondary .page-item .page-link {
     background: #FFF;
     color: #4F5050;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
 .pagination.pagination-rounded .page-item .page-link {
@@ -5742,7 +5747,7 @@ textarea,.form-control {
     margin: 0 -40px
 }
 
-#countDown>div {
+#countDown > div {
     display: inline-block;
     width: 70px;
     border: 1px solid #E1E1E1;
@@ -5752,14 +5757,14 @@ textarea,.form-control {
     padding: 10px 5px
 }
 
-#countDown>div span {
+#countDown > div span {
     display: block;
     font-weight: 400;
     color: #A1A1A2;
     font-size: 10px
 }
 
-#offline-toast,#online-toast {
+#offline-toast, #online-toast {
     color: #FFF;
     font-weight: 500
 }
@@ -5871,10 +5876,10 @@ textarea,.form-control {
     bottom: 70px;
     font-size: 18px;
     margin-bottom: env(safe-area-inset-bottom);
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.08)
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08)
 }
 
-.button.goTop:hover,.button.goTop:active {
+.button.goTop:hover, .button.goTop:active {
     background: #617085
 }
 
@@ -5882,124 +5887,124 @@ textarea,.form-control {
     display: flex
 }
 
-.needs-validation.was-validated .form-group.basic .invalid-feedback,.needs-validation.was-validated .form-group.basic .valid-feedback,.needs-validation.was-validated .form-group.boxed .invalid-feedback,.needs-validation.was-validated .form-group.boxed .valid-feedback {
+.needs-validation.was-validated .form-group.basic .invalid-feedback, .needs-validation.was-validated .form-group.basic .valid-feedback, .needs-validation.was-validated .form-group.boxed .invalid-feedback, .needs-validation.was-validated .form-group.boxed .valid-feedback {
     height: 16px;
     font-size: 11px;
     line-height: 1.4em;
     margin-top: 4px
 }
 
-.needs-validation.was-validated .form-group.basic .invalid-feedback,.needs-validation.was-validated .form-group.boxed .invalid-feedback {
+.needs-validation.was-validated .form-group.basic .invalid-feedback, .needs-validation.was-validated .form-group.boxed .invalid-feedback {
     color: #EC4433
 }
 
-.needs-validation.was-validated .form-group.basic .valid-feedback,.needs-validation.was-validated .form-group.boxed .valid-feedback {
+.needs-validation.was-validated .form-group.basic .valid-feedback, .needs-validation.was-validated .form-group.boxed .valid-feedback {
     color: #34C759
 }
 
-.needs-validation.was-validated .form-group.basic .clear-input,.needs-validation.was-validated .form-group.boxed .clear-input {
+.needs-validation.was-validated .form-group.basic .clear-input, .needs-validation.was-validated .form-group.boxed .clear-input {
     bottom: 20px
 }
 
-.form-control.is-valid,.was-validated .form-control:valid {
+.form-control.is-valid, .was-validated .form-control:valid {
     border-color: #34C759;
     box-shadow: 0 !important;
     background-image: none !important
 }
 
-.form-control.is-valid:focus,.was-validated .form-control:valid:focus {
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
     border-color: #34C759;
     box-shadow: none !important
 }
 
-.custom-select.is-valid,.was-validated .custom-select:valid {
+.custom-select.is-valid, .was-validated .custom-select:valid {
     border-color: #34C759
 }
 
-.custom-select.is-valid:focus,.was-validated .custom-select:valid:focus {
+.custom-select.is-valid:focus, .was-validated .custom-select:valid:focus {
     border-color: #34C759;
     box-shadow: none !important
 }
 
-.form-check-input.is-valid ~ .form-check-label,.was-validated .form-check-input:valid ~ .form-check-label {
+.form-check-input.is-valid ~ .form-check-label, .was-validated .form-check-input:valid ~ .form-check-label {
     color: #34C759
 }
 
-.custom-control-input.is-valid ~ .custom-control-label,.was-validated .custom-control-input:valid ~ .custom-control-label {
+.custom-control-input.is-valid ~ .custom-control-label, .was-validated .custom-control-input:valid ~ .custom-control-label {
     color: #34C759
 }
 
-.custom-control-input.is-valid ~ .custom-control-label::before,.was-validated .custom-control-input:valid ~ .custom-control-label::before {
+.custom-control-input.is-valid ~ .custom-control-label::before, .was-validated .custom-control-input:valid ~ .custom-control-label::before {
     border-color: #34C759
 }
 
-.custom-control-input.is-valid:checked ~ .custom-control-label::before,.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
+.custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
     border-color: #34C759;
     background-color: #34C759
 }
 
-.custom-control-input.is-valid:focus ~ .custom-control-label::before,.was-validated .custom-control-input:valid:focus ~ .custom-control-label::before {
+.custom-control-input.is-valid:focus ~ .custom-control-label::before, .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before {
     box-shadow: none !important
 }
 
-.custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before,.was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before {
+.custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before, .was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before {
     border-color: #34C759
 }
 
-.custom-file-input.is-valid ~ .custom-file-label,.was-validated .custom-file-input:valid ~ .custom-file-label {
+.custom-file-input.is-valid ~ .custom-file-label, .was-validated .custom-file-input:valid ~ .custom-file-label {
     border-color: #34C759
 }
 
-.custom-file-input.is-valid:focus ~ .custom-file-label,.was-validated .custom-file-input:valid:focus ~ .custom-file-label {
+.custom-file-input.is-valid:focus ~ .custom-file-label, .was-validated .custom-file-input:valid:focus ~ .custom-file-label {
     border-color: #34C759;
     box-shadow: none !important
 }
 
-.form-control.is-invalid,.was-validated .form-control:invalid {
+.form-control.is-invalid, .was-validated .form-control:invalid {
     border-color: #EC4433;
     background-image: none !important
 }
 
-.form-control.is-invalid:focus,.was-validated .form-control:invalid:focus {
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
     border-color: #EC4433;
     box-shadow: none !important
 }
 
-.custom-select.is-invalid,.was-validated .custom-select:invalid {
+.custom-select.is-invalid, .was-validated .custom-select:invalid {
     border-color: #EC4433
 }
 
-.custom-select.is-invalid:focus,.was-validated .custom-select:invalid:focus {
+.custom-select.is-invalid:focus, .was-validated .custom-select:invalid:focus {
     border-color: #EC4433;
     box-shadow: none !important
 }
 
-.form-check-input.is-invalid ~ .form-check-label,.was-validated .form-check-input:invalid ~ .form-check-label {
+.form-check-input.is-invalid ~ .form-check-label, .was-validated .form-check-input:invalid ~ .form-check-label {
     color: #EC4433
 }
 
-.custom-control-input.is-invalid ~ .custom-control-label,.was-validated .custom-control-input:invalid ~ .custom-control-label {
+.custom-control-input.is-invalid ~ .custom-control-label, .was-validated .custom-control-input:invalid ~ .custom-control-label {
     color: #EC4433
 }
 
-.custom-control-input.is-invalid ~ .custom-control-label::before,.was-validated .custom-control-input:invalid ~ .custom-control-label::before {
+.custom-control-input.is-invalid ~ .custom-control-label::before, .was-validated .custom-control-input:invalid ~ .custom-control-label::before {
     border-color: #EC4433
 }
 
-.custom-control-input.is-invalid:checked ~ .custom-control-label::before,.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
+.custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
     border-color: #EC4433;
     background-color: #EC4433
 }
 
-.custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before,.was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before {
+.custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before {
     border-color: #EC4433
 }
 
-.custom-file-input.is-invalid ~ .custom-file-label,.was-validated .custom-file-input:invalid ~ .custom-file-label {
+.custom-file-input.is-invalid ~ .custom-file-label, .was-validated .custom-file-input:invalid ~ .custom-file-label {
     border-color: #EC4433
 }
 
-.custom-file-input.is-invalid:focus ~ .custom-file-label,.was-validated .custom-file-input:invalid:focus ~ .custom-file-label {
+.custom-file-input.is-invalid:focus ~ .custom-file-label, .was-validated .custom-file-input:invalid:focus ~ .custom-file-label {
     border-color: #EC4433;
     box-shadow: none !important
 }
@@ -6101,7 +6106,7 @@ body.dark-mode-active {
     color: #8195a6
 }
 
-body.dark-mode-active.bg-light,body.dark-mode-active.bg-white {
+body.dark-mode-active.bg-light, body.dark-mode-active.bg-white {
     background: #0c1624 !important
 }
 
@@ -6126,11 +6131,11 @@ body.dark-mode-active .bg-light {
     background: #fff !important
 }
 
-body.dark-mode-active h1,body.dark-mode-active h2,body.dark-mode-active h3,body.dark-mode-active h4,body.dark-mode-active h5,body.dark-mode-active h6 {
+body.dark-mode-active h1, body.dark-mode-active h2, body.dark-mode-active h3, body.dark-mode-active h4, body.dark-mode-active h5, body.dark-mode-active h6 {
     color: #fff
 }
 
-body.dark-mode-active h1 small,body.dark-mode-active h2 small,body.dark-mode-active h3 small,body.dark-mode-active h4 small,body.dark-mode-active h5 small,body.dark-mode-active h6 small {
+body.dark-mode-active h1 small, body.dark-mode-active h2 small, body.dark-mode-active h3 small, body.dark-mode-active h4 small, body.dark-mode-active h5 small, body.dark-mode-active h6 small {
     color: #8195a6
 }
 
@@ -6155,7 +6160,7 @@ body.dark-mode-active .appHeader.bg-light .pageTitle {
     color: #141515
 }
 
-body.dark-mode-active .appHeader .left .headerButton,body.dark-mode-active .appHeader .right .headerButton {
+body.dark-mode-active .appHeader .left .headerButton, body.dark-mode-active .appHeader .right .headerButton {
     color: #fff
 }
 
@@ -6184,7 +6189,7 @@ body.dark-mode-active .section .wide-block {
     border-bottom-color: #1B283B
 }
 
-body.dark-mode-active .section .content-header,body.dark-mode-active .section .content-footer {
+body.dark-mode-active .section .content-header, body.dark-mode-active .section .content-footer {
     color: #586d7f
 }
 
@@ -6205,19 +6210,19 @@ body.dark-mode-active .appBottomMenu {
     border-top-color: #1B283B
 }
 
-body.dark-mode-active .appBottomMenu .item ion-icon,body.dark-mode-active .appBottomMenu .item strong {
+body.dark-mode-active .appBottomMenu .item ion-icon, body.dark-mode-active .appBottomMenu .item strong {
     color: #fff
 }
 
-body.dark-mode-active .appBottomMenu .item:hover ion-icon,body.dark-mode-active .appBottomMenu .item:hover strong {
+body.dark-mode-active .appBottomMenu .item:hover ion-icon, body.dark-mode-active .appBottomMenu .item:hover strong {
     color: #fff
 }
 
-body.dark-mode-active .appBottomMenu.bg-light .item ion-icon,body.dark-mode-active .appBottomMenu.bg-light .item strong {
+body.dark-mode-active .appBottomMenu.bg-light .item ion-icon, body.dark-mode-active .appBottomMenu.bg-light .item strong {
     color: #141515
 }
 
-body.dark-mode-active .appBottomMenu.bg-light .item:hover ion-icon,body.dark-mode-active .appBottomMenu.bg-light .item:hover strong {
+body.dark-mode-active .appBottomMenu.bg-light .item:hover ion-icon, body.dark-mode-active .appBottomMenu.bg-light .item:hover strong {
     color: #141515
 }
 
@@ -6232,7 +6237,7 @@ body.dark-mode-active .accordion .accordion-header .btn {
 }
 
 body.dark-mode-active .accordion .accordion-header .btn:active {
-    background: rgba(27,40,59,0.2) !important
+    background: rgba(27, 40, 59, 0.2) !important
 }
 
 body.dark-mode-active .accordion .accordion-header .btn.collapsed:before {
@@ -6255,12 +6260,12 @@ body.dark-mode-active .action-sheet .modal-content .modal-header .modal-title {
     color: #fff !important
 }
 
-body.dark-mode-active .action-button-list>li .btn {
+body.dark-mode-active .action-button-list > li .btn {
     color: #fff
 }
 
-body.dark-mode-active .action-button-list>li .btn:active,body.dark-mode-active .action-button-list>li .btn.active {
-    background: rgba(27,40,59,0.3) !important
+body.dark-mode-active .action-button-list > li .btn:active, body.dark-mode-active .action-button-list > li .btn.active {
+    background: rgba(27, 40, 59, 0.3) !important
 }
 
 body.dark-mode-active .action-button-list .action-divider {
@@ -6290,46 +6295,46 @@ body.dark-mode-active .listview .text-muted {
     color: #586d7f !important
 }
 
-body.dark-mode-active .listview>li:after {
+body.dark-mode-active .listview > li:after {
     background: #1B283B
 }
 
-body.dark-mode-active .listview>li header,body.dark-mode-active .listview>li footer {
+body.dark-mode-active .listview > li header, body.dark-mode-active .listview > li footer {
     color: #8195a6
 }
 
-body.dark-mode-active .listview>li.divider-title {
-    background: rgba(0,0,0,0.1);
+body.dark-mode-active .listview > li.divider-title {
+    background: rgba(0, 0, 0, 0.1);
     color: #8195a6;
     border-top-color: #1B283B;
     border-bottom-color: #1B283B
 }
 
-body.dark-mode-active .link-listview>li a {
+body.dark-mode-active .link-listview > li a {
     color: #fff !important
 }
 
-body.dark-mode-active .link-listview>li a:after {
+body.dark-mode-active .link-listview > li a:after {
     background-image: url("data:image/svg+xml,%0A%3Csvg width='10px' height='16px' viewBox='0 0 10 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='Listview' transform='translate(-112.000000, -120.000000)' stroke='%23586d7f' stroke-width='2.178'%3E%3Cpolyline id='Path' points='114 122 120 128 114 134'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
 }
 
-body.dark-mode-active .link-listview>li a:active {
-    background: rgba(27,40,59,0.3)
+body.dark-mode-active .link-listview > li a:active {
+    background: rgba(27, 40, 59, 0.3)
 }
 
-body.dark-mode-active .image-listview>li a.item {
+body.dark-mode-active .image-listview > li a.item {
     color: #fff !important
 }
 
-body.dark-mode-active .image-listview>li a.item:active {
-    background: rgba(27,40,59,0.3)
+body.dark-mode-active .image-listview > li a.item:active {
+    background: rgba(27, 40, 59, 0.3)
 }
 
-body.dark-mode-active .image-listview>li a.item:after {
+body.dark-mode-active .image-listview > li a.item:after {
     background-image: url("data:image/svg+xml,%0A%3Csvg width='10px' height='16px' viewBox='0 0 10 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg id='Listview' transform='translate(-112.000000, -120.000000)' stroke='%23586d7f' stroke-width='2.178'%3E%3Cpolyline id='Path' points='114 122 120 128 114 134'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
 }
 
-body.dark-mode-active .image-listview.media>li {
+body.dark-mode-active .image-listview.media > li {
     border-bottom: 1px solid #1B283B
 }
 
@@ -6339,7 +6344,7 @@ body.dark-mode-active .btn-light {
     border-color: #fff !important
 }
 
-body.dark-mode-active .btn-light:hover,body.dark-mode-active .btn-light:active {
+body.dark-mode-active .btn-light:hover, body.dark-mode-active .btn-light:active {
     background: #fff !important;
     color: #000 !important;
     border-color: #fff !important;
@@ -6352,7 +6357,7 @@ body.dark-mode-active .btn-dark {
     border-color: #000 !important
 }
 
-body.dark-mode-active .btn-dark:hover,body.dark-mode-active .btn-dark:active {
+body.dark-mode-active .btn-dark:hover, body.dark-mode-active .btn-dark:active {
     background: #000 !important;
     color: #fff !important;
     border-color: #000 !important;
@@ -6364,7 +6369,7 @@ body.dark-mode-active .btn-outline-light {
     color: #fff !important
 }
 
-body.dark-mode-active .btn-outline-light:hover,body.dark-mode-active .btn-outline-light:active {
+body.dark-mode-active .btn-outline-light:hover, body.dark-mode-active .btn-outline-light:active {
     color: #fff !important;
     border-color: #fff !important
 }
@@ -6374,10 +6379,10 @@ body.dark-mode-active .btn-outline-dark {
     color: #000 !important
 }
 
-body.dark-mode-active .btn-outline-dark:hover,body.dark-mode-active .btn-outline-dark:active {
+body.dark-mode-active .btn-outline-dark:hover, body.dark-mode-active .btn-outline-dark:active {
     color: #000 !important;
     border-color: #000 !important;
-    background: rgba(0,0,0,0.2) !important
+    background: rgba(0, 0, 0, 0.2) !important
 }
 
 body.dark-mode-active .card {
@@ -6393,12 +6398,12 @@ body.dark-mode-active .card .card-subtitle {
 }
 
 body.dark-mode-active .card .card-header {
-    border-bottom-color: rgba(255,255,255,0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
     color: #fff
 }
 
 body.dark-mode-active .card .card-footer {
-    border-top-color: rgba(255,255,255,0.1);
+    border-top-color: rgba(255, 255, 255, 0.1);
     color: #8195a6
 }
 
@@ -6433,7 +6438,7 @@ body.dark-mode-active .custom-control .custom-control-label {
 
 body.dark-mode-active .custom-control .custom-control-label:before {
     background: transparent;
-    border-color: rgba(255,255,255,0.15) !important
+    border-color: rgba(255, 255, 255, 0.15) !important
 }
 
 body.dark-mode-active .custom-control .custom-control-label:active:before {
@@ -6446,7 +6451,7 @@ body.dark-mode-active .input-list .custom-control:after {
 }
 
 body.dark-mode-active .input-list .custom-control-label:active {
-    background: rgba(27,40,59,0.3)
+    background: rgba(27, 40, 59, 0.3)
 }
 
 body.dark-mode-active .chip {
@@ -6494,8 +6499,8 @@ body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn {
     color: #fff
 }
 
-body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn:hover,body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn:focus,body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn:active,body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn.active {
-    background: rgba(27,40,59,0.3) !important
+body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn:hover, body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn:focus, body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn:active, body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-list .btn.active {
+    background: rgba(27, 40, 59, 0.3) !important
 }
 
 body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn {
@@ -6503,8 +6508,8 @@ body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn {
     border-right-color: #1B283B !important
 }
 
-body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn:hover,body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn:focus,body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn:active,body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn.active {
-    background: rgba(27,40,59,0.3) !important
+body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn:hover, body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn:focus, body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn:active, body.dark-mode-active .dialogbox .modal-dialog .modal-content .btn-inline .btn.active {
+    background: rgba(27, 40, 59, 0.3) !important
 }
 
 body.dark-mode-active .dialogbox .modal-dialog .modal-content .modal-header .modal-title {
@@ -6523,33 +6528,33 @@ body.dark-mode-active .divider .icon-box {
     background: #1B283B
 }
 
-body.dark-mode-active .dropdown .dropdown-menu,body.dark-mode-active .dropup .dropdown-menu {
+body.dark-mode-active .dropdown .dropdown-menu, body.dark-mode-active .dropup .dropdown-menu {
     background: #0c1624;
     border: 1px solid #1B283B
 }
 
-body.dark-mode-active .dropdown .dropdown-menu .dropdown-item,body.dark-mode-active .dropup .dropdown-menu .dropdown-item {
+body.dark-mode-active .dropdown .dropdown-menu .dropdown-item, body.dark-mode-active .dropup .dropdown-menu .dropdown-item {
     color: #fff
 }
 
-body.dark-mode-active .dropdown .dropdown-menu .dropdown-item:hover,body.dark-mode-active .dropdown .dropdown-menu .dropdown-item:active,body.dark-mode-active .dropup .dropdown-menu .dropdown-item:hover,body.dark-mode-active .dropup .dropdown-menu .dropdown-item:active {
-    background: rgba(27,40,59,0.5) !important;
+body.dark-mode-active .dropdown .dropdown-menu .dropdown-item:hover, body.dark-mode-active .dropdown .dropdown-menu .dropdown-item:active, body.dark-mode-active .dropup .dropdown-menu .dropdown-item:hover, body.dark-mode-active .dropup .dropdown-menu .dropdown-item:active {
+    background: rgba(27, 40, 59, 0.5) !important;
     color: #fff
 }
 
-body.dark-mode-active .dropdown .dropdown-menu .dropdown-divider,body.dark-mode-active .dropup .dropdown-menu .dropdown-divider {
+body.dark-mode-active .dropdown .dropdown-menu .dropdown-divider, body.dark-mode-active .dropup .dropdown-menu .dropdown-divider {
     border-top-color: #1B283B !important
 }
 
-body.dark-mode-active .dropdown .dropdown-menu .dropdown-header,body.dark-mode-active .dropup .dropdown-menu .dropdown-header {
+body.dark-mode-active .dropdown .dropdown-menu .dropdown-header, body.dark-mode-active .dropup .dropdown-menu .dropdown-header {
     color: #8195a6
 }
 
-body.dark-mode-active .dropdown .dropdown-menu .text,body.dark-mode-active .dropup .dropdown-menu .text {
+body.dark-mode-active .dropdown .dropdown-menu .text, body.dark-mode-active .dropup .dropdown-menu .text {
     color: #8195a6
 }
 
-body.dark-mode-active .dropdown .dropdown-menu .icon,body.dark-mode-active .dropdown .dropdown-menu ion-icon,body.dark-mode-active .dropup .dropdown-menu .icon,body.dark-mode-active .dropup .dropdown-menu ion-icon {
+body.dark-mode-active .dropdown .dropdown-menu .icon, body.dark-mode-active .dropdown .dropdown-menu ion-icon, body.dark-mode-active .dropup .dropdown-menu .icon, body.dark-mode-active .dropup .dropdown-menu ion-icon {
     color: #fff
 }
 
@@ -6590,7 +6595,7 @@ body.dark-mode-active .form-wizard-section .button-item.active p {
 
 body.dark-mode-active .exampleBox {
     border-color: #1B283B;
-    background: rgba(27,40,59,0.3)
+    background: rgba(27, 40, 59, 0.3)
 }
 
 body.dark-mode-active .form-group .label {
@@ -6605,12 +6610,12 @@ body.dark-mode-active .form-group .clear-input {
     color: #586d7f
 }
 
-body.dark-mode-active .form-group.basic .form-control,body.dark-mode-active .form-group.basic .custom-select {
+body.dark-mode-active .form-group.basic .form-control, body.dark-mode-active .form-group.basic .custom-select {
     border-bottom-color: #1B283B;
     color: #fff
 }
 
-body.dark-mode-active .form-group.boxed .form-control,body.dark-mode-active .form-group.boxed .custom-select {
+body.dark-mode-active .form-group.boxed .form-control, body.dark-mode-active .form-group.boxed .custom-select {
     color: #fff;
     background: #1B283B;
     border-color: #1B283B
@@ -6691,7 +6696,7 @@ body.dark-mode-active .notification-dialog.android-style .notification-header .c
     color: #586d7f
 }
 
-body.dark-mode-active .notification-dialog.android-style .notification-header .close-button:hover,body.dark-mode-active .notification-dialog.android-style .notification-header .close-button:active {
+body.dark-mode-active .notification-dialog.android-style .notification-header .close-button:hover, body.dark-mode-active .notification-dialog.android-style .notification-header .close-button:active {
     color: #8195a6
 }
 
@@ -6707,13 +6712,13 @@ body.dark-mode-active .notification-dialog.android-style .notification-footer .n
     border-right: 1px solid #1B283B
 }
 
-body.dark-mode-active .notification-dialog.android-style .notification-footer .notification-button:hover,body.dark-mode-active .notification-dialog.android-style .notification-footer .notification-button:active {
-    background: rgba(27,40,59,0.3)
+body.dark-mode-active .notification-dialog.android-style .notification-footer .notification-button:hover, body.dark-mode-active .notification-dialog.android-style .notification-footer .notification-button:active {
+    background: rgba(27, 40, 59, 0.3)
 }
 
 body.dark-mode-active .notification-dialog.ios-style {
     background: #0a1320;
-    border:2px white solid;
+    border: 2px white solid;
 }
 
 body.dark-mode-active .notification-dialog.ios-style .icon-box {
@@ -6788,8 +6793,8 @@ body.dark-mode-active .table thead th {
     color: #fff
 }
 
-body.dark-mode-active .table td,body.dark-mode-active .table th {
-    border-color: rgba(255,255,255,0.1)
+body.dark-mode-active .table td, body.dark-mode-active .table th {
+    border-color: rgba(255, 255, 255, 0.1)
 }
 
 body.dark-mode-active .table-dark {
@@ -6797,10 +6802,10 @@ body.dark-mode-active .table-dark {
 }
 
 body.dark-mode-active .table-striped tbody tr:nth-of-type(odd) {
-    background: rgba(27,40,59,0.4)
+    background: rgba(27, 40, 59, 0.4)
 }
 
-body.dark-mode-active .table-bordered td,body.dark-mode-active .table-bordered th {
+body.dark-mode-active .table-bordered td, body.dark-mode-active .table-bordered th {
     border-color: #1B283B
 }
 
@@ -6839,8 +6844,8 @@ body.dark-mode-active .sidebar-buttons .button {
     color: #fff
 }
 
-body.dark-mode-active .sidebar-buttons .button:hover,body.dark-mode-active .sidebar-buttons .button:active {
-    background: rgba(27,40,59,0.2)
+body.dark-mode-active .sidebar-buttons .button:hover, body.dark-mode-active .sidebar-buttons .button:active {
+    background: rgba(27, 40, 59, 0.2)
 }
 
 body.dark-mode-active .sidebar-buttons:last-child {
@@ -6852,26 +6857,26 @@ body.dark-mode-active .profileBox .in strong {
 }
 
 body.dark-mode-active .profileBox .in .text-muted {
-    color: rgba(255,255,255,0.5) !important
+    color: rgba(255, 255, 255, 0.5) !important
 }
 
 body.dark-mode-active .close-sidebar-button {
-    color: rgba(255,255,255,0.5) !important
+    color: rgba(255, 255, 255, 0.5) !important
 }
 
 body.dark-mode-active .close-sidebar-button:active {
-    background: rgba(27,40,59,0.3)
+    background: rgba(27, 40, 59, 0.3)
 }
 
-body.dark-mode-active .ios-add-to-home,body.dark-mode-active .android-add-to-home {
-    background: rgba(12,22,36,0.4) !important
+body.dark-mode-active .ios-add-to-home, body.dark-mode-active .android-add-to-home {
+    background: rgba(12, 22, 36, 0.4) !important
 }
 
-body.dark-mode-active .ios-add-to-home .modal-content:before,body.dark-mode-active .android-add-to-home .modal-content:before {
+body.dark-mode-active .ios-add-to-home .modal-content:before, body.dark-mode-active .android-add-to-home .modal-content:before {
     border-top-color: #0F1C2F
 }
 
-body.dark-mode-active .ios-add-to-home .modal-content .action-sheet-content,body.dark-mode-active .android-add-to-home .modal-content .action-sheet-content {
+body.dark-mode-active .ios-add-to-home .modal-content .action-sheet-content, body.dark-mode-active .android-add-to-home .modal-content .action-sheet-content {
     color: #fff
 }
 
@@ -6880,7 +6885,7 @@ body.dark-mode-active .demoIcons {
 }
 
 body.dark-mode-active .custom-file-upload label {
-    background-color: rgba(27,40,59,0.2);
+    background-color: rgba(27, 40, 59, 0.2);
     border-color: #1B283B
 }
 
@@ -6898,7 +6903,7 @@ body.dark-mode-active .custom-file-upload label.file-uploaded span {
 }
 
 body.dark-mode-active .nav-tabs.style1 {
-    background: rgba(27,40,59,0.4)
+    background: rgba(27, 40, 59, 0.4)
 }
 
 body.dark-mode-active .nav-tabs.style1 .nav-item .nav-link {
@@ -6934,11 +6939,11 @@ body.dark-mode-active #countDown {
     color: #fff
 }
 
-body.dark-mode-active #countDown>div {
+body.dark-mode-active #countDown > div {
     border-color: #1B283B
 }
 
-body.dark-mode-active #countDown>div span {
+body.dark-mode-active #countDown > div span {
     color: #586d7f
 }
 
