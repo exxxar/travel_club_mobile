@@ -83,10 +83,13 @@
 <script src="https://embed.tawk.to/6011a65ac31c9117cb73211e/1et2f3ktl" async></script>
 
 
-@yield("scripts")
+
 <script src="{{env("APP_DEBUG")?asset('/js/app.js'):asset('/js/app.min.js')}}?ver={{env("APP_VERSION")}}"></script>
 <script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}"></script>
 
+@yield("scripts")
+
+<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js"></script>
 </body>
 
 </html>

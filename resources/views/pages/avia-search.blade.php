@@ -9,11 +9,6 @@
 
 @endsection
 
-@section("scripts")
-
-    <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
-
-@endsection
 
 
 

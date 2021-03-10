@@ -118,5 +118,6 @@
     <orderEntry type="library" name="data" level="application" />
     <orderEntry type="library" name="ionicons" level="application" />
     <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="biletix_wl" level="application" />
   </component>
 </module>

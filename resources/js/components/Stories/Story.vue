@@ -21,8 +21,8 @@
 <style lang="scss">
     .story-item {
         padding: 10px !important;
-        height: 60px;
-        width: 60px !important;
+        height: 80px;
+        width: 80px;
 
         &.opened {
             a {
