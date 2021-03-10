@@ -5,7 +5,7 @@
         <h4 class="section-title">Воспоминания</h4>
         <p>Наши истории из путешествий</p>
 
-        <carousel :items="6" :nav="false" :dots="false" class="story-blocks">
+        <carousel :items="5" :nav="false" :dots="false" class="story-blocks">
             <div @click="show(index+1)" v-for="(story, index) in stories">
                 <story :index="index+1" :image="story.image"/>
             </div>
