@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <preloader :time="1500"></preloader>
+    <preloader :time="2000"></preloader>
 
     <header-block></header-block>
 

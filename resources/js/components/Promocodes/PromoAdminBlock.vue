@@ -9,7 +9,7 @@
                 <div class="input-wrapper">
                     <label class="label" for="promo-admin">Ваш промокод</label>
                     <input type="text" id="promo-admin" placeholder="Введите ваш промокод"
-                           class="form-control col-12 mb-2"
+                           class="form-control col-12"
                            v-model="code" required>
                     <i class="clear-input">
                         <i class="fas fa-hand-holding-usd"></i>
@@ -22,7 +22,7 @@
                 <div class="input-wrapper">
                     <label class="label" for="promo-pass">Ваш пароль</label>
                     <input type="password" id="promo-pass" placeholder="Введите ваш индивидуальный пароль"
-                           class="form-control col-12 mb-2" v-model="password" required>
+                           class="form-control col-12" v-model="password" required>
                     <i class="clear-input">
                         <i class="fas fa-hand-holding-usd"></i>
                     </i>
