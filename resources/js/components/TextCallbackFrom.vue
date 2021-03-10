@@ -195,15 +195,16 @@
             padding: 10px;
 
             label {
-                width: 50px;
-                height: 50px;
-                background: white;
-                border: 3px lightgray solid;
+                width: 90px;
+                height: 90px;
+                background: #fff;
+                border: 3px solid #d3d3d3;
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: lightgray;
+                color: #d3d3d3;
+                font-size: 36px;
             }
 
             input {
