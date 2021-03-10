@@ -28,7 +28,7 @@
           content="Сеть туристических агенств - Travel Club">
     <title>TravelClub</title>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=contain"/>
+          content="width=device-width, initial-scale=1, minimum-scale=0.9, maximum-scale=1, viewport-fit=cover"/>
 
     <meta name="keywords" content="туризм"/>
     <!-- Favicons -->
