@@ -11,6 +11,12 @@
 
 @endsection
 
+@section("scripts")
+    <script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
+@endsection
+
+
+
 
 
 

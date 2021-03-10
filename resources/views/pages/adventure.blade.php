@@ -11,6 +11,11 @@
 
 @endsection
 
+@section("scripts")
+
+    <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
+@endsection
+
 
 
 
