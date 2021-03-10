@@ -34,7 +34,7 @@
                         </div>
                     </div>
 
-                    <div class="row mx-auto mt-4 mb-3 font-weight-bold w-100 pr-5 pl-5 text-justify"
+                    <div class="row mx-auto mt-4 mb-3 font-weight-bold w-100  text-justify"
                     >
                         <p>
                             Сеть туристических агентств
@@ -64,7 +64,7 @@
                     </div>
 
 
-                    <div class="row mx-auto mt-4 mb-3 font-weight-bold  w-100 pr-5 pl-5 text-justify">
+                    <div class="row mx-auto mt-4 mb-3 font-weight-bold  w-100 text-justify">
                         <p>
                             Современный туризм давно вышел за рамки пакетных туров, наши клиенты в
                             большинстве предпочитают яркий и динамичный отдых, путем создания
