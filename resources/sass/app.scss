@@ -67,7 +67,7 @@ svg:not(:root).svg-inline--fa {
 
 
     .coming-soon-img {
-        background: url(/img/travel/coming-soon-dark.png);
+        background: url('../img/travel/coming-soon-dark.png');
     }
 
 
@@ -76,7 +76,7 @@ svg:not(:root).svg-inline--fa {
 .coming-soon-img {
     height: 75px;
     width: 100%;
-    background: url(/img/travel/coming-soon.png);
+    background: url('../img/travel/coming-soon.png');
     background-size: contain !important;
     background-repeat: no-repeat !important;
     transform: rotate(
