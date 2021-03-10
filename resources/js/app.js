@@ -87,6 +87,7 @@ Vue.component('header-anim-section', require('./components/HeaderAnimSection.vue
 Vue.component('promo-image-block', require('./components/PromoImageBlock.vue').default);
 Vue.component('footer-anim-section', require('./components/FooterAnimBlock.vue').default);
 Vue.component('story-list', require('./components/Stories/StoryList.vue').default);
+Vue.component('promo-admin-block', require('./components/Promocodes/PromoAdminBlock.vue').default);
 
 //Pages
 Vue.component('index-page', require('./pages/Index.vue').default);

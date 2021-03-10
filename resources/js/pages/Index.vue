@@ -36,6 +36,18 @@
                 </div>
 
                 <div class="item">
+                    <div class="card card-with-blue-line" text="Новинка">
+                        <a href="/m/adventure" class="travel-card" aria-label="Туры по России">
+                            <img src="/img/travel/4.png" class="card-img-top" alt="image">
+                        </a>
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0 text-center text-uppercase">Туры по России</h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="item">
                     <div class="card">
                         <a href="/m/flies" class="travel-card" aria-label="Подобрать авиобилеты">
                             <img src="/img/travel/2.png" class="card-img-top" alt="image">
@@ -46,7 +58,7 @@
                     </div>
                 </div>
 
-
+<!--
                 <div class="item">
                     <div class="card">
                         <a href="/m/hotels" class="travel-card" aria-label="Подобрать отель">
@@ -56,19 +68,9 @@
                             <h4 class="mb-0 text-center text-uppercase">Подобрать отель</h4>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
 
-                <div class="item">
-                    <div class="card card-with-blue-line" text="Новинка">
-                        <a href="/m/adventure" class="travel-card" aria-label="Туры по России">
-                            <img src="/img/travel/4.png" class="card-img-top" alt="image">
-                        </a>
-                        <div class="card-body pt-2">
-                            <h4 class="mb-0 text-center text-uppercase">Туры по России</h4>
-                        </div>
-                    </div>
-                </div>
 
 
             </carousel>

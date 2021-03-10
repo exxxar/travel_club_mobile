@@ -4,7 +4,8 @@
             <h5 class="card-title">Форма обратной связи</h5>
             <div class="form-group boxed">
                 <div class="input-wrapper">
-                    <input type="text" name="name" class="form-control" v-model="name" placeholder="Ваше Ф.И.О." required>
+                    <input type="text" name="name" class="form-control" v-model="name" placeholder="Ваше Ф.И.О."
+                           required>
                     <i class="clear-input">
                         <i class="far fa-times-circle"></i>
                     </i>
@@ -25,10 +26,9 @@
             </div>
 
 
-
             <div class="form-group boxed">
                 <div class="input-wrapper">
-                    <input type="text" name="phone" class="form-control"  v-model="phone"
+                    <input type="text" name="phone" class="form-control" v-model="phone"
                            pattern="[\+]\d{2} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
                            maxlength="19"
                            v-mask="['+# (###) ###-##-##','+## (###) ###-##-##']"
@@ -49,6 +49,36 @@
                 </div>
             </div>
 
+            <div class="form-group boxed">
+                <div class="input-wrapper">
+                    <h4 class="text-center">Выберите месенджеры для ответа</h4>
+                    <ul class="messagers">
+                        <li>
+
+                            <input type="checkbox" id="telegram-check" name="answer-check">
+                            <label for="telegram-check">
+                                <i class="fab fa-telegram-plane"></i>
+                            </label>
+                        </li>
+                        <li>
+
+                            <input type="checkbox" id="inta-check" name="answer-check">
+                            <label for="inta-check">
+                                <i class="fab fa-instagram"></i>
+                            </label>
+
+                        </li>
+                        <li>
+
+                            <input type="checkbox" id="whatsapp-check" name="answer-check">
+                            <label for="whatsapp-check">
+                                <i class="fab fa-whatsapp"></i>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="form-group mb-2">
                 <voice-callback-form :phone="phone" :cansend="cansend"></voice-callback-form>
             </div>
@@ -58,9 +88,10 @@
                     Отправить
                 </button>
             </div>
-            <div class="form-group mb-2">
+            <div class="form-group mb-2 d-flex justify-content-center">
 
-                <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
+                <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1"
+                   title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
                     <i class="icon ion-ios-filing"></i>
                     Пользовательское соглашение!
                 </a>
@@ -76,6 +107,17 @@
 
 
     export default {
+        props: {
+            qType: {
+                type: Number,
+                default: 0
+            },
+            hiddenMessage: {
+                type: String,
+                default: ''
+            },
+        },
+
         data() {
             return {
                 name: localStorage.getItem("food_first_name", ''),
@@ -83,20 +125,24 @@
                 type: 0,
                 city: 0,
                 message: '',
-                cansend:false,
-                cities:[
-                  "Донецк",
-                  "Ростов-на-Дону"
+                cansend: false,
+                cities: [
+                    "Донецк",
+                    "Ростов-на-Дону"
                 ],
                 question_types: [
                     "Вопросы по туру",
                     "Вопросы по перелету",
                     "Вопросы по отелю",
+                    "Активация прмокода",
                     "Стать партнером",
                     "Реклама и продвижение",
                     "Другие вопросы"
                 ]
             };
+        },
+        mounted() {
+            this.type = this.qType < this.question_types.length && this.qType >= 0 ? this.qType : 0;
         },
         methods: {
 
@@ -107,7 +153,7 @@
                     .post('../api/v1/wish', {
                         from: this.name,
                         phone: this.phone,
-                        message: "*" + this.question_types[this.type] + "*:\n" + this.message
+                        message: "*" + this.question_types[this.type] + "*:\n" + this.message + "\n" + this.hiddenMessage
                     })
                     .then(response => {
                         this.sendMessage("Сообщение успешно отправлено");
@@ -119,7 +165,8 @@
                     })
 
 
-            },
+            }
+            ,
             sendMessage(message) {
                 this.$notify({
                     group: 'info',
@@ -127,8 +174,49 @@
                     title: 'Отправка сообщений Fastoran',
                     text: message
                 });
-            },
-        },
-        directives: {mask}
+            }
+            ,
+        }
+        ,
+        directives: {
+            mask
+        }
     }
 </script>
+<style lang="scss">
+    .messagers {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+            padding: 10px;
+
+            label {
+                width: 50px;
+                height: 50px;
+                background: white;
+                border: 3px lightgray solid;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: lightgray;
+            }
+
+            input {
+                display: none;
+            }
+
+            input:checked ~ label {
+                border: 3px orange solid;
+                color: orange;
+            }
+
+        }
+
+
+    }
+</style>
