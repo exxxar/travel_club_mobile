@@ -62,9 +62,9 @@
                         </li>
                         <li>
 
-                            <input type="checkbox" id="inta-check" name="answer-check">
-                            <label for="inta-check">
-                                <i class="fab fa-instagram"></i>
+                            <input type="checkbox" id="viber-check" name="answer-check">
+                            <label for="viber-check">
+                                <i class="fab fa-viber"></i>
                             </label>
 
                         </li>
@@ -204,7 +204,7 @@
                 justify-content: center;
                 align-items: center;
                 color: #d3d3d3;
-                font-size: 24px;
+                font-size: 28px;
             }
 
             input {
