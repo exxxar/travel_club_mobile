@@ -9,8 +9,8 @@
 
         />
 
-        <div class="swap-history-left" @click="prev()"></div>
-        <div class="swap-history-right" @click="next()"></div>
+        <div class="swap-history-left" @v-touch:swipe.right="prev()"></div>
+        <div class="swap-history-right" @v-touch:swipe.left="next()"></div>
     </div>
 </template>
 <script>

@@ -5,7 +5,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="story-bar"></div>
-                <div class="story-image">
+                <div class="story-image" v-touch:swipe.bottom="swipeHandler">
                     <img :src="image" alt="image">
                 </div>
                 <div class="modal-header">
@@ -34,8 +34,13 @@
 </template>
 <script>
     export default {
-        props: ["index", "progress","image", "time", "title", "description"],
+        props: ["index", "progress", "image", "time", "title", "description"],
 
+        methods: {
+            swipeHandler() {
+                $("#StoryDefault" + this.index).hide();
+            }
+        }
 
 
     }

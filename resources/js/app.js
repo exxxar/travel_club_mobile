@@ -58,10 +58,13 @@ import VueRecord from '@codekraft-studio/vue-record'
 
 Vue.use(VueRecord)
 
-
 import VuePwaInstallPlugin from "vue-pwa-install";
 
 Vue.use(VuePwaInstallPlugin);
+
+import Vue2TouchEvents from 'vue2-touch-events'
+
+Vue.use(Vue2TouchEvents)
 
 //Components
 Vue.component('bottom-menu', require('./components/BottomMenu.vue').default);
