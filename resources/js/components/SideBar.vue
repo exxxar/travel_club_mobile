@@ -172,6 +172,17 @@
                                 </div>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
+                                <div class="icon-box bg-orange">
+                                    <img src="/img/travel/logo_it.png" class="img-fluid" alt="donbassit" style="padding: 5px;">
+                                </div>
+                                <div class="in">
+                                    <div>Хочу такое же!</div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
 
 
