@@ -259,10 +259,10 @@
 
         },
         methods:{
-            swipeHanlderRight(){
+            swipeHandlerRight(){
                 eventBus.$emit("right-swipe");
             },
-            swipeHanlderLeft(){
+            swipeHandlerLeft(){
                 eventBus.$emit("left-swipe");
             },
             swipeHandlerBottomTop(){

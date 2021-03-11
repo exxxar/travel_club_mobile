@@ -13,6 +13,7 @@
 
         <div class="swap-history-left" @click="prev()"></div>
         <div class="swap-history-right" @click="next()"></div>
+        <div class="swap-history-bottom" @click="close()"></div>
     </div>
 </template>
 <script>
@@ -57,6 +58,9 @@
             }
         },
         methods: {
+            close(){
+                $(".stories").modal("hide");
+            },
             swipeHandler() {
                 console.log("testttt")
             },
@@ -100,6 +104,17 @@
 </script>
 
 <style lang="scss">
+
+    .modal.show.stories ~ .swap-history-bottom {
+        position: fixed;
+        z-index: 99999999999!important;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 150px;
+
+    }
+
 
 
     .modal.show.stories ~ .swap-history-left {
