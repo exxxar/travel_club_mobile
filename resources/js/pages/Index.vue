@@ -1,6 +1,6 @@
 <template>
     <!-- App Capsule -->
-    <div id="appCapsule" v-touch:swipe.bottom="swipeHandler">
+    <div id="appCapsule" v-touch:swipe="swipeHandler">
 
         <div class="header-large-title d-flex justify-content-between align-items-center">
             <div>
