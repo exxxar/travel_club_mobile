@@ -104,7 +104,7 @@
 
     .modal.show.stories ~ .swap-history-left {
         position: fixed;
-        z-index: 9999;
+        z-index: 99999999999999999999;
         top: 100px;
         left: 0;
         width: 150px;
@@ -114,7 +114,7 @@
 
     .modal.show.stories ~ .swap-history-right {
         position: fixed;
-        z-index: 9999;
+        z-index: 999999999999999999999;
         top: 100px;
         right: 0;
         width: 150px;
