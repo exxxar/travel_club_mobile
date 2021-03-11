@@ -54,6 +54,9 @@ Route::prefix('v1')->group(function () {
     Route::post('sendTourSearchOrder', 'TourController@sendTourSearchOrder');
     Route::post('saveTourOrder', 'TourController@saveTourOrder');
 
+    //Promocodes
+    Route::post('sendPromocode', 'HomeController@sendPromocode');
+    Route::post('/statistic/promocode', 'PromocodeController@generate');
 
 
 

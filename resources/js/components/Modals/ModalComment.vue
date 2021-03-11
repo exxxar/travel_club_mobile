@@ -39,7 +39,7 @@
 <style lang="scss">
 
     .comment-iframe {
-        padding: 0px 0px 50px 0px;
+        padding: 0px 0px 0px 0px;
         width: 100%;
         height: 100vh;
         border: none;
