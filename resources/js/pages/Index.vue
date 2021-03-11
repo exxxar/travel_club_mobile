@@ -1,6 +1,10 @@
 <template>
     <!-- App Capsule -->
-    <div id="appCapsule" v-touch:swipe="swipeHandler">
+    <div id="appCapsule"
+         v-touch:swipe.bottom="swipeHandlerBottomTop"
+         v-touch:swipe.top="swipeHandlerBottomTop"
+         v-touch:swipe.left="swipeHandlerLeft"
+         v-touch:swipe.right="swipeHandlerRight">
 
         <div class="header-large-title d-flex justify-content-between align-items-center">
             <div>
@@ -255,8 +259,13 @@
 
         },
         methods:{
-
-            swipeHandler(){
+            swipeHanlderRight(){
+                eventBus.$emit("right-swipe");
+            },
+            swipeHanlderLeft(){
+                eventBus.$emit("left-swipe");
+            },
+            swipeHandlerBottomTop(){
               $(".stories").modal("hide");
 /*
               this.$notify({

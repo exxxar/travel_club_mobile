@@ -1,21 +1,18 @@
 <template>
     <div>
-        <div
-            @v-touch:swipe="swipeHandler()"
-        >
-            <StoryModalImage
-                v-if="current"
-                :index="current"
-                :image="stories[current-1].image"
-                :time="stories[current-1].time"
-                :progress="progress"
 
-            />
+        <StoryModalImage
+            v-if="current"
+            :index="current"
+            :image="stories[current-1].image"
+            :time="stories[current-1].time"
+            :progress="progress"
 
-        </div>
+        />
 
-       <!-- <div class="swap-history-left" @click="prev()"></div>
-        <div class="swap-history-right" @click="next()"></div>-->
+
+        <!-- <div class="swap-history-left" @click="prev()"></div>
+         <div class="swap-history-right" @click="next()"></div>-->
     </div>
 </template>
 <script>
@@ -31,6 +28,18 @@
                 progress: 0,
                 interval: null,
             }
+        },
+        mounted() {
+            eventBus.$on("right-swipe", () => {
+                this.next()
+            });
+
+
+            eventBus.$on("left-swipe", () => {
+                this.prev()
+            });
+
+
         },
         computed: {
             stories() {
