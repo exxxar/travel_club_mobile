@@ -14,8 +14,8 @@
 
         </div>
 
-        <div class="swap-history-left" @click="prev()"></div>
-        <div class="swap-history-right" @click="next()"></div>
+       <!-- <div class="swap-history-left" @click="prev()"></div>
+        <div class="swap-history-right" @click="next()"></div>-->
     </div>
 </template>
 <script>
@@ -47,7 +47,6 @@
         methods: {
             swipeHandler() {
                 console.log("testttt")
-                $('#StoryDefault' + this.current).modal('hide');
             },
             prev() {
                 this.current = this.current > 1 ? this.current - 1 : this.stories.length - 1;

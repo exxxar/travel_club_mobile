@@ -258,12 +258,12 @@
 
             swipeHandler(){
               $(".stories").modal("hide");
-
+/*
               this.$notify({
                   title: 'Максим',
                   text: 'Понравилась история? Давай также;)',
                   group: 'main'
-              });
+              });*/
           }
         },
         components: {carousel, VueCountdown},
