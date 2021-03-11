@@ -8,31 +8,30 @@
                     <a href="javascript:;" data-dismiss="modal">Закрыть</a>
                 </div>
                 <div class="modal-body">
-                    <div class="row m-auto">
-                        <div class="col-12 col-md-8 col-sm-12 m-auto">
-                            <div class="row align-items-center justify-content-center mx-auto mb-3 w-100">
-                                <div class="col-md-7 mx-auto p-0">
-                                    <div class="row mr-auto ml-0 my-auto title-part-left">
-                                        <h1><span>Д</span>авайте</h1>
-                                        <img src="/img/travel/blue-brush.svg">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 mx-auto p-0">
-                                    <div class="row ml-auto mr-0 my-auto title-part-right">
-                                        <h1>познакомимся!</h1>
-                                        <img src="/img/travel/orange-brush.svg">
-                                    </div>
-                                </div>
+
+                    <div class="row align-items-center justify-content-center mx-auto mb-3 w-100">
+                        <div class="col-md-7 mx-auto p-0">
+                            <div class="row mr-auto ml-0 my-auto title-part-left">
+                                <h1><span>Д</span>авайте</h1>
+                                <img src="/img/travel/blue-brush.svg">
                             </div>
                         </div>
+                        <div class="col-md-7 mx-auto p-0">
+                            <div class="row ml-auto mr-0 my-auto title-part-right">
+                                <h1>познакомимся!</h1>
+                                <img src="/img/travel/orange-brush.svg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-12 m-auto">
-                            <img src="/img/travel/blue-inc-d.svg" style="position: absolute; top: -44px; right: 0px;">
-                            <img src="/img/travel/orange-inc-d.svg" style="position: absolute; left: 0px;">
                             <div class="text-center lets-start">
                                 <img src="/img/travel/logo-1.png">
                             </div>
                         </div>
                     </div>
+
 
                     <div class="row mx-auto mt-4 mb-3 font-weight-bold w-100  text-justify"
                     >
@@ -54,8 +53,6 @@
 
                     <div class="row m-auto w-100">
                         <div class="col-md-12 m-auto">
-                            <img src="/img/travel/blue-inc-d.svg" style="position: absolute; top: -44px; right: 0px;">
-                            <img src="/img/travel/orange-inc-d.svg" style="position: absolute; left: 0px;">
                             <div class="text-center lets-start">
                                 <img src="/img/travel/avatar.png">
                             </div>
@@ -96,14 +93,14 @@
     .lets-start {
         position: relative;
         z-index: 3;
-        height: 400px;
+        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         img {
-            width: 100%;
-            max-width: 300px;
+            height: 100%;
+
         }
     }
 
@@ -111,6 +108,7 @@
         position: relative;
         display: flex;
         justify-content: end;
+
         h1 {
             z-index: 1;
             font-weight: 100;
@@ -122,6 +120,7 @@
                 color: orange;
             }
         }
+
         img {
             position: absolute;
             width: 250px;

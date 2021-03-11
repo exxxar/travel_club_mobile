@@ -118,6 +118,19 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a href="#omments" data-toggle="modal" aria-label="Комментарии и отзывы"
+                               data-target="#CommentsModal" class="item">
+                                <div class="icon-box bg-orange">
+                                    <i class="far fa-comment"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Комментарии и отзывы</div>
+
+                                </div>
+                            </a>
+                        </li>
+
 
 
 

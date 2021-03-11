@@ -3,7 +3,7 @@
     <div id="appCapsule">
 
 
-        <carousel :items="1" :nav="false" :autoplay="true">
+        <carousel :items="1" :nav="false" :autoplay="true" class="mb-5">
             <div class="item p-2">
                 <img src="/img/travel/InDevelopment.png" alt="alt" class="imaged w-100 square mb-4">
                 <h2 class="text-center">Совсем скоро!</h2>
@@ -57,6 +57,7 @@
                 <p class="text-center">Вы никогда не пропустите свой рейс или же дату отправления в путешествие!</p>
             </div>
         </carousel>
+
 
 
         <div class="carousel-button-footer">
