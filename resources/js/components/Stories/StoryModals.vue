@@ -11,8 +11,8 @@
         />
 
 
-        <!-- <div class="swap-history-left" @click="prev()"></div>
-         <div class="swap-history-right" @click="next()"></div>-->
+        <div class="swap-history-left" @click="prev()"></div>
+        <div class="swap-history-right" @click="next()"></div>
     </div>
 </template>
 <script>
@@ -31,11 +31,14 @@
         },
         mounted() {
             eventBus.$on("right-swipe", () => {
+                console.log("Test right swipe")
                 this.next()
+
             });
 
 
             eventBus.$on("left-swipe", () => {
+                console.log("Test left swipe")
                 this.prev()
             });
 
