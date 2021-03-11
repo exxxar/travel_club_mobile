@@ -42,3 +42,4 @@ Route::view('/m/promo', "pages.promo")->name("promo");
 Route::view('/m/maintenance', "pages.maintenance")->name("maintenance");
 Route::view('/m/tour-search', "pages.tour-search")->name("tour-search");
 Route::view('/m/avia-search', "pages.avia-search")->name("avia-search");
+Route::view('/m/comments', "pages.comments")->name("comments");
