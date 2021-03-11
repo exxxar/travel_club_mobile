@@ -1,6 +1,6 @@
 <template>
     <!-- App Sidebar -->
-    <div class="modal panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+    <div class="modal panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body p-0">
@@ -204,7 +204,11 @@
     <!-- * App Sidebar -->
 </template>
 <script>
-    export default {}
+    export default {
+        methods:{
+
+        }
+    }
 </script>
 <style lang="scss">
 

@@ -1,16 +1,21 @@
 <template>
     <div>
-        <StoryModalImage
-            v-if="current"
-            :index="current"
-            :image="stories[current-1].image"
-            :time="stories[current-1].time"
-            :progress="progress"
+        <div
+            @v-touch:swipe="swipeHandler()"
+        >
+            <StoryModalImage
+                v-if="current"
+                :index="current"
+                :image="stories[current-1].image"
+                :time="stories[current-1].time"
+                :progress="progress"
 
-        />
+            />
 
-        <div class="swap-history-left" @v-touch:swipe.right="prev()"></div>
-        <div class="swap-history-right" @v-touch:swipe.left="next()"></div>
+        </div>
+
+        <div class="swap-history-left" @click="prev()"></div>
+        <div class="swap-history-right" @click="next()"></div>
     </div>
 </template>
 <script>
@@ -27,8 +32,8 @@
                 interval: null,
             }
         },
-        computed:{
-            stories(){
+        computed: {
+            stories() {
                 return this.$store.getters.getStories;
             }
         },
@@ -40,12 +45,16 @@
             }
         },
         methods: {
+            swipeHandler() {
+                console.log("testttt")
+                $('#StoryDefault' + this.current).modal('hide');
+            },
             prev() {
-                this.current = this.current > 1 ? this.current - 1 : this.stories.length-1;
+                this.current = this.current > 1 ? this.current - 1 : this.stories.length - 1;
                 this.start()
             },
             next() {
-                this.current = this.current < this.stories.length-1 ? this.current + 1 : 1;
+                this.current = this.current < this.stories.length - 1 ? this.current + 1 : 1;
                 this.start()
             },
             start() {
@@ -55,7 +64,7 @@
 
                     if (this.progress >= 99) {
 
-                        if (this.current < this.stories.length-1) {
+                        if (this.current < this.stories.length - 1) {
                             this.current += 1;
                             $('#StoryDefault' + this.current).modal('show');
                         } else {

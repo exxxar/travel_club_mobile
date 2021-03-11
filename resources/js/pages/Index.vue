@@ -1,6 +1,6 @@
 <template>
     <!-- App Capsule -->
-    <div id="appCapsule">
+    <div id="appCapsule" v-touch:swipe.bottom="swipeHandler">
 
         <div class="header-large-title d-flex justify-content-between align-items-center">
             <div>
@@ -255,11 +255,13 @@
 
         },
         methods:{
-          test(){
-              console.log("Test");
+
+            swipeHandler(){
+              $(".stories").modal("hide");
+
               this.$notify({
-                  title: 'Important message',
-                  text: 'Hello user!',
+                  title: 'Максим',
+                  text: 'Понравилась история? Давай также;)',
                   group: 'main'
               });
           }
