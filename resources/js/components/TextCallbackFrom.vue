@@ -55,14 +55,15 @@
                     <ul class="messagers">
                         <li>
 
-                            <input type="checkbox" id="telegram-check" name="answer-check">
+                            <input type="checkbox" id="telegram-check" name="answer-check" v-model="socials"
+                                   value="telegram">
                             <label for="telegram-check">
                                 <i class="fab fa-telegram-plane"></i>
                             </label>
                         </li>
                         <li>
 
-                            <input type="checkbox" id="viber-check" name="answer-check">
+                            <input type="checkbox" id="viber-check" name="answer-check" value="viber" v-model="socials">
                             <label for="viber-check">
                                 <i class="fab fa-viber"></i>
                             </label>
@@ -70,7 +71,8 @@
                         </li>
                         <li>
 
-                            <input type="checkbox" id="whatsapp-check" name="answer-check">
+                            <input type="checkbox" id="whatsapp-check" name="answer-check" value="whatsapp"
+                                   v-model="socials">
                             <label for="whatsapp-check">
                                 <i class="fab fa-whatsapp"></i>
                             </label>
@@ -120,6 +122,7 @@
 
         data() {
             return {
+                socials: [],
                 name: localStorage.getItem("food_first_name", ''),
                 phone: localStorage.getItem("fastoran_phone", ''),
                 type: 0,
@@ -150,14 +153,13 @@
                 e.preventDefault();
                 this.cansend = true;
                 axios
-                    .post('../api/v1/wish', {
+                    .post('../api/v1/sendWish', {
                         from: this.name,
                         phone: this.phone,
-                        message: "*" + this.question_types[this.type] + "*:\n" + this.message + "\n" + this.hiddenMessage
+                        message: "<b>" + this.question_types[this.type] + "</b>:\n" + this.message + "\n" + this.hiddenMessage + "\nМожно связаться в: " + JSON.stringify(this.socials),
                     })
                     .then(response => {
                         this.sendMessage("Сообщение успешно отправлено");
-                        $('#contactModalBox').modal('hide')
                         this.name = "";
                         this.phone = "";
                         this.message = "";
@@ -169,10 +171,9 @@
             ,
             sendMessage(message) {
                 this.$notify({
-                    group: 'info',
-                    type: 'success',
-                    title: 'Отправка сообщений Fastoran',
-                    text: message
+                    title: 'Travel Club',
+                    text: message,
+                    group: 'main'
                 });
             }
             ,

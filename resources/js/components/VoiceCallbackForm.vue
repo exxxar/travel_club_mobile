@@ -52,7 +52,7 @@
                     formData.append('files[' + i + ']', file);
                 }
 
-                axios.post('/fileupload', formData, {
+                axios.post('../api/v1/sendVoiceCallback', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         },

@@ -84,12 +84,12 @@
 
 
 
-<script src="{{env("APP_DEBUG")?asset('/js/app.js'):asset('/js/app.min.js')}}?ver={{env("APP_VERSION")}}"></script>
-<script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}"></script>
+<script src="{{env("APP_DEBUG")?asset('/js/app.js'):asset('/js/app.min.js')}}?ver={{env("APP_VERSION")}}" defer></script>
+<script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}" defer></script>
 
 @yield("scripts")
 
-<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js"></script>
+<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
 </body>
 
 </html>

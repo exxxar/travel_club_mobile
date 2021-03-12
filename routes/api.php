@@ -26,6 +26,14 @@ Route::prefix('v1')->group(function () {
     Route::post('sendPhoneCallback', 'MessageController@sendPhoneCallback');
     Route::post('sendVoiceCallback', 'MessageController@sendVoiceCallback');
 
+    Route::post('sendWish', 'MessageController@sendWish')->name("wish");
+
+
+    //ModuleOrders
+    Route::post('sendTourModuleOrder', 'MessageController@sendTourModuleOrder');
+    Route::post('sendAviaModuleOrder', 'MessageController@sendAviaModuleOrder');
+    Route::post('sendHotelModuleOrder', 'MessageController@sendHotelModuleOrder');
+
     //TourModule
     Route::get('getDepartCities', 'TourController@getDepartCities');
     Route::get('getCountries/{town_id}', 'TourController@getCountries');
@@ -37,12 +45,6 @@ Route::prefix('v1')->group(function () {
 
     //AviaModule
     Route::get('getAviaCities/{term}', 'AviaController@getAviaCities');
-
-    //ModuleOrders
-    Route::post('sendTourModuleOrder', 'ModuleOrderController@sendTourModuleOrder');
-    Route::post('sendAviaModuleOrder', 'ModuleOrderController@sendAviaModuleOrder');
-    Route::post('sendHotelModuleOrder', 'ModuleOrderController@sendHotelModuleOrder');
-
 
     Route::get('tours', 'TourController@all');
     Route::get('popularTours', 'TourController@getPopularTours');
