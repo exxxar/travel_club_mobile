@@ -115,8 +115,6 @@
 
     }
 
-
-
     .modal.show.stories ~ .swap-history-left {
         position: fixed;
         z-index: 99999999999!important;

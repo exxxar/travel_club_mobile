@@ -80,7 +80,16 @@
                             <span style="font-family: &quot;Bello Pro&quot;; font-weight: 100;">Travel</span> <span
                             style="color: rgb(240, 139, 35); font-family: &quot;Open Sans&quot;; font-weight: 900;">Club</span>
                             !
-                        </p></div>
+                        </p>
+                    </div>
+
+
+                    <div class="d-flex justify-content-center">
+                        <a href="#omments" data-toggle="modal" aria-label="Комментарии и отзывы"
+                           data-target="#CommentsModal" class="btn btn-orange rounded">
+                            Оставить отзыв
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
