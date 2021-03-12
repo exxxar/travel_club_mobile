@@ -42,11 +42,12 @@
                     <button type="submit" class="btn btn-orange w-100" :disabled="invalid">Отправить</button>
                 </div>
 
-                <div class="input-wrapper mt-2 d-flex justify-content-center" >
-                <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
-                    <i class="icon ion-ios-filing"></i>
-                    Пользовательское соглашение!
-                </a>
+                <div class="input-wrapper mt-2 d-flex justify-content-center">
+                    <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1"
+                       title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
+                        <i class="icon ion-ios-filing"></i>
+                        Пользовательское соглашение!
+                    </a>
                 </div>
 
             </form>
@@ -68,15 +69,14 @@
             }
         },
         mounted() {
-            this.name = this.tourModule.name;
-            this.phone = this.tourModule.phone;
+            this.name = this.aviaModule.name;
+            this.phone = this.aviaModule.phone;
         },
-        computed:
-            {
-                tourModule() {
-                    return this.$store.getters.tourModule
-                },
+        computed: {
+            aviaModule() {
+                return this.$store.getters.aviaModule
             },
+        },
         methods: {
             onSubmit() {
                 this.$store.dispatch('changeName', this.name);
@@ -87,11 +87,13 @@
                         name: this.name,
                         phone: this.phone,
                         message: this.message,
-                        tourModule: this.tourModule
+                        aviaModule: this.aviaModule
                     }
                 ).then(resp => {
                     this.sendMessage("Заявка на подбор авио успешно отправлена!")
                 })
+
+
             },
             sendMessage(message) {
                 this.$notify({

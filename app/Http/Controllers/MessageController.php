@@ -26,28 +26,28 @@ class MessageController extends Controller
         $message = $request->get("message") ?? '';
         $tourModule = $request->get("tourModule") ?? '';
 
-        $order = "*Заявка на подбор тура*\n"
-            . "*Имя:*" . $name . "\n"
-            . "*Телефон:* " . $phone . "\n"
-            . "*Дополнительная информация:*" . $message . "\n"
-            . "*Страна отправления:*" . $tourModule['country'] . "\n"
-            . "*Страна назначения:*" . $tourModule['resort_country']['Name'] . "\n";
-        $order .= "*Курорт(ы):*";
+        $order = "<b>Заявка на подбор тура</b>\n"
+            . "<b>Имя:</b>" . $name . "\n"
+            . "<b>Телефон:</b> " . $phone . "\n"
+            . "<b>Дополнительная информация:</b>" . $message . "\n"
+            . "<b>Страна отправления:</b>" . $tourModule['country'] . "\n"
+            . "<b>Страна назначения:</b>" . $tourModule['resort_country']['Name'] . "\n";
+        $order .= "<b>Курорт(ы):</b>";
         foreach ($tourModule['resorts'] as $resort) {
             $order .= $resort['Name'] . ",";
         }
-        $order .= "\n*Отель(и):*";
+        $order .= "\n<b>Отель(и):</b>";
         foreach ($tourModule['hotels'] as $hotel) {
             $order .= $hotel['Name'] . ",";
         }
-        $order .= "\n*Туроператоры:*";
+        $order .= "\n<b>Туроператоры:</b>";
         foreach ($tourModule['tour_operators'] as $tour_operator) {
             $order .= $tour_operator['Name'] . ",";
         }
-        $order .= "\n*Интервал дат вылета:*" . $tourModule['date_range']['start'] . " - " . $tourModule['date_range']['end'] . "\n"
-            . "*Ночей от:*" . $tourModule['nights_from'] . "  *До:*" . $tourModule['nights_to'] . "\n"
-            . "*Цена   от:*" . $tourModule['price_from'] . "  *До:*" . $tourModule['price_to'] . "\n"
-            . "*Взрослых:*" . $tourModule['adults'] . "  *Детей:*" . $tourModule['children'] . "\n";
+        $order .= "\n<b>Интервал дат вылета:</b>" . $tourModule['date_range']['start'] . " - " . $tourModule['date_range']['end'] . "\n"
+            . "<b>Ночей от:</b>" . $tourModule['nights_from'] . "  <b>До:</b>" . $tourModule['nights_to'] . "\n"
+            . "<b>Цена от:</b>" . $tourModule['price_from'] . "  <b>До:</b>" . $tourModule['price_to'] . "\n"
+            . "<b>Взрослых:</b>" . $tourModule['adults'] . "  <b>Детей:</b>" . $tourModule['children'] . "\n";
 //            "*Курорт(ы):*".$tourModule['resorts'][0]['Name']."\n"
 //            ."*Отель(и):*".$tourModule['hotels'][0]['Name']."\n"
 //            ."*Туроператоры:*".$tourModule['tour_operators'][0]['Name']."\n"
@@ -69,42 +69,42 @@ class MessageController extends Controller
         $aviaModule = $request->get("aviaModule") ?? '';
 
 
-        $order = "*Заявка на подбор авиабилетов*\n"
-            . "*Имя:*" . $name . "\n"
-            . "*Телефон:* " . $phone . "\n"
-            . "*Дополнительная информация:*" . $message . "\n";
+        $order = "<b>Заявка на подбор авиабилетов</b>\n"
+            . "<b>Имя:</b>" . $name . "\n"
+            . "<b>Телефон:</b> " . $phone . "\n"
+            . "<b>Дополнительная информация:</b>" . $message . "\n";
         if ($aviaModule['is_multi_city'] == false) {
             if (isset($aviaModule['city_from']['city_name'])) {
-                $order .= "*Город вылета:*" . $aviaModule['city_from']['city_name'] . "," . $aviaModule['city_from']['name'] . "," . $aviaModule['city_from']['code'] . "\n";
+                $order .= "<b>Город вылета:</b>" . $aviaModule['city_from']['city_name'] . "," . $aviaModule['city_from']['name'] . "," . $aviaModule['city_from']['code'] . "\n";
             }
             if (!isset($aviaModule['city_from']['city_name'])) {
-                $order .= "*Город вылета:*" . $aviaModule['city_from']['name'] . ", Все аэропорты, " . $aviaModule['city_from']['code'] . "\n";
+                $order .= "<b>Город вылета:</b>" . $aviaModule['city_from']['name'] . ", Все аэропорты, " . $aviaModule['city_from']['code'] . "\n";
             }
             if (isset($aviaModule['city_to']['city_name'])) {
-                $order .= "*Город прибытия:*" . $aviaModule['city_from']['city_name'] . "," . $aviaModule['city_from']['name'] . "," . $aviaModule['city_from']['code'] . "\n";
+                $order .= "<b>Город прибытия:</b>" . $aviaModule['city_from']['city_name'] . "," . $aviaModule['city_from']['name'] . "," . $aviaModule['city_from']['code'] . "\n";
             }
             if (!isset($aviaModule['city_to']['city_name'])) {
-                $order .= "*Город прибытия:*" . $aviaModule['city_from']['name'] . ", Все аэропорты, " . $aviaModule['city_from']['code'] . "\n";
+                $order .= "<b>Город прибытия:</b>" . $aviaModule['city_from']['name'] . ", Все аэропорты, " . $aviaModule['city_from']['code'] . "\n";
             }
-            $order .= "*Туда:*" . Carbon::parse($aviaModule['depart_date'])->format('d-m-Y') . "  *Обратно:*" . Carbon::parse($aviaModule['return_date'])->format('d-m-Y') . "\n";
+            $order .= "<b>Туда:</b>" . Carbon::parse($aviaModule['depart_date'])->format('d-m-Y') . "  <b>Обратно:</b>" . Carbon::parse($aviaModule['return_date'])->format('d-m-Y') . "\n";
         } else {
-            $order .= "*Сложный маршрут\n*";
+            $order .= "<b>Сложный маршрут\n</b>";
             $index = 1;
             foreach ($aviaModule['routes'] as $resort) {
-                $order .= "*Маршрут № " . $index . "*\n";
+                $order .= "<b>Маршрут № " . $index . "</b>\n";
                 if (isset($resort['city_from']['city_name'])) {
-                    $order .= "*Город вылета:*" . $resort['city_from']['city_name'] . "," . $resort['city_from']['name'] . "," . $resort['city_from']['code'] . "\n";
+                    $order .= "<b>Город вылета:</b>" . $resort['city_from']['city_name'] . "," . $resort['city_from']['name'] . "," . $resort['city_from']['code'] . "\n";
                 }
                 if (!isset($resort['city_from']['city_name'])) {
-                    $order .= "*Город вылета:*" . $resort['city_from']['name'] . ", Все аэропорты, " . $resort['city_from']['code'] . "\n";
+                    $order .= "<b>Город вылета:</b>" . $resort['city_from']['name'] . ", Все аэропорты, " . $resort['city_from']['code'] . "\n";
                 }
                 if (isset($resort['city_to']['city_name'])) {
-                    $order .= "*Город прибытия:*" . $resort['city_from']['city_name'] . "," . $resort['city_from']['name'] . "," . $resort['city_from']['code'] . "\n";
+                    $order .= "<b>Город прибытия:</b>" . $resort['city_from']['city_name'] . "," . $resort['city_from']['name'] . "," . $resort['city_from']['code'] . "\n";
                 }
                 if (!isset($resort['city_to']['city_name'])) {
-                    $order .= "*Город прибытия:*" . $resort['city_from']['name'] . ", Все аэропорты, " . $resort['city_from']['code'] . "\n";
+                    $order .= "<b>Город прибытия:</b>" . $resort['city_from']['name'] . ", Все аэропорты, " . $resort['city_from']['code'] . "\n";
                 }
-                $order .= "*Дата вылета:*" . $aviaModule['depart_date'] . "\n";
+                $order .= "<b>Дата вылета:</b>" . $aviaModule['depart_date'] . "\n";
                 $index++;
             }
         }
@@ -112,8 +112,8 @@ class MessageController extends Controller
 //            ."*Город вылета:*".$aviaModule['city_from']."\n"
 //            ."*Город прибытия:*".$aviaModule['city_to']['Name']."\n";
 
-        $order .= "*Класс:*" . $aviaModule['avia_class'] . "\n"
-            . "*Взрослых:*" . $aviaModule['adults'] . "  *Детей до 12:*" . $aviaModule['children_under_12'] . "  *Детей до 2:*" . $aviaModule['children_under_2'] . "\n";
+        $order .= "<b>Класс:</b>" . $aviaModule['avia_class'] . "\n"
+            . "<b>Взрослых:</b>" . $aviaModule['adults'] . "  <b>Детей до 12:</b>" . $aviaModule['children_under_12'] . "  <b>Детей до 2:</b>" . $aviaModule['children_under_2'] . "\n";
 
         $this->sendMessage($order);
 

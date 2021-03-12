@@ -1,20 +1,20 @@
 export default {
     state: {
         aviaModule: JSON.parse(localStorage.getItem("aviaModule")) || {
-            name:'',
-            phone:'',
+            name: '',
+            phone: '',
             adults: 1,
             city_from: null,
             city_to: null,
             children_under_12: 0,
             children_under_2: 0,
-            depart_date:new Date(),
-            return_date:null,
-            is_multi_city:false,
-            routes:[],//city_from, city_to, departure_date
-            avia_class:'Эконом класс'
+            depart_date: new Date(),
+            return_date: null,
+            is_multi_city: false,
+            routes: [],//city_from, city_to, departure_date
+            avia_class: 'Эконом класс'
         },
-        aviaCities:[],
+        aviaCities: [],
         avia_step1: true,
         avia_step2: false,
         avia_step3: false,
@@ -26,8 +26,8 @@ export default {
     },
 
     // getters
-    getters : {
-        aviaModule (state) {
+    getters: {
+        aviaModule(state) {
             return state.aviaModule;
         },
 
@@ -55,8 +55,15 @@ export default {
 
     // actions
     actions: {
-        sendAviaModuleOrder({commit}, payload) {
-            return axios.post('/sendAviaModuleOrder', payload)
+        sendAvioModuleOrder({commit}, payload) {
+
+
+            try {
+                return axios.post('/sendAviaModuleOrder', payload)
+            } catch (error) {
+                console.log(error);
+                throw error
+            }
         },
 
         changeAviaName({commit}, payload) {
@@ -65,23 +72,23 @@ export default {
         changeAviaPhone({commit}, payload) {
             commit('changeAviaPhone', payload)
         },
-        changeAviaSteps ({commit}, payload) {
+        changeAviaSteps({commit}, payload) {
             commit('changeAviaSteps', payload)
         },
-        changeAviaStep1 ({commit}, payload) {
+        changeAviaStep1({commit}, payload) {
             commit('changeAviaStep1', payload)
         },
-        changeAviaStep2 ({commit}, payload) {
+        changeAviaStep2({commit}, payload) {
             commit('changeAviaStep2', payload)
         },
-        changeAviaStep3 ({commit}, payload) {
+        changeAviaStep3({commit}, payload) {
             commit('changeAviaStep3', payload)
         },
 
-        changeCityFrom ({commit}, payload) {
+        changeCityFrom({commit}, payload) {
             commit('changeCityFrom', payload)
         },
-        changeCityTo ({commit}, payload) {
+        changeCityTo({commit}, payload) {
             commit('changeCityTo', payload)
         },
         changeAviaAdults({commit}, payload) {
@@ -104,12 +111,11 @@ export default {
         },
         async getAviaCities({commit}, payload) {
             commit('isAviaCitiesLoading', true);
-            await axios.get('/getAviaCities/'+payload).then((response) => {
+            await axios.get('/getAviaCities/' + payload).then((response) => {
                 commit('getAviaCities', response.data);
                 commit('isAviaCitiesLoading', false);
             });
         },
-
 
 
         incAviaAdults({commit}) {
@@ -143,15 +149,15 @@ export default {
             state.aviaModule.phone = payload;
             localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
         },
-        changeAviaStep1 (state, payload) {
+        changeAviaStep1(state, payload) {
             state.avia_step1 = payload;
             localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
         },
-        changeAviaStep2 (state, payload) {
+        changeAviaStep2(state, payload) {
             state.avia_step2 = payload;
             localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
         },
-        changeAviaStep3 (state, payload) {
+        changeAviaStep3(state, payload) {
             state.avia_step3 = payload;
             localStorage.setItem("aviaModule", JSON.stringify(state.aviaModule));
         },

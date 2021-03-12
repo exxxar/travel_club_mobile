@@ -22,7 +22,7 @@ try {
 
 window.axios = require('axios');
 
-window.axios.defaults.baseURL = 'https://m.travel-club.tours/api/v1';
+window.axios.defaults.baseURL = '/api/v1';
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

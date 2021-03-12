@@ -9,8 +9,8 @@ import storiesModule from './modules/storiesModule';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-	namespaced: true,
-	modules: {
-		tourModule, aviaModule, storiesModule
-	}
+    namespaced: true,
+    modules: {
+        tourModule, aviaModule, storiesModule
+    }
 })
