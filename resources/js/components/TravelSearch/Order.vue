@@ -116,6 +116,8 @@
                         tourModule: this.tourModule
                     }
                 ).then(resp => {
+                    this.startTimer();
+
                     this.sendMessage("Заявка на подбор тура успешно отправлена!")
                 })
             },

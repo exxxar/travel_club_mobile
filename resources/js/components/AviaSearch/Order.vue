@@ -116,6 +116,8 @@
                         aviaModule: this.aviaModule
                     }
                 ).then(resp => {
+                    this.startTimer();
+
                     this.sendMessage("Заявка на подбор авио успешно отправлена!")
                 })
 
