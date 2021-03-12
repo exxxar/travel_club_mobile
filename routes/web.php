@@ -22,7 +22,7 @@ Route::get('/', function () {
 })->name("desktop");
 
 Route::get('/offline', function () {
-    return view("page.maintenance");
+    return view("pages.maintenance");
 })->name("offline");
 
 
