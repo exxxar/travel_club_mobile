@@ -5,13 +5,14 @@ namespace App\Classes;
 
 
 use Telegram\Bot\FileUpload\InputFile;
+use \Telegram\Bot\Laravel\Facades\Telegram as TG;
 
 trait Telegram
 {
 
     public function sendMessage($text)
     {
-        \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
+        TG::sendMessage([
             'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
             'parse_mode' => 'HTML',
             'text' => sprintf($text),
@@ -21,7 +22,7 @@ trait Telegram
 
     public function sendAudio($caption, $audioName)
     {
-        \Telegram\Bot\Laravel\Facades\Telegram::sendAudio([
+        TG::sendAudio([
             'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
             "caption" => sprintf($caption),
             'parse_mode' => 'HTML',
