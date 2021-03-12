@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PromocodeEvent;
 use App\Message;
 use App\ModuleOrder;
 use App\Promocode;
@@ -127,9 +128,10 @@ class MessageController extends Controller
 
     public function sendPromocode(Request $request)
     {
+
         return response()->json([
             "res" => !is_null(Promocode::where("code",
-                $request->promocode)
+                $request->get("code"))
                 ->first())
         ], 200);
 
@@ -148,6 +150,11 @@ class MessageController extends Controller
         $email = $request->get("email") ?? '';
         $from = $request->get("from") ?? '';
         $message = $request->get("message") ?? '';
+
+        $code = $request->get("code") ?? '';
+
+        if (mb_strlen($code) > 0)
+            event(new PromocodeEvent($code, "$message", 0.0, $from, $phone));
 
         $this->sendMessage(sprintf("<b>Заявка на перезвон:</b>\nТелефон: %s\nПочта: %s\nФ.И.О.: %s\nСообщение: %s",
             $phone,

@@ -153,10 +153,12 @@
                 e.preventDefault();
                 this.cansend = true;
                 axios
-                    .post('../api/v1/sendWish', {
+                    .post('sendWish', {
                         from: this.name,
                         phone: this.phone,
                         message: "<b>" + this.question_types[this.type] + "</b>:\n" + this.message + "\n" + this.hiddenMessage + "\nМожно связаться в: " + JSON.stringify(this.socials),
+                        code: this.hiddenMessage.length > 0 ? this.hiddenMessage : ''
+
                     })
                     .then(response => {
                         this.sendMessage("Сообщение успешно отправлено");

@@ -24,7 +24,9 @@
 
                     <div class="form-group boxed">
                         <div class="input-wrapper">
-                           <button class="btn btn-orange w-100" >Активировать</button>
+                           <button class="btn btn-orange w-100" :disabled="searching">
+                                   {{counter?counter+" сек.":"Активировать"}}
+                           </button>
                         </div>
                     </div>
 
@@ -35,7 +37,7 @@
         </div>
 
         <div class="section mt-2 mb-2" v-if="success_promo_active">
-            <text-callback-form :qType="3" :hiddenMessage="'промокод:'+code"/>
+            <text-callback-form :qType="3" :hiddenMessage="code"/>
         </div>
 
 
@@ -148,11 +150,54 @@
             return {
                 success_promo_active:false,
                 code:'',
+                searching: false,
+                counter: null,
+            }
+        },
+        mounted() {
+            if (localStorage.getItem("status_counter") != null) {
+                this.searching = true;
+                this.startTimer(localStorage.getItem("status_counter"))
             }
         },
         methods:{
+            sendMessage(message) {
+                this.$notify({
+                    title: 'TravelClub',
+                    text: message,
+                    group: 'main'
+                });
+            },
+            startTimer(time) {
+                this.counter = time != null ? Math.min(time, 30) : 30;
+                let counterId = setInterval(() => {
+                        if (this.counter > 0)
+                            this.counter--
+                        else {
+                            clearInterval(counterId)
+                            this.searching = false
+                            this.counter = null
+                        }
+                        localStorage.setItem("status_counter", this.counter)
+                    }, 1000
+                )
+            },
             active(){
-               this.success_promo_active = true
+                this.searching = true;
+                axios.post('sendPromocode',{
+                    code:this.code,
+                }).then(resp=>{
+
+                    this.startTimer();
+
+                    this.success_promo_active = resp.data.res
+
+                    this.sendMessage(this.success_promo_active?"Промокод найден, заполните информацию о себе и с вами свяжется наш менеджер!":
+                        "Ошибка, промокод не найден!")
+                }).catch(()=>{
+                    this.sendMessage("Ошибка активации промокода!")
+                })
+
             }
         }
     }

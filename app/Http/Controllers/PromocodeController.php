@@ -31,8 +31,8 @@ class PromocodeController extends Controller
         $mpdf = new Mpdf();
 
         $promocode = Promocode::where("code", $request->get("code"))
-            ->where("password", bcrypt($request->get("password")))
-            ->where("is_active", true)
+            //->where("password", bcrypt($request->get("password")))
+            //->where("is_active", true)
             ->first();
 
         if (is_null($promocode))
