@@ -30,7 +30,7 @@ Route::prefix('v1')->group(function () {
 
 
     //ModuleOrders
-    Route::post('sendTourModuleOrder', 'MessageController@sendTourModuleOrder');
+    Route::post('sendTourModuleOrder', 'MessageController@sendTourModuleOrder2');
     Route::post('sendAviaModuleOrder', 'MessageController@sendAviaModuleOrder');
     Route::post('sendHotelModuleOrder', 'MessageController@sendHotelModuleOrder');
 
