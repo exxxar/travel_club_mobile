@@ -37,23 +37,15 @@ class PromocodeListener
         if (is_null($event))
             return;
 
-        Log::info("test1=>".print_r($event,true));
+
         $promocode = Promocode::where("code", $event->code)
             ->first();
 
-        Log::info("test2");
+
         if (is_null($promocode))
             return;
 
-        Log::info("test3");
-        Log::info(print_r((object)[
-            "promocode_id" => $promocode->id,
-            "tour_description" => $event->tour_description ?? '',
-            "tour_price" => $event->tour_price ?? '',
-            "user_name" => $event->user_name,
-            "user_phone" => $event->user_phone,
-        ], true));
-        Log::info("test4");
+        $promocode->activate_but_not_lead_count = $promocode->activate_but_not_lead_count + 1;
 
         PromocodeHistory::create([
             "promocode_id" => $promocode->id,
