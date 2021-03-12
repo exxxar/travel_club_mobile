@@ -105,6 +105,7 @@
                 )
             },
             onSubmit() {
+                this.searching = true;
                 this.$store.dispatch('changeName', this.name);
                 this.$store.dispatch('changePhone', this.phone);
 
