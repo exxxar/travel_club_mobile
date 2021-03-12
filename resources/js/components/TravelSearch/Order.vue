@@ -39,7 +39,11 @@
                 </div>
 
                 <div class="input-wrapper mt-2">
-                    <button type="submit" class="btn btn-orange w-100" :disabled="invalid">Отправить</button>
+                    <button type="submit" class="btn btn-orange w-100" :disabled="invalid||searching">
+                        {{counter?counter+" сек.":"Отправить"}}
+                    </button>
+
+
                 </div>
 
                 <div class="input-wrapper mt-2 d-flex justify-content-center" >
@@ -61,6 +65,8 @@
         name: "Order",
         data() {
             return {
+                searching: false,
+                counter: null,
                 name: '',
                 phone: '',
                 // email: '',
@@ -68,6 +74,12 @@
             }
         },
         mounted() {
+
+            if (localStorage.getItem("status_counter") != null) {
+                this.searching = true;
+                this.startTimer(localStorage.getItem("status_counter"))
+            }
+
             this.name = this.tourModule.name;
             this.phone = this.tourModule.phone;
         },
@@ -78,6 +90,20 @@
                 },
             },
         methods: {
+            startTimer(time) {
+                this.counter = time != null ? Math.min(time, 30) : 30;
+                let counterId = setInterval(() => {
+                        if (this.counter > 0)
+                            this.counter--
+                        else {
+                            clearInterval(counterId)
+                            this.searching = false
+                            this.counter = null
+                        }
+                        localStorage.setItem("status_counter", this.counter)
+                    }, 1000
+                )
+            },
             onSubmit() {
                 this.$store.dispatch('changeName', this.name);
                 this.$store.dispatch('changePhone', this.phone);
