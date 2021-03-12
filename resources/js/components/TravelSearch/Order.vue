@@ -95,10 +95,9 @@
             },
             sendMessage(message) {
                 this.$notify({
-                    group: 'info',
-                    type: 'travel',
-                    title: 'Сообщение от TravelClub',
-                    text: message
+                    title: 'TravelClub',
+                    text: message,
+                    group: 'main'
                 });
             },
         },

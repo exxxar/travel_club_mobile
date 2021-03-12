@@ -86,7 +86,7 @@ export default {
     actions: {
         sendTourModuleOrder({commit}, payload) {
             try {
-                return axios.post('sendTourModuleOrder', payload);
+                return axios.post('sendAviaModuleOrder2', payload);
                 // commit('sendTourModuleOrder', payload)
             } catch (error) {
                 console.log(error);

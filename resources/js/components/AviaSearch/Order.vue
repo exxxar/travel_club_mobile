@@ -82,7 +82,7 @@
                 this.$store.dispatch('changeName', this.name);
                 this.$store.dispatch('changePhone', this.phone);
 
-                this.$store.dispatch('sendTourModuleOrder',
+                this.$store.dispatch('sendAvioModuleOrder',
                     {
                         name: this.name,
                         phone: this.phone,
@@ -90,15 +90,14 @@
                         tourModule: this.tourModule
                     }
                 ).then(resp => {
-                    this.sendMessage("Заявка на подбор тура успешно отправлена!")
+                    this.sendMessage("Заявка на подбор авио успешно отправлена!")
                 })
             },
             sendMessage(message) {
                 this.$notify({
-                    group: 'info',
-                    type: 'travel',
-                    title: 'Сообщение от TravelClub',
-                    text: message
+                    title: 'TravelClub',
+                    text: message,
+                    group: 'main'
                 });
             },
         },
