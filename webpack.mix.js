@@ -33,6 +33,8 @@ mix.disableNotifications();
 
 mix.copy('resources/assets/js/lib/jquery-3.4.1.min.js', 'public/js');
 mix.copy("resources/assets/css/theme.css", "public/css");
+mix.copy("resources/assets/css/tour-search.css", "public/css");
+
 mix.copyDirectory('resources/assets/img', 'public/img');
 mix.copyDirectory('resources/assets/css/inc', 'public/css/inc');
 
