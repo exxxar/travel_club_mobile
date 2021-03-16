@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{AaG6:function(a,t,e){"use strict";e.r(t);var n={name:"Chats"},s=e("KHd+"),c=Object(s.a)(n,(function(){var a=this.$createElement,t=this._self._c||a;return t("div",[t("chat-list")],1)}),[],!1,null,"31baaaa1",null);t.default=c.exports}}]);

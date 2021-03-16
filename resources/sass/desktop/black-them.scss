@@ -1,0 +1,404 @@
+body {
+    /*background: #4B79A1;
+    background: linear-gradient(to top, #2a3350, #45597c);
+    background: -olinear-gradient(to top, #283E51, #0A2342);
+    height: 100vh;
+    background-attachment: fixed;*/
+
+    background: #4B79A1;
+    background: linear-gradient(to top, #4a1000, #9b5454);
+    background: -olinear-gradient(to top, #283E51, #0A2342);
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.header_area.sticky {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#hotel .illustration {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.tg-icon,
+.inst-icon {
+    color: white !important;
+}
+
+.travel-card {
+
+    border-radius: 25px;
+    // background: #0b1033;
+}
+
+.travel-card-description {
+    // color:white;
+}
+
+.travel-card-orange {
+    border-radius: 25px;
+}
+
+.menu-title {
+    //text-shadow: 1px 1px 1px black;
+
+    span {
+        color: white !important;
+    }
+}
+
+.icon-instagram {
+    color: white !important;
+}
+
+.family-row:nth-child(1) {
+
+    img {
+        height: 254px !important;
+        filter: drop-shadow(2px 4px 6px black);
+        transition: .3s;
+
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.025,1.025);
+        }
+
+    }
+}
+
+
+.family-row:nth-child(2) {
+    width: 80%;
+    height: 75px;
+    background: url(/images/coming-soon-dark.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-7deg);
+    transition: 1s;
+
+    &:hover {
+        transform: scale(1.025,1.025);
+    }
+
+    img {
+        display: none;
+    }
+}
+
+.travel-illustration {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.family-description {
+    p {
+        color: white;
+    }
+}
+
+#promocode,
+#family {
+    h1.title-1 {
+        color: white;
+    }
+
+}
+
+.avia-mark {
+    img {
+        filter: invert(1) drop-shadow(2px 3px 2px black);
+    }
+}
+
+.trip-mark {
+    img {
+        filter: invert(1) drop-shadow(2px 3px 2px black);
+    }
+}
+
+.flip-clock__slot {
+    color: white !important;
+}
+
+#landing {
+}
+
+.feature-1 {
+    color: white;
+}
+
+#avia .illustration {
+
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+
+#__biletix__wl__ {
+    background: white !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    z-index: 0 !important;
+}
+
+#__biletix__wl__ * {
+    color: #580808 !important;
+}
+
+#__biletix__wl__ .biletix__wl__price_variant_item__plane, #__biletix__wl__ .biletix__wl__search_form {
+    background: #ffa819;
+}
+
+#__biletix__wl__ .biletix_wl__switch label.active {
+    background: #fe4b43;
+}
+
+#__biletix__wl__ .biletix_wl__switch {
+    border: 1px solid #ff0000;
+    padding: 2px;
+}
+
+#__biletix__wl__ .biletix__wl__price_variant_item__price,
+#__biletix__wl__ .biletix__wl__title {
+    background: #ffa819;
+}
+
+#__biletix__wl__ .biletix__wl__search_form__person_list_plane .biletix__wl__search_form__person_list .biletix__wl__search_form__person_list__item.selected {
+    background: #dc3545 !important;
+}
+
+#__biletix__wl__ .biletix__wl__price_variant_item__price.cheap .biletix__wl__price_variant_item__price__info, #__biletix__wl__ .biletix__wl__price_variant_item__price.cheap .biletix__wl__price_variant_item__price__type {
+    background: #ff0404;
+    color: #fff !important;
+    display: inline;
+}
+
+#__biletix__wl__ .biletix__wl__variant_list .biletix__wl__trip_item__offer.active {
+    background: #aadd33 !important;
+    border-radius: 5px !important;
+    color: #025673 !important;
+
+    * {
+        color: white !important;
+    }
+}
+
+.biletix__wl__title__demo {
+    display: none !important;
+}
+
+#__biletix__wl__ .biletix__wl__title .biletix__wl__icon {
+    position: absolute;
+    left: 31px;
+    top: 26px;
+    width: 14px;
+    height: 16px;
+    fill: #ffffff;
+}
+
+
+#__biletix__wl__ .biletix__wl__resize_me[min-width=""] .biletix__wl__price_variant_item .biletix__wl__price_variant_item__price .biletix__wl__price_variant_item__price__info, #__biletix__wl__[min-width=""] .biletix__wl__price_variant_item .biletix__wl__price_variant_item__price .biletix__wl__price_variant_item__price__info {
+    background-color: #fe4b43;
+}
+
+#__biletix__wl__ .biletix__wl__price_variant_item__plane:not(:last-child), #__biletix__wl__ .biletix__wl__search_form:not(:last-child) {
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+#__biletix__wl__ .biletix__wl__ak_group_table tbody tr td .biletix__wl__ak_group_table__filter_item {
+    background: #ebe045;
+}
+
+#__biletix__wl__ .biletix__wl__ak_group_table tbody tr td .biletix__wl__ak_group_table__filter_item.cheap {
+    background: #ad3;
+}
+
+
+.logo-1-1 {
+    filter: drop-shadow(2px 4px 6px black);
+
+    transition: transform .3s;
+
+    &:hover {
+        transform: scale(1.025, 1.025);
+    }
+}
+
+.logo-1-2 {
+    filter: drop-shadow(2px 4px 6px black);
+
+    transition: transform .3s;
+
+    &:hover {
+        transform: scale(1.025, 1.025) rotate(5deg);
+    }
+}
+
+.avia-mark,
+.trip-mark {
+    transition: transform .3s;
+
+    &:hover {
+        transform: scale(1.025, 1.025);
+    }
+}
+
+.hotel-mark {
+
+
+    transform-origin: 0 0;
+    transition: .3s;
+    transform: rotate(0deg);
+
+
+}
+#hotel:hover {
+
+
+
+    .hotel-mark {
+        animation: hotelMarkAnim 3s ease-in-out;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+
+
+    }
+}
+
+
+@keyframes hotelMarkAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(66deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(55deg);
+    }
+
+    80% {
+        transform: rotate(35deg);
+    }
+
+    100% {
+        transform: rotate(40deg);
+    }
+
+
+}
+
+.orange-inc.orange-inc-1 {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.blue-inc.blue-inc-1 {
+    position: absolute;
+    top: -44px;
+    right: 0px;
+    filter: drop-shadow(2px 4px 6px black);
+    transform: rotate(
+            88deg
+    ) translate(12px, -48px);
+}
+
+
+.orange-inc.orange-inc-2 {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.blue-inc.blue-inc-2 {
+    filter: drop-shadow(2px 4px 6px black);
+    transform: rotate(
+            45deg
+    );
+}
+// Core
+
+@import "resources/sass/desktop/black-dashboard/custom/functions";
+@import "resources/sass/desktop/black-dashboard/bootstrap/functions";
+
+@import "resources/sass/desktop/black-dashboard/custom/variables";
+@import "resources/sass/desktop/black-dashboard/bootstrap/variables";
+
+@import "resources/sass/desktop/black-dashboard/custom/mixins";
+@import "resources/sass/desktop/black-dashboard/bootstrap/mixins";
+
+// Bootstrap components
+
+//@import "black-dashboard/bootstrap/root";
+//@import "black-dashboard/bootstrap/reboot";
+//@import "black-dashboard/bootstrap/type";
+@import "resources/sass/desktop/black-dashboard/bootstrap/images";
+//@import "black-dashboard/bootstrap/code";
+//@import "black-dashboard/bootstrap/grid";
+//@import "black-dashboard/bootstrap/tables";
+@import "resources/sass/desktop/black-dashboard/bootstrap/forms";
+//@import "black-dashboard/bootstrap/buttons";
+@import "resources/sass/desktop/black-dashboard/bootstrap/transitions";
+//@import "black-dashboard/bootstrap/dropdown";
+@import "resources/sass/desktop/black-dashboard/bootstrap/button-group";
+@import "resources/sass/desktop/black-dashboard/bootstrap/input-group";
+@import "resources/sass/desktop/black-dashboard/bootstrap/custom-forms";
+////@import "black-dashboard/bootstrap/nav";
+////@import "black-dashboard/bootstrap/navbar";
+@import "resources/sass/desktop/black-dashboard/bootstrap/card";
+//@import "black-dashboard/bootstrap/breadcrumb";
+//@import "black-dashboard/bootstrap/pagination";
+//@import "black-dashboard/bootstrap/badge";
+//@import "black-dashboard/bootstrap/jumbotron";
+//@import "black-dashboard/bootstrap/alert";
+//@import "black-dashboard/bootstrap/progress";
+@import "resources/sass/desktop/black-dashboard/bootstrap/media";
+@import "resources/sass/desktop/black-dashboard/bootstrap/list-group";
+//@import "black-dashboard/bootstrap/close";
+//@import "black-dashboard/bootstrap/modal";
+//@import "black-dashboard/bootstrap/tooltip";
+//@import "black-dashboard/bootstrap/popover";
+//@import "black-dashboard/bootstrap/carousel";
+//@import "black-dashboard/bootstrap/utilities";
+//@import "black-dashboard/bootstrap/print";
+
+// Custom components
+
+//@import "black-dashboard/custom/alerts.scss";
+@import "resources/sass/desktop/black-dashboard/custom/buttons.scss";
+//@import "black-dashboard/custom/dropdown.scss";
+////@import "black-dashboard/custom/footer.scss";
+@import "resources/sass/desktop/black-dashboard/custom/forms.scss";
+//@import "black-dashboard/custom/images.scss";
+//@import "black-dashboard/custom/modal.scss";
+////@import "black-dashboard/custom/navbar.scss";
+//@import "black-dashboard/custom/type.scss";
+////@import "black-dashboard/custom/tables";
+//@import "black-dashboard/custom/checkboxes-radio";
+//@import "black-dashboard/custom/fixed-plugin";
+@import "resources/sass/desktop/black-dashboard/custom/sidebar-and-main-panel.scss";
+@import "resources/sass/desktop/black-dashboard/custom/misc.scss";
+//@import "black-dashboard/custom/rtl.scss";
+@import "resources/sass/desktop/black-dashboard/custom/input-group.scss";
+
+
+// Vendor / Plugins
+
+@import "resources/sass/desktop/black-dashboard/custom/vendor/plugin-perfect-scrollbar.scss";
+//@import "black-dashboard/custom/vendor/plugin-animate-bootstrap-notify.scss";
+
+// light mode
+
+@import "resources/sass/desktop/black-dashboard/custom/white-content.scss";
+
+// Cards
+//
+@import 'resources/sass/desktop/black-dashboard/custom/card';
+//@import "black-dashboard/custom/cards/card-chart";
+//@import "black-dashboard/custom/cards/card-map";
+@import "resources/sass/desktop/black-dashboard/custom/cards/card-user";
+@import "resources/sass/desktop/black-dashboard/custom/cards/card-task";
+@import "resources/sass/desktop/black-dashboard/custom/cards/card-plain";

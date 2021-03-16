@@ -1,0 +1,113 @@
+body {
+    background: #4B79A1;
+    background: -webkit-linear-gradient(to top, #283E51, #0A2342);
+    background: linear-gradient(to top, #320052, #77000f);
+    background: -olinear-gradient(to top, #283E51, #0A2342);
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.tg-icon,
+.inst-icon {
+    color: white !important;
+}
+
+.header_area.sticky {
+    background: rgba(255,255,255,0.4);
+}
+
+#hotel .illustration {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.travel-card {
+
+    border-radius: 25px;
+// background: #0b1033;
+}
+
+.travel-card-description {
+// color:white;
+}
+
+.travel-card-orange {
+    border-radius: 25px;
+}
+
+.menu-title {
+//text-shadow: 1px 1px 1px black;
+
+span {
+    color: white !important;
+}
+}
+
+.icon-instagram {
+    color: white !important;
+}
+
+.family-row:nth-child(2) {
+img {
+    height: 254px !important;
+    filter: drop-shadow(2px 4px 6px black);
+}
+}
+
+
+.family-row:nth-child(3) {
+    width: 80%;
+    height: 75px;
+    background: url(/images/coming-soon-dark.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-7deg);
+    transition: 1s;
+
+img {
+    display: none;
+}
+}
+
+.travel-illustration {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.family-description {
+p {
+    color: white;
+}
+}
+
+#promocode,
+#family {
+h1.title-1 {
+    color: white;
+}
+
+}
+
+.avia-mark {
+img {
+    filter: invert(1) drop-shadow(2px 3px 2px black);
+}
+}
+.trip-mark {
+img {
+    filter: invert(1) drop-shadow(2px 3px 2px black);
+}
+}
+
+.flip-clock__slot {
+    color:white !important;
+}
+#landing {
+}
+
+.feature-1 {
+    color:white;
+}
+
+#avia .illustration {
+
+    filter: drop-shadow(2px 4px 6px black);
+}

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{djB6:function(e,t,n){"use strict";n.r(t);var o={name:"Todos"},s=n("KHd+"),a=Object(s.a)(o,(function(){var e=this.$createElement;return(this._self._c||e)("to-do-list")}),[],!1,null,"161eda50",null);t.default=a.exports}}]);

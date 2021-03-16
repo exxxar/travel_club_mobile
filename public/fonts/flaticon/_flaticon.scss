@@ -1,0 +1,60 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 03/08/2020 23:48
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-phone:before { content: "\f100"; }
+.flaticon-contact:before { content: "\f101"; }
+.flaticon-order:before { content: "\f102"; }
+.flaticon-business-and-finance:before { content: "\f103"; }
+.flaticon-hot-air-balloon-1:before { content: "\f104"; }
+.flaticon-hot-air-balloon:before { content: "\f105"; }
+.flaticon-dinner:before { content: "\f106"; }
+.flaticon-safe-box:before { content: "\f107"; }
+.flaticon-armchair:before { content: "\f108"; }
+.flaticon-pet-friendly:before { content: "\f109"; }
+    
+    $font-Flaticon-phone: "\f100";
+    $font-Flaticon-contact: "\f101";
+    $font-Flaticon-order: "\f102";
+    $font-Flaticon-business-and-finance: "\f103";
+    $font-Flaticon-hot-air-balloon-1: "\f104";
+    $font-Flaticon-hot-air-balloon: "\f105";
+    $font-Flaticon-dinner: "\f106";
+    $font-Flaticon-safe-box: "\f107";
+    $font-Flaticon-armchair: "\f108";
+    $font-Flaticon-pet-friendly: "\f109";

@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Jenssegers\Agent\Facades\Agent;
+
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,28 +21,55 @@ Route::get('/', function () {
     if (Agent::isMobile())
         return redirect()->route("index");
 
-    return view('welcome');
+    return view('desktop.welcome');
 })->name("desktop");
 
 Route::get('/offline', function () {
-    return view("pages.maintenance");
+    return view("pwa.pages.maintenance");
 })->name("offline");
 
+Route::group(["prefix" => "/m", "name" => "m."], function () {
+    //Route::view('/', 'pwa.pages.index')->name("index");
 
-Route::view('/m/', 'pages.index')->name("index");
+    Route::get("/",function (){
 
-Route::view('/m/about', "pages.about")->name("about");
-Route::view('/m/contact', "pages.contact")->name("contact");
-Route::view('/m/chat', "pages.chat")->name("chat");
-Route::view('/m/faq', "pages.faq")->name("faq");
+        if (!Agent::isMobile())
+            return redirect()->route("desktop");
 
-Route::view('/m/tours', "pages.tours")->name("tours");
-Route::view('/m/profile', "pages.profile")->name("profile");
-Route::view('/m/adventure', "pages.adventure")->name("adventure");
-Route::view('/m/hotels', "pages.hotels")->name("hotels");
-Route::view('/m/flies', "pages.flies")->name("flies");
-Route::view('/m/promo', "pages.promo")->name("promo");
-Route::view('/m/maintenance', "pages.maintenance")->name("maintenance");
-Route::view('/m/tour-search', "pages.tour-search")->name("tour-search");
-Route::view('/m/avia-search', "pages.avia-search")->name("avia-search");
-Route::view('/m/comments', "pages.comments")->name("comments");
+        return view('pwa.pages.index');
+    })->name("index");
+
+    Route::view("/desktop","pwa.welcome")->name("m.desktop");
+
+    Route::view('/about', "pwa.pages.about")->name("about");
+    Route::view('/contact', "pwa.pages.contact")->name("contact");
+    Route::view('/chat', "pwa.pages.chat")->name("chat");
+    Route::view('/faq', "pwa.pages.faq")->name("faq");
+
+    Route::view('/tours', "pwa.pages.tours")->name("tours");
+    Route::view('/profile', "pwa.pages.profile")->name("profile");
+    Route::view('/adventure', "pwa.pages.adventure")->name("adventure");
+    Route::view('/hotels', "pwa.pages.hotels")->name("hotels");
+    Route::view('/flies', "pwa.pages.flies")->name("flies");
+    Route::view('/promo', "pwa.pages.promo")->name("promo");
+    Route::view('/maintenance', "pwa.pages.maintenance")->name("maintenance");
+    Route::view('/tour-search', "pwa.pages.tour-search")->name("tour-search");
+    Route::view('/avia-search', "pwa.pages.avia-search")->name("avia-search");
+    Route::view('/comments', "pwa.pages.comments")->name("comments");
+});
+
+Route::get("/file/{name}", function ($name) {
+
+    $file = Storage::disk('local')->get("public/uploads/$name");
+    return (new Response($file, 200))
+        ->header('Content-Type', 'audio/mpeg');
+
+});
+
+Route::get('/{any?}', function () {
+    return view('desktop.welcome');
+})->where('any', '^(?!api\/)[\/\w\.-]*');
+
+
+
+

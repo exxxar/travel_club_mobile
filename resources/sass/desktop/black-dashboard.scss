@@ -1,0 +1,83 @@
+// Core
+
+@import "resources/sass/desktop/black-dashboard/custom/functions";
+@import "resources/sass/desktop/black-dashboard/bootstrap/functions";
+
+@import "resources/sass/desktop/black-dashboard/custom/variables";
+@import "resources/sass/desktop/black-dashboard/bootstrap/variables";
+
+@import "resources/sass/desktop/black-dashboard/custom/mixins";
+@import "resources/sass/desktop/black-dashboard/bootstrap/mixins";
+
+// Bootstrap components
+
+//@import "black-dashboard/bootstrap/root";
+//@import "black-dashboard/bootstrap/reboot";
+//@import "black-dashboard/bootstrap/type";
+@import "resources/sass/desktop/black-dashboard/bootstrap/images";
+//@import "black-dashboard/bootstrap/code";
+//@import "black-dashboard/bootstrap/grid";
+//@import "black-dashboard/bootstrap/tables";
+@import "resources/sass/desktop/black-dashboard/bootstrap/forms";
+//@import "black-dashboard/bootstrap/buttons";
+@import "resources/sass/desktop/black-dashboard/bootstrap/transitions";
+//@import "black-dashboard/bootstrap/dropdown";
+@import "resources/sass/desktop/black-dashboard/bootstrap/button-group";
+@import "resources/sass/desktop/black-dashboard/bootstrap/input-group";
+@import "resources/sass/desktop/black-dashboard/bootstrap/custom-forms";
+////@import "black-dashboard/bootstrap/nav";
+////@import "black-dashboard/bootstrap/navbar";
+@import "resources/sass/desktop/black-dashboard/bootstrap/card";
+//@import "black-dashboard/bootstrap/breadcrumb";
+//@import "black-dashboard/bootstrap/pagination";
+//@import "black-dashboard/bootstrap/badge";
+//@import "black-dashboard/bootstrap/jumbotron";
+//@import "black-dashboard/bootstrap/alert";
+//@import "black-dashboard/bootstrap/progress";
+@import "resources/sass/desktop/black-dashboard/bootstrap/media";
+@import "resources/sass/desktop/black-dashboard/bootstrap/list-group";
+//@import "black-dashboard/bootstrap/close";
+//@import "black-dashboard/bootstrap/modal";
+//@import "black-dashboard/bootstrap/tooltip";
+//@import "black-dashboard/bootstrap/popover";
+//@import "black-dashboard/bootstrap/carousel";
+//@import "black-dashboard/bootstrap/utilities";
+//@import "black-dashboard/bootstrap/print";
+
+// Custom components
+
+//@import "black-dashboard/custom/alerts.scss";
+@import "resources/sass/desktop/black-dashboard/custom/buttons.scss";
+//@import "black-dashboard/custom/dropdown.scss";
+////@import "black-dashboard/custom/footer.scss";
+@import "resources/sass/desktop/black-dashboard/custom/forms.scss";
+//@import "black-dashboard/custom/images.scss";
+//@import "black-dashboard/custom/modal.scss";
+////@import "black-dashboard/custom/navbar.scss";
+//@import "black-dashboard/custom/type.scss";
+////@import "black-dashboard/custom/tables";
+//@import "black-dashboard/custom/checkboxes-radio";
+//@import "black-dashboard/custom/fixed-plugin";
+@import "resources/sass/desktop/black-dashboard/custom/sidebar-and-main-panel.scss";
+@import "resources/sass/desktop/black-dashboard/custom/misc.scss";
+//@import "black-dashboard/custom/rtl.scss";
+@import "resources/sass/desktop/black-dashboard/custom/input-group.scss";
+
+
+// Vendor / Plugins
+
+@import "resources/sass/desktop/black-dashboard/custom/vendor/plugin-perfect-scrollbar.scss";
+//@import "black-dashboard/custom/vendor/plugin-animate-bootstrap-notify.scss";
+
+// light mode
+
+@import "resources/sass/desktop/black-dashboard/custom/white-content.scss";
+
+// Cards
+//
+@import 'resources/sass/desktop/black-dashboard/custom/card';
+//@import "black-dashboard/custom/cards/card-chart";
+//@import "black-dashboard/custom/cards/card-map";
+@import "resources/sass/desktop/black-dashboard/custom/cards/card-user";
+@import "resources/sass/desktop/black-dashboard/custom/cards/card-task";
+@import "resources/sass/desktop/black-dashboard/custom/cards/card-plain";

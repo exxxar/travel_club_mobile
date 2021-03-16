@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 
-const CompressionPlugin = require('compression-webpack-plugin');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,7 +13,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
  */
 
 if (mix.inProduction()) {
-
+    const CompressionPlugin = require('compression-webpack-plugin');
 
     mix.webpackConfig({
         plugins: [
@@ -29,42 +29,56 @@ if (mix.inProduction()) {
     });
 }
 
+
 mix.disableNotifications();
 
-mix.copy('resources/assets/js/lib/jquery-3.4.1.min.js', 'public/js');
-mix.copy("resources/assets/css/theme.css", "public/css");
-mix.copy("resources/assets/css/tour-search.css", "public/css");
+
+mix.webpackConfig({
+    resolve: {
+        extensions: ['.js', '.vue', '.jpg', '.png', '.css', '.svg', '.mp3'],
+        alias: {
+            '@': __dirname + '/resources',
+            '~': __dirname + '/public',
+            // '^':__dirname + '/storage/app/public'
+        }
+    }
+});
+
+
+mix
+
+    .js('resources/js/desktop/app.js', 'public/js/desktop')
+    .sass('resources/sass/desktop/app.scss', 'public/css/desktop/app.css')
+    .options({
+        processCssUrls: false
+    });
+
+
+mix
+    .js('resources/js/pwa/app.js', 'public/js/pwa')
+    .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css');
+
+
+mix.copy('resources/assets/css/style.css', 'public/css/assets/app.css');
+
+
+mix.copy('resources/assets/js/lib/jquery-3.4.1.min.js', 'public/js/pwa');
+mix.copy("resources/assets/css/theme.css", "public/css/pwa");
+
+mix.copy("resources/assets/css/tour-search.css", "public/css/pwa");
 
 mix.copyDirectory('resources/assets/img', 'public/img');
 mix.copyDirectory('resources/assets/css/inc', 'public/css/inc');
 
-if (!mix.inProduction()) {
-    mix.js('resources/js/app.js', 'public/js')
-        .js('resources/assets/js/app.js', 'public/js/assets')
-        .sass('resources/sass/app.scss', 'public/css')
-        .options({
-            processCssUrls: false
-        })
-
-    mix.copy('resources/assets/css/style.css', 'public/css/assets/app.css');
-}
-
 if (mix.inProduction()) {
 
-    mix.js('resources/js/app.js', 'public/js')
-        .js('resources/assets/js/app.js', 'public/js/assets')
-        .sass('resources/sass/app.scss', 'public/css')
-        .combine([
-            'resources/assets/css/style.css',
-            'public/css/app.css'
-        ], 'public/css/app.css');
-
-    mix.minify('public/js/app.js')
-    mix.minify('public/css/app.css')
-    mix.minify('public/css/theme.css')
+    mix.minify('public/js/pwa/app.js')
+    mix.minify('public/css/pwa/app.css')
+    mix.minify('public/css/pwa/theme.css')
     mix.minify('public/css/assets/app.css')
 
-
+    mix.minify('public/js/desktop/app.js')
+    mix.minify('public/css/desktop/app.css')
 }
 
 mix.version();
