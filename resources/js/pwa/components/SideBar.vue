@@ -26,7 +26,7 @@
 
                     <ul class="listview flush transparent no-line image-listview mt-2">
                         <li>
-                            <a href="/m/profile" class="item" aria-label="профиль пользователя">
+                            <a href="https://travel-club.tours/m/profile" class="item" aria-label="профиль пользователя">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-user-alt"></i>
                                 </div>
@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/m/tours" class="item" aria-label="Доступные туры">
+                            <a href="https://travel-club.tours/m/tours" class="item" aria-label="Доступные туры">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-compass"></i>
                                 </div>
@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/m/flies" class="item" aria-label="Доступные перелеты">
+                            <a href="https://travel-club.tours/m/flies" class="item" aria-label="Доступные перелеты">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-plane-departure"></i>
                                 </div>
@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/m/adventure" class="item" aria-label="Подобрать туры по России">
+                            <a href="https://travel-club.tours/m/adventure" class="item" aria-label="Подобрать туры по России">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-map-marked-alt"></i>
                                 </div>
@@ -69,7 +69,7 @@
                         </li>
 
                         <li>
-                            <a href="/m/maintenance" class="item" aria-label="TravelClub Family">
+                            <a href="https://travel-club.tours/m/maintenance" class="item" aria-label="TravelClub Family">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-users"></i>
                                 </div>
@@ -94,7 +94,7 @@
                         </li>
 
                         <li>
-                            <a href="/m/promo" class="item" aria-label="Promocodes">
+                            <a href="https://travel-club.tours/m/promo" class="item" aria-label="Promocodes">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-ad"></i>
                                 </div>

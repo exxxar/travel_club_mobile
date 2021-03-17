@@ -18,7 +18,7 @@
                             <div class="bg-panel ml-auto mr-auto day-theme"
                                  style="height: 520px; max-width: 300px; position: relative;">
                                 <h1>Подобрать путешествие</h1>
-                                <img src="images/1_1.png" style="position:absolute; bottom: 0;width: 100%;">
+                                <img src="images/1.png" style="position:absolute; bottom: 0;width: 100%;">
                             </div>
                         </router-link>
                     </div>
@@ -27,7 +27,7 @@
                             <div class="bg-panel ml-auto mr-auto day-theme"
                                  style="height: 520px; max-width: 300px; position: relative;">
                                 <h1>Подобрать авиабилеты</h1>
-                                <img src="images/2_2.png" style="position:absolute; bottom: 0;width: 100%;">
+                                <img src="images/2.png" style="position:absolute; bottom: 0;width: 100%;">
                             </div>
                         </router-link>
                     </div>
@@ -50,7 +50,7 @@
                                     <div class="bg-panel ml-auto mr-auto day-theme"
                                          style="height: 70vh; max-width: 300px; position: relative;">
                                         <h1>Подобрать путешествие</h1>
-                                        <img src="images/1_1.png" style="position:absolute; bottom: 0;width: 100%;">
+                                        <img src="images/1.png" style="position:absolute; bottom: 0;width: 100%;">
                                     </div>
                                 </router-link>
                             </slide>
@@ -59,7 +59,7 @@
                                     <div class="bg-panel ml-auto mr-auto day-theme"
                                          style="height: 70vh; max-width: 300px; position: relative;">
                                         <h1>Подобрать авиабилеты</h1>
-                                        <img src="images/2_2.png" style="position:absolute; bottom: 0;width: 100%;">
+                                        <img src="images/2.png" style="position:absolute; bottom: 0;width: 100%;">
                                     </div>
                                 </router-link>
                             </slide>

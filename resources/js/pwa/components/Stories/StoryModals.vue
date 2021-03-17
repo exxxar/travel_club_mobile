@@ -104,6 +104,11 @@
 </script>
 
 <style lang="scss">
+    .swap-history-right,
+    .swap-history-left,
+    .swap-history-bottom {
+        width: 0px;
+    }
 
     .modal.show.stories ~ .swap-history-bottom {
         position: fixed;

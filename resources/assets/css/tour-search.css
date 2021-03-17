@@ -10,6 +10,8 @@
 .SLT-App-blue__container {
     background-color: #f08b23 !important;
     background-image: url("/images/wturizm.svg") !important;
+    z-index: 0;
+
 }
 /*.SLT-Select-blue__field.SLT-Select-blue__open {*/
 /*    border: 1px solid  #ffca00;*/

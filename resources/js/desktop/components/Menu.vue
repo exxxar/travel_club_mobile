@@ -29,12 +29,12 @@
             <a href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR" target="_blank" class="icon fab fa-viber ml-3 mr-auto tg-icon" ></a>
         </div>
 
-        <div class="row m-auto desktop" style="color: #063065">
-<!--            <b-form-checkbox v-model="theme" name="check-button" switch>-->
+       <!-- <div class="row m-auto desktop" style="color: #063065">
+&lt;!&ndash;            <b-form-checkbox v-model="theme" name="check-button" switch>&ndash;&gt;
                 <p class="mb-0" style="font-family: Open Sans;font-weight: 900;font-size: 16px;cursor: pointer" v-if="theme" @click="theme= !theme">Дневная тема</p>
                 <p class="mb-0" style="font-family: Open Sans;font-weight: 900;font-size: 16px;cursor: pointer" v-if="!theme" @click="theme= !theme">Ночная тема</p>
-<!--            </b-form-checkbox>-->
-        </div>
+&lt;!&ndash;            </b-form-checkbox>&ndash;&gt;
+        </div>-->
 
         <div class="ml-auto mr-2 mt-auto mb-auto">
             <slider

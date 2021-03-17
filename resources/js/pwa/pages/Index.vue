@@ -24,12 +24,13 @@
 
         <div class="section full mt-3 mb-3">
 
-            <carousel :items="1" :nav="false">
+            <carousel :loop="true" :items="1" :nav="false">
 
 
                 <div class="item">
                     <div class="card">
-                        <a href="/m/tours" class="travel-card" aria-label="Подобрать путеествие">
+                        <a href="https://travel-club.tours/m/tours" class="travel-card"
+                           aria-label="Подобрать путеествие">
                             <img src="/img/travel/1.png" class="card-img-top" alt="image">
                         </a>
 
@@ -41,7 +42,7 @@
 
                 <div class="item">
                     <div class="card card-with-blue-line" text="Новинка">
-                        <a href="/m/adventure" class="travel-card" aria-label="Туры по России">
+                        <a href="https://travel-club.tours/m/adventure" class="travel-card" aria-label="Туры по России">
                             <img src="/img/travel/4.png" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
@@ -53,7 +54,8 @@
 
                 <div class="item">
                     <div class="card">
-                        <a href="/m/flies" class="travel-card" aria-label="Подобрать авиобилеты">
+                        <a href="https://travel-club.tours/m/flies" class="travel-card"
+                           aria-label="Подобрать авиобилеты">
                             <img src="/img/travel/2.png" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
@@ -62,19 +64,17 @@
                     </div>
                 </div>
 
-<!--
-                <div class="item">
-                    <div class="card">
-                        <a href="/m/hotels" class="travel-card" aria-label="Подобрать отель">
-                            <img src="/img/travel/3.png" class="card-img-top" alt="image">
-                        </a>
-                        <div class="card-body pt-2">
-                            <h4 class="mb-0 text-center text-uppercase">Подобрать отель</h4>
-                        </div>
-                    </div>
-                </div>-->
-
-
+                <!--
+                                <div class="item">
+                                    <div class="card">
+                                        <a href="/m/hotels" class="travel-card" aria-label="Подобрать отель">
+                                            <img src="/img/travel/3.png" class="card-img-top" alt="image">
+                                        </a>
+                                        <div class="card-body pt-2">
+                                            <h4 class="mb-0 text-center text-uppercase">Подобрать отель</h4>
+                                        </div>
+                                    </div>
+                                </div>-->
 
 
             </carousel>
@@ -117,7 +117,8 @@
 
                         Вам также будут доступны реальные отзывы на каждый объект размещения.
                     </p>
-                    <a href="/m/tour-search" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
+                    <a href="https://travel-club.tours/m/tour-search" class="btn btn-orange w-100"
+                       aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
                     </a>
@@ -136,7 +137,8 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="/m/avia-search" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
+                    <a href="https://travel-club.tours/m/avia-search" class="btn btn-orange w-100"
+                       aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
                     </a>
@@ -155,7 +157,8 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="/m/tour-search" class="btn btn-orange w-100" aria-label="Начать прямо сейчас">
+                    <a href="https://travel-club.tours/m/tour-search" class="btn btn-orange w-100"
+                       aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
 
@@ -258,33 +261,35 @@
         mounted() {
 
         },
-        methods:{
-            swipeHandlerRight(){
+        methods: {
+            swipeHandlerRight() {
                 eventBus.$emit("right-swipe");
             },
-            swipeHandlerLeft(){
+            swipeHandlerLeft() {
                 eventBus.$emit("left-swipe");
             },
-            swipeHandlerBottomTop(){
-              $(".stories").modal("hide");
-/*
-              this.$notify({
-                  title: 'Максим',
-                  text: 'Понравилась история? Давай также;)',
-                  group: 'main'
-              });*/
-          }
+            swipeHandlerBottomTop() {
+                $(".stories").modal("hide");
+                /*
+                              this.$notify({
+                                  title: 'Максим',
+                                  text: 'Понравилась история? Давай также;)',
+                                  group: 'main'
+                              });*/
+            }
         },
         components: {carousel, VueCountdown},
     }
 </script>
 <style lang="scss">
+
     .owl-item {
         display: flex;
         justify-content: center;
+
         .item {
             padding: 40px;
-            width:100%;
+            width: 100%;
             //min-width: 480px;
 
             .travel-card {

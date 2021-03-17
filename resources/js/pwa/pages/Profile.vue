@@ -63,7 +63,7 @@
         <div class="carousel-button-footer">
             <div class="row">
                 <div class="col-6">
-                    <a href="/m/" class="btn btn-secondary btn-lg btn-block goBack">На главную</a>
+                    <a href="https://travel-club.tours/m" class="btn btn-secondary btn-lg btn-block goBack">На главную</a>
                 </div>
 
             </div>

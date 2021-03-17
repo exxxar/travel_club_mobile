@@ -1,12 +1,12 @@
 <template>
     <!-- App Bottom Menu -->
     <div class="appBottomMenu">
-        <a href="/m/" class="item active"  aria-label="Домашняя">
+        <a href="https://travel-club.tours/m" class="item active"  aria-label="Домашняя">
             <div class="col">
                 <i class="fas fa-home"></i>
             </div>
         </a>
-        <a href="/m/tours" class="item"  aria-label="Туры">
+        <a href="https://travel-club.tours/m/tours" class="item"  aria-label="Туры">
             <div class="col">
                 <i class="fas fa-route"></i>
             </div>
@@ -17,7 +17,7 @@
                 <!--<span class="badge badge-danger">5</span>-->
             </div>
         </a>
-        <a href="/m/adventure" class="item" aria-label="Перелеты">
+        <a href="https://travel-club.tours/m/adventure" class="item" aria-label="Перелеты">
             <div class="col">
                 <i class="fab fa-fly"></i>
             </div>

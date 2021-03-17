@@ -59,6 +59,10 @@ mix
     .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css');
 
 
+mix
+    .sass('resources/sass/desktop/black-them.scss', 'public/css/black-them.css');
+
+
 mix.copy('resources/assets/css/style.css', 'public/css/assets/app.css');
 
 

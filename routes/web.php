@@ -19,7 +19,7 @@ use Illuminate\Http\Response;
 
 Route::get('/', function () {
     if (Agent::isMobile())
-        return redirect()->route("index");
+        return view('pwa.pages.index');
 
     return view('desktop.welcome');
 })->name("desktop");
@@ -28,13 +28,13 @@ Route::get('/offline', function () {
     return view("pwa.pages.maintenance");
 })->name("offline");
 
-Route::group(["prefix" => "/m", "name" => "m."], function () {
+Route::group(["prefix" => "/m"], function () {
     //Route::view('/', 'pwa.pages.index')->name("index");
 
     Route::get("/",function (){
 
         if (!Agent::isMobile())
-            return redirect()->route("desktop");
+            return view('desktop.welcome');
 
         return view('pwa.pages.index');
     })->name("index");
