@@ -13,15 +13,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Travel Club" />
     <meta property="og:description" content="Сеть туристических агенств - Travel Club" />
-    <meta property="og:url" content="https://m.travel-club.tours" />
+    <meta property="og:url" content="https://travel-club.tours" />
     <meta property="og:site_name" content="Travel Club" />
-    <meta property="og:image" content="https://m.travel-club.tours/img/icons/icon-72x72.png" />
+    <meta property="og:image" content="https://travel-club.tours/img/icons/icon-72x72.png" />
     <meta property="og:image:width" content="790" />
     <meta property="og:image:height" content="808" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="Сеть туристических агенств - Travel Club" />
     <meta name="twitter:title" content="Сеть туристических агенств - Travel Club" />
-    <meta name="twitter:image" content="https://m.travel-club.tours/img/icons/icon-72x72.png" />
+    <meta name="twitter:image" content="https://travel-club.tours/img/icons/icon-72x72.png" />
 
 
     <meta name="description"

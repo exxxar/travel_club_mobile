@@ -658,7 +658,7 @@
                     <div class="col-md-6">
                         <div class="hero-header">
                             <div class="itemLogo">
-                                <img src="https://m.travel-club.tours/img/logo.png" alt="logo" class="image">
+                                <img src="https://travel-club.tours/img/logo.png" alt="logo" class="image">
                             </div>
                         </div>
 
@@ -691,7 +691,7 @@
                                 </li>
                             </ul>
                             <div class="previewArrow">
-                                <img src="https://m.travel-club.tours/img/item/demo-arrow.png" alt="preview"> Используй
+                                <img src="https://travel-club.toursimg/item/demo-arrow.png" alt="preview"> Используй
                                 мышку для скрола
                             </div>
                         </div>
@@ -715,7 +715,7 @@
                         </div>
 
                         <div class="qrBlock" style="display: none;">
-                            <img src="https://m.travel-club.tours/img/qr.jpg" alt="qr" class="qr">
+                            <img src="https://travel-club.tours/img/qr.jpg" alt="qr" class="qr">
                             <div class="text">
                                 <strong>Посмотреть на своём телефоне.</strong> Сканируй QR-код для установки приложения
                             </div>
@@ -725,7 +725,7 @@
                         <div class="phoneContent">
                             <div class="phoneWrapper">
                                 <div class="in">
-                                    <iframe class="getFrame" src="https://m.travel-club.tours/m"
+                                    <iframe class="getFrame" src="https://travel-club.tours/m"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
@@ -845,7 +845,7 @@
                 <div class="mt-5 p-4">
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <a href="/m/" class="btn btn-secondary btn-block" style="height: 56px">
+                            <a href="https://travel-club.tours/m" class="btn btn-secondary btn-block" style="height: 56px">
                                 <ion-icon name="eye-outline"></ion-icon>
                                 Попробовать
                             </a>
