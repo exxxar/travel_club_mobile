@@ -11,7 +11,7 @@
             <div class="fixed-footer">
                 <div class="row">
                     <div class="col-12">
-                        <a href="http://travel-club.tours/m/" class="btn btn-orange btn-lg btn-block">Вернуться</a>
+                        <a href="https://travel-club.tours/m" class="btn btn-orange btn-lg btn-block">Вернуться</a>
                     </div>
                 </div>
             </div>
