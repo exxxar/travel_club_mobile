@@ -84,7 +84,7 @@ Vue.prototype.$search = function (term, list, options) {
 }
 
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = 'https://m.travel-club.tours/api/v1';
+axios.defaults.baseURL = 'https://m.travel-club.tours/api/desktop/v1';
 // axios.defaults.baseURL = 'https://travel-club/api/v1';
 
 //Vue.prototype.$http = axios;
