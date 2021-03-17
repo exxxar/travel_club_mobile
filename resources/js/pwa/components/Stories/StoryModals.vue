@@ -10,10 +10,13 @@
 
         />
 
+<!--
+        <div v-if="active">
+            <div class="swap-history-left" @click="prev()"></div>
+            <div class="swap-history-right" @click="next()"></div>
+            <div class="swap-history-bottom" @click="close()"></div>
+        </div>-->
 
-        <div class="swap-history-left" @click="prev()"></div>
-        <div class="swap-history-right" @click="next()"></div>
-        <div class="swap-history-bottom" @click="close()"></div>
     </div>
 </template>
 <script>
@@ -32,14 +35,14 @@
         },
         mounted() {
             eventBus.$on("right-swipe", () => {
-                console.log("Test right swipe")
+
                 this.next()
 
             });
 
 
             eventBus.$on("left-swipe", () => {
-                console.log("Test left swipe")
+
                 this.prev()
             });
 
@@ -104,13 +107,8 @@
 </script>
 
 <style lang="scss">
-    .swap-history-right,
-    .swap-history-left,
-    .swap-history-bottom {
-        width: 0px;
-    }
 
-    .modal.show.stories ~ .swap-history-bottom {
+  /* .swap-history-bottom {
         position: fixed;
         z-index: 99999999999!important;
         bottom: 0px;
@@ -120,7 +118,7 @@
 
     }
 
-    .modal.show.stories ~ .swap-history-left {
+   .swap-history-left {
         position: fixed;
         z-index: 99999999999!important;
         top: 100px;
@@ -130,7 +128,7 @@
 
     }
 
-    .modal.show.stories ~ .swap-history-right {
+    .swap-history-right {
         position: fixed;
         z-index: 99999999999!important;
         top: 100px;
@@ -138,5 +136,5 @@
         width: 150px;
         height: 500px;
 
-    }
+    }*/
 </style>

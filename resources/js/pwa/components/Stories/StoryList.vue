@@ -12,7 +12,6 @@
 
         </carousel>
 
-
         <story-modals :active="active_index"/>
     </div>
 </template>
@@ -42,7 +41,7 @@
         }
     }
 </script>
-<style>
+<style lang="scss">
     .story-blocks {
         width: calc(100% + 16px);
         margin-left: -16px
