@@ -691,7 +691,7 @@
                                 </li>
                             </ul>
                             <div class="previewArrow">
-                                <img src="https://travel-club.toursimg/item/demo-arrow.png" alt="preview"> Используй
+                                <img src="/img/item/demo-arrow.png" alt="preview"> Используй
                                 мышку для скрола
                             </div>
                         </div>
@@ -725,7 +725,7 @@
                         <div class="phoneContent">
                             <div class="phoneWrapper">
                                 <div class="in">
-                                    <iframe class="getFrame" src="https://travel-club.tours/m"
+                                    <iframe class="getFrame" src="https://travel-club.tours"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
