@@ -669,24 +669,21 @@
                         <div class="hero-content">
                             <ul class="heroList">
                                 <li>
-                                    <ion-icon name="checkmark-outline" role="img" class="md hydrated"
-                                              aria-label="checkmark outline"></ion-icon>
+
+                                    <i class="far fa-check-square md hydrated"></i>
                                     Подбор туров для каждого
                                 </li>
                                 <li>
-                                    <ion-icon name="checkmark-outline" role="img" class="md hydrated"
-                                              aria-label="checkmark outline"></ion-icon>
+                                    <i class="far fa-check-square md hydrated"></i>
                                     Современные туры по РФ
 
                                 </li>
                                 <li>
-                                    <ion-icon name="checkmark-outline" role="img" class="md hydrated"
-                                              aria-label="checkmark outline"></ion-icon>
+                                    <i class="far fa-check-square md hydrated"></i>
                                     Доступные авиобилеты
                                 </li>
                                 <li>
-                                    <ion-icon name="checkmark-outline" role="img" class="md hydrated"
-                                              aria-label="checkmark outline"></ion-icon>
+                                    <i class="far fa-check-square md hydrated"></i>
                                     Комфортабельные отели
                                 </li>
                             </ul>
@@ -707,8 +704,7 @@
     -->
                             <a href="#qr" class="btn btn-orange d-flex justify-content-center align-items-center"
                                id="hero-qr-button">
-                                <ion-icon name="qr-code-outline" role="img" class="md hydrated"
-                                          aria-label="qr code outline"></ion-icon>
+                                <i class="fas fa-qrcode"></i>
                                 Попробуй с телефона
                             </a>
 
@@ -845,15 +841,15 @@
                 <div class="mt-5 p-4">
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <a href="https://travel-club.tours/m" class="btn btn-secondary btn-block" style="height: 56px">
-                                <ion-icon name="eye-outline"></ion-icon>
+                            <a href="https://travel-club.tours" class="btn btn-secondary btn-block" style="height: 56px">
+                                <i class="far fa-eye"></i>
                                 Попробовать
                             </a>
                         </div>
                         <div class="col-12">
                             <a href="https://donbassit.ru"
                                class="btn btn-success btn-block" target="_blank" style="height: 56px;">
-                                <ion-icon name="cart-outline"></ion-icon>
+                                <i class="fas fa-cart-plus"></i>
                                 Хочу себе такое
                             </a>
                         </div>
