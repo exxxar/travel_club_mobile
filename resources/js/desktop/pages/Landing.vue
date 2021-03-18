@@ -670,20 +670,20 @@
                             <ul class="heroList">
                                 <li>
 
-                                    <i class="far fa-check-square md hydrated"></i>
+                                    <i class="far fa-check-square md hydrated m-2"></i>
                                     Подбор туров для каждого
                                 </li>
                                 <li>
-                                    <i class="far fa-check-square md hydrated"></i>
+                                    <i class="far fa-check-square md hydrated m-2"></i>
                                     Современные туры по РФ
 
                                 </li>
                                 <li>
-                                    <i class="far fa-check-square md hydrated"></i>
+                                    <i class="far fa-check-square md hydrated m-2"></i>
                                     Доступные авиобилеты
                                 </li>
                                 <li>
-                                    <i class="far fa-check-square md hydrated"></i>
+                                    <i class="far fa-check-square md hydrated m-2"></i>
                                     Комфортабельные отели
                                 </li>
                             </ul>
@@ -721,7 +721,7 @@
                         <div class="phoneContent">
                             <div class="phoneWrapper">
                                 <div class="in">
-                                    <iframe class="getFrame" src="https://travel-club.tours"
+                                    <iframe class="getFrame" src="https://m.travel-club.tours/m"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
