@@ -39,6 +39,8 @@ Route::group(["prefix" => "/m"], function () {
         return view('pwa.pages.index');
     })->name("index");
 
+
+    Route::view("/mobile","pwa.pages.index")->name("m.index");
     Route::view("/desktop","pwa.welcome")->name("m.desktop");
 
     Route::view('/about', "pwa.pages.about")->name("about");

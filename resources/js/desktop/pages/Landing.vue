@@ -704,7 +704,7 @@
     -->
                             <a href="#qr" class="btn btn-orange d-flex justify-content-center align-items-center"
                                id="hero-qr-button">
-                                <i class="fas fa-qrcode"></i>
+                                <i class="fas fa-qrcode mr-1"></i>
                                 Попробуй с телефона
                             </a>
 
@@ -721,7 +721,7 @@
                         <div class="phoneContent">
                             <div class="phoneWrapper">
                                 <div class="in">
-                                    <iframe class="getFrame" src="https://m.travel-club.tours/m"
+                                    <iframe class="getFrame" src="https://travel-club.tours/m/mobile"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
