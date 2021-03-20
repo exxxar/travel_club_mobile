@@ -164,16 +164,16 @@
                         </div>
 
 
-                        <li>
+                      <!--  <li>
                             <a href="https://travel-club.tours" target="_blank" class="item" aria-label="Полная версия">
                                 <div class="in">
                                     <div>Полная версия сайта</div>
 
                                 </div>
                             </a>
-                        </li>
+                        </li>-->
 
-                        <li>
+                      <!--  <li>
                             <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
                                 <div class="icon-box bg-orange">
                                     <img src="/img/travel/logo_it.png" class="img-fluid" alt="donbassit" style="padding: 5px;">
@@ -182,7 +182,7 @@
                                     <div>Хочу такое же!</div>
                                 </div>
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
 
 

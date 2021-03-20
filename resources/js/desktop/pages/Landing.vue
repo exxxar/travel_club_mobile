@@ -842,17 +842,17 @@
                     <div class="row">
                         <div class="col-12 mb-3">
                             <a href="https://travel-club.tours" class="btn btn-secondary btn-block" style="height: 56px">
-                                <i class="far fa-eye"></i>
+                                <i class="far fa-eye mr-2"></i>
                                 Попробовать
                             </a>
                         </div>
-                        <div class="col-12">
+                       <!-- <div class="col-12">
                             <a href="https://donbassit.ru"
                                class="btn btn-success btn-block" target="_blank" style="height: 56px;">
                                 <i class="fas fa-cart-plus"></i>
                                 Хочу себе такое
                             </a>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -860,7 +860,7 @@
 
 
         <div class="sidebar">
-            <a href="#contacts" class="toggleButton sidebarTrigger" @click="sidebarOpen()">
+            <a href="#sidbar" class="toggleButton sidebarTrigger" @click="sidebarOpen()">
                 <i class="fas fa-arrow-right"></i>
             </a>
             <div class="sidebarTitle">
@@ -995,11 +995,11 @@
                         <use xlink:href="#gentle-wave" x="48" y="1" fill="#062348"/>
                     </g>
                 </svg>
-                <div class="row w-100 m-auto" style="height:100%; width:100%">
-                    <div class="col-12 col-md-5 tablet-footer-col-12 mx-auto">
+                <div class="row w-100 footer-last m-auto">
+                    <div class="col-12 col-md-12">
 
-                        <div class="row w-100 mx-auto mt-5 justify-content-center align-items-center">
-                            <div class="col-12">
+                        <div class="row w-100  justify-content-center align-items-center">
+                            <div class="col-12 p-5">
                               <button class="btn btn-orange rounded btn-footer-contact"  @click="sidebarOpen">
                                   Контакты
                               </button>
@@ -1007,7 +1007,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3 col-sm-12 ">
+                  <!--  <div class="col-12 col-md-3 col-sm-12 ">
                         <div class="row mt-5 mx-auto" style="height:70%; width:100%">
                             <div class="col-12 mb-3 mx-auto">
                                 <div class="row m-auto" style="height:50px">
@@ -1053,7 +1053,7 @@
                                 <div class="row w-100 m-auto align-items-center">
                                     <div class="col-2">
                                         <div class="more-button m-auto">
-                                            <!--<a href="#" class="icon icon-instagram"></a>-->
+                                            &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
                                             <div class="icon icon-telegram"></div>
                                         </div>
                                     </div>
@@ -1069,7 +1069,7 @@
                                 <div class="row w-100 m-auto align-items-center ">
                                     <div class="col-2">
                                         <div class="more-button m-auto">
-                                            <!--<a href="#" class="icon icon-instagram"></a>-->
+                                            &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
                                             <div class="fab fa-viber"></div>
                                         </div>
                                     </div>
@@ -1082,14 +1082,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12" style="background: #041e3f;border-top: 1px solid #d9d9d942;">
+                    </div>-->
+                 <!--   <div class="col-12" style="background: #041e3f;border-top: 1px solid #d9d9d942;">
                         <div class="row w-100 m-auto align-items-center justify-content-center">
                             <a class="mx-auto my-2" target="_blank" href="https://donbassit.ru"
                                style="color:white; font-family: 'Open Sans'; font-weight: 900"><img
                                 src="/images/do-it.png" class="mb-2" style="height: 20px;"/></a>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </section>

@@ -169,7 +169,7 @@
                 });
             },
             startTimer(time) {
-                this.counter = time != null ? Math.min(time, 30) : 30;
+                this.counter = time != null ? Math.min(time, 10) : 10;
                 let counterId = setInterval(() => {
                         if (this.counter > 0)
                             this.counter--

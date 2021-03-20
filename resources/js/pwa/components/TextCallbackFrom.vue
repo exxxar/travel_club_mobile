@@ -29,7 +29,6 @@
             <div class="form-group boxed">
                 <div class="input-wrapper">
                     <input type="text" name="phone" class="form-control" v-model="phone"
-                           pattern="[\+]\d{2} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
                            maxlength="19"
                            v-mask="['+# (###) ###-##-##','+## (###) ###-##-##']"
                            placeholder="Номер телефона" required>
@@ -161,11 +160,14 @@
 
                     })
                     .then(response => {
-                        this.sendMessage("Сообщение успешно отправлено");
                         this.name = "";
                         this.phone = "";
                         this.message = "";
                         this.cansend = false;
+                        this.socials = []
+
+                        this.sendMessage("Сообщение успешно отправлено");
+
                     })
 
 
