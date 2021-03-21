@@ -35,7 +35,7 @@
                         </a>
 
                         <div class="card-body pt-2">
-                            <h4 class="mb-0 text-center text-uppercase">Подобрать путеествие</h4>
+                            <h4 class="mb-0 text-center text-uppercase">Подобрать путешествие</h4>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             <img src="/img/travel/2.png" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
-                            <h4 class="mb-0 text-center text-uppercase">Подобрать авиобилеты</h4>
+                            <h4 class="mb-0 text-center text-uppercase">Подобрать авиабилеты</h4>
                         </div>
                     </div>
                 </div>
@@ -111,9 +111,9 @@
                     <h5 class="card-title">С TravelClub</h5>
                     <p class="card-text">
                         Данный раздел позволяет сделать подбор пакетного тура по всему миру от ведущих туристических
-                        оператов.
+                        операторов.
 
-                        Вы с легкостью сможете провести оплату онлайн или сделать заказ с сайта.
+                        Вы с лёгкостью сможете провести оплату онлайн или сделать заказ с сайта.
 
                         Вам также будут доступны реальные отзывы на каждый объект размещения.
                     </p>
@@ -212,7 +212,7 @@
             </div>
 
 
-            <div>Разработано команией Donbass IT</div>
+            <div>Разработано компанией Donbass IT</div>
             Доступные технологии для вашего бизнеса;)
 
             <div class="mt-2">

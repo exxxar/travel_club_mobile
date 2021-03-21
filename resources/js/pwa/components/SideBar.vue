@@ -52,7 +52,7 @@
                                     <i class="fas fa-plane-departure"></i>
                                 </div>
                                 <div class="in">
-                                    <div>Подобрать авиобилеты</div>
+                                    <div>Подобрать авиабилеты</div>
                                 </div>
                             </a>
                         </li>

@@ -30,7 +30,7 @@
             <div class="item p-2">
                 <img src="/img/presentation/6.png" alt="alt" class="imaged w-100 square mb-4">
                 <h2 class="text-center">Архив туров</h2>
-                <p class="text-center">Все Ваши путешесвтия хранятся в виде истории и Вы всегда сможете освежить воспоминания!</p>
+                <p class="text-center">Все Ваши путешествия хранятся в виде истории и Вы всегда сможете освежить воспоминания!</p>
             </div>
 
             <div class="item p-2">
