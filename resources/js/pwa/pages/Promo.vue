@@ -15,7 +15,7 @@
                     <div class="form-group boxed">
                         <div class="input-wrapper">
                             <label class="label" for="promo">Ваш промокод</label>
-                            <input type="tel" class="form-control" id="promo" placeholder="Введите ваш промокод" v-model="code">
+                            <input type="text" class="form-control" id="promo" placeholder="Введите ваш промокод" v-model="code">
                             <i class="clear-input">
                                 <i class="fas fa-hand-holding-usd"></i>
                             </i>
