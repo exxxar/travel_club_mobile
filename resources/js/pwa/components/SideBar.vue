@@ -165,14 +165,6 @@
                         </div>
 
 
-                        <li>
-                            <a @click="install" class="item" aria-label="Полная версия">
-                                <div class="in">
-                                    <div>Установить приложение</div>
-
-                                </div>
-                            </a>
-                        </li>
 
                         <!--  <li>
                               <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
