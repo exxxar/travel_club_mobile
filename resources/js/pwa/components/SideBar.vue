@@ -1,6 +1,6 @@
 <template>
     <!-- App Sidebar -->
-    <div class="modal panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog" >
+    <div class="modal panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body p-0">
@@ -26,7 +26,8 @@
 
                     <ul class="listview flush transparent no-line image-listview mt-2">
                         <li>
-                            <a href="https://travel-club.tours/m/profile" class="item" aria-label="профиль пользователя">
+                            <a href="https://travel-club.tours/m/profile" class="item"
+                               aria-label="профиль пользователя">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-user-alt"></i>
                                 </div>
@@ -57,7 +58,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://travel-club.tours/m/adventure" class="item" aria-label="Подобрать туры по России">
+                            <a href="https://travel-club.tours/m/adventure" class="item"
+                               aria-label="Подобрать туры по России">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-map-marked-alt"></i>
                                 </div>
@@ -69,7 +71,8 @@
                         </li>
 
                         <li>
-                            <a href="https://travel-club.tours/m/maintenance" class="item" aria-label="TravelClub Family">
+                            <a href="https://travel-club.tours/m/maintenance" class="item"
+                               aria-label="TravelClub Family">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-users"></i>
                                 </div>
@@ -132,8 +135,6 @@
                         </li>
 
 
-
-
                         <li>
                             <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="item"
                                aria-label="Политика конфиденциальности">
@@ -173,16 +174,16 @@
                             </a>
                         </li>
 
-                      <!--  <li>
-                            <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
-                                <div class="icon-box bg-orange">
-                                    <img src="/img/travel/logo_it.png" class="img-fluid" alt="donbassit" style="padding: 5px;">
-                                </div>
-                                <div class="in">
-                                    <div>Хочу такое же!</div>
-                                </div>
-                            </a>
-                        </li>-->
+                        <!--  <li>
+                              <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
+                                  <div class="icon-box bg-orange">
+                                      <img src="/img/travel/logo_it.png" class="img-fluid" alt="donbassit" style="padding: 5px;">
+                                  </div>
+                                  <div class="in">
+                                      <div>Хочу такое же!</div>
+                                  </div>
+                              </a>
+                          </li>-->
                     </ul>
 
 
@@ -216,31 +217,14 @@
 </template>
 <script>
     export default {
-        data(){
-          return {
-              deferredPrompt:null,
-          }
-        },
-        mounted() {
 
-            window.addEventListener('beforeinstallprompt', (e) => {
-                // Prevent the mini-infobar from appearing on mobile
-                e.preventDefault();
-                // Stash the event so it can be triggered later.
-                this.deferredPrompt = e;
-                // Update UI notify the user they can install the PWA
-                // showInstallPromotion();
-
-                console.log("prompt install=>", this.deferredPrompt)
-            });
-        },
-        methods:{
-            install(){
+        methods: {
+            install() {
                 // hideMyInstallPromotion();
                 // Show the install prompt
-                this.deferredPrompt.prompt();
+                window.deferredPrompt.deferredPrompt.prompt();
                 // Wait for the user to respond to the prompt
-                this.deferredPrompt.userChoice.then((choiceResult) => {
+                window.deferredPrompt.deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('User accepted the install prompt');
                     } else {
