@@ -166,7 +166,7 @@
 
 
                         <li>
-                            <a href="#install" @click="install" target="_blank" class="item" aria-label="Полная версия">
+                            <a @click="install" class="item" aria-label="Полная версия">
                                 <div class="in">
                                     <div>Установить приложение</div>
 
@@ -217,14 +217,36 @@
 </template>
 <script>
     export default {
+        data() {
+            return {
+                deferredPrompt: null
+            }
+        },
+        mounted() {
+            try {
 
+
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    // Prevent the mini-infobar from appearing on mobile
+                    e.preventDefault();
+                    // Stash the event so it can be triggered later.
+                    window.deferredPrompt = e;
+                    // Update UI notify the user they can install the PWA
+                    // showInstallPromotion();
+
+                    console.log("prompt install=>", this.deferredPrompt)
+                });
+            } catch (e) {
+
+            }
+        },
         methods: {
             install() {
                 // hideMyInstallPromotion();
                 // Show the install prompt
-                window.deferredPrompt.deferredPrompt.prompt();
+                this.deferredPrompt.deferredPrompt.prompt();
                 // Wait for the user to respond to the prompt
-                window.deferredPrompt.deferredPrompt.userChoice.then((choiceResult) => {
+                this.deferredPrompt.deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('User accepted the install prompt');
                     } else {

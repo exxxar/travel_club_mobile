@@ -12,19 +12,6 @@ try {
 
     require('bootstrap');
 
-    window.deferredPrompt = null;
-
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-        // Prevent the mini-infobar from appearing on mobile
-        e.preventDefault();
-        // Stash the event so it can be triggered later.
-        window.deferredPrompt = e;
-        // Update UI notify the user they can install the PWA
-        // showInstallPromotion();
-
-        console.log("prompt install=>", this.deferredPrompt)
-    });
 } catch (e) {
 }
 
