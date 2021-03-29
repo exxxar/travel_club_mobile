@@ -168,7 +168,7 @@
                         <li v-if="deferredPrompt">
                             <a @click="install" class="item" aria-label="Установить приложение">
                                 <div class="icon-box bg-orange">
-                                    <i class="fas fa-landmark"></i>
+                                    <i class="fas fa-cloud-upload-alt"></i>
                                 </div>
                                 <div class="in">
                                     <div>Установить приложение</div>
@@ -247,9 +247,9 @@
             install() {
                 // hideMyInstallPromotion();
                 // Show the install prompt
-                this.deferredPrompt.deferredPrompt.prompt();
+                this.deferredPrompt.prompt();
                 // Wait for the user to respond to the prompt
-                this.deferredPrompt.deferredPrompt.userChoice.then((choiceResult) => {
+                this.deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('User accepted the install prompt');
                     } else {
