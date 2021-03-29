@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix("pwa")->group(function (){
     Route::prefix('v1')->group(function () {
 
-        Route::get('/getCitiesUR','HomeController@getCities');
+        Route::get('/getCitiesUR','Desktop\HomeController@getCities');
 
         Route::any('bot/{bot}', 'BotController@handle');
         //Message
