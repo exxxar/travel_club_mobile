@@ -164,14 +164,14 @@
                         </div>
 
 
-                      <!--  <li>
-                            <a href="https://travel-club.tours" target="_blank" class="item" aria-label="Полная версия">
+                        <li>
+                            <a href="#install" @click="install" target="_blank" class="item" aria-label="Полная версия">
                                 <div class="in">
-                                    <div>Полная версия сайта</div>
+                                    <div>Установить приложение</div>
 
                                 </div>
                             </a>
-                        </li>-->
+                        </li>
 
                       <!--  <li>
                             <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
@@ -216,8 +216,38 @@
 </template>
 <script>
     export default {
-        methods:{
+        data(){
+          return {
+              deferredPrompt:null,
+          }
+        },
+        mounted() {
 
+            window.addEventListener('beforeinstallprompt', (e) => {
+                // Prevent the mini-infobar from appearing on mobile
+                e.preventDefault();
+                // Stash the event so it can be triggered later.
+                this.deferredPrompt = e;
+                // Update UI notify the user they can install the PWA
+                // showInstallPromotion();
+
+                console.log("prompt install=>", this.deferredPrompt)
+            });
+        },
+        methods:{
+            install(){
+                // hideMyInstallPromotion();
+                // Show the install prompt
+                this.deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                this.deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                });
+            },
         }
     }
 </script>

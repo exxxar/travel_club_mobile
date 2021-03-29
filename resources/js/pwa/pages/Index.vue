@@ -243,6 +243,10 @@
                 Наши контакты
             </button>
 
+            <button class="btn btn-primary" @click="install">
+                Test Prompt install
+            </button>
+
 
         </div>
         <!-- * app footer -->
@@ -258,10 +262,10 @@
     import carousel from 'vue-owl-carousel'
 
     export default {
-        mounted() {
 
-        },
+
         methods: {
+
             swipeHandlerRight() {
                 eventBus.$emit("right-swipe");
             },

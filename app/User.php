@@ -2,8 +2,7 @@
 
 namespace App;
 
-use App\Notifications\MailResetPasswordNotification;
-use Tymon\JWTAuth\Contracts\JWTSubject;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,7 +10,7 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 
 
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
@@ -109,6 +108,6 @@ class User extends Authenticatable implements JWTSubject
      */
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new MailResetPasswordNotification($token));
+        //$this->notify(new MailResetPasswordNotification($token));
     }
 }

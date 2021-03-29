@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 use Jenssegers\Agent\Facades\Agent;
 
 use Illuminate\Http\Response;
+use Telegram\Bot\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,20 @@ use Illuminate\Http\Response;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get("/setw", function () {
+
+    $bots = \App\Bot::all();
+
+    foreach ($bots as $bot) {
+        $telegram = new Api(env("APP_DEBUG") ? $bot->token_dev : $bot->token_prod);
+        $telegram->setWebhook(['url' => env("APP_URL") . '/api/pwa/v1/bot/' . $bot->bot_url]);
+        sleep(3);
+    }
+
+    return "Success";
+});
+
 
 Route::get('/', function () {
     if (Agent::isMobile())
@@ -47,6 +62,7 @@ Route::group(["prefix" => "/m"], function () {
     Route::view('/contact', "pwa.pages.contact")->name("contact");
     Route::view('/chat', "pwa.pages.chat")->name("chat");
     Route::view('/faq', "pwa.pages.faq")->name("faq");
+    Route::view('/telegram', "pwa.pages.telegram")->name("telegram");
 
     Route::view('/tours', "pwa.pages.tours")->name("tours");
     Route::view('/profile', "pwa.pages.profile")->name("profile");

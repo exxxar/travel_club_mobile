@@ -4366,9 +4366,10 @@ textarea, .form-control {
 }
 
 .message-item.user .bubble {
-    background: #1E74FD;
-    color: #FFF;
-    border-radius: 16px 16px 0 16px
+    background: orange;
+    color: #000000;
+    border-radius: 16px 16px 0 16px;
+    width:100%;
 }
 
 .chatFooter {

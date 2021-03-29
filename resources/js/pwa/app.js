@@ -11,6 +11,11 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+
+import VueMarkdown from 'vue-markdown'
+
+Vue.use(VueMarkdown)
+
 import {ValidationProvider, extend, ValidationObserver} from 'vee-validate';
 import {required, email} from 'vee-validate/dist/rules';
 
@@ -69,10 +74,13 @@ Vue.use(Vue2TouchEvents)
 //Components
 Vue.component('bottom-menu', require('./components/BottomMenu.vue').default);
 Vue.component('header-block', require('./components/HeaderBlock.vue').default);
+Vue.component('header-chat-block', require('./components/HeaderChatBlock.vue').default);
+Vue.component('footer-chat-block', require('./components/FooterChatBlock.vue').default);
 Vue.component('modals-block', require('./components/ModalsBlock.vue').default);
 Vue.component('travel-notification', require('./components/TravelNotification.vue').default);
 Vue.component('preloader', require('./components/Preloader.vue').default);
 Vue.component('sidebar', require('./components/SideBar.vue').default);
+Vue.component('modal-keyboard-component', require('./components/Modals/ModalKeyboard.vue').default);
 
 Vue.component('chat-footer', require('./components/Chat/ChatFooter.vue').default);
 Vue.component('chat-header', require('./components/Chat/ChatHeader.vue').default);
@@ -104,6 +112,8 @@ Vue.component('hotels-page', require('./pages/Hotels.vue').default);
 Vue.component('flies-page', require('./pages/Flies.vue').default);
 Vue.component('tour-search-page', require('./pages/TourSearch.vue').default);
 Vue.component('avia-search-page', require('./pages/AviaSearch.vue').default);
+
+Vue.component('telegram-page', require('./pages/Telegram.vue').default);
 
 const app = new Vue({
     store,
