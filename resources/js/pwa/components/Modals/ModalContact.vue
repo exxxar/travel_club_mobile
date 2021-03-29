@@ -8,7 +8,7 @@
                     <a href="javascript:;" rel="noreferrer" data-dismiss="modal">Закрыть</a>
                 </div>
                 <div class="modal-body">
-
+                    <phone-by-city-form></phone-by-city-form>
                     <ul class="nav nav-tabs style1" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" rel="noreferrer" data-toggle="tab" href="#home-1" role="tab"

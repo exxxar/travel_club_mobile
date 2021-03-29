@@ -84,7 +84,7 @@ Vue.prototype.$search = function (term, list, options) {
 }
 
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = 'https://m.travel-club.tours/api/desktop/v1';
+axios.defaults.baseURL = 'https://travel-club.tours/api/desktop/v1';
 // axios.defaults.baseURL = 'https://travel-club/api/v1';
 
 //Vue.prototype.$http = axios;
@@ -142,6 +142,7 @@ Vue.component("base-input", BaseInput);
 Vue.component("base-button", BaseButton);
 
 Vue.component('contact-form', require('./components/CallbackForm.vue').default);
+Vue.component('phone-by-city-form', require('./components/PhoneByCity.vue').default);
 Vue.component('voice-callback-form', require('./components/VoiceCallbackForm.vue').default);
 Vue.component('phone-order', require('./components/PhoneOrder.vue').default);
 Vue.component('modal', require('./components/Modal.vue').default);

@@ -27,17 +27,17 @@
 <script>
     export default {
         name: 'app',
-        props: ["phone","cansend"],
+        props: ["phone", "cansend"],
         data() {
             return {
                 recordings: []
             }
         },
-        watch:{
-          cansend:function (newVal) {
+        watch: {
+            cansend: function (newVal) {
                 if (newVal)
                     this.send();
-          }
+            }
         },
         methods: {
             send() {
@@ -78,10 +78,14 @@
                 this.$refs.Video.src = window.URL.createObjectURL(data)
             },
             onResult(data) {
-                this.recordings.push({
-                    src: window.URL.createObjectURL(data),
-                    data: data
-                })
+                try {
+                    this.recordings.push({
+                        src: window.URL.createObjectURL(data),
+                        data: data
+                    })
+                } catch (e) {
+                    console.log(e)
+                }
             }
         }
     }
@@ -137,7 +141,6 @@
             max-height: 400px;
         }
     }
-
 
 
 </style>

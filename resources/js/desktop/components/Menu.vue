@@ -9,7 +9,8 @@
                 </h4>
             </a>
         </div>
-        <div class="row m-auto desktop">
+        <div class="row m-auto desktop d-flex align-items-center">
+            <phone-by-city-form>    </phone-by-city-form>
             <a class="mr-5 mb-0"
                :href="'tel:'+unformatted_phone"
                style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase"

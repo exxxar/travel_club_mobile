@@ -300,6 +300,7 @@
                 position: relative;
                 border-radius: 5px;
                 height: 450px !important;
+                overflow: hidden;
 
                 img {
                     position: absolute;

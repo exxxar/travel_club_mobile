@@ -14,7 +14,9 @@
                             <strong>Travel Club</strong>
                             <div class="text-muted">
                                 <i class="fas fa-map-marker-alt"></i>
-                                г. Донецк
+                                <span v-if="selected">{{selected.item.name}}</span>
+                                <span v-else>г. Донецк</span>
+
                             </div>
                         </div>
                         <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal"
@@ -222,7 +224,8 @@
     export default {
         data() {
             return {
-                deferredPrompt: null
+                deferredPrompt: null,
+                selected:  JSON.parse(localStorage.getItem("cityfrom2")) || null,
             }
         },
         mounted() {

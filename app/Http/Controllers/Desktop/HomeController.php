@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Desktop;
 
+use App\Classes\HHCitiesApi;
 use App\Http\Controllers\Controller;
 use App\Message;
 use Illuminate\Http\Request;
@@ -15,11 +16,21 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    private $hhCitiesApi;
+
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->hhCitiesApi = new HHCitiesApi();
     }
 
+    public function  getCities(){
+        $tmp_ukr = $this->hhCitiesApi->getCitiesByCountry(5);
+        $tmp_rf = $this->hhCitiesApi->getCitiesByCountry(113);
+        $tmp_msk = $this->hhCitiesApi->getCitiesByCountry(1);
+        $tmp_kv = $this->hhCitiesApi->getCitiesByCountry(115);
+        return [$tmp_rf,$tmp_ukr,$tmp_msk, $tmp_kv ];
+    }
     /**
      * Show the application dashboard.
      *

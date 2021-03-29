@@ -19,7 +19,7 @@
         <section class="mb-5" style="height: 100%;">
             <div class="container m-auto" style="height: 100%;">
                 <div class="row m-auto justify-content-center align-items-center w-100 h-100">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <promocode-image title1="Оформи" title2="полёт" pos="238"></promocode-image>
                     </div>
                     <div class="col-md-6">

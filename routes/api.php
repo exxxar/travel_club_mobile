@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -69,6 +70,8 @@ Route::prefix("pwa")->group(function (){
 
 Route::prefix("desktop")->group(function (){
     Route::prefix('v1')->namespace('Desktop')->group(function () {
+
+        Route::get('/getCitiesUR','HomeController@getCities');
 
         //Promocode
         Route::post('sendPromocode', 'HomeController@sendPromocode');
