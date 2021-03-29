@@ -165,7 +165,7 @@
                         </div>
 
 
-                        <li>
+                        <li v-if="deferredPrompt">
                             <a @click="install" class="item" aria-label="Установить приложение">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-landmark"></i>
@@ -233,7 +233,7 @@
                     // Prevent the mini-infobar from appearing on mobile
                     e.preventDefault();
                     // Stash the event so it can be triggered later.
-                    window.deferredPrompt = e;
+                    this.deferredPrompt = e;
                     // Update UI notify the user they can install the PWA
                     // showInstallPromotion();
 
