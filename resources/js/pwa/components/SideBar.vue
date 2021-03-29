@@ -165,6 +165,17 @@
                         </div>
 
 
+                        <li>
+                            <a @click="install" class="item" aria-label="Установить приложение">
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Установить приложение</div>
+
+                                </div>
+                            </a>
+                        </li>
 
                         <!--  <li>
                               <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">
@@ -215,7 +226,7 @@
             }
         },
         mounted() {
-          /*  try {
+            try {
 
 
                 window.addEventListener('beforeinstallprompt', (e) => {
@@ -230,10 +241,10 @@
                 });
             } catch (e) {
 
-            }*/
+            }
         },
         methods: {
-           /* install() {
+            install() {
                 // hideMyInstallPromotion();
                 // Show the install prompt
                 this.deferredPrompt.deferredPrompt.prompt();
@@ -245,7 +256,7 @@
                         console.log('User dismissed the install prompt');
                     }
                 });
-            },*/
+            },
         }
     }
 </script>

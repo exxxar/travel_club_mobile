@@ -243,11 +243,6 @@
                 Наши контакты
             </button>
 
-            <button class="btn btn-primary" @click="install">
-                Test Prompt install
-            </button>
-
-
         </div>
         <!-- * app footer -->
 
