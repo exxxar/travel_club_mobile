@@ -223,7 +223,7 @@
             }
         },
         mounted() {
-            try {
+          /*  try {
 
 
                 window.addEventListener('beforeinstallprompt', (e) => {
@@ -238,10 +238,10 @@
                 });
             } catch (e) {
 
-            }
+            }*/
         },
         methods: {
-            install() {
+           /* install() {
                 // hideMyInstallPromotion();
                 // Show the install prompt
                 this.deferredPrompt.deferredPrompt.prompt();
@@ -253,7 +253,7 @@
                         console.log('User dismissed the install prompt');
                     }
                 });
-            },
+            },*/
         }
     }
 </script>
