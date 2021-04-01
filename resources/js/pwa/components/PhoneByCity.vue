@@ -3,10 +3,10 @@
         <h2>Телефон менеджера в вашем городе</h2>
         <div @click="openFilter()" v-if="selected&&!is_filter" class="mb-2">
             <p v-if="selected.country==='uk'" class="m-0 select-phone">
-                <span class="phone" v-if="selected.item.parent_id==2134||selected.item.parent_id==2173">+380714320000 <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
-                <span class="phone" v-else>+38095704333 <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
+                <span class="phone" v-if="selected.item.parent_id==2134||selected.item.parent_id==2173"> 071-339-90-89 <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
+                <span class="phone" v-else>8-800-222-89-68<span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
             </p>
-            <p class="m-0 select-phone" v-else><span class="phone">+790800000000</span> <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></p>
+            <p class="m-0 select-phone" v-else><span class="phone">8-800-222-89-68</span> <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></p>
         </div>
         <p @click="openFilter()" v-if="!selected&&!is_filter" class="m-0"><i class="fas fa-sign-in-alt"></i>Нажмите для выбора города </p>
 
@@ -70,22 +70,22 @@
 
                 let tmp_summary = [];
 
-                if (tmp_msk.name.indexOf(this.search) != -1)
+                if (tmp_msk.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                     tmp_summary.push({item: tmp_msk, country: 'rf'})
 
-                if (tmp_kiev.name.indexOf(this.search) != -1)
+                if (tmp_kiev.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                     tmp_summary.push({item: tmp_kiev, country: 'uk'})
 
                 tmp_rf.forEach(item => {
                     item.areas.forEach(subItem => {
-                        if (subItem.name.indexOf(this.search) != -1)
+                        if (subItem.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                             tmp_summary.push({item: subItem, country: 'rf'})
                     })
                 })
 
                 tmp_uk.forEach(item => {
                     item.areas.forEach(subItem => {
-                        if (subItem.name.indexOf(this.search) != -1)
+                        if (subItem.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                             tmp_summary.push({item: subItem, country: 'uk'})
                     })
                 })

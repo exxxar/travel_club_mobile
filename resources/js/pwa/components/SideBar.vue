@@ -150,8 +150,19 @@
                             </a>
                         </li>
 
+                        <li v-if="deferredPrompt">
+                            <a @click="install" class="item" aria-label="Установить приложение">
+                                <div class="icon-box bg-orange">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="in">
+                                    <div>Установить приложение</div>
 
-                        <div class="card-body d-flex justify-content-between align-items-end">
+                                </div>
+                            </a>
+                        </li>
+
+                        <div class="card-body d-flex justify-content-between align-items-end mb-5">
                             <div>
                                 <h6 class="card-subtitle">Используй удобства!</h6>
                                 <h5 class="card-title mb-0 d-flex align-items-center justify-content-between">
@@ -167,17 +178,6 @@
                         </div>
 
 
-                        <li v-if="deferredPrompt">
-                            <a @click="install" class="item" aria-label="Установить приложение">
-                                <div class="icon-box bg-orange">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </div>
-                                <div class="in">
-                                    <div>Установить приложение</div>
-
-                                </div>
-                            </a>
-                        </li>
 
                         <!--  <li>
                               <a href="https://donbassit.ru" target="_blank" class="item" aria-label="Донбасс IT компания веб-разработки">

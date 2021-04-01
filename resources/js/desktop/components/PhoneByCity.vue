@@ -69,22 +69,22 @@
 
                 let tmp_summary = [];
 
-                if (tmp_msk.name.indexOf(this.search) != -1)
+                if (tmp_msk.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                     tmp_summary.push({item: tmp_msk, country: 'rf'})
 
-                if (tmp_kiev.name.indexOf(this.search) != -1)
+                if (tmp_kiev.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                     tmp_summary.push({item: tmp_kiev, country: 'uk'})
 
                 tmp_rf.forEach(item => {
                     item.areas.forEach(subItem => {
-                        if (subItem.name.indexOf(this.search) != -1)
+                        if (subItem.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                             tmp_summary.push({item: subItem, country: 'rf'})
                     })
                 })
 
                 tmp_uk.forEach(item => {
                     item.areas.forEach(subItem => {
-                        if (subItem.name.indexOf(this.search) != -1)
+                        if (subItem.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1)
                             tmp_summary.push({item: subItem, country: 'uk'})
                     })
                 })
