@@ -2,10 +2,10 @@
     <div>
         <div @click="openFilter()" v-if="selected&&!is_filter">
             <p v-if="selected.country==='uk'" class="m-0">
-                <span v-if="selected.item.parent_id==2134||selected.item.parent_id==2173">+380714320000</span>
-                <span v-else>+38095704333</span>
+                <span v-if="selected.item.parent_id==2134||selected.item.parent_id==2173">071-339-90-89</span>
+                <span v-else>8-800-222-89-68</span>
             </p>
-            <p class="m-0" v-else>+790800000000</p>
+            <p class="m-0" v-else>8-800-222-89-68</p>
         </div>
         <p @click="openFilter()" v-if="!selected&&!is_filter" class="m-0">Выберите город</p>
 
