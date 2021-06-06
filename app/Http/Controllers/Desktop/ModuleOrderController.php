@@ -122,8 +122,8 @@ class ModuleOrderController extends Controller
         curl_close($ch);
 
         Telegram::sendMessage([
-//            'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
-            'chat_id' => '-1001370191765',
+            'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
+            //'chat_id' => '-1001370191765',
             'parse_mode' => 'Markdown',
             'text' => sprintf($order),
             'disable_notification' => 'true'
@@ -235,8 +235,8 @@ class ModuleOrderController extends Controller
         curl_close($ch);
 
         Telegram::sendMessage([
-//            'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
-            'chat_id' => '-1001370191765',
+            'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
+            //'chat_id' => '-1001370191765',
             'parse_mode' => 'Markdown',
             'text' => sprintf($order),
             'disable_notification' => 'true'
