@@ -7,9 +7,9 @@
 
                     <!-- profile box -->
                     <div class="profileBox">
-                        <div class="image-wrapper">
+                        <a href="https://travel-club.tours" class="image-wrapper">
                             <img src="/img/travel/logo-1.png" alt="image" class="imaged">
-                        </div>
+                        </a>
                         <div class="in" data-toggle="modal" data-target="#ContactModal">
                             <strong>Travel Club</strong>
                             <div class="text-muted">

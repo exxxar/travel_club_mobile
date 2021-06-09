@@ -4,8 +4,6 @@
 
     <preloader :time="1500"></preloader>
 
-    <header-block></header-block>
-
     <profile-page></profile-page>
 
 

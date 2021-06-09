@@ -1,6 +1,6 @@
 <template>
 
-    <div id="appCapsule">
+    <div id="appCapsule" class="custom-app-capsule">
 
 
         <!--<carousel :items="1" :nav="false" :autoplay="true" class="mb-5">
@@ -59,8 +59,8 @@
         </carousel>-->
 
 
-        <div class="container p-2">
-            <iframe scrolling="no" src="https://andreypugach.xyz/clients?s=ewogICAgImZpcnN0X3RleHRfY29sb3IiOiAid2hpdGUiLAogICAgInNlY29uZF90ZXh0X2NvbG9yIjogIiM0OTUwNTciLAogICAgInRpdGxlX3RleHRfY29sb3IiOiAiIzM2MzYzNiIsCiAgICAiZmlyc3RfcHJpbWFyeV9jb2xvciI6ICJyZWQiLAogICAgInNlY29uZF9wcmltYXJ5X2NvbG9yIjogIm9yYW5nZSIsCiAgICAiYm9yZGVyX2NvbG9yIjogIiMyMTk2RjMiLAogICAgImJveF9zaGFkb3dfY29sb3IiOiAiI2E2ZDVmYSIsCiAgICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIgp9" class="profile-style"></iframe>
+        <div class="container p-0">
+            <iframe  src="https://andreypugach.xyz/clients?s=ewogICAgImZpcnN0X3RleHRfY29sb3IiOiAid2hpdGUiLAogICAgInNlY29uZF90ZXh0X2NvbG9yIjogIiM0OTUwNTciLAogICAgInRpdGxlX3RleHRfY29sb3IiOiAiIzM2MzYzNiIsCiAgICAiZmlyc3RfcHJpbWFyeV9jb2xvciI6ICJyZWQiLAogICAgInNlY29uZF9wcmltYXJ5X2NvbG9yIjogIm9yYW5nZSIsCiAgICAiYm9yZGVyX2NvbG9yIjogIiMyMTk2RjMiLAogICAgImJveF9zaGFkb3dfY29sb3IiOiAiI2E2ZDVmYSIsCiAgICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIgp9" class="profile-style"></iframe>
 
         </div>
 
@@ -87,7 +87,12 @@
 <style lang="scss">
     .profile-style {
         width:100%;
-        min-height: 1500px;
+        height:100%;
+        min-height:100vh;
         border:none;
+    }
+
+    .custom-app-capsule {
+        padding:0 !important;
     }
 </style>

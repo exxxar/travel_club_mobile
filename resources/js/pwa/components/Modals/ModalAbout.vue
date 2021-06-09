@@ -49,7 +49,14 @@
                             style="color: rgb(240, 139, 35); font-family: &quot;Open Sans&quot;; font-weight: 900;">Club</span>
                             лежит многолетний опыт работы. Все наши специалисты регулярную проходят
                             обязательную квалификацию, тем самым подтверждая свое право быть в команде
-                        </p></div>
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 m-auto">
+                            <employee-list/>
+                        </div>
+                    </div>
 
                     <div class="row m-auto w-100">
                         <div class="col-md-12 m-auto">
