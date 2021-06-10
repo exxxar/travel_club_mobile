@@ -6,13 +6,13 @@
         <p class="text-center">Немного о наших коллегах</p>
 
         <carousel :items="4" :nav="false" :dots="false" class="story-blocks">
-            <div @click="show(index+1)" v-for="(employee, index) in employees">
+            <div @click="show(index+1)" v-for="(employee, index) in filteredEmployees">
                 <employee :index="index+1" :image="employee.image"/>
             </div>
 
         </carousel>
 
-        <employee-modals :active="active_index"/>
+        <employee-modals :active="active_index" :city="city"/>
     </div>
 </template>
 <script>
@@ -21,12 +21,27 @@
     import EmployeeModals from "../Employees/EmployeeModals";
 
     export default {
+        props: {
+            city: {
+                type: String,
+                required: false,
+                default: '',
+            },
+        },
         data() {
             return {
                 active_index: null,
             }
         },
         computed: {
+            filteredEmployees() {
+                if (this.city.trim() == "")
+                    return this.employees;
+
+                let tmp = this.employees.filter(item => item.location === this.city);
+
+                return tmp;
+            },
             employees() {
                 return this.$store.getters.getEmployees;
             }

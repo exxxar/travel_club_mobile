@@ -35,7 +35,6 @@
                                 </div>
                                 <div class="in">
                                     Личный кабинет
-                                    <div class="coming-soon-img sidebar-img"></div>
                                 </div>
                             </a>
                         </li>

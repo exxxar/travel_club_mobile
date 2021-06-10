@@ -4,11 +4,11 @@
         <EmploeeModalImage
             v-if="current"
             :index="current"
-            :image="employees[current-1].image"
-            :time="employees[current-1].time"
-            :title="employees[current-1].title"
-            :name="employees[current-1].name"
-            :location="employees[current-1].location"
+            :image="filteredEmployees[current-1].image"
+            :time="filteredEmployees[current-1].time"
+            :title="filteredEmployees[current-1].title"
+            :name="filteredEmployees[current-1].name"
+            :location="filteredEmployees[current-1].location"
             :progress="progress"
 
         />
@@ -26,7 +26,7 @@
     import EmploeeModalImage from "./Modals/EmploeeModalImage";
 
     export default {
-        props: ["active"],
+        props: ["active", "city"],
         data() {
             return {
 
@@ -51,6 +51,14 @@
 
         },
         computed: {
+            filteredEmployees(){
+                if (this.city.trim() == "")
+                    return this.employees;
+
+                let tmp = this.employees.filter(item => item.location === this.city);
+
+                return tmp;
+            },
             employees() {
                 return this.$store.getters.getEmployees;
             }
