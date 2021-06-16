@@ -19,6 +19,12 @@ let router = new VueRouter({
             meta: {bodyStyle: false, preloader: true},
         },
         {
+            path: '/simple-profile',
+            component: () => import('./pages/SimpleProfile.vue'),
+            name: "simple-profile",
+            meta: {bodyStyle: false, preloader: true},
+        },
+        {
             path: "/login",
             name: "login",
             components: {
@@ -219,16 +225,16 @@ let router = new VueRouter({
                         default: () => import('./pages/Client/Main.vue'),
                         mobile: () => import('./mobile/pages/Client/Main.vue')
                     },
-                    meta: {layout: 'client', requiresAuth: true}
+                    meta: {layout: 'client', requiresAuth: false}
                 },
                 {
                     path: "profile",
                     name: "client-profile",
                     components: {
-                        default: () => import('./pages/Client/Profile.vue'),
+                        default: () => import('./pages/SimpleProfile.vue'),
                         mobile: () => import('./mobile/pages/Client/Profile.vue')
                     },
-                    meta: {layout: 'client', requiresAuth: true}
+                    meta: {layout: 'client', requiresAuth: false}
                 },
                 // {
                 //     path: "balance",

@@ -2,8 +2,8 @@
     <div class="section mb-5">
 
 
-        <h4 class="section-title text-center" style="justify-content: center;">Сотрудники</h4>
-        <p class="text-center">Немного о наших коллегах</p>
+        <h4 class="section-title text-center" style="justify-content: center;" v-if="visible_menu">Сотрудники</h4>
+        <p class="text-center" v-if="visible_menu">Немного о наших коллегах</p>
 
         <carousel :items="4" :nav="false" :dots="false" class="story-blocks">
             <div @click="show(index+1)" v-for="(employee, index) in filteredEmployees">
@@ -27,6 +27,11 @@
                 required: false,
                 default: '',
             },
+            visible_menu: {
+                type:Boolean,
+                required: false,
+                default: true
+            }
         },
         data() {
             return {

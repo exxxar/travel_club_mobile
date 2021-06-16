@@ -23,6 +23,8 @@ import  'tb-skeleton/dist/skeleton.css'
 Vue.use(skeleton)
 Vue.use(VueRouter);
 Vue.use(Vuex);
+
+window.eventBus = new Vue();
 // Vue.use(require('vue-moment'));
 
 Vue.component('ValidationProvider', ValidationProvider);
@@ -233,6 +235,7 @@ Vue.component('manager-menu', ManagerMenu);
 import AdminMenu from './mobile/components/AdminMenu.vue';
 Vue.component('admin-menu', AdminMenu);
 
+Vue.component('employee-list', require('./components/Employees/EmployeeList.vue').default);
 
 new Vue({
     router,

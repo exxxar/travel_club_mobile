@@ -19,6 +19,7 @@ import moduleOrders from "./moduleOrders";
 
 import chats from './chats';
 import branches from "./branches";
+import employees from "./employeesModule";
 
 Vue.use(Vuex);
 
@@ -27,6 +28,6 @@ export default new Vuex.Store({
 	modules: {
 		auth, navigation, users, tours, todos,
         messages, tourModule, aviaModule, moduleOrders, tourSearch,
-        clients, chats, branches
+        clients, chats, branches, employees
 	}
 })

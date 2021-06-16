@@ -166,7 +166,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-12 col-sm-12 p-0">
-                                    <div class="row mx-auto mt-4 mb-3"
+                                    <div class="row mx-auto mt-4 mb-3 d-flex justify-content-center flex-wrap"
                                          style="color: #062348; font-size: 14px; font-weight: 700; width: 80%; text-align: justify">
                                         <p>
                                             Сеть туристических агентств
@@ -177,6 +177,15 @@
                                             путешествий и готовы делится своим опытом.
                                             Настоящие профессионалы, обожающие свою работу!
                                         </p>
+
+
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-10">
+                                                <employee-list :visible_title="false"/>
+                                            </div>
+                                        </div>
+
+
                                         <p>
                                             В основе
                                             <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
@@ -898,6 +907,9 @@
                         <p> Пн-Птн 10 00 – 18 00</p>
                         <p>Суббота 10 00 – 17 00</p>
                         <p>Воскресенье – выходной</p>
+
+                        <employee-list :city="'Донецк'"/>
+
                         <div class="ya-map"><a
                             href="https://yandex.ru/MAPS/142/donetsk/?utm_medium=mapframe&utm_source=maps"
                             style="color:#eee;font-size:12px;position:absolute;top:0px;">Донецк</a><a
@@ -928,6 +940,7 @@
                             Яндекс.Карты</a>
                             <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ72AL2A" allowfullscreen="true"></iframe>
                         </div>
+
                     </div>
                     <h2>Ростов-на-Дону</h2>
                     <div class="col-12">
@@ -940,6 +953,8 @@
                         <p>Пн-Птн 10 00 – 18 00</p>
                         <p>Суббота 10 00 – 17 00</p>
                         <p>Воскресенье – выходной</p>
+
+                        <employee-list :city="'Ростов-на-Дону'"/>
 
                         <div class="ya-map"><a
                             href="https://yandex.ru/MAPS/39/rostov-na-donu/?utm_medium=mapframe&utm_source=maps"

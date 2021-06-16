@@ -46,10 +46,10 @@
                 :burger-icon="false"
                 :closeOnNavigation="true"
             >
-                <div class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" v-if="isLoggedIn" @click="toProfile">
+          <!--      <div class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" v-if="isLoggedIn" @click="toProfile">
                     <span><i class="icon icon-person"></i>Личный кабинет</span>
-                </div>
-                <a class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" href="/login" v-if="!isLoggedIn">
+                </div>-->
+                <a class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" href="/simple-profile">
                     <span><i class="icon icon-person"></i>Личный кабинет</span>
                 </a>
                 <a v-if="$route.name=='landing'" class="nav-link" v-for="link in landing_links" href=""
