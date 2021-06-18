@@ -5,7 +5,7 @@
 .SLT-SearchForm-blue__desktopView.SLT-SearchForm-blue__container {
     max-width: 700px;
     padding: 60px 10px 68px;
-    z-index: 1 !important;
+    z-index: 100 !important;
 }
 .SLT-App-blue__container {
     background-color: #f08b23 !important;
