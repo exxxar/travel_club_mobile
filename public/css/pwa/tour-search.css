@@ -26,7 +26,7 @@
     position: relative;
     width: 100%;
     background-color: #fff !important;
-    z-index: 1 !important;
+    z-index: 100 !important;
 }
 .SLT-SearchForm-blue__container {
     position: relative;
@@ -35,7 +35,7 @@
     padding: 24px 20px 48px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    z-index: 1 !important;
+    z-index: 100 !important;
 }
 
 .SLT-SearchForm-blue__desktopView.SLT-SearchForm-blue__container .SLT-SearchForm-blue__searchBtn {
