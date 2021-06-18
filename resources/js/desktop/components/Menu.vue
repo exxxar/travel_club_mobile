@@ -21,7 +21,7 @@
             <!--          <p class="mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">bp.pink.donetsk@gmail.com</p>-->
             <a href="mailto:tours@travel-club.tours" class="mb-0"
                style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">
-                tours@travel-club.tours</a>
+                travelclubrnd@bk.ru</a>
         </div>
         <div class="row m-auto desktop">
             <!--          <a href="#" class="icon icon-vk ml-auto mr-3" target="_blank" style="color: #f08b23; font-size: 25px; text-decoration: none"></a>-->

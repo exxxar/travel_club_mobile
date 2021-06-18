@@ -5,7 +5,7 @@
 .SLT-SearchForm-blue__desktopView.SLT-SearchForm-blue__container {
     max-width: 700px;
     padding: 60px 10px 68px;
-    z-index: 100 !important;
+    z-index: 1 !important;
 }
 .SLT-App-blue__container {
     background-color: #f08b23 !important;
@@ -26,7 +26,7 @@
     position: relative;
     width: 100%;
     background-color: #fff !important;
-    z-index: 50 !important;
+    z-index: 1 !important;
 }
 .SLT-SearchForm-blue__container {
     position: relative;
@@ -35,7 +35,7 @@
     padding: 24px 20px 48px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    z-index: 100 !important;
+    z-index: 1 !important;
 }
 
 .SLT-SearchForm-blue__desktopView.SLT-SearchForm-blue__container .SLT-SearchForm-blue__searchBtn {
