@@ -18,6 +18,16 @@ import VueMarkdown from 'vue-markdown'
 
 Vue.use(VueMarkdown)
 
+import VueLazyload from 'vue-lazyload'
+
+
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: 'img/logo.png',
+    loading: 'img/logo.png',
+    attempt: 1
+})
+
 import {ValidationProvider, extend, ValidationObserver} from 'vee-validate';
 import {required, email} from 'vee-validate/dist/rules';
 

@@ -7,7 +7,7 @@
         </div>
 
         <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar1.jpg" alt="avatar" class="avatar">
+            <img v-lazy="'assets/img/sample/avatar/avatar1.jpg'" alt="avatar" class="avatar">
             <div class="content">
                 <div class="title">John</div>
                 <div class="bubble">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar2.jpg" alt="avatar" class="avatar">
+            <img v-lazy="'assets/img/sample/avatar/avatar2.jpg'" alt="avatar" class="avatar">
             <div class="content">
                 <div class="title">Marry</div>
                 <div class="bubble">
@@ -42,18 +42,18 @@
         </div>
 
         <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar2.jpg" alt="avatar" class="avatar">
+            <img v-lazy="'assets/img/sample/avatar/avatar2.jpg'" alt="avatar" class="avatar">
             <div class="content">
                 <div class="title">Marry</div>
                 <div class="bubble">
-                    <img src="assets/img/sample/photo/1.jpg" alt="photo" class="imaged w160">
+                    <img v-lazy="'assets/img/sample/photo/1.jpg'" alt="photo" class="imaged w160">
                 </div>
                 <div class="footer">10:40 AM</div>
             </div>
         </div>
 
         <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar4.jpg" alt="avatar" class="avatar">
+            <img v-lazy="'assets/img/sample/avatar/avatar4.jpg'" alt="avatar" class="avatar">
             <div class="content">
                 <div class="title">Katie</div>
                 <div class="bubble">
@@ -64,7 +64,7 @@
         </div>
 
         <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar2.jpg" alt="avatar" class="avatar">
+            <img v-lazy="'assets/img/sample/avatar/avatar2.jpg'" alt="avatar" class="avatar">
             <div class="content">
                 <div class="title">Marry</div>
                 <div class="bubble">

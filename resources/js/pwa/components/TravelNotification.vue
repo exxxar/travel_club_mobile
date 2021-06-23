@@ -7,7 +7,7 @@
                     <div class="notification-dialog ios-style">
                         <div class="notification-header">
                             <div class="in">
-                                <img src="/img/travel/logo-1.png" alt="image" class="imaged w24 rounded">
+                                <img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged w24 rounded">
                                 <strong>Travel Club</strong>
                                 <span class="ml-1">сейчас</span>
                             </div>

@@ -2,7 +2,7 @@
     <div id="appCapsule">
 
         <div class="section text-center">
-            <img src="assets/img/sample/photo/vector5.png" alt="image" class="imaged w200">
+            <img v-lazy="'assets/img/sample/photo/vector5.png'" alt="image" class="imaged w200">
         </div>
 
         <div class="section full">

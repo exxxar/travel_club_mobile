@@ -2,7 +2,7 @@
     <div id="appCapsule">
 
         <div class="error-page">
-            <img src="/img/travel/404.png" alt="alt" class="imaged square w200">
+            <img v-lazy="'/img/travel/404.png'" alt="alt" class="imaged square w200">
             <h1 class="title">Мы работаем над этим</h1>
             <div class="text mb-5">
               Данный раздел сейчас на обслуживании!

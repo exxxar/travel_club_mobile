@@ -3,7 +3,7 @@
     <div id="appCapsule">
 
         <div class="section full">
-            <img src="assets/img/sample/photo/wide4.jpg" alt="image" class="imaged square w-100">
+            <img v-lazy="'assets/img/sample/photo/wide4.jpg'" alt="image" class="imaged square w-100">
         </div>
 
         <div class="section full mt-2">
@@ -31,7 +31,7 @@
                 <li>
                     <div class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/avatar/avatar1.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -44,7 +44,7 @@
                 <li>
                     <div class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/avatar/avatar2.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -57,7 +57,7 @@
                 <li>
                     <div class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/avatar/avatar4.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/avatar/avatar4.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -70,7 +70,7 @@
                 <li>
                     <div class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/avatar/avatar5.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/avatar/avatar5.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -90,7 +90,7 @@
                 <li>
                     <a href="#" class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/photo/1.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/photo/1.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -105,7 +105,7 @@
                 <li>
                     <a href="#" class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/photo/2.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/photo/2.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -118,7 +118,7 @@
                 <li>
                     <a href="#" class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/photo/3.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/photo/3.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -131,7 +131,7 @@
                 <li>
                     <a href="#" class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/photo/5.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/photo/5.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>
@@ -144,7 +144,7 @@
                 <li>
                     <a href="#" class="item">
                         <div class="imageWrapper">
-                            <img src="assets/img/sample/photo/6.jpg" alt="image" class="imaged w64">
+                            <img v-lazy="'assets/img/sample/photo/6.jpg'" alt="image" class="imaged w64">
                         </div>
                         <div class="in">
                             <div>

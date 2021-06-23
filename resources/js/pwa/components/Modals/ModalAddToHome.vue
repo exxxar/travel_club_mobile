@@ -10,7 +10,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="action-sheet-content text-center">
-                        <div class="mb-1"><img src="/img/travel/logo-1.png" alt="image" class="imaged">
+                        <div class="mb-1"><img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged">
                         </div>
                         <h4>Travel Club</h4>
                         <div>

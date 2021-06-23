@@ -13,13 +13,13 @@
                         <div class="col-md-7 mx-auto p-0">
                             <div class="row mr-auto ml-0 my-auto title-part-left">
                                 <h1><span>Д</span>авайте</h1>
-                                <img src="/img/travel/blue-brush.svg">
+                                <img v-lazy="'/img/travel/blue-brush.svg'">
                             </div>
                         </div>
                         <div class="col-md-7 mx-auto p-0">
                             <div class="row ml-auto mr-0 my-auto title-part-right">
                                 <h1>познакомимся!</h1>
-                                <img src="/img/travel/orange-brush.svg">
+                                <img v-lazy="'/img/travel/orange-brush.svg'">
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-md-12 m-auto">
                             <div class="text-center lets-start">
-                                <img src="/img/travel/logo-1.png">
+                                <img v-lazy="'/img/travel/logo-1.png'">
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="row m-auto w-100">
                         <div class="col-md-12 m-auto">
                             <div class="text-center lets-start">
-                                <img src="/img/travel/avatar.png">
+                                <img v-lazy="'/img/travel/avatar.png'">
                             </div>
                         </div>
 

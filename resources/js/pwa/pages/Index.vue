@@ -31,7 +31,7 @@
                     <div class="card">
                         <a href="https://travel-club.tours/m/tours" class="travel-card"
                            aria-label="Подобрать путеествие">
-                            <img src="/img/travel/1.png" class="card-img-top" alt="image">
+                            <img v-lazy="'/img/travel/1.png'" class="card-img-top" alt="image">
                         </a>
 
                         <div class="card-body pt-2">
@@ -43,7 +43,7 @@
                 <div class="item">
                     <div class="card card-with-blue-line" text="Новинка">
                         <a href="https://travel-club.tours/m/adventure" class="travel-card" aria-label="Туры по России">
-                            <img src="/img/travel/4.png" class="card-img-top" alt="image">
+                            <img v-lazy="'/img/travel/4.png'" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
                             <h4 class="mb-0 text-center text-uppercase">Туры по России</h4>
@@ -56,7 +56,7 @@
                     <div class="card">
                         <a href="https://travel-club.tours/m/flies" class="travel-card"
                            aria-label="Подобрать авиобилеты">
-                            <img src="/img/travel/2.png" class="card-img-top" alt="image">
+                            <img v-lazy="'/img/travel/2.png'" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
                             <h4 class="mb-0 text-center text-uppercase">Подобрать авиабилеты</h4>
@@ -106,7 +106,7 @@
 
         <div class="section mt-3 mb-3">
             <div class="card">
-                <img src="/img/travel/s1.png" class="card-img-top" alt="image">
+                <img v-lazy="'/img/travel/s1.png'" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h6 class="card-subtitle">Путешествуй</h6>
                     <h5 class="card-title">С TravelClub</h5>
@@ -129,7 +129,7 @@
 
         <div class="section mt-3 mb-3">
             <div class="card">
-                <img src="/img/travel/s2.png" class="card-img-top" alt="image">
+                <img v-lazy="'/img/travel/s2.png'" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h6 class="card-subtitle">Летай</h6>
                     <h5 class="card-title">С TravelClub</h5>
@@ -149,7 +149,7 @@
 
         <div class="section mt-3 mb-3">
             <div class="card">
-                <img src="/img/travel/s3.png" class="card-img-top" alt="image">
+                <img v-lazy="'/img/travel/s3.png'" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h6 class="card-subtitle">Туры</h6>
                     <h5 class="card-title">По России</h5>
@@ -172,7 +172,7 @@
         <div class="section mt-3 mb-3">
             <div class="error-page">
                 <div class="mb-2">
-                    <img src="/img/travel/family-illustration.png" alt="alt" class="imaged square w200">
+                    <img v-lazy="'/img/travel/family-illustration.png'" alt="alt" class="imaged square w200">
                 </div>
                 <h1 class="title">Наша семья</h1>
                 <div class="text mb-3">
@@ -181,7 +181,7 @@
                         href="https://www.instagram.com/goodiets/">@goodiets</a></p>
                 </div>
                 <div class="mb-2 ">
-                    <img src="/img/travel/goodiets.png" alt="alt" class="imaged square w200">
+                    <img v-lazy="'/img/travel/goodiets.png'" alt="alt" class="imaged square w200">
 
                     <div class="coming-soon-img"></div>
 
@@ -205,7 +205,7 @@
         </div>
         <!-- app footer -->
         <div class="appFooter">
-            <img src="/img/logo.png" alt="icon" class="footer-logo mb-2">
+            <img v-lazy="'/img/logo.png'" alt="icon" class="footer-logo mb-2">
             <text-callback-form/>
 
             <div class="footer-title">

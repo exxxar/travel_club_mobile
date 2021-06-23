@@ -8,7 +8,7 @@
                     <!-- profile box -->
                     <div class="profileBox">
                         <a href="https://travel-club.tours" class="image-wrapper">
-                            <img src="/img/travel/logo-1.png" alt="image" class="imaged">
+                            <img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged">
                         </a>
                         <div class="in" data-toggle="modal" data-target="#ContactModal">
                             <strong>Travel Club</strong>

@@ -5,17 +5,17 @@
         <div class="row mt-2">
             <div class="col-6" @click="country=0">
                 <div class="country-block">
-                    <img src="/img/travel/ukraine1.png" alt="" class="img-fluid rounded-country country-checked"
+                    <img v-lazy="'/img/travel/ukraine1.png'" alt="" class="img-fluid rounded-country country-checked"
                          v-if="country===0">
-                    <img src="/img/travel/ukraine0.png" alt="" class="img-fluid rounded-country" v-else>
+                    <img v-lazy="'/img/travel/ukraine0.png'" alt="" class="img-fluid rounded-country" v-else>
                     <h4 class="country-title">Украина</h4>
                 </div>
             </div>
             <div class="col-6" @click="country=1">
                 <div class="country-block">
-                    <img src="/img/travel/russia1.png" alt="" class="img-fluid rounded-country country-checked"
+                    <img v-lazy="'/img/travel/russia1.png'" alt="" class="img-fluid rounded-country country-checked"
                          v-if="country===1">
-                    <img src="/img/travel/russia0.png" alt="" class="img-fluid rounded-country" v-else>
+                    <img v-lazy="'/img/travel/russia0.png'" alt="" class="img-fluid rounded-country" v-else>
                     <h4 class="country-title">Россия</h4>
                 </div>
             </div>

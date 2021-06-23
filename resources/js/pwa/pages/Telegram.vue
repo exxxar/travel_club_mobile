@@ -7,11 +7,11 @@
         </div>
 
         <div class="message-item" v-for="message in messages" v-bind:class="{'user':(message.result?false:true)}">
-            <img :src="message.result?'/img/logo.png':'/img/travel/avatar.png'" alt="avatar" class="avatar">
+            <img v-lazy="message.result?'/img/logo.png':'/img/travel/avatar.png'" alt="avatar" class="avatar">
             <div class="content">
                 <div class="title">{{message.result?'TravelClub':'Вы'}}</div>
                 <div class="bubble">
-                    <img :src="message.photo" alt="photo" class="imaged w160" v-if="message.photo">
+                    <img v-lazy="message.photo" alt="photo" class="imaged w160" v-if="message.photo">
                     <vue-markdown>{{message.text}}</vue-markdown>
 
                     <ul v-if="message.type===2">

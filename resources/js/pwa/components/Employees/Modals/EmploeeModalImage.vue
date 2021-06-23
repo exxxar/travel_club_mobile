@@ -7,11 +7,11 @@
             <div class="modal-content">
                 <div class="story-bar"></div>
                 <div class="story-image">
-                    <img :src="image" alt="image">
+                    <img v-lazy="image" alt="image">
                 </div>
                 <div class="modal-header">
                     <a href="#" class="profile-detail">
-                        <img src="/img/travel/logo-1.png" alt="avatar" class="imaged w36 rounded mr-1">
+                        <img v-lazy="'/img/travel/logo-1.png'" alt="avatar" class="imaged w36 rounded mr-1">
                         <div>
                             <h4>Travel Club Family</h4>
                             <span class="text-muted">{{time}}</span>
