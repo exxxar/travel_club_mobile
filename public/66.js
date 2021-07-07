@@ -1,1 +1,1510 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[66],{"8MFA":function(t,a,e){(t.exports=e("I1BE")(!1)).push([t.i,'.title-1[data-v-5b08ed6b]{position:absolute;z-index:1;left:20px;top:10px;color:#062348;font-family:Bello Pro!important;font-size:35px}.title-1 span[data-v-5b08ed6b]{font-size:40px}.title-2[data-v-5b08ed6b]{position:absolute;z-index:1;left:36px;top:18px;color:#fff;font-family:Open Sans!important;font-weight:900;font-size:19px}.title-2 span[data-v-5b08ed6b]{text-transform:uppercase}.orange-brush[data-v-5b08ed6b]{top:2px;left:0;width:350px;height:50px}.blue-brush[data-v-5b08ed6b]{top:10px;left:-55px;width:425px;height:50px;opacity:1}.ballon[data-v-5b08ed6b]{margin:0 auto;width:150px;position:relative;top:45%;transform:translateY(-45%)}.ballon-inner[data-v-5b08ed6b]{-webkit-animation:drift-data-v-5b08ed6b 5s ease-in-out infinite;animation:drift-data-v-5b08ed6b 5s ease-in-out infinite}.ballon-ball[data-v-5b08ed6b]{border-radius:150%;border-bottom-left-radius:425%;border-bottom-right-radius:425%;border-top-left-radius:425%;border-top-radius:220%;background:orange;transform:rotate(135deg)}.ballon-ball[data-v-5b08ed6b],.ballon-ball1[data-v-5b08ed6b]{height:150px;width:150px;position:relative;overflow:hidden}.ballon-ball1[data-v-5b08ed6b]{border-bottom-left-radius:100%;border-bottom-right-radius:220%;border-top-left-radius:220%;background:#ff0}.ballon-ball2[data-v-5b08ed6b]{height:150px;width:150px;border-bottom-left-radius:0;border-bottom-right-radius:530%;border-top-left-radius:530%;background:orange}.ballon-ball2[data-v-5b08ed6b],.ballon-ball3[data-v-5b08ed6b]{position:relative;overflow:hidden}.ballon-ball3[data-v-5b08ed6b]{height:175px;width:37px;background:#ff0;border-bottom-left-radius:1000%;border-bottom-right-radius:1000%;border-top-left-radius:1000%;transform:rotate(45deg);border-top-right-radius:1000%;margin-left:64px;margin-top:-20px}.ball-inner[data-v-5b08ed6b]{position:absolute;height:38px;top:60px;left:0;width:100%;overflow:hidden;border-radius:50%;border-bottom:5px solid #000;z-index:1}.ballon-rope[data-v-5b08ed6b]{left:117px;transform:rotate(28deg)}.ballon-rope[data-v-5b08ed6b],.ballon-rope1[data-v-5b08ed6b]{height:130px;width:0;position:absolute;z-index:0;border:1px solid #010000;border-right-color:#000;top:76px}.ballon-rope1[data-v-5b08ed6b]{left:32px;transform:rotate(-28deg)}.ballon-rope2[data-v-5b08ed6b]{left:41px;transform:rotate(-25deg)}.ballon-rope2[data-v-5b08ed6b],.ballon-rope3[data-v-5b08ed6b]{height:120px;width:0;position:absolute;z-index:0;border:1px solid #010000;border-right-color:#000;top:84px}.ballon-rope3[data-v-5b08ed6b]{left:108px;transform:rotate(25deg)}.ballon-rope4[data-v-5b08ed6b]{left:54px;transform:rotate(-20deg)}.ballon-rope4[data-v-5b08ed6b],.ballon-rope5[data-v-5b08ed6b]{height:130px;width:0;position:absolute;z-index:0;border:1px solid #010000;border-right-color:#000;top:90px}.ballon-rope5[data-v-5b08ed6b]{left:94px;transform:rotate(20deg)}.ballon-rope6[data-v-5b08ed6b]{left:66px;transform:rotate(-9deg)}.ballon-rope6[data-v-5b08ed6b],.ballon-rope7[data-v-5b08ed6b]{height:130px;width:0;position:absolute;z-index:0;border:1px solid #010000;border-right-color:#000;top:93px}.ballon-rope7[data-v-5b08ed6b]{left:82px;transform:rotate(9deg)}.ballon-rope8[data-v-5b08ed6b]{height:120px;width:0;position:absolute;z-index:0;left:74.5px;border:1px solid #010000;border-right-color:#000;transform:rotate(0deg);top:97px}.ballon-rope9[data-v-5b08ed6b]{left:85px;transform:rotate(-3deg)}.ballon-rope9[data-v-5b08ed6b],.ballon-rope10[data-v-5b08ed6b]{height:30px;width:0;position:absolute;z-index:0;border:1px solid #010000;border-right-color:#000;top:167px}.ballon-rope10[data-v-5b08ed6b]{left:63px;transform:rotate(3deg)}.ballon-seat[data-v-5b08ed6b]{width:28.5714285714px;height:28.5714285714px;position:relative;border:3px solid #633421;border-radius:0 0 6px 6px;margin:25px auto;background:linear-gradient(90deg,#987359,#89534d 50%,#4a2b21 85%);top:20px}.ballon-seat[data-v-5b08ed6b]:before{content:"";width:28.5714285714px;height:14.2857142857px;position:absolute;border-radius:0 0 6px 6px;bottom:0;left:-2px;border-top:3px solid #633421;background:transparent}.sky[data-v-5b08ed6b]{position:absolute;top:0;left:0;right:0;max-width:650px;width:100%;height:100%;overflow:hidden;z-index:0;margin:0 auto}.cloud[data-v-5b08ed6b]{position:absolute;background:#dcf6ff;border-radius:200px}.cloud--inner1[data-v-5b08ed6b]:after,.cloud--inner1[data-v-5b08ed6b]:before{content:"";background:#dcf6ff;width:48%;height:100%;position:absolute;top:-34%;left:2%;border-radius:300px}.cloud--inner1[data-v-5b08ed6b]:after{width:65%;height:120%;top:-21%;left:auto;right:2%}.cloud--inner3[data-v-5b08ed6b]:after,.cloud--inner3[data-v-5b08ed6b]:before{content:"";background:#dcf6ff;width:55%;height:91%;position:absolute;top:21%;left:-9%;border-radius:300px}.cloud--inner3[data-v-5b08ed6b]:after{width:55%;height:100%;top:34%;left:auto;right:8%}.cloud--inner2[data-v-5b08ed6b]:after,.cloud--inner2[data-v-5b08ed6b]:before{content:"";background:#ace7f9;width:61%;height:100%;position:absolute;top:30%;left:-12%;border-radius:200px}.cloud--inner2[data-v-5b08ed6b]:after{width:55%;height:100%;top:54%;left:auto;right:10%}.cloud--inner4[data-v-5b08ed6b]:after,.cloud--inner4[data-v-5b08ed6b]:before{content:"";position:absolute;border-radius:200px}.cloud--inner4[data-v-5b08ed6b]:before{background:#ace7f9;width:50%;height:89%;top:19%;left:auto;right:-20%}.cloud--inner4[data-v-5b08ed6b]:after{background:#dcf6ff;width:50%;height:74%;top:18%;left:auto;right:-19%}.cloud-1[data-v-5b08ed6b]{width:110px;height:55px;bottom:50%;left:105%;-webkit-animation:moveClouds-data-v-5b08ed6b 17s linear infinite;animation:moveClouds-data-v-5b08ed6b 17s linear infinite;-webkit-animation-delay:3s;animation-delay:3s}.cloud-2[data-v-5b08ed6b]{width:83.3333333333px;height:41.6666666667px;bottom:15%;left:105%;-webkit-animation:moveClouds-data-v-5b08ed6b 12s linear infinite;animation:moveClouds-data-v-5b08ed6b 12s linear infinite;-webkit-animation-delay:0s;animation-delay:0s}.cloud-3[data-v-5b08ed6b]{width:66.6666666667px;height:33.3333333333px;top:5%;left:105%;-webkit-animation:moveClouds-data-v-5b08ed6b 15s linear infinite;animation:moveClouds-data-v-5b08ed6b 15s linear infinite;-webkit-animation-delay:2s;animation-delay:2s}@-webkit-keyframes moveClouds-data-v-5b08ed6b{0%{transform:translateX(-15vw);opacity:0}5%{opacity:.1}10%{opacity:.5}15%{opacity:.8}20%{opacity:1}70%{opacity:.8}80%{opacity:.5}90%{opacity:.1}to{transform:translateX(-650px);opacity:0}}@keyframes moveClouds-data-v-5b08ed6b{0%{transform:translateX(-15vw);opacity:0}5%{opacity:.1}10%{opacity:.5}15%{opacity:.8}20%{opacity:1}70%{opacity:.8}80%{opacity:.5}90%{opacity:.1}to{transform:translateX(-650px);opacity:0}}@-webkit-keyframes drift-data-v-5b08ed6b{0%{transform:translateY(0) rotate()}50%{transform:translateY(-20px) rotate(-3deg)}to{transform:translateY(0) rotate()}}@keyframes drift-data-v-5b08ed6b{0%{transform:translateY(0) rotate()}50%{transform:translateY(-20px) rotate(-3deg)}to{transform:translateY(0) rotate()}}',""])},B5Ei:function(t,a,e){"use strict";e.r(a);var o={name:"Start",data:function(){return{}},mounted:function(){},computed:{menu:function(){return this.$store.getters.menu},tourModule:function(){return this.$store.getters.tourModule},preloader:function(){return this.$store.getters.preloader}},methods:{}},i=(e("XcXC"),e("KHd+")),d=Object(i.a)(o,(function(){var t=this.$createElement;this._self._c;return this._m(0)}),[function(){var t=this,a=t.$createElement,e=t._self._c||a;return e("div",{staticClass:"cont m-auto"},[e("div",{staticClass:"ml-auto mr-auto",staticStyle:{position:"relative",height:"40vh",width:"100%",background:"url('/images/Resurs_7.svg') no-repeat center"}},[e("div",{staticClass:"sky"},[e("div",{staticClass:"cloud-1 cloud"},[e("div",{staticClass:"cloud--inner1"}),t._v(" "),e("div",{staticClass:"cloud--inner4"}),t._v(" "),e("div",{staticClass:"cloud--inner2"}),t._v(" "),e("div",{staticClass:"cloud--inner3"})]),t._v(" "),e("div",{staticClass:"cloud-2 cloud"},[e("div",{staticClass:"cloud--inner1"}),t._v(" "),e("div",{staticClass:"cloud--inner4"}),t._v(" "),e("div",{staticClass:"cloud--inner2"}),t._v(" "),e("div",{staticClass:"cloud--inner3"})]),t._v(" "),e("div",{staticClass:"cloud-3 cloud"},[e("div",{staticClass:"cloud--inner1"}),t._v(" "),e("div",{staticClass:"cloud--inner4"}),t._v(" "),e("div",{staticClass:"cloud--inner2"}),t._v(" "),e("div",{staticClass:"cloud--inner3"})]),t._v(" "),e("div",{staticClass:"ballon"},[e("div",{staticClass:"ballon-inner"},[e("div",{staticClass:"ball-inner"}),t._v(" "),e("div",{staticClass:"ballon-ball"},[e("div",{staticClass:"ballon-ball1"},[e("div",{staticClass:"ballon-ball2"},[e("div",{staticClass:"ballon-ball3"})])])]),t._v(" "),e("div",{staticClass:"ballon-rope"}),t._v(" "),e("div",{staticClass:"ballon-rope1"}),t._v(" "),e("div",{staticClass:"ballon-rope2"}),t._v(" "),e("div",{staticClass:"ballon-rope3"}),t._v(" "),e("div",{staticClass:"ballon-rope4"}),t._v(" "),e("div",{staticClass:"ballon-rope5"}),t._v(" "),e("div",{staticClass:"ballon-rope6"}),t._v(" "),e("div",{staticClass:"ballon-rope7"}),t._v(" "),e("div",{staticClass:"ballon-rope8"}),t._v(" "),e("div",{staticClass:"ballon-rope9"}),t._v(" "),e("div",{staticClass:"ballon-rope10"}),t._v(" "),e("div",{staticClass:"ballon-seat"})])])])]),t._v(" "),e("div",{staticClass:"row m-auto justify-content-center align-items-center",staticStyle:{width:"100%"}},[e("div",{staticClass:"col-12 col-md-8 col-sm-12"},[e("div",{staticClass:"row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row",staticStyle:{height:"100px",width:"100%"}},[e("div",{staticClass:"col-md-7 p-0"},[e("div",{staticClass:"row mr-auto ml-0 my-auto travel-card-title",staticStyle:{position:"relative",height:"50px",width:"300px"}},[e("h1",{staticClass:"title-1"},[e("span",[t._v("Д")]),t._v("обро пожаловать")]),t._v(" "),e("img",{staticClass:"blue-brush",staticStyle:{position:"absolute"},attrs:{src:"/images/blue-brush.svg"}})])]),t._v(" "),e("div",{staticClass:"col-md-7 p-0"},[e("div",{staticClass:"row ml-auto mr-0 my-auto travel-card-title",staticStyle:{position:"relative",height:"50px",width:"350px"}},[e("h1",{staticClass:"title-2"},[e("span",[t._v("в модуль подбора туров ")])]),t._v(" "),e("img",{staticClass:"orange-brush",staticStyle:{position:"absolute"},attrs:{src:"/images/orange-brush.svg"}})])])])])]),t._v(" "),e("div",{staticClass:"row m-auto justify-content-center align-items-center px-5",staticStyle:{width:"80%"}},[e("p",{staticStyle:{color:"#0f213d","font-family":"'Open Sans'","font-weight":"900","font-style":"italic"}},[t._v("Надоело искать, подбирать туры и следить за их ценой самостоятельно? Мы предлагаем заполнить заявку на подбор туров и наши менеджеры сделают всё за Вас!")])])])}],!1,null,"5b08ed6b",null);a.default=d.exports},XcXC:function(t,a,e){"use strict";e("t65p")},t65p:function(t,a,e){var o=e("8MFA");"string"==typeof o&&(o=[[t.i,o,""]]);var i={hmr:!0,transform:void 0,insertInto:void 0};e("aET+")(o,i);o.locals&&(t.exports=o.locals)}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[66],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/TourSearch.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "TourSearch",
+  data: function data() {
+    return {
+      icons: ["fa fa-comment", "fas fa-microphone", "fas fa-phone"],
+      menuUrlList: ["#contactModalBox", "#customVoiceModal", "#customPhoneModal"],
+      titles: ["Написать сообщение", "Записать голосовое", "Заказать звонок"]
+    };
+  },
+  created: function created() {
+    var SletatRuScript = document.createElement('script');
+    SletatRuScript.setAttribute('src', 'https://front.sletat.ru/modules/module6/latest/module.js');
+    SletatRuScript.defer = true;
+    SletatRuScript.async = true;
+    document.head.appendChild(SletatRuScript);
+  },
+  computed: {
+    locationByIp: function locationByIp() {
+      return this.$store.getters.locationByIp;
+    }
+  },
+  methods: {
+    toTourSearch: function toTourSearch() {
+      this.$router.push('/tour-search');
+    },
+    toAviaSearch: function toAviaSearch() {
+      this.$router.push('/avia-search'); // this.$router.push('/avia-module')
+    },
+    toHotelSearch: function toHotelSearch() {
+      // this.$router.push('/hotel-search')
+      // this.$router.push('/hotel-module')
+      this.$router.push('/russia-tour-search');
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.btn-travel[data-v-4c59027c] {\n    border-radius: 50px;\n    background: #f08b23;\n    color: white;\n    text-transform: uppercase;\n    font-family: \"Open Sans\";\n    font-weight: 900;\n    font-size: 20px;\n    outline: none;\n    border: none;\n}\n.footer[data-v-4c59027c] {\n    position: relative;\n    text-align: center;\n//background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);\n    color: white;\n    /*height: 65vh;*/\n}\n.inner-header[data-v-4c59027c] {\n    height: 65vh;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n}\n.flex[data-v-4c59027c] {\n    /*Flexbox for containers*/\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n}\n.waves[data-v-4c59027c] {\n    position: relative;\n    width: 100%;\n    height: 15vh;\n    margin-bottom: -7px;\n    /*Fix for safari gap*/\n    min-height: 100px;\n    max-height: 150px;\n}\n.footer-content[data-v-4c59027c] {\n    position: relative;\n    height: 35vh;\n    text-align: center;\n    background-color: #ff9900;\n}\n.footer-content h1[data-v-4c59027c] {\n    /*font-family: 'Bello Pro';*/\n    font-family: 'Open Sans Extrabold';\n}\n.inner-content[data-v-4c59027c]{\n    position: relative;\n    text-align: center;\n    background-color: #062348;\n    width:100%;\n}\n.inner-content .waves[data-v-4c59027c] {\n    position: absolute;\n    top:-75px;\n    height: 12vh;\n    /*Fix for safari gap*/\n    min-height: 70px;\n    max-height: 120px;\n}\n.inner-flex[data-v-4c59027c]{\n    /*Flexbox for containers*/\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    text-align: center;\n}\n/* Animation */\n.parallax>use[data-v-4c59027c] {\n    -webkit-animation: move-forever-data-v-4c59027c 25s cubic-bezier(.55, .5, .45, .5) infinite;\n            animation: move-forever-data-v-4c59027c 25s cubic-bezier(.55, .5, .45, .5) infinite;\n}\n.parallax>use[data-v-4c59027c]:nth-child(1) {\n    -webkit-animation-delay: -2s;\n            animation-delay: -2s;\n    -webkit-animation-duration: 7s;\n            animation-duration: 7s;\n}\n.parallax>use[data-v-4c59027c]:nth-child(2) {\n    -webkit-animation-delay: -3s;\n            animation-delay: -3s;\n    -webkit-animation-duration: 10s;\n            animation-duration: 10s;\n}\n.parallax>use[data-v-4c59027c]:nth-child(3) {\n    -webkit-animation-delay: -4s;\n            animation-delay: -4s;\n    -webkit-animation-duration: 13s;\n            animation-duration: 13s;\n}\n.parallax>use[data-v-4c59027c]:nth-child(4) {\n    -webkit-animation-delay: -5s;\n            animation-delay: -5s;\n    -webkit-animation-duration: 20s;\n            animation-duration: 20s;\n}\n@-webkit-keyframes move-forever-data-v-4c59027c {\n0% {\n        transform: translate3d(-90px, 0, 0);\n}\n100% {\n        transform: translate3d(85px, 0, 0);\n}\n}\n@keyframes move-forever-data-v-4c59027c {\n0% {\n        transform: translate3d(-90px, 0, 0);\n}\n100% {\n        transform: translate3d(85px, 0, 0);\n}\n}\n/*Shrinking for mobile*/\n@media (max-width: 768px) {\n.waves[data-v-4c59027c] {\n        height: 50px;\n        min-height: 50px;\n        margin-bottom: 0px;\n}\n.footer-content[data-v-4c59027c] {\n        height: 30vh;\n}\n.inner-content .waves[data-v-4c59027c] {\n        top: -45px;\n        height: 50px;\n        min-height: 50px;\n}\n.footer-content h1[data-v-4c59027c] {\n        font-size: 27px;\n}\n}\n.footer-btn[data-v-4c59027c] {\n    background-color: #062348;\n    border: none;\n    color: white;\n    font-family: 'Open Sans';\n    font-weight: 900;\n    font-size: 20px;\n    border-radius: 50px;\n    text-transform: uppercase;\n    padding: 10px 32px;\n    text-decoration: none;\n    outline: none !important;\n}\n.footer-illustration[data-v-4c59027c] {\n    /*position:absolute;*/\n    /*bottom:0px;*/\n    /*left: 0px;*/\n    width: 100%;\n    /*height: 100%;*/\n    display: block;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n.more-text[data-v-4c59027c] {\n    font-family: \"Open Sans\";\n    text-transform: uppercase;\n    color: #f08b23;\n    font-weight: 600;\n    font-size: 16px;\n    cursor:pointer;\n}\n.more-button[data-v-4c59027c] {\n    cursor:pointer;\n    margin: 0 10px;\n    right: 10px;\n}\n.more-button div[data-v-4c59027c] {\n    width: 40px;\n    height: 40px;\n    display: block;\n    border-radius: 50px;\n    text-decoration: none;\n    font-size: 40px;\n    /*line-height: 50px;*/\n    color:  white;\n    background: #f08b23;\n    padding: 0px !important;\n}\n.footer .more-button div[data-v-4c59027c] {\n    width: 50px;\n    height: 50px;\n    font-size: 30px;\n    padding-top: 10px !important\n}\n.footer .more-text[data-v-4c59027c] {\n    color: white;\n    font-size: 20px;\n    font-weight: 900;\n    margin-top: auto;\n    margin-bottom: auto;\n}\n@media screen and (max-width: 576px) {\n.tablet-footer-col[data-v-4c59027c] {\n        flex: 0 0 55%;\n        max-width: 55%;\n}\n}\n@media screen and (max-width: 992px) {\n.tablet-footer-col[data-v-4c59027c] {\n        flex: 0 0 50% ;\n        max-width: 50%;\n}\n}\n@media screen and (max-width: 477px) {\n.tablet-footer-col[data-v-4c59027c] {\n        flex: 0 0 100% !important;\n        max-width: 100% !important;\n}\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--7-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=template&id=4c59027c&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/TourSearch.vue?vue&type=template&id=4c59027c&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { "overflow-x": "hidden" } },
+    [
+      _c("quick-menu", {
+        attrs: {
+          "menu-count": 3,
+          "icon-class": _vm.icons,
+          titles: _vm.titles,
+          menuUrlList: _vm.menuUrlList,
+          position: "'bottom-left'",
+          backgroundColor: "#f08b23"
+        }
+      }),
+      _vm._v(" "),
+      _c("div", {
+        staticStyle: { "margin-top": "60px", "min-height": "400px" },
+        attrs: {
+          "data-sletat-module-id": "19a07720-bf7d-489e-be04-21b7dc89eff7"
+        }
+      }),
+      _vm._v(" "),
+      _c("section", { staticClass: "mb-5", staticStyle: { height: "100%" } }, [
+        _c(
+          "div",
+          { staticClass: "container m-auto", staticStyle: { height: "100%" } },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row m-auto justify-content-center align-items-center w-100 h-100"
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "col-md-4" },
+                  [
+                    _c("promocode-image", {
+                      attrs: { title1: "Оформи", title2: "тур", pos: "310" }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "row family-row family-description m-auto",
+                      staticStyle: {
+                        width: "80%",
+                        color: "#062348",
+                        "font-size": "17px",
+                        "font-weight": "900",
+                        "font-family": "'Open Sans'"
+                      }
+                    },
+                    [
+                      _c("p", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "\n                            Не получилось определиться самому? Оформи заявку и наш менеджер тебе поможет!\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "b-button",
+                        {
+                          staticClass: "btn-travel btn-group-lg mt-2 mx-auto",
+                          attrs: { href: "/tour-module" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Оформить заявку\n                        "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "footer",
+          staticStyle: { overflow: "hidden" },
+          attrs: { id: "contacts" }
+        },
+        [
+          _c("div", [
+            _c(
+              "svg",
+              {
+                staticClass: "waves",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  viewBox: "0 24 150 28",
+                  preserveAspectRatio: "none",
+                  "shape-rendering": "auto"
+                }
+              },
+              [
+                _c("defs", [
+                  _c("path", {
+                    attrs: {
+                      id: "gentle-wave",
+                      d:
+                        "M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("g", { staticClass: "parallax" }, [
+                  _c("use", {
+                    attrs: {
+                      "xlink:href": "#gentle-wave",
+                      x: "48",
+                      y: "0",
+                      fill: "rgba(255,255,153, 0.7)"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("use", {
+                    attrs: {
+                      "xlink:href": "#gentle-wave",
+                      x: "48",
+                      y: "3",
+                      fill: "rgba(255,204,102, 0.6)"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("use", {
+                    attrs: {
+                      "xlink:href": "#gentle-wave",
+                      x: "48",
+                      y: "6",
+                      fill: "rgba(255,153,0, 1)"
+                    }
+                  })
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-content inner-flex" }, [
+            _c(
+              "svg",
+              {
+                staticClass: "waves",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  viewBox: "0 24 150 28",
+                  preserveAspectRatio: "none",
+                  "shape-rendering": "auto"
+                }
+              },
+              [
+                _c("defs", [
+                  _c("path", {
+                    attrs: {
+                      id: "gentle-wave",
+                      d:
+                        "M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("g", { staticClass: "parallax" }, [
+                  _c("use", {
+                    attrs: {
+                      "xlink:href": "#gentle-wave",
+                      x: "48",
+                      y: "1",
+                      fill: "#062348"
+                    }
+                  })
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "row w-100 m-auto",
+                staticStyle: { height: "100%", width: "100%" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-12 col-md-5 tablet-footer-col-12 mx-auto"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "row w-100 mx-auto mt-5 justify-content-center"
+                      },
+                      [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _vm.locationByIp.region == "Donetsk"
+                          ? _c("div", { staticClass: "col-12 col-sm-6 p-0" }, [
+                              _vm._m(2)
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.locationByIp.region == "Donetsk"
+                          ? _c("div", { staticClass: "col-12 col-sm-6 p-0" }, [
+                              _vm._m(3)
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.locationByIp.region != "Donetsk"
+                          ? _c("div", { staticClass: "col-sm-10 col-12 p-0" }, [
+                              _vm._m(4)
+                            ])
+                          : _vm._e()
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-6 col-md-3 col-sm-12 tablet-footer-col mx-auto"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "row mt-5 mx-auto",
+                        staticStyle: { height: "70%", width: "100%" }
+                      },
+                      [
+                        _c("div", { staticClass: "col-12 mb-3 mx-auto" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "row m-auto",
+                              staticStyle: { height: "50px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "more-text m-auto",
+                                  staticStyle: { color: "#f08b23" },
+                                  on: { click: _vm.toTourSearch }
+                                },
+                                [_vm._v("Путешествуй")]
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-12 mb-3" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "row m-auto",
+                              staticStyle: { height: "50px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "more-text m-auto",
+                                  staticStyle: { color: "#f08b23" },
+                                  on: { click: _vm.toAviaSearch }
+                                },
+                                [_vm._v("Летай")]
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-12 mb-3" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "row m-auto",
+                              staticStyle: { height: "50px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "more-text m-auto",
+                                  staticStyle: { color: "#f08b23" },
+                                  on: { click: _vm.toHotelSearch }
+                                },
+                                [_vm._v("Познавай")]
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _vm._m(6)
+              ]
+            )
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "footer-content flex" }, [
+      _c("div", { staticClass: "row mb-5" }, [
+        _c("div", { staticClass: "col-12 mb-3" }, [
+          _c("h1", [_vm._v("Готовы к незабываемым приключениям?")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c(
+            "button",
+            {
+              staticClass: "footer-btn",
+              attrs: {
+                type: "text",
+                "data-toggle": "modal",
+                "data-target": "#customPhoneModal"
+              }
+            },
+            [_vm._v("Заказать звонок")]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c(
+        "span",
+        {
+          staticClass: "my-3 mx-auto",
+          staticStyle: {
+            background: "#f08b23",
+            padding: "5px 10px",
+            "border-radius": "50px",
+            "font-family": "'Open Sans Extrabold'",
+            "text-transform": "uppercase",
+            display: "inline-block"
+          }
+        },
+        [
+          _vm._v(
+            "\n                                Контакты\n                            "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row w-100 m-auto",
+        staticStyle: { "font-family": "'Open Sans'", "font-weight": "600" }
+      },
+      [
+        _c("div", { staticClass: "col-12 px-1" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", {
+                staticClass: "contact-icon icon icon-mail_outline mr-1"
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c("div", { staticClass: "row w-100 m-auto" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "ml-2 mb-0",
+                    staticStyle: { color: "white" },
+                    attrs: { href: "mailto:travelclubdonetsk@gmail.com" }
+                  },
+                  [_vm._v("travelclubdonetsk@gmail.com")]
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 px-1" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-building mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "row w-100 m-auto",
+                  staticStyle: { "text-align": "start" }
+                },
+                [
+                  _c("p", { staticClass: "ml-2 mb-0" }, [
+                    _vm._v("Г. Донецк, ул. Артема 100Д")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 px-1" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-phone mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c("div", { staticClass: "row w-100 m-auto" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "ml-2 mb-0",
+                    staticStyle: { color: "white" },
+                    attrs: { href: "tel:+380713399089" }
+                  },
+                  [_vm._v("071-339-90-89")]
+                ),
+                _c("i", {
+                  staticClass: " mx-1 icon fab fa-viber",
+                  staticStyle: { "font-weight": "500" }
+                }),
+                _c("i", { staticClass: "icon icon-whatsapp" })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 px-1" }, [
+          _c(
+            "div",
+            {
+              staticClass: "row w-100 m-auto",
+              staticStyle: { "font-size": "10px", "text-align": "start" }
+            },
+            [
+              _c("p", { staticClass: "ml-1 mb-0" }, [_vm._v("Режим работы:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Пн-Пт 10:00 – 18:00")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Суббота 10:00 – 17:00")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Воскресенье – выходной")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row w-100 m-auto",
+        staticStyle: { "font-family": "'Open Sans'", "font-weight": "600" }
+      },
+      [
+        _c("div", { staticClass: "col-12 px-1" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-building mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "row w-100 m-auto",
+                  staticStyle: { "text-align": "start" }
+                },
+                [
+                  _c("p", { staticClass: "ml-2 mb-0" }, [
+                    _vm._v("Г. Донецк, Бульвар Пушкина 23")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 px-1" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-phone mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c("div", { staticClass: "row w-100 m-auto" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "ml-2 mb-0",
+                    staticStyle: { color: "white" },
+                    attrs: { href: "tel:+380712353322" }
+                  },
+                  [_vm._v("071-235-33-22")]
+                ),
+                _vm._v(" "),
+                _c("i", {
+                  staticClass: " mx-1 icon fab fa-viber",
+                  staticStyle: { "font-weight": "500" }
+                }),
+                _vm._v(" "),
+                _c("i", { staticClass: "icon icon-whatsapp" })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-phone mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c("div", { staticClass: "row w-100 m-auto" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "ml-2 mb-0",
+                    staticStyle: { color: "white" },
+                    attrs: { href: "tel:+380959359990" }
+                  },
+                  [_vm._v("095-935-99-90")]
+                ),
+                _vm._v(" "),
+                _c("i", {
+                  staticClass: " mx-1 icon fab fa-viber",
+                  staticStyle: { "font-weight": "500" }
+                }),
+                _vm._v(" "),
+                _c("i", { staticClass: "icon icon-whatsapp" })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 px-1", staticStyle: { "font-size": "10px" } },
+          [
+            _c("div", { staticClass: "row w-100 m-auto" }, [
+              _c("p", { staticClass: "ml-1 mb-0" }, [_vm._v("Режим работы:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Пн-Пт 10:00 – 18:00")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Суббота 10:00 – 17:00")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Воскресенье – выходной")
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row w-100 m-auto",
+        staticStyle: {
+          "font-family": "'Open Sans'",
+          "font-weight": "600",
+          color: "white"
+        }
+      },
+      [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", {
+                staticClass: "contact-icon icon icon-mail_outline mr-1"
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c("div", { staticClass: "row w-100 m-auto" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "ml-2 mb-0",
+                    staticStyle: { color: "white" },
+                    attrs: { href: "mailto:travelclubrnd@bk.ru" }
+                  },
+                  [_vm._v("travelclubrnd@bk.ru")]
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-building mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "row w-100 m-auto",
+                  staticStyle: { "text-align": "start" }
+                },
+                [
+                  _c("p", { staticClass: "ml-2 mb-0" }, [
+                    _vm._v("Г. Ростов–на–Дону, Социалистическая 11 оф 2А")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "row w-100 m-auto" }, [
+            _c("div", { staticClass: "col-1 p-0" }, [
+              _c("div", { staticClass: "contact-icon icon icon-phone mr-1" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-11 p-0" }, [
+              _c("div", { staticClass: "row w-100 m-auto" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "ml-2 mb-0",
+                    staticStyle: { color: "white" },
+                    attrs: { href: "tel:+79882534149" }
+                  },
+                  [_vm._v("+7-988-253-41-49")]
+                ),
+                _c("i", {
+                  staticClass: "mx-1 icon fab fa-viber",
+                  staticStyle: { "font-weight": "500" }
+                }),
+                _c("i", { staticClass: "icon icon-whatsapp" })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12", staticStyle: { "font-size": "10px" } },
+          [
+            _c("div", { staticClass: "row w-100 mx-auto mt-2" }, [
+              _c("p", { staticClass: "ml-1 mb-0" }, [_vm._v("Режим работы:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Пн-Пт 10:00 – 18:00")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Суббота 10:00 – 17:00")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-0 flex" }, [
+                _c("span", {
+                  staticStyle: {
+                    width: "8px",
+                    height: "8px",
+                    background: "#f08b23",
+                    "border-radius": "50%",
+                    margin: "0px 5px",
+                    display: "block"
+                  }
+                }),
+                _vm._v("Воскресенье – выходной")
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-6 col-md-4 col-sm-12 tablet-footer-col mx-auto" },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "row w-100 mt-5 mx-auto",
+            staticStyle: { height: "70%", width: "100%" }
+          },
+          [
+            _c("div", { staticClass: "col-12 p-0 mb-3" }, [
+              _c(
+                "div",
+                { staticClass: "row w-100 m-auto align-items-center" },
+                [
+                  _c("div", { staticClass: "col-2" }, [
+                    _c("div", { staticClass: "more-button m-auto" }, [
+                      _c("div", { staticClass: "icon icon-instagram" })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-10" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "more-text m-auto float-left",
+                        attrs: {
+                          target: "_blank",
+                          href: "https://www.instagram.com/travelclub_tours"
+                        }
+                      },
+                      [
+                        _c("h1", { staticClass: "more-text mr-auto" }, [
+                          _vm._v(
+                            "\n                                            @travelclub_tours\n                                        "
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12 p-0 mb-3" }, [
+              _c(
+                "div",
+                { staticClass: "row w-100 m-auto align-items-center" },
+                [
+                  _c("div", { staticClass: "col-2" }, [
+                    _c("div", { staticClass: "more-button m-auto" }, [
+                      _c("div", { staticClass: "icon icon-telegram" })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-10" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "more-text m-auto float-left",
+                        attrs: {
+                          target: "_blank",
+                          href: "https://t.me/travelclubtours"
+                        }
+                      },
+                      [
+                        _c("h1", { staticClass: "more-text mr-auto" }, [
+                          _vm._v("Travel Club Telegram")
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12 p-0 mb-3" }, [
+              _c(
+                "div",
+                { staticClass: "row w-100 m-auto align-items-center" },
+                [
+                  _c("div", { staticClass: "col-2" }, [
+                    _c("div", { staticClass: "more-button m-auto" }, [
+                      _c("div", { staticClass: "fab fa-viber" })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-10" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "more-text m-auto float-left",
+                        attrs: {
+                          target: "_blank",
+                          href:
+                            "https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
+                        }
+                      },
+                      [
+                        _c("h1", { staticClass: "more-text mr-auto" }, [
+                          _vm._v("Travel Club Viber")
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "col-12",
+        staticStyle: {
+          background: "#041e3f",
+          "border-top": "1px solid #d9d9d942"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "row w-100 m-auto align-items-center justify-content-center"
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass: "mx-auto my-2",
+                staticStyle: {
+                  color: "white",
+                  "font-family": "'Open Sans'",
+                  "font-weight": "900"
+                },
+                attrs: { target: "_blank", href: "https://donbassit.ru" }
+              },
+              [
+                _vm._v("Made by  "),
+                _c("img", {
+                  staticClass: "mb-2",
+                  staticStyle: { height: "20px" },
+                  attrs: { src: "/images/do-it.png" }
+                })
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/TourSearch.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/desktop/pages/TourSearch.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TourSearch_vue_vue_type_template_id_4c59027c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TourSearch.vue?vue&type=template&id=4c59027c&scoped=true& */ "./resources/js/desktop/pages/TourSearch.vue?vue&type=template&id=4c59027c&scoped=true&");
+/* harmony import */ var _TourSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TourSearch.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/TourSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TourSearch_vue_vue_type_style_index_0_id_4c59027c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css& */ "./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TourSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TourSearch_vue_vue_type_template_id_4c59027c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TourSearch_vue_vue_type_template_id_4c59027c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4c59027c",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/TourSearch.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/TourSearch.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/desktop/pages/TourSearch.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TourSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css& ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_style_index_0_id_4c59027c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--7-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=style&index=0&id=4c59027c&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_style_index_0_id_4c59027c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_style_index_0_id_4c59027c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_style_index_0_id_4c59027c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_style_index_0_id_4c59027c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/TourSearch.vue?vue&type=template&id=4c59027c&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/TourSearch.vue?vue&type=template&id=4c59027c&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_template_id_4c59027c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TourSearch.vue?vue&type=template&id=4c59027c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/TourSearch.vue?vue&type=template&id=4c59027c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_template_id_4c59027c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TourSearch_vue_vue_type_template_id_4c59027c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

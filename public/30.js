@@ -1,1 +1,1890 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[30],{"Bbu+":function(t,e,a){"use strict";a.r(e);var s=a("o0o1"),i=a.n(s),o=a("wd/R"),r=a.n(o);function n(t,e,a,s,i,o,r){try{var n=t[o](r),c=n.value}catch(t){return void a(t)}n.done?e(c):Promise.resolve(c).then(s,i)}function c(t){return function(){var e=this,a=arguments;return new Promise((function(s,i){var o=t.apply(e,a);function r(t){n(o,s,i,r,c,"next",t)}function c(t){n(o,s,i,r,c,"throw",t)}r(void 0)}))}}var l={name:"TourInfo",data:function(){return{tour:"",markedDates:["2020-8-12","14/08/2020"],start:new Date,end:new Date((new Date).setDate((new Date).getDate()+7)),review:"",loading:!1,load:!1,invalid:!0}},computed:{menu:function(){return this.$store.getters.menu},user:function(){return this.$store.getters.user}},created:function(){this.getTour()},mounted:function(){this.toCalendar()},methods:{getTour:function(){var t=this;return c(i.a.mark((function e(){var a,s;return i.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(t.load=!0,t.user){e.next=6;break}return e.next=4,t.$store.dispatch("getUser").then((function(){t.tour=t.user.tours.find((function(e){return e.id==t.$route.params.id})),t.start=r()(t.tour.TourInfo.date_range.start,"DD-MM-YYYY").toDate(),t.end=r()(t.tour.TourInfo.date_range.end,"DD-MM-YYYY").toDate();var e=r()(new Date),a=r()(t.tour.EndAt).add(3,"days");1==!!e.isAfter(a)&&(t.invalid=!1),t.load=!1}));case 4:e.next=14;break;case 6:t.tour=t.user.tours.find((function(e){return e.id==t.$route.params.id})),t.start=r()(t.tour.TourInfo.date_range.start,"DD-MM-YYYY").toDate(),t.end=r()(t.tour.TourInfo.date_range.end,"DD-MM-YYYY").toDate(),a=r()(new Date),s=r()(t.tour.EndAt).add(3,"days"),1==!!a.isAfter(s)&&(t.invalid=!1),t.load=!1;case 14:case"end":return e.stop()}}),e)})))()},toCalendar:function(){var t=this;null==this.$refs.Calendar?setTimeout((function(){return t.$refs.Calendar.ChooseDate(t.start)}),2e3):this.$refs.Calendar.ChooseDate(this.start)},toBalance:function(){this.$router.push("/client/balance/"+this.$route.params.id)},addToArchive:function(t){var e=this,a={id:t.id,UserId:t.UserId,Archive:!0,status:"add"};this.$store.dispatch("updateArchive",a).then((function(){console.log("updateArchive","true"),t.Archive=!0,e.sendMessage("Тур успешно перемещен в архив")}))},returnFromArchive:function(t){var e=this,a={id:t.id,UserId:t.UserId,Archive:!1,status:"return"};this.$store.dispatch("updateArchive",a).then((function(){t.Archive=!1,e.sendMessage("Тур успешно перемещен из архива")}))},addReview:function(){var t=this;return c(i.a.mark((function e(){var a;return i.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return t.loading=!0,a={review:t.review,date:new Date},t.tour.Comment.length>0||(t.tour.Comment=[]),t.tour.Comment.push(a),e.next=5,t.$store.dispatch("updateReview",t.tour).then((function(){t.sendMessage("Новый отзыв успешно добавлен"),t.loading=!1}));case 5:t.loading=!1,$("#reviewModalBox").modal("hide");case 7:case"end":return e.stop()}}),e)})))()},sendMessage:function(t){this.$notify({group:"info",type:"travel",title:"Сообщение от TravelClub",text:t})}}},d=(a("jt/k"),a("M4P5"),a("KHd+")),u=Object(d.a)(l,(function(){var t=this,e=t.$createElement,a=t._self._c||e;return a("div",{directives:[{name:"show",rawName:"v-show",value:!t.load,expression:"!load"}],attrs:{id:"tour-info"}},[a("div",{staticClass:"modal fade",attrs:{id:"reviewModalBox",tabindex:"-1",role:"dialog","aria-labelledby":"reviewModalBoxLabel","aria-hidden":"true"}},[a("div",{staticClass:"modal-dialog modal-dialog-centered modal-dialog-scrollable",attrs:{id:"client"}},[a("div",{staticClass:"modal-content"},[t._m(0),t._v(" "),a("div",{staticClass:"modal-body"},[a("div",{staticClass:"row mb-5 mx-auto"},[a("div",{staticClass:"col-md-12"},[a("div",{staticClass:"row align-items-center justify-content-center mx-auto mt-3",staticStyle:{width:"100%"}},[a("label",{staticClass:"control-label"},[t._v("Напишите Ваши впечатления")]),t._v(" "),a("b-form-textarea",{staticClass:"travel-input",staticStyle:{padding:"5px 15px",border:"1px solid #f08b23","border-radius":"20px !important"},attrs:{rows:"6",cols:"80",placeholder:"Напишите Ваши впечатления..."},model:{value:t.review,callback:function(e){t.review=e},expression:"review"}})],1)])])]),t._v(" "),a("div",{staticClass:"modal-footer"},[a("div",{staticClass:"row"},[a("div",{staticClass:"col-md-12 contact-btn"},[a("button",{staticClass:"btn btn-travel",staticStyle:{width:"100%"},attrs:{type:"submit",disabled:t.loading},on:{click:t.addReview}},[a("div",{staticClass:"row align-items-center m-auto w-100 h-100"},[t.loading?a("span",{staticClass:"spinner-border spinner-border-sm mx-2",attrs:{role:"status","aria-hidden":"true"}}):t._e(),t._v(" "),t.loading?a("span",{staticClass:"sr-only"},[t._v("Loading...")]):t._e(),t._v("\n                                       Отправить\n                                    ")])])])])])])])]),t._v(" "),a("div",{staticClass:"row align-items-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("button",{staticClass:"btn btn-tour-info",on:{click:t.toBalance}},[a("i",{staticClass:"fas fa-wallet mr-2"}),t._v("Баланс")]),t._v(" "),t.tour.Archive?a("button",{staticClass:"btn btn-tour-info",on:{click:function(e){return t.returnFromArchive(t.tour)}}},[a("i",{staticClass:"fas fa-archive mr-2"}),t._v("Вернуть из архива")]):a("button",{staticClass:"btn btn-tour-info",on:{click:function(e){return t.addToArchive(t.tour)}}},[a("i",{staticClass:"fas fa-archive mr-2"}),t._v("Отправить в архив")]),t._v(" "),a("button",{staticClass:"btn btn-tour-info",attrs:{disabled:t.invalid,"data-toggle":"modal","data-target":"#reviewModalBox"}},[a("i",{staticClass:"fas fa-comment-dots mr-2"}),t._v("Написать отзыв")])]),t._v(" "),a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-md-6 p-0"},[t._m(1),t._v(" "),a("div",{staticClass:"row features align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center w-100 m-auto"},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center w-100 m-auto"},[a("b",{staticClass:"mr-3",class:"slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_"+t.tour.TourInfo.country.Id,staticStyle:{border:"1px solid #063065"}}),t._v(" "),a("div",{staticClass:"subtitle"},[t._v(t._s(t.tour.TourInfo.country.Name))])])])])])])]),t._v(" "),a("div",{staticClass:"col-md-6 p-0"},[t._m(2),t._v(" "),a("div",{staticClass:"row features align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center w-100 m-auto"},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"subtitle"},[t._v(t._s(t.tour.TourInfo.resort.Name))])])])])])])]),t._v(" "),t._m(3),t._v(" "),a("div",{staticClass:"row features align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[t._m(4),t._v(" "),a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center w-100 m-auto"},[a("div",{staticClass:"subtitle"},[t._v(t._s(t.tour.TourInfo.hotel.Name)+" "),a("span",{staticClass:"ml-3",staticStyle:{color:"#0f213d"}},[t._v(t._s(t.tour.TourInfo.hotel.StarName))])]),t._v(" "),a("svg",{staticClass:"icon-star my-auto ml-1",staticStyle:{width:"20px",height:"20px"},attrs:{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 19 19"}},[a("path",{attrs:{fill:"#ffca00",d:"M9.5 0l3.131 5.97 6.367 1.29-4.432 4.97.804 6.77-5.87-2.9L3.63 19l.804-6.77L.002 7.26l6.367-1.29L9.5 0"}})])])])])]),t._v(" "),a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[t._m(5),t._v(" "),a("div",{staticClass:"col-12"},[a("div",{staticClass:"subtitle"},[t._v(t._s(t.tour.TourInfo.room_type))])])])]),t._v(" "),a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[t._m(6),t._v(" "),a("div",{staticClass:"col-12"},[a("div",{staticClass:"subtitle"},[t._v(t._s(t.tour.TourInfo.meal.Name)),a("span",{staticClass:"my-auto",staticStyle:{color:"#0f213d","font-size":"14px"}},[t._v(" - "+t._s(t.tour.TourInfo.meal.desc))])])])])])]),t._v(" "),t._m(7),t._v(" "),a("div",{staticClass:"row m-auto align-items-center justify-content-center",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-md-5 col-sm-12 m-auto"},[a("div",{staticClass:"row mx-auto mt-5 mb-5 align-items-center justify-content-center",staticStyle:{width:"100%",height:"100%"}},[a("functional-calendar",{ref:"Calendar",attrs:{"marked-date-range":{start:t.tour.TourInfo.date_range.start,end:t.tour.TourInfo.date_range.end}}})],1)]),t._v(" "),a("div",{staticClass:"col-md-5 col-sm-12 m-auto"},[a("add-to-calendar",{attrs:{title:"Тур",location:t.tour.TourInfo.resort.Name+", "+t.tour.TourInfo.country.Name,start:t.start,end:t.end,details:"Тур от TravelClub"},inlineTemplate:{render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"calendars row w-100 m-auto"},[e("div",{staticClass:"col-12 mb-2"},[e("google-calendar",{attrs:{id:"google-calendar"}},[e("i",{staticClass:"icon-google"}),this._v(" Добавить в Google календарь\n                            ")])],1),this._v(" "),e("div",{staticClass:"col-12 mb-2"},[e("microsoft-calendar",{attrs:{id:"microsoft-calendar"}},[e("i",{staticClass:"icon-windows"}),this._v(" Добавить в Microsoft live календарь\n                            ")])],1),this._v(" "),e("div",{staticClass:"col-12 mb-2"},[e("office365-calendar",{attrs:{id:"office365-calendar"}},[e("i",{staticClass:"icon-microsoftoutlook"}),this._v(" Добавить в  Office365 outlook календарь\n                            ")])],1)])},staticRenderFns:[]}})],1)]),t._v(" "),t.tour.TourInfo.avia_tickets.length>0?a("div",{staticClass:"row mx-auto mt-5 mb-5  align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[a("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",position:"absolute"}},[t._v("Авиабилеты")])]):t._e(),t._v(" "),t.tour.TourInfo.avia_tickets.length>0?a("div",{staticClass:"row features align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"lists"},[a("section",{directives:[{name:"show",rawName:"v-show",value:t.tour.TourInfo.avia_tickets.length,expression:"tour.TourInfo.avia_tickets.length"}],staticClass:"main"},[a("ul",{staticClass:"ticket-list"},t._l(t.tour.TourInfo.avia_tickets,(function(e){return a("li",{key:e.id,staticClass:"ticket"},[a("div",{staticClass:"view"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto w-100 h-100"},[a("div",{staticClass:"col-4 p-0"},[a("label",[t._v(t._s(e.date))])]),t._v(" "),a("div",{staticClass:"col-8 p-0",staticStyle:{"border-left":"1px solid #f08b23"}},[a("label",[t._v(t._s(e.description))])])])])])})),0)])])])]):t._e(),t._v(" "),t.tour.TourInfo.passengers.length>0?a("div",{staticClass:"row mx-auto mt-5 mb-5  align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[a("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",position:"absolute"}},[t._v("Пассажиры")])]):t._e(),t._v(" "),t.tour.TourInfo.passengers.length>0?a("div",{staticClass:"row features align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"lists"},[a("section",{directives:[{name:"show",rawName:"v-show",value:t.tour.TourInfo.passengers.length,expression:"tour.TourInfo.passengers.length"}],staticClass:"main"},[a("ul",{staticClass:"passenger-list"},t._l(t.tour.TourInfo.passengers,(function(e){return a("li",{key:e.id,staticClass:"passenger"},[a("div",{staticClass:"view"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto w-100 h-100"},[a("div",{staticClass:"col-4 p-0",staticStyle:{"border-right":"1px solid #f08b23"}},[a("label",[t._v(t._s(e.Name))])]),t._v(" "),a("div",{staticClass:"col-2 p-0",staticStyle:{"border-left":"1px solid #f08b23"}},[a("label",[t._v(t._s(e.DoB))])]),t._v(" "),a("div",{staticClass:"col-2 p-0",staticStyle:{"border-left":"1px solid #f08b23"}},[a("label",[t._v(t._s(e.Passport))])]),t._v(" "),a("div",{staticClass:"col-2 p-0",staticStyle:{"border-left":"1px solid #f08b23"}},[a("label",[t._v(t._s(e.Date))])]),t._v(" "),a("div",{staticClass:"col-2 p-0",staticStyle:{"border-left":"1px solid #f08b23"}},[a("label",[t._v(t._s(e.ExpiryDate))])])])])])})),0)])])])]):t._e(),t._v(" "),""!=t.tour.TourInfo.services.trim()?a("div",{staticClass:"row mx-auto mt-5 mb-5 justify-content-center align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[a("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",width:"330px",position:"absolute"}},[t._v("Дополнительные услуги")])]):t._e(),t._v(" "),""!=t.tour.TourInfo.services.trim()?a("div",{staticClass:"row features align-items-center justify-content-center mx-auto mt-auto mb-5",staticStyle:{width:"100%",height:"100%"}},[a("div",{staticClass:"col-12"},[a("div",{staticClass:"row align-items-center w-100 m-auto"},[a("div",{staticClass:"title"},[t._v(t._s(t.tour.TourInfo.services))])])])]):t._e(),t._v(" "),t.tour.TourInfo.files.length>0?a("div",{staticClass:"row mx-auto mt-5 mb-5 justify-content-center align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[a("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",width:"330px",position:"absolute"}},[t._v("Файлы")])]):t._e(),t._v(" "),t.tour.TourInfo.files.length>0?a("div",{staticClass:"file-listing"},t._l(t.tour.TourInfo.files,(function(e,s){return a("div",{key:e.name,staticClass:"list-group-item"},[a("div",{staticClass:"row m-auto w-100 align-items-center justify-content-center"},[a("div",{staticClass:"col-4 text-center"},[/\.(jpe?g|png|svg)$/i.test(e.name)?a("img",{staticClass:"preview",attrs:{src:e.path}}):a("img",{staticClass:"preview",attrs:{src:"/images/LOGO-1.png"}})]),t._v(" "),a("div",{staticClass:"col-8"},["file"==e.type?a("div",[a("a",{staticStyle:{color:"#f08b23"},attrs:{href:e.path}},[a("p",{staticClass:"control-label"},[t._v(t._s(e.name))])])]):t._e(),t._v(" "),"audio"==e.type?a("div",[a("audio-player",{attrs:{audio:e}})],1):t._e()])])])})),0):t._e()])}),[function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"modal-header"},[e("h5",{staticClass:"modal-title",attrs:{id:"reviewModalBoxLabel"}},[this._v("Оставить отзыв")]),this._v(" "),e("button",{staticClass:"close",attrs:{type:"button","data-dismiss":"modal","aria-label":"Close"}},[e("span",{attrs:{"aria-hidden":"true"}},[this._v("×")])])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"row mx-auto mt-5 mb-5  align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[e("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",position:"absolute"}},[this._v("Страна")])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"row mx-auto mt-5 mb-5  align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[e("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",position:"absolute"}},[this._v("Курорт")])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"row mx-auto mt-5 mb-5  align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[e("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",position:"absolute"}},[this._v("Отель")])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"col-12"},[e("div",{staticClass:"title"},[e("i",{staticClass:"icon-icon-list mr-1",staticStyle:{"font-size":"11px"}},[e("span",{staticClass:"path1"},[e("span",{staticClass:"path2"})])]),this._v("название отеля:\n                        ")])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"col-12"},[e("div",{staticClass:"title"},[e("i",{staticClass:"icon-icon-list mr-1",staticStyle:{"font-size":"11px"}},[e("span",{staticClass:"path1"},[e("span",{staticClass:"path2"})])]),this._v("\n                            категория номера:\n                        ")])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"col-12"},[e("div",{staticClass:"title"},[e("i",{staticClass:"icon-icon-list mr-1",staticStyle:{"font-size":"11px"}},[e("span",{staticClass:"path1"},[e("span",{staticClass:"path2"})])]),this._v("\n                            питание\n                        ")])])},function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"row mx-auto mt-5 mb-5  align-items-center",staticStyle:{width:"100%",height:"100%","border-top":"4px solid #f08b23"}},[e("span",{staticClass:"white--text active-tour ml-5",staticStyle:{background:"#062348","font-size":"18px",position:"absolute"}},[this._v("Даты")])])}],!1,null,"365900ec",null);e.default=u.exports},FrWb:function(t,e,a){var s=a("vT9G");"string"==typeof s&&(s=[[t.i,s,""]]);var i={hmr:!0,transform:void 0,insertInto:void 0};a("aET+")(s,i);s.locals&&(t.exports=s.locals)},M4P5:function(t,e,a){"use strict";a("FrWb")},hBMe:function(t,e,a){var s=a("i9Jr");"string"==typeof s&&(s=[[t.i,s,""]]);var i={hmr:!0,transform:void 0,insertInto:void 0};a("aET+")(s,i);s.locals&&(t.exports=s.locals)},i9Jr:function(t,e,a){(t.exports=a("I1BE")(!1)).push([t.i,".btn-tour-info[data-v-365900ec]{border:2px solid #f08b23;border-radius:20px;padding:3px 20px;font-weight:900;text-transform:uppercase;font-family:Open Sans;min-width:206px;text-align:center;color:#f08b23;margin-right:5px;margin-left:5px}.btn-tour-info[data-v-365900ec]:hover{border:2px solid #0d274b;background:#0d274b;color:#fff!important}.btn-tour-info[data-v-365900ec]:disabled{border:2px solid #c6e2f7;color:#c6e2f7}.btn-tour-info[data-v-365900ec]:disabled:hover{border:2px solid #c6e2f7;color:#c6e2f7!important;background:#fff}.white--text[data-v-365900ec]{color:#fff!important;caret-color:#fff!important}.active-tour[data-v-365900ec]{background:#f08b23;border-radius:20px;padding:3px 20px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2);font-weight:900;width:206px;text-align:center;float:left}.active-tour[data-v-365900ec],.features[data-v-365900ec]{text-transform:uppercase;font-family:Open Sans}.features[data-v-365900ec]{line-height:2.25}.title[data-v-365900ec]{font-size:13px;color:#0d274b;letter-spacing:2px;font-weight:900}.subtitle[data-v-365900ec]{font-size:18px;color:#f08b23;font-weight:900}@media screen and (max-width:576px){.title[data-v-365900ec]{font-size:12px}.subtitle[data-v-365900ec]{font-size:15px}}.main[data-v-365900ec]{position:relative;z-index:2;padding:0 15px}.ticket-list[data-v-365900ec]{margin:0;padding:0;list-style:none}.ticket-list li[data-v-365900ec]{position:relative;font-size:14px;border-bottom:1px solid #f08b23;border-top:1px solid #f08b23}.ticket-list li label[data-v-365900ec]{word-break:break-all;padding:5px 5px 5px 10px;display:block;line-height:1.2;transition:color .4s;color:#0d274b;font-family:Open Sans;font-weight:700}.passenger-list[data-v-365900ec]{margin:0;padding:0;list-style:none}.passenger-list li[data-v-365900ec]{position:relative;font-size:14px;border-bottom:1px solid #f08b23;border-top:1px solid #f08b23}.passenger-list li label[data-v-365900ec]{word-break:break-all;padding:5px;display:block;line-height:1.2;transition:color .4s;color:#0d274b;text-align:center}.lists[data-v-365900ec],.passenger-list li label[data-v-365900ec]{font-family:Open Sans;font-weight:700}.lists[data-v-365900ec]{background:#fff;position:relative;border-radius:20px;border:1px solid #f08b23}.preview[data-v-365900ec]{height:100px;max-width:90%}",""])},"jt/k":function(t,e,a){"use strict";a("hBMe")},vT9G:function(t,e,a){(t.exports=a("I1BE")(!1)).push([t.i,".calendars a{color:#063065;margin-right:10px}.calendars a,.calendars a:hover{text-decoration:none}.icon-microsoftoutlook:before,.icon-windows:before{color:#063065}#tour-info .vfc-week .vfc-day span.vfc-span-day.vfc-today{color:#000!important}#tour-info .vfc-separately-navigation-buttons.vfc-space-between{background:#f08b23!important}#tour-info .vfc-week .vfc-day span.vfc-span-day.vfc-marked{background-color:#f08b23}.vfc-week .vfc-day span.vfc-span-day.vfc-marked:before{background-color:#ffe7ce}#tour-info .vfc-week .vfc-day .vfc-base-start,.vfc-week .vfc-day .vfc-base-end{background:#ffe7ce;background-color:#ffe7ce}#tour-info .vfc-calendars-container,#tour-info .vfc-main-container{border-radius:20px}#tour-info .vfc-top-date span{cursor:default;text-decoration:unset;margin:0 2px;color:#fff;font-family:Open Sans;font-weight:900}#tour-info .vfc-navigation-buttons div .vfc-arrow-left,.vfc-separately-navigation-buttons div .vfc-arrow-left{width:12px;height:12px;border-left:2px solid #fff;border-color:#fff currentcolor;border-top:2px solid #fff;transform:rotate(-45deg)}#tour-info .vfc-navigation-buttons div,.vfc-separately-navigation-buttons div{z-index:2;display:flex;color:#fff;font-size:18px;margin:20px 10px}#tour-info .vfc-navigation-buttons div .vfc-arrow-right,.vfc-separately-navigation-buttons div .vfc-arrow-right{width:12px;height:12px;border-color:currentcolor currentcolor #fff #fff;border-right:2px solid #fff;border-top:2px solid #fff;transform:rotate(45deg)}#tour-info .vfc-content{margin:0 20px;z-index:1}.vfc-popover-container{width:100%;max-width:300px}",""])}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[30],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "TourInfo",
+  data: function data() {
+    return {
+      tour: '',
+      markedDates: ['2020-8-12', '14/08/2020'],
+      start: new Date(),
+      end: new Date(new Date().setDate(new Date().getDate() + 7)),
+      review: '',
+      loading: false,
+      load: false,
+      invalid: true
+    };
+  },
+  computed: {
+    menu: function menu() {
+      return this.$store.getters.menu;
+    },
+    user: function user() {
+      return this.$store.getters.user;
+    }
+  },
+  created: function created() {
+    this.getTour(); // this.start = new Date(this.tour.TourInfo.date_range.start)
+    // console.log(this.start)
+    // this.end = new Date(this.tour.TourInfo.date_range.end)
+  },
+  mounted: function mounted() {
+    // this.$refs.Calendar;
+    // console.log(this.$refs.Calendar)
+    // console.log(this.$refs['Calendar'])
+    // console.log(this.$refs.Calendar.calendar)
+    // let self = this
+    // this.$nextTick(()=>{
+    //
+    //     console.log(self.$refs)
+    //     console.log(self.$refs.Calendar)
+    // });
+    this.toCalendar();
+  },
+  methods: {
+    getTour: function getTour() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var now, end, after;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.load = true;
+
+                if (_this.user) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _context.next = 4;
+                return _this.$store.dispatch('getUser').then(function () {
+                  _this.tour = _this.user.tours.find(function (tour) {
+                    return tour.id == _this.$route.params.id;
+                  });
+                  _this.start = moment__WEBPACK_IMPORTED_MODULE_1___default()(_this.tour.TourInfo.date_range.start, "DD-MM-YYYY").toDate();
+                  _this.end = moment__WEBPACK_IMPORTED_MODULE_1___default()(_this.tour.TourInfo.date_range.end, "DD-MM-YYYY").toDate();
+                  var now = moment__WEBPACK_IMPORTED_MODULE_1___default()(new Date());
+                  var end = moment__WEBPACK_IMPORTED_MODULE_1___default()(_this.tour.EndAt).add(3, 'days');
+                  var after = now.isAfter(end) ? true : false;
+
+                  if (after == true) {
+                    _this.invalid = false;
+                  }
+
+                  _this.load = false;
+                });
+
+              case 4:
+                _context.next = 14;
+                break;
+
+              case 6:
+                _this.tour = _this.user.tours.find(function (tour) {
+                  return tour.id == _this.$route.params.id;
+                });
+                _this.start = moment__WEBPACK_IMPORTED_MODULE_1___default()(_this.tour.TourInfo.date_range.start, "DD-MM-YYYY").toDate();
+                _this.end = moment__WEBPACK_IMPORTED_MODULE_1___default()(_this.tour.TourInfo.date_range.end, "DD-MM-YYYY").toDate();
+                now = moment__WEBPACK_IMPORTED_MODULE_1___default()(new Date());
+                end = moment__WEBPACK_IMPORTED_MODULE_1___default()(_this.tour.EndAt).add(3, 'days');
+                after = now.isAfter(end) ? true : false;
+
+                if (after == true) {
+                  _this.invalid = false;
+                }
+
+                _this.load = false;
+
+              case 14:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    toCalendar: function toCalendar() {
+      var _this2 = this;
+
+      if (this.$refs.Calendar == undefined) {
+        setTimeout(function () {
+          return _this2.$refs.Calendar.ChooseDate(_this2.start);
+        }, 2000);
+      } else {
+        this.$refs.Calendar.ChooseDate(this.start);
+      } // this.$nextTick(function() {
+      //     console.log(this.$refs.Calendar)
+      //     this.$refs.Calendar.ChooseDate(this.start);
+      //     // this.$refs.Calendar.ChooseDate('25/10/2020');
+      // });
+
+    },
+    toBalance: function toBalance() {
+      this.$router.push('/client/balance/' + this.$route.params.id);
+    },
+    addToArchive: function addToArchive(tour) {
+      var _this3 = this;
+
+      var data = {
+        id: tour.id,
+        UserId: tour.UserId,
+        Archive: true,
+        status: 'add'
+      };
+      this.$store.dispatch('updateArchive', data).then(function () {
+        console.log('updateArchive', 'true');
+        tour.Archive = true;
+
+        _this3.sendMessage('Тур успешно перемещен в архив');
+      });
+    },
+    returnFromArchive: function returnFromArchive(tour) {
+      var _this4 = this;
+
+      var data = {
+        id: tour.id,
+        UserId: tour.UserId,
+        Archive: false,
+        status: 'return'
+      };
+      this.$store.dispatch('updateArchive', data).then(function () {
+        tour.Archive = false;
+
+        _this4.sendMessage('Тур успешно перемещен из архива');
+      });
+    },
+    addReview: function addReview() {
+      var _this5 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this5.loading = true;
+                data = {
+                  review: _this5.review,
+                  date: new Date()
+                };
+
+                if (_this5.tour.Comment.length > 0) {
+                  _this5.tour.Comment.push(data);
+                } else {
+                  _this5.tour.Comment = [];
+
+                  _this5.tour.Comment.push(data);
+                }
+
+                _context2.next = 5;
+                return _this5.$store.dispatch('updateReview', _this5.tour).then(function () {
+                  _this5.sendMessage('Новый отзыв успешно добавлен');
+
+                  _this5.loading = false;
+                });
+
+              case 5:
+                _this5.loading = false;
+                $('#reviewModalBox').modal('hide');
+
+              case 7:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    sendMessage: function sendMessage(message) {
+      this.$notify({
+        group: 'info',
+        type: 'travel',
+        title: 'Сообщение от TravelClub',
+        text: message
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.btn-tour-info[data-v-40e2e144] {\n    border: 2px solid #f08b23;\n    border-radius: 20px;\n    padding: 3px 20px;\n    font-weight: 900;\n    text-transform: uppercase;\n    font-family: 'Open Sans';\n    min-width: 206px;\n    text-align: center;\n    color: #f08b23;\n    margin-right: 5px;\n    margin-left: 5px;\n}\n.btn-tour-info[data-v-40e2e144]:hover{\n    border: 2px solid rgb(13, 39, 75);\n    background: rgb(13, 39, 75);\n    color: #fff !important;\n}\n.btn-tour-info[data-v-40e2e144]:disabled {\n    border: 2px solid #c6e2f7;\n    color: #c6e2f7;\n}\n.btn-tour-info[data-v-40e2e144]:disabled:hover{\n    border: 2px solid #c6e2f7;\n    color: #c6e2f7 !important;\n    background: white;\n}\n.white--text[data-v-40e2e144] {\n    color: #fff !important;\n    caret-color: #fff !important;\n}\n.active-tour[data-v-40e2e144] {\n    background: #f08b23;\n    border-radius: 20px;\n    padding: 3px 20px;\n    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    font-weight: 900;\n    text-transform: uppercase;\n    font-family: 'Open Sans';\n    width: 206px;\n    text-align: center;\n    float: left;\n}\n.features[data-v-40e2e144] {\n    font-family: \"Open Sans\";\n    text-transform: uppercase;\n    line-height: 2.25;\n}\n.title[data-v-40e2e144] {\n    font-size: 13px;\n    color: rgb(13, 39, 75);\n    letter-spacing: 2px;\n    font-weight: 900;\n}\n.subtitle[data-v-40e2e144] {\n    font-size: 18px;\n    color: #f08b23;\n    font-weight: 900;\n}\n@media screen and (max-width: 576px) {\n.title[data-v-40e2e144] {\n        font-size: 12px;\n}\n.subtitle[data-v-40e2e144] {\n        font-size: 15px;\n}\n}\n.main[data-v-40e2e144] {\n    position: relative;\n    z-index: 2;\n    /*border-top: 1px solid #f08b23;*/\n    padding: 0px 15px;\n}\n.ticket-list[data-v-40e2e144] {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n.ticket-list li[data-v-40e2e144] {\n    position: relative;\n    font-size: 14px;\n    border-bottom: 1px solid #f08b23;\n    border-top: 1px solid #f08b23;\n}\n\n/*.ticket-list li:last-child {*/\n/*    border-bottom: none;*/\n/*}*/\n.ticket-list li label[data-v-40e2e144] {\n    word-break: break-all;\n    padding: 5px 5px 5px 10px;\n    display: block;\n    line-height: 1.2;\n    transition: color 0.4s;\n    color: #0d274b;\n    font-family: \"Open Sans\";\n    font-weight: 700;\n}\n.passenger-list[data-v-40e2e144] {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n.passenger-list li[data-v-40e2e144] {\n    position: relative;\n    font-size: 14px;\n    border-bottom: 1px solid #f08b23;\n    border-top: 1px solid #f08b23;\n}\n/*.passenger-list li:last-child {*/\n/*    border-bottom: none;*/\n/*}*/\n.passenger-list li label[data-v-40e2e144] {\n    word-break: break-all;\n    padding: 5px 5px 5px 5px;\n    display: block;\n    line-height: 1.2;\n    transition: color 0.4s;\n    color: #0d274b;\n    font-family: \"Open Sans\";\n    font-weight: 700;\n    text-align: center;\n}\n.lists[data-v-40e2e144] {\n    background: #fff;\n    position: relative;\n    border-radius: 20px;\n    border: 1px solid #f08b23;\n    font-weight: 700;\n    font-family: \"Open Sans\";\n}\n.preview[data-v-40e2e144]{\n    height: 100px;\n    max-width: 90%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.calendars a {\n    text-decoration: none;\n    color: #063065;\n    margin-right: 10px;\n}\n.calendars a:hover {\n    text-decoration: none;\n}\n.icon-windows::before {\n    color: #063065;\n}\n.icon-microsoftoutlook::before {\n    color: #063065;\n}\n#tour-info .vfc-week .vfc-day span.vfc-span-day.vfc-today{\n    color: black !important;\n}\n#tour-info .vfc-separately-navigation-buttons.vfc-space-between{\n    background: #f08b23 !important;\n}\n#tour-info .vfc-week .vfc-day span.vfc-span-day.vfc-marked {\n    background-color: #f08b23;\n}\n.vfc-week .vfc-day span.vfc-span-day.vfc-marked::before {\n    background-color: #ffe7ce;\n}\n#tour-info .vfc-week .vfc-day .vfc-base-start, .vfc-week .vfc-day .vfc-base-end {\n    background: #ffe7ce;\n    background-color: rgb(255, 231, 206);\n}\n#tour-info .vfc-main-container {\n    border-radius:20px;\n}\n#tour-info .vfc-calendars-container {\n    border-radius:20px;\n}\n#tour-info .vfc-top-date span {\n    cursor: default;\n    text-decoration: unset;\n    margin: 0 2px;\n    color: #fff;\n    font-family: \"Open Sans\";\n    font-weight: 900;\n}\n#tour-info .vfc-navigation-buttons div .vfc-arrow-left, .vfc-separately-navigation-buttons div .vfc-arrow-left {\n    width: 12px;\n    height: 12px;\n    border-top: 2px solid;\n    border-top-color: currentcolor;\n    border-left: 2px solid;\n    border-left-color: currentcolor;\n    border-color: #fff;\n    transform: rotate(-45deg);\n}\n#tour-info .vfc-navigation-buttons div, .vfc-separately-navigation-buttons div {\n    z-index: 2;\n    display: flex;\n    color: #fff;\n    font-size: 18px;\n    margin: 20px 10px;\n}\n#tour-info .vfc-navigation-buttons div .vfc-arrow-right, .vfc-separately-navigation-buttons div .vfc-arrow-right {\n    width: 12px;\n    height: 12px;\n    border-top: 2px solid;\n    border-top-color: currentcolor;\n    border-right: 2px solid;\n    border-right-color: currentcolor;\n    border-color: #fff;\n    transform: rotate(45deg);\n}\n#tour-info .vfc-content {\n    margin: 0 20px;\n    margin-bottom: 0px;\n    z-index: 1;\n}\n.vfc-popover-container {\n    width: 100%;\n    max-width: 300px;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TourInfo.vue?vue&type=style&index=1&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=template&id=40e2e144&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=template&id=40e2e144&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: !_vm.load,
+          expression: "!load"
+        }
+      ],
+      attrs: { id: "tour-info" }
+    },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "reviewModalBox",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "reviewModalBoxLabel",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "modal-dialog modal-dialog-centered modal-dialog-scrollable",
+              attrs: { id: "client" }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c("div", { staticClass: "row mb-5 mx-auto" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "row align-items-center justify-content-center mx-auto mt-3",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("label", { staticClass: "control-label" }, [
+                            _vm._v("Напишите Ваши впечатления")
+                          ]),
+                          _vm._v(" "),
+                          _c("b-form-textarea", {
+                            staticClass: "travel-input",
+                            staticStyle: {
+                              padding: "5px 15px",
+                              border: "1px solid #f08b23",
+                              "border-radius": "20px !important"
+                            },
+                            attrs: {
+                              rows: "6",
+                              cols: "80",
+                              placeholder: "Напишите Ваши впечатления..."
+                            },
+                            model: {
+                              value: _vm.review,
+                              callback: function($$v) {
+                                _vm.review = $$v
+                              },
+                              expression: "review"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-12 contact-btn" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-travel",
+                          staticStyle: { width: "100%" },
+                          attrs: { type: "submit", disabled: _vm.loading },
+                          on: { click: _vm.addReview }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "row align-items-center m-auto w-100 h-100"
+                            },
+                            [
+                              _vm.loading
+                                ? _c("span", {
+                                    staticClass:
+                                      "spinner-border spinner-border-sm mx-2",
+                                    attrs: {
+                                      role: "status",
+                                      "aria-hidden": "true"
+                                    }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.loading
+                                ? _c("span", { staticClass: "sr-only" }, [
+                                    _vm._v("Loading...")
+                                  ])
+                                : _vm._e(),
+                              _vm._v(
+                                "\n                                       Отправить\n                                    "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row align-items-center m-auto",
+          staticStyle: { width: "100%", height: "100%" }
+        },
+        [
+          _c(
+            "button",
+            { staticClass: "btn btn-tour-info", on: { click: _vm.toBalance } },
+            [_c("i", { staticClass: "fas fa-wallet mr-2" }), _vm._v("Баланс")]
+          ),
+          _vm._v(" "),
+          !_vm.tour.Archive
+            ? _c(
+                "button",
+                {
+                  staticClass: "btn btn-tour-info",
+                  on: {
+                    click: function($event) {
+                      return _vm.addToArchive(_vm.tour)
+                    }
+                  }
+                },
+                [
+                  _c("i", { staticClass: "fas fa-archive mr-2" }),
+                  _vm._v("Отправить в архив")
+                ]
+              )
+            : _c(
+                "button",
+                {
+                  staticClass: "btn btn-tour-info",
+                  on: {
+                    click: function($event) {
+                      return _vm.returnFromArchive(_vm.tour)
+                    }
+                  }
+                },
+                [
+                  _c("i", { staticClass: "fas fa-archive mr-2" }),
+                  _vm._v("Вернуть из архива")
+                ]
+              ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-tour-info",
+              attrs: {
+                disabled: _vm.invalid,
+                "data-toggle": "modal",
+                "data-target": "#reviewModalBox"
+              }
+            },
+            [
+              _c("i", { staticClass: "fas fa-comment-dots mr-2" }),
+              _vm._v("Написать отзыв")
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row align-items-center justify-content-center m-auto",
+          staticStyle: { width: "100%", height: "100%" }
+        },
+        [
+          _c("div", { staticClass: "col-md-6 p-0" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row features align-items-center justify-content-center m-auto",
+                staticStyle: { width: "100%", height: "100%" }
+              },
+              [
+                _c("div", { staticClass: "col-12" }, [
+                  _c(
+                    "div",
+                    { staticClass: "row align-items-center w-100 m-auto" },
+                    [
+                      _c("div", { staticClass: "col-12" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "row align-items-center w-100 m-auto"
+                          },
+                          [
+                            _c("b", {
+                              staticClass: "mr-3",
+                              class:
+                                "slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_" +
+                                _vm.tour.TourInfo.country.Id,
+                              staticStyle: { border: "1px solid #063065" }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "subtitle" }, [
+                              _vm._v(_vm._s(_vm.tour.TourInfo.country.Name))
+                            ])
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 p-0" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row features align-items-center justify-content-center m-auto",
+                staticStyle: { width: "100%", height: "100%" }
+              },
+              [
+                _c("div", { staticClass: "col-12" }, [
+                  _c(
+                    "div",
+                    { staticClass: "row align-items-center w-100 m-auto" },
+                    [
+                      _c("div", { staticClass: "col-12" }, [
+                        _c("div", { staticClass: "subtitle" }, [
+                          _vm._v(_vm._s(_vm.tour.TourInfo.resort.Name))
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "row features align-items-center justify-content-center m-auto",
+          staticStyle: { width: "100%", height: "100%" }
+        },
+        [
+          _c("div", { staticClass: "col-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row align-items-center justify-content-center m-auto",
+                staticStyle: { width: "100%", height: "100%" }
+              },
+              [
+                _vm._m(4),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12" }, [
+                  _c(
+                    "div",
+                    { staticClass: "row align-items-center w-100 m-auto" },
+                    [
+                      _c("div", { staticClass: "subtitle" }, [
+                        _vm._v(_vm._s(_vm.tour.TourInfo.hotel.Name) + " "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "ml-3",
+                            staticStyle: { color: "#0f213d" }
+                          },
+                          [_vm._v(_vm._s(_vm.tour.TourInfo.hotel.StarName))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "icon-star my-auto ml-1",
+                          staticStyle: { width: "20px", height: "20px" },
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 19 19"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "#ffca00",
+                              d:
+                                "M9.5 0l3.131 5.97 6.367 1.29-4.432 4.97.804 6.77-5.87-2.9L3.63 19l.804-6.77L.002 7.26l6.367-1.29L9.5 0"
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row align-items-center justify-content-center m-auto",
+                staticStyle: { width: "100%", height: "100%" }
+              },
+              [
+                _vm._m(5),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12" }, [
+                  _c("div", { staticClass: "subtitle" }, [
+                    _vm._v(_vm._s(_vm.tour.TourInfo.room_type))
+                  ])
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row align-items-center justify-content-center m-auto",
+                staticStyle: { width: "100%", height: "100%" }
+              },
+              [
+                _vm._m(6),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12" }, [
+                  _c("div", { staticClass: "subtitle" }, [
+                    _vm._v(_vm._s(_vm.tour.TourInfo.meal.Name)),
+                    _c(
+                      "span",
+                      {
+                        staticClass: "my-auto",
+                        staticStyle: { color: "#0f213d", "font-size": "14px" }
+                      },
+                      [_vm._v(" - " + _vm._s(_vm.tour.TourInfo.meal.desc))]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(7),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row m-auto align-items-center justify-content-center",
+          staticStyle: { width: "100%", height: "100%" }
+        },
+        [
+          _c("div", { staticClass: "col-md-5 col-sm-12 m-auto" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row mx-auto mt-5 mb-5 align-items-center justify-content-center",
+                staticStyle: { width: "100%", height: "100%" }
+              },
+              [
+                _c("functional-calendar", {
+                  ref: "Calendar",
+                  attrs: {
+                    "marked-date-range": {
+                      start: _vm.tour.TourInfo.date_range.start,
+                      end: _vm.tour.TourInfo.date_range.end
+                    }
+                  }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-md-5 col-sm-12 m-auto" },
+            [
+              _c("add-to-calendar", {
+                attrs: {
+                  title: "Тур",
+                  location:
+                    _vm.tour.TourInfo.resort.Name +
+                    ", " +
+                    _vm.tour.TourInfo.country.Name,
+                  start: _vm.start,
+                  end: _vm.end,
+                  details: "Тур от TravelClub"
+                },
+                inlineTemplate: {
+                  render: function() {
+                    var _vm = this
+                    var _h = _vm.$createElement
+                    var _c = _vm._self._c || _h
+                    return _c(
+                      "div",
+                      { staticClass: "calendars row w-100 m-auto" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-12 mb-2" },
+                          [
+                            _c(
+                              "google-calendar",
+                              { attrs: { id: "google-calendar" } },
+                              [
+                                _c("i", { staticClass: "icon-google" }),
+                                _vm._v(
+                                  " Добавить в Google календарь\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-12 mb-2" },
+                          [
+                            _c(
+                              "microsoft-calendar",
+                              { attrs: { id: "microsoft-calendar" } },
+                              [
+                                _c("i", { staticClass: "icon-windows" }),
+                                _vm._v(
+                                  " Добавить в Microsoft live календарь\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-12 mb-2" },
+                          [
+                            _c(
+                              "office365-calendar",
+                              { attrs: { id: "office365-calendar" } },
+                              [
+                                _c("i", {
+                                  staticClass: "icon-microsoftoutlook"
+                                }),
+                                _vm._v(
+                                  " Добавить в  Office365 outlook календарь\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  },
+                  staticRenderFns: []
+                }
+              })
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _vm.tour.TourInfo.avia_tickets.length > 0
+        ? _c(
+            "div",
+            {
+              staticClass: "row mx-auto mt-5 mb-5  align-items-center",
+              staticStyle: {
+                width: "100%",
+                height: "100%",
+                "border-top": "4px solid #f08b23"
+              }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticClass: "white--text active-tour ml-5",
+                  staticStyle: {
+                    background: "#062348",
+                    "font-size": "18px",
+                    position: "absolute"
+                  }
+                },
+                [_vm._v("Авиабилеты")]
+              )
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.avia_tickets.length > 0
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "row features align-items-center justify-content-center m-auto",
+              staticStyle: { width: "100%", height: "100%" }
+            },
+            [
+              _c("div", { staticClass: "col-12" }, [
+                _c("div", { staticClass: "lists" }, [
+                  _c(
+                    "section",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.tour.TourInfo.avia_tickets.length,
+                          expression: "tour.TourInfo.avia_tickets.length"
+                        }
+                      ],
+                      staticClass: "main"
+                    },
+                    [
+                      _c(
+                        "ul",
+                        { staticClass: "ticket-list" },
+                        _vm._l(_vm.tour.TourInfo.avia_tickets, function(
+                          ticket
+                        ) {
+                          return _c(
+                            "li",
+                            { key: ticket.id, staticClass: "ticket" },
+                            [
+                              _c("div", { staticClass: "view" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "row align-items-center justify-content-center m-auto w-100 h-100"
+                                  },
+                                  [
+                                    _c("div", { staticClass: "col-4 p-0" }, [
+                                      _c("label", [_vm._v(_vm._s(ticket.date))])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col-8 p-0",
+                                        staticStyle: {
+                                          "border-left": "1px solid #f08b23"
+                                        }
+                                      },
+                                      [
+                                        _c("label", [
+                                          _vm._v(_vm._s(ticket.description))
+                                        ])
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.passengers.length > 0
+        ? _c(
+            "div",
+            {
+              staticClass: "row mx-auto mt-5 mb-5  align-items-center",
+              staticStyle: {
+                width: "100%",
+                height: "100%",
+                "border-top": "4px solid #f08b23"
+              }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticClass: "white--text active-tour ml-5",
+                  staticStyle: {
+                    background: "#062348",
+                    "font-size": "18px",
+                    position: "absolute"
+                  }
+                },
+                [_vm._v("Пассажиры")]
+              )
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.passengers.length > 0
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "row features align-items-center justify-content-center m-auto",
+              staticStyle: { width: "100%", height: "100%" }
+            },
+            [
+              _c("div", { staticClass: "col-12" }, [
+                _c("div", { staticClass: "lists" }, [
+                  _c(
+                    "section",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.tour.TourInfo.passengers.length,
+                          expression: "tour.TourInfo.passengers.length"
+                        }
+                      ],
+                      staticClass: "main"
+                    },
+                    [
+                      _c(
+                        "ul",
+                        { staticClass: "passenger-list" },
+                        _vm._l(_vm.tour.TourInfo.passengers, function(
+                          passenger
+                        ) {
+                          return _c(
+                            "li",
+                            { key: passenger.id, staticClass: "passenger" },
+                            [
+                              _c("div", { staticClass: "view" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "row align-items-center justify-content-center m-auto w-100 h-100"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col-4 p-0",
+                                        staticStyle: {
+                                          "border-right": "1px solid #f08b23"
+                                        }
+                                      },
+                                      [
+                                        _c("label", [
+                                          _vm._v(_vm._s(passenger.Name))
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col-2 p-0",
+                                        staticStyle: {
+                                          "border-left": "1px solid #f08b23"
+                                        }
+                                      },
+                                      [
+                                        _c("label", [
+                                          _vm._v(_vm._s(passenger.DoB))
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col-2 p-0",
+                                        staticStyle: {
+                                          "border-left": "1px solid #f08b23"
+                                        }
+                                      },
+                                      [
+                                        _c("label", [
+                                          _vm._v(_vm._s(passenger.Passport))
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col-2 p-0",
+                                        staticStyle: {
+                                          "border-left": "1px solid #f08b23"
+                                        }
+                                      },
+                                      [
+                                        _c("label", [
+                                          _vm._v(_vm._s(passenger.Date))
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col-2 p-0",
+                                        staticStyle: {
+                                          "border-left": "1px solid #f08b23"
+                                        }
+                                      },
+                                      [
+                                        _c("label", [
+                                          _vm._v(_vm._s(passenger.ExpiryDate))
+                                        ])
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.services.trim() != ""
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "row mx-auto mt-5 mb-5 justify-content-center align-items-center",
+              staticStyle: {
+                width: "100%",
+                height: "100%",
+                "border-top": "4px solid #f08b23"
+              }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticClass: "white--text active-tour ml-5",
+                  staticStyle: {
+                    background: "#062348",
+                    "font-size": "18px",
+                    width: "330px",
+                    position: "absolute"
+                  }
+                },
+                [_vm._v("Дополнительные услуги")]
+              )
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.services.trim() != ""
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "row features align-items-center justify-content-center mx-auto mt-auto mb-5",
+              staticStyle: { width: "100%", height: "100%" }
+            },
+            [
+              _c("div", { staticClass: "col-12" }, [
+                _c(
+                  "div",
+                  { staticClass: "row align-items-center w-100 m-auto" },
+                  [
+                    _c("div", { staticClass: "title" }, [
+                      _vm._v(_vm._s(_vm.tour.TourInfo.services))
+                    ])
+                  ]
+                )
+              ])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.files.length > 0
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "row mx-auto mt-5 mb-5 justify-content-center align-items-center",
+              staticStyle: {
+                width: "100%",
+                height: "100%",
+                "border-top": "4px solid #f08b23"
+              }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticClass: "white--text active-tour ml-5",
+                  staticStyle: {
+                    background: "#062348",
+                    "font-size": "18px",
+                    width: "330px",
+                    position: "absolute"
+                  }
+                },
+                [_vm._v("Файлы")]
+              )
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tour.TourInfo.files.length > 0
+        ? _c(
+            "div",
+            { staticClass: "file-listing" },
+            _vm._l(_vm.tour.TourInfo.files, function(file, index) {
+              return _c(
+                "div",
+                { key: file.name, staticClass: "list-group-item" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "row m-auto w-100 align-items-center justify-content-center"
+                    },
+                    [
+                      _c("div", { staticClass: "col-4 text-center" }, [
+                        /\.(jpe?g|png|svg)$/i.test(file.name)
+                          ? _c("img", {
+                              staticClass: "preview",
+                              attrs: { src: file.path }
+                            })
+                          : _c("img", {
+                              staticClass: "preview",
+                              attrs: { src: "/images/LOGO-1.png" }
+                            })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-8" }, [
+                        file.type == "file"
+                          ? _c("div", [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { color: "#f08b23" },
+                                  attrs: { href: file.path }
+                                },
+                                [
+                                  _c("p", { staticClass: "control-label" }, [
+                                    _vm._v(_vm._s(file.name))
+                                  ])
+                                ]
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        file.type == "audio"
+                          ? _c(
+                              "div",
+                              [_c("audio-player", { attrs: { audio: file } })],
+                              1
+                            )
+                          : _vm._e()
+                      ])
+                    ]
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        : _vm._e()
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "reviewModalBoxLabel" } },
+        [_vm._v("Оставить отзыв")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row mx-auto mt-5 mb-5  align-items-center",
+        staticStyle: {
+          width: "100%",
+          height: "100%",
+          "border-top": "4px solid #f08b23"
+        }
+      },
+      [
+        _c(
+          "span",
+          {
+            staticClass: "white--text active-tour ml-5",
+            staticStyle: {
+              background: "#062348",
+              "font-size": "18px",
+              position: "absolute"
+            }
+          },
+          [_vm._v("Страна")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row mx-auto mt-5 mb-5  align-items-center",
+        staticStyle: {
+          width: "100%",
+          height: "100%",
+          "border-top": "4px solid #f08b23"
+        }
+      },
+      [
+        _c(
+          "span",
+          {
+            staticClass: "white--text active-tour ml-5",
+            staticStyle: {
+              background: "#062348",
+              "font-size": "18px",
+              position: "absolute"
+            }
+          },
+          [_vm._v("Курорт")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row mx-auto mt-5 mb-5  align-items-center",
+        staticStyle: {
+          width: "100%",
+          height: "100%",
+          "border-top": "4px solid #f08b23"
+        }
+      },
+      [
+        _c(
+          "span",
+          {
+            staticClass: "white--text active-tour ml-5",
+            staticStyle: {
+              background: "#062348",
+              "font-size": "18px",
+              position: "absolute"
+            }
+          },
+          [_vm._v("Отель")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "title" }, [
+        _c(
+          "i",
+          {
+            staticClass: "icon-icon-list mr-1",
+            staticStyle: { "font-size": "11px" }
+          },
+          [
+            _c("span", { staticClass: "path1" }, [
+              _c("span", { staticClass: "path2" })
+            ])
+          ]
+        ),
+        _vm._v("название отеля:\n                        ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "title" }, [
+        _c(
+          "i",
+          {
+            staticClass: "icon-icon-list mr-1",
+            staticStyle: { "font-size": "11px" }
+          },
+          [
+            _c("span", { staticClass: "path1" }, [
+              _c("span", { staticClass: "path2" })
+            ])
+          ]
+        ),
+        _vm._v(
+          "\n                            категория номера:\n                        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "title" }, [
+        _c(
+          "i",
+          {
+            staticClass: "icon-icon-list mr-1",
+            staticStyle: { "font-size": "11px" }
+          },
+          [
+            _c("span", { staticClass: "path1" }, [
+              _c("span", { staticClass: "path2" })
+            ])
+          ]
+        ),
+        _vm._v(
+          "\n                            питание\n                        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row mx-auto mt-5 mb-5  align-items-center",
+        staticStyle: {
+          width: "100%",
+          height: "100%",
+          "border-top": "4px solid #f08b23"
+        }
+      },
+      [
+        _c(
+          "span",
+          {
+            staticClass: "white--text active-tour ml-5",
+            staticStyle: {
+              background: "#062348",
+              "font-size": "18px",
+              position: "absolute"
+            }
+          },
+          [_vm._v("Даты")]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/TourInfo.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/TourInfo.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TourInfo_vue_vue_type_template_id_40e2e144_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TourInfo.vue?vue&type=template&id=40e2e144&scoped=true& */ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=template&id=40e2e144&scoped=true&");
+/* harmony import */ var _TourInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TourInfo.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TourInfo_vue_vue_type_style_index_0_id_40e2e144_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css& */ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css&");
+/* harmony import */ var _TourInfo_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TourInfo.vue?vue&type=style&index=1&lang=css& */ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
+  _TourInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TourInfo_vue_vue_type_template_id_40e2e144_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TourInfo_vue_vue_type_template_id_40e2e144_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "40e2e144",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/Client/TourInfo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TourInfo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_0_id_40e2e144_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=0&id=40e2e144&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_0_id_40e2e144_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_0_id_40e2e144_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_0_id_40e2e144_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_0_id_40e2e144_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css& ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TourInfo.vue?vue&type=style&index=1&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=style&index=1&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=template&id=40e2e144&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=template&id=40e2e144&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_template_id_40e2e144_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TourInfo.vue?vue&type=template&id=40e2e144&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/TourInfo.vue?vue&type=template&id=40e2e144&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_template_id_40e2e144_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TourInfo_vue_vue_type_template_id_40e2e144_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

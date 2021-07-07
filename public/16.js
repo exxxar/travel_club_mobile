@@ -1,1 +1,639 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{"0s1m":function(t,e,a){"use strict";a("9VwZ")},"9VwZ":function(t,e,a){var i=a("Ni+3");"string"==typeof i&&(i=[[t.i,i,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};a("aET+")(i,s);i.locals&&(t.exports=i.locals)},"Ni+3":function(t,e,a){(t.exports=a("I1BE")(!1)).push([t.i,".btn.btn-primary[data-v-32d0b66e]{color:#fff!important;background:linear-gradient(0deg,#ffbf00,#f08b23);background-color:transparent;background-color:#f08b23!important;border-color:#f08b23!important;box-shadow:0 2px 2px 0 rgba(156,39,176,.14),0 3px 1px -2px rgba(156,39,176,.2),0 1px 5px 0 rgba(156,39,176,.12)!important;border-radius:50px}.avia-title[data-v-32d0b66e]{color:#062348!important;font-family:Open Sans Extrabold;font-weight:900}.title-1[data-v-32d0b66e]{position:absolute;z-index:1;left:20px;top:10px;color:#062348;font-family:Bello Pro!important;font-size:35px}.title-1 span[data-v-32d0b66e]{font-size:40px}.title-2[data-v-32d0b66e]{position:absolute;z-index:1;left:87px;top:18px;color:#fff;font-family:Open Sans!important;font-weight:900;font-size:25px}.title-2 span[data-v-32d0b66e]{text-transform:uppercase}.orange-brush[data-v-32d0b66e]{top:5px;left:0;width:265px}.blue-brush[data-v-32d0b66e]{top:10px;left:-55px;width:330px;height:50px;opacity:1}",""])},bRS1:function(t,e,a){"use strict";a.r(e);var i={name:"Order",data:function(){return{name:"",phone:"",message:"",loading:!1}},mounted:function(){this.name=this.aviaModule.name,this.phone=this.aviaModule.phone},computed:{aviaModule:function(){return this.$store.getters.aviaModule}},methods:{next:function(){this.$router.push("/avia-module/avia")},onSubmit:function(){var t=this;this.loading=!0,this.$store.dispatch("changeAviaName",this.name),this.$store.dispatch("changeAviaPhone",this.phone),this.$store.dispatch("sendAviaModuleOrder",{name:this.name,phone:this.phone,message:this.message,aviaModule:this.aviaModule}).then((function(e){t.loading=!1,t.sendMessage("Заявка на подбор авиабилетов успешно отправлена!")})),this.loading=!1},sendMessage:function(t){this.$notify({group:"info",type:"travel",title:"Сообщение от TravelClub",text:t})}},directives:{mask:a("OmDE").mask}},s=(a("0s1m"),a("KHd+")),n=Object(s.a)(i,(function(){var t=this,e=t.$createElement,a=t._self._c||e;return a("div",{staticClass:"cont m-auto"},[t._m(0),t._v(" "),a("ValidationObserver",{scopedSlots:t._u([{key:"default",fn:function(e){var i=e.invalid;return[a("div",{staticClass:"row justify-content-center mx-auto mt-auto mb-5",staticStyle:{width:"80%"}},[a("div",{staticClass:"col-md-8"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%"}},[a("h6",{staticClass:"avia-title"},[t._v("Ваше имя")]),t._v(" "),a("ValidationProvider",{staticStyle:{width:"100%","text-align":"center"},attrs:{name:"name",rules:"required"},scopedSlots:t._u([{key:"default",fn:function(e){var i=e.errors;return[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("b-form-input",{staticClass:"travel-input",attrs:{type:"text",placeholder:"Ваше имя",required:""},model:{value:t.name,callback:function(e){t.name=e},expression:"name"}})],1),t._v(" "),a("span",{staticClass:"validate-error"},[t._v(t._s(i[0]))])]}}],null,!0)})],1)]),t._v(" "),a("div",{staticClass:"col-md-8"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%"}},[a("h6",{staticClass:"avia-title"},[t._v("Ваш номер телефона")]),t._v(" "),a("ValidationProvider",{staticStyle:{width:"100%","text-align":"center"},attrs:{name:"phone",rules:"required|phone"},scopedSlots:t._u([{key:"default",fn:function(e){var i=e.errors;return[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%"}},[a("b-form-input",{directives:[{name:"mask",rawName:"v-mask",value:["+# (###) ###-##-##","+## (###) ###-##-##"],expression:"['+# (###) ###-##-##','+## (###) ###-##-##']"}],staticClass:"travel-input",attrs:{type:"text",placeholder:"Номер телефона",required:""},model:{value:t.phone,callback:function(e){t.phone=e},expression:"phone"}})],1),t._v(" "),a("span",{staticClass:"validate-error"},[t._v(t._s(i[0]))])]}}],null,!0)})],1)]),t._v(" "),a("div",{staticClass:"col-md-8"},[a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[a("h6",{staticClass:"avia-title"},[t._v("Дополнительная информация")]),t._v(" "),a("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%"}},[a("b-form-textarea",{staticClass:"travel-input p-2",staticStyle:{"border-radius":"20px !important"},attrs:{name:"message",placeholder:"Дополнительная информация"},model:{value:t.message,callback:function(e){t.message=e},expression:"message"}})],1)])]),t._v(" "),a("div",{staticClass:"col-md-8"},[a("div",{staticClass:"row mx-auto my-2 w-100 align-items-center justify-content-center"},[a("button",{staticClass:"btn btn-primary btn-lg w-100",attrs:{disabled:i||t.loading},on:{click:t.onSubmit}},[t._v("\n                        Отправить\n                    ")])])])])]}}])})],1)}),[function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"row m-auto justify-content-center align-items-center",staticStyle:{width:"100%"}},[e("div",{staticClass:"col-12 col-md-8 col-sm-12"},[e("div",{staticClass:"row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row",staticStyle:{height:"100px",width:"100%"}},[e("div",{staticClass:"col-md-7 p-0"},[e("div",{staticClass:"row mr-auto ml-0 my-auto travel-card-title",staticStyle:{position:"relative",height:"50px",width:"250px"}},[e("h1",{staticClass:"title-1"},[e("span",[this._v("З")]),this._v("аполните")]),this._v(" "),e("img",{staticClass:"blue-brush",staticStyle:{position:"absolute"},attrs:{src:"/images/blue-brush.svg"}})])]),this._v(" "),e("div",{staticClass:"col-md-7 p-0"},[e("div",{staticClass:"row ml-auto mr-0 my-auto travel-card-title",staticStyle:{position:"relative",height:"50px",width:"250px"}},[e("h1",{staticClass:"title-2"},[e("span",[this._v("заявку")])]),this._v(" "),e("img",{staticClass:"orange-brush",staticStyle:{position:"absolute"},attrs:{src:"/images/orange-brush.svg"}})])])])])])}],!1,null,"32d0b66e",null);e.default=n.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-the-mask */ "./node_modules/vue-the-mask/dist/vue-the-mask.js");
+/* harmony import */ var vue_the_mask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_the_mask__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Order",
+  data: function data() {
+    return {
+      name: '',
+      phone: '',
+      message: '',
+      loading: false
+    };
+  },
+  mounted: function mounted() {
+    this.name = this.aviaModule.name;
+    this.phone = this.aviaModule.phone;
+  },
+  computed: {
+    aviaModule: function aviaModule() {
+      return this.$store.getters.aviaModule;
+    }
+  },
+  methods: {
+    next: function next() {
+      this.$router.push('/avia-module/avia');
+    },
+    onSubmit: function onSubmit() {
+      var _this = this;
+
+      this.loading = true;
+      this.$store.dispatch('changeAviaName', this.name);
+      this.$store.dispatch('changeAviaPhone', this.phone);
+      this.$store.dispatch('sendAviaModuleOrder', {
+        name: this.name,
+        phone: this.phone,
+        message: this.message,
+        aviaModule: this.aviaModule
+      }).then(function (resp) {
+        _this.loading = false;
+
+        _this.sendMessage("Заявка на подбор авиабилетов успешно отправлена!");
+      });
+      this.loading = false;
+    },
+    sendMessage: function sendMessage(message) {
+      this.$notify({
+        group: 'info',
+        type: 'travel',
+        title: 'Сообщение от TravelClub',
+        text: message
+      });
+    }
+  },
+  directives: {
+    mask: vue_the_mask__WEBPACK_IMPORTED_MODULE_0__["mask"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.btn.btn-primary[data-v-02ff23d4] {\n    color: #fff !important;\n    background: linear-gradient(0deg, #ffbf00 0%, #f08b23 100%);\n    background-color: rgba(0, 0, 0, 0);\n    background-color: #f08b23 !important;\n    border-color: #f08b23 !important;\n    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12) !important;\n    border-radius: 50px;\n}\n.avia-title[data-v-02ff23d4] {\n    color: #062348 !important;\n    font-family: \"Open Sans Extrabold\";\n    font-weight: 900;\n}\n.title-1[data-v-02ff23d4] {\n    position: absolute;\n    z-index: 1;\n    left: 20px;\n    top: 10px;\n    color:#062348;\n    font-family: 'Bello Pro' !important;\n    font-size: 35px;\n}\n.title-1 span[data-v-02ff23d4] {\n    font-size: 40px;\n}\n.title-2[data-v-02ff23d4] {\n    position: absolute;\n    z-index: 1;\n    left: 87px;\n    top: 18px;\n    color:white;\n    font-family: 'Open Sans' !important;\n    font-weight:900;\n    font-size: 25px;\n}\n.title-2 span[data-v-02ff23d4] {\n    text-transform: uppercase;\n}\n.orange-brush[data-v-02ff23d4]{\n    top: 5px;\n    left: 0px;\n    width: 265px;\n}\n.blue-brush[data-v-02ff23d4]{\n    top: 10px;\n    left: -55px;\n    width: 330px;\n    height: 50px;\n    opacity: 1;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=template&id=02ff23d4&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=template&id=02ff23d4&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "cont m-auto" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("ValidationObserver", {
+        scopedSlots: _vm._u([
+          {
+            key: "default",
+            fn: function(ref) {
+              var invalid = ref.invalid
+              return [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "row justify-content-center mx-auto mt-auto mb-5",
+                    staticStyle: { width: "80%" }
+                  },
+                  [
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "row align-items-center justify-content-center m-auto",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("h6", { staticClass: "avia-title" }, [
+                            _vm._v("Ваше имя")
+                          ]),
+                          _vm._v(" "),
+                          _c("ValidationProvider", {
+                            staticStyle: {
+                              width: "100%",
+                              "text-align": "center"
+                            },
+                            attrs: { name: "name", rules: "required" },
+                            scopedSlots: _vm._u(
+                              [
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var errors = ref.errors
+                                    return [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "row align-items-center justify-content-center m-auto",
+                                          staticStyle: {
+                                            width: "100%",
+                                            height: "100%"
+                                          }
+                                        },
+                                        [
+                                          _c("b-form-input", {
+                                            staticClass: "travel-input",
+                                            attrs: {
+                                              type: "text",
+                                              placeholder: "Ваше имя",
+                                              required: ""
+                                            },
+                                            model: {
+                                              value: _vm.name,
+                                              callback: function($$v) {
+                                                _vm.name = $$v
+                                              },
+                                              expression: "name"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        { staticClass: "validate-error" },
+                                        [_vm._v(_vm._s(errors[0]))]
+                                      )
+                                    ]
+                                  }
+                                }
+                              ],
+                              null,
+                              true
+                            )
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "row align-items-center justify-content-center m-auto",
+                          staticStyle: { width: "100%" }
+                        },
+                        [
+                          _c("h6", { staticClass: "avia-title" }, [
+                            _vm._v("Ваш номер телефона")
+                          ]),
+                          _vm._v(" "),
+                          _c("ValidationProvider", {
+                            staticStyle: {
+                              width: "100%",
+                              "text-align": "center"
+                            },
+                            attrs: { name: "phone", rules: "required|phone" },
+                            scopedSlots: _vm._u(
+                              [
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var errors = ref.errors
+                                    return [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "row align-items-center justify-content-center m-auto",
+                                          staticStyle: { width: "100%" }
+                                        },
+                                        [
+                                          _c("b-form-input", {
+                                            directives: [
+                                              {
+                                                name: "mask",
+                                                rawName: "v-mask",
+                                                value: [
+                                                  "+# (###) ###-##-##",
+                                                  "+## (###) ###-##-##"
+                                                ],
+                                                expression:
+                                                  "['+# (###) ###-##-##','+## (###) ###-##-##']"
+                                              }
+                                            ],
+                                            staticClass: "travel-input",
+                                            attrs: {
+                                              type: "text",
+                                              placeholder: "Номер телефона",
+                                              required: ""
+                                            },
+                                            model: {
+                                              value: _vm.phone,
+                                              callback: function($$v) {
+                                                _vm.phone = $$v
+                                              },
+                                              expression: "phone"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        { staticClass: "validate-error" },
+                                        [_vm._v(_vm._s(errors[0]))]
+                                      )
+                                    ]
+                                  }
+                                }
+                              ],
+                              null,
+                              true
+                            )
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "row align-items-center justify-content-center m-auto",
+                          staticStyle: { width: "100%", height: "100%" }
+                        },
+                        [
+                          _c("h6", { staticClass: "avia-title" }, [
+                            _vm._v("Дополнительная информация")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "row align-items-center justify-content-center m-auto",
+                              staticStyle: { width: "100%" }
+                            },
+                            [
+                              _c("b-form-textarea", {
+                                staticClass: "travel-input p-2",
+                                staticStyle: {
+                                  "border-radius": "20px !important"
+                                },
+                                attrs: {
+                                  name: "message",
+                                  placeholder: "Дополнительная информация"
+                                },
+                                model: {
+                                  value: _vm.message,
+                                  callback: function($$v) {
+                                    _vm.message = $$v
+                                  },
+                                  expression: "message"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "row mx-auto my-2 w-100 align-items-center justify-content-center"
+                        },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary btn-lg w-100",
+                              attrs: { disabled: invalid || _vm.loading },
+                              on: { click: _vm.onSubmit }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        Отправить\n                    "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            }
+          }
+        ])
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row m-auto justify-content-center align-items-center",
+        staticStyle: { width: "100%" }
+      },
+      [
+        _c("div", { staticClass: "col-12 col-md-8 col-sm-12" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row",
+              staticStyle: { height: "100px", width: "100%" }
+            },
+            [
+              _c("div", { staticClass: "col-md-7 p-0" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row mr-auto ml-0 my-auto travel-card-title",
+                    staticStyle: {
+                      position: "relative",
+                      height: "50px",
+                      width: "250px"
+                    }
+                  },
+                  [
+                    _c("h1", { staticClass: "title-1" }, [
+                      _c("span", [_vm._v("З")]),
+                      _vm._v("аполните")
+                    ]),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "blue-brush",
+                      staticStyle: { position: "absolute" },
+                      attrs: { src: "/images/blue-brush.svg" }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-7 p-0" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row ml-auto mr-0 my-auto travel-card-title",
+                    staticStyle: {
+                      position: "relative",
+                      height: "50px",
+                      width: "250px"
+                    }
+                  },
+                  [
+                    _c("h1", { staticClass: "title-2" }, [
+                      _c("span", [_vm._v("заявку")])
+                    ]),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "orange-brush",
+                      staticStyle: { position: "absolute" },
+                      attrs: { src: "/images/orange-brush.svg" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/AviaModule/Order.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/desktop/pages/AviaModule/Order.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Order_vue_vue_type_template_id_02ff23d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Order.vue?vue&type=template&id=02ff23d4&scoped=true& */ "./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=template&id=02ff23d4&scoped=true&");
+/* harmony import */ var _Order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Order.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Order_vue_vue_type_style_index_0_id_02ff23d4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css& */ "./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Order_vue_vue_type_template_id_02ff23d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Order_vue_vue_type_template_id_02ff23d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "02ff23d4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/AviaModule/Order.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Order.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css& ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_style_index_0_id_02ff23d4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=style&index=0&id=02ff23d4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_style_index_0_id_02ff23d4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_style_index_0_id_02ff23d4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_style_index_0_id_02ff23d4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_style_index_0_id_02ff23d4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=template&id=02ff23d4&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=template&id=02ff23d4&scoped=true& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_template_id_02ff23d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Order.vue?vue&type=template&id=02ff23d4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/AviaModule/Order.vue?vue&type=template&id=02ff23d4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_template_id_02ff23d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Order_vue_vue_type_template_id_02ff23d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

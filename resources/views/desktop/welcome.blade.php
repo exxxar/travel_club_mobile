@@ -65,7 +65,11 @@
 
 </div>
 
-
+<div class="travel-news-btn">
+    <div class="sign">
+        <span class="fast-flicker">N</span>ew<span class="flicker">s</span>
+    </div>
+</div>
 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 

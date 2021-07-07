@@ -1,16 +1,10 @@
 {
-    "/js/desktop/app.js": "/js/desktop/app.js?id=24c8af6611fd107fe29d",
-    "/css/desktop/app.css": "/css/desktop/app.css?id=8b7559e328404557fcda",
-    "/css/pwa/app.css": "/css/pwa/app.css?id=bb08b073393d96d7d222",
-    "/js/pwa/app.js": "/js/pwa/app.js?id=bdc83e7928b6ab14a829",
+    "/js/desktop/app.js": "/js/desktop/app.js?id=d175c434305be4ce1290",
+    "/css/desktop/app.css": "/css/desktop/app.css?id=aaea3abe3ab4e77b1184",
+    "/css/pwa/app.css": "/css/pwa/app.css?id=04f6d12e2b1351571005",
+    "/js/pwa/app.js": "/js/pwa/app.js?id=f0ee14fc394ba945cd07",
     "/css/assets/app.css": "/css/assets/app.css?id=7b3c73bf6f0d0dc6a81a",
     "/js/pwa/jquery-3.4.1.min.js": "/js/pwa/jquery-3.4.1.min.js?id=220afd743d9e9643852e",
     "/css/pwa/theme.css": "/css/pwa/theme.css?id=f56e620e874324e7c68a",
-    "/css/pwa/tour-search.css": "/css/pwa/tour-search.css?id=95b8859231e2d3af5918",
-    "/js/pwa/app.min.js": "/js/pwa/app.min.js?id=bdc83e7928b6ab14a829",
-    "/css/pwa/app.min.css": "/css/pwa/app.min.css?id=bb08b073393d96d7d222",
-    "/css/pwa/theme.min.css": "/css/pwa/theme.min.css?id=f56e620e874324e7c68a",
-    "/css/assets/app.min.css": "/css/assets/app.min.css?id=7b3c73bf6f0d0dc6a81a",
-    "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=24c8af6611fd107fe29d",
-    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=8b7559e328404557fcda"
+    "/css/pwa/tour-search.css": "/css/pwa/tour-search.css?id=95b8859231e2d3af5918"
 }
