@@ -850,18 +850,19 @@
                 <div class="mt-5 p-4">
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <a href="https://travel-club.tours" class="btn btn-secondary btn-block" style="height: 56px">
+                            <a href="https://travel-club.tours" class="btn btn-secondary btn-block"
+                               style="height: 56px">
                                 <i class="far fa-eye mr-2"></i>
                                 Попробовать
                             </a>
                         </div>
-                       <!-- <div class="col-12">
-                            <a href="https://donbassit.ru"
-                               class="btn btn-success btn-block" target="_blank" style="height: 56px;">
-                                <i class="fas fa-cart-plus"></i>
-                                Хочу себе такое
-                            </a>
-                        </div>-->
+                        <!-- <div class="col-12">
+                             <a href="https://donbassit.ru"
+                                class="btn btn-success btn-block" target="_blank" style="height: 56px;">
+                                 <i class="fas fa-cart-plus"></i>
+                                 Хочу себе такое
+                             </a>
+                         </div>-->
                     </div>
                 </div>
             </div>
@@ -1012,103 +1013,155 @@
                 </svg>
                 <div class="row w-100 footer-last m-auto">
                     <div class="col-12 col-md-12">
+                        <button class="btn btn-orange rounded btn-footer-contact" @click="sidebarOpen">
+                            Контакты
+                        </button>
 
-                        <div class="row w-100  justify-content-center align-items-center">
-                            <div class="col-12 p-5">
-                              <button class="btn btn-orange rounded btn-footer-contact"  @click="sidebarOpen">
-                                  Контакты
-                              </button>
-
-                            </div>
-                        </div>
                     </div>
-                  <!--  <div class="col-12 col-md-3 col-sm-12 ">
-                        <div class="row mt-5 mx-auto" style="height:70%; width:100%">
-                            <div class="col-12 mb-3 mx-auto">
-                                <div class="row m-auto" style="height:50px">
-                                    <a class="more-text m-auto" style="color: #f08b23;"
-                                       v-scroll-to="'#travel'">Путешествуй</a>
+                    <!--    <div class="col-12 col-md-3 col-sm-12 ">
+                            <div class="row mt-5 mx-auto" style="height:70%; width:100%">
+                                <div class="col-12 mb-3 mx-auto">
+                                    <div class="row m-auto" style="height:50px">
+                                        <a class="more-text m-auto" style="color: #f08b23;"
+                                           v-scroll-to="'#travel'">Путешествуй</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <div class="row m-auto" style="height:50px">
-                                    <a class="more-text m-auto" style="color: #f08b23;" v-scroll-to="'#avia'">Летай</a>
+                                <div class="col-12 mb-3">
+                                    <div class="row m-auto" style="height:50px">
+                                        <a class="more-text m-auto" style="color: #f08b23;" v-scroll-to="'#avia'">Летай</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <div class="row m-auto" style="height:50px">
-                                    <a class="more-text m-auto" style="color: #f08b23;"
-                                       v-scroll-to="'#russia'">Познавай</a>
+                                <div class="col-12 mb-3">
+                                    <div class="row m-auto" style="height:50px">
+                                        <a class="more-text m-auto" style="color: #f08b23;"
+                                           v-scroll-to="'#russia'">Познавай</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4 col-sm-12">
-                        <div class="row w-100 mt-5 mx-auto" style="height:70%; width:100%">
+                        <div class="col-12 col-md-4 col-sm-12">
+                            <div class="row w-100 mt-5 mx-auto" style="height:70%; width:100%">
 
-                            <div class="col-12 p-0 mb-3">
-                                <div class="row w-100 m-auto align-items-center">
-                                    <div class="col-2">
-                                        <div class="more-button m-auto">
+                                <div class="col-12 p-0 mb-3">
+                                    <div class="row w-100 m-auto align-items-center">
+                                        <div class="col-2">
+                                            <div class="more-button m-auto">
 
-                                            <div class="icon icon-instagram"></div>
+                                                <div class="icon icon-instagram"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
-                                           href="https://www.instagram.com/travelclub_tours">
-                                            <h1 class="more-text mr-auto">
-                                                @travelclub_tours
-                                            </h1>
-                                        </a>
+                                        <div class="col-10">
+                                            <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
+                                               href="https://www.instagram.com/travelclub_tours">
+                                                <h1 class="more-text mr-auto">
+                                                    @travelclub_tours
+                                                </h1>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12 p-0 mb-3">
-                                <div class="row w-100 m-auto align-items-center">
-                                    <div class="col-2">
-                                        <div class="more-button m-auto">
-                                            &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
-                                            <div class="icon icon-telegram"></div>
+                                <div class="col-12 p-0 mb-3">
+                                    <div class="row w-100 m-auto align-items-center">
+                                        <div class="col-2">
+                                            <div class="more-button m-auto">
+                                                &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
+                                                <div class="icon icon-telegram"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
-                                           href="https://t.me/travelclubtours">
-                                            <h1 class="more-text mr-auto">Travel Club Telegram</h1>
-                                        </a>
+                                        <div class="col-10">
+                                            <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
+                                               href="https://t.me/travelclubtours">
+                                                <h1 class="more-text mr-auto">Travel Club Telegram</h1>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12 p-0 mb-3">
-                                <div class="row w-100 m-auto align-items-center ">
-                                    <div class="col-2">
-                                        <div class="more-button m-auto">
-                                            &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
-                                            <div class="fab fa-viber"></div>
+                                <div class="col-12 p-0 mb-3">
+                                    <div class="row w-100 m-auto align-items-center ">
+                                        <div class="col-2">
+                                            <div class="more-button m-auto">
+                                                &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
+                                                <div class="fab fa-viber"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
-                                           href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR">
-                                            <h1 class="more-text mr-auto">Travel Club Viber</h1>
-                                        </a>
+                                        <div class="col-10">
+                                            <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
+                                               href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR">
+                                                <h1 class="more-text mr-auto">Travel Club Viber</h1>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>-->
-                 <!--   <div class="col-12" style="background: #041e3f;border-top: 1px solid #d9d9d942;">
-                        <div class="row w-100 m-auto align-items-center justify-content-center">
-                            <a class="mx-auto my-2" target="_blank" href="https://donbassit.ru"
-                               style="color:white; font-family: 'Open Sans'; font-weight: 900"><img
-                                src="/images/do-it.png" class="mb-2" style="height: 20px;"/></a>
-                        </div>
-                    </div>-->
+                        <div class="col-12" style="background: #041e3f;border-top: 1px solid #d9d9d942;">
+                            <div class="row w-100 m-auto align-items-center justify-content-center">
+                                <a class="mx-auto my-2" target="_blank" href="https://donbassit.ru"
+                                   style="color:white; font-family: 'Open Sans'; font-weight: 900"><img
+                                    src="/images/do-it.png" class="mb-2" style="height: 20px;"/></a>
+                            </div>
+                        </div>-->
                 </div>
+
+
             </div>
         </section>
 
+        <footer id="footer">
+            <div class="zerogrid wrap-footer">
+                <div class="row">
+                    <div class="col-sm-4 footer-1">
+                        <div class="wrap-col">
+                            <h3 class="widget-title">О нас</h3>
+                            <p class="text-white">Коллектив туристического агентства «TravelClub» рады приветствовать Вас на нашем сайте. Мы
+                                поможем сделать Ваш долгожданный отпуск полным красочных впечатлений и ярких
+                                воспоминаний. </p>
+                            <p  class="text-white">Это может быть горящий тур в Египет, Турцию, Тунис, ОАЭ, Черногорию, Хорватию, Италию,
+                                Болгарию, если Вы хотите понежиться под теплыми лучами солнца и поплавать в море. </p>
+                            <ul class="quicklinks w-100 d-flex justify-content-end">
+                               <!-- <li><a href="about.html">Подробнее</a></li>-->
+                                <li><a target="_blank" href="https://yandex.ru/maps/142/donetsk/house/bulvar_pushkina_23/Z04YfgdiSEwDQFpifXxxc3VgYg==/?from=api-maps&ll=37.802265%2C48.002741&origin=jsapi21&z=18.9">Мы на карте</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 footer-2 d-flex justify-content-center">
+                        <div class="wrap-col text-center">
+                            <h3 class="widget-title">Контакты</h3>
+                            <p  class="text-white">Телефоны:</p>
+                            <strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22<br>(095) 935-99-90</strong>
+                            <p class="text-white">Viber, WhatsApp:</p>
+                            <strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
+                            <p  class="text-white">Telegram:</p><strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
+                            <p class="text-white">Адрес:</p>
+                            <strong style="color:#A9A9A9;">г.Донецк, Бульвар Пушкина, 23</strong>
+                            <p class="text-white">Email:</p>
+                            <strong style="color:#A9A9A9;">travelclubrnd@bk.ru</strong>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 footer-3 d-flex justify-content-center">
+                        <div class="wrap-col text-center">
+                            <h3 class="widget-title text-center">Мы в соцсетях</h3>
+                            <ul class="social-buttons d-flex justify-content-center">
+                                <li><a href="https://vk.com/rozovyi_slon_donetsk"><i class="fab fa-vk"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp"></i> </a></li>
+                                <li><a href="https://www.instagram.com/travelclub_tours/"><i class="fab fa-instagram"></i></a></li>
+
+                            </ul>
+                            <a class="btn btn-outline-light" href="viber://chat?number=+3800712353322">Написать в
+                                Viber</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <div class="copyright">
+
+                        Donetsk &nbsp;|&nbsp;www.travel-club.tours&nbsp;|&nbsp; 2017 – 2021
+                    </div>
+                </div>
+            </div>
+
+        </footer>
     </div>
 </template>
 
@@ -1192,4 +1245,120 @@
 </script>
 <style lang="scss">
     @import "@/sass/desktop/landing.scss";
+
+
+    /* ---------------------------------------------------------------------------- */
+    /* -------------------------------------Footer--------------------------------- */
+    /* ---------------------------------------------------------------------------- */
+    footer#footer {
+        background: #001025;
+        font-size: 14px;
+        position: relative;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: block;
+        border-bottom: 2px white solid;
+    }
+
+    footer a {
+        color: #ed6427
+    }
+
+    footer a:hover {
+        color: #fff
+    }
+
+    footer .widget-title {
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        color: #ed6427;
+    }
+
+    footer .wrap-footer {
+        padding: 70px 60px 0;
+    }
+
+    footer .brand-footer {
+        font-size: 57px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #777;
+    }
+
+    footer ul li {
+        margin-bottom: 5px;
+        padding: 10px 0 15px;
+        display: inline-block;
+    }
+
+    footer ul.quicklinks li {
+        position: relative;
+        padding: 0 10px;
+    }
+
+    footer ul.quicklinks li:after {
+        position: absolute;
+        content: "";
+        border-right: 1px solid #777;
+        height: 16px;
+        top: 5px;
+        padding-left: 10px;
+    }
+
+    footer ul.quicklinks li:last-child:after {
+        display: none;
+    }
+
+    footer ul.quicklinks li:first-child {
+        padding-left: 0;
+    }
+
+    footer .col-footer-1 {
+    }
+
+    footer .col-footer-2 p {
+        margin: 5px 0 0;
+    }
+
+    footer .col-footer-2 strong {
+        font-size: 17px;
+    }
+
+    footer .col-footer-3 {
+    }
+
+    footer .col-footer-3 ul.social-buttons {
+    }
+
+    footer .col-footer-3 ul.social-buttons li a {
+        font-size: 32px;
+        margin: 15px;
+    }
+
+    footer .bottom-footer {
+        margin-top: 50px;
+    }
+
+    .copyright {
+        background: #1a1c1e;
+        color: #777;
+        padding: 20px;
+        text-align: center;
+    }
+
+    @media all and (max-width: 768px) {
+        footer#footer {
+            position: relative;
+        }
+        .copyright {
+            text-align: center;
+        }
+        .copyright ul.quick-link {
+            float: none;
+            margin-top: 10px;
+        }
+    }
+
 </style>

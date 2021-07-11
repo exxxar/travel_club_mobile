@@ -2409,7 +2409,12 @@ background: #f9f9f9 !important;
 .footer-last {
     height: 100%;
     min-height: 300px;
+    border-bottom: 2px white solid;
     background: url(/images/footer.png);
     background-position: bottom;
     background-repeat-y: no-repeat;
+
+
+
+
 }
