@@ -14,7 +14,7 @@
 
             <div>
                 <button type="button" class="btn btn-orange rounded mr-1" data-toggle="modal" aria-label="О Travel Club"
-                        data-target="#AboutModal"><i class="far fa-question-circle"></i>
+                        data-target="#AboutModal">О нас
                 </button>
             </div>
 
@@ -27,7 +27,7 @@
             <carousel :loop="true" :items="1" :nav="false">
 
 
-                <div class="item">
+                <div class="item ">
                     <div class="card">
                         <a href="https://travel-club.tours/m/tours" class="travel-card"
                            aria-label="Подобрать путеествие">
@@ -102,6 +102,8 @@
         </div>
 
         <story-list/>
+
+        <latest-news-block/>
 
 
         <div class="section mt-3 mb-3">
@@ -336,5 +338,6 @@
         align-items: center;
         padding: 50px;
     }
+
 
 </style>

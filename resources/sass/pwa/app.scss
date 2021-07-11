@@ -161,3 +161,18 @@ svg:not(:root).svg-inline--fa {
 }
 
 @import 'resources/sass/pwa/index';
+
+
+.pulse {
+    animation: pulse-animation 2s;
+    animation-iteration-count: 5;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}

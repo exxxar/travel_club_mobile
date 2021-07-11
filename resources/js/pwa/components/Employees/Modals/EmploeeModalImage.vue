@@ -1,7 +1,7 @@
 <template>
     <div class="modal fade employees stories with-story-bar show" :id="'EmployeeDefault'+index"
 
-         data-backdrop="static" tabindex="-1"
+         data-backdrop="true" tabindex="-1"
          aria-modal="true" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

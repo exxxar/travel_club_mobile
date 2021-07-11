@@ -36,17 +36,6 @@
             }
         },
         mounted() {
-            eventBus.$on("right-swipe", () => {
-
-                this.next()
-
-            });
-
-
-            eventBus.$on("left-swipe", () => {
-
-                this.prev()
-            });
 
 
         },

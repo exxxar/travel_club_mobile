@@ -18,11 +18,23 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::prefix("admin")->group(function () {
+    Route::prefix('v1')->group(function () {
+        Route::get("/list", "ArticleController@index");
+        Route::post("/store", "ArticleController@store");
+        Route::put("/update/{id}", "ArticleController@update");
+        Route::delete("/remove/{id}", "ArticleController@destroy");
+        Route::post('/article-auth', 'ArticleController@isAuth');
+    });
+});
 
-Route::prefix("pwa")->group(function (){
+Route::prefix("pwa")->group(function () {
     Route::prefix('v1')->group(function () {
 
-        Route::get('/getCitiesUR','Desktop\HomeController@getCities');
+        Route::get('/getCitiesUR', 'Desktop\HomeController@getCities');
+        Route::get('/latest-news', 'ArticleController@getLatestNews');
+        Route::get('/all-news', 'ArticleController@getAllNews');
+
 
         Route::any('bot/{bot}', 'BotController@handle');
         //Message
@@ -65,15 +77,13 @@ Route::prefix("pwa")->group(function (){
         Route::post('/statistic/promocode', 'PromocodeController@generate');
 
 
-
-
     });
 });
 
-Route::prefix("desktop")->group(function (){
+Route::prefix("desktop")->group(function () {
     Route::prefix('v1')->namespace('Desktop')->group(function () {
 
-        Route::get('/getCitiesUR','HomeController@getCities');
+        Route::get('/getCitiesUR', 'HomeController@getCities');
 
         //Promocode
         Route::post('sendPromocode', 'HomeController@sendPromocode');

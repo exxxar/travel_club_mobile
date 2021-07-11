@@ -15,7 +15,7 @@
                 <div class="row m-auto desktop" style="height: 100%; width: 90%;">
                     <div class="col-md-6 col-lg-4 col-sm-10 m-auto">
                         <router-link to="/tour-search">
-                            <div class="bg-panel ml-auto mr-auto day-theme"
+                            <div class="bg-panel ml-auto mr-auto pulse day-theme"
                                  style="height: 520px; max-width: 300px; position: relative;">
                                 <h1>Подобрать путешествие</h1>
                                 <img src="images/1.png" style="position:absolute; bottom: 0;width: 100%;">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-sm-10 m-auto">
                         <router-link to="/avia-search">
-                            <div class="bg-panel ml-auto mr-auto day-theme"
+                            <div class="bg-panel ml-auto mr-auto pulse day-theme"
                                  style="height: 520px; max-width: 300px; position: relative;">
                                 <h1>Подобрать авиабилеты</h1>
                                 <img src="images/2.png" style="position:absolute; bottom: 0;width: 100%;">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-sm-10 m-auto">
                         <router-link to="/russia-tour-search">
-                            <div class="bg-panel ml-auto mr-auto day-theme russion-tours-btn"
+                            <div class="bg-panel pulse ml-auto mr-auto day-theme russion-tours-btn"
                                  style="height: 520px; max-width: 300px; position: relative;">
                                 <h1>Подобрать туры по России</h1>
                                 <img src="images/4.png" style="position:absolute; bottom: 0;width: 100%;">

@@ -1,5 +1,5 @@
 <template>
-    <div class="modal fade modalbox" id="AboutModal" data-backdrop="static" tabindex="-1" style="display: none;"
+    <div class="modal fade modalbox" id="AboutModal" data-backdrop="true" tabindex="-1" style="display: none;"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

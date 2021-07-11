@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Jenssegers\Agent\Facades\Agent;
@@ -32,16 +34,23 @@ Route::get("/setw", function () {
 });
 
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
     if (Agent::isMobile())
         return view('pwa.pages.index');
 
-    return view('desktop.welcome');
+    $articles = \App\Article::where("publish_at", "<=", Carbon::now("+3:00"))
+        ->orderBy("id","desc")->paginate(20);
+
+    return view('desktop.welcome',compact("articles"));
 })->name("desktop");
 
 Route::get('/offline', function () {
     return view("pwa.pages.maintenance");
 })->name("offline");
+
+Route::group(["prefix" => "/admin"], function () {
+    Route::get("/news","ArticleController@index");
+});
 
 Route::group(["prefix" => "/m"], function () {
     //Route::view('/', 'pwa.pages.index')->name("index");
@@ -57,6 +66,7 @@ Route::group(["prefix" => "/m"], function () {
 
     Route::view("/mobile","pwa.pages.index")->name("m.index");
     Route::view("/desktop","pwa.welcome")->name("m.desktop");
+    Route::view("/all-news","pwa.pages.news")->name("news");
 
     Route::view('/about', "pwa.pages.about")->name("about");
     Route::view('/contact', "pwa.pages.contact")->name("contact");

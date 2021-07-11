@@ -108,6 +108,8 @@ Vue.component('footer-anim-section', require('./components/FooterAnimBlock.vue')
 Vue.component('story-list', require('./components/Stories/StoryList.vue').default);
 Vue.component('employee-list', require('./components/Employees/EmployeeList.vue').default);
 Vue.component('promo-admin-block', require('./components/Promocodes/PromoAdminBlock.vue').default);
+Vue.component('latest-news-block', require('./components/LatestNews.vue').default);
+Vue.component('news-item-block', require('./components/NewsItem.vue').default);
 
 //Pages
 Vue.component('index-page', require('./pages/Index.vue').default);
@@ -118,6 +120,7 @@ Vue.component('faq-page', require('./pages/Faq.vue').default);
 Vue.component('maintenance-page', require('./pages/Maintenance.vue').default);
 Vue.component('profile-page', require('./pages/Profile.vue').default);
 Vue.component('intro-page', require('./pages/Intro.vue').default);
+Vue.component('news-page', require('./pages/News.vue').default);
 Vue.component('promo-page', require('./pages/Promo.vue').default);
 
 Vue.component('adventure-page', require('./pages/Adenture.vue').default);

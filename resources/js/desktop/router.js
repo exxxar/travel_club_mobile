@@ -90,6 +90,15 @@ let router = new VueRouter({
         },
 
         {
+            path: '/articles',
+            component: () => import('./pages/admin/Articles.vue'),
+            meta: {
+                preloader: true,
+                requiresAuth: false
+            },
+        },
+
+        {
             path: '/tour-module',
             components: {
                 default: () => import('./pages/Step3.vue'),

@@ -9,7 +9,14 @@ class Article extends Model
     //
 
     protected $fillable = [
-        'content'
+        'content',
+        'title',
+        'subtitle',
+        'author',
+        'publish_at',
     ];
 
+    protected $casts = [
+        "publish_at"=>"datetime"
+    ];
 }

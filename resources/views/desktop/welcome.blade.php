@@ -18,6 +18,7 @@
             src: url(/fonts/vag-world-bold.ttf); /* Путь к файлу со шрифтом */
             font-display: swap;
         }
+
     </style>
     <!-- Fonts -->
 
@@ -28,14 +29,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/icons/icon-192x192.png')}}">
     <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/icons/icon-152x152.png')}}">
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link href="{{asset('images/icons/splash-2048x2732.png')}}" sizes="2048x2732" rel="apple-touch-startup-image" />
-    <link href="{{asset('images/icons/splash-1668x2224.png')}}" sizes="1668x2224" rel="apple-touch-startup-image" />
-    <link href="{{asset('images/icons/splash-1536x2048.png')}}" sizes="1536x2048" rel="apple-touch-startup-image" />
-    <link href="{{asset('images/icons/splash-1125x2436.png')}}" sizes="1125x2436" rel="apple-touch-startup-image" />
-    <link href="{{asset('images/icons/splash-1242x2208.png')}}" sizes="1242x2208" rel="apple-touch-startup-image" />
-    <link href="{{asset('images/icons/splash-750x1334.png')}}" sizes="750x1334" rel="apple-touch-startup-image" />
-    <link href="{{asset('images/icons/splash-640x1136.png')}}" sizes="640x1136" rel="apple-touch-startup-image" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="{{asset('images/icons/splash-2048x2732.png')}}" sizes="2048x2732" rel="apple-touch-startup-image"/>
+    <link href="{{asset('images/icons/splash-1668x2224.png')}}" sizes="1668x2224" rel="apple-touch-startup-image"/>
+    <link href="{{asset('images/icons/splash-1536x2048.png')}}" sizes="1536x2048" rel="apple-touch-startup-image"/>
+    <link href="{{asset('images/icons/splash-1125x2436.png')}}" sizes="1125x2436" rel="apple-touch-startup-image"/>
+    <link href="{{asset('images/icons/splash-1242x2208.png')}}" sizes="1242x2208" rel="apple-touch-startup-image"/>
+    <link href="{{asset('images/icons/splash-750x1334.png')}}" sizes="750x1334" rel="apple-touch-startup-image"/>
+    <link href="{{asset('images/icons/splash-640x1136.png')}}" sizes="640x1136" rel="apple-touch-startup-image"/>
 
     @laravelPWA
 
@@ -56,7 +57,6 @@
     <link rel="stylesheet" href="{{asset('css/desktop/app.css?ver=')}}{{env("APP_VERSION")}}">
 
 
-
 </head>
 <body class="pr-0">
 
@@ -65,11 +65,33 @@
 
 </div>
 
-<div class="travel-news-btn">
-    <div class="sign">
-        <span class="fast-flicker">N</span>ew<span class="flicker">s</span>
+@isset($articles)
+    <!-- Modal -->
+    <div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body articles">
+                    @foreach($articles as $article)
+                        <h6>Новость #{{$article->id}}</h6>
+                        {!! $article->content !!}
+                    <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small>
+                        <hr>
+                    @endforeach
+
+                    {{$articles->links()}}
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="travel-news-btn pulse">
+        <button type="button" class="btn btn-link btn-round " style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
+            <i class="far fa-newspaper"></i>
+        </button>
+    </div>
+
+@endisset
 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
@@ -78,7 +100,6 @@
 <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
 
 <script src="{{asset('/js/desktop/app.js?ver=')}}{{env("APP_VERSION")}}" defer></script>
-
 
 
 </body>
