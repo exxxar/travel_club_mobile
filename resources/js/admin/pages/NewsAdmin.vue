@@ -235,7 +235,7 @@
                 this.publish_at = null;
             },
             load(page = 1) {
-                axios.get(`https://travel-club.tours/api/admin/v1/list/?page=${page}`).then(resp => {
+                axios.get(`https://travel-club.tours/api/admin/v1/list?page=${page}`).then(resp => {
                     console.log(resp)
                     this.paginate = resp.data
 

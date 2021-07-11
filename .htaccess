@@ -27,6 +27,10 @@ Header set Cache-Control "max-age=31536000, public"
 Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
 
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+
 Redirect 301 /pratopizza /
 Redirect 301 /questions.php /questions
 Redirect 301 /rest-list.php /rest-list
