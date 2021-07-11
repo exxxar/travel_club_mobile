@@ -1,5 +1,5 @@
 <template>
-    <div class="section mt-3 mb-3" v-if="article">
+    <div class="section mt-3 mb-3" v-if="article!=null">
 
 
         <div class="card article mb-2">
