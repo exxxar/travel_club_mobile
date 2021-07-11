@@ -14,5 +14,7 @@
     "/css/pwa/theme.min.css": "/css/pwa/theme.min.css?id=f56e620e874324e7c68a",
     "/css/assets/app.min.css": "/css/assets/app.min.css?id=7b3c73bf6f0d0dc6a81a",
     "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=d4064864d572df25851a",
-    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=2057867ff57f97e946db"
+    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=2057867ff57f97e946db",
+    "/js/admin/app.min.js": "/js/admin/app.min.js?id=1ae2730876ebb0ce3c9e",
+    "/css/admin/app.min.css": "/css/admin/app.min.css?id=353911cfe9468de837f3"
 }

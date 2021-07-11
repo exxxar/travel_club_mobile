@@ -88,6 +88,9 @@ if (mix.inProduction()) {
 
     mix.minify('public/js/desktop/app.js')
     mix.minify('public/css/desktop/app.css')
+
+    mix.minify('public/js/admin/app.js')
+    mix.minify('public/css/admin/app.css')
 }
 
 mix.version();
