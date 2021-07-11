@@ -10,7 +10,7 @@
         <div class="post-header">
             <div>
                 <a href="#">
-                    <img src="/img/logo.png" alt="avatar" class="imaged w24 rounded me-05">
+                    <img src="/img/logo.png" alt="avatar" class="imaged w24 rounded me-05 post-img">
                     {{article.author}}
                 </a>
             </div>
@@ -190,3 +190,9 @@
         }
     }
 </script>
+<style lang="scss">
+    .post-img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+</style>

@@ -17,7 +17,7 @@ try {
 
 window.axios = require('axios');
 
-window.axios.defaults.baseURL = '/api/admin/v1';
+window.axios.defaults.baseURL = 'https://travel-club.tours/api/admin/v1';
 
 window.csrf = document.head.querySelector('meta[name="csrf-token"]').content
 
