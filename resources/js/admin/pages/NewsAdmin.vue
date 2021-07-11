@@ -1,48 +1,57 @@
 <template>
     <div class="container">
 
-        <div class="row mt-2" v-if="isAuth">
+        <div class="row mt-2" v-if="checkCodeAuth">
             <div class="col-md-8">
                 <form v-on:submit.prevent="!selected?save():update()">
-                <h4>Редактор новостей</h4>
-                <div class="row mt-2">
-                    <div class="col-sm-12">
-                        <h6 class="mt-2">Заголовок новости</h6>
-                        <input type="text" class="form-control" placeholder="Введите заголовок" v-model="title" required>
-                        <h6 class="mt-2">Подзаголовок новости</h6>
-                        <input type="text" class="form-control" placeholder="Введите подзаголовок" v-model="subtitle" required>
-                        <h6 class="mt-2">Имя автора</h6>
-                        <input type="text" class="form-control" placeholder="Введите имя автора" v-model="author" required>
-                        <h6 class="mt-2">Отложенная дата публикации</h6>
-                        <input type="datetime-local" class="form-control" placeholder="Введите дату публикации" v-model="publish_at" required>
+                    <h4>Редактор новостей</h4>
+                    <div class="row mt-2">
+                        <div class="col-sm-12">
+                            <h6 class="mt-2">Заголовок новости</h6>
+                            <input type="text" class="form-control" placeholder="Введите заголовок" v-model="title"
+                                   required>
+                            <h6 class="mt-2">Подзаголовок новости</h6>
+                            <input type="text" class="form-control" placeholder="Введите подзаголовок"
+                                   v-model="subtitle" required>
+                            <h6 class="mt-2">Имя автора</h6>
+                            <input type="text" class="form-control" placeholder="Введите имя автора" v-model="author"
+                                   required>
+                            <h6 class="mt-2">Отложенная дата публикации</h6>
+                            <input type="datetime-local" class="form-control" placeholder="Введите дату публикации"
+                                   v-model="publish_at" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-sm-12">
-                        <vue-editor
-                            v-model="content">
-                        </vue-editor>
-                    </div>
-
-                </div>
-                <div class="row mt-2">
-                    <div class="col-sm-4 col-12">
-                        <button type="submit" class="btn btn-outline-primary w-100" v-if="!selected">Добавить новость</button>
-                        <button type="submit" class="btn btn-outline-primary w-100 mb-2" v-if="selected">Обновить</button>
+                    <div class="row mt-2">
+                        <div class="col-sm-12">
+                            <vue-editor
+                                v-model="content">
+                            </vue-editor>
+                        </div>
 
                     </div>
+                    <div class="row mt-2">
+                        <div class="col-sm-4 col-12">
+                            <button type="submit" class="btn btn-outline-primary w-100" v-if="!selected">Добавить
+                                новость
+                            </button>
+                            <button type="submit" class="btn btn-outline-primary w-100 mb-2" v-if="selected">Обновить
+                            </button>
 
-                    <div class="col-sm-4 col-12">
-                        <button class="btn btn-outline-warning w-100" @click="cancel" v-if="selected">Отмена</button>
+                        </div>
+
+                        <div class="col-sm-4 col-12">
+                            <button class="btn btn-outline-warning w-100" @click="cancel" v-if="selected">Отмена
+                            </button>
+                        </div>
                     </div>
-                </div>
                 </form>
             </div>
             <div class="col-md-4">
                 <h4>Последние 20 новостей</h4>
                 <div class="row mb-2">
                     <div class="col-12">
-                        <input type="search" v-model="search" class="form-control w-100" placeholder="Поиск по новостям">
+                        <input type="search" v-model="search" class="form-control w-100"
+                               placeholder="Поиск по новостям">
                     </div>
                 </div>
                 <ul class="list-group simple-list-group">
@@ -53,14 +62,17 @@
                         <h5>{{article.title}}</h5>
                         <h6>{{article.subtitle}}</h6>
                         <p><small>Автор: <strong>{{article.author}}</strong></small></p>
-                        <p v-if="article.publish_at"><small>Дата публикации: <strong>{{new Date(article.publish_at)}}</strong></small></p>
+                        <p v-if="article.publish_at"><small>Дата публикации: <strong>{{new
+                            Date(article.publish_at)}}</strong></small></p>
                         <p class="simple-news" v-html="article.content"></p>
                         <div class="row">
                             <div class="col-6">
-                                <button class="btn btn-outline-primary w-100" @click="select(article)">Редактировать</button>
+                                <button class="btn btn-outline-primary w-100" @click="select(article)">Редактировать
+                                </button>
                             </div>
                             <div class="col-6">
-                                <button class="btn btn-outline-primary  w-100" @click="remove(article.id)">Удалить</button>
+                                <button class="btn btn-outline-primary  w-100" @click="remove(article.id)">Удалить
+                                </button>
                             </div>
                         </div>
 
@@ -78,7 +90,8 @@
 
                         <li class="page-item" v-for="page in filteredPaginate"
                             :class="{'active':page===paginate.current_page}"><a class="page-link" href="#"
-                                                                                @click="goToPage(page)">{{page}}</a></li>
+                                                                                @click="goToPage(page)">{{page}}</a>
+                        </li>
 
 
                         <li class="page-item" v-if="paginate.current_page!=paginate.last_page">
@@ -94,7 +107,7 @@
         </div>
 
 
-        <div class="row d-flex justify-content-center mt-2" v-if="!isAuth&&message">
+        <div class="row d-flex justify-content-center mt-2" v-if="!checkCodeAuth&&message">
 
             <div class="col-12 col-md-6">
                 <div class="alert alert-danger" role="alert">
@@ -102,13 +115,13 @@
                 </div>
             </div>
         </div>
-        <div class="row d-flex justify-content-center mt-2" v-if="!isAuth">
+        <div class="row d-flex justify-content-center mt-2" v-if="!checkCodeAuth">
             <div class="col-12 col-md-6">
                 <input type="text" class="form-control" v-model="code" placeholder="Код авторизации">
             </div>
         </div>
 
-        <div class="row d-flex justify-content-center mt-2" v-if="!isAuth">
+        <div class="row d-flex justify-content-center mt-2" v-if="!checkCodeAuth">
             <div class="col-12 col-md-6">
                 <button class="btn btn-primary w-100" @click="auth">Вперед</button>
             </div>
@@ -125,6 +138,10 @@
             VueEditor
         },
         computed: {
+            checkCodeAuth: function () {
+                return localStorage.getItem("is_code_auth") || this.isAuth;
+
+            },
             filteredPaginate: function () {
 
 
@@ -153,17 +170,17 @@
 
         data() {
             return {
-                isAuth:false,
-                paginate:{},
+                isAuth: false,
+                paginate: {},
                 selected: null,
                 search: null,
                 articles: [],
                 content: '<h1>Напиши свою новость</h1>',
-                title:'',
-                subtitle:'',
-                author:'',
-                publish_at:null,
-                code:null,
+                title: '',
+                subtitle: '',
+                author: '',
+                publish_at: null,
+                code: null,
                 message: null,
             }
         },
@@ -172,16 +189,20 @@
             this.load()
         },
         methods: {
-            auth(){
-              axios.post("/article-auth",{
-                  code:this.code
-              }).then(resp=>{
-                  console.log(resp)
-                  this.isAuth = resp.data.is_auth
+            auth() {
+                axios.post("https://travel-club.tours/api/admin/v1/article-auth", {
+                    code: this.code
+                }).then(resp => {
+                    console.log(resp)
+                    this.isAuth = resp.data.is_auth
 
-                  if (!this.isAuth)
-                      this.message = "Ошибка авторизации!"
-              })
+
+                    if (!this.isAuth)
+                        this.message = "Ошибка авторизации!"
+
+                    if (this.isAuth)
+                        localStorage.setItem("is_code_auth", true)
+                })
             },
             select(item) {
                 this.selected = item
@@ -191,11 +212,11 @@
                 this.author = this.selected.author
 
                 let isoStr = new Date(this.selected.publish_at).toISOString()
-                this.publish_at = isoStr.substring(0,isoStr.length-1);
+                this.publish_at = isoStr.substring(0, isoStr.length - 1);
 
             },
             update() {
-                axios.put(`/update/${this.selected.id}`, {
+                axios.put(`https://travel-club.tours/api/admin/v1/update/${this.selected.id}`, {
                     content: this.content,
                     title: this.title,
                     subtitle: this.subtitle,
@@ -214,7 +235,7 @@
                 this.publish_at = null;
             },
             load(page = 1) {
-                axios.get(`/list/?page=${page}`).then(resp => {
+                axios.get(`https://travel-club.tours/api/admin/v1/list/?page=${page}`).then(resp => {
                     console.log(resp)
                     this.paginate = resp.data
 
@@ -223,11 +244,11 @@
                     delete this.paginate.data
                 })
             },
-            goToPage(page){
-              this.load(page)
+            goToPage(page) {
+                this.load(page)
             },
-            remove(id){
-                axios.delete(`/remove/${id}`).then(resp=>{
+            remove(id) {
+                axios.delete(`https://travel-club.tours/api/admin/v1/remove/${id}`).then(resp => {
                     window.location.reload()
                 })
             },
