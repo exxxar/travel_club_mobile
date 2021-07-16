@@ -84,8 +84,8 @@
                             <div id="list-scroll" class="list-group">
                                 @foreach($articles as $article)
                                 <a class="list-group-item list-group-item-action" href="#list-item-{{$article->id}}">
-                                    <h3>{{$article->title}}</h3>
-                                    <h4>{{$article->subtitle}}</h4>
+                                    <h6>{{$article->title}}</h6>
+                                    <h6>{{$article->subtitle}}</h6>
                                     <hr>
                                     <h6>Новость #{{$article->id}}</h6>
                                 </a>
