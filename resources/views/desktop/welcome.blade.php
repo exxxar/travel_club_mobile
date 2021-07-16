@@ -56,6 +56,12 @@
     <link rel="stylesheet" href="{{asset('css/desktop/main.css?ver=')}}{{env("APP_VERSION")}}">
     <link rel="stylesheet" href="{{asset('css/desktop/app.css?ver=')}}{{env("APP_VERSION")}}">
 
+    <style>
+        .scrollspy-news {
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    </style>
 
 </head>
 <body class="pr-0">
@@ -72,34 +78,64 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body articles">
-                    @foreach($articles as $article)
-                        <h6>Новость #{{$article->id}}</h6>
-                        {!! $article->content !!}
-                    <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small>
-                        <hr>
-                    @endforeach
 
-                    {{$articles->links()}}
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div id="list-scroll" class="list-group">
+                                @foreach($articles as $article)
+                                <a class="list-group-item list-group-item-action" href="#list-item-{{$article->id}}">
+                                    <h3>{{$article->title}}</h3>
+                                    <h4>{{$article->subtitle}}</h4>
+                                    <hr>
+                                    <h6>Новость #{{$article->id}}</h6>
+                                </a>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+
+                            <div data-spy="scroll" data-target="#list-scroll" data-offset="0" class="scrollspy-news">
+                            @foreach($articles as $article)
+                                <h3 id="list-item-{{$article->id}}">{{$article->title}}</h3>
+                                <h4>{{$article->subtitle}}</h4>
+                                <hr>
+                                <h6>Новость #{{$article->id}}</h6>
+                                {!! $article->content !!}
+                                <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small>
+                                <hr>
+                            @endforeach
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                        {{$articles->links()}}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="travel-news-btn pulse">
-        <button type="button" class="btn btn-link btn-round text-uppercase font-weight-bold" style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
-           News
-        </button>
-    </div>
+        <div class="travel-news-btn pulse">
+            <button type="button" class="btn btn-link btn-round text-uppercase font-weight-bold"
+                    style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
+                News
+            </button>
+        </div>
 
-@endisset
+        @endisset
 
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-<script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
-<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
-<script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
+        <script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
+        <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
+        <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js"
+                defer></script>
 
-<script src="{{asset('/js/desktop/app.js?ver=')}}{{env("APP_VERSION")}}" defer></script>
+        <script src="{{asset('/js/desktop/app.js?ver=')}}{{env("APP_VERSION")}}" defer></script>
 
 
 </body>

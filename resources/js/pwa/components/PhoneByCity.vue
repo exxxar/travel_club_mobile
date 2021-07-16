@@ -6,13 +6,13 @@
                 <span class="phone" v-if="selected.item.parent_id==2134||selected.item.parent_id==2173"> 071-339-90-89 <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
                 <span class="phone" v-else>8-800-222-89-68<span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
             </p>
-            <p class="m-0 select-phone" v-else><span class="phone">8-800-222-89-68</span> <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></p>
+            <p class="m-0 select-phone selected-text" v-else><span class="phone">8-800-222-89-68</span> <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></p>
         </div>
         <p @click="openFilter()" v-if="!selected&&!is_filter" class="selected-text m-0"><i class="fas fa-sign-in-alt"></i>Нажмите для выбора города </p>
 
         <input type="text" class="form-control mb-2" placeholder="Ваш город" v-model="search" v-if="is_filter" @keydown.esc="openFilter">
         <ul class="city-list" v-if="is_filter&&filteredArray.length>0">
-            <li v-for="item in filteredArray" @click="selectCity(item)">
+            <li v-for="item in filteredArray" @click="selectCity(item)" class="w-100">
 
                 <span v-if="item.item.id==118">Донецк (Донецкая область)</span>
                 <span v-else>{{item.item.name}}</span>
