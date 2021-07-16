@@ -86,7 +86,7 @@
     </div>
 
     <div class="travel-news-btn pulse">
-        <button type="button" class="btn btn-link btn-round" style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
+        <button type="button" class="btn btn-link btn-round text-uppercase font-weight-bold" style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
            News
         </button>
     </div>
