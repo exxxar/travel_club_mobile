@@ -24,6 +24,8 @@ Vue.use(skeleton)
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
+Vue.use(require('vue-moment'));
+
 window.eventBus = new Vue();
 // Vue.use(require('vue-moment'));
 

@@ -28,7 +28,7 @@
 
 
                 <div class="item ">
-                    <div class="card">
+                    <div class="card pulse">
                         <a href="https://travel-club.tours/m/tours" class="travel-card"
                            aria-label="Подобрать путеествие">
                             <img v-lazy="'/img/travel/1.png'" class="card-img-top" alt="image">
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="item">
-                    <div class="card card-with-blue-line" text="Новинка">
+                    <div class="card card-with-blue-line pulse" text="Новинка">
                         <a href="https://travel-club.tours/m/adventure" class="travel-card" aria-label="Туры по России">
                             <img v-lazy="'/img/travel/4.png'" class="card-img-top" alt="image">
                         </a>
@@ -53,7 +53,7 @@
 
 
                 <div class="item">
-                    <div class="card">
+                    <div class="card pulse">
                         <a href="https://travel-club.tours/m/flies" class="travel-card"
                            aria-label="Подобрать авиобилеты">
                             <img v-lazy="'/img/travel/2.png'" class="card-img-top" alt="image">

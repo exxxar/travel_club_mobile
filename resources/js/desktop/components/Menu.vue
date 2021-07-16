@@ -49,7 +49,7 @@
           <!--      <div class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" v-if="isLoggedIn" @click="toProfile">
                     <span><i class="icon icon-person"></i>Личный кабинет</span>
                 </div>-->
-                <a class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" href="/simple-profile">
+                <a class="nav-link account-link bm-custom-active" style="cursor:pointer; border-radius: 5px; max-width: 300px" href="/simple-profile">
                     <span><i class="icon icon-person"></i>Личный кабинет</span>
                 </a>
                 <a v-if="$route.name=='landing'" class="nav-link" v-for="link in landing_links" href=""
@@ -209,6 +209,17 @@
     }
 </script>
 <style>
+    .bm-custom-active {
+        max-width: 300px;
+        background: linear-gradient(#1d8cf8, #5eacff);
+
+        text-align: center;
+        color: white;
+
+        box-shadow: 1px 1px 3px 0px #777777;
+    }
+
+
     .slider-theme-switch .custom-control-input:checked ~ .custom-control-label::before {
         color:  #f08b23 !important;
         border-color: #f1e5d9 !important;

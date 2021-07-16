@@ -43,11 +43,10 @@
         },
         mounted() {
 
-            //axios.defaults.baseURL = 'http://localhost:8000/api/desktop/v1/';
+           // axios.defaults.baseURL = 'http://localhost:8000/api/desktop/v1/';
 
             axios.get('getCitiesUR').then(resp => {
                 this.countries = resp.data;
-                console.log(resp.data)
             })
 
         },
@@ -63,6 +62,11 @@
                 this.selected = null
             },
             filteredList() {
+
+                console.log("countries=>",this.countries)
+                if (this.countries.length=== 0)
+                    return [];
+
                 let tmp_uk = this.countries[1].areas;
                 let tmp_rf = this.countries[0].areas;
                 let tmp_msk = this.countries[2];

@@ -86,8 +86,8 @@
     </div>
 
     <div class="travel-news-btn pulse">
-        <button type="button" class="btn btn-link btn-round " style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
-            <i class="far fa-newspaper"></i>
+        <button type="button" class="btn btn-link btn-round" style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
+           News
         </button>
     </div>
 

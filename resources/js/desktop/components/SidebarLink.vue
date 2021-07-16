@@ -4,7 +4,7 @@
                class="nav-item"
                v-bind="$attrs"
                tag="li">
-        <a class="nav-link">
+        <a class="nav-link" v-bind:class="{'selected-link':is_active}">
             <slot>
                 <i v-if="icon" :class="icon"></i>
                 <p>{{name}}</p>
@@ -28,6 +28,10 @@
             }
         },
         props: {
+            is_active:{
+              type:Boolean,
+              default: false,
+            },
             name: String,
             icon: String,
             tag: {
@@ -46,6 +50,7 @@
             }
         },
         mounted() {
+
             if (this.addLink) {
                 this.addLink(this);
             }
@@ -61,5 +66,6 @@
     };
 </script>
 <style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">
+
 
 </style>

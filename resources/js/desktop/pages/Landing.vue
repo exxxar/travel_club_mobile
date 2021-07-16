@@ -1128,7 +1128,7 @@
                         <div class="wrap-col text-center">
                             <h3 class="widget-title">Контакты</h3>
                             <p  class="text-white">Телефоны:</p>
-                            <strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22<br>(095) 935-99-90</strong>
+                            <phone-by-city-form class="phone-by-city mb-0"></phone-by-city-form>
                             <p class="text-white">Viber, WhatsApp:</p>
                             <strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
                             <p  class="text-white">Telegram:</p><strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
@@ -1246,6 +1246,13 @@
 <style lang="scss">
     @import "@/sass/desktop/landing.scss";
 
+    .phone-by-city {
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px white solid;
+        color: white;
+        margin-bottom: 10px;
+    }
 
     /* ---------------------------------------------------------------------------- */
     /* -------------------------------------Footer--------------------------------- */

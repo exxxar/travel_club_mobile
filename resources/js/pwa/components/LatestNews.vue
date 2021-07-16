@@ -11,7 +11,8 @@
                 </h5>
 
         <news-item-block :article="article"/>
-        <div class="section mt-4">
+                <hr>
+        <div class="section mt-2">
             <a href="https://travel-club.tours/m/all-news" aria-label="Начать прямо сейчас"
                class="btn btn-orange w-100"><i class="fas fa-arrow-right mr-2"></i>
                 ВСЕ НОВОСТИ

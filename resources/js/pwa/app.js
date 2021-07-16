@@ -13,6 +13,9 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+import VueMoment from 'vue-moment'
+
+Vue.use(VueMoment);
 
 import VueMarkdown from 'vue-markdown'
 
