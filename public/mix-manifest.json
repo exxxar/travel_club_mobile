@@ -1,7 +1,7 @@
 {
     "/js/admin/app.js": "/js/admin/app.js?id=0a1e482be70f188cc990",
     "/js/desktop/app.js": "/js/desktop/app.js?id=204131c4b674133d36d8",
-    "/css/desktop/app.css": "/css/desktop/app.css?id=53850c33db29f4f63455",
+    "/css/desktop/app.css": "/css/desktop/app.css?id=90df9ee2bcd280c0a061",
     "/css/pwa/app.css": "/css/pwa/app.css?id=12ff53512e3d31859973",
     "/css/admin/app.css": "/css/admin/app.css?id=353911cfe9468de837f3",
     "/js/pwa/app.js": "/js/pwa/app.js?id=279db03f4c52b1ab386b",
@@ -14,7 +14,7 @@
     "/css/pwa/theme.min.css": "/css/pwa/theme.min.css?id=f56e620e874324e7c68a",
     "/css/assets/app.min.css": "/css/assets/app.min.css?id=7b3c73bf6f0d0dc6a81a",
     "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=204131c4b674133d36d8",
-    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=53850c33db29f4f63455",
+    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=90df9ee2bcd280c0a061",
     "/js/admin/app.min.js": "/js/admin/app.min.js?id=0a1e482be70f188cc990",
     "/css/admin/app.min.css": "/css/admin/app.min.css?id=353911cfe9468de837f3"
 }

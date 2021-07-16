@@ -1246,6 +1246,7 @@
 <style lang="scss">
     @import "@/sass/desktop/landing.scss";
 
+
     .city-list {
         position: absolute;
         background: white;
@@ -1270,6 +1271,11 @@
         border: 2px white solid;
         margin-bottom: 10px;
     }
+
+    .phone-by-city p {
+        color: white;
+    }
+
 
     /* ---------------------------------------------------------------------------- */
     /* -------------------------------------Footer--------------------------------- */
