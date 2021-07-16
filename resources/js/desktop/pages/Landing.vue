@@ -1246,6 +1246,24 @@
 <style lang="scss">
     @import "@/sass/desktop/landing.scss";
 
+    .city-list {
+        position: absolute;
+        background: white;
+        /* border-bottom: 2px orange solid; */
+        box-shadow: 1px 1px 2px 0px #858585;
+        padding: 21px;
+
+        li {
+            list-style: none;
+            cursor: pointer;
+
+            padding: 0;
+            width: 100%;
+            text-align: left;
+
+        }
+    }
+
     .phone-by-city {
         padding: 10px;
         border-radius: 5px;
