@@ -8,7 +8,7 @@
             </p>
             <p class="m-0 select-phone" v-else><span class="phone">8-800-222-89-68</span> <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></p>
         </div>
-        <p @click="openFilter()" v-if="!selected&&!is_filter" class="m-0"><i class="fas fa-sign-in-alt"></i>Нажмите для выбора города </p>
+        <p @click="openFilter()" v-if="!selected&&!is_filter" class="selected-text m-0"><i class="fas fa-sign-in-alt"></i>Нажмите для выбора города </p>
 
         <input type="text" class="form-control mb-2" placeholder="Ваш город" v-model="search" v-if="is_filter" @keydown.esc="openFilter">
         <ul class="city-list" v-if="is_filter&&filteredArray.length>0">
@@ -94,13 +94,15 @@
                     })
                 })
 
-                this.filteredArray = tmp_summary.slice(0, 20)
+                this.filteredArray = tmp_summary.slice(0, 10)
 
             }
         }
     }
 </script>
 <style lang="scss">
+
+
     .select-phone {
         .phone {
             text-decoration: underline;
@@ -117,6 +119,15 @@
         li {
             list-style: none;
             cursor: pointer;
+
+            width: 100%;
+            padding: 0;
+            text-align: left;
+
         }
+    }
+
+    .selected-text {
+        color:white;
     }
 </style>

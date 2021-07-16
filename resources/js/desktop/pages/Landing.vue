@@ -1250,7 +1250,6 @@
         padding: 10px;
         border-radius: 5px;
         border: 2px white solid;
-        color: white;
         margin-bottom: 10px;
     }
 
