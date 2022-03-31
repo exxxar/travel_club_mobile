@@ -23,15 +23,15 @@ class ArticleController extends Controller
 
     public function isAuth(Request $request)
     {
-        $code = env("ADMIN_NEWS_CODE")??null;
+        $code = env("ADMIN_NEWS_CODE") ?? null;
 
         if (is_null($code))
-            return response()->json(["is_auth"=>false]);
+            return response()->json(["is_auth" => false]);
 
-        if ($code!==$request->code)
-            return response()->json(["is_auth"=>false]);
+        if ($code !== $request->code)
+            return response()->json(["is_auth" => false]);
 
-        return response()->json(["is_auth"=>true]);
+        return response()->json(["is_auth" => true]);
     }
 
     public function getAllNews()
@@ -41,6 +41,17 @@ class ArticleController extends Controller
             ->take(20)
             ->skip(0)
             ->get());
+    }
+
+    public function getSingleNews($id)
+    {
+
+        $article = Article::where("id", $id)
+            ->first();
+        if (!is_null($article))
+            return response()->json($article);
+        return response()->noContent();
+
     }
 
     public function getLatestNews()

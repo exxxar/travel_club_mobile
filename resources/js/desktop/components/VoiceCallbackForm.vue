@@ -13,7 +13,7 @@
                         <div v-for="(record, index) in recordings" :key="index" class="recorded-item justify-content-between">
                             <div class="audio-container w-100">
 <!--                                <audio :src="record.src" controls/>-->
-                                <audio-player :audio="record" class="w-100"></audio-player>
+                                <audio-player-component :audio="record" class="w-100"></audio-player-component>
                             </div>
                             <div>
                                 <button @click="removeRecord(index)" class="btn btn-primary" style="padding: 10px !important;max-width:50px">

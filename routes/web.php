@@ -67,6 +67,7 @@ Route::group(["prefix" => "/m"], function () {
     Route::view("/mobile","pwa.pages.index")->name("m.index");
     Route::view("/desktop","pwa.welcome")->name("m.desktop");
     Route::view("/all-news","pwa.pages.news")->name("news");
+    Route::view("/single-news","pwa.pages.news-single")->name("single-news");
 
     Route::view('/about', "pwa.pages.about")->name("about");
     Route::view('/contact', "pwa.pages.contact")->name("contact");

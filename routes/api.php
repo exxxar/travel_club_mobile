@@ -34,6 +34,7 @@ Route::prefix("pwa")->group(function () {
         Route::get('/getCitiesUR', 'Desktop\HomeController@getCities');
         Route::get('/latest-news', 'ArticleController@getLatestNews');
         Route::get('/all-news', 'ArticleController@getAllNews');
+        Route::get('/single-news/{id}', 'ArticleController@getSingleNews');
 
 
         Route::any('bot/{bot}', 'BotController@handle');

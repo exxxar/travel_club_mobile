@@ -87,7 +87,6 @@
                                     <h6>{{$article->title}}</h6>
                                     <h6>{{$article->subtitle}}</h6>
                                     <hr>
-                                    <h6>Новость #{{$article->id}}</h6>
                                 </a>
                                 @endforeach
                             </div>
@@ -96,13 +95,11 @@
 
                             <div data-spy="scroll" data-target="#list-scroll" data-offset="0" class="scrollspy-news">
                             @foreach($articles as $article)
-                                <h3 id="list-item-{{$article->id}}">{{$article->title}}</h3>
+                                <h3 id="list-item-{{$article->id}}"><a target="_blank" href="/m/single-news?id={{$article->id}}">{{$article->title}}</a></h3>
                                 <h4>{{$article->subtitle}}</h4>
                                 <hr>
-                                <h6>Новость #{{$article->id}}</h6>
                                 {!! $article->content !!}
-                                <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small>
-                                <hr>
+                                <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small><hr>
                             @endforeach
                             </div>
 

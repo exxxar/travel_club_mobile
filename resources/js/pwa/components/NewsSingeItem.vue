@@ -1,13 +1,7 @@
 <template>
 
-
-    <div class="blog-post" @click="isOpened = !isOpened">
-        <div class="mb-2" v-bind:class="{'img-active':isOpened}">
-            <img v-lazy="img" alt="image" class="imaged square w-100">
-        </div>
-
-
-        <h1 class="title"><a href="/m/single-news?id=5" target="_blank">{{article.title}}</a></h1>
+    <div class="blog-post">
+        <h1 class="title">{{article.title}}</h1>
 
         <div class="post-header">
             <div>
@@ -18,12 +12,7 @@
             </div>
             {{new Date(article.created_at) | moment("dddd, MMMM Do YYYY, h:mm:ss a") }}
         </div>
-        <div class="post-body" v-if="!isOpened">
-            <button class="btn btn-outline-danger w-100">
-                Читать новость
-            </button>
-        </div>
-        <div v-html="article.content" v-if="isOpened">
+        <div v-html="article.content" class="post-body-simple">
 
         </div>
     </div>
@@ -59,23 +48,19 @@
         object-fit: cover;
     }
 
-    .header-post {
-        position: sticky;
-        top: 20px;
-    }
+  .post-body-simple {
+      padding: 10px;
+      p {
+          font-size: 14px;
+          line-height: 150%;
+          text-align: justify;
+          &:first-letter {
+              margin-left: 50px;
+          }
 
-
-
-    .img-active {
-        height: 164px;
-        overflow: hidden;
-        transition: 1s;
-        img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-            filter: grayscale(0.75);
-            transition: 1s;
-        }
-    }
+          img {
+              margin-bottom: 10px;
+          }
+      }
+  }
 </style>
