@@ -54,10 +54,10 @@
           font-size: 14px;
           line-height: 150%;
           text-align: justify;
-          &:first-letter {
+        /*  &:first-letter {
               margin-left: 50px;
           }
-
+*/
           img {
               margin-bottom: 10px;
           }
