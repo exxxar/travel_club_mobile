@@ -9,10 +9,14 @@
         <div class="section full mt-2">
             <h1 class="section-title">Туры по России</h1>
 
+            <iframe src="/sletat-ru" style="border:none; width: 100%; height:100%; min-height: 700px;"></iframe>
 
-            <div class="s-partnership">
-                d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D
-            </div>
+
+            <!--
+                        <div class="s-partnership">
+                            d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D
+                        </div>
+            -->
 
 
         </div>

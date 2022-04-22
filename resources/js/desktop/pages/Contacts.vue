@@ -25,7 +25,6 @@
                                 </div>
                                 <div class="info_text">
                                     <p><a href="mailto:travelClub@gmail.com">travelClub@gmail.com</a></p>
-                                    <p><a href="mailto:travelClub@gmail.com">travelClub@gmail.com</a></p>
                                 </div>
                             </div>
                             <div class="info_list">
@@ -33,8 +32,7 @@
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <div class="info_text">
-                                    <p><a href="tel:+27882911891">+38 (071) 000-00-00</a></p>
-                                    <p><a href="tel:+27882911891">+38 (071) 000-00-00</a></p>
+                                    <p><a href="tel:88001019666">8-800-101-96-66</a></p>
                                 </div>
                             </div>
                         </div>

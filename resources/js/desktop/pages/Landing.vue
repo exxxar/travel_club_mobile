@@ -205,6 +205,58 @@
                 </div>
             </div>
         </section>
+
+
+<!--
+        <section id="sletatru" class="tablet desktop mb-5" style="height:100%;">
+            <div class="container m-auto" style="height: 100%;">
+                <div class="row m-auto tablet desktop" style="height: 100%; width: 100%;">
+
+
+                    <div class="col-12 col-md-12 col-sm-12 tablet-travel-card-col m-auto">
+                        <iframe src="/sletat-ru" style="border:none; width: 100%; height:100%; min-height: 700px;"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+-->
+
+<!--
+               <section id="news" class="tablet desktop mb-5" style="height:100%;">
+                    <div class="container m-auto" style="height: 100%;">
+                        <div class="row m-auto tablet desktop" style="height: 100%; width: 100%;">
+
+
+                            <div class="col-12 col-md-12 col-sm-12 tablet-travel-card-col m-auto">
+                                <div class="mr-0 ml-auto" style="height: auto">
+                                    <div style="width: 100%; height: 100%;"
+                                         class="row m-auto justify-content-center align-items-center">
+
+                                        <div class="col-12 col-md-12 col-sm-12 p-0">
+                                            <div class="row mx-auto mt-4 mb-3 d-flex justify-content-center flex-wrap"
+                                                 style="color: #062348; font-size: 14px; font-weight: 700; width: 80%; text-align: justify">
+
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class="col-10">
+                                                       <news-list :visible_title="false"/>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+-->
+
+
         <section id="why" class="tablet desktop my-5" style="height:100%;">
             <div class="container m-auto" style="height: 100%;">
                 <div class="row m-auto tablet desktop" style="height: 100%; width: 100%;">
@@ -897,11 +949,36 @@
 
             <div class="sidebarProducts">
                 <div class="row">
+                    <h2>Ростов-на-Дону</h2>
+                    <div class="col-12">
+                        <p>Социалистическая 11 оф 2А
+                        </p>
+                        <p>8 800 101-96-66</p>
+                        <p>8 800 222-89-68</p>
+                        <p>travelclubrnd@bk.ru</p>
+                        <p>+7-988-253-41-49</p>
+                        <h4> Режим работы:</h4>
+                        <p>Пн-Птн 10 00 – 18 00</p>
+                        <p>Суббота 10 00 – 17 00</p>
+                        <p>Воскресенье – выходной</p>
+
+                        <employee-list :city="'Ростов-на-Дону'"/>
+
+                        <div class="ya-map"><a
+                            href="https://yandex.ru/MAPS/39/rostov-na-donu/?utm_medium=mapframe&utm_source=maps"
+                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Ростов‑на‑Дону</a><a
+                            href="https://yandex.ru/MAPS/39/rostov-na-donu/house/sotsialisticheskaya_ulitsa_11_27/Z0AYcQdgTUQCQFptfX5wdnhkYg==/?ll=39.700415%2C47.217476&utm_medium=mapframe&utm_source=maps&z=16.65"
+                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Социалистическая улица, 11/27
+                            — Яндекс.Карты</a>
+                            <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ7XX1KD" allowfullscreen="true"></iframe>
+                        </div>
+                    </div>
 
                     <div class="col-12">
                         <h2>Донецк</h2>
                         <p>Ул. Артема 100Д
                         </p>
+                        <p> 8-800-101-96-66 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i class="fab fa-viber"></i></span></p>
                         <p> 071-339-90-89 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i
                             class="fab fa-viber"></i></span></p>
                         <h4> Режим работы:</h4>
@@ -943,29 +1020,7 @@
                         </div>
 
                     </div>
-                    <h2>Ростов-на-Дону</h2>
-                    <div class="col-12">
-                        <p>Социалистическая 11 оф 2А
-                        </p>
-                        <p>8 800 222-89-68</p>
-                        <p>travelclubrnd@bk.ru</p>
-                        <p>+7-988-253-41-49</p>
-                        <h4> Режим работы:</h4>
-                        <p>Пн-Птн 10 00 – 18 00</p>
-                        <p>Суббота 10 00 – 17 00</p>
-                        <p>Воскресенье – выходной</p>
 
-                        <employee-list :city="'Ростов-на-Дону'"/>
-
-                        <div class="ya-map"><a
-                            href="https://yandex.ru/MAPS/39/rostov-na-donu/?utm_medium=mapframe&utm_source=maps"
-                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Ростов‑на‑Дону</a><a
-                            href="https://yandex.ru/MAPS/39/rostov-na-donu/house/sotsialisticheskaya_ulitsa_11_27/Z0AYcQdgTUQCQFptfX5wdnhkYg==/?ll=39.700415%2C47.217476&utm_medium=mapframe&utm_source=maps&z=16.65"
-                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Социалистическая улица, 11/27
-                            — Яндекс.Карты</a>
-                            <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ7XX1KD" allowfullscreen="true"></iframe>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1128,7 +1183,8 @@
                         <div class="wrap-col text-center">
                             <h3 class="widget-title">Контакты</h3>
                             <p  class="text-white">Телефоны:</p>
-                            <phone-by-city-form class="phone-by-city mb-0"></phone-by-city-form>
+                            <p lass="text-white"><strong style="font-size: 18px;color:#A9A9A9;">8-800-101-96-66</strong></p>
+<!--                            <phone-by-city-form class="phone-by-city mb-0"></phone-by-city-form>-->
                             <p class="text-white">Viber, WhatsApp:</p>
                             <strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
                             <p  class="text-white">Telegram:</p><strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
@@ -1156,7 +1212,7 @@
                 <div class="bottom-footer">
                     <div class="copyright">
 
-                        Donetsk &nbsp;|&nbsp;www.travel-club.tours&nbsp;|&nbsp; 2017 – 2021
+                        www.travel-club.tours&nbsp;|&nbsp; 2017 – 2022
                     </div>
                 </div>
             </div>

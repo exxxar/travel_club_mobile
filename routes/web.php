@@ -33,6 +33,8 @@ Route::get("/setw", function () {
     return "Success";
 });
 
+Route::view("/sletat-ru","desktop.sletat");
+
 
 Route::get('/', function (Request $request) {
     if (Agent::isMobile())

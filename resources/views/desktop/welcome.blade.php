@@ -83,56 +83,58 @@
                         <div class="col-sm-4">
                             <div id="list-scroll" class="list-group">
                                 @foreach($articles as $article)
-                                <a class="list-group-item list-group-item-action" href="#list-item-{{$article->id}}">
-                                    <h6>{{$article->title}}</h6>
-                                    <h6>{{$article->subtitle}}</h6>
-                                    <hr>
-                                </a>
+                                    <a class="list-group-item list-group-item-action"
+                                       href="#list-item-{{$article->id}}">
+                                        <h6>{{$article->title}}</h6>
+                                        <h6>{{$article->subtitle}}</h6>
+                                        <hr>
+                                    </a>
                                 @endforeach
                             </div>
                         </div>
                         <div class="col-sm-8">
 
                             <div data-spy="scroll" data-target="#list-scroll" data-offset="0" class="scrollspy-news">
-                            @foreach($articles as $article)
-                                <h3 id="list-item-{{$article->id}}"><a target="_blank" href="/m/single-news?id={{$article->id}}">{{$article->title}}</a></h3>
-                                <h4>{{$article->subtitle}}</h4>
-                                <hr>
-                                {!! $article->content !!}
-                                <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small><hr>
-                            @endforeach
+                                @foreach($articles as $article)
+                                    <h3 id="list-item-{{$article->id}}">{{$article->title}}<a target="_blank"
+                                                                                              class="copy"
+                                                                                              href="/m/single-news?id={{$article->id}}"><i
+                                                class="fa-solid fa-link-simple"></i></a></h3>
+                                    <h4>{{$article->subtitle}}</h4>
+                                    <hr>
+                                    {!! $article->content !!}
+                                    <small><em>Добавлено {{\Illuminate\Support\Carbon::parse($article->created_at)}}</em></small>
+                                    <hr>
+                                @endforeach
                             </div>
 
                         </div>
                     </div>
 
 
-
-
-
-                        {{$articles->links()}}
-                    </div>
+                    {{$articles->links()}}
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="travel-news-btn pulse">
-            <button type="button" class="btn btn-link btn-round text-uppercase font-weight-bold"
-                    style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
-                News
-            </button>
-        </div>
+    <div class="travel-news-btn pulse">
+        <button type="button" class="btn btn-link btn-round text-uppercase font-weight-bold"
+                style="width: 75px;height: 75px;" data-toggle="modal" data-target="#newsModal">
+            News
+        </button>
+    </div>
 
-        @endisset
+@endisset
 
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-        <script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
-        <script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
-        <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js"
-                defer></script>
+<script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
+<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
+<script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js"
+        defer></script>
 
-        <script src="{{asset('/js/desktop/app.js?ver=')}}{{env("APP_VERSION")}}" defer></script>
+<script src="{{asset('/js/desktop/app.js?ver=')}}{{env("APP_VERSION")}}" defer></script>
 
 
 </body>

@@ -10,7 +10,9 @@
             </a>
         </div>
         <div class="row m-auto desktop d-flex align-items-center">
-            <phone-by-city-form class="mr-5 mb-0"></phone-by-city-form>
+
+            <p class="mr-5 mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">8-800-101-96-66</p>
+<!--            <phone-by-city-form class="mr-5 mb-0"></phone-by-city-form>-->
        <!--     <a class="mr-5 mb-0"
                :href="'tel:'+unformatted_phone"
                style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase"

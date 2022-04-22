@@ -86,7 +86,7 @@
                                         </div>
                                         <div class="col-11 p-0">
                                             <div class="row w-100 m-auto">
-                                                <a class="ml-2 mb-0" style="color:white" href="tel:+380713399089">071-339-90-89</a><i
+                                                <a class="ml-2 mb-0" style="color:white" href="tel:88001019666">8-800-101-96-66</a><i
                                                 class=" mx-1 icon fab fa-viber" style="font-weight: 500;"></i><i
                                                 class="icon icon-whatsapp"></i>
                                             </div>

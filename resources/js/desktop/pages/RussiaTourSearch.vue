@@ -11,8 +11,11 @@
         </quick-menu>
         <div class="row w-100 m-auto align-items-center justify-content-center">
 
-            <div class="container" style="min-height: 100px;">
-                <div class="s-partnership" style="display:none;margin-top:60px;min-height: 200px">d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D</div>
+            <div class="container" style="min-height: 700px;">
+                <iframe src="/sletat-ru" style="border:none; width: 100%; height:100%; min-height: 700px;"></iframe>
+
+
+                <!--                <div class="s-partnership" style="display:none;margin-top:60px;min-height: 200px">d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D</div>-->
             </div>
 
         </div>

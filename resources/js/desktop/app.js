@@ -240,6 +240,7 @@ import AdminMenu from './mobile/components/AdminMenu.vue';
 Vue.component('admin-menu', AdminMenu);
 
 Vue.component('employee-list', require('./components/Employees/EmployeeList.vue').default);
+Vue.component('news-list', require('./components/News/NewsList.vue').default);
 
 new Vue({
     router,
