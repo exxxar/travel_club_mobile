@@ -82,9 +82,7 @@ var render = function render() {
       position: "'bottom-left'",
       backgroundColor: "#f08b23"
     }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "tv-search-form tv-moduleid-9961474"
-  }), _vm._v(" "), _c("section", {
+  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("section", {
     staticClass: "mb-5",
     staticStyle: {
       height: "100%"
@@ -167,7 +165,7 @@ var render = function render() {
       y: "6",
       fill: "rgba(255,153,0, 1)"
     }
-  })])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  })])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "inner-content inner-flex"
   }, [_c("svg", {
     staticClass: "waves",
@@ -202,13 +200,13 @@ var render = function render() {
     staticClass: "col-12 col-md-5 tablet-footer-col-12 mx-auto"
   }, [_c("div", {
     staticClass: "row w-100 mx-auto mt-5 justify-content-center"
-  }, [_vm._m(1), _vm._v(" "), _vm.locationByIp.region == "Donetsk" ? _c("div", {
+  }, [_vm._m(2), _vm._v(" "), _vm.locationByIp.region == "Donetsk" ? _c("div", {
     staticClass: "col-12 col-sm-6 p-0"
-  }, [_vm._m(2)]) : _vm._e(), _vm._v(" "), _vm.locationByIp.region == "Donetsk" ? _c("div", {
+  }, [_vm._m(3)]) : _vm._e(), _vm._v(" "), _vm.locationByIp.region == "Donetsk" ? _c("div", {
     staticClass: "col-12 col-sm-6 p-0"
-  }, [_vm._m(3)]) : _vm._e(), _vm._v(" "), _vm.locationByIp.region != "Donetsk" ? _c("div", {
+  }, [_vm._m(4)]) : _vm._e(), _vm._v(" "), _vm.locationByIp.region != "Donetsk" ? _c("div", {
     staticClass: "col-sm-10 col-12 p-0"
-  }, [_vm._m(4)]) : _vm._e()])]), _vm._v(" "), _c("div", {
+  }, [_vm._m(5)]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "col-6 col-md-3 col-sm-12 tablet-footer-col mx-auto"
   }, [_c("div", {
     staticClass: "row mt-5 mx-auto",
@@ -261,9 +259,19 @@ var render = function render() {
     on: {
       click: _vm.toHotelSearch
     }
-  }, [_vm._v("Познавай")])])])])]), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)])])])], 1);
+  }, [_vm._v("Познавай")])])])])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7)])])])], 1);
 };
 var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("section", {
+    staticStyle: {
+      "margin-top": "52px"
+    }
+  }, [_c("div", {
+    staticClass: "tv-search-form tv-moduleid-9961474"
+  })]);
+}, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
