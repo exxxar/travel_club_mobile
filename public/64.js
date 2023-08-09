@@ -1,1 +1,290 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[64],{X6s1:function(t,a,i){"use strict";i.r(a);var s={name:"RussiaTourSearch",data:function(){return{icons:["fa fa-comment","fas fa-microphone","fas fa-phone"],menuUrlList:["#contactModalBox","#customVoiceModal","#customPhoneModal"],titles:["Написать сообщение","Записать голосовое","Заказать звонок"]}},computed:{locationByIp:function(){return this.$store.getters.locationByIp}},mounted:function(){},methods:{toTourSearch:function(){this.$router.push("/tour-search")},toAviaSearch:function(){this.$router.push("/avia-search")},toHotelSearch:function(){this.$router.push("/russia-tour-search")}}},e=(i("vdcA"),i("KHd+")),o=Object(e.a)(s,(function(){var t=this,a=t.$createElement,i=t._self._c||a;return i("div",[i("quick-menu",{attrs:{"menu-count":3,"icon-class":t.icons,titles:t.titles,menuUrlList:t.menuUrlList,position:"'bottom-left'",backgroundColor:"#f08b23"}}),t._v(" "),t._m(0),t._v(" "),i("section",{staticClass:"mb-5",staticStyle:{height:"100%"}},[i("div",{staticClass:"container m-auto",staticStyle:{height:"100%"}},[i("div",{staticClass:"row m-auto justify-content-center align-items-center w-100 h-100"},[i("div",{staticClass:"col-md-4"},[i("promocode-image",{attrs:{title1:"Оформи",title2:"тур",pos:"310"}})],1),t._v(" "),i("div",{staticClass:"col-md-6"},[i("div",{staticClass:"row family-row family-description m-auto",staticStyle:{width:"80%",color:"#062348","font-size":"17px","font-weight":"900","font-family":"'Open Sans'"}},[i("p",{staticClass:"text-center"},[t._v("\n                            Не получилось определиться самому? Оформи заявку и наш менеджер тебе поможет!\n                        ")]),t._v(" "),i("b-button",{staticClass:"btn-travel btn-group-lg mt-2 mx-auto",attrs:{href:"/tour-module"}},[t._v("\n                            Оформить заявку\n                        ")])],1)])])])]),t._v(" "),i("section",{staticClass:"footer",staticStyle:{overflow:"hidden"},attrs:{id:"contacts"}},[i("div",[i("svg",{staticClass:"waves",attrs:{xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",viewBox:"0 24 150 28",preserveAspectRatio:"none","shape-rendering":"auto"}},[i("defs",[i("path",{attrs:{id:"gentle-wave",d:"M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"}})]),t._v(" "),i("g",{staticClass:"parallax"},[i("use",{attrs:{"xlink:href":"#gentle-wave",x:"48",y:"0",fill:"rgba(255,255,153, 0.7)"}}),t._v(" "),i("use",{attrs:{"xlink:href":"#gentle-wave",x:"48",y:"3",fill:"rgba(255,204,102, 0.6)"}}),t._v(" "),i("use",{attrs:{"xlink:href":"#gentle-wave",x:"48",y:"6",fill:"rgba(255,153,0, 1)"}})])])]),t._v(" "),t._m(1),t._v(" "),i("div",{staticClass:"inner-content inner-flex"},[i("svg",{staticClass:"waves",attrs:{xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",viewBox:"0 24 150 28",preserveAspectRatio:"none","shape-rendering":"auto"}},[i("defs",[i("path",{attrs:{id:"gentle-wave",d:"M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"}})]),t._v(" "),i("g",{staticClass:"parallax"},[i("use",{attrs:{"xlink:href":"#gentle-wave",x:"48",y:"1",fill:"#062348"}})])]),t._v(" "),i("div",{staticClass:"row w-100 m-auto",staticStyle:{height:"100%",width:"100%"}},[i("div",{staticClass:"col-12 col-md-5 tablet-footer-col-12 mx-auto"},[i("div",{staticClass:"row w-100 mx-auto mt-5 justify-content-center"},[t._m(2),t._v(" "),"Donetsk"==t.locationByIp.region?i("div",{staticClass:"col-12 col-sm-6 p-0"},[t._m(3)]):t._e(),t._v(" "),"Donetsk"==t.locationByIp.region?i("div",{staticClass:"col-12 col-sm-6 p-0"},[t._m(4)]):t._e(),t._v(" "),"Donetsk"!=t.locationByIp.region?i("div",{staticClass:"col-sm-10 col-12 p-0"},[t._m(5)]):t._e()])]),t._v(" "),i("div",{staticClass:"col-6 col-md-3 col-sm-12 tablet-footer-col mx-auto"},[i("div",{staticClass:"row mt-5 mx-auto",staticStyle:{height:"70%",width:"100%"}},[i("div",{staticClass:"col-12 mb-3 mx-auto"},[i("div",{staticClass:"row m-auto",staticStyle:{height:"50px"}},[i("a",{staticClass:"more-text m-auto",staticStyle:{color:"#f08b23"},on:{click:t.toTourSearch}},[t._v("Путешествуй")])])]),t._v(" "),i("div",{staticClass:"col-12 mb-3"},[i("div",{staticClass:"row m-auto",staticStyle:{height:"50px"}},[i("a",{staticClass:"more-text m-auto",staticStyle:{color:"#f08b23"},on:{click:t.toAviaSearch}},[t._v("Летай")])])]),t._v(" "),i("div",{staticClass:"col-12 mb-3"},[i("div",{staticClass:"row m-auto",staticStyle:{height:"50px"}},[i("a",{staticClass:"more-text m-auto",staticStyle:{color:"#f08b23"},on:{click:t.toHotelSearch}},[t._v("Познавай")])])])])]),t._v(" "),t._m(6),t._v(" "),t._m(7)])])])],1)}),[function(){var t=this.$createElement,a=this._self._c||t;return a("div",{staticClass:"row w-100 m-auto align-items-center justify-content-center"},[a("div",{staticClass:"container",staticStyle:{"min-height":"700px"}},[a("iframe",{staticStyle:{border:"none",width:"100%",height:"100%","min-height":"700px"},attrs:{src:"/sletat-ru"}})])])},function(){var t=this.$createElement,a=this._self._c||t;return a("div",{staticClass:"footer-content flex"},[a("div",{staticClass:"row mb-5"},[a("div",{staticClass:"col-12 mb-3"},[a("h1",[this._v("Готовы к незабываемым приключениям?")])]),this._v(" "),a("div",{staticClass:"col-12"},[a("button",{staticClass:"footer-btn",attrs:{type:"text","data-toggle":"modal","data-target":"#customPhoneModal"}},[this._v("Заказать звонок")])])])])},function(){var t=this.$createElement,a=this._self._c||t;return a("div",{staticClass:"col-12"},[a("span",{staticClass:"my-3 mx-auto",staticStyle:{background:"#f08b23",padding:"5px 10px","border-radius":"50px","font-family":"'Open Sans Extrabold'","text-transform":"uppercase",display:"inline-block"}},[this._v("\n                                Контакты\n                            ")])])},function(){var t=this,a=t.$createElement,i=t._self._c||a;return i("div",{staticClass:"row w-100 m-auto",staticStyle:{"font-family":"'Open Sans'","font-weight":"600"}},[i("div",{staticClass:"col-12 px-1"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-mail_outline mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto"},[i("a",{staticClass:"ml-2 mb-0",staticStyle:{color:"white"},attrs:{href:"mailto:travelclubdonetsk@gmail.com"}},[t._v("travelclubdonetsk@gmail.com")])])])])]),t._v(" "),i("div",{staticClass:"col-12 px-1"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-building mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto",staticStyle:{"text-align":"start"}},[i("p",{staticClass:"ml-2 mb-0"},[t._v("Г. Донецк, ул. Артема 100Д")])])])])]),t._v(" "),i("div",{staticClass:"col-12 px-1"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-phone mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto"},[i("a",{staticClass:"ml-2 mb-0",staticStyle:{color:"white"},attrs:{href:"tel:+380713399089"}},[t._v("071-339-90-89")]),i("i",{staticClass:" mx-1 icon fab fa-viber",staticStyle:{"font-weight":"500"}}),i("i",{staticClass:"icon icon-whatsapp"})])])])]),t._v(" "),i("div",{staticClass:"col-12 px-1"},[i("div",{staticClass:"row w-100 m-auto",staticStyle:{"font-size":"10px","text-align":"start"}},[i("p",{staticClass:"ml-1 mb-0"},[t._v("Режим работы:")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Пн-Пт 10:00 – 18:00")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Суббота 10:00 – 17:00")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Воскресенье – выходной")])])])])},function(){var t=this,a=t.$createElement,i=t._self._c||a;return i("div",{staticClass:"row w-100 m-auto",staticStyle:{"font-family":"'Open Sans'","font-weight":"600"}},[i("div",{staticClass:"col-12 px-1"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-building mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto",staticStyle:{"text-align":"start"}},[i("p",{staticClass:"ml-2 mb-0"},[t._v("Г. Донецк, Бульвар Пушкина 23")])])])])]),t._v(" "),i("div",{staticClass:"col-12 px-1"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-phone mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto"},[i("a",{staticClass:"ml-2 mb-0",staticStyle:{color:"white"},attrs:{href:"tel:+380712353322"}},[t._v("071-235-33-22")]),t._v(" "),i("i",{staticClass:" mx-1 icon fab fa-viber",staticStyle:{"font-weight":"500"}}),t._v(" "),i("i",{staticClass:"icon icon-whatsapp"})])])]),t._v(" "),i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-phone mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto"},[i("a",{staticClass:"ml-2 mb-0",staticStyle:{color:"white"},attrs:{href:"tel:+380959359990"}},[t._v("095-935-99-90")]),t._v(" "),i("i",{staticClass:" mx-1 icon fab fa-viber",staticStyle:{"font-weight":"500"}}),t._v(" "),i("i",{staticClass:"icon icon-whatsapp"})])])])]),t._v(" "),i("div",{staticClass:"col-12 px-1",staticStyle:{"font-size":"10px"}},[i("div",{staticClass:"row w-100 m-auto"},[i("p",{staticClass:"ml-1 mb-0"},[t._v("Режим работы:")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Пн-Пт 10:00 – 18:00")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Суббота 10:00 – 17:00")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Воскресенье – выходной")])])])])},function(){var t=this,a=t.$createElement,i=t._self._c||a;return i("div",{staticClass:"row w-100 m-auto",staticStyle:{"font-family":"'Open Sans'","font-weight":"600",color:"white"}},[i("div",{staticClass:"col-12"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-mail_outline mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto"},[i("a",{staticClass:"ml-2 mb-0",staticStyle:{color:"white"},attrs:{href:"mailto:travelclubrnd@bk.ru"}},[t._v("travelclubrnd@bk.ru")])])])])]),t._v(" "),i("div",{staticClass:"col-12"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-building mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto",staticStyle:{"text-align":"start"}},[i("p",{staticClass:"ml-2 mb-0"},[t._v("Г. Ростов–на–Дону, Социалистическая 11 оф 2А")])])])])]),t._v(" "),i("div",{staticClass:"col-12"},[i("div",{staticClass:"row w-100 m-auto"},[i("div",{staticClass:"col-1 p-0"},[i("div",{staticClass:"contact-icon icon icon-phone mr-1"})]),t._v(" "),i("div",{staticClass:"col-11 p-0"},[i("div",{staticClass:"row w-100 m-auto"},[i("a",{staticClass:"ml-2 mb-0",staticStyle:{color:"white"},attrs:{href:"tel:+79882534149"}},[t._v("+7-988-253-41-49")]),i("i",{staticClass:"mx-1 icon fab fa-viber",staticStyle:{"font-weight":"500"}}),i("i",{staticClass:"icon icon-whatsapp"})])])])]),t._v(" "),i("div",{staticClass:"col-12",staticStyle:{"font-size":"10px"}},[i("div",{staticClass:"row w-100 mx-auto mt-2"},[i("p",{staticClass:"ml-1 mb-0"},[t._v("Режим работы:")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Пн-Пт 10:00 – 18:00")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Суббота 10:00 – 17:00")]),t._v(" "),i("div",{staticClass:"mb-0 flex"},[i("span",{staticStyle:{width:"8px",height:"8px",background:"#f08b23","border-radius":"50%",margin:"0px 5px",display:"block"}}),t._v("Воскресенье – выходной")])])])])},function(){var t=this,a=t.$createElement,i=t._self._c||a;return i("div",{staticClass:"col-6 col-md-4 col-sm-12 tablet-footer-col mx-auto"},[i("div",{staticClass:"row w-100 mt-5 mx-auto",staticStyle:{height:"70%",width:"100%"}},[i("div",{staticClass:"col-12 p-0 mb-3"},[i("div",{staticClass:"row w-100 m-auto align-items-center"},[i("div",{staticClass:"col-2"},[i("div",{staticClass:"more-button m-auto"},[i("div",{staticClass:"icon icon-instagram"})])]),t._v(" "),i("div",{staticClass:"col-10"},[i("a",{staticClass:"more-text m-auto float-left",attrs:{target:"_blank",href:"https://www.instagram.com/travelclub_tours"}},[i("h1",{staticClass:"more-text mr-auto"},[t._v("\n                                            @travelclub_tours\n                                        ")])])])])]),t._v(" "),i("div",{staticClass:"col-12 p-0 mb-3"},[i("div",{staticClass:"row w-100 m-auto align-items-center"},[i("div",{staticClass:"col-2"},[i("div",{staticClass:"more-button m-auto"},[i("div",{staticClass:"icon icon-telegram"})])]),t._v(" "),i("div",{staticClass:"col-10"},[i("a",{staticClass:"more-text m-auto float-left",attrs:{target:"_blank",href:"https://t.me/travelclubtours"}},[i("h1",{staticClass:"more-text mr-auto"},[t._v("Travel Club Telegram")])])])])]),t._v(" "),i("div",{staticClass:"col-12 p-0 mb-3"},[i("div",{staticClass:"row w-100 m-auto align-items-center"},[i("div",{staticClass:"col-2"},[i("div",{staticClass:"more-button m-auto"},[i("div",{staticClass:"fab fa-viber"})])]),t._v(" "),i("div",{staticClass:"col-10"},[i("a",{staticClass:"more-text m-auto float-left",attrs:{target:"_blank",href:"https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"}},[i("h1",{staticClass:"more-text mr-auto"},[t._v("Travel Club Viber")])])])])])])])},function(){var t=this.$createElement,a=this._self._c||t;return a("div",{staticClass:"col-12",staticStyle:{background:"#041e3f","border-top":"1px solid #d9d9d942"}},[a("div",{staticClass:"row w-100 m-auto align-items-center justify-content-center"},[a("a",{staticClass:"mx-auto my-2",staticStyle:{color:"white","font-family":"'Open Sans'","font-weight":"900"},attrs:{target:"_blank",href:"https://donbassit.ru"}},[this._v("Made by  "),a("img",{staticClass:"mb-2",staticStyle:{height:"20px"},attrs:{src:"/images/do-it.png"}})])])])}],!1,null,"4cde1caa",null);a.default=o.exports},ja4i:function(t,a,i){var s=i("rybD");"string"==typeof s&&(s=[[t.i,s,""]]);var e={hmr:!0,transform:void 0,insertInto:void 0};i("aET+")(s,e);s.locals&&(t.exports=s.locals)},rybD:function(t,a,i){(t.exports=i("I1BE")(!1)).push([t.i,".btn-travel[data-v-4cde1caa]{border-radius:50px;background:#f08b23;color:#fff;text-transform:uppercase;font-family:Open Sans;font-weight:900;font-size:20px;outline:none;border:none}.footer[data-v-4cde1caa]{position:relative;text-align:center;//background:linear-gradient(60deg,#543ab7,#00acc1);color:#fff}.inner-header[data-v-4cde1caa]{height:65vh;width:100%;margin:0;padding:0}.flex[data-v-4cde1caa]{display:flex;justify-content:center;align-items:center;text-align:center}.waves[data-v-4cde1caa]{position:relative;width:100%;height:15vh;margin-bottom:-7px;min-height:100px;max-height:150px}.footer-content[data-v-4cde1caa]{position:relative;height:35vh;text-align:center;background-color:#f90}.footer-content h1[data-v-4cde1caa]{font-family:Open Sans Extrabold}.inner-content[data-v-4cde1caa]{position:relative;text-align:center;background-color:#062348;width:100%}.inner-content .waves[data-v-4cde1caa]{position:absolute;top:-75px;height:12vh;min-height:70px;max-height:120px}.inner-flex[data-v-4cde1caa]{display:flex;justify-content:center;align-items:flex-end;text-align:center}.parallax>use[data-v-4cde1caa]{-webkit-animation:move-forever-data-v-4cde1caa 25s cubic-bezier(.55,.5,.45,.5) infinite;animation:move-forever-data-v-4cde1caa 25s cubic-bezier(.55,.5,.45,.5) infinite}.parallax>use[data-v-4cde1caa]:first-child{-webkit-animation-delay:-2s;animation-delay:-2s;-webkit-animation-duration:7s;animation-duration:7s}.parallax>use[data-v-4cde1caa]:nth-child(2){-webkit-animation-delay:-3s;animation-delay:-3s;-webkit-animation-duration:10s;animation-duration:10s}.parallax>use[data-v-4cde1caa]:nth-child(3){-webkit-animation-delay:-4s;animation-delay:-4s;-webkit-animation-duration:13s;animation-duration:13s}.parallax>use[data-v-4cde1caa]:nth-child(4){-webkit-animation-delay:-5s;animation-delay:-5s;-webkit-animation-duration:20s;animation-duration:20s}@-webkit-keyframes move-forever-data-v-4cde1caa{0%{transform:translate3d(-90px,0,0)}to{transform:translate3d(85px,0,0)}}@keyframes move-forever-data-v-4cde1caa{0%{transform:translate3d(-90px,0,0)}to{transform:translate3d(85px,0,0)}}@media (max-width:768px){.waves[data-v-4cde1caa]{height:50px;min-height:50px;margin-bottom:0}.footer-content[data-v-4cde1caa]{height:30vh}.inner-content .waves[data-v-4cde1caa]{top:-45px;height:50px;min-height:50px}.footer-content h1[data-v-4cde1caa]{font-size:27px}}.footer-btn[data-v-4cde1caa]{background-color:#062348;border:none;color:#fff;font-family:Open Sans;font-weight:900;font-size:20px;border-radius:50px;text-transform:uppercase;padding:10px 32px;text-decoration:none;outline:none!important}.footer-illustration[data-v-4cde1caa]{width:100%;display:block;-o-object-fit:contain;object-fit:contain}.more-text[data-v-4cde1caa]{font-family:Open Sans;text-transform:uppercase;color:#f08b23;font-weight:600;font-size:16px;cursor:pointer}.more-button[data-v-4cde1caa]{cursor:pointer;margin:0 10px;right:10px}.more-button div[data-v-4cde1caa]{width:40px;height:40px;display:block;border-radius:50px;text-decoration:none;font-size:40px;color:#fff;background:#f08b23;padding:0!important}.footer .more-button div[data-v-4cde1caa]{width:50px;height:50px;font-size:30px;padding-top:10px!important}.footer .more-text[data-v-4cde1caa]{color:#fff;font-size:20px;font-weight:900;margin-top:auto;margin-bottom:auto}@media screen and (max-width:576px){.tablet-footer-col[data-v-4cde1caa]{flex:0 0 55%;max-width:55%}}@media screen and (max-width:992px){.tablet-footer-col[data-v-4cde1caa]{flex:0 0 50%;max-width:50%}}@media screen and (max-width:477px){.tablet-footer-col[data-v-4cde1caa]{flex:0 0 100%!important;max-width:100%!important}}",""])},vdcA:function(t,a,i){"use strict";i("ja4i")}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[64],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Step3.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  computed: {},
+  methods: {
+    onComplete: function onComplete() {
+      // alert('Yay. Done!');
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=template&id=0a2a69bb&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Step3.vue?vue&type=template&id=0a2a69bb& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "container p-0 m-auto",
+    staticStyle: {
+      height: "100vh"
+    }
+  }, [_c("div", {
+    staticClass: "row align-items-center justify-content-center m-auto",
+    staticStyle: {
+      height: "100%",
+      width: "100%"
+    }
+  }, [_c("form-wizard", {
+    staticStyle: {
+      width: "100%"
+    },
+    attrs: {
+      shape: "circle",
+      color: "#f08b23",
+      stepSize: "sm"
+    },
+    on: {
+      "on-complete": _vm.onComplete
+    },
+    scopedSlots: _vm._u([{
+      key: "custom-buttons-left",
+      fn: function fn(props) {
+        return [props.activeTabIndex > 0 ? _c("span", {
+          staticClass: "backSpan"
+        }, [_vm._v("Назад")]) : _vm._e()];
+      }
+    }, {
+      key: "custom-buttons-right",
+      fn: function fn(props) {
+        return [_c("span", {
+          staticClass: "nextSpan"
+        }, [_vm._v("Далее")])];
+      }
+    }, {
+      key: "footer",
+      fn: function fn(props) {
+        return [_c("div", {
+          staticClass: "wizard-footer-left"
+        }, [props.activeTabIndex > 0 ? _c("wizard-button", {
+          staticClass: "backButton",
+          staticStyle: {
+            "background-color": "#f08b23",
+            color: "white"
+          },
+          nativeOn: {
+            click: function click($event) {
+              return props.prevTab();
+            }
+          }
+        }, [_c("span", {
+          staticClass: "icon-keyboard_arrow_left"
+        })]) : _vm._e()], 1), _vm._v(" "), _c("div", {
+          staticClass: "wizard-footer-right"
+        }, [!props.isLastStep ? _c("wizard-button", {
+          staticClass: "nextButton wizard-footer-right",
+          staticStyle: {
+            "background-color": "#f08b23",
+            color: "white"
+          },
+          nativeOn: {
+            click: function click($event) {
+              return props.nextTab();
+            }
+          }
+        }, [_c("span", {
+          staticClass: "icon-keyboard_arrow_right"
+        })]) : _vm._e()], 1)];
+      }
+    }])
+  }, [_c("tab-content", {
+    attrs: {
+      title: "Начало",
+      route: "/tour-module/",
+      icon: "",
+      checkedIcon: "icon-check"
+    }
+  }), _vm._v(" "), _c("tab-content", {
+    attrs: {
+      title: "Выбор страны отправления",
+      route: "/tour-module/country",
+      icon: "",
+      checkedIcon: "icon-check"
+    }
+  }), _vm._v(" "), _c("tab-content", {
+    attrs: {
+      title: "Подбор тура",
+      route: "/tour-module/tour",
+      icon: "",
+      checkedIcon: "icon-check"
+    }
+  }), _vm._v(" "), _c("tab-content", {
+    attrs: {
+      title: "Формирование заявки",
+      route: "/tour-module/order",
+      icon: "",
+      checkedIcon: "icon-check"
+    }
+  }), _vm._v(" "), _c("transition", {
+    attrs: {
+      name: "fade",
+      mode: "out-in"
+    }
+  }, [_c("router-view")], 1)], 1)], 1)]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--8-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.fade-enter-active, .fade-leave-active {\n    transition: opacity .5s\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    opacity: 0\n}\n.title {\n    font-family: 'Bello Pro';\n    color:#85b8e7;\n    cursor: pointer;\n}\n.active {\n    color:#f08b23 !important;\n}\n.switch{\n    transition: all .5s;\n    cursor:pointer;\n}\n.right{\n    transform: rotate(30deg);\n}\n.left{\n    transform: rotate(-108deg);\n}\n.vue-form-wizard .wizard-tab-content {\n    min-height: 100px;\n    padding: 30px 0px 10px;\n}\n@media screen and (min-width: 800px) {\n.backButton {\n        width: 60px !important;\n        height: 60px !important;\n        min-width: 60px !important;\n        display: block !important;\n        border-radius: 50px !important;\n        text-decoration: none !important;\n        font-size: 30px !important;\n        line-height: 50px !important;\n        color: white !important;\n        background: #9df !important;\n        padding: 0px !important;\n        top: 40% !important;\n        /*left: 10px;*/\n        left: 5% !important;\n        position: absolute !important;\n}\n.nextButton {\n        width: 60px !important;\n        height: 60px !important;\n        min-width: 60px !important;\n        display: block !important;\n        border-radius: 50px !important;\n        text-decoration: none !important;\n        font-size: 30px !important;\n        font-weight: 600 !important;\n        line-height: 50px !important;\n        color: white !important;\n        background: #9df !important;\n        padding: 0px !important;\n        top: 40% !important;\n        /* right: 10px;*/\n        right: 5% !important;\n        position: absolute !important;\n}\n.nextButton span {\n        font-size: 45px;\n        top: 4px !important;\n        position: relative;\n}\n.backButton span {\n        font-size: 45px;\n        top: 4px !important;\n        position: relative;\n}\n}\n@media screen and (max-width: 800px) {\n.nextSpan {\n        display: none;\n}\n    /*.nextButton {*/\n    /*    display: inline-block !important;*/\n    /*    margin-bottom: 0 !important;*/\n    /*    font-weight: 400 !important;*/\n    /*    text-align: center !important;*/\n    /*    vertical-align: middle !important;*/\n    /*    -ms-touch-action: manipulation !important;*/\n    /*    touch-action: manipulation !important;*/\n    /*    cursor: pointer !important;*/\n    /*    background-image: none !important;*/\n    /*    border: 1px solid transparent !important;*/\n    /*    border-top-color: transparent !important;*/\n    /*    border-top-width: 1px !important;*/\n    /*    border-right-color: transparent !important;*/\n    /*    border-right-width: 1px !important;*/\n    /*    border-bottom-color: transparent !important;*/\n    /*    border-bottom-width: 1px !important;*/\n    /*    border-left-color: transparent !important;*/\n    /*    border-left-width: 1px !important;*/\n    /*    white-space: nowrap !important;*/\n    /*    padding: 6px 12px !important;*/\n    /*    font-size: 14px !important;*/\n    /*    line-height: 1.42857 !important;*/\n    /*    border-radius: 4px !important;*/\n    /*    background: orange !important;*/\n    /*    color: white;*/\n    /*}*/\n.backSpan {\n        display: none;\n}\n}\n.backButton span {\n    font-size: 45px;\n    top: 0px;\n    position: relative;\n}\n.backSpan{\n    top: 43%;\n    left: 25%;\n    /*left: 30px;*/\n    position: absolute;\n    text-transform: uppercase;\n    font-weight: 600;\n}\n.nextButton span {\n    font-size: 45px;\n    top: 0px;\n    position: relative;\n}\n.nextSpan{\n    top: 43%;\n    /*right: 30px;*/\n    right: 25%;\n    position: absolute;\n    text-transform: uppercase;\n    font-weight: 600;\n}\n#ua {\n    width: 100%;\n    height: 40vh;\n    position: relative;\n    overflow: visible;\n}\n#russia {\n    /*width: 50vw;*/\n    width: 100%;\n    height: 40vh;\n    position: relative;\n    overflow: visible;\n}\nbutton:focus {\n    outline: 0;\n}\nbutton:hover {\n    cursor: pointer;\n}\n.style-two.switch-button.left button.left {\n    color: #fff;\n}\n.style-two.switch-button.left .switch {\n    left: 5%;\n}\n.style-two.switch-button.right button.right {\n    color: #fff;\n}\n.style-two.switch-button.right .switch {\n    left: 55%;\n}\n.style-two.switch-button .switch {\n    transition: all 0.5s;\n    float: left;\n    text-align: center;\n    z-index: 0;\n    background-color: #f08b23;\n    width: 40%;\n    height: 80%;\n    font-weight: 800;\n    position: absolute;\n    top: 10%;\n    border-radius: 100px;\n}\n.style-two.switch-button button {\n    float: left;\n    background-color: transparent !important;\n    color: #f08b23;\n    border: 0;\n    font-size: 1em;\n    padding: 2%;\n    width: 50%;\n    height: 3em;\n    font-weight: 500;\n    z-index: 1;\n    text-align: center;\n    position: relative;\n    transition-delay: 0.2s;\n}\n.style-two.switch-button {\n    position: relative;\n    font-size: 1.2em;\n    overflow: hidden;\n    width: 300px;\n    float: left;\n}\n.style-two.switch-button input {\n    display: none;\n}\n.cont {\n    height: 70vh;\n}\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--8-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--8-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Step3.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/desktop/pages/Step3.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Step3_vue_vue_type_template_id_0a2a69bb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Step3.vue?vue&type=template&id=0a2a69bb& */ "./resources/js/desktop/pages/Step3.vue?vue&type=template&id=0a2a69bb&");
+/* harmony import */ var _Step3_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Step3.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/Step3.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Step3_vue_vue_type_style_index_0_id_0a2a69bb_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css& */ "./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Step3_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Step3_vue_vue_type_template_id_0a2a69bb___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Step3_vue_vue_type_template_id_0a2a69bb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/Step3.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Step3.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/desktop/pages/Step3.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Step3.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css& ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_8_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_style_index_0_id_0a2a69bb_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--8-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=style&index=0&id=0a2a69bb&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_8_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_style_index_0_id_0a2a69bb_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_8_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_style_index_0_id_0a2a69bb_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_8_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_style_index_0_id_0a2a69bb_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_8_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_style_index_0_id_0a2a69bb_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Step3.vue?vue&type=template&id=0a2a69bb&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Step3.vue?vue&type=template&id=0a2a69bb& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_template_id_0a2a69bb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../node_modules/vue-loader/lib??vue-loader-options!./Step3.vue?vue&type=template&id=0a2a69bb& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Step3.vue?vue&type=template&id=0a2a69bb&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_template_id_0a2a69bb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Step3_vue_vue_type_template_id_0a2a69bb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

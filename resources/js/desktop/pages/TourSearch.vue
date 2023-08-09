@@ -10,7 +10,8 @@
         >
         </quick-menu>
 
-        <div data-sletat-module-id="19a07720-bf7d-489e-be04-21b7dc89eff7" style="margin-top:60px;min-height: 400px"></div>
+<!--        <div data-sletat-module-id="19a07720-bf7d-489e-be04-21b7dc89eff7" style="margin-top:60px;min-height: 400px"></div>-->
+        <div class="tv-search-form tv-moduleid-9961474"></div>
         <section class="mb-5" style="height: 100%;">
             <div class="container m-auto" style="height: 100%;">
                 <div class="row m-auto justify-content-center align-items-center w-100 h-100">
@@ -335,11 +336,16 @@
             titles:["Написать сообщение","Записать голосовое","Заказать звонок"],
         }),
         created() {
-            let SletatRuScript = document.createElement('script')
-            SletatRuScript.setAttribute('src', 'https://front.sletat.ru/modules/module6/latest/module.js')
-            SletatRuScript.defer = true;
-            SletatRuScript.async = true;
-            document.head.appendChild(SletatRuScript)
+            // let SletatRuScript = document.createElement('script')
+            // SletatRuScript.setAttribute('src', 'https://front.sletat.ru/modules/module6/latest/module.js')
+            // SletatRuScript.defer = true;
+            // SletatRuScript.async = true;
+            // document.head.appendChild(SletatRuScript)
+            let tourvisor = document.createElement('script');
+            tourvisor.setAttribute('src', 'https://tourvisor.ru/module/init.js');
+            tourvisor.defer = true;
+            tourvisor.async = true;
+            document.head.appendChild(tourvisor);
         },
         computed:{
             locationByIp() {

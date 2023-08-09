@@ -47,7 +47,7 @@ mix.webpackConfig({
 
 mix
 
-    .js('resources/js/desktop/app.js', 'public/js/desktop')
+    .js('resources/js/desktop/app.js', 'public/js/desktop').vue()
     .sass('resources/sass/desktop/app.scss', 'public/css/desktop/app.css')
     .options({
         processCssUrls: false
@@ -55,12 +55,12 @@ mix
 
 
 mix
-    .js('resources/js/pwa/app.js', 'public/js/pwa')
+    .js('resources/js/pwa/app.js', 'public/js/pwa').vue()
     .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css');
 
 
 mix
-    .js('resources/js/admin/app.js', 'public/js/admin')
+    .js('resources/js/admin/app.js', 'public/js/admin').vue()
     .sass('resources/sass/admin/app.scss', 'public/css/admin/app.css');
 
 
@@ -81,16 +81,16 @@ mix.copyDirectory('resources/assets/css/inc', 'public/css/inc');
 
 if (mix.inProduction()) {
 
-    mix.minify('public/js/pwa/app.js')
-    mix.minify('public/css/pwa/app.css')
-    mix.minify('public/css/pwa/theme.css')
-    mix.minify('public/css/assets/app.css')
+    mix.minify('public/js/pwa/app.js');
+    mix.minify('public/css/pwa/app.css');
+    mix.minify('public/css/pwa/theme.css');
+    mix.minify('public/css/assets/app.css');
 
-    mix.minify('public/js/desktop/app.js')
-    mix.minify('public/css/desktop/app.css')
+    mix.minify('public/js/desktop/app.js');
+    mix.minify('public/css/desktop/app.css');
 
-    mix.minify('public/js/admin/app.js')
-    mix.minify('public/css/admin/app.css')
+    mix.minify('public/js/admin/app.js');
+    mix.minify('public/css/admin/app.css');
 }
 
 mix.version();

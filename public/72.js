@@ -1,1 +1,181 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[72],{ETx4:function(t,e,s){"use strict";s.r(e);var a=s("o0o1"),o=s.n(a);function i(t,e,s,a,o,i,l){try{var n=t[i](l),r=n.value}catch(t){return void s(t)}n.done?e(r):Promise.resolve(r).then(a,o)}var l={name:"Archive",data:function(){return{columns:[{label:"ID тура",field:"id"},{label:"Дата",field:"created_at"},{label:"С",field:"TourInfo.date_range.start"},{label:"По",field:"TourInfo.date_range.end"},{label:"Страна",field:"TourInfo.country.Name"},{label:"Курорт",field:"TourInfo.resort.Name"},{label:"Цена",field:"TourInfo.price"},{label:"Выплачено",field:"TourInfo.paid"}],load:!0}},created:function(){},mounted:function(){this.getUser()},computed:{menu:function(){return this.$store.getters.menu},user:function(){return this.$store.getters.user}},methods:{getUser:function(){var t,e=this;return(t=o.a.mark((function t(){return o.a.wrap((function(t){for(;;)switch(t.prev=t.next){case 0:if(e.user){t.next=5;break}return t.next=3,e.$store.dispatch("getUser").then((function(){(e.user.archive.length>0||null!=e.user.archive)&&e.user.archive.forEach((function(t){t.show=!1,t.isLoading=!1,t.expand={country:t.TourInfo.country,resort:t.TourInfo.resort,hotel:t.TourInfo.hotel,meal:t.TourInfo.meal,room_type:t.TourInfo.room_type,tour_operator:t.TourInfo.tour_operator,date_range:{start:t.TourInfo.date_range.start,end:t.TourInfo.date_range.end},price:t.TourInfo.price,paid:t.TourInfo.paid,left:t.TourInfo.left,services:t.TourInfo.services,avia_tickets:t.TourInfo.avia_tickets,passengers:t.TourInfo.passengers,files:t.TourInfo.files}})),e.load=!1}));case 3:t.next=7;break;case 5:(e.user.archive.length>0||null!=e.user.archive)&&e.user.archive.forEach((function(t){t.show=!1,t.isLoading=!1,t.expand={country:t.TourInfo.country,resort:t.TourInfo.resort,hotel:t.TourInfo.hotel,meal:t.TourInfo.meal,room_type:t.TourInfo.room_type,tour_operator:t.TourInfo.tour_operator,date_range:{start:t.TourInfo.date_range.start,end:t.TourInfo.date_range.end},price:t.TourInfo.price,paid:t.TourInfo.paid,left:t.TourInfo.left,services:t.TourInfo.services,avia_tickets:t.TourInfo.avia_tickets,passengers:t.TourInfo.passengers,files:t.TourInfo.files}})),e.load=!1;case 7:case"end":return t.stop()}}),t)})),function(){var e=this,s=arguments;return new Promise((function(a,o){var l=t.apply(e,s);function n(t){i(l,a,o,n,r,"next",t)}function r(t){i(l,a,o,n,r,"throw",t)}n(void 0)}))})()},toTourInfo:function(t){this.$router.push("/client/tour-info/"+t)},sendMessage:function(t){this.$notify({group:"info",type:"travel",title:"Сообщение от TravelClub",text:t})}},directives:{mask:s("OmDE").mask}},n=s("KHd+"),r=Object(n.a)(l,(function(){var t=this,e=t.$createElement,s=t._self._c||e;return s("div",[s("div",{staticClass:"row m-auto w-100 h-100 align-items-center justify-content-center",attrs:{id:"client"}},[s("div",{staticClass:"col-md-12"},[s("data-table",{attrs:{title:"Архив",columns:t.columns,rows:t.user.archive,perPage:[5,10,25,50],clickable:!1,loadingAnimation:t.load},scopedSlots:t._u([{key:"tbody-tr",fn:function(e){return[s("td",{attrs:{"data-title":"Действия"}},[e.row.isLoading?t._e():s("button",{staticClass:"btn waves-effect",staticStyle:{outline:"none"},on:{click:function(s){return t.toTourInfo(e.row.id)}}},[s("i",{staticClass:"icon icon-eye",staticStyle:{color:"#0d274b"}})])])]}},{key:"expand-panel",fn:function(e){return[s("div",{staticStyle:{width:"100%",height:"100%"}},[s("div",{staticClass:"row align-items-center justify-content-center m-auto",staticStyle:{width:"100%",height:"100%"}},[s("div",{staticClass:"col-md-6 col-sm-12 mx-auto"},[s("div",{staticClass:"list-group"},[s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Страна")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v(t._s(e.row.expand.country.Name))])]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Курорт")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v("\n                                            "+t._s(e.row.expand.resort.Name)+"\n                                        ")])]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Отель")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v("\n                                            "+t._s(e.row.expand.hotel.Name)+"\n                                        ")])]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Питание")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v("\n                                            "+t._s(e.row.expand.meal.Name)+"\n                                        ")])])])]),t._v(" "),s("div",{staticClass:"col-md-6 col-sm-12 mx-auto"},[s("div",{staticClass:"list-group"},[s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Даты тура")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v(t._s(e.row.expand.date_range.start)+" - "+t._s(e.row.expand.date_range.end))])]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Цена")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v(t._s(e.row.expand.price))])]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Выплачено")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v(t._s(e.row.expand.paid))])]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("div",{staticClass:"d-flex w-100 justify-content-between"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Остаток")])]),t._v(" "),s("p",{staticClass:"mb-1"},[t._v(t._s(e.row.expand.left))])])])]),t._v(" "),s("div",{staticClass:"col-md-12 col-sm-12 mx-auto"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Дополнительные услуги")]),t._v(" "),s("div",{staticClass:"list-group-item flex-column align-items-start p-1"},[s("p",{staticClass:"mb-1"},[t._v(t._s(e.row.expand.services))])])]),t._v(" "),s("div",{staticClass:"col-md-12 col-sm-12 mx-auto"},[s("label",{staticClass:"mb-1 control-label",staticStyle:{color:"#f08b23"}},[t._v("Файлы")]),t._v(" "),t._l(e.row.expand.files,(function(e,a){return s("div",{key:e.name,staticClass:"list-group-item"},[s("div",{staticClass:"row m-auto w-100 align-items-center justify-content-center"},[s("div",{staticClass:"col-4 text-center"},[/\.(jpe?g|png|svg)$/i.test(e.name)?s("img",{staticClass:"preview",attrs:{src:e.path}}):s("img",{staticClass:"preview",attrs:{src:"/images/LOGO-1.png"}})]),t._v(" "),s("div",{staticClass:"col-8"},["file"==e.type?s("div",[s("p",{staticClass:"control-label"},[t._v(t._s(e.name))])]):t._e(),t._v(" "),"audio"==e.type?s("div",[s("audio-player",{attrs:{audio:e}})],1):t._e()])])])}))],2)])])]}}])},[s("th",{staticStyle:{width:"auto"},attrs:{slot:"thead-tr"},slot:"thead-tr"},[t._v("\n                    Действия\n                ")])])],1)])])}),[],!1,null,"702179fb",null);e.default=r.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[72],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/Orders.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/Orders.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Orders",
+  data: function data() {
+    return {
+      columns: [{
+        label: 'ID',
+        field: 'id'
+      }, {
+        label: 'Дата',
+        field: 'name'
+      }, {
+        label: 'Имя',
+        field: 'name',
+        tagged: true
+      }, {
+        label: 'Телефон',
+        field: 'email'
+      }, {
+        label: 'Тип заказа',
+        field: 'email'
+      }],
+      window: {
+        width: 0,
+        height: 0
+      },
+      countItems: 3,
+      tags: [{
+        tag: 'User',
+        style: 'background:blue; color:white;'
+      }],
+      showModal: false,
+      editItem: {}
+    };
+  },
+  created: function created() {},
+  mounted: function mounted() {
+    this.$store.dispatch('setUsers');
+  },
+  computed: {
+    menu: function menu() {
+      return this.$store.getters.menu;
+    },
+    users: function users() {
+      return this.$store.getters.users;
+    },
+    preloader: function preloader() {
+      return this.$store.getters.preloader;
+    }
+  },
+  methods: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/Orders.vue?vue&type=template&id=f9dd68c6&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Client/Orders.vue?vue&type=template&id=f9dd68c6&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("div", {
+    staticClass: "row m-auto mb-4 justify-content-center align-items-center",
+    staticStyle: {
+      width: "100%",
+      height: "100%"
+    },
+    attrs: {
+      id: "client"
+    }
+  }, [_c("data-table", {
+    attrs: {
+      title: "История заказов",
+      columns: _vm.columns,
+      rows: _vm.users,
+      perPage: [5, 10, 25, 50],
+      expandMode: true,
+      tagBackgrounds: _vm.tags
+    },
+    scopedSlots: _vm._u([{
+      key: "expand-panel",
+      fn: function fn(props) {
+        return [_c("p", [_vm._v(_vm._s(props.row.name))])];
+      }
+    }])
+  })], 1)]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/Orders.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/Orders.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Orders_vue_vue_type_template_id_f9dd68c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Orders.vue?vue&type=template&id=f9dd68c6&scoped=true& */ "./resources/js/desktop/pages/Client/Orders.vue?vue&type=template&id=f9dd68c6&scoped=true&");
+/* harmony import */ var _Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Orders.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/Client/Orders.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Orders_vue_vue_type_template_id_f9dd68c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Orders_vue_vue_type_template_id_f9dd68c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "f9dd68c6",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/Client/Orders.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/Orders.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/Orders.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Orders.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/Orders.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Client/Orders.vue?vue&type=template&id=f9dd68c6&scoped=true&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Client/Orders.vue?vue&type=template&id=f9dd68c6&scoped=true& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Orders_vue_vue_type_template_id_f9dd68c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Orders.vue?vue&type=template&id=f9dd68c6&scoped=true& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Client/Orders.vue?vue&type=template&id=f9dd68c6&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Orders_vue_vue_type_template_id_f9dd68c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_Orders_vue_vue_type_template_id_f9dd68c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);
