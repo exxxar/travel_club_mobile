@@ -134,7 +134,7 @@
 <script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js"
         defer></script>
 
-<script src="{{asset('/js/desktop/app.js?ver=')}}{{env("APP_VERSION")}}" defer></script>
+<script src="{{env("APP_DEBUG")?asset('/js/desktop/app.js'):asset('/js/desktop/app.min.js')}}?ver={{env("APP_VERSION")}}" defer></script>
 
 
 </body>
