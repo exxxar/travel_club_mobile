@@ -53,13 +53,13 @@
 
 
                 <div class="item">
-                    <div class="card pulse">
+                    <div class="card card-with-red-line pulse" text="Скоро">
                         <a href="https://travel-club.tours/m/flies" class="travel-card"
-                           aria-label="Подобрать авиобилеты">
+                           aria-label="Горячие туры">
                             <img v-lazy="'/img/travel/2.png'" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
-                            <h4 class="mb-0 text-center text-uppercase">Подобрать авиабилеты</h4>
+                            <h4 class="mb-0 text-center text-uppercase">Горячие туры</h4>
                         </div>
                     </div>
                 </div>
@@ -164,47 +164,11 @@
                        aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
-
                     </a>
                 </div>
             </div>
         </div>
 
-
-        <div class="section mt-3 mb-3">
-            <div class="error-page">
-                <div class="mb-2">
-                    <img v-lazy="'/img/travel/family-illustration.png'" alt="alt" class="imaged square w200">
-                </div>
-                <h1 class="title">Наша семья</h1>
-                <div class="text mb-3">
-                    <h4>Стань частью нашей семьи</h4>
-                    <p>С нами путешествует семья тревел-блогеров Любава и Алеша <a
-                        href="https://www.instagram.com/goodiets/">@goodiets</a></p>
-                </div>
-                <div class="mb-2 ">
-                    <img v-lazy="'/img/travel/goodiets.png'" alt="alt" class="imaged square w200">
-
-                    <div class="coming-soon-img"></div>
-
-                </div>
-
-
-                <vue-countdown id="countDown" class="mb-5" :time="200 * 24 * 60 * 60 * 1000"
-                               v-slot="{ days, hours, minutes, seconds }">
-                    <div>{{ days }}<span>Дней</span></div>
-                    <div>{{ hours }}<span>Часов</span></div>
-                    <div>{{ minutes }} <span>Минут</span></div>
-                    <div>{{ seconds }} <span>Секунд</span></div>
-                </vue-countdown>
-
-
-            </div>
-        </div>
-
-        <div class="section">
-
-        </div>
         <!-- app footer -->
         <div class="appFooter">
             <img v-lazy="'/img/logo.png'" alt="icon" class="footer-logo mb-2">
@@ -229,7 +193,7 @@
                    class="btn btn-icon btn-lg btn-instagram" aria-label="Ссылка на инстаграм">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
+                <a href="https://wa.me/79492353322"
                    target="_blank" rel="noreferrer" class="btn btn-icon btn-lg btn-whatsapp"
                    aria-label="Ссылка на вотсап">
                     <i class="fab fa-whatsapp"></i>

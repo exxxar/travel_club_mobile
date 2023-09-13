@@ -35,7 +35,7 @@ mix.disableNotifications();
 
 mix.webpackConfig({
     resolve: {
-        extensions: ['.js', '.vue', '.jpg', '.png', '.css', '.svg', '.mp3'],
+        extensions: ['.*','.js', '.vue', '.jpg', '.png', '.css', '.svg', '.mp3', '.scss'],
         alias: {
             '@': __dirname + '/resources',
             '~': __dirname + '/public',

@@ -1,79 +1,80 @@
 <template>
-    <div class="header_area sticky menu row align-items-center justify-content-center ml-auto mr-auto pl-5 pr-5 pt-2 pb-2"
-        style="width: 100%;"
-    >
-        <div class="row ml-2 mr-auto mt-auto mb-auto">
-            <a href="/">
-                <h4 style="z-index: 1; font-family:'Bello Pro'; color:#0d274b;" class="float-left menu-title">
-                    Travel<span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
-                </h4>
-            </a>
-        </div>
-        <div class="row m-auto desktop d-flex align-items-center">
+    <div class="header_area sticky menu d-flex align-items-center justify-content-between w-100 px-5 py-2">
+        <a href="/">
+            <h4 style="z-index: 1; color:#0d274b;font-weight:900;" class="float-left menu-title">
+                Travel<span style="color: #f08b23; font-family: 'Open Sans';">Club</span>
+            </h4>
+        </a>
+<!--        <div class="row m-auto desktop d-flex align-items-center">-->
 
-            <p class="mr-5 mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">8-800-101-96-66</p>
-<!--            <phone-by-city-form class="mr-5 mb-0"></phone-by-city-form>-->
-       <!--     <a class="mr-5 mb-0"
-               :href="'tel:'+unformatted_phone"
-               style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase"
-            >
-                {{phone}}</a>-->
-            <!--          <p class="mr-5 mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">8 800 500 5 500</p>-->
-            <!--          <p class="mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">travel-club@gmail.com</p>-->
-            <!--          <p class="mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">bp.pink.donetsk@gmail.com</p>-->
-            <a href="mailto:tours@travel-club.tours" class="mb-0"
-               style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">
-                travelclubrnd@bk.ru</a>
-        </div>
-        <div class="row m-auto desktop">
-            <!--          <a href="#" class="icon icon-vk ml-auto mr-3" target="_blank" style="color: #f08b23; font-size: 25px; text-decoration: none"></a>-->
-            <a href="https://www.instagram.com/travelclub_tours" target="_blank" class="icon icon-instagram inst-icon" ></a>
-            <a href="https://t.me/travelclubtours" target="_blank" class="icon icon-telegram ml-3 mr-auto tg-icon" ></a>
-            <a href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR" target="_blank" class="icon fab fa-viber ml-3 mr-auto tg-icon" ></a>
-        </div>
+<!--            <p class="mr-5 mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">8-800-101-96-66</p>-->
+<!--&lt;!&ndash;            <phone-by-city-form class="mr-5 mb-0"></phone-by-city-form>&ndash;&gt;-->
+<!--       &lt;!&ndash;     <a class="mr-5 mb-0"-->
+<!--               :href="'tel:'+unformatted_phone"-->
+<!--               style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase"-->
+<!--            >-->
+<!--                {{phone}}</a>&ndash;&gt;-->
+<!--            &lt;!&ndash;          <p class="mr-5 mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">8 800 500 5 500</p>&ndash;&gt;-->
+<!--            &lt;!&ndash;          <p class="mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">travel-club@gmail.com</p>&ndash;&gt;-->
+<!--            &lt;!&ndash;          <p class="mb-0" style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">bp.pink.donetsk@gmail.com</p>&ndash;&gt;-->
+<!--            <a href="mailto:tours@travel-club.tours" class="mb-0"-->
+<!--               style="color:#0d274b; font-family: 'Open Sans';font-weight:900; font-size: 16px; text-transform: lowercase">-->
+<!--                travelclubrnd@bk.ru</a>-->
+<!--        </div>-->
+        <div class="d-flex">
+            <div class="d-flex desktop mr-3">
+                <div>
+                    <div class="banner pulse text-uppercase px-3 mr-3" style="color:white; background: #c30000; border-radius:10px; font-weight: 600;">
+                        мы в соц.сетях
+                    </div>
+                </div>
 
-       <!-- <div class="row m-auto desktop" style="color: #063065">
-&lt;!&ndash;            <b-form-checkbox v-model="theme" name="check-button" switch>&ndash;&gt;
-                <p class="mb-0" style="font-family: Open Sans;font-weight: 900;font-size: 16px;cursor: pointer" v-if="theme" @click="theme= !theme">Дневная тема</p>
-                <p class="mb-0" style="font-family: Open Sans;font-weight: 900;font-size: 16px;cursor: pointer" v-if="!theme" @click="theme= !theme">Ночная тема</p>
-&lt;!&ndash;            </b-form-checkbox>&ndash;&gt;
-        </div>-->
+                <!--          <a href="#" class="icon icon-vk ml-auto mr-3" target="_blank" style="color: #f08b23; font-size: 25px; text-decoration: none"></a>-->
+                <a href="https://www.instagram.com/travelclub_tours" target="_blank" class="icon icon-instagram inst-icon"></a>
+                <a href="https://t.me/travelclubtours" target="_blank" class="icon icon-telegram ml-3 mr-auto tg-icon"></a>
+                <a href="https://wa.me/79492353322" target="_blank" class="icon icon-whatsapp ml-3 mr-auto tg-icon"></a>
+            </div>
 
-        <div class="ml-auto mr-2 mt-auto mb-auto">
+            <!-- <div class="row m-auto desktop" style="color: #063065">
+     &lt;!&ndash;            <b-form-checkbox v-model="theme" name="check-button" switch>&ndash;&gt;
+                     <p class="mb-0" style="font-family: Open Sans;font-weight: 900;font-size: 16px;cursor: pointer" v-if="theme" @click="theme= !theme">Дневная тема</p>
+                     <p class="mb-0" style="font-family: Open Sans;font-weight: 900;font-size: 16px;cursor: pointer" v-if="!theme" @click="theme= !theme">Ночная тема</p>
+     &lt;!&ndash;            </b-form-checkbox>&ndash;&gt;
+             </div>-->
             <slider
-                right
-                @openMenu="openMenu()"
-                @closeMenu="closeMenu()"
-                width="400"
-                :burger-icon="false"
-                :closeOnNavigation="true"
-            >
-          <!--      <div class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" v-if="isLoggedIn" @click="toProfile">
-                    <span><i class="icon icon-person"></i>Личный кабинет</span>
-                </div>-->
-                <a class="nav-link account-link bm-custom-active" style="cursor:pointer; border-radius: 5px; max-width: 300px" href="/simple-profile">
-                    <span><i class="icon icon-person"></i>Личный кабинет</span>
-                </a>
-                <a v-if="$route.name=='landing'" class="nav-link" v-for="link in landing_links" href=""
-                   v-scroll-to="link.scroll">
-                    <span><i v-if="link.icon" :class="link.icon"></i> {{link.name}}</span>
-                </a>
-                <a v-if="$route.name!='landing'" class="nav-link" v-for="link in module_tour_links"
-                   :href="link.url">
-                    <span><i v-if="link.icon" :class="link.icon"></i> {{link.name}}</span>
-                </a>
-                <a class="nav-link" href="#" @click="logout" v-if="isLoggedIn">
-                    <span> <i class="icon-exit_to_app"></i> Выйти</span>
-                </a>
-                <div class="nav-link">
+                    right
+                    @openMenu="openMenu()"
+                    @closeMenu="closeMenu()"
+                    width="400"
+                    :burger-icon="false"
+                    :closeOnNavigation="true"
+                >
+                    <!--      <div class="nav-link account-link" style="cursor:pointer; border-radius: 5px; max-width: 300px" v-if="isLoggedIn" @click="toProfile">
+                              <span><i class="icon icon-person"></i>Личный кабинет</span>
+                          </div>-->
+<!--                    <a class="nav-link account-link bm-custom-active" style="cursor:pointer; border-radius: 5px; max-width: 300px" href="/simple-profile">-->
+<!--                        <span><i class="icon icon-person"></i>Личный кабинет</span>-->
+<!--                    </a>-->
+                    <a v-if="$route.name=='landing'" class="nav-link" v-for="link in landing_links" href=""
+                       v-scroll-to="link.scroll">
+                        <span><i v-if="link.icon" :class="link.icon"></i> {{link.name}}</span>
+                    </a>
+                    <a v-if="$route.name!='landing'" class="nav-link" v-for="link in module_tour_links"
+                       :href="link.url">
+                        <span><i v-if="link.icon" :class="link.icon"></i> {{link.name}}</span>
+                    </a>
+                    <a class="nav-link" href="#" @click="logout" v-if="isLoggedIn">
+                        <span> <i class="icon-exit_to_app"></i> Выйти</span>
+                    </a>
+                    <div class="nav-link">
                     <span class="tablet mobile">
 <!--                        <b-form-checkbox class="slider-theme-switch" v-model="theme" name="check-button" switch>-->
                             <p class="mb-0" v-if="theme" @click="theme= !theme">Дневная тема</p>
                             <p class="mb-0" v-if="!theme" @click="theme= !theme">Ночная тема</p>
-<!--                        </b-form-checkbox>-->
+                        <!--                        </b-form-checkbox>-->
                     </span>
-                </div>
-            </slider>
+                    </div>
+                </slider>
         </div>
     </div>
 </template>
@@ -90,7 +91,7 @@
                 {name: 'Подобрать авиабилеты', scroll: '#avia', icon: "fas fa-plane-departure"},
                 // {name: 'Подобрать отель', scroll: '#hotel', icon: "fas fa-hotel"},
                 {name: 'Подобрать туры по России', scroll: '#russia', icon: "fas fa-map-marked-alt"},
-                {name: 'TravelClub Family', scroll: '#family', icon: "fas fa-users"},
+                // {name: 'TravelClub Family', scroll: '#family', icon: "fas fa-users"},
                 {name: 'Контакты', scroll: '#contacts', icon: "fas fa-address-book"},
             ],
             client_links: [
@@ -194,8 +195,8 @@
                         console.log(resp.data.result)
                         this.$store.dispatch('setLocationByIp', resp.data.result);
                         if (resp.data.result.region == 'Donetsk') {
-                            this.phone = '+38 (071) 235-33-22';
-                            this.unformatted_phone = '+380712353322';
+                            this.phone = '+7 (949) 235-33-22';
+                            this.unformatted_phone = '+79492353322';
                         } else {
                             this.phone = '8 800 500 5 500';
                             this.unformatted_phone = '+88005005500';

@@ -8,10 +8,7 @@
         <div class="section full mt-2">
             <h1 class="section-title">Путешествия</h1>
 
-
-            <div data-sletat-module-id="19a07720-bf7d-489e-be04-21b7dc89eff7"
-                 style="margin-top:0px;min-height: 400px"></div>
-
+            <div class="tv-search-form tv-moduleid-9961474"></div>
 
         </div>
 
@@ -22,7 +19,7 @@
             <p class="text-center">
                 Не получилось определиться самому? Оформи заявку и наш менеджер тебе поможет!
             </p>
-            <a class="btn btn-orange w-100" href="https://travel-club.tours/m/tour-search">
+            <a class="btn btn-orange w-100" :href="$baseUrl+'/m/tour-search'">
                 Оформить заявку
             </a>
 
@@ -33,5 +30,18 @@
     <!-- * App Capsule -->
 </template>
 <script>
-    export default {}
+    export default {
+        created() {
+            // let SletatRuScript = document.createElement('script')
+            // SletatRuScript.setAttribute('src', 'https://front.sletat.ru/modules/module6/latest/module.js')
+            // SletatRuScript.defer = true;
+            // SletatRuScript.async = true;
+            // document.head.appendChild(SletatRuScript)
+            let tourvisor = document.createElement('script');
+            tourvisor.setAttribute('src', 'https://tourvisor.ru/module/init.js');
+            tourvisor.defer = true;
+            tourvisor.async = true;
+            document.head.appendChild(tourvisor);
+        },
+    }
 </script>

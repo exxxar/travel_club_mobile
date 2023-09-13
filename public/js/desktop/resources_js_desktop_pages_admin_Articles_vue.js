@@ -5545,6 +5545,678 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vue-ts-types/dist/index.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/index.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isNonPositive = exports.isNonNegative = exports.isPositive = exports.isNegative = exports.instanceOfProp = exports.oneOfTypesProp = exports.oneOfObjectKeysProp = exports.oneOfProp = exports.functionProp = exports.objectProp = exports.arrayProp = exports.anyProp = exports.vueComponentProp = exports.symbolProp = exports.integerProp = exports.numberProp = exports.booleanProp = exports.stringProp = void 0;
+var string_1 = __webpack_require__(/*! ./prop-types/string */ "./node_modules/vue-ts-types/dist/prop-types/string.js");
+Object.defineProperty(exports, "stringProp", ({ enumerable: true, get: function () { return string_1.stringProp; } }));
+var boolean_1 = __webpack_require__(/*! ./prop-types/boolean */ "./node_modules/vue-ts-types/dist/prop-types/boolean.js");
+Object.defineProperty(exports, "booleanProp", ({ enumerable: true, get: function () { return boolean_1.booleanProp; } }));
+var number_1 = __webpack_require__(/*! ./prop-types/number */ "./node_modules/vue-ts-types/dist/prop-types/number.js");
+Object.defineProperty(exports, "numberProp", ({ enumerable: true, get: function () { return number_1.numberProp; } }));
+var integer_1 = __webpack_require__(/*! ./prop-types/integer */ "./node_modules/vue-ts-types/dist/prop-types/integer.js");
+Object.defineProperty(exports, "integerProp", ({ enumerable: true, get: function () { return integer_1.integerProp; } }));
+var symbol_1 = __webpack_require__(/*! ./prop-types/symbol */ "./node_modules/vue-ts-types/dist/prop-types/symbol.js");
+Object.defineProperty(exports, "symbolProp", ({ enumerable: true, get: function () { return symbol_1.symbolProp; } }));
+var vueComponent_1 = __webpack_require__(/*! ./prop-types/vueComponent */ "./node_modules/vue-ts-types/dist/prop-types/vueComponent.js");
+Object.defineProperty(exports, "vueComponentProp", ({ enumerable: true, get: function () { return vueComponent_1.vueComponentProp; } }));
+var any_1 = __webpack_require__(/*! ./prop-types/any */ "./node_modules/vue-ts-types/dist/prop-types/any.js");
+Object.defineProperty(exports, "anyProp", ({ enumerable: true, get: function () { return any_1.anyProp; } }));
+var array_1 = __webpack_require__(/*! ./prop-types/array */ "./node_modules/vue-ts-types/dist/prop-types/array.js");
+Object.defineProperty(exports, "arrayProp", ({ enumerable: true, get: function () { return array_1.arrayProp; } }));
+var object_1 = __webpack_require__(/*! ./prop-types/object */ "./node_modules/vue-ts-types/dist/prop-types/object.js");
+Object.defineProperty(exports, "objectProp", ({ enumerable: true, get: function () { return object_1.objectProp; } }));
+var function_1 = __webpack_require__(/*! ./prop-types/function */ "./node_modules/vue-ts-types/dist/prop-types/function.js");
+Object.defineProperty(exports, "functionProp", ({ enumerable: true, get: function () { return function_1.functionProp; } }));
+var oneOf_1 = __webpack_require__(/*! ./prop-types/oneOf */ "./node_modules/vue-ts-types/dist/prop-types/oneOf.js");
+Object.defineProperty(exports, "oneOfProp", ({ enumerable: true, get: function () { return oneOf_1.oneOfProp; } }));
+var oneOfObjectKeys_1 = __webpack_require__(/*! ./prop-types/oneOfObjectKeys */ "./node_modules/vue-ts-types/dist/prop-types/oneOfObjectKeys.js");
+Object.defineProperty(exports, "oneOfObjectKeysProp", ({ enumerable: true, get: function () { return oneOfObjectKeys_1.oneOfObjectKeysProp; } }));
+var oneOfTypes_1 = __webpack_require__(/*! ./prop-types/oneOfTypes */ "./node_modules/vue-ts-types/dist/prop-types/oneOfTypes.js");
+Object.defineProperty(exports, "oneOfTypesProp", ({ enumerable: true, get: function () { return oneOfTypes_1.oneOfTypesProp; } }));
+var instanceOf_1 = __webpack_require__(/*! ./prop-types/instanceOf */ "./node_modules/vue-ts-types/dist/prop-types/instanceOf.js");
+Object.defineProperty(exports, "instanceOfProp", ({ enumerable: true, get: function () { return instanceOf_1.instanceOfProp; } }));
+var isNegative_1 = __webpack_require__(/*! ./validators/isNegative */ "./node_modules/vue-ts-types/dist/validators/isNegative.js");
+Object.defineProperty(exports, "isNegative", ({ enumerable: true, get: function () { return isNegative_1.isNegative; } }));
+var isPositive_1 = __webpack_require__(/*! ./validators/isPositive */ "./node_modules/vue-ts-types/dist/validators/isPositive.js");
+Object.defineProperty(exports, "isPositive", ({ enumerable: true, get: function () { return isPositive_1.isPositive; } }));
+var isNonNegative_1 = __webpack_require__(/*! ./validators/isNonNegative */ "./node_modules/vue-ts-types/dist/validators/isNonNegative.js");
+Object.defineProperty(exports, "isNonNegative", ({ enumerable: true, get: function () { return isNonNegative_1.isNonNegative; } }));
+var isNonPositive_1 = __webpack_require__(/*! ./validators/isNonPositive */ "./node_modules/vue-ts-types/dist/validators/isNonPositive.js");
+Object.defineProperty(exports, "isNonPositive", ({ enumerable: true, get: function () { return isNonPositive_1.isNonPositive; } }));
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/any.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/any.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.anyProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any type. No built-in runtime validation is performed by default.
+ *
+ * Type parameter `T` can be used to restrict the type at compile time.
+ *
+ * @param validator - Optional function for runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const anyProp = (validator) => (0, util_1.propOptionsGenerator)(undefined, validator);
+exports.anyProp = anyProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/array.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/array.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.arrayProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any array. No further runtime validation is performed by default.
+ *
+ * Type parameter `T` can be used to restrict the type of the array items at compile time.
+ *
+ *  @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const arrayProp = (validator) => (0, util_1.propOptionsGenerator)(Array, validator);
+exports.arrayProp = arrayProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/boolean.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/boolean.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.booleanProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any boolean (validated at runtime and compile time).
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const booleanProp = (validator) => (0, util_1.propOptionsGenerator)(Boolean, validator);
+exports.booleanProp = booleanProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/function.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/function.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.functionProp = void 0;
+const validators_1 = __webpack_require__(/*! ../validators */ "./node_modules/vue-ts-types/dist/validators/index.js");
+/* eslint-disable @typescript-eslint/ban-types */
+/**
+ * Allows any function. No further runtime validation is performed by default.
+ *
+ * Type parameter `T` can be used to restrict the type to a specific function signature at compile time.
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const functionProp = (validator) => ({
+    optional: {
+        type: Function,
+        required: false,
+        default: undefined,
+        validator: (0, validators_1.vuePropValidator)(validator),
+    },
+    nullable: {
+        type: Function,
+        required: false,
+        default: null,
+        validator: (0, validators_1.vuePropValidator)(validator),
+    },
+    required: {
+        type: Function,
+        required: true,
+        validator: (0, validators_1.vuePropValidator)(validator),
+    },
+});
+exports.functionProp = functionProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/instanceOf.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/instanceOf.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.instanceOfProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+const validators_1 = __webpack_require__(/*! ../validators */ "./node_modules/vue-ts-types/dist/validators/index.js");
+/**
+ * Allows instances of the given constructor (validated at runtime and compile time).
+ *
+ * Type parameter `T` can be used to adjust the inferred type at compile time.
+ *
+ * @param parent - The constructor to allow.
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const instanceOfProp = (parent, validator) => (0, util_1.propOptionsGenerator)(parent, validator, (0, validators_1.isInstanceOf)(parent));
+exports.instanceOfProp = instanceOfProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/integer.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/integer.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.integerProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+const validators_1 = __webpack_require__(/*! ../validators */ "./node_modules/vue-ts-types/dist/validators/index.js");
+/**
+ * Allows any integer (validated at runtime).
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const integerProp = (validator) => (0, util_1.propOptionsGenerator)(Number, validator, validators_1.isInteger);
+exports.integerProp = integerProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/number.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/number.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.numberProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any number (validated at runtime and compile time).
+ *
+ * Type parameter `T` can be used to restrict the type at compile time with a union type.
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const numberProp = (validator) => (0, util_1.propOptionsGenerator)(Number, validator);
+exports.numberProp = numberProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/object.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/object.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.objectProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any object. No further runtime validation is performed by default.
+ *
+ * Type parameter `T` can be used to restrict the type at compile time.
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const objectProp = (validator) => (0, util_1.propOptionsGenerator)(Object, validator);
+exports.objectProp = objectProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/oneOf.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/oneOf.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.oneOfProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+const validators_1 = __webpack_require__(/*! ../validators */ "./node_modules/vue-ts-types/dist/validators/index.js");
+// inspired by https://github.com/dwightjack/vue-types/blob/4.1.1/src/validators/oneof.ts
+const getOneOfType = (values) => {
+    const allowedTypes = [...new Set(values.flatMap(value => {
+            var _a;
+            if (value === null || value === undefined) {
+                return [];
+            }
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            return (_a = value.constructor) !== null && _a !== void 0 ? _a : [];
+        }))];
+    if (allowedTypes.length === 0) {
+        return undefined;
+    }
+    if (allowedTypes.length === 1) {
+        return allowedTypes[0];
+    }
+    return allowedTypes;
+};
+/**
+ * Allows any of the specified allowed values (validated at runtime and compile time).
+ *
+ * Type parameter `T` can be used to adjust the inferred type at compile time, this is usually not necessary.
+ *
+ * @param allowedValues - The allowed values.
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const oneOfProp = (allowedValues, validator) => (0, util_1.propOptionsGenerator)(getOneOfType(allowedValues), validator, (0, validators_1.isOneOf)(allowedValues));
+exports.oneOfProp = oneOfProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/oneOfObjectKeys.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/oneOfObjectKeys.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.oneOfObjectKeysProp = void 0;
+const oneOf_1 = __webpack_require__(/*! ./oneOf */ "./node_modules/vue-ts-types/dist/prop-types/oneOf.js");
+/**
+ * Allows any of the keys of the specified object (validated at runtime and compile time).
+ *
+ * Type parameter `T` can be used to adjust the inferred type at compile time, this is usually not necessary.
+ *
+ * @param object - The object whose keys are allowed.
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const oneOfObjectKeysProp = (object, validator) => (0, oneOf_1.oneOfProp)(Object.keys(object), validator);
+exports.oneOfObjectKeysProp = oneOfObjectKeysProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/oneOfTypes.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/oneOfTypes.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.oneOfTypesProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any of the passed constructor types (validated at runtime).
+ *
+ * Type parameter `T` has to be used to adjust the type at compile time.
+ *
+ * @param type - A single constructor or an array of constructors to allow.
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const oneOfTypesProp = (type, validator) => (0, util_1.propOptionsGenerator)(type, validator);
+exports.oneOfTypesProp = oneOfTypesProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/string.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/string.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.stringProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any string. No further runtime validation is performed by default.
+ *
+ * Type parameter `T` can be used to restrict the type at compile time with a union type.
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const stringProp = (validator) => (0, util_1.propOptionsGenerator)(String, validator);
+exports.stringProp = stringProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/symbol.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/symbol.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.symbolProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+const validators_1 = __webpack_require__(/*! ../validators */ "./node_modules/vue-ts-types/dist/validators/index.js");
+/**
+ * Allows any symbol (validated at runtime and compile time).
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const symbolProp = (validator) => (0, util_1.propOptionsGenerator)(undefined, validator, validators_1.isSymbol);
+exports.symbolProp = symbolProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/prop-types/vueComponent.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/prop-types/vueComponent.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.vueComponentProp = void 0;
+const util_1 = __webpack_require__(/*! ../util */ "./node_modules/vue-ts-types/dist/util.js");
+/**
+ * Allows any Vue component instance, name or options object. No built-in runtime validation is performed by default.
+ *
+ * @param validator - Optional function for further runtime validation; should return `undefined` if valid, or an error string if invalid.
+ */
+const vueComponentProp = (validator) => (0, util_1.propOptionsGenerator)([Object, String], validator);
+exports.vueComponentProp = vueComponentProp;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/util.js":
+/*!************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/util.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.propOptionsGenerator = void 0;
+const validators_1 = __webpack_require__(/*! ./validators */ "./node_modules/vue-ts-types/dist/validators/index.js");
+const propOptionsGenerator = (type, userValidator, ...typeValidators) => ({
+    optional: {
+        type,
+        required: false,
+        default: undefined,
+        validator: (0, validators_1.vuePropValidator)(userValidator, ...typeValidators),
+    },
+    nullable: {
+        type,
+        required: false,
+        default: null,
+        validator: (0, validators_1.vuePropValidator)(userValidator, ...typeValidators),
+    },
+    withDefault: (defaultValue) => ({
+        type,
+        required: false,
+        default: defaultValue,
+        validator: (0, validators_1.vuePropValidator)(userValidator, ...typeValidators),
+    }),
+    required: {
+        type,
+        required: true,
+        validator: (0, validators_1.vuePropValidator)(userValidator, ...typeValidators),
+    },
+});
+exports.propOptionsGenerator = propOptionsGenerator;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/index.js ***!
+  \************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isSymbol = exports.isOneOf = exports.isInteger = exports.isInstanceOf = exports.vuePropValidator = void 0;
+const vue_1 = __importDefault(__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"));
+/**
+ * Creates a Vue prop validator that runs all type validators and the user validator (if specified).
+ * @param userValidator Validator function specified by the user.
+ * @param typeValidators Validator functions hard-coded by the prop type function.
+ */
+function vuePropValidator(userValidator, ...typeValidators) {
+    const validators = userValidator ? [...typeValidators, userValidator] : typeValidators;
+    if (validators.length === 0) {
+        return undefined;
+    }
+    return (value) => {
+        for (const validator of validators) {
+            const errorMessage = validator(value);
+            if (errorMessage) {
+                if (typeof vue_1.default === 'object' && 'util' in vue_1.default) {
+                    // @ts-expect-error -- Vue.util is only available in Vue 2, but provides more context than console.warn
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+                    vue_1.default.util.warn(`${errorMessage} (received: '${String(value)}')`);
+                }
+                else {
+                    console.warn(`${errorMessage} (received: '${String(value)}')`);
+                }
+                return false;
+            }
+        }
+        return true;
+    };
+}
+exports.vuePropValidator = vuePropValidator;
+// for internal use only
+var isInstanceOf_1 = __webpack_require__(/*! ./isInstanceOf */ "./node_modules/vue-ts-types/dist/validators/isInstanceOf.js");
+Object.defineProperty(exports, "isInstanceOf", ({ enumerable: true, get: function () { return isInstanceOf_1.isInstanceOf; } }));
+var isInteger_1 = __webpack_require__(/*! ./isInteger */ "./node_modules/vue-ts-types/dist/validators/isInteger.js");
+Object.defineProperty(exports, "isInteger", ({ enumerable: true, get: function () { return isInteger_1.isInteger; } }));
+var isOneOf_1 = __webpack_require__(/*! ./isOneOf */ "./node_modules/vue-ts-types/dist/validators/isOneOf.js");
+Object.defineProperty(exports, "isOneOf", ({ enumerable: true, get: function () { return isOneOf_1.isOneOf; } }));
+var isSymbol_1 = __webpack_require__(/*! ./isSymbol */ "./node_modules/vue-ts-types/dist/validators/isSymbol.js");
+Object.defineProperty(exports, "isSymbol", ({ enumerable: true, get: function () { return isSymbol_1.isSymbol; } }));
+// custom validators provided for user convenience are exported from main entrypoint
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isInstanceOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isInstanceOf.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isInstanceOf = void 0;
+/** Validator that only allows instances of the given parent. */
+const isInstanceOf = (parent) => value => {
+    if (!(value instanceof parent)) {
+        return `value should be an instance of ${parent.name}`;
+    }
+    return undefined;
+};
+exports.isInstanceOf = isInstanceOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isInteger.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isInteger.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isInteger = void 0;
+/** Validator that only allows integer numbers. */
+const isInteger = value => {
+    if (typeof value !== 'number' || !Number.isInteger(value)) {
+        return 'value should be an integer';
+    }
+    return undefined;
+};
+exports.isInteger = isInteger;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isNegative.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isNegative.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isNegative = void 0;
+/** Validator that only allows negative numbers (`< 0`). */
+const isNegative = value => {
+    if (typeof value !== 'number' || value >= 0 || Number.isNaN(value)) {
+        return 'value should be a negative number';
+    }
+    return undefined;
+};
+exports.isNegative = isNegative;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isNonNegative.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isNonNegative.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isNonNegative = void 0;
+/** Validator that only allows non-negative numbers (`>= 0`). */
+const isNonNegative = value => {
+    if (typeof value !== 'number' || value < 0 || Number.isNaN(value)) {
+        return 'value should be a non-negative number';
+    }
+    return undefined;
+};
+exports.isNonNegative = isNonNegative;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isNonPositive.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isNonPositive.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isNonPositive = void 0;
+/** Validator that only allows non-positive numbers (`<= 0`). */
+const isNonPositive = value => {
+    if (typeof value !== 'number' || value > 0 || Number.isNaN(value)) {
+        return 'value should be a non-positive number';
+    }
+    return undefined;
+};
+exports.isNonPositive = isNonPositive;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isOneOf.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isOneOf.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isOneOf = void 0;
+/** Validator that only allows any of the given values. */
+const isOneOf = (allowedValues) => value => {
+    if (!allowedValues.includes(value)) {
+        return `value should be one of "${allowedValues.join('", "')}"`;
+    }
+    return undefined;
+};
+exports.isOneOf = isOneOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isPositive.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isPositive.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isPositive = void 0;
+/** Validator that only allows positive numbers (`> 0`). */
+const isPositive = value => {
+    if (typeof value !== 'number' || value <= 0 || Number.isNaN(value)) {
+        return 'value should be a positive number';
+    }
+    return undefined;
+};
+exports.isPositive = isPositive;
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ts-types/dist/validators/isSymbol.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/vue-ts-types/dist/validators/isSymbol.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.isSymbol = void 0;
+/** Validator that only allows symbols. */
+const isSymbol = value => {
+    if (typeof value !== 'symbol') {
+        return 'value should be a symbol';
+    }
+    return undefined;
+};
+exports.isSymbol = isSymbol;
+
+
+/***/ }),
+
 /***/ "./node_modules/@tiptap/core/dist/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/@tiptap/core/dist/index.js ***!
@@ -5592,6 +6264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getMarkRange: () => (/* binding */ getMarkRange),
 /* harmony export */   getMarkType: () => (/* binding */ getMarkType),
 /* harmony export */   getMarksBetween: () => (/* binding */ getMarksBetween),
+/* harmony export */   getNodeAtPosition: () => (/* binding */ getNodeAtPosition),
 /* harmony export */   getNodeAttributes: () => (/* binding */ getNodeAttributes),
 /* harmony export */   getNodeType: () => (/* binding */ getNodeType),
 /* harmony export */   getRenderedAttributes: () => (/* binding */ getRenderedAttributes),
@@ -5607,6 +6280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   injectExtensionAttributesToParseRule: () => (/* binding */ injectExtensionAttributesToParseRule),
 /* harmony export */   inputRulesPlugin: () => (/* binding */ inputRulesPlugin),
 /* harmony export */   isActive: () => (/* binding */ isActive),
+/* harmony export */   isAtEndOfNode: () => (/* binding */ isAtEndOfNode),
+/* harmony export */   isAtStartOfNode: () => (/* binding */ isAtStartOfNode),
 /* harmony export */   isEmptyObject: () => (/* binding */ isEmptyObject),
 /* harmony export */   isExtensionRulesEnabled: () => (/* binding */ isExtensionRulesEnabled),
 /* harmony export */   isFunction: () => (/* binding */ isFunction),
@@ -5767,9 +6442,6 @@ class CommandManager {
     buildProps(tr, shouldDispatch = true) {
         const { rawCommands, editor, state } = this;
         const { view } = editor;
-        if (state.storedMarks) {
-            tr.setStoredMarks(state.storedMarks);
-        }
         const props = {
             tr,
             editor,
@@ -5779,7 +6451,7 @@ class CommandManager {
                 transaction: tr,
             }),
             dispatch: shouldDispatch ? () => undefined : undefined,
-            chain: () => this.createChain(tr),
+            chain: () => this.createChain(tr, shouldDispatch),
             can: () => this.createCan(tr),
             get commands() {
                 return Object.fromEntries(Object.entries(rawCommands).map(([name, command]) => {
@@ -5955,7 +6627,10 @@ function mergeAttributes(...objects) {
                 return;
             }
             if (key === 'class') {
-                mergedAttributes[key] = [mergedAttributes[key], value].join(' ');
+                const valueClasses = value ? value.split(' ') : [];
+                const existingClasses = mergedAttributes[key] ? mergedAttributes[key].split(' ') : [];
+                const insertClasses = valueClasses.filter(valueClass => !existingClasses.includes(valueClass));
+                mergedAttributes[key] = [...existingClasses, ...insertClasses].join(' ');
             }
             else if (key === 'style') {
                 mergedAttributes[key] = [mergedAttributes[key], value].join('; ');
@@ -6958,6 +7633,16 @@ const createParagraphNear = () => ({ state, dispatch }) => {
     return (0,_tiptap_pm_commands__WEBPACK_IMPORTED_MODULE_5__.createParagraphNear)(state, dispatch);
 };
 
+const cut = (originRange, targetPos) => ({ editor, tr }) => {
+    const { state } = editor;
+    const contentSlice = state.doc.slice(originRange.from, originRange.to);
+    tr.deleteRange(originRange.from, originRange.to);
+    const newPos = tr.mapping.map(targetPos);
+    tr.insert(newPos, contentSlice.content);
+    tr.setSelection(new _tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.TextSelection(tr.doc.resolve(newPos - 1)));
+    return true;
+};
+
 const deleteCurrentNode = () => ({ tr, dispatch }) => {
     const { selection } = tr;
     const currentNode = selection.$anchor.node();
@@ -7287,7 +7972,7 @@ const insertContentAt = (position, value, options) => ({ tr, dispatch, editor })
         if (content.toString() === '<>') {
             return true;
         }
-        let { from, to } = typeof position === 'number' ? { from: position, to: position } : position;
+        let { from, to } = typeof position === 'number' ? { from: position, to: position } : { from: position.from, to: position.to };
         let isOnlyTextContent = true;
         let isOnlyBlockContent = true;
         const nodes = isFragment(content) ? content : [content];
@@ -7347,6 +8032,40 @@ const joinBackward = () => ({ state, dispatch }) => {
 };
 const joinForward = () => ({ state, dispatch }) => {
     return (0,_tiptap_pm_commands__WEBPACK_IMPORTED_MODULE_5__.joinForward)(state, dispatch);
+};
+
+const joinItemBackward = () => ({ tr, state, dispatch, }) => {
+    try {
+        const point = (0,_tiptap_pm_transform__WEBPACK_IMPORTED_MODULE_4__.joinPoint)(state.doc, state.selection.$from.pos, -1);
+        if (point === null || point === undefined) {
+            return false;
+        }
+        tr.join(point, 2);
+        if (dispatch) {
+            dispatch(tr);
+        }
+        return true;
+    }
+    catch {
+        return false;
+    }
+};
+
+const joinItemForward = () => ({ state, dispatch, tr, }) => {
+    try {
+        const point = (0,_tiptap_pm_transform__WEBPACK_IMPORTED_MODULE_4__.joinPoint)(state.doc, state.selection.$from.pos, +1);
+        if (point === null || point === undefined) {
+            return false;
+        }
+        tr.join(point, 2);
+        if (dispatch) {
+            dispatch(tr);
+        }
+        return true;
+    }
+    catch (e) {
+        return false;
+    }
 };
 
 function isMacOS() {
@@ -7595,6 +8314,28 @@ const setContent = (content, emitUpdate = false, parseOptions = {}) => ({ tr, ed
     return true;
 };
 
+function getMarkAttributes(state, typeOrName) {
+    const type = getMarkType(typeOrName, state.schema);
+    const { from, to, empty } = state.selection;
+    const marks = [];
+    if (empty) {
+        if (state.storedMarks) {
+            marks.push(...state.storedMarks);
+        }
+        marks.push(...state.selection.$head.marks());
+    }
+    else {
+        state.doc.nodesBetween(from, to, node => {
+            marks.push(...node.marks);
+        });
+    }
+    const mark = marks.find(markItem => markItem.type.name === type.name);
+    if (!mark) {
+        return {};
+    }
+    return { ...mark.attrs };
+}
+
 /**
  * Returns a new `Transform` based on all steps of the passed transactions.
  */
@@ -7718,28 +8459,6 @@ function generateText(doc, extensions, options) {
             ...textSerializers,
         },
     });
-}
-
-function getMarkAttributes(state, typeOrName) {
-    const type = getMarkType(typeOrName, state.schema);
-    const { from, to, empty } = state.selection;
-    const marks = [];
-    if (empty) {
-        if (state.storedMarks) {
-            marks.push(...state.storedMarks);
-        }
-        marks.push(...state.selection.$head.marks());
-    }
-    else {
-        state.doc.nodesBetween(from, to, node => {
-            marks.push(...node.marks);
-        });
-    }
-    const mark = marks.find(markItem => markItem.type.name === type.name);
-    if (!mark) {
-        return {};
-    }
-    return { ...mark.attrs };
 }
 
 function getNodeAttributes(state, typeOrName) {
@@ -7913,6 +8632,30 @@ function getMarksBetween(from, to, doc) {
     return marks;
 }
 
+/**
+ * Finds the first node of a given type or name in the current selection.
+ * @param state The editor state.
+ * @param typeOrName The node type or name.
+ * @param pos The position to start searching from.
+ * @param maxDepth The maximum depth to search.
+ * @returns The node and the depth as an array.
+ */
+const getNodeAtPosition = (state, typeOrName, pos, maxDepth = 20) => {
+    const $pos = state.doc.resolve(pos);
+    let currentDepth = maxDepth;
+    let node = null;
+    while (currentDepth > 0 && node === null) {
+        const currentNode = $pos.node(currentDepth);
+        if ((currentNode === null || currentNode === void 0 ? void 0 : currentNode.type.name) === typeOrName) {
+            node = currentNode;
+        }
+        else {
+            currentDepth -= 1;
+        }
+    }
+    return [node, currentDepth];
+};
+
 function getSplittedAttributes(extensionAttributes, typeName, attributes) {
     return Object.fromEntries(Object
         .entries(attributes)
@@ -8002,6 +8745,33 @@ function isActive(state, name, attributes = {}) {
     }
     return false;
 }
+
+const isAtEndOfNode = (state, nodeType) => {
+    const { $from, $to, $anchor } = state.selection;
+    if (nodeType) {
+        const parentNode = findParentNode(node => node.type.name === nodeType)(state.selection);
+        if (!parentNode) {
+            return false;
+        }
+        const $parentPos = state.doc.resolve(parentNode.pos + 1);
+        if ($anchor.pos + 1 === $parentPos.end()) {
+            return true;
+        }
+        return false;
+    }
+    if ($to.parentOffset < $to.parent.nodeSize - 2 || $from.pos !== $to.pos) {
+        return false;
+    }
+    return true;
+};
+
+const isAtStartOfNode = (state) => {
+    const { $from, $to } = state.selection;
+    if ($from.parentOffset > 0 || $from.pos !== $to.pos) {
+        return false;
+    }
+    return true;
+};
 
 function isList(name, extensions) {
     const { nodeExtensions } = splitExtensions(extensions);
@@ -8610,6 +9380,7 @@ var commands = /*#__PURE__*/Object.freeze({
   clearNodes: clearNodes,
   command: command,
   createParagraphNear: createParagraphNear,
+  cut: cut,
   deleteCurrentNode: deleteCurrentNode,
   deleteNode: deleteNode,
   deleteRange: deleteRange,
@@ -8626,6 +9397,8 @@ var commands = /*#__PURE__*/Object.freeze({
   joinDown: joinDown,
   joinBackward: joinBackward,
   joinForward: joinForward,
+  joinItemBackward: joinItemBackward,
+  joinItemForward: joinItemForward,
   keyboardShortcut: keyboardShortcut,
   lift: lift,
   liftEmptyBlock: liftEmptyBlock,
@@ -8725,7 +9498,12 @@ const Keymap = Extension.create({
                 const { selection, doc } = tr;
                 const { empty, $anchor } = selection;
                 const { pos, parent } = $anchor;
-                const isAtStart = _tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.Selection.atStart(doc).from === pos;
+                const $parentPos = $anchor.parent.isTextblock ? tr.doc.resolve(pos - 1) : $anchor;
+                const parentIsIsolating = $parentPos.parent.type.spec.isolating;
+                const parentPos = $anchor.pos - $anchor.parentOffset;
+                const isAtStart = (parentIsIsolating && $parentPos.parent.childCount === 1)
+                    ? parentPos === $anchor.pos
+                    : _tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.Selection.atStart(doc).from === pos;
                 if (!empty || !isAtStart || !parent.type.isTextblock || parent.textContent.length) {
                     return false;
                 }
@@ -9138,6 +9916,7 @@ class Editor extends EventEmitter {
         });
         this.view.updateState(newState);
         this.createNodeViews();
+        this.prependClass();
         // Let’s store the editor instance in the DOM element.
         // So we’ll have access to it for tests.
         const dom = this.view.dom;
@@ -9150,6 +9929,12 @@ class Editor extends EventEmitter {
         this.view.setProps({
             nodeViews: this.extensionManager.nodeViews,
         });
+    }
+    /**
+     * Prepend class name to element.
+     */
+    prependClass() {
+        this.view.dom.className = `tiptap ${this.view.dom.className}`;
     }
     captureTransaction(fn) {
         this.isCapturingTransaction = true;
@@ -9301,7 +10086,6 @@ function markInputRule(config) {
             const { tr } = state;
             const captureGroup = match[match.length - 1];
             const fullMatch = match[0];
-            let markEnd = range.to;
             if (captureGroup) {
                 const startSpaces = fullMatch.search(/\S/);
                 const textStart = range.from + fullMatch.indexOf(captureGroup);
@@ -9322,7 +10106,7 @@ function markInputRule(config) {
                 if (textStart > range.from) {
                     tr.delete(range.from + startSpaces, textStart);
                 }
-                markEnd = range.from + startSpaces + captureGroup.length;
+                const markEnd = range.from + startSpaces + captureGroup.length;
                 tr.addMark(range.from + startSpaces, markEnd, config.type.create(attributes || {}));
                 tr.removeStoredMark(config.type);
             }
@@ -9342,6 +10126,7 @@ function nodeInputRule(config) {
             const { tr } = state;
             const start = range.from;
             let end = range.to;
+            const newNode = config.type.create(attributes);
             if (match[1]) {
                 const offset = match[0].lastIndexOf(match[1]);
                 let matchStart = start + offset;
@@ -9355,11 +10140,12 @@ function nodeInputRule(config) {
                 const lastChar = match[0][match[0].length - 1];
                 tr.insertText(lastChar, start + match[0].length - 1);
                 // insert node from input rule
-                tr.replaceWith(matchStart, end, config.type.create(attributes));
+                tr.replaceWith(matchStart, end, newNode);
             }
             else if (match[0]) {
-                tr.replaceWith(start, end, config.type.create(attributes));
+                tr.insert(start - 1, config.type.create(attributes)).delete(tr.mapping.map(start), tr.mapping.map(end));
             }
+            tr.scrollIntoView();
         },
     });
 }
@@ -9610,6 +10396,10 @@ class Node {
     }
 }
 
+function isAndroid() {
+    return navigator.platform === 'Android' || /android/i.test(navigator.userAgent);
+}
+
 class NodeView {
     constructor(component, props, options) {
         this.isDragging = false;
@@ -9750,13 +10540,14 @@ class NodeView {
         if (mutation.type === 'selection') {
             return false;
         }
-        // try to prevent a bug on iOS that will break node views on enter
+        // try to prevent a bug on iOS and Android that will break node views on enter
         // this is because ProseMirror can’t preventDispatch on enter
         // this will lead to a re-render of the node view on enter
         // see: https://github.com/ueberdosis/tiptap/issues/1214
+        // see: https://github.com/ueberdosis/tiptap/issues/2534
         if (this.dom.contains(mutation.target)
             && mutation.type === 'childList'
-            && isiOS()
+            && (isiOS() || isAndroid())
             && this.editor.isFocused) {
             const changedNodes = [
                 ...Array.from(mutation.addedNodes),
@@ -10341,6 +11132,8 @@ const ListItem = _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.Node.create({
     addOptions() {
         return {
             HTMLAttributes: {},
+            bulletListTypeName: 'bulletList',
+            orderedListTypeName: 'orderedList',
         };
     },
     content: 'paragraph block*',
@@ -11263,8 +12056,11 @@ const History = _tiptap_core__WEBPACK_IMPORTED_MODULE_1__.Extension.create({
     addKeyboardShortcuts() {
         return {
             'Mod-z': () => this.editor.commands.undo(),
+            'Mod-Z': () => this.editor.commands.undo(),
             'Mod-y': () => this.editor.commands.redo(),
+            'Mod-Y': () => this.editor.commands.redo(),
             'Shift-Mod-z': () => this.editor.commands.redo(),
+            'Shift-Mod-Z': () => this.editor.commands.redo(),
             // Russian keyboard layouts
             'Mod-я': () => this.editor.commands.undo(),
             'Shift-Mod-я': () => this.editor.commands.redo(),
@@ -11310,9 +12106,16 @@ const HorizontalRule = _tiptap_core__WEBPACK_IMPORTED_MODULE_1__.Node.create({
     },
     addCommands() {
         return {
-            setHorizontalRule: () => ({ chain }) => {
-                return (chain()
-                    .insertContent({ type: this.name })
+            setHorizontalRule: () => ({ chain, state }) => {
+                const { $to: $originTo } = state.selection;
+                const currentChain = chain();
+                if ($originTo.parentOffset === 0) {
+                    currentChain.insertContentAt(Math.max($originTo.pos - 2, 0), { type: this.name });
+                }
+                else {
+                    currentChain.insertContent({ type: this.name });
+                }
+                return (currentChain
                     // set cursor after horizontal rule
                     .command(({ tr, dispatch }) => {
                     var _a;
@@ -11320,14 +12123,22 @@ const HorizontalRule = _tiptap_core__WEBPACK_IMPORTED_MODULE_1__.Node.create({
                         const { $to } = tr.selection;
                         const posAfter = $to.end();
                         if ($to.nodeAfter) {
-                            tr.setSelection(_tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.TextSelection.create(tr.doc, $to.pos));
+                            if ($to.nodeAfter.isTextblock) {
+                                tr.setSelection(_tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.TextSelection.create(tr.doc, $to.pos + 1));
+                            }
+                            else if ($to.nodeAfter.isBlock) {
+                                tr.setSelection(_tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.NodeSelection.create(tr.doc, $to.pos));
+                            }
+                            else {
+                                tr.setSelection(_tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.TextSelection.create(tr.doc, $to.pos));
+                            }
                         }
                         else {
                             // add node after horizontal rule if it’s the end of the document
                             const node = (_a = $to.parent.type.contentMatch.defaultType) === null || _a === void 0 ? void 0 : _a.create();
                             if (node) {
                                 tr.insert(posAfter, node);
-                                tr.setSelection(_tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.TextSelection.create(tr.doc, posAfter));
+                                tr.setSelection(_tiptap_pm_state__WEBPACK_IMPORTED_MODULE_0__.TextSelection.create(tr.doc, posAfter + 1));
                             }
                         }
                         tr.scrollIntoView();
@@ -11470,6 +12281,8 @@ const ListItem = _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.Node.create({
     addOptions() {
         return {
             HTMLAttributes: {},
+            bulletListTypeName: 'bulletList',
+            orderedListTypeName: 'orderedList',
         };
     },
     content: 'paragraph block*',
@@ -11519,6 +12332,8 @@ const ListItem = _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.Node.create({
     addOptions() {
         return {
             HTMLAttributes: {},
+            bulletListTypeName: 'bulletList',
+            orderedListTypeName: 'orderedList',
         };
     },
     content: 'paragraph block*',
@@ -11777,9 +12592,14 @@ const Strike = _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.Mark.create({
         };
     },
     addKeyboardShortcuts() {
-        return {
-            'Mod-Shift-x': () => this.editor.commands.toggleStrike(),
-        };
+        const shortcuts = {};
+        if ((0,_tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isMacOS)()) {
+            shortcuts['Mod-Shift-s'] = () => this.editor.commands.toggleStrike();
+        }
+        else {
+            shortcuts['Ctrl-Shift-s'] = () => this.editor.commands.toggleStrike();
+        }
+        return shortcuts;
     },
     addInputRules() {
         return [
@@ -12261,6 +13081,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getMarkRange: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getMarkRange),
 /* harmony export */   getMarkType: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getMarkType),
 /* harmony export */   getMarksBetween: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getMarksBetween),
+/* harmony export */   getNodeAtPosition: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getNodeAtPosition),
 /* harmony export */   getNodeAttributes: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getNodeAttributes),
 /* harmony export */   getNodeType: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getNodeType),
 /* harmony export */   getRenderedAttributes: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.getRenderedAttributes),
@@ -12276,6 +13097,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   injectExtensionAttributesToParseRule: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.injectExtensionAttributesToParseRule),
 /* harmony export */   inputRulesPlugin: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.inputRulesPlugin),
 /* harmony export */   isActive: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isActive),
+/* harmony export */   isAtEndOfNode: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isAtEndOfNode),
+/* harmony export */   isAtStartOfNode: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isAtStartOfNode),
 /* harmony export */   isEmptyObject: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isEmptyObject),
 /* harmony export */   isExtensionRulesEnabled: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isExtensionRulesEnabled),
 /* harmony export */   isFunction: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.isFunction),
@@ -12311,10 +13134,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   textblockTypeInputRule: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.textblockTypeInputRule),
 /* harmony export */   wrappingInputRule: () => (/* reexport safe */ _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.wrappingInputRule)
 /* harmony export */ });
-/* harmony import */ var _tiptap_extension_bubble_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tiptap/extension-bubble-menu */ "./node_modules/@tiptap/extension-bubble-menu/dist/index.js");
+/* harmony import */ var _tiptap_extension_bubble_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tiptap/extension-bubble-menu */ "./node_modules/@tiptap/extension-bubble-menu/dist/index.js");
 /* harmony import */ var _tiptap_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tiptap/core */ "./node_modules/@tiptap/core/dist/index.js");
-/* harmony import */ var _tiptap_extension_floating_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tiptap/extension-floating-menu */ "./node_modules/@tiptap/extension-floating-menu/dist/index.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var _tiptap_extension_floating_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tiptap/extension-floating-menu */ "./node_modules/@tiptap/extension-floating-menu/dist/index.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_ts_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-ts-types */ "./node_modules/vue-ts-types/dist/index.js");
+
 
 
 
@@ -12352,7 +13177,7 @@ const BubbleMenu = {
                     return;
                 }
                 this.$nextTick(() => {
-                    editor.registerPlugin((0,_tiptap_extension_bubble_menu__WEBPACK_IMPORTED_MODULE_1__.BubbleMenuPlugin)({
+                    editor.registerPlugin((0,_tiptap_extension_bubble_menu__WEBPACK_IMPORTED_MODULE_2__.BubbleMenuPlugin)({
                         updateDelay: this.updateDelay,
                         editor,
                         element: this.$el,
@@ -12461,7 +13286,7 @@ const FloatingMenu = {
                     return;
                 }
                 this.$nextTick(() => {
-                    editor.registerPlugin((0,_tiptap_extension_floating_menu__WEBPACK_IMPORTED_MODULE_2__.FloatingMenuPlugin)({
+                    editor.registerPlugin((0,_tiptap_extension_floating_menu__WEBPACK_IMPORTED_MODULE_3__.FloatingMenuPlugin)({
                         pluginKey: this.pluginKey,
                         editor,
                         element: this.$el,
@@ -12525,7 +13350,7 @@ const NodeViewWrapper = {
 
 class VueRenderer {
     constructor(component, props) {
-        const Component = (typeof component === 'function') ? component : vue__WEBPACK_IMPORTED_MODULE_3__["default"].extend(component);
+        const Component = (typeof component === 'function') ? component : vue__WEBPACK_IMPORTED_MODULE_4__["default"].extend(component);
         this.ref = new Component(props).$mount();
     }
     get element() {
@@ -12538,7 +13363,7 @@ class VueRenderer {
         }
         // prevents `Avoid mutating a prop directly` error message
         // Fix: `VueNodeViewRenderer` change vue Constructor `config.silent` not working
-        const currentVueConstructor = (_c = (_b = (_a = this.ref.$props.editor) === null || _a === void 0 ? void 0 : _a.contentComponent) === null || _b === void 0 ? void 0 : _b.$options._base) !== null && _c !== void 0 ? _c : vue__WEBPACK_IMPORTED_MODULE_3__["default"]; // eslint-disable-line
+        const currentVueConstructor = (_c = (_b = (_a = this.ref.$props.editor) === null || _a === void 0 ? void 0 : _a.contentComponent) === null || _b === void 0 ? void 0 : _b.$options._base) !== null && _c !== void 0 ? _c : vue__WEBPACK_IMPORTED_MODULE_4__["default"]; // eslint-disable-line
         const originalSilent = currentVueConstructor.config.silent;
         currentVueConstructor.config.silent = true;
         Object
@@ -12554,38 +13379,14 @@ class VueRenderer {
 }
 
 const nodeViewProps = {
-    editor: {
-        type: Object,
-        required: true,
-    },
-    node: {
-        type: Object,
-        required: true,
-    },
-    decorations: {
-        type: Object,
-        required: true,
-    },
-    selected: {
-        type: Boolean,
-        required: true,
-    },
-    extension: {
-        type: Object,
-        required: true,
-    },
-    getPos: {
-        type: Function,
-        required: true,
-    },
-    updateAttributes: {
-        type: Function,
-        required: true,
-    },
-    deleteNode: {
-        type: Function,
-        required: true,
-    },
+    editor: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.objectProp)().required,
+    node: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.objectProp)().required,
+    decorations: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.objectProp)().required,
+    selected: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.booleanProp)().required,
+    extension: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.objectProp)().required,
+    getPos: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.functionProp)().required,
+    updateAttributes: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.functionProp)().required,
+    deleteNode: (0,vue_ts_types__WEBPACK_IMPORTED_MODULE_1__.functionProp)().required,
 };
 class VueNodeView extends _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.NodeView {
     mount() {
@@ -12601,11 +13402,11 @@ class VueNodeView extends _tiptap_core__WEBPACK_IMPORTED_MODULE_0__.NodeView {
             deleteNode: () => this.deleteNode(),
         };
         const onDragStart = this.onDragStart.bind(this);
-        this.decorationClasses = vue__WEBPACK_IMPORTED_MODULE_3__["default"].observable({
+        this.decorationClasses = vue__WEBPACK_IMPORTED_MODULE_4__["default"].observable({
             value: this.getDecorationClasses(),
         });
         // @ts-ignore
-        const vue = (_b = (_a = this.editor.contentComponent) === null || _a === void 0 ? void 0 : _a.$options._base) !== null && _b !== void 0 ? _b : vue__WEBPACK_IMPORTED_MODULE_3__["default"]; // eslint-disable-line
+        const vue = (_b = (_a = this.editor.contentComponent) === null || _a === void 0 ? void 0 : _a.$options._base) !== null && _b !== void 0 ? _b : vue__WEBPACK_IMPORTED_MODULE_4__["default"]; // eslint-disable-line
         const Component = vue.extend(this.component).extend({
             props: Object.keys(props),
             provide: () => {
@@ -21084,10 +21885,10 @@ function replaceRange(tr, from, to, slice) {
     // Back up preferredDepth to cover defining textblocks directly
     // above it, possibly skipping a non-defining textblock.
     for (let d = preferredDepth - 1; d >= 0; d--) {
-        let type = leftNodes[d].type, def = definesContent(type);
-        if (def && $from.node(preferredTargetIndex).type != type)
+        let leftNode = leftNodes[d], def = definesContent(leftNode.type);
+        if (def && !leftNode.sameMarkup($from.node(Math.abs(preferredTarget) - 1)))
             preferredDepth = d;
-        else if (def || !type.isTextblock)
+        else if (def || !leftNode.type.isTextblock)
             break;
     }
     for (let j = slice.openStart; j >= 0; j--) {

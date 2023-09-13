@@ -12,10 +12,7 @@ import { required, email } from 'vee-validate/dist/rules';
 import VueFormWizard from 'vue-step-progress-bar'
 import 'vue-step-progress-bar/dist/vue-form-wizard.min.css'
 import App from './App.vue';
-import SignInForm from './components/SignInForm.vue';
-import Illuminator from './components/Illuminator.vue';
 import Menu from './components/Menu.vue';
-// import DataTable from "vue-materialize-datatable";
 import DataTable from "./components/DataTable.vue";
 
 import skeleton from 'tb-skeleton'
@@ -90,10 +87,13 @@ Vue.prototype.$search = function (term, list, options) {
 }
 
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = 'https://travel-club.tours/api/desktop/v1';
-// axios.defaults.baseURL = 'https://travel-club/api/v1';
+// Vue.prototype.$http = axios;
+// Получение this.$baseUrl из .env
+// Vue.prototype.$http.defaults.baseURL = process.env.APP_URL;
+Vue.prototype.$baseUrl = process.env.MIX_APP_URL;
+// axios.defaults.baseURL = 'https://travel-club.tours/api/desktop/v1';
+axios.defaults.baseURL = Vue.prototype.$baseUrl+'/api/desktop/v1';
 
-//Vue.prototype.$http = axios;
 const token = localStorage.getItem('token');
 if (token) {
     axios.defaults.headers.common['Authorization'] = "Bearer "+token;
@@ -101,8 +101,6 @@ if (token) {
 Vue.config.productionTip = false;
 
 Vue.use(VueFormWizard)
-// Vue.component('sign-in', SignInForm);
-// Vue.component('illuminator', Illuminator);
 Vue.component('main-menu', Menu);
 Vue.component('data-table', DataTable);
 
@@ -148,6 +146,7 @@ Vue.component("base-input", BaseInput);
 Vue.component("base-button", BaseButton);
 
 Vue.component('contact-form', require('./components/CallbackForm.vue').default);
+Vue.component('Footer', require('./components/Footer.vue').default);
 Vue.component('phone-by-city-form', require('./components/PhoneByCity.vue').default);
 Vue.component('voice-callback-form', require('./components/VoiceCallbackForm.vue').default);
 Vue.component('phone-order', require('./components/PhoneOrder.vue').default);

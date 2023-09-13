@@ -444,7 +444,7 @@
         </div>
     </div>
 </div>
-я
+
 <div class="mobileDetected">
     <div class="in">
         <div><img src="/img/travel/logo-1.png" alt="logo" class="logo" style="width: 50px; height: 80px; object-fit: contain"></div>

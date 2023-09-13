@@ -1138,7 +1138,7 @@
 .travel-card-orange .title-2 {
     position: absolute;
     z-index: 1;
-    right: 40px;
+    right: 30px;
     top: 70px;
     /*color: #f08b23;*/
     color: white;
@@ -1152,12 +1152,13 @@
 }
 
 .travel-card-orange .blue-brush {
-    left: 230px;
+    right: 0px;
 }
 
 .travel-card-orange .orange-brush {
     top: 5px;
-    left: 210px;
+    right: 0px;
+    left: auto;
 }
 
 .travel-card-orange .orange-inc {
@@ -1361,7 +1362,7 @@
 
 .footer-content h1 {
     /*font-family: 'Bello Pro';*/
-    font-family: 'Open Sans Extrabold';
+    //font-family: 'Open Sans Extrabold';
 }
 
 .inner-content {
@@ -1369,11 +1370,12 @@
     text-align: center;
     background-color: #062348;
     width: 100%;
+    height: 50px
 }
 
 .inner-content .waves {
     position: absolute;
-    top: -75px;
+    bottom: 50px;
     height: 12vh;
     /*Fix for safari gap*/
     min-height: 70px;
@@ -1687,7 +1689,29 @@ background: #f9f9f9 !important;
 
 }
 
+.soon-banner {
 
+    overflow: hidden;
+
+    &:after {
+        content: "Скоро";
+        width: 278px;
+        height: 40px;
+        background: linear-gradient(#c30000, #ff0b2f);
+        position: absolute;
+        transform: rotate(45deg);
+        right: -97px;
+        text-align: center;
+        color: white;
+        display: flex;
+        top: 17px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 3px 0px #777777;
+        font-weight: 700;
+    }
+
+}
 
 .hero {
     padding: 50px 0;

@@ -7,7 +7,7 @@
 
                     <!-- profile box -->
                     <div class="profileBox">
-                        <a href="https://travel-club.tours" class="image-wrapper">
+                        <a :href="$baseUrl" class="image-wrapper">
                             <img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged">
                         </a>
                         <div class="in" data-toggle="modal" data-target="#ContactModal">
@@ -27,19 +27,19 @@
                     <!-- * profile box -->
 
                     <ul class="listview flush transparent no-line image-listview mt-2">
+<!--                        <li>-->
+<!--                            <a :href="$baseUrl+'/m/profile'" class="item"-->
+<!--                               aria-label="профиль пользователя">-->
+<!--                                <div class="icon-box bg-orange">-->
+<!--                                    <i class="fas fa-user-alt"></i>-->
+<!--                                </div>-->
+<!--                                <div class="in">-->
+<!--                                    Личный кабинет-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li>
-                            <a href="https://travel-club.tours/m/profile" class="item"
-                               aria-label="профиль пользователя">
-                                <div class="icon-box bg-orange">
-                                    <i class="fas fa-user-alt"></i>
-                                </div>
-                                <div class="in">
-                                    Личный кабинет
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://travel-club.tours/m/tours" class="item" aria-label="Доступные туры">
+                            <a :href="$baseUrl+'/m/tours'" class="item" aria-label="Доступные туры">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-compass"></i>
                                 </div>
@@ -49,7 +49,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://travel-club.tours/m/flies" class="item" aria-label="Доступные перелеты">
+                            <a :href="$baseUrl+'/m/flies'" class="item" aria-label="Доступные перелеты">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-plane-departure"></i>
                                 </div>
@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://travel-club.tours/m/adventure" class="item"
+                            <a :href="$baseUrl+'/m/adventure'" class="item"
                                aria-label="Подобрать туры по России">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-map-marked-alt"></i>
@@ -71,18 +71,6 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="https://travel-club.tours/m/maintenance" class="item"
-                               aria-label="TravelClub Family">
-                                <div class="icon-box bg-orange">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div class="in">
-                                    <div>TravelClub Family</div>
-                                    <div class="coming-soon-img sidebar-img"></div>
-                                </div>
-                            </a>
-                        </li>
 
                         <li>
                             <a href="#contact" data-target="#ContactModal" data-toggle="modal" class="item"
@@ -98,18 +86,6 @@
                         </li>
 
                         <li>
-                            <a href="https://travel-club.tours/m/promo" class="item" aria-label="Promocodes">
-                                <div class="icon-box bg-orange">
-                                    <i class="fas fa-ad"></i>
-                                </div>
-                                <div class="in">
-                                    <div>Промокоды</div>
-                                    <div class="coming-soon-img sidebar-img"></div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
                             <a href="#contact" data-toggle="modal" aria-label="О Travel Club"
                                data-target="#AboutModal" class="item">
                                 <div class="icon-box bg-orange">
@@ -117,7 +93,6 @@
                                 </div>
                                 <div class="in">
                                     <div>О Нас</div>
-
                                 </div>
                             </a>
                         </li>
@@ -156,7 +131,6 @@
                                 </div>
                                 <div class="in">
                                     <div>Установить приложение</div>
-
                                 </div>
                             </a>
                         </li>
@@ -207,7 +181,7 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a rel="noreferrer"
-                       href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
+                       href="https://wa.me/79492353322"
                        target="_blank" class="button" aria-label="наш контакт в вотспап">
                         <i class="fab fa-whatsapp"></i>
                     </a>

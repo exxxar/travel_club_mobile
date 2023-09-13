@@ -77,10 +77,6 @@
 
     <modals-block></modals-block>
 </div>
-
-
-
-
 <script src="{{env("APP_DEBUG")?asset('/js/pwa/app.js'):asset('/js/pwa/app.min.js')}}?ver={{env("APP_VERSION")}}" defer></script>
 <script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}" defer></script>
 

@@ -24,9 +24,9 @@
                     </div>
                     <div class="col-md-6 col-lg-4 col-sm-10 m-auto">
                         <router-link to="/avia-search">
-                            <div class="bg-panel ml-auto mr-auto pulse day-theme"
+                            <div class="bg-panel ml-auto mr-auto pulse day-theme soon-banner"
                                  style="height: 520px; max-width: 300px; position: relative;">
-                                <h1>Подобрать авиабилеты</h1>
+                                <h1>Горячие туры</h1>
                                 <img src="images/2.png" style="position:absolute; bottom: 0;width: 100%;">
                             </div>
                         </router-link>
@@ -56,9 +56,9 @@
                             </slide>
                             <slide>
                                 <router-link to="/avia-search">
-                                    <div class="bg-panel ml-auto mr-auto day-theme"
+                                    <div class="bg-panel ml-auto mr-auto day-theme soon-banner"
                                          style="height: 70vh; max-width: 300px; position: relative;">
-                                        <h1>Подобрать авиабилеты</h1>
+                                        <h1>Горячие туры</h1>
                                         <img src="images/2.png" style="position:absolute; bottom: 0;width: 100%;">
                                     </div>
                                 </router-link>
@@ -170,9 +170,8 @@
                                          style="color: #062348; font-size: 14px; font-weight: 700; width: 80%; text-align: justify">
                                         <p>
                                             Сеть туристических агентств
-                                            <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
-                                            <span
-                                                style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
+                                            <span style="font-family: 'Open Sans';font-weight:900;">Travel<span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span></span>
+
                                             – это в первую очередь команда людей, которые не представляют свою жизнь без
                                             путешествий и готовы делится своим опытом.
                                             Настоящие профессионалы, обожающие свою работу!
@@ -188,9 +187,8 @@
 
                                         <p>
                                             В основе
-                                            <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
-                                            <span
-                                                style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
+                                            <span style="font-family: 'Open Sans';font-weight:900;">Travel<span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span></span>
+
                                             лежит многолетний опыт работы. Все наши специалисты регулярную проходят
                                             обязательную квалификацию, тем самым подтверждая свое право быть в команде
                                         </p>
@@ -332,15 +330,15 @@
                                             Welcome!
                                             Любая, даже самая крейзи идея имеет право на существование, все возможно,
                                             вместе с
-                                            <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
-                                            <span
-                                                style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
+                                            <span style="font-family: 'Open Sans';font-weight:900;">Travel<span
+                                                style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span></span>
+
                                         </p>
                                         <p>
                                             Изучайте Мир и путешествуйте вместе с
-                                            <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
-                                            <span
-                                                style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
+                                            <span style="font-family: 'Open Sans';font-weight:900;">Travel<span
+                                                style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span></span>
+
                                             !
                                         </p>
                                     </div>
@@ -576,8 +574,8 @@
                                      style="position: absolute;top:57px"/>
                             </div>
                             <div class="travel-card-description row">
-                                <p>Путешествуй с <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
-                                    <span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
+                                <p>Путешествуй с <span style="font-family: 'Open Sans';font-weight:900;">Travel<span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span></span>
+
                                     по всей России.</p>
                                 <p>Возможна оплата онлайн или сделать заказ с сайта.</p>
                             </div>
@@ -620,8 +618,8 @@
                                 </div>
                             </div>
                             <div class="card-description my-3 mx-auto ">
-                                <p>Путешествуй с <span style="font-family:'Bello Pro'; font-weight:100;">Travel</span>
-                                    <span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span>
+                                <p>Путешествуй с <span style="font-family: 'Open Sans';font-weight:900;">Travel<span style="color: #f08b23; font-family: 'Open Sans';font-weight:900;">Club</span></span>
+
                                     по всей России.</p>
                                 <p>Возможна оплата онлайн или сделать заказ с сайта.</p>
                             </div>
@@ -640,77 +638,77 @@
             </div>
         </section>
 
-        <section id="family" class="my-5" style="height: 100%; min-height: 500px; ">
-            <div class="container m-auto" style="width: 100%;">
-                <div style="width: 100%; height: 100%;" class="row m-auto justify-content-center align-items-center">
-                    <div class="col-12 col-md-8 col-sm-12">
-                        <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row"
-                             style="height:100px;width:100%;">
-                            <div class="col-md-7 p-0">
-                                <div class="row mr-auto ml-0 my-auto travel-card-title"
-                                     style="position:relative;height:50px;width:250px;">
-                                    <h1 class="title-1"><span>Н</span>аша семья</h1>
-                                    <img src="/images/blue-brush.svg" class="blue-brush"
-                                         style="position: absolute; width:250px; height:50px"/>
-                                </div>
-                            </div>
-                            <div class="col-md-7 p-0">
-                                <div class="row ml-auto mr-0 my-auto travel-card-title"
-                                     style="position:relative;height:50px;width:250px;">
-                                    <h1 class="title-2"><span>TravelClub</span></h1>
-                                    <img src="/images/orange-brush.svg" class="orange-brush"
-                                         style="position: absolute; width:250px; height:50px"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="row m-auto" style="height: 100%; width: 100%;">
-                            <div class="col-md-6 col-sm-12 col-12 m-auto">
-                                <!--                                <div class="row family-row family-description" style="width: 80%; color: #062348;font-size: 13px;font-weight: 900; font-family:'Open Sans';">-->
-                                <!--                                    <p>Стань частью</p>-->
-                                <!--                                </div>-->
-                                <div class="row family-row" style="width: 100%;">
-                                    <div class="col-md-5 p-0 m-auto">
-                                        <div class="row m-auto" style="height:100%; width:100%;">
-                                            <div class="col-12 p-0">
-                                                <div class="feature family-title mt-2 mb-4">
-                                                    <h4 class="feature-1"><strong>Стань частью</strong></h4>
-                                                    <h2 class="feature-2">travelclub family</h2>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-12 col-sm-6 pl-0">
-                                                <div class="feature mb-4">
-                                                    <h4 class="feature-1"><strong>с нами путешествуют</strong></h4>
-                                                    <h2 class="feature-2">Любава и Алёша</h2>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-12 col-sm-6 pl-0">
-                                                <div class="feature mb-4">
-                                                    <h4 class="feature-1"><strong>фитнес-семья в instagram</strong></h4>
-                                                    <a href="https://www.instagram.com/goodiets/"><h2 class="feature-2">
-                                                        @goodiets</h2></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 text-center m-auto">
-                                        <img src="/images/goodiets.png" style="height: 169px;"/>
-                                    </div>
-                                </div>
-                                <div class="row mt-3 family-row" style="width: 80%;">
-                                    <img src="/images/coming-soon.png" style="width: 100%;"/>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-12 m-auto">
-                                <img src="/images/family-illustration.png" style="width: 100%;"/>
-                                <flip-countdown deadline="2022-01-11 00:00:00" :labels="labels"></flip-countdown>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!--        <section id="family" class="my-5" style="height: 100%; min-height: 500px; ">-->
+<!--            <div class="container m-auto" style="width: 100%;">-->
+<!--                <div style="width: 100%; height: 100%;" class="row m-auto justify-content-center align-items-center">-->
+<!--                    <div class="col-12 col-md-8 col-sm-12">-->
+<!--                        <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row"-->
+<!--                             style="height:100px;width:100%;">-->
+<!--                            <div class="col-md-7 p-0">-->
+<!--                                <div class="row mr-auto ml-0 my-auto travel-card-title"-->
+<!--                                     style="position:relative;height:50px;width:250px;">-->
+<!--                                    <h1 class="title-1"><span>Н</span>аша семья</h1>-->
+<!--                                    <img src="/images/blue-brush.svg" class="blue-brush"-->
+<!--                                         style="position: absolute; width:250px; height:50px"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-7 p-0">-->
+<!--                                <div class="row ml-auto mr-0 my-auto travel-card-title"-->
+<!--                                     style="position:relative;height:50px;width:250px;">-->
+<!--                                    <h1 class="title-2"><span>TravelClub</span></h1>-->
+<!--                                    <img src="/images/orange-brush.svg" class="orange-brush"-->
+<!--                                         style="position: absolute; width:250px; height:50px"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-12">-->
+<!--                        <div class="row m-auto" style="height: 100%; width: 100%;">-->
+<!--                            <div class="col-md-6 col-sm-12 col-12 m-auto">-->
+<!--                                &lt;!&ndash;                                <div class="row family-row family-description" style="width: 80%; color: #062348;font-size: 13px;font-weight: 900; font-family:'Open Sans';">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    <p>Стань частью</p>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--                                <div class="row family-row" style="width: 100%;">-->
+<!--                                    <div class="col-md-5 p-0 m-auto">-->
+<!--                                        <div class="row m-auto" style="height:100%; width:100%;">-->
+<!--                                            <div class="col-12 p-0">-->
+<!--                                                <div class="feature family-title mt-2 mb-4">-->
+<!--                                                    <h4 class="feature-1"><strong>Стань частью</strong></h4>-->
+<!--                                                    <h2 class="feature-2">travelclub family</h2>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-12 col-md-12 col-sm-6 pl-0">-->
+<!--                                                <div class="feature mb-4">-->
+<!--                                                    <h4 class="feature-1"><strong>с нами путешествуют</strong></h4>-->
+<!--                                                    <h2 class="feature-2">Любава и Алёша</h2>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-12 col-md-12 col-sm-6 pl-0">-->
+<!--                                                <div class="feature mb-4">-->
+<!--                                                    <h4 class="feature-1"><strong>фитнес-семья в instagram</strong></h4>-->
+<!--                                                    <a href="https://www.instagram.com/goodiets/"><h2 class="feature-2">-->
+<!--                                                        @goodiets</h2></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-7 text-center m-auto">-->
+<!--                                        <img src="/images/goodiets.png" style="height: 169px;"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="row mt-3 family-row" style="width: 80%;">-->
+<!--                                    <img src="/images/coming-soon.png" style="width: 100%;"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6 col-sm-12 col-12 m-auto">-->
+<!--                                <img src="/images/family-illustration.png" style="width: 100%;"/>-->
+<!--                                <flip-countdown deadline="2022-01-11 00:00:00" :labels="labels"></flip-countdown>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
         <div class="hero">
             <div class="container">
@@ -782,7 +780,7 @@
                         <div class="phoneContent">
                             <div class="phoneWrapper">
                                 <div class="in">
-                                    <iframe class="getFrame" src="https://travel-club.tours/m/mobile"
+                                    <iframe class="getFrame" src="http://test-task/m/mobile"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
@@ -940,7 +938,7 @@
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a rel="noreferrer"
-                   href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR"
+                   href="https://wa.me/79492353322"
                    target="_blank" class="button" aria-label="наш контакт в вотспап">
                     <i class="fab fa-whatsapp"></i>
                 </a>
@@ -951,12 +949,9 @@
                 <div class="row">
                     <h2>Ростов-на-Дону</h2>
                     <div class="col-12">
-                        <p>Социалистическая 11 оф 2А
-                        </p>
-                        <p>8 800 101-96-66</p>
-                        <p>8 800 222-89-68</p>
+                        <p>Горького 140</p>
+                        <p>+7 906 416-78-72</p>
                         <p>travelclubrnd@bk.ru</p>
-                        <p>+7-988-253-41-49</p>
                         <h4> Режим работы:</h4>
                         <p>Пн-Птн 10 00 – 18 00</p>
                         <p>Суббота 10 00 – 17 00</p>
@@ -964,48 +959,48 @@
 
                         <employee-list :city="'Ростов-на-Дону'"/>
 
-                        <div class="ya-map"><a
-                            href="https://yandex.ru/MAPS/39/rostov-na-donu/?utm_medium=mapframe&utm_source=maps"
-                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Ростов‑на‑Дону</a><a
-                            href="https://yandex.ru/MAPS/39/rostov-na-donu/house/sotsialisticheskaya_ulitsa_11_27/Z0AYcQdgTUQCQFptfX5wdnhkYg==/?ll=39.700415%2C47.217476&utm_medium=mapframe&utm_source=maps&z=16.65"
-                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Социалистическая улица, 11/27
-                            — Яндекс.Карты</a>
-                            <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ7XX1KD" allowfullscreen="true"></iframe>
-                        </div>
+<!--                        <div class="ya-map"><a-->
+<!--                            href="https://yandex.ru/MAPS/39/rostov-na-donu/?utm_medium=mapframe&utm_source=maps"-->
+<!--                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Ростов‑на‑Дону</a><a-->
+<!--                            href="https://yandex.ru/MAPS/39/rostov-na-donu/house/sotsialisticheskaya_ulitsa_11_27/Z0AYcQdgTUQCQFptfX5wdnhkYg==/?ll=39.700415%2C47.217476&utm_medium=mapframe&utm_source=maps&z=16.65"-->
+<!--                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Социалистическая улица, 11/27-->
+<!--                            — Яндекс.Карты</a>-->
+<!--                            <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ7XX1KD" allowfullscreen="true"></iframe>-->
+<!--                        </div>-->
                     </div>
 
-                    <div class="col-12">
-                        <h2>Донецк</h2>
-                        <p>Ул. Артема 100Д
-                        </p>
-                        <p> 8-800-101-96-66 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i class="fab fa-viber"></i></span></p>
-                        <p> 071-339-90-89 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i
-                            class="fab fa-viber"></i></span></p>
-                        <h4> Режим работы:</h4>
-                        <p> Пн-Птн 10 00 – 18 00</p>
-                        <p>Суббота 10 00 – 17 00</p>
-                        <p>Воскресенье – выходной</p>
+<!--                    <div class="col-12">-->
+<!--                        <h2>Донецк</h2>-->
+<!--                        <p>Ул. Артема 100Д-->
+<!--                        </p>-->
+<!--                        <p> 8-800-101-96-66 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i class="fab fa-viber"></i></span></p>-->
+<!--                        <p> 071-339-90-89 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i-->
+<!--                            class="fab fa-viber"></i></span></p>-->
+<!--                        <h4> Режим работы:</h4>-->
+<!--                        <p> Пн-Птн 10 00 – 18 00</p>-->
+<!--                        <p>Суббота 10 00 – 17 00</p>-->
+<!--                        <p>Воскресенье – выходной</p>-->
 
-                        <employee-list :city="'Донецк'"/>
+<!--                        <employee-list :city="'Донецк'"/>-->
 
-                        <div class="ya-map"><a
-                            href="https://yandex.ru/MAPS/142/donetsk/?utm_medium=mapframe&utm_source=maps"
-                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Донецк</a><a
-                            href="https://yandex.ru/MAPS/142/donetsk/house/vulytsia_artema_100d/Z04YfgdhQUEDQFpifXxwdnprYg==/?ll=37.801844%2C48.017686&utm_medium=mapframe&utm_source=maps&z=16.65"
-                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Артёма, 100Д —
-                            Яндекс.Карты</a>
-                            <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ72EhkB" allowfullscreen="true"></iframe>
-                        </div>
-                    </div>
+<!--                        <div class="ya-map"><a-->
+<!--                            href="https://yandex.ru/MAPS/142/donetsk/?utm_medium=mapframe&utm_source=maps"-->
+<!--                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Донецк</a><a-->
+<!--                            href="https://yandex.ru/MAPS/142/donetsk/house/vulytsia_artema_100d/Z04YfgdhQUEDQFpifXxwdnprYg==/?ll=37.801844%2C48.017686&utm_medium=mapframe&utm_source=maps&z=16.65"-->
+<!--                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Артёма, 100Д —-->
+<!--                            Яндекс.Карты</a>-->
+<!--                            <iframe src="https://yandex.ru/map-widget/v1/-/CCUQ72EhkB" allowfullscreen="true"></iframe>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="col-12">
                         <h2>Донецк</h2>
                         <p>Бульвар Пушкина 23
                         </p>
-                        <p>071-235-33-22 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i
-                            class="fab fa-viber"></i></span></p>
-                        <p>095-935-99-90</p>
-                        <h4> Режим работы:</h4>
+                        <p>+7 949 235-33-22
+                            <span class="ml-2"><i class="fab fa-whatsapp"></i></span>
+                        </p>
+                        <h4>Режим работы:</h4>
                         <p> Пн-Птн 10 00 – 18 00</p>
                         <p>Суббота 10 00 – 17 00</p>
                         <p> Воскресенье - выходной</p>
@@ -1024,211 +1019,13 @@
                 </div>
             </div>
         </div>
-
-        <section class="footer" id="contacts" style="overflow: hidden">
-            <!--Waves Container-->
-            <div>
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave"
-                              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,153, 0.7)"/>
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,204,102, 0.6)"/>
-                        <!--<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,153, 0.7)" />-->
-                        <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(255,153,0, 1)"/>
-                    </g>
-                </svg>
-            </div>
-            <!--Waves end-->
-            <div class="footer-content flex">
-                <div class="row mb-5">
-                    <div class="col-12 mb-3">
-                        <h1>Готовы к незабываемым приключениям?</h1>
-                    </div>
-                    <div class="col-12">
-                        <button class="footer-btn" type="text" data-toggle="modal" data-target="#customPhoneModal">
-                            Заказать звонок
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="inner-content inner-flex">
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave"
-                              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="1" fill="#062348"/>
-                    </g>
-                </svg>
-                <div class="row w-100 footer-last m-auto">
-                    <div class="col-12 col-md-12">
-                        <button class="btn btn-orange rounded btn-footer-contact" @click="sidebarOpen">
-                            Контакты
-                        </button>
-
-                    </div>
-                    <!--    <div class="col-12 col-md-3 col-sm-12 ">
-                            <div class="row mt-5 mx-auto" style="height:70%; width:100%">
-                                <div class="col-12 mb-3 mx-auto">
-                                    <div class="row m-auto" style="height:50px">
-                                        <a class="more-text m-auto" style="color: #f08b23;"
-                                           v-scroll-to="'#travel'">Путешествуй</a>
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <div class="row m-auto" style="height:50px">
-                                        <a class="more-text m-auto" style="color: #f08b23;" v-scroll-to="'#avia'">Летай</a>
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <div class="row m-auto" style="height:50px">
-                                        <a class="more-text m-auto" style="color: #f08b23;"
-                                           v-scroll-to="'#russia'">Познавай</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 col-sm-12">
-                            <div class="row w-100 mt-5 mx-auto" style="height:70%; width:100%">
-
-                                <div class="col-12 p-0 mb-3">
-                                    <div class="row w-100 m-auto align-items-center">
-                                        <div class="col-2">
-                                            <div class="more-button m-auto">
-
-                                                <div class="icon icon-instagram"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-10">
-                                            <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
-                                               href="https://www.instagram.com/travelclub_tours">
-                                                <h1 class="more-text mr-auto">
-                                                    @travelclub_tours
-                                                </h1>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 p-0 mb-3">
-                                    <div class="row w-100 m-auto align-items-center">
-                                        <div class="col-2">
-                                            <div class="more-button m-auto">
-                                                &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
-                                                <div class="icon icon-telegram"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-10">
-                                            <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
-                                               href="https://t.me/travelclubtours">
-                                                <h1 class="more-text mr-auto">Travel Club Telegram</h1>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 p-0 mb-3">
-                                    <div class="row w-100 m-auto align-items-center ">
-                                        <div class="col-2">
-                                            <div class="more-button m-auto">
-                                                &lt;!&ndash;<a href="#" class="icon icon-instagram"></a>&ndash;&gt;
-                                                <div class="fab fa-viber"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-10">
-                                            <a class="more-text m-auto float-left p-2 text-center w-100" target="_blank"
-                                               href="https://invite.viber.com/?g2=AQBfafsk6TeJiEi4vi0HBbxlHq6j9KfenRbLYssiFJrvfsZPLMirR07MSoBBPQpR">
-                                                <h1 class="more-text mr-auto">Travel Club Viber</h1>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12" style="background: #041e3f;border-top: 1px solid #d9d9d942;">
-                            <div class="row w-100 m-auto align-items-center justify-content-center">
-                                <a class="mx-auto my-2" target="_blank" href="https://donbassit.ru"
-                                   style="color:white; font-family: 'Open Sans'; font-weight: 900"><img
-                                    src="/images/do-it.png" class="mb-2" style="height: 20px;"/></a>
-                            </div>
-                        </div>-->
-                </div>
-
-
-            </div>
-        </section>
-
-        <footer id="footer">
-            <div class="zerogrid wrap-footer">
-                <div class="row">
-                    <div class="col-sm-4 footer-1">
-                        <div class="wrap-col">
-                            <h3 class="widget-title">О нас</h3>
-                            <p class="text-white">Коллектив туристического агентства «TravelClub» рады приветствовать Вас на нашем сайте. Мы
-                                поможем сделать Ваш долгожданный отпуск полным красочных впечатлений и ярких
-                                воспоминаний. </p>
-                            <p  class="text-white">Это может быть горящий тур в Египет, Турцию, Тунис, ОАЭ, Черногорию, Хорватию, Италию,
-                                Болгарию, если Вы хотите понежиться под теплыми лучами солнца и поплавать в море. </p>
-                            <ul class="quicklinks w-100 d-flex justify-content-end">
-                               <!-- <li><a href="about.html">Подробнее</a></li>-->
-                                <li><a target="_blank" href="https://yandex.ru/maps/142/donetsk/house/bulvar_pushkina_23/Z04YfgdiSEwDQFpifXxxc3VgYg==/?from=api-maps&ll=37.802265%2C48.002741&origin=jsapi21&z=18.9">Мы на карте</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 footer-2 d-flex justify-content-center">
-                        <div class="wrap-col text-center">
-                            <h3 class="widget-title">Контакты</h3>
-                            <p  class="text-white">Телефоны:</p>
-                            <p lass="text-white"><strong style="font-size: 18px;color:#A9A9A9;">8-800-101-96-66</strong></p>
-<!--                            <phone-by-city-form class="phone-by-city mb-0"></phone-by-city-form>-->
-                            <p class="text-white">Viber, WhatsApp:</p>
-                            <strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
-                            <p  class="text-white">Telegram:</p><strong style="font-size: 18px;color:#A9A9A9;">(071) 235-33-22</strong>
-                            <p class="text-white">Адрес:</p>
-                            <strong style="color:#A9A9A9;">г.Донецк, Бульвар Пушкина, 23</strong>
-                            <p class="text-white">Email:</p>
-                            <strong style="color:#A9A9A9;">travelclubrnd@bk.ru</strong>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 footer-3 d-flex justify-content-center">
-                        <div class="wrap-col text-center">
-                            <h3 class="widget-title text-center">Мы в соцсетях</h3>
-                            <ul class="social-buttons d-flex justify-content-center">
-                                <li><a href="https://vk.com/rozovyi_slon_donetsk"><i class="fab fa-vk"></i></a></li>
-                                <li><a href="#"><i class="fab fa-whatsapp"></i> </a></li>
-                                <li><a href="https://www.instagram.com/travelclub_tours/"><i class="fab fa-instagram"></i></a></li>
-
-                            </ul>
-                            <a class="btn btn-outline-light" href="viber://chat?number=+3800712353322">Написать в
-                                Viber</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="bottom-footer">
-                    <div class="copyright">
-
-                        www.travel-club.tours&nbsp;|&nbsp; 2017 – 2022
-                    </div>
-                </div>
-            </div>
-
-        </footer>
+        <Footer/>
     </div>
 </template>
 
 <script>
-
-
-    import FlipCountdown from 'vue2-flip-countdown'
-
     export default {
         name: "Landing",
-        components: {FlipCountdown},
         data: () => ({
             labels: {
                 days: 'Дни',
@@ -1285,12 +1082,12 @@
                             localStorage.setItem('promo', true);
                             this.$router.push('/signup')
                         } else {
-                            this.promocode_error_text = 'Неверно введен промокод'
+                            this.promocode_error_text = 'Неверно введен промокод';
                             this.promocode_error = true;
                         }
                     })
                 } else {
-                    this.promocode_error_text = 'Введите промокод'
+                    this.promocode_error_text = 'Введите промокод';
                     this.promocode_error = true;
                 }
 
@@ -1332,119 +1129,5 @@
         color: white;
     }
 
-
-    /* ---------------------------------------------------------------------------- */
-    /* -------------------------------------Footer--------------------------------- */
-    /* ---------------------------------------------------------------------------- */
-    footer#footer {
-        background: #001025;
-        font-size: 14px;
-        position: relative;
-        top: auto;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: block;
-        border-bottom: 2px white solid;
-    }
-
-    footer a {
-        color: #ed6427
-    }
-
-    footer a:hover {
-        color: #fff
-    }
-
-    footer .widget-title {
-        text-transform: capitalize;
-        margin-bottom: 30px;
-        color: #ed6427;
-    }
-
-    footer .wrap-footer {
-        padding: 70px 60px 0;
-    }
-
-    footer .brand-footer {
-        font-size: 57px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        color: #777;
-    }
-
-    footer ul li {
-        margin-bottom: 5px;
-        padding: 10px 0 15px;
-        display: inline-block;
-    }
-
-    footer ul.quicklinks li {
-        position: relative;
-        padding: 0 10px;
-    }
-
-    footer ul.quicklinks li:after {
-        position: absolute;
-        content: "";
-        border-right: 1px solid #777;
-        height: 16px;
-        top: 5px;
-        padding-left: 10px;
-    }
-
-    footer ul.quicklinks li:last-child:after {
-        display: none;
-    }
-
-    footer ul.quicklinks li:first-child {
-        padding-left: 0;
-    }
-
-    footer .col-footer-1 {
-    }
-
-    footer .col-footer-2 p {
-        margin: 5px 0 0;
-    }
-
-    footer .col-footer-2 strong {
-        font-size: 17px;
-    }
-
-    footer .col-footer-3 {
-    }
-
-    footer .col-footer-3 ul.social-buttons {
-    }
-
-    footer .col-footer-3 ul.social-buttons li a {
-        font-size: 32px;
-        margin: 15px;
-    }
-
-    footer .bottom-footer {
-        margin-top: 50px;
-    }
-
-    .copyright {
-        background: #1a1c1e;
-        color: #777;
-        padding: 20px;
-        text-align: center;
-    }
-
-    @media all and (max-width: 768px) {
-        footer#footer {
-            position: relative;
-        }
-        .copyright {
-            text-align: center;
-        }
-        .copyright ul.quick-link {
-            float: none;
-            margin-top: 10px;
-        }
-    }
 
 </style>

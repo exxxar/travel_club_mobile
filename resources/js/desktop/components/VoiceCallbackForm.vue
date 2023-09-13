@@ -13,7 +13,7 @@
                         <div v-for="(record, index) in recordings" :key="index" class="recorded-item justify-content-between">
                             <div class="audio-container w-100">
 <!--                                <audio :src="record.src" controls/>-->
-                                <audio-player-component :audio="record" class="w-100"></audio-player-component>
+                                <audio-player :audio="record" class="w-100"></audio-player>
                             </div>
                             <div>
                                 <button @click="removeRecord(index)" class="btn btn-primary" style="padding: 10px !important;max-width:50px">
@@ -91,7 +91,7 @@
 </template>
 
 <script>
-    import {mask} from 'vue-the-mask'
+    import {mask} from 'vue-the-mask';
     export default {
         // props: ["phone"],
         data() {

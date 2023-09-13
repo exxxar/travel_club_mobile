@@ -60,29 +60,32 @@
             //     src: this.audio
             // },
             // this.player.src = 'https://travel-club/storage/app/public' + this.audio;
-            if(this.audio.type=='audio')
-            {
-                if(this.audio.src)
+            if(this.audio) {
+                if(this.audio.type=='audio')
                 {
-                    this.player=new Audio(this.audio.src);
+                    if(this.audio.src)
+                    {
+                        this.player=new Audio(this.audio.src);
+                    }
+                    else {
+                        this.player=new Audio(this.audio.path);
+                    }
+                    this.duration = this.audio.seconds;
+                    console.log(this.audio)
+                    // this.title = this.audio.name;
                 }
-                else {
-                    this.player=new Audio(this.audio.path);
+                else
+                {
+                    // var path = 'https://travel-club.tours'+this.audio;
+                    // console.log(path)
+                    this.player = new Audio(this.audio);
+                    this.title = this.audio.name
                 }
-                this.duration = this.audio.seconds;
-                console.log(this.audio)
-                // this.title = this.audio.name;
+                this.player.addEventListener('loadeddata', this.proccessPlaybackStart, false)
+                this.player.addEventListener('loadedmetadata', this.proccessPlaybackStart, false)
+                this.player.addEventListener("canplay", this.proccessPlaybackStart, false)
             }
-            else
-            {
-                // var path = 'https://travel-club.tours'+this.audio;
-                // console.log(path)
-                this.player = new Audio(this.audio)
-                this.title = this.audio.name
-            }
-            this.player.addEventListener('loadeddata', this.proccessPlaybackStart, false)
-            this.player.addEventListener('loadedmetadata', this.proccessPlaybackStart, false)
-            this.player.addEventListener("canplay", this.proccessPlaybackStart, false)
+
         },
         methods: {
             listenersWhenPlay() {

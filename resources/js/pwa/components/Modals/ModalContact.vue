@@ -25,24 +25,12 @@
                     </ul>
                     <div class="tab-content mt-2">
                         <div class="tab-pane fade active show" id="home-1" role="tabpanel">
-                            <p>Ул. Артема 100Д
-                                <button class="btn btn-link" @click="showOnMap(0)" rel="noreferrer">Показать на карте</button>
-                            </p>
-                            <p> 071-339-90-89 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i
-                                class="fab fa-viber"></i></span></p>
-                            <h4> Режим работы:</h4>
-                            <p> Пн-Птн 10 00 – 18 00</p>
-                            <p>Суббота 10 00 – 17 00</p>
-                            <p>Воскресенье – выходной</p>
-
-
-                            <hr>
                             <p>Бульвар Пушкина 23
                                 <button class="btn btn-link" @click="showOnMap(1)" rel="noreferrer">Показать на карте</button>
                             </p>
-                            <p>071-235-33-22 <span class="ml-2"><i class="fab fa-whatsapp"></i> <i
-                                class="fab fa-viber"></i></span></p>
-                            <p>095-935-99-90</p>
+                            <p>+7 949 235-33-22
+                                <span class="ml-2"><i class="fab fa-whatsapp"></i></span>
+                            </p>
                             <h4> Режим работы:</h4>
                             <p> Пн-Птн 10 00 – 18 00</p>
                             <p>Суббота 10 00 – 17 00</p>
@@ -54,12 +42,9 @@
 
                         </div>
                         <div class="tab-pane fade" id="home-2" role="tabpanel">
-                            <p>Социалистическая 11 оф 2А
-                                <button class="btn btn-link" @click="showOnMap(2)">Показать на карте</button>
-                            </p>
-                            <p>8 800 222-89-68</p>
+                            <p>Горького 140</p>
+                            <p>+7 906 416-78-72</p>
                             <p>travelclubrnd@bk.ru</p>
-                            <p>+7-988-253-41-49</p>
                             <h4> Режим работы:</h4>
                             <p>Пн-Птн 10 00 – 18 00</p>
                             <p>Суббота 10 00 – 17 00</p>
@@ -73,13 +58,13 @@
                     </div>
 
 
-                    <yandex-map ref="map" :coords="center">
-                        <ymap-marker :key="index" v-for="(location, index) in locations"
-                                     :marker-id="'id'+index"
-                                     :coords="location.coords"
-                                     :icon="location.markerIcon"
-                        />
-                    </yandex-map>
+<!--                    <yandex-map ref="map" :coords="center">-->
+<!--                        <ymap-marker :key="index" v-for="(location, index) in locations"-->
+<!--                                     :marker-id="'id'+index"-->
+<!--                                     :coords="location.coords"-->
+<!--                                     :icon="location.markerIcon"-->
+<!--                        />-->
+<!--                    </yandex-map>-->
 
                 </div>
             </div>
@@ -87,7 +72,7 @@
     </div>
 </template>
 <script>
-    import {yandexMap, ymapMarker} from 'vue-yandex-maps'
+    // import {yandexMap, ymapMarker} from 'vue-yandex-maps'
 
     export default {
         data() {
@@ -150,7 +135,7 @@
                 }, 1000);
             }
         },
-        components: {yandexMap, ymapMarker}
+        // components: {yandexMap, ymapMarker}
     }
 </script>
 <style lang="scss">

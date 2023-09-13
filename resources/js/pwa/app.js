@@ -7,8 +7,8 @@
 import Vue from "vue";
 
 require('./bootstrap');
+Vue.prototype.$baseUrl = process.env.MIX_APP_URL;
 
-window.Vue = require('vue');
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
@@ -51,7 +51,6 @@ extend('min', {
     params: ['length'],
     message: 'Это поле должно содержать {length} или более знаков'
 });
-
 extend('phone', {
     validate(value, args) {
         return value.length >= 18;

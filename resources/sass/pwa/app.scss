@@ -145,6 +145,31 @@ svg:not(:root).svg-inline--fa {
     }
 
 }
+.card-with-red-line {
+    overflow: hidden;
+
+    &:after {
+        content: attr(text);
+        font-size: 18px;
+        width: 306px;
+        height: 50px;
+        background: linear-gradient(#f83f1a, #ff4344, #c71f00);
+        position: absolute;
+        transform: rotate(
+                45deg
+        );
+        right: -87px;
+        top: 42px;
+        box-shadow: 1px 1px 3px 0px #777777;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+}
 
 .comments {
     height: 100vh;

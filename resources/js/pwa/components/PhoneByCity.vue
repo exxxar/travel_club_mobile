@@ -3,7 +3,7 @@
         <h2>Телефон менеджера в вашем городе</h2>
         <div @click="openFilter()" v-if="selected&&!is_filter" class="mb-2">
             <p v-if="selected.country==='uk'" class="m-0 select-phone">
-                <span class="phone" v-if="selected.item.parent_id==2134||selected.item.parent_id==2173"> 071-339-90-89 <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
+                <span class="phone" v-if="selected.item.parent_id==2134||selected.item.parent_id==2173">7 949 339-90-89 <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
                 <span class="phone" v-else>8-800-222-89-68<span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></span>
             </p>
             <p class="m-0 select-phone selected-text" v-else><span class="phone">8-800-222-89-68</span> <span class="badge badge-warning"><i class="fas fa-sign-in-alt"></i></span></p>
