@@ -759,7 +759,27 @@ var render = function render() {
     attrs: {
       src: "/images/orange-inc.svg"
     }
-  })])])])]), _vm._v(" "), _vm._m(25), _vm._v(" "), _vm._m(26), _vm._v(" "), _vm._m(27), _vm._v(" "), _c("div", {
+  })])])])]), _vm._v(" "), _c("div", {
+    staticClass: "hero"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_vm._m(25), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "phoneContent"
+  }, [_c("div", {
+    staticClass: "phoneWrapper"
+  }, [_c("div", {
+    staticClass: "in"
+  }, [_c("iframe", {
+    staticClass: "getFrame",
+    attrs: {
+      src: _vm.$baseUrl + "/m/mobile",
+      frameborder: "0"
+    }
+  })])])])])])])]), _vm._v(" "), _vm._m(26), _vm._v(" "), _vm._m(27), _vm._v(" "), _c("div", {
     staticClass: "sidebar"
   }, [_c("a", {
     staticClass: "toggleButton sidebarTrigger",
@@ -1575,12 +1595,6 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "hero"
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
     staticClass: "col-md-6"
   }, [_c("div", {
     staticClass: "hero-header"
@@ -1640,21 +1654,7 @@ var staticRenderFns = [function () {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "text"
-  }, [_c("strong", [_vm._v("Посмотреть на своём телефоне.")]), _vm._v(" Сканируй QR-код для установки приложения\n                            ")])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-6"
-  }, [_c("div", {
-    staticClass: "phoneContent"
-  }, [_c("div", {
-    staticClass: "phoneWrapper"
-  }, [_c("div", {
-    staticClass: "in"
-  }, [_c("iframe", {
-    staticClass: "getFrame",
-    attrs: {
-      src: "http://test-task/m/mobile",
-      frameborder: "0"
-    }
-  })])])])])])])]);
+  }, [_c("strong", [_vm._v("Посмотреть на своём телефоне.")]), _vm._v(" Сканируй QR-код для установки приложения\n                            ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
