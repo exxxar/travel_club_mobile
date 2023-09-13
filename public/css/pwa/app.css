@@ -9,13 +9,13 @@
 
 @font-face {
   font-family: "ionicons";
-  src: url('./ionicons.eot');
+  src: url(/fonts/vendor/@icon/ionicons/ionicons.eot?387af982d9851df96fc0ca01619b5942);
   src: 
-    url('./ionicons.eot?#iefix') format('embedded-opentype'),
-    url('./ionicons.woff2') format('woff2'),
-    url('./ionicons.woff') format('woff'),
-    url('./ionicons.ttf') format('truetype'),
-    url('./ionicons.svg#ionicons') format('svg');
+    url(/fonts/vendor/@icon/ionicons/ionicons.eot?387af982d9851df96fc0ca01619b5942?#iefix) format('embedded-opentype'),
+    url(/fonts/vendor/@icon/ionicons/ionicons.woff2?7182bc80a4d581a117482ef96fcf907b) format('woff2'),
+    url(/fonts/vendor/@icon/ionicons/ionicons.woff?1a1087fc51823a74abe1f9ba08d15ac7) format('woff'),
+    url(/fonts/vendor/@icon/ionicons/ionicons.ttf?04768fcf4eee710f6510685294dba664) format('truetype'),
+    url(/images/vendor/@icon/ionicons/ionicons.svg?3ef7a5425d17d4007c7548b116bcfb2d#ionicons) format('svg');
 }
 
 .ion {
