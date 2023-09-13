@@ -1,6 +1,10 @@
 {
-    "/js/pwa/app.js": "/js/pwa/app.js?id=51ba2a90097292236e2733a0ec58ff06",
-    "/css/pwa/app.css": "/css/pwa/app.css?id=c0348770ba008dd1e1a1e735568385a4",
+    "/js/desktop/app.js": "/js/desktop/app.js?id=6bd3223c6501e540e93a29d28676800e",
+    "/js/pwa/app.js": "/js/pwa/app.js?id=bc85dbd75fae447c48b39fa99385c1f4",
+    "/js/admin/app.js": "/js/admin/app.js?id=eaca6a4ba7762c8ac3fd62177ebf26ec",
+    "/css/pwa/app.css": "/css/pwa/app.css?id=4a04d342722dfb2bd4e3b1d482d0b94a",
+    "/css/admin/app.css": "/css/admin/app.css?id=40ede6450d904d7acce09a04f9856f4c",
+    "/css/desktop/app.css": "/css/desktop/app.css?id=c665f138e00ede6849ad858e6f044589",
     "/css/assets/app.css": "/css/assets/app.css?id=7b3c73bf6f0d0dc6a81a9aaa69f22a7a",
     "/js/pwa/jquery-3.4.1.min.js": "/js/pwa/jquery-3.4.1.min.js?id=220afd743d9e9643852e31a135a9f3ae",
     "/css/pwa/theme.css": "/css/pwa/theme.css?id=f56e620e874324e7c68a8948d0db4507",
@@ -86,9 +90,5 @@
     "/img/travel/ukraine0.png": "/img/travel/ukraine0.png?id=e89573849d54061f04186162b3801271",
     "/img/travel/ukraine1.png": "/img/travel/ukraine1.png?id=d16f900b4b6d08f2f261d040da6f5a9f",
     "/img/travel/wturizm.svg": "/img/travel/wturizm.svg?id=6f46def5718c1835b13607f69ebc0d0d",
-    "/css/inc/bootstrap/bootstrap.min.css": "/css/inc/bootstrap/bootstrap.min.css?id=7cc40c199d128af6b01e74a28c5900b0",
-    "/js/pwa/app.min.js": "/js/pwa/app.min.js?id=51ba2a90097292236e2733a0ec58ff06",
-    "/css/pwa/app.min.css": "/css/pwa/app.min.css?id=c0348770ba008dd1e1a1e735568385a4",
-    "/css/pwa/theme.min.css": "/css/pwa/theme.min.css?id=f56e620e874324e7c68a8948d0db4507",
-    "/css/assets/app.min.css": "/css/assets/app.min.css?id=7b3c73bf6f0d0dc6a81a9aaa69f22a7a"
+    "/css/inc/bootstrap/bootstrap.min.css": "/css/inc/bootstrap/bootstrap.min.css?id=7cc40c199d128af6b01e74a28c5900b0"
 }

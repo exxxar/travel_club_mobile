@@ -780,7 +780,7 @@
                         <div class="phoneContent">
                             <div class="phoneWrapper">
                                 <div class="in">
-                                    <iframe class="getFrame" src="http://test-task/m/mobile"
+                                    <iframe class="getFrame" :src="$baseUrl+'/m/mobile'"
                                             frameborder="0"></iframe>
                                 </div>
                             </div>
