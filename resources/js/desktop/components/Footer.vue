@@ -168,7 +168,7 @@
                         <h3 class="widget-title text-center">Мы в соцсетях</h3>
                         <ul class="social-buttons d-flex justify-content-center">
 <!--                            <li><a href="https://vk.com/rozovyi_slon_donetsk"><i class="fab fa-vk"></i></a></li>-->
-                            <li><a href="https://wa.me/79492353322"><i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="https://wa.me/79064167872"><i class="fab fa-whatsapp"></i></a></li>
                             <li><a href="https://www.instagram.com/travelclub_tours/"><i class="fab fa-instagram"></i></a></li>
                             <li><a href="https://t.me/travelclubtours"><i class="fab fa-telegram"></i></a></li>
                         </ul>

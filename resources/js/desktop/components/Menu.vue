@@ -32,7 +32,7 @@
                 <!--          <a href="#" class="icon icon-vk ml-auto mr-3" target="_blank" style="color: #f08b23; font-size: 25px; text-decoration: none"></a>-->
                 <a href="https://www.instagram.com/travelclub_tours" target="_blank" class="icon icon-instagram inst-icon"></a>
                 <a href="https://t.me/travelclubtours" target="_blank" class="icon icon-telegram ml-3 mr-auto tg-icon"></a>
-                <a href="https://wa.me/79492353322" target="_blank" class="icon icon-whatsapp ml-3 mr-auto tg-icon"></a>
+                <a href="https://wa.me/79064167872" target="_blank" class="icon icon-whatsapp ml-3 mr-auto tg-icon"></a>
             </div>
 
             <!-- <div class="row m-auto desktop" style="color: #063065">

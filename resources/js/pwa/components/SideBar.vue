@@ -181,7 +181,7 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a rel="noreferrer"
-                       href="https://wa.me/79492353322"
+                       href="https://wa.me/79064167872"
                        target="_blank" class="button" aria-label="наш контакт в вотспап">
                         <i class="fab fa-whatsapp"></i>
                     </a>

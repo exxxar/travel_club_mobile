@@ -129,13 +129,10 @@
 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-<script src="https://front.sletat.ru/modules/module6/latest/module.js" async></script>
-<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>
-<script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js"
-        defer></script>
-
-<script src="{{env("APP_DEBUG")?asset('/js/desktop/app.js'):asset('/js/desktop/app.min.js')}}?ver={{env("APP_VERSION")}}" defer></script>
-
+<script src="https://front.sletat.ru/modules/module6/latest/module.js" async defer></script>
+<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async defer></script>
+<script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" defer></script>
+<script src="{{getenv("APP_DEBUG")==true ? asset('/js/desktop/app.js') : asset('/js/desktop/app.min.js')}}?ver={{getenv("APP_VERSION")}}" async defer></script>
 
 </body>
 

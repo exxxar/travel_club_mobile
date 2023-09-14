@@ -193,7 +193,7 @@
                    class="btn btn-icon btn-lg btn-instagram" aria-label="Ссылка на инстаграм">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://wa.me/79492353322"
+                <a href="https://wa.me/79064167872"
                    target="_blank" rel="noreferrer" class="btn btn-icon btn-lg btn-whatsapp"
                    aria-label="Ссылка на вотсап">
                     <i class="fab fa-whatsapp"></i>

@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'resources/sass/desktop/variables';
+@import 'resources/sass/desktop/_variables';
 
 // Bootstrap
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
+@import "landing.scss";
 
 .travel-news-btn {
     cursor: pointer;

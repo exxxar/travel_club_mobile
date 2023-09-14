@@ -128,7 +128,7 @@ class MessageController extends Controller
 
     public function sendVoiceCallback(Request $request)
     {
-        $phone = $request->phone ?? "+380710000000";
+        $phone = $request->phone ?? "+79490000000";
         $user_name = $request->name ?? "";
         $messengers = $request->messengers ?? "";
         $files = $request->file('files');

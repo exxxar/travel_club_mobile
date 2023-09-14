@@ -210,6 +210,8 @@ import index from './mobile/pages/index.vue';
 //layouts
 import DesktopLayout from './pages/DesktopLayout.vue';
 Vue.component('default-layout', DesktopLayout);
+import LandingLayout from './components/LandingLayout.vue';
+Vue.component('LandingLayout', LandingLayout);
 //mobile-layouts
 import MobileLayout from './mobile/pages/MobileLayout.vue';
 Vue.component('mobile-layout', MobileLayout);

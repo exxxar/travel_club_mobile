@@ -1,25 +1,13 @@
 <template>
-    <div>
-        <quick-menu
-            :menu-count="3"
-            :icon-class="icons"
-            :titles="titles"
-            :menuUrlList="menuUrlList"
-            position="'bottom-left'"
-            backgroundColor="#f08b23"
-        >
-        </quick-menu>
+    <LandingLayout>
         <div class="row w-100 m-auto align-items-center justify-content-center">
 
             <div class="container" style="min-height: 700px;">
-                <iframe src="/sletat-ru" style="border:none; width: 100%; height:100%; min-height: 700px;"></iframe>
-
-
+                <iframe src="/sletat-ru" style="border:none; width: 100%; height:100%; min-height: 700px;" title="Туры по России"></iframe>
                 <!--                <div class="s-partnership" style="display:none;margin-top:60px;min-height: 200px">d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D</div>-->
             </div>
 
         </div>
-
         <section class="mb-5" style="height: 100%;">
             <div class="container m-auto" style="height: 100%;">
                 <div class="row m-auto justify-content-center align-items-center w-100 h-100">
@@ -39,8 +27,7 @@
                 </div>
             </div>
         </section>
-        <Footer/>
-    </div>
+    </LandingLayout>
 </template>
 
 <script>
@@ -48,32 +35,13 @@
     export default {
         name: "RussiaTourSearch",
         data: () => ({
-            icons:["fa fa-comment","fas fa-microphone","fas fa-phone"],
-            menuUrlList:["#contactModalBox","#customVoiceModal","#customPhoneModal"],
-            titles:["Написать сообщение","Записать голосовое","Заказать звонок"],
         }),
         computed:{
-            locationByIp() {
-                return this.$store.getters.locationByIp
-            },
         },
         mounted() {
 
             },
         methods:{
-            toTourSearch() {
-                this.$router.push('/tour-search')
-            },
-            toAviaSearch() {
-                this.$router.push('/avia-search')
-                // this.$router.push('/avia-module')
-
-            },
-            toHotelSearch() {
-                // this.$router.push('/hotel-search')
-                // this.$router.push('/hotel-module')
-                this.$router.push('/russia-tour-search')
-            },
         }
     }
 </script>

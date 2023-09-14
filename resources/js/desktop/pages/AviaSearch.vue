@@ -1,20 +1,9 @@
 <template>
-    <div>
-        <quick-menu
-            :menu-count="3"
-            :icon-class="icons"
-            :titles="titles"
-            :menuUrlList="menuUrlList"
-            position="'bottom-left'"
-            backgroundColor="#f08b23"
-        >
-        </quick-menu>
+    <LandingLayout>
         <div class="container mt-auto mb-auto" style="height: 100%;">
 <!--            <div class="row mx-auto w-100" style="margin-top: 60px">-->
                 <div id="__biletix__wl__" class="w-100 mb-0" style="margin-top: 60px;z-index: 0 !important;"></div>
 <!--            </div>-->
-
-    <!--        <script id="__biletix__wl__script" type="text/javascript" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>-->
         </div>
         <section class="mb-5" style="height: 100%;">
             <div class="container m-auto" style="height: 100%;">
@@ -35,46 +24,22 @@
                 </div>
             </div>
         </section>
-        <Footer/>
-    </div>
+    </LandingLayout>
 </template>
 
 <script>
     export default {
         name: "AviaSearch",
         data: () => ({
-            icons:["fa fa-comment","fas fa-microphone","fas fa-phone"],
-            menuUrlList:["#contactModalBox","#customVoiceModal","#customPhoneModal"],
-            titles:["Написать сообщение","Записать голосовое","Заказать звонок"],
         }),
         created() {
-            let BiletixScript = document.createElement('script')
-            BiletixScript.setAttribute('src', 'https://ps.biletix.ru/static/wl/build/biletix_wl.min.js')
-            BiletixScript.setAttribute('id', '__biletix__wl__script')
-            BiletixScript.defer = true;
-            BiletixScript.async = true;
-            document.head.appendChild(BiletixScript)
+            // let BiletixScript = document.createElement('script')
+            // BiletixScript.setAttribute('src', 'https://ps.biletix.ru/static/wl/build/biletix_wl.min.js')
+            // BiletixScript.setAttribute('id', '__biletix__wl__script')
+            // BiletixScript.defer = true;
+            // BiletixScript.async = true;
+            // document.head.appendChild(BiletixScript)
         },
-        computed:{
-            locationByIp() {
-                return this.$store.getters.locationByIp
-            },
-        },
-        methods:{
-            toTourSearch() {
-                this.$router.push('/tour-search')
-            },
-            toAviaSearch() {
-                this.$router.push('/avia-search')
-                // this.$router.push('/avia-module')
-
-            },
-            toHotelSearch() {
-                // this.$router.push('/hotel-search')
-                // this.$router.push('/hotel-module')
-                this.$router.push('/russia-tour-search')
-            },
-        }
     }
 </script>
 
