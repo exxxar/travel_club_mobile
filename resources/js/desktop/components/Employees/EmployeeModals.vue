@@ -72,7 +72,8 @@
         },
         methods: {
             close(){
-                $(".employees").modal("hide");
+                // $(".employees").modal("hide");
+                this.$store.dispatch('closeModal', '.employees');
             },
             swipeHandler() {
                 console.log("testttt")
@@ -94,9 +95,10 @@
 
                         if (this.current < this.employees.length - 1) {
                             this.current += 1;
-                            $('#EmployeeDefault' + this.current).modal('show');
+                            this.$store.dispatch('openModal', '#EmployeeDefault' + this.current)
                         } else {
-                            $('#EmployeeDefault' + this.current).modal('hide');
+                            this.$store.dispatch('closeModal', '#EmployeeDefault' + this.current)
+                            // $('#EmployeeDefault' + this.current).modal('hide');
                             this.current = null
                             clearInterval(this.interval)
                             return;

@@ -52,10 +52,13 @@ extend('min', {
     message: 'Это поле должно содержать {length} или более знаков'
 });
 extend('phone', {
-    validate(value, args) {
-        return value.length >= 18;
+    message: field => 'Это поле должно быть действительным номером телефона',
+    validate(value) {
+        if (value) {
+            return /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/.test(value) && value.length >= 10 && value.length <= 19;
+        }
+        return false;
     },
-    message: 'Это поле должно быть действительным номером телефона'
 });
 extend('password', {
     params: ['target'],
@@ -74,8 +77,9 @@ import Notifications from 'vue-notification'
 Vue.use(Notifications)
 
 import VueRecord from '@codekraft-studio/vue-record'
-
 Vue.use(VueRecord)
+
+
 
 import VuePwaInstallPlugin from "vue-pwa-install";
 

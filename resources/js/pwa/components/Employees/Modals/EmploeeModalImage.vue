@@ -1,7 +1,7 @@
 <template>
     <div class="modal fade employees stories with-story-bar show" :id="'EmployeeDefault'+index"
 
-         data-backdrop="true" tabindex="-1"
+          data-bs-backdrop="true" tabindex="-1"
          aria-modal="true" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -40,7 +40,8 @@
 
         methods:{
             hide(){
-                $(".employees").modal("hide");
+                // $(".employees").modal("hide");
+                this.$store.dispatch('closeModal', '.employees');
             }
         }
 

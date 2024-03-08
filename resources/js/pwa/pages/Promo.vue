@@ -48,9 +48,9 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion001"
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion001"
                                 aria-expanded="true">
-                            <i class="fas fa-ad mr-2"></i>
+                            <i class="fas fa-ad me-2"></i>
                             Как работают промокоды
                         </button>
                     </div>
@@ -76,8 +76,8 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion002">
-                            <i class="fas fa-handshake mr-2"></i>
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion002">
+                            <i class="fas fa-handshake me-2"></i>
                             Как получить промокод?
                         </button>
                     </div>
@@ -101,9 +101,9 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion003"
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion003"
                                 aria-expanded="false">
-                            <i class="fas fa-hand-holding-usd mr-2"></i>
+                            <i class="fas fa-hand-holding-usd me-2"></i>
                             Хочу зарабатывать с промокодами
                         </button>
                     </div>

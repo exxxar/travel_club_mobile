@@ -43,8 +43,7 @@
                                                 <button type="submit" class="btn btn-lg btn-travel btn-block text-uppercase mt-3" :disabled="invalid||loading">
                                                     <div class="row align-items-center justify-content-center m-auto w-100 h-100 text-center">
                                                         <span v-if="loading" class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
-                                                        <span v-if="loading" class="sr-only">Loading...</span>
-                                                        Отправить
+                                                       Отправить
                                                     </div>
                                                 </button>
                                             </form>
@@ -320,7 +319,7 @@
         background: #f08b23;
         color: white;
         text-transform: uppercase;
-        font-family: "Open Sans";
+        font-family: "Roboto", sans-serif;
         font-weight: 900;
         font-size: 20px;
     }

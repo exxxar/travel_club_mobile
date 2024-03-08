@@ -33,17 +33,22 @@ Route::get("/setw", function () {
     return "Success";
 });
 
-Route::view("/sletat-ru","desktop.sletat");
+//Route::view("/sletat-ru","desktop.sletat");
+Route::view("/tours", "desktop.tours");
+Route::view("/hot-tours", "desktop.hot-tours");
+Route::view("/russia-tours", "desktop.russia-tours");
+
+
 
 
 Route::get('/', function (Request $request) {
     if (Agent::isMobile())
         return view('pwa.pages.index');
 
-    $articles = \App\Article::where("publish_at", "<=", Carbon::now("+3:00"))
-        ->orderBy("id","desc")->paginate(20);
+//    $articles = \App\Article::where("publish_at", "<=", Carbon::now("+3:00"))
+//        ->orderBy("id","desc")->paginate(20);,compact("articles")
 
-    return view('desktop.welcome',compact("articles"));
+    return view('desktop.welcome');
 })->name("desktop");
 
 Route::get('/offline', function () {
@@ -78,6 +83,7 @@ Route::group(["prefix" => "/m"], function () {
     Route::view('/telegram', "pwa.pages.telegram")->name("telegram");
 
     Route::view('/tours', "pwa.pages.tours")->name("tours");
+    Route::view('/hot-tours', "pwa.pages.hot-tours")->name("hot-tours");
     Route::view('/profile', "pwa.pages.profile")->name("profile");
     Route::view('/adventure', "pwa.pages.adventure")->name("adventure");
     Route::view('/hotels', "pwa.pages.hotels")->name("hotels");

@@ -1,27 +1,28 @@
 <template>
     <div>
         <div class="quick-menu" ref="quickMenu" :style="quickMenuStyle" style="cursor: pointer;">
-
             <div v-for="(n,key) in menuCount" class="sub-menu" :style="getSubMenu(n-1)">
                 <div class="tooltip-target w-100 h-100">
                 <span class="tooltip fadein right flat-tooltip dark arrow-left">{{titles[n-1]}}</span>
-                <a :style="subMenuStyle" @mouseover.stop="mouseEnterSubMenu" @mouseout.stop="mouseOutSubMenu" data-toggle="modal" :data-target="menuUrlList[n-1]">
-                    <i :class="iconClass[n-1]" ref="icon"></i>
+                <a :style="subMenuStyle" @mouseover.stop="mouseEnterSubMenu" @mouseout.stop="mouseOutSubMenu"
+                   data-bs-toggle="modal" :data-bs-target="menuUrlList[n-1]"
+                >
+                    <base-icon :name="iconClass[n-1]" ref="icon" height="100%"></base-icon>
                 </a>
                 </div>
             </div>
         </div>
         <div class="peng-menu desktop" :style="quickMenuStyle">
-            <transition name="fade">
-                <img src="/images/penguin5.png" v-if="penguin" @click="toggleMenu" style="height:250px; bottom:0; left:0; z-index:2;" class="peng"/>
-                <img src="/images/penguin6.png" v-if="!penguin" @click="toggleMenu" style="height:180px; bottom:0; left:0;z-index:2;" class="peng"/>
-            </transition>
+            <img src="/images/penguin5.png" v-if="penguin" @click="toggleMenu"
+                 style="height:250px; bottom:0; left:0; z-index:2;" class="peng"/>
+            <img src="/images/penguin6.png" v-else @click="toggleMenu" style="height:180px; bottom:0; left:0;z-index:2;"
+                 class="peng"/>
         </div>
         <div class="peng-menu mobile tablet" :style="quickMenuStyle">
-            <transition name="fade">
-                <img src="/images/penguin5.png" v-if="penguin" @click="toggleMenu" style="height:180px; bottom:0; left:0;z-index:2;" class="peng"/>
-                <img src="/images/penguin6.png" v-if="!penguin" @click="toggleMenu" style="height:130px; bottom:0; left:0;z-index:2;" class="peng"/>
-            </transition>
+            <img src="/images/penguin5.png" v-if="penguin" @click="toggleMenu"
+                 style="height:180px; bottom:0; left:0;z-index:2;" class="peng"/>
+            <img src="/images/penguin6.png" v-else @click="toggleMenu" style="height:130px; bottom:0; left:0;z-index:2;"
+                 class="peng"/>
         </div>
     </div>
 </template>
@@ -83,10 +84,10 @@
                 const topPosition = {top:'20px'},
                     bottomPosition={bottom:'20px'},
                     leftPosition = {left:'20px'},
-                    rightPosition = {right:'20px'}
-                let style = this.isTop?topPosition:bottomPosition
-                Object.assign(style, this.isLeft?leftPosition:rightPosition)
-                Object.assign(style,{transform: this.isLeft?"rotate(-180deg)":"rotate(180deg)"})
+                    rightPosition = {right:'20px'};
+                let style = this.isTop?topPosition:bottomPosition;
+                Object.assign(style, this.isLeft?leftPosition:rightPosition);
+                Object.assign(style,{transform: this.isLeft?"rotate(-180deg)":"rotate(180deg)"});
                 return style
             },
             menuStyle(){
@@ -96,11 +97,10 @@
                 }
             },
             subMenuStyle(){
-                const style = {
+                return {
                     backgroundColor: this.backgroundColor,
                     color: this.color
                 }
-                return style
             },
 
             isTop(){
@@ -470,10 +470,11 @@
             a{
                 outline: none;
                 text-decoration: none;
-                display: inline-block;
+                display: block;
                 border-radius: 50% !important;
                 width: 100%;
                 height: 100%;
+                padding: 5px;
                 i {
                     outline: none;
                     font-size:30px;

@@ -96,15 +96,7 @@
         mounted() {
             if(this.isLoggedIn)
             {
-                if (this.isAdmin == true) {
-                    this.$router.push('/admin')
-                }
-                else if(this.isManager == true) {
-                    this.$router.push('/manager')
-                }
-                else {
-                    this.$router.push('/client')
-                }
+                this.$router.push('/dashboard')
             }
         },
         methods: {
@@ -121,15 +113,7 @@
                     await this.$store.dispatch('login', data)
                         .then(resp => {
                             if(resp.data.status == 'success') {
-                                if (this.isAdmin == true) {
-                                    this.$router.push('/admin')
-                                }
-                                else if(this.isManager == true) {
-                                    this.$router.push('/manager')
-                                }
-                                else {
-                                    this.$router.push('/client')
-                                }
+                                this.$router.push('/dashboard')
                             }
                             else {
                                 this.wrongCredentials = 'Неверные учетные данные'

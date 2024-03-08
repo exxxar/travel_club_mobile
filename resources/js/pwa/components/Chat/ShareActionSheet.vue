@@ -9,7 +9,7 @@
                 <div class="modal-body">
                     <ul class="action-button-list">
                         <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
+                            <a href="#" class="btn btn-list"  data-bs-dismiss="modal">
                                 <span>
                                     <ion-icon name="camera-outline"></ion-icon>
                                     Take a photo
@@ -17,7 +17,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
+                            <a href="#" class="btn btn-list"  data-bs-dismiss="modal">
                                 <span>
                                     <ion-icon name="videocam-outline"></ion-icon>
                                     Video
@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
+                            <a href="#" class="btn btn-list"  data-bs-dismiss="modal">
                                 <span>
                                     <ion-icon name="image-outline"></ion-icon>
                                     Upload from Gallery
@@ -33,7 +33,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
+                            <a href="#" class="btn btn-list"  data-bs-dismiss="modal">
                                 <span>
                                     <ion-icon name="document-outline"></ion-icon>
                                     Documents
@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
+                            <a href="#" class="btn btn-list"  data-bs-dismiss="modal">
                                 <span>
                                     <ion-icon name="musical-notes-outline"></ion-icon>
                                     Sound file

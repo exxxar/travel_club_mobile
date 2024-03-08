@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="header_area sticky menu row align-items-center justify-content-center ml-auto mr-auto pl-2 pr-2 pt-2 pb-2" style="width: 100%;">
+        <div class="header_area sticky menu row align-items-center justify-content-center ml-auto mr-auto ps-2 pe-2 pt-2 pb-2" style="width: 100%;">
             <div class="row ml-2 mr-auto mt-auto mb-auto">
                 <a href="/">
                     <h4 style="z-index: 1; font-family:'Bello Pro'; color:#0d274b;" class="float-left menu-title">

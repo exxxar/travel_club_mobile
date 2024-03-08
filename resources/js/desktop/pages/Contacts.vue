@@ -1,12 +1,12 @@
 <template>
         <div class="container mt-5 mb-5" style="height: 100%">
-          <div class="row align-items-center justify-content-center ml-auto mr-auto mt-4 mb-4" style="width: 100%; height: 100%">
-<!--              <div class="col-md-3 register-left ml-auto mr-auto">-->
+          <div class="row align-items-center justify-content-center ml-auto me-auto mt-4 mb-4" style="width: 100%; height: 100%">
+<!--              <div class="col-md-3 register-left ml-auto me-auto">-->
 <!--                  <img src="/images/contact.png" alt="" style="width: 120px"/>-->
 <!--              </div>-->
-<!--              <div class="col-md-9 ml-auto mr-auto">-->
-<!--                <div class="row align-items-center justify-content-center ml-auto mr-auto">-->
-                    <div class="col-md-6 ml-auto mr-auto">
+<!--              <div class="col-md-9 ml-auto me-auto">-->
+<!--                <div class="row align-items-center justify-content-center ml-auto me-auto">-->
+                    <div class="col-md-6 ml-auto me-auto">
                         <div class="widget_title">
                             <h4>НАШИ КОНТАКТЫ</h4>
                         </div>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 ml-auto mr-auto">
+                    <div class="col-md-6 ml-auto me-auto">
                             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0dc25ce9396865ffdf9891683aedb07f2a61230931197e7da84d6bad6467404d&amp;source=constructor"
                                     frameborder="0"
                                     style="width: 100%; height: 400px; padding: 10px; box-sizing: border-box;">

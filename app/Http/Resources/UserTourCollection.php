@@ -6,6 +6,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class UserTourCollection extends ResourceCollection
 {
+    public $collects = UserTourShortResource::class;
+
     /**
      * Transform the resource collection into an array.
      *

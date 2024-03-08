@@ -11,7 +11,7 @@
                             <h1 class="m-auto" style="color: #f8a105; font-weight: 900; text-transform: uppercase">В разработке</h1>
                         </div>
                         <div class="col-md-12 mb-5 p-0 text-center">
-                            <b-button data-toggle="modal" data-target="#contactModalBox" class="btn btn-travel btn-group-lg m-auto" style="border:0">Заказать у менеджера</b-button>
+                            <b-button data-bs-toggle="modal" data-bs-target="#contactModalBox" class="btn btn-travel btn-group-lg m-auto" style="border:0">Заказать у менеджера</b-button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
         background: #f08b23;
         color: white;
         text-transform: uppercase;
-        font-family: "Open Sans";
+        font-family: "Roboto", sans-serif;
         font-weight: 900;
         font-size: 20px;
     }

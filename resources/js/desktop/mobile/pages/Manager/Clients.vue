@@ -2,7 +2,7 @@
     <div>
         <div id="mobile-table" class="row m-auto mb-4 px-4 justify-content-center align-items-center" style="width: 100%;height: 100%;">
             <div class="modal fade modalbox show"
-                 id="newClientModalBox" data-backdrop="static"
+                 id="newClientModalBox"  data-bs-backdrop="static"
                  tabindex="-1" role="dialog"
                  aria-modal="true"
             >
@@ -10,7 +10,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Создать клиента</h5>
-                            <a href="javascript:;" data-dismiss="modal" style="text-decoration: none">Закрыть</a>
+                            <a href="javascript:;"  data-bs-dismiss="modal" style="text-decoration: none">Закрыть</a>
                         </div>
                         <div class="modal-body">
                             <div class="start-form" style="margin-bottom: 110px">
@@ -72,7 +72,7 @@
                                                             <span class="validate-error">{{ errors[0] }}</span>
                                                         </ValidationProvider>
                                                     </div>
-                                                    <div class="col-md-12 pr-md-1">
+                                                    <div class="col-md-12 pe-md-1">
                                                         <ValidationProvider name="City" rules="required" v-slot="{ errors }" style="width:100%;">
                                                             <div class="form-group mb-0">
                                                                 <label class="control-label">Город</label>
@@ -318,7 +318,7 @@
         methods:
             {
                 addClient: function(){
-                    $('#newClientModalBox').modal('show')
+                    this.$store.dispatch('openModal', '#newClientModalBox')
                 },
                 saveClient: function(){
                     this.loading=true;
@@ -329,7 +329,7 @@
                         .then(response => {
                             this.sendMessage('Клиент успешно сохранён')
                             this.loading=false;
-                            $('#newClientModalBox').modal('hide')
+                            this.$store.dispatch('closeModal', '#newClientModalBox');
                     });
 
                 },

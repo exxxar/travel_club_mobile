@@ -6,14 +6,18 @@ Vue.use(Vuex);
 export default {
     state: {
         clients:[],
-        deleted_clients:[],
+        clients_loading: false,
+        clients_pagination: {}
     },
     getters: {
         clients(state) {
             return state.clients;
         },
-        deleted_clients(state) {
-            return state.deleted_clients;
+        clients_loading(state) {
+            return state.clients_loading;
+        },
+        clients_pagination(state) {
+            return state.clients_pagination;
         },
     },
     mutations: {
@@ -22,18 +26,34 @@ export default {
             state.clients.unshift(payload)
         },
         setClients(state, payload) {
-            state.clients = payload
+            let client = -1;
+            payload.forEach(item => {
+                client = state.clients.findIndex(x => x.id === item.id);
+                if(client < 0) {
+                    state.clients.push(item)
+                }
+            });
         },
-        setDeletedClients(state, payload) {
-            state.deleted_clients = payload
+        setClientsLoading(state, payload) {
+            return (state.clients_loading = payload);
         },
-        deleteClient(state, payload) {
-            let foundIndex = state.clients.findIndex(item => item.id === payload);
-            state.clients.splice(foundIndex, 1);
+        setClientsPagination(state, payload) {
+            return (state.clients_pagination = payload);
         },
         saveClient(state, payload) {
             let client = state.clients.findIndex(x => x.id === payload.id);
             state.clients[client] = payload;
+        },
+        deleteClient(state, payload) {
+            let index = state.clients.findIndex(item => item.id === payload);
+            if(index) {
+                state.clients.splice(index, 1);
+            }
+        },
+        //<editor-fold desc="OldVersion">
+        /*
+        setDeletedClients(state, payload) {
+            state.deleted_clients = payload
         },
         removeClient(state, payload) {
             let client = state.clients.findIndex(x => x.id === payload);
@@ -56,15 +76,17 @@ export default {
                 state.clients.push(item);
             }
         },
-
+*/
 
         //client-info
+        /*
         saveClientInfo(state, payload) {
             let client = state.clients.findIndex(x => x.id === payload.UserId);
             state.clients[client].info = payload;
         },
-
+*/
         //client-tour
+        /*
         addClientTour(state, payload) {
             let foundIndex = state.clients.findIndex(item => item.id === payload.UserId);
             state.clients[foundIndex].tours.unshift(payload)
@@ -109,13 +131,20 @@ export default {
             let tour = state.clients[client].tours.findIndex(tour => tour.id !== payload.id);
             state.clients[client].tours.splice(tour, 1);
         },
+        */
+        //</editor-fold>
     },
     actions: {
         //client
-        async setClients({commit}) {
+        async setClients({dispatch, commit}, payload={}) {
             try {
-                return await axios.get('/auth/manager/clients')
-                    // .then((response) => {
+                payload.role = 'user';
+                commit('setClientsLoading', true);
+                return await axios.get('/auth/admin/users/search', {params:payload})
+                    .then((response) => {
+                        commit('setClients', response.data.data);
+                        dispatch('makePaginationObject', { key: 'clients', pagination: response.data});
+                        // commit('setClientsPagination', pagination);
                     //     // console.log(response.data.users)
                     //     // response.data.users.forEach( item => {
                     //     //     item.show = false;
@@ -142,7 +171,9 @@ export default {
                     //     //         }
                     //     //     })
                     //     // })
-                    // });
+                    }).finally(() => {
+                        commit('setClientsLoading', false);
+                    });
             } catch (error) {
                 console.log(error)
                 throw error

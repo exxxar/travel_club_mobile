@@ -1,6 +1,6 @@
 <template>
     <div class='cont m-auto'>
-        <div class="ml-auto mr-auto" style="position: relative; height: 40vh; width: 100%; background: url('/images/Resurs_7.svg') no-repeat center;" >
+        <div class="ml-auto me-auto" style="position: relative; height: 40vh; width: 100%; background: url('/images/Resurs_7.svg') no-repeat center;" >
             <div class='sky'>
                 <div class='cloud-1 cloud'>
                     <div class='cloud--inner1'></div>
@@ -55,13 +55,13 @@
             <div class="col-12 col-md-8 col-sm-12">
                 <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row" style="height:100px;width:100%;">
                     <div class="col-md-7 p-0">
-                        <div class="row mr-auto ml-0 my-auto travel-card-title" style="position:relative;height:50px;width:300px;">
+                        <div class="row me-auto ml-0 my-auto travel-card-title" style="position:relative;height:50px;width:300px;">
                             <h1 class="title-1"><span>Д</span>обро пожаловать</h1>
                             <img src="/images/blue-brush.svg" class="blue-brush" style="position: absolute;"/>
                         </div>
                     </div>
                     <div class="col-md-7 p-0">
-                        <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:350px;">
+                        <div class="row ml-auto me-0 my-auto travel-card-title" style="position:relative;height:50px;width:350px;">
                             <h1 class="title-2"><span>в модуль подбора туров </span></h1>
                             <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
                         </div>

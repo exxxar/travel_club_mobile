@@ -1,5 +1,5 @@
 <template>
-    <div class="ml-auto mr-auto sky-wrapper">
+    <div class="ms-auto mr-auto sky-wrapper">
         <div class='sky'>
             <div class='cloud-1 cloud'>
                 <div class='cloud--inner1'></div>

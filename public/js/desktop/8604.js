@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[8604],{38604:(s,t,a)=>{a.r(t),a.d(t,{default:()=>n});const e={name:"Chats"};const n=(0,a(51900).Z)(e,(function(){var s=this._self._c;return s("div",[s("chat-list")],1)}),[],!1,null,"31baaaa1",null).exports}}]);

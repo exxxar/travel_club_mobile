@@ -11,7 +11,7 @@
                     <ValidationObserver v-slot="{ invalid }">
                         <card id="client-profile">
                             <div class="row w-100 p-2 m-auto">
-                                <div class="col-md-4 pr-md-1">
+                                <div class="col-md-4 pe-md-1">
                                     <ValidationProvider name="lastName" rules="required" v-slot="{ errors }" style="width:100%;">
                                         <b-form-group label="Фамилия" label-size="sm" class="mb-0">
                                             <b-form-input label="Фамилия"
@@ -37,7 +37,7 @@
                                         <span class="validate-error">{{ errors[0] }}</span>
                                     </ValidationProvider>
                                 </div>
-                                <div class="col-md-4 pl-md-1">
+                                <div class="col-md-4 ps-md-1">
                                     <b-form-group label="Отчество" label-size="sm" class="mb-0">
                                         <b-form-input label="Отчество"
                                                       v-model="client.info.MiddleName"
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="row w-100 p-2 m-auto">
-                                <!--                            <div class="col-md-4 pr-md-1">-->
+                                <!--                            <div class="col-md-4 pe-md-1">-->
                                 <!--                                <ValidationProvider name="login" rules="required" v-slot="{ errors }" style="width:100%;">-->
                                 <!--                                    <b-form-input label="Логин"-->
                                 <!--                                                placeholder="Логин"-->
@@ -61,7 +61,7 @@
                                 <!--                                    <span class="validate-error">{{ errors[0] }}</span>-->
                                 <!--                                </ValidationProvider>-->
                                 <!--                            </div>-->
-                                <div class="col-md-4 pr-md-1">
+                                <div class="col-md-4 pe-md-1">
                                     <ValidationProvider name="email" rules="required|email" v-slot="{ errors }" style="width:100%;">
                                         <b-form-group label="Email" label-size="sm" class="mb-0">
                                             <b-form-input label="Email"
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="row w-100 p-2 m-auto">
-                                <div class="col-md-4 pr-md-1">
+                                <div class="col-md-4 pe-md-1">
                                     <ValidationProvider name="City" rules="required" v-slot="{ errors }" style="width:100%;">
                                         <b-form-group label="Город" label-size="sm" class="mb-0">
                                             <multiselect
@@ -457,7 +457,7 @@
                 this.edit_tour.new_files=[];
                 this.$store.dispatch('getCities', this.edit_tour.TourInfo.country.Id);
                 this.$store.dispatch('getHotels', {country_id:this.edit_tour.TourInfo.country.Id, town_id:'0', star_id:'0'});
-                $('#editUserTourModalBox').modal('show')
+                this.$store.dispatch('openModal', '#editUserTourModalBox')
 
             },
             chooseEditResortCountry(value){
@@ -594,7 +594,7 @@
                             Comment:''
                         };
                             this.edit_loading = false;
-                            $('#editUserTourModalBox').modal('hide');
+                        this.$store.dispatch('closeModal', '#editUserTourModalBox');
                     });
             },
 
@@ -602,7 +602,7 @@
             addClientTour: function(){
                 this.$store.dispatch('getCities', this.new_tour.TourInfo.country.Id);
                 this.$store.dispatch('getHotels', {country_id:this.new_tour.TourInfo.country.Id, town_id:'0', star_id:'0'});
-                $('#newUserTourModalBox').modal('show')
+                this.$store.dispatch('openModal', '#newUserTourModalBox')
             },
             chooseNewResortCountry(value){
                 this.new_tour.TourInfo.resort={Name:'Любой'};
@@ -714,7 +714,7 @@
                         }
 
                         this.new_loading = false;
-                        $('#newUserTourModalBox').modal('hide')
+                        this.$store.dispatch('closeModal', '#newUserTourModalBox');
                     });
 
             },

@@ -21,6 +21,11 @@ import chats from './chats';
 import branches from "./branches";
 import employees from "./employeesModule";
 
+import shared from "./shared";
+import documents from "./documents";
+import reviews from "./reviews";
+import articles from "./articles";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -28,6 +33,6 @@ export default new Vuex.Store({
 	modules: {
 		auth, navigation, users, tours, todos,
         messages, tourModule, aviaModule, moduleOrders, tourSearch,
-        clients, chats, branches, employees
+        clients, chats, branches, employees, shared, documents, reviews, articles
 	}
 })

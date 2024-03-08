@@ -29,14 +29,14 @@
                 <mobile-voice-callback-form :phone="phone" :cansend="cansend"></mobile-voice-callback-form>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary mr-1 mb-1 w-100">
+                <button type="submit" class="btn btn-primary me-1 mb-1 w-100">
                     <i class="icon ion-md-mail"></i>
                     Отправить
                 </button>
             </div>
             <div class="form-group mb-2">
 
-                <a href="/m/rules" class="btn btn-link mr-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
+                <a href="/m/rules" class="btn btn-link me-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
                     <i class="icon ion-ios-filing"></i>
                     Пользовательское соглашение!
                 </a>
@@ -81,7 +81,7 @@
                     })
                     .then(response => {
                         this.sendMessage("Сообщение успешно отправлено");
-                        $('#contactModalBox').modal('hide')
+                        this.$store.dispatch('closeModal', '#contactModalBox');
                         this.name = "";
                         this.phone = "";
                         this.message = "";

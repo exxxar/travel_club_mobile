@@ -50,7 +50,7 @@
 
             <div class="form-group boxed">
                 <div class="input-wrapper">
-                    <h4 class="text-center">Выберите месенджеры для ответа</h4>
+                    <h4 class="text-center">Выберите мессенджеры для ответа</h4>
                     <ul class="messagers">
                         <li>
 
@@ -60,14 +60,14 @@
                                 <i class="fab fa-telegram-plane"></i>
                             </label>
                         </li>
-                        <li>
+<!--                        <li>-->
 
-                            <input type="checkbox" id="viber-check" name="answer-check" value="viber" v-model="socials">
-                            <label for="viber-check">
-                                <i class="fab fa-viber"></i>
-                            </label>
+<!--                            <input type="checkbox" id="viber-check" name="answer-check" value="viber" v-model="socials">-->
+<!--                            <label for="viber-check">-->
+<!--                                <i class="fab fa-viber"></i>-->
+<!--                            </label>-->
 
-                        </li>
+<!--                        </li>-->
                         <li>
 
                             <input type="checkbox" id="whatsapp-check" name="answer-check" value="whatsapp"
@@ -91,7 +91,7 @@
             </div>
             <div class="form-group mb-2 d-flex justify-content-center">
 
-                <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1"
+                <a href="#rules" data-bs-target="#RulesModal"  data-bs-toggle="modal" class="btn btn-link mr-1 mb-1"
                    title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
                     <i class="icon ion-ios-filing"></i>
                     Пользовательское соглашение!

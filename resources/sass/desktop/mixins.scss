@@ -1,0 +1,188 @@
+@mixin down($size) {
+    @media (max-width: map-get($breakpoints, $size)) { @content; }
+}
+@mixin up($size) {
+    @media (min-width: map-get($breakpoints, $size)) { @content; }
+}
+@mixin down-all() {
+    @each $key, $value in $breakpoints {
+        @media (max-width: $value) {
+            @content('-down-'+$key, $value);
+        }
+    }
+}
+@mixin up-all() {
+    @each $key, $value in $breakpoints {
+        @media (min-width: $value) {
+            @content('-up-'+$key, $value);
+        }
+    }
+}
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+@mixin set-property($class, $property, $values, $add_key:false, $additional:null, $content:false, $only_content:false) {
+    $init_key:'';
+    @each $key, $value in $values {
+        @if $add_key == true {
+            $init_key:'-'+ $key;
+        }
+        #{'.'+$namespace+'-'+$class+$init_key} {
+            @if $only_content == false {
+                #{$property}: $value $additional;
+            }
+            @if ($content == true) or ($only_content == true) {
+                @content($key, $value);
+            }
+        }
+    }
+}
+
+@mixin svg-color($color, $types...) {
+    @each $type in $types {
+        @if $type != '' {
+            #{'.'+$namespace+'-stroke-'+$color+'-'+$type} {
+                stroke: map-get($tc-theme-colors, $color+'-'+$type) !important;
+            }
+            #{'.'+$namespace+'-fill-'+$color+'-'+$type} {
+                fill: map-get($tc-theme-colors, $color+'-'+$type) !important;
+            }
+        } @else {
+            #{'.'+$namespace+'-stroke-'+$color} {
+                stroke: map-get($tc-theme-colors, $color+'-default') !important;
+            }
+            #{'.'+$namespace+'-fill-'+$color} {
+                fill: map-get($tc-theme-colors, $color+'-default') !important;
+            }
+        }
+
+    }
+}
+@mixin setColorSvg($property, $color, $types...) {
+    @each $type in $types {
+        @if $type == 'default' {
+            #{'.'+$namespace+'-'+$property+'-'+$color} {
+                #{$property}: map-get($tc-theme-colors, $color+'-default') !important;
+            }
+        } @else if $type == '' {
+            #{'.'+$namespace+'-'+$property+'-'+$color} {
+                #{$property}: map-get($tc-theme-colors, $color) !important;
+            }
+        } @else {
+            #{'.'+$namespace+'-'+$property+'-'+$color+'-'+$type} {
+                #{$property}: map-get($tc-theme-colors, $color+'-'+$type) !important;
+            }
+        }
+    }
+}
+@mixin set-color($property, $class, $color, $types...) {
+    @each $type in $types {
+        @if $type == 'default' {
+            #{'.'+$namespace+'-'+$class+'-'+$color} {
+                #{$property}: map-get($tc-theme-colors, $color+'-default') !important;
+            }
+        } @else if $type == '' {
+            #{'.'+$namespace+'-'+$class+'-'+$color} {
+                #{$property}: map-get($tc-theme-colors, $color) !important;
+            }
+        } @else {
+            #{'.'+$namespace+'-'+$class+'-'+$color+'-'+$type} {
+                #{$property}: map-get($tc-theme-colors, $color+'-'+$type) !important;
+            }
+        }
+    }
+}
+
+@mixin setHoverColor($target, $color, $types...) {
+    $tmp_taget: '';
+    @if $target != '' {
+        $tmp_taget:'.'+ $target;
+    }
+    @each $type in $types {
+        @if $type == 'default' {
+            #{'.'+$namespace+'-hover'+'-'+$color}#{$tmp_taget}:hover {
+                background-color: map-get($tc-theme-colors, $color+'-default') !important;
+                & #{'.'+$namespace}-fill {
+                    fill: white !important;
+                }
+                & #{'.'+$namespace}-stroke {
+                    stroke: white !important;
+                }
+            }
+        } @else if $type == '' {
+            #{'.'+$namespace+'-hover'+'-'+$color}#{$tmp_taget}:hover {
+                background-color: map-get($tc-theme-colors, $color) !important;
+                & #{'.'+$namespace}-fill {
+                    fill: white !important;
+                }
+                & #{'.'+$namespace}-stroke {
+                    stroke: white !important;
+                }
+            }
+        } @else {
+            #{'.'+$namespace+'-hover'+'-'+$color+'-'+$type}#{$tmp_taget}:hover {
+                background-color: map-get($tc-theme-colors, $color+'-'+$type) !important;
+                & #{'.'+$namespace}-fill {
+                    fill: white !important;
+                }
+                & #{'.'+$namespace}-stroke {
+                    stroke: white !important;
+                }
+            }
+        }
+    }
+}
+
+//
+//@mixin themify {
+//    @each $theme, $map in $themes {
+//        :global(.theme--#{$theme}) & {
+//            $theme-map: () !global;
+//
+//            @each $key, $submap in $map {
+//                $value: map-get($map, $key);
+//                $theme-map: map-merge($theme-map, ($key: $value,)) !global;
+//            }
+//            @content;
+//
+//            $theme-map: null !global;
+//        }
+//    }
+//}
+//
+//@mixin gthemify {
+//    @each $theme, $map in $themes {
+//        .theme--#{$theme} & {
+//            $theme-map: () !global;
+//
+//            @each $key, $submap in $map {
+//                $value: map-get($map, $key);
+//                $theme-map: map-merge($theme-map, ($key: $value,)) !global;
+//            }
+//            @content;
+//
+//            $theme-map: null !global;
+//        }
+//    }
+//}
+

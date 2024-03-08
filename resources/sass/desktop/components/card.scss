@@ -1,0 +1,41 @@
+#{'.'+$namespace} {
+    &-card {
+        //background: var(--#{$namespace}-bg);
+        background: find-color("surface", 'card');
+        border-radius: map-get($indents, 'xxlarge');
+        padding: map-get($indents, 'xxlarge');
+        position: relative;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+        &__title {
+            //color: find-color("secondary", "white");
+            color: var(--#{$namespace}-secondary);
+            font-weight: 700;
+        }
+
+        &__subtitle {
+            font-size: 12px;
+            font-weight: 500;
+            //color: find-color("neutral-dark", "surface", 'text');
+            color: var(--b-neutral-dark);
+        }
+        &__text {
+            font-size: 14px;
+            //color: find-color("secondary", "surface", 'text');
+            color: var(--#{$namespace}-secondary);
+        }
+    }
+}
+
+@media (max-width: 576px)
+{
+    #{'.'+$namespace} {
+        &-card {
+            border-radius: map-get($indents, 'xlarge');
+            padding: map-get($indents, 'xlarge');
+            &__title {
+                font-size: 1.17em;
+            }
+        }
+    }
+}

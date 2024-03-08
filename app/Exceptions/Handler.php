@@ -3,7 +3,10 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Throwable;
+use \Tymon\JWTAuth\Exceptions\TokenExpiredException as TokenExpiredException;
 
 class Handler extends ExceptionHandler
 {
@@ -50,6 +53,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        Log::info('here Exception render = '. $exception->getMessage() . '  = ');
+        //проверить, что приходят нужные коды, в конфиге поменять время жизни токена на несколько минут
+        if ($exception instanceof UnauthorizedHttpException) {
+            if ($exception->getMessage() === 'Token has expired') {
+                Log::info('here UnauthorizedHttpException');
+                return response()->json(['message' => 'Unauthenticated.'], 403);
+            }
+
+        }
         return parent::render($request, $exception);
     }
 }

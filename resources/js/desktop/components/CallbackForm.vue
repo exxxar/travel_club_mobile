@@ -1,78 +1,38 @@
 <template>
-    <form class="form" @submit="sendRequest">
-        <div class="card-body m-auto row" style="width: 100%">
-            <div class="col-md-12 mb-2">
-                <div class="form-group bmd-form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="material-icons">person</i>
-                            </span>
-                        </div>
-                        <input type="text" name="name" class="form-control" v-model="name" placeholder="Ваше Ф.И.О."
-                               required>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 mb-2">
-                <div class="form-group bmd-form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="material-icons">phone</i>
-                            </span>
-                        </div>
-                        <input type="text" name="phone" class="form-control" v-model="phone"
-                               pattern="[\+]\d{2} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
-                               v-mask="['+# (###) ###-##-##','+## (###) ###-##-##']"
-                               placeholder="Номер телефона" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12 mb-2">
-                <div class="form-group bmd-form-group">
-                    <div class="input-group select">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="material-icons">help_outline</i>
-                            </span>
-                        </div>
-
-                            <select name="question-type" v-model="type" class="form-control" :options="question_types" required>
-                                <option v-for="(option,index) in question_types" :value="index">
-                                    {{option}}
-                                </option>
-                            </select>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="material-icons">message</i>
-                            </span>
-                        </div>
-                        <textarea name="message" v-model="message" class="form-control"
-                                  placeholder="Текст сообщения" required>
-                        </textarea>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-md-12 contact-btn">
-                <button type="submit" class="btn btn-primary" style="width: 100%">Отправить</button>
-            </div>
-        </div>
-    </form>
+    <base-modal id="contactModalBox" title="Напишите нам сообщение" :close_button_disabled="loading"
+                title_class="tc-modal__title-promo">
+        <template #body>
+            <base-input v-model="name" name="name" label="Ваше Ф.И.О." rules="required">
+                <template #icon>
+                    <base-icon name="User" color="secondary"/>
+                </template>
+            </base-input>
+            <base-input v-model="phone" name="phone" label="Номер телефона" rules="required|phone"
+                        :mask="['+# ### ### ####','+## ### ### ####', '+## ### #### ####']"
+            >
+                <template #icon>
+                    <base-icon name="Phone" color="secondary"/>
+                </template>
+            </base-input>
+            <base-select v-model="type" name="question-type" label="Тип вопроса" :options="question_types"
+                         rules="required">
+                <!--            <template #group-item>-->
+                <!--                <base-icon name="Help" color="secondary"/>-->
+                <!--            </template>-->
+            </base-select>
+            <base-input v-model="message" name="message" label="Текст сообщения" rules="required" tag="textarea"
+                        no_group_item>
+                <!--            <template #icon>-->
+                <!--                <base-icon name="Comment" color="secondary"/>-->
+                <!--            </template>-->
+            </base-input>
+        </template>
+        <template #footer="{invalid}">
+            <base-button class="w-100" @click="sendRequest" :loading="loading" :disabled="invalid||loading">Отправить</base-button>
+        </template>
+    </base-modal>
 </template>
 <script>
-    import {mask} from 'vue-the-mask'
-
     export default {
         data() {
             return {
@@ -88,28 +48,14 @@
                     "Стать партнёром",
                     "Реклама и продвижение",
                     "Тех. поддержка"
-                ]
+                ],
+                loading: false
             };
         },
         methods: {
-
-            sendRequest: function (e) {
-                e.preventDefault();
-                // axios
-                //     .post('../api/v1/wish', {
-                //         from: this.name,
-                //         phone: this.phone,
-                //         message: "*" + this.question_types[this.type] + "*:\n" + this.message + "\n"
-                //     })
-                //     .then(response => {
-                //         this.sendMessage("Сообщение успешно отправлено");
-                //         $('#contactModalBox').modal('hide')
-                //         this.name = "";
-                //         this.phone = "";
-                //         this.message = "";
-                //     })
-
-                axios
+            async sendRequest() {
+                this.loading = true;
+                await axios
                     .post('/sendCallback', {
                         name: this.name,
                         phone: this.phone,
@@ -117,27 +63,13 @@
                         question_type: this.question_types[this.type]
                     })
                     .then(response => {
-
-                        // this.name = "";
-                        // this.phone = "";
-                        // this.message = "";
-                    })
-                this.sendMessage("Сообщение успешно отправлено");
-                $('#contactModalBox').modal('hide')
-                // this.sendMessage("Сообщение успешно отправлено");
-                // $('#contactModalBox').modal('hide')
-
+                        this.$store.commit('closeModal', '#contactModalBox');
+                        this.$store.dispatch('sendNotification', {message: 'Сообщение успешно отправлено'});
+                    }).finally(() => {
+                        this.loading = false;
+                    });
             },
-            sendMessage(message) {
-                this.$notify({
-                    group: 'info',
-                    type: 'travel',
-                    title: 'Отправка сообщений TravelClub',
-                    text: message
-                });
-            },
-        },
-        directives: {mask}
+        }
     }
 </script>
 <style>

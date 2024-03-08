@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Vuex from 'vuex';
 import store from './store'
-import auth from './store/auth.js'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css';
 
@@ -15,8 +13,153 @@ let router = new VueRouter({
         {
             path: '/',
             component: () => import('./pages/Landing.vue'),
-            name: "landing",
+            name: "Landing",
             meta: {bodyStyle: false, preloader: true},
+        },
+        {
+            path: '',
+            component: () => import('./pages/DesktopLayout.vue'),
+            name: "DesktopLayout",
+            children: [
+                {
+                    path: "login",
+                    name: "login",
+                    components: {
+                        default: () => import('./pages/SignIn.vue'),
+                        mobile: () => import('./mobile/pages/SignIn.vue')
+                    },
+                    meta: {
+                        layout: 'mobile',
+                        requiresAuth: false,
+                    }
+                },
+                {
+                    path: "signup",
+                    name: "signup",
+                    components: {
+                        default: () => import('./pages/SignUp.vue'),
+                        mobile: () => import('./pages/SignUp.vue')
+                    },
+                    meta: {
+                        layout: 'mobile',
+                        requiresAuth: false,
+                    }
+                },
+                {
+                    path: 'reset-password',
+                    name: 'reset-password',
+                    component: () => import('./pages/ForgotPassword.vue'),
+                    meta: {
+                        requiresAuth: false,
+                    }
+                },
+                {
+                    path: 'reset-password/:token',
+                    name: 'reset-password-form',
+                    component:  () => import('./pages/ResetPasswordForm.vue'),
+                    meta: {
+                        requiresAuth: false,
+                    }
+                },
+                {
+                    path: 'tour-search',
+                    component: () => import('./pages/TourSearch.vue'),
+                    meta: {preloader: true},
+                },
+                {
+                    path: 'avia-search',
+                    component: () => import('./pages/AviaSearch.vue'),
+                    meta: {preloader: true},
+                },
+                {
+                    path: 'russia-tour-search',
+                    component: () => import('./pages/RussiaTourSearch.vue'),
+                    meta: {preloader: true},
+                },
+            ]
+        },
+        {
+            path: '/dashboard',
+            component: () => import('./pages/Dashboard/Layout.vue'),
+            // name: "dashboard-main",
+            children: [
+                {
+                    path: '',
+                    component: () => import('./pages/Dashboard/Dashboard.vue'),
+                    name: "dashboard-main",
+                },
+                {
+                    path: 'profile',
+                    component: () => import('./pages/Dashboard/Profile.vue'),
+                    name: "dashboard-profile",
+                },
+                {
+                    path: 'tours',
+                    component: () => import('./pages/Dashboard/Tours/Tours.vue'),
+                    name: "dashboard-tours",
+                },
+                {
+                    path: 'tour/:id',
+                    component: () => import('./pages/Dashboard/Tours/Tour.vue'),
+                    name: "dashboard-tour",
+                    meta: {
+                        requiresAuth: true
+                    },
+                },
+                {
+                    path: 'documents',
+                    component: () => import('./pages/Dashboard/Documents/Documents.vue'),
+                    name: "dashboard-documents",
+                },
+                {
+                    path: 'reviews',
+                    component: () => import('./pages/Dashboard/Reviews/Reviews.vue'),
+                    name: "dashboard-reviews",
+                },
+                {
+                    path: 'review',
+                    component: () => import('./pages/Dashboard/Review.vue'),
+                    name: "dashboard-review",
+                },
+                {
+                    path: 'branches',
+                    component: () => import('./pages/Dashboard/Branches/Index.vue'),
+                    name: "dashboard-branches",
+                },
+                {
+                    path: 'users',
+                    component: () => import('./pages/Dashboard/Users/Users.vue'),
+                    name: "dashboard-users",
+                },
+                {
+                    path: 'clients',
+                    component: () => import('./pages/Dashboard/Clients/Index.vue'),
+                    name: "dashboard-clients",
+                },
+                {
+                    path: 'news',
+                    // component: () => import('../admin/pages/NewsAdmin.vue'),
+                    component: () => import('./pages/Dashboard/News/Articles.vue'),
+                    name: "dashboard-news",
+                    children: [
+                    ]
+                },
+                {
+                    path: 'news/create',
+                    component: () => import('./pages/Dashboard/News/Article.vue'),
+                    name: "dashboard-news-create",
+                },
+                {
+                    path: 'news/update/:id',
+                    component: () => import('./pages/Dashboard/News/Article.vue'),
+                    name: "dashboard-news-update",
+                },
+                {
+                    path: 'orders',
+                    component: () => import('./pages/Dashboard/Orders/Index.vue'),
+                    name: "dashboard-orders",
+                },
+            ]
         },
         {
             path: '/simple-profile',
@@ -24,61 +167,7 @@ let router = new VueRouter({
             name: "simple-profile",
             meta: {bodyStyle: false, preloader: true},
         },
-        {
-            path: "/login",
-            name: "login",
-            components: {
-                default: () => import('./pages/SignIn.vue'),
-                mobile: () => import('./mobile/pages/SignIn.vue')
-            },
-            meta: {
-                layout: 'mobile',
-                requiresAuth: false,
-            }
-        },
-        {
-            path: "/signup",
-            name: "signup",
-            components: {
-                default: () => import('./pages/SignUp.vue'),
-                mobile: () => import('./pages/SignUp.vue')
-            },
-            meta: {
-                layout: 'mobile',
-                requiresAuth: false,
-            }
-        },
-        {
-            path: '/reset-password',
-            name: 'reset-password',
-            component: () => import('./pages/ForgotPassword.vue'),
-            meta: {
-                requiresAuth: false,
-            }
-        },
-        {
-            path: '/reset-password/:token',
-            name: 'reset-password-form',
-            component:  () => import('./pages/ResetPasswordForm.vue'),
-            meta: {
-                requiresAuth: false,
-            }
-        },
-        {
-            path: '/tour-search',
-            component: () => import('./pages/TourSearch.vue'),
-            meta: {preloader: true},
-        },
-        {
-            path: '/avia-search',
-            component: () => import('./pages/AviaSearch.vue'),
-            meta: {preloader: true},
-        },
-        {
-            path: '/russia-tour-search',
-            component: () => import('./pages/RussiaTourSearch.vue'),
-            meta: {preloader: true},
-        },
+
 
         {
             path: '/promocodes',
@@ -240,8 +329,15 @@ let router = new VueRouter({
                     path: "profile",
                     name: "client-profile",
                     components: {
-                        default: () => import('./pages/SimpleProfile.vue'),
-                        mobile: () => import('./mobile/pages/Client/Profile.vue')
+                        component: () => import('./pages/Dashboard/Dashboard.vue'),
+                    },
+                    meta: {layout: 'client', requiresAuth: false}
+                },
+                {
+                    path: "tours",
+                    name: "client-tours",
+                    components: {
+                        component: () => import('./pages/Dashboard/Tours/Tours.vue'),
                     },
                     meta: {layout: 'client', requiresAuth: false}
                 },
@@ -688,7 +784,7 @@ let router = new VueRouter({
         {
             //404
             path: '*',
-            component: () => import('./pages/404.vue'),
+            component: () => import('./pages/NotFound.vue'),
         }
     ],
     scrollBehavior (to, from, savedPosition) {
@@ -702,28 +798,29 @@ router.beforeEach((to, from, next) => {
     }
     if (to.matched.some(record => record.meta.requiresAuth)) {
         /* If we will do admin page */
-        if (store.getters.isLoggedIn == false) {
+        console.log('store.getters.isLoggedIn', store.getters.isLoggedIn)
+        if (store.getters.isLoggedIn === false) {
             next('/login')
             return;
         } else {
             // console.log(store.getters)
-            if (to.matched.some(record => record.meta.is_admin)) {
-                if (store.getters.isAdmin == false) {
-                    next('/login')
-                    return;
-                } else {
-                    next()
-                }
-            } else if (to.matched.some(record => record.meta.is_manager)) {
-                if (store.getters.isManager == false) {
-                    next('/login')
-                    return;
-                } else {
-                    next()
-                }
-            } else {
+            // if (to.matched.some(record => record.meta.is_admin)) {
+            //     if (store.getters.isAdmin == false) {
+            //         next('/login')
+            //         return;
+            //     } else {
+            //         next()
+            //     }
+            // } else if (to.matched.some(record => record.meta.is_manager)) {
+            //     if (store.getters.isManager == false) {
+            //         next('/login')
+            //         return;
+            //     } else {
+            //         next()
+            //     }
+            // } else {
                 next()
-            }
+            // }
         }
         /*--------------------------------------------------------*/
         // if (store.getters.isLoggedIn) {

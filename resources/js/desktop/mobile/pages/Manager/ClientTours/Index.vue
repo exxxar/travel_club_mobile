@@ -27,7 +27,7 @@
                             <span class="sr-only">Loading...</span>
                         </div>
                     </div>
-                    <button v-if="!props.row.isLoading" class="btn waves-effect" style="outline: none;" data-toggle="modal" data-target="#editUserTourModalBox"
+                    <button v-if="!props.row.isLoading" class="btn waves-effect" style="outline: none;"  data-bs-toggle="modal" data-bs-target="#editUserTourModalBox"
                             @click="editClientTour(props.row)"
                     >
                         <i class="material-icons" style="color: #0d274b;" >edit</i>
@@ -296,7 +296,7 @@
             addClientTour: function(){
                 this.$store.dispatch('getCities', this.new_tour.TourInfo.country.Id);
                 this.$store.dispatch('getHotels', {country_id:this.new_tour.TourInfo.country.Id, town_id:'0', star_id:'0'});
-                $('#newUserTourModalBox').modal('show');
+                this.$store.dispatch('openModal', '#newUserTourModalBox')
             },
 
             sendMessage(message) {

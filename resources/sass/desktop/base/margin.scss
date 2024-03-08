@@ -1,0 +1,64 @@
+@include set-property('m','margin', $indents, true, !important);
+@include set-property('mr','margin-right', $indents, true,!important);
+@include set-property('ml','margin-left', $indents, true,!important);
+@include set-property('me','margin-right', $indents, true,!important);
+@include set-property('ms','margin-left', $indents, true,!important);
+@include set-property('mt','margin-top', $indents, true,!important);
+@include set-property('mb','margin-bottom', $indents, true,!important);
+@include set-property('mx','margin', $indents, true, !important, true, true) using ($key, $value) {
+    margin-right: $value !important;
+    margin-left: $value !important;
+};
+@include set_property('ml-auto','margin-left', (auto: auto), false, !important);
+@include set_property('ms-auto','margin-left', (auto: auto), false, !important);
+@include set_property('mx','margin', (auto: auto), true, !important, true, true) using ($key, $value) {
+    margin-right: $value !important;
+    margin-left: $value !important;
+};
+@include set_property('my','margin', (auto: auto), true, !important, true, true) using ($key, $value) {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+};
+@include up-all() using ($key, $value) {
+    @include set-property('mr'+$key,'margin-right', $indents, true,!important);
+    @include set-property('ml'+$key,'margin-left', $indents, true,!important);
+    @include set-property('me'+$key,'margin-right', $indents, true,!important);
+    @include set-property('ms'+$key,'margin-left', $indents, true,!important);
+    @include set-property('mt'+$key,'margin-top', $indents, true,!important);
+    @include set-property('mb'+$key,'margin-bottom', $indents, true,!important);
+    @include set-property('mx'+$key,'margin', $indents, true, !important, true, true) using ($key, $value) {
+        margin-right: $value !important;
+        margin-left: $value !important;
+    };
+    @include set_property('mx'+$key,'margin', (auto: auto), true, !important, true, true) using ($key, $value) {
+        margin-right: $value !important;
+        margin-left: $value !important;
+    };
+    @include set_property('my'+$key,'margin', (auto: auto), true, !important, true, true) using ($key, $value) {
+        margin-top: $value !important;
+        margin-bottom: $value !important;
+    };
+}
+
+@include down-all() using ($key, $value){
+    @include set-property('mr'+$key,'margin-right', $indents, true,!important);
+    @include set-property('ml'+$key,'margin-left', $indents, true,!important);
+    @include set-property('me'+$key,'margin-right', $indents, true,!important);
+    @include set-property('ms'+$key,'margin-left', $indents, true,!important);
+    @include set-property('mt'+$key,'margin-top', $indents, true,!important);
+    @include set-property('mb'+$key,'margin-bottom', $indents, true,!important);
+    @include set-property('mx'+$key,'margin', $indents, true, !important, true, true) using ($key, $value) {
+        margin-right: $value !important;
+        margin-left: $value !important;
+    };
+    @include set_property('mx'+$key,'margin', (auto: auto), true, !important, true, true) using ($key, $value) {
+        margin-right: $value !important;
+        margin-left: $value !important;
+    };
+    @include set_property('my'+$key,'margin', (auto: auto), true, !important, true, true) using ($key, $value) {
+        margin-top: $value !important;
+        margin-bottom: $value !important;
+    };
+}
+
+

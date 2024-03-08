@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="appHeader menu row align-items-center justify-content-center ml-auto mr-auto pl-2 pr-2 pt-2 pb-2" style="width: 100%;">
-            <div class="row ml-2 mr-auto mt-auto mb-auto">
+        <div class="appHeader menu row align-items-center justify-content-center ml-auto me-auto ps-2 pe-2 pt-2 pb-2" style="width: 100%;">
+            <div class="row ml-2 me-auto mt-auto mb-auto">
                 <div class="action-button" @click="back">
                     <div class="icon icon-keyboard_arrow_left"></div>
                 </div>
@@ -13,7 +13,7 @@
                     </h4>
                 </a>
             </div>
-            <div class="ml-auto mr-2 my-auto">
+            <div class="ml-auto me-2 my-auto">
                 <slider
                     right
                     @openMenu="openMenu()"
@@ -100,16 +100,8 @@
                 this.$store.commit('setMenu', false)
             },
             toProfile() {
-                if (this.isAdmin == true) {
-                    this.$router.push('/admin')
-                }
-                if(this.isManager == true){
-                    this.$router.push('/manager')
-                }
-                if (!this.isAdmin && !this.isManager)  {
-                    this.$router.push('/client')
-                }
-                this.closeMenu()
+                this.$router.push('/dashboard');
+                this.closeMenu();
             },
             logout: function () {
                 this.$store.dispatch('logout')

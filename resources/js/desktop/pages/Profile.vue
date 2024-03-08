@@ -7,7 +7,7 @@
     <div class="cssui-usercard__body"  style="height: 100%; width: 100%">
       <header class="cssui-usercard__header" style="height: 50%; width: 100%">
         <illuminator :component ="'profile'"></illuminator>
-        <div class="cssui-usercard__header-info ml-2">
+        <div class="cssui-usercard__header-info ms-2">
           <h4 class="cssui-usercard__name">{{user.name}}</h4>
           <h5 class="cssui-usercard__post">{{user.email}}</h5>
         </div>

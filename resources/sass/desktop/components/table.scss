@@ -1,0 +1,61 @@
+table.#{$namespace}-table {
+    background-color: transparent;
+}
+#{'.'+$namespace} {
+    &-table {
+        background-color: transparent;
+        border-radius: map-get($indents, 'medium');
+        & > :not(caption) > * > * {
+            //padding: 0.5rem 0.5rem;
+            //color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color))));
+            background-color: find-color("surface", 'card');
+            //border-bottom-width: var(--bs-border-width);
+            //box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg))));
+        }
+        &__thead {
+            & tr {
+                & th {
+                    //text-align: center;
+                    vertical-align: middle;
+                    font-weight: bold;
+                    background: find-color('secondary-lighter');
+                    //background: #f3f4f9;
+                    //color: find-color('text-2');
+                    color: #888ca4;
+                    //color: var(--b-neutral-dark);
+                    //color: var(--#{$namespace}-text-1);
+                    &#{'.'+$namespace}-table__thead-group {
+                        border-bottom: 1px solid #888ca4;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                }
+                &:first-child {
+                    & th:first-child {
+                        border-top-left-radius: map-get($indents, 'medium');
+                        border-bottom-left-radius: map-get($indents, 'medium');
+                    }
+                    & th:last-child {
+                        border-top-right-radius: map-get($indents, 'medium');
+                        border-bottom-right-radius: map-get($indents, 'medium');
+                    }
+                }
+                //&:last-child {
+                //    & th:first-child {
+                //        border-bottom-left-radius: map-get($indents, 'medium');
+                //    }
+                //    & th:last-child {
+                //        border-bottom-right-radius: map-get($indents, 'medium');
+                //    }
+                //}
+            }
+        }
+        & tbody {
+            & tr {
+                & td {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

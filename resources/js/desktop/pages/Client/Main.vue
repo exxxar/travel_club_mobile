@@ -7,14 +7,14 @@
                         <div class="col-12 col-md-8 col-sm-12">
                             <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row" style="height:100px;width:100%;">
                                 <div class="col-md-7 p-0">
-                                    <div class="row mr-auto ml-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
+                                    <div class="row me-auto ms-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
                                         <h1 class="title-1"><span>З</span>дравствуйте,</h1>
                                         <img src="/images/blue-brush.svg" class="blue-brush" style="position: absolute;"/>
                                     </div>
                                 </div>
                                 <div class="col-md-7 p-0">
-                                    <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
-                                        <h1 class="title-2"><span>{{user.info.FullName}}</span></h1>
+                                    <div class="row ms-auto me-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
+                                        <h1 class="title-2"><span>{{user.info.FullName | empty_filter}}</span></h1>
                                         <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
                                     </div>
                                 </div>
@@ -35,24 +35,24 @@
                                     </div>
                                     <div class="v-responsive__content">
                                         <div class="v-card__title">
-                                            <div class="white--text active-tour d-sm-block d-md-none">{{tour_title}}</div>
-<!--                                            <div class="ml-auto white&#45;&#45;text active-tour">-->
+                                            <div class="white--text active-tour d-sm-block d-md-none">{{tour_title | empty_filter}}</div>
+<!--                                            <div class="ms-auto white&#45;&#45;text active-tour">-->
 <!--                                                <div class="row m-auto align-items-center justify-content-center" style="height: 100%; width: 100%;">-->
-<!--                                                    <div class="icon icon-calendar mr-2"></div>13.07 - 13.08-->
+<!--                                                    <div class="icon icon-calendar me-2"></div>13.07 - 13.08-->
 <!--                                                </div>-->
 <!--                                            </div>-->
                                         </div>
                                         <div class="v-card__subtitle white--text d-sm-block d-md-none">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h3>{{current_tour.TourInfo.resort.Name}}, {{current_tour.TourInfo.country.Name}}</h3>
+                                                    <h3>{{current_tour.TourInfo.resort.Name | empty_filter}}, {{current_tour.TourInfo.country.Name | empty_filter}}</h3>
 <!--                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed-->
 <!--                                                        do eiusmod tempor incididunt ut labore et dolore magna-->
 <!--                                                        aliqua-->
 <!--                                                    </p>-->
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <span class="white--text active-tour float-right">{{current_tour.TourInfo.price}}</span>
+                                                    <span class="white--text active-tour float-right">{{current_tour.TourInfo.price | empty_filter}}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -62,13 +62,13 @@
                         </div>
                         <div class="col-md-6 d-none d-md-block">
                             <div class="row mx-auto mt-3 mb-3 align-items-center justify-content-center">
-                                <span class="white--text active-tour" style="background:#062348; font-size: 24px">{{tour_title}} тур</span>
+                                <span class="white--text active-tour" style="background:#062348; font-size: 24px">{{tour_title  | empty_filter}} тур</span>
                             </div>
                             <div class="row m-auto align-items-center justify-content-center">
-                                <h3 class="subtitle">{{current_tour.TourInfo.resort.Name}},
-                                    <b class="ml-1 mr-1" style="border: 1px solid #063065" :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+current_tour.TourInfo.country.Id">
+                                <h3 class="subtitle">{{current_tour.TourInfo.resort.Name | empty_filter}},
+                                    <b class="ms-1 me-1" style="border: 1px solid #063065" :class="'tc-flag-'+current_tour.TourInfo.country.Id | empty_filter">
                                     </b>
-                                    {{current_tour.TourInfo.country.Name}}
+                                    {{current_tour.TourInfo.country.Name | empty_filter}}
                                 </h3>
                             </div>
                             <div class="row features align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -76,7 +76,7 @@
                                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                                         <div class="col-12">
                                             <div class="title">
-                                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                                     <span class="path1">
                                                         <span class="path2"></span>
                                                     </span>
@@ -85,8 +85,8 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="row align-items-center w-100 m-auto">
-                                                <div class="subtitle">{{current_tour.TourInfo.hotel.Name}} <span class="ml-3" style="color: #0f213d">{{current_tour.TourInfo.hotel.StarName}}</span></div>
-                                                <svg class="icon-star my-auto ml-1" style="width: 20px;height: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                                                <div class="subtitle">{{current_tour.TourInfo.hotel.Name | empty_filter}} <span class="ms-3" style="color: #0f213d">{{current_tour.TourInfo.hotel.StarName | empty_filter}}</span></div>
+                                                <svg class="icon-star my-auto ms-1" style="width: 20px;height: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                                                     <path fill="#ffca00" d="M9.5 0l3.131 5.97 6.367 1.29-4.432 4.97.804 6.77-5.87-2.9L3.63 19l.804-6.77L.002 7.26l6.367-1.29L9.5 0"></path>
                                                 </svg>
                                             </div>
@@ -97,7 +97,7 @@
                                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                                         <div class="col-12">
                                             <div class="title">
-                                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                                     <span class="path1">
                                                         <span class="path2"></span>
                                                     </span>
@@ -106,7 +106,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <div class="subtitle">{{current_tour.TourInfo.room_type}}</div>
+                                            <div class="subtitle">{{current_tour.TourInfo.room_type | empty_filter}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                                         <div class="col-12">
                                             <div class="title">
-                                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                                     <span class="path1">
                                                         <span class="path2"></span>
                                                     </span>
@@ -123,7 +123,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <div class="subtitle">{{current_tour.TourInfo.meal.Name}}<span class="my-auto" style="color: #0f213d; font-size:14px"> - {{current_tour.TourInfo.meal.desc}}</span></div>
+                                            <div class="subtitle">{{current_tour.TourInfo.meal.Name | empty_filter}}<span class="my-auto" style="color: #0f213d; font-size:14px"> - {{current_tour.TourInfo.meal.desc | empty_filter}}</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                 <span class="white--text active-tour" style="background:#062348; font-size: 24px;position: absolute">Туры</span>
             </div>
             <div class="row mx-auto mt-3 mb-3 justify-content-center align-items-center" v-if="tours.length>0" style="width: 100%;height: 100%;">
-                <hooper class="mr-auto ml-auto desktop" style="height: 100%;" :itemsToShow="3" :infiniteScroll="false">
+                <hooper class="me-auto ms-auto desktop" style="height: 100%;" :itemsToShow="3" :infiniteScroll="false">
                     <slide v-for="tour in tours" @click="toTourInfo(tour.id)" :key="tour.id">
                         <div class="mx-auto v-card elevation-24" @click="toTourInfo(tour.id)" style="height: 350px; max-width: 100%; width: 350px; border-radius: 20px; cursor:pointer">
                             <div class="v-responsive v-image" style="height: 100%;">
@@ -161,23 +161,23 @@
                                 <div class="v-responsive__content">
                                     <div class="v-card__title">
                                         <!--                                <div class="white&#45;&#45;text active-tour">Текущий</div>-->
-                                        <div class="ml-auto white--text active-tour">
+                                        <div class="ms-auto white--text active-tour">
                                             <div class="row m-auto align-items-center justify-content-center" style="height: 100%; width: 100%;">
-                                                <div class="icon icon-calendar mr-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}
+                                                <div class="icon icon-calendar me-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="v-card__subtitle white--text">
                                         <div class="row">
                                             <div class="col-md-12 mb-2">
-                                                <h4>{{tour.TourInfo.resort.Name}}, {{tour.TourInfo.country.Name}}</h4>
+                                                <h4>{{tour.TourInfo.resort.Name | empty_filter}}, {{tour.TourInfo.country.Name | empty_filter}}</h4>
 <!--                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed-->
 <!--                                                    do eiusmod tempor incididunt ut labore et dolore magna-->
 <!--                                                    aliqua-->
 <!--                                                </p>-->
                                             </div>
                                             <div class="col-md-12">
-                                                <span class="white--text active-tour float-right">{{tour.TourInfo.price}}</span>
+                                                <span class="white--text active-tour float-right">{{tour.TourInfo.price | empty_filter}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
                     </slide>
                     <hooper-navigation slot="hooper-addons"></hooper-navigation>
                 </hooper>
-                <hooper class="mr-auto ml-auto tablet" style="height: 100%;" :itemsToShow="2" :infiniteScroll="false">
+                <hooper class="me-auto ms-auto tablet" style="height: 100%;" :itemsToShow="2" :infiniteScroll="false">
                     <slide v-for="tour in tours" @click="toTourInfo(tour.id)" :key="tour.id">
                         <div class="mx-auto v-card elevation-24" @click="toTourInfo(tour.id)" style="height: 350px; max-width: 100%; width: 350px; border-radius: 20px; cursor:pointer;">
                             <div class="v-responsive v-image" style="height: 100%;">
@@ -198,9 +198,9 @@
                                 <div class="v-responsive__content">
                                     <div class="v-card__title">
                                         <!--                                <div class="white&#45;&#45;text active-tour">Текущий</div>-->
-                                        <div class="ml-auto white--text active-tour">
+                                        <div class="ms-auto white--text active-tour">
                                             <div class="row m-auto align-items-center justify-content-center" style="height: 100%; width: 100%;">
-                                                <div class="icon icon-calendar mr-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}
+                                                <div class="icon icon-calendar me-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}
                                             </div>
                                         </div>
                                     </div>
@@ -208,14 +208,14 @@
                                         <div class="row">
                                             <div class="col-md-12 mb-2">
 
-                                                <h4>{{tour.TourInfo.resort.Name}}, {{tour.TourInfo.country.Name}}</h4>
+                                                <h4>{{tour.TourInfo.resort.Name | empty_filter}}, {{tour.TourInfo.country.Name | empty_filter}}</h4>
 <!--                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed-->
 <!--                                                    do eiusmod tempor incididunt ut labore et dolore magna-->
 <!--                                                    aliqua-->
 <!--                                                </p>-->
                                             </div>
                                             <div class="col-md-12">
-                                                <span class="white--text active-tour float-right">{{tour.TourInfo.price}}</span>
+                                                <span class="white--text active-tour float-right">{{tour.TourInfo.price | empty_filter}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +225,7 @@
                     </slide>
                     <hooper-navigation slot="hooper-addons"></hooper-navigation>
                 </hooper>
-                <hooper class="mr-auto ml-auto mobile" style="height: 100%;" :itemsToShow="1" :infiniteScroll="true">
+                <hooper class="me-auto ms-auto mobile" style="height: 100%;" :itemsToShow="1" :infiniteScroll="true">
                     <slide v-for="tour in tours" @click="toTourInfo(tour.id)" :key="tour.id">
                         <div class="mx-auto v-card elevation-24" @click="toTourInfo(tour.id)" style="height: 350px; max-width: 100%; width: 350px; border-radius: 20px; cursor:pointer;">
                             <div class="v-responsive v-image" style="height: 100%;">
@@ -235,23 +235,23 @@
                                 </div>
                                 <div class="v-responsive__content">
                                     <div class="v-card__title">
-                                        <div class="ml-auto white--text active-tour">
+                                        <div class="ms-auto white--text active-tour">
                                             <div class="row m-auto align-items-center justify-content-center" style="height: 100%; width: 100%;">
-                                                <div class="icon icon-calendar mr-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}
+                                                <div class="icon icon-calendar me-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="v-card__subtitle white--text">
                                         <div class="row">
                                             <div class="col-md-12 mb-2">
-                                                <h4>{{tour.TourInfo.resort.Name}}, {{tour.TourInfo.country.Name}}</h4>
+                                                <h4>{{tour.TourInfo.resort.Name | empty_filter}}, {{tour.TourInfo.country.Name | empty_filter}}</h4>
 <!--                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed-->
 <!--                                                    do eiusmod tempor incididunt ut labore et dolore magna-->
 <!--                                                    aliqua-->
 <!--                                                </p>-->
                                             </div>
                                             <div class="col-md-12">
-                                                <span class="white--text active-tour float-right">{{tour.TourInfo.price}}</span>
+                                                <span class="white--text active-tour float-right">{{tour.TourInfo.price | empty_filter}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -348,10 +348,10 @@
             },
         created() {
             // this.$store.commit('setPreloader', true)
-            this.getUser()
-            if(this.branches.length<=0){
-                this.loadBranches();
-            }
+            this.getUser();
+            // if(this.branches.length<=0){
+            //     this.loadBranches();
+            // }
             // if (!this.user) {
             //     this.$store.dispatch('getUser').then( () => {
             //         this.tours = this.user.tours;

@@ -3,7 +3,7 @@
         <baloon-anim class="mt-5"/>
 
         <tour-start/>
-        <tour-country/>
+<!--        <tour-country/>-->
         <tour-filter/>
         <tour-order/>
 
@@ -11,7 +11,7 @@
     </div>
 </template>
 <script>
-    import TourCountry from '../components/TravelSearch/Country'
+    // import TourCountry from '../components/TravelSearch/Country'
     import TourFilter from '../components/TravelSearch/TourFilter'
     import TourStart from '../components/TravelSearch/Start'
     import BaloonAnim from '../components/BaloonAnim'
@@ -19,7 +19,8 @@
 
     export default {
         components: {
-            TourCountry, BaloonAnim, TourFilter, TourOrder, TourStart
+            // TourCountry,
+            BaloonAnim, TourFilter, TourOrder, TourStart
         }
 
     }

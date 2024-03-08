@@ -62,7 +62,8 @@
         },
         methods: {
             close(){
-                $(".stories").modal("hide");
+                // $(".stories").modal("hide");
+                this.$store.dispatch('closeModal', '.stories');
             },
             swipeHandler() {
                 console.log("testttt")
@@ -84,9 +85,9 @@
 
                         if (this.current < this.stories.length - 1) {
                             this.current += 1;
-                            $('#StoryDefault' + this.current).modal('show');
+                            this.$store.dispatch('openModal', '#StoryDefault' + this.current);
                         } else {
-                            $('#StoryDefault' + this.current).modal('hide');
+                            this.$store.dispatch('closeModal', '#StoryDefault' + this.current);
                             this.current = null
                             clearInterval(this.interval)
                             return;

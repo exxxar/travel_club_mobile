@@ -78,11 +78,12 @@ class HomeController extends Controller
 
     public function locationByIp(Request $request)
     {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('GET',"http://ipinfo.io");
-        $result = json_decode($response->getBody(), true);
+//        $client = new \GuzzleHttp\Client();
+//        $response = $client->request('GET',"http://ipinfo.io");
+//        $result = json_decode($response->getBody(), true);
         return response()->json([
-            "result" => $result,
+//            "result" => $result,
+            "result" => null,
         ], 200);
     }
 

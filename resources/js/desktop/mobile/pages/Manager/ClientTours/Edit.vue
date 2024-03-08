@@ -1,6 +1,6 @@
 <template>
     <div class="modal fade modalbox show"
-         id="editUserTourModalBox" data-backdrop="static"
+         id="editUserTourModalBox"  data-bs-backdrop="static"
          tabindex="-1" role="dialog"
          aria-modal="true"
     >
@@ -8,7 +8,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Редактировать тур клиента</h5>
-                    <a href="javascript:;" data-dismiss="modal" style="text-decoration: none">Закрыть</a>
+                    <a href="javascript:;"  data-bs-dismiss="modal" style="text-decoration: none">Закрыть</a>
                 </div>
                 <div class="modal-body">
                     <div class="start-form" style="margin-bottom: 110px">
@@ -32,13 +32,13 @@
                                             @input="chooseEditResortCountry"
                                         >
                                             <template slot="singleLabel" slot-scope="props">
-                                                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                                <b :class="'tc-flag-'+props.option.Id"></b>
                                                 <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
                                             </template>
                                             <template slot="option" slot-scope="props">
-                                                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                                <b :class="'tc-flag-'+props.option.Id"></b>
                                                 <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
@@ -486,7 +486,7 @@
                             Comment:''
                         };
                         this.loading = false;
-                        $('#editUserTourModalBox').modal('hide');
+                        this.$store.dispatch('closeModal', '#editUserTourModalBox');
                     });
             },
 

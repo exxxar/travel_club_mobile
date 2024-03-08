@@ -1,0 +1,20 @@
+@include set-color('background-color', 'bg', 'main', 'default', 'light', 'lighter');
+@include set-color('background-color', 'bg', 'primary', 'default', 'light', 'lighter', 'dark');
+@include set-color('background-color', 'bg', 'green', 'default', 'light', 'lighter');
+@include set-color('background-color', 'bg', 'red', 'default', 'light', 'lighter', 'dark');
+@include set-color('background-color', 'bg', 'blue', 'default', 'light', 'lighter', 'dark');
+@include set-color('background-color', 'bg', 'yellow', 'default', 'light', 'lighter');
+@include set-color('background-color', 'bg', 'purple', 'default', 'light', 'lighter');
+@include set-color('background-color', 'bg', 'pink', 'default', 'light', 'lighter');
+@include set-color('background-color', 'bg', 'orange', 'default', 'lighter');
+@include set-color('background-color', 'bg', 'teal', 'default', 'lighter');
+@include set-color('background-color', 'bg', 'neutral', 'default', 'light', 'lighter','dark', 'darker');
+@include set-color('background-color', 'bg', 'white', '');
+
+#{'.'+$namespace}-bg-body {
+    background-color: $body-bg !important;
+}
+
+#{'.'+$namespace}-bg-transparent {
+    background-color: transparent !important;
+}

@@ -5,7 +5,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="reviewModalBoxLabel">Оставить отзыв</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close"  data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -46,7 +46,7 @@
             <button class="btn btn-tour-info" @click="toBalance"><i class="fas fa-wallet mr-2"></i>Баланс</button>
             <button class="btn btn-tour-info" v-if="!tour.Archive" @click="addToArchive(tour)"><i class="fas fa-archive mr-2"></i>Отправить в архив</button>
             <button class="btn btn-tour-info" v-if="tour.Archive" @click="returnFromArchive(tour)"><i class="fas fa-archive mr-2"></i>Вернуть из архива</button>
-            <button class="btn btn-tour-info" :disabled="invalid" data-toggle="modal" data-target="#reviewModalBox"><i class="fas fa-comment-dots mr-2"></i>Написать отзыв</button>
+            <button class="btn btn-tour-info" :disabled="invalid"  data-bs-toggle="modal" data-bs-target="#reviewModalBox"><i class="fas fa-comment-dots mr-2"></i>Написать отзыв</button>
         </div>
         <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
             <div class="col-md-6 p-0">
@@ -58,7 +58,7 @@
                         <div class="row align-items-center w-100 m-auto">
                             <div class="col-12">
                                 <div class="row align-items-center w-100 m-auto">
-                                    <b class="mr-3" style="border: 1px solid #063065" :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+tour.TourInfo.country.Id"></b>
+                                    <b class="mr-3" style="border: 1px solid #063065" :class="'tc-flag-'+tour.TourInfo.country.Id"></b>
                                     <div class="subtitle">{{tour.TourInfo.country.Name}}</div>
                                 </div>
                             </div>
@@ -386,7 +386,7 @@
                     this.loading = false
                 })
                 this.loading = false
-                $('#reviewModalBox').modal('hide')
+                this.$store.dispatch('closeModal', '#reviewModalBox');
 
             },
             returnFromArchive(tour) {

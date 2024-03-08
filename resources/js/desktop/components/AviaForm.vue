@@ -1,13 +1,13 @@
 <template>
     <div>
 <!--        <div class="row mx-auto justify-content-center" v-if="type!='module'" style="height: 100%; width: 100%;">-->
-<!--            <div class="col-12 col-md-6 pr-md-1">-->
+<!--            <div class="col-12 col-md-6 pe-md-1">-->
 <!--                <label class="control-label">Имя</label>-->
 <!--                <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                    <input type="text" class="multiselect__input price" v-model="aviaModule.name" placeholder="Имя" required>-->
 <!--                </div>-->
 <!--            </div>-->
-<!--            <div class="col-12 col-md-6 pl-md-1">-->
+<!--            <div class="col-12 col-md-6 ps-md-1">-->
 <!--                <label class="control-label">Телефон</label>-->
 <!--                <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                    <input type="text" class=" multiselect__input price"-->

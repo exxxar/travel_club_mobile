@@ -17,7 +17,7 @@
 
         <div class="row mb-2">
             <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary mr-1 mb-1" style="width:100%"><span>Заказать звонок</span>
+                <button type="submit" class="btn btn-primary me-1 mb-1" style="width:100%"><span>Заказать звонок</span>
                 </button>
             </div>
         </div>
@@ -40,7 +40,7 @@
             onSubmit() {
                 ym(61797661, 'reachGoal', 'phone');
 
-                $('#customPhoneModal').modal('hide')
+                this.$store.dispatch('closeModal', '#customPhoneModal');
 
                 this.sendMessage("Заказ успешно отправлен")
 

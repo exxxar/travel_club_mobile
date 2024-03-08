@@ -1,355 +1,376 @@
 <template>
     <div id="sky">
-<!--    <transition name="fade">-->
+        <!--            <transition name="fade">-->
 
 
-<!--        <div class="new-body" style="">-->
-<!--        <div class="modal fade" id="contactModalBox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
-<!--             aria-hidden="true">-->
-<!--            <div class="modal-dialog custom-modal-dialog" role="document">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
+        <!--                <div class="new-body" style="">-->
+        <!--                <div class="modal fade" id="contactModalBox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
+        <!--                     aria-hidden="true">-->
+        <!--                    <div class="modal-dialog custom-modal-dialog" role="document">-->
+        <!--                        <div class="modal-content">-->
+        <!--                            <div class="modal-header">-->
 
-<!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                            <span aria-hidden="true">&times;</span>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        <h5 class="modal-title" id="exampleModalLabel">Свяжись с нами</h5>-->
-<!--                        <contact-form></contact-form>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+        <!--                                <button type="button" class="close"  data-bs-dismiss="modal" aria-label="Close">-->
+        <!--                                    <span aria-hidden="true">&times;</span>-->
+        <!--                                </button>-->
+        <!--                            </div>-->
+        <!--                            <div class="modal-body">-->
+        <!--                                <h5 class="modal-title" id="exampleModalLabel">Свяжись с нами</h5>-->
+        <!--                                <contact-form></contact-form>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="modal fade " id="customPhoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
+        <!--                     aria-hidden="true">-->
+        <!--                    <div class="modal-dialog modal-main custom-modal-dialog" role="document">-->
+        <!--                        <div class="modal-content">-->
+        <!--                            <div class="modal-header">-->
+        <!--                                <button type="button" class="close"  data-bs-dismiss="modal" aria-label="Close">-->
+        <!--                                    <span aria-hidden="true">&times;</span>-->
+        <!--                                </button>-->
+        <!--                            </div>-->
+        <!--                            <div class="modal-body">-->
+        <!--                                <h5 class="modal-title" id="exampleModalLabel">Закажи у нас</h5>-->
+        <!--                                <phone-order></phone-order>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="modal fade " id="customVoiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
+        <!--                     aria-hidden="true">-->
+        <!--                    <div class="modal-dialog modal-main custom-modal-dialog" role="document">-->
+        <!--                        <div class="modal-content">-->
+        <!--                            <div class="card card-signup card-plain">-->
+        <!--                                <div class="modal-header">-->
+        <!--                                    <div class="card-header card-header-primary text-center">-->
+        <!--                                        <button type="button" class="close"  data-bs-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>-->
+        <!--                                        <h4 class="card-title">Запиши голосовое сообщение</h4>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                                <div class="modal-body">-->
+        <!--                                    <voice-callback-form :phone="phone"></voice-callback-form>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <modal :id="'contactModalBox'" :title="'Напишите нам сообщение'">-->
+        <!--                    <template slot="body">-->
+        <!--                        <contact-form></contact-form>-->
+        <!--                    </template>-->
+        <!--                </modal>-->
+        <!--                <modal :id="'customVoiceModal'" :title="'Свяжитесь с нами'">-->
+        <!--                    <template slot="body">-->
+        <!--                        <voice-callback-form></voice-callback-form>-->
+        <!--                    </template>-->
+        <!--                </modal>-->
+        <!--                <modal :id="'customPhoneModal'" :title="'Заказать звонок'">-->
+        <!--                    <template slot="body">-->
+        <!--                        <phone-order></phone-order>-->
+        <!--                    </template>-->
+        <!--                </modal>-->
+        <notifications :position="'top left'" classes="my-style"></notifications>
+        <!--  <main-menu></main-menu>-->
+<!--        <transition name="fade">-->
+            <preloader v-show="preloader"></preloader>
+<!--        </transition>-->
+<!--        <div style="min-height: 100vh">-->
+<!--            &lt;!&ndash;        <div class="col-md-2 d-none d-md-block">&ndash;&gt;-->
+<!--            <main-menu/>-->
+<!--            <router-view class="tc-wrapper tc-wrapper-nowrap" style="min-height: calc( 100vh - 52px );">-->
+
+<!--            </router-view>-->
 <!--        </div>-->
-<!--        <div class="modal fade " id="customPhoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
-<!--             aria-hidden="true">-->
-<!--            <div class="modal-dialog modal-main custom-modal-dialog" role="document">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                            <span aria-hidden="true">&times;</span>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        <h5 class="modal-title" id="exampleModalLabel">Закажи у нас</h5>-->
-<!--                        <phone-order></phone-order>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="modal fade " id="customVoiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
-<!--             aria-hidden="true">-->
-<!--            <div class="modal-dialog modal-main custom-modal-dialog" role="document">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="card card-signup card-plain">-->
-<!--                        <div class="modal-header">-->
-<!--                            <div class="card-header card-header-primary text-center">-->
-<!--                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>-->
-<!--                                <h4 class="card-title">Запиши голосовое сообщение</h4>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="modal-body">-->
-<!--                            <voice-callback-form :phone="phone"></voice-callback-form>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <modal :id="'contactModalBox'" :title="'Напишите нам сообщение'">-->
-<!--            <template slot="body">-->
-<!--                <contact-form></contact-form>-->
-<!--            </template>-->
-<!--        </modal>-->
-<!--        <modal :id="'customVoiceModal'" :title="'Свяжитесь с нами'">-->
-<!--            <template slot="body">-->
-<!--                <voice-callback-form></voice-callback-form>-->
-<!--            </template>-->
-<!--        </modal>-->
-<!--        <modal :id="'customPhoneModal'" :title="'Заказать звонок'">-->
-<!--            <template slot="body">-->
-<!--                <phone-order></phone-order>-->
-<!--            </template>-->
-<!--        </modal>-->
-        <notifications :position="'top left'" :group="'info'" classes="my-style"></notifications>
-<!--  <main-menu></main-menu>-->
-            <transition name="fade">
-                <preloader v-if="preloader"></preloader>
-            </transition>
-   <!-- <div class='div' v-bind:style='{"background-color": (isActive? "yellow" : "orange" )}' @click="isActive = !isActive"></div>; -->
-<!--    <div class="row align-items-center justify-content-center ml-auto mr-auto" style="width: 100%;">-->
-<!--      <transition name="fade" mode="out-in">-->
-<!--        <router-view></router-view>-->
-<!--      </transition>-->
-<!--    </div>-->
-        <div v-if="isMobile">
-            <component :is="layout">
-                <transition v-if="layout!=='default-layout'" name="fade" mode="out-in">
-                    <router-view v-if="!isMobile"/>
-                    <router-view v-else name="mobile"/>
-                </transition>
-                <transition v-else name="fade" mode="out-in">
-                    <router-view></router-view>
-                </transition>
-            </component>
-        </div>
-        <div v-if="!isMobile">
-            <default-layout>
-                <transition v-if="layout!=='default-layout'" name="fade" mode="out-in">
-                    <router-view v-if="!isMobile"/>
-                    <router-view v-else name="mobile"/>
-                </transition>
-                <transition v-else name="fade" mode="out-in">
-                    <router-view></router-view>
-                </transition>
-            </default-layout>
-        </div>
+        <router-view>
+        </router-view>
+        <!-- <div class='div' v-bind:style='{"background-color": (isActive? "yellow" : "orange" )}' @click="isActive = !isActive"></div>; -->
+        <!--    <div class="row align-items-center justify-content-center ms-auto mr-auto" style="width: 100%;">-->
+        <!--      <transition name="fade" mode="out-in">-->
+        <!--        <router-view></router-view>-->
+        <!--      </transition>-->
+        <!--    </div>-->
+
+        <!--        <div v-if="isMobile">-->
+        <!--            <component :is="layout">-->
+        <!--                <transition v-if="layout!=='default-layout'" name="fade" mode="out-in">-->
+        <!--                    <router-view v-if="!isMobile"/>-->
+        <!--                    <router-view v-else name="mobile"/>-->
+        <!--                </transition>-->
+        <!--                <transition v-else name="fade" mode="out-in">-->
+        <!--                    <router-view></router-view>-->
+        <!--                </transition>-->
+        <!--            </component>-->
+        <!--        </div>-->
+        <!--        <div v-if="!isMobile">-->
+        <!--            <default-layout>-->
+        <!--                <transition v-if="layout!=='default-layout'" name="fade" mode="out-in">-->
+        <!--                    <router-view v-if="!isMobile"/>-->
+        <!--                    <router-view v-else name="mobile"/>-->
+        <!--                </transition>-->
+        <!--                <transition v-else name="fade" mode="out-in">-->
+        <!--                    <router-view></router-view>-->
+        <!--                </transition>-->
+        <!--            </default-layout>-->
+        <!--        </div>-->
 
 
-<!--        <component :is="layout">-->
-<!--            <transition v-if="layout!=='default-layout'" name="fade" mode="out-in">-->
-<!--                <router-view v-if="!isMobile"/>-->
-<!--                <router-view v-else name="mobile"/>-->
-<!--            </transition>-->
-<!--            <transition v-else name="fade" mode="out-in">-->
-<!--                <router-view></router-view>-->
-<!--            </transition>-->
-<!--        </component>-->
+        <!--        <component :is="layout">-->
+        <!--            <transition v-if="layout!=='default-layout'" name="fade" mode="out-in">-->
+        <!--                <router-view v-if="!isMobile"/>-->
+        <!--                <router-view v-else name="mobile"/>-->
+        <!--            </transition>-->
+        <!--            <transition v-else name="fade" mode="out-in">-->
+        <!--                <router-view></router-view>-->
+        <!--            </transition>-->
+        <!--        </component>-->
 
 
-<!--      <div class="row align-items-center justify-content-center mr-auto ml-auto" style="width:100%;overflow: hidden;">-->
-<!--&lt;!&ndash;      <div class="ml-auto mr-auto" style="z-index: 1">&ndash;&gt;-->
-<!--&lt;!&ndash;          <a href="#" class="icon icon-vk ml-auto mr-3" style="color: yellow;font-size: xx-large;"></a>&ndash;&gt;-->
-<!--&lt;!&ndash;          <a href="#" class="icon icon-instagram" style="color: yellow;font-size: xx-large;"></a>&ndash;&gt;-->
-<!--&lt;!&ndash;          <a href="#" class="icon icon-telegram ml-3 mr-auto" style="color: yellow;font-size: xx-large;"></a>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+        <!--      <div class="row align-items-center justify-content-center mr-auto ms-auto" style="width:100%;overflow: hidden;">-->
+        <!--&lt;!&ndash;      <div class="ms-auto mr-auto" style="z-index: 1">&ndash;&gt;-->
+        <!--&lt;!&ndash;          <a href="#" class="icon icon-vk ms-auto mr-3" style="color: yellow;font-size: xx-large;"></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;          <a href="#" class="icon icon-instagram" style="color: yellow;font-size: xx-large;"></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;          <a href="#" class="icon icon-telegram ms-3 mr-auto" style="color: yellow;font-size: xx-large;"></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;      </div>&ndash;&gt;-->
 
 
+        <!--                  <div class="socials text-center">-->
+        <!--                      <ul class="social-buttons" id="demo1">-->
+        <!--                          <li>-->
+        <!--&lt;!&ndash;                              <a href="#" class="icon icon-vk"></a>&ndash;&gt;-->
+        <!--                              <a href="#" class="icon icon-vk" style="font-size: xx-large;"></a>-->
+        <!--                          </li>-->
+        <!--                          <li>-->
+        <!--&lt;!&ndash;                              <a href="#" class="icon icon-instagram"></a>&ndash;&gt;-->
+        <!--                              <a href="#" class="icon icon-instagram" style="font-size: xx-large;"></a>-->
+        <!--                          </li>-->
+        <!--                          <li>-->
+        <!--&lt;!&ndash;                              <a href="#" class="icon icon-instagram"></a>&ndash;&gt;-->
+        <!--                              <a href="#" class="icon icon-telegram" style="font-size: xx-large;"></a>-->
+        <!--                          </li>-->
+        <!--                      </ul>-->
+        <!--                  </div>-->
 
-<!--                  <div class="socials text-center">-->
-<!--                      <ul class="social-buttons" id="demo1">-->
-<!--                          <li>-->
-<!--&lt;!&ndash;                              <a href="#" class="icon icon-vk"></a>&ndash;&gt;-->
-<!--                              <a href="#" class="icon icon-vk" style="font-size: xx-large;"></a>-->
-<!--                          </li>-->
-<!--                          <li>-->
-<!--&lt;!&ndash;                              <a href="#" class="icon icon-instagram"></a>&ndash;&gt;-->
-<!--                              <a href="#" class="icon icon-instagram" style="font-size: xx-large;"></a>-->
-<!--                          </li>-->
-<!--                          <li>-->
-<!--&lt;!&ndash;                              <a href="#" class="icon icon-instagram"></a>&ndash;&gt;-->
-<!--                              <a href="#" class="icon icon-telegram" style="font-size: xx-large;"></a>-->
-<!--                          </li>-->
-<!--                      </ul>-->
-<!--                  </div>-->
+        <!--      &lt;!&ndash; <ul class="social-buttons" id="demo2">-->
+        <!--        <li>-->
+        <!--          <a href="#" class="brandico-twitter-bird"></a>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <a href="#" class="brandico-facebook"></a>-->
+        <!--        </li>-->
+        <!--      </ul> &ndash;&gt;-->
+        <!--  </div>-->
 
-<!--      &lt;!&ndash; <ul class="social-buttons" id="demo2">-->
-<!--        <li>-->
-<!--          <a href="#" class="brandico-twitter-bird"></a>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <a href="#" class="brandico-facebook"></a>-->
-<!--        </li>-->
-<!--      </ul> &ndash;&gt;-->
-<!--  </div>-->
+        <!--      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"-->
+        <!--           viewBox="0 0 1920.000000 525.000000"-->
+        <!--           preserveAspectRatio="xMidYMid meet"style="position: absolute; bottom: 0;z-index: -1;">-->
 
-<!--      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"-->
-<!--           viewBox="0 0 1920.000000 525.000000"-->
-<!--           preserveAspectRatio="xMidYMid meet"style="position: absolute; bottom: 0;z-index: -1;">-->
+        <!--          <g transform="translate(0.000000,912.000000) scale(0.100000,-0.100000)"-->
+        <!--             fill="#000000" stroke="none">-->
+        <!--              <path d="M19170 5375 c0 -34 -1 -35 -37 -35 -45 -1 -181 -20 -348 -50 -66 -11-->
+        <!-- -172 -30 -235 -41 -63 -11 -131 -23 -150 -26 -19 -2 -80 -13 -135 -23 -212-->
+        <!-- -39 -387 -67 -710 -115 -60 -8 -135 -20 -165 -25 -77 -13 -338 -46 -510 -65-->
+        <!-- -358 -38 -473 -46 -755 -52 -420 -8 -576 6 -1165 108 -36 6 -290 55 -565 109-->
+        <!-- -559 109 -585 114 -775 141 -358 51 -390 53 -805 53 -394 0 -534 -8 -730 -43-->
+        <!-- -27 -5 -86 -15 -130 -21 -69 -10 -267 -46 -430 -78 -60 -12 -341 -71 -555-->
+        <!-- -118 -668 -144 -1031 -194 -1405 -194 -215 0 -370 13 -635 51 -307 45 -315 46-->
+        <!-- -445 74 -437 95 -1157 242 -1250 256 -400 60 -442 63 -845 64 -433 0 -539 -8-->
+        <!-- -910 -72 -126 -21 -533 -103 -740 -147 -794 -172 -1082 -215 -1500 -223 -359-->
+        <!-- -7 -768 19 -1180 77 -74 10 -187 26 -250 35 -63 9 -160 24 -215 34 -55 10-->
+        <!-- -158 29 -230 41 -252 43 -1114 222 -1293 268 l-72 18 0 -2688 0 -2688 9600 0-->
+        <!--9600 0 0 2705 c0 2398 -2 2705 -15 2705 -10 0 -15 -11 -15 -35z"/>-->
+        <!--          </g>-->
 
-<!--          <g transform="translate(0.000000,912.000000) scale(0.100000,-0.100000)"-->
-<!--             fill="#000000" stroke="none">-->
-<!--              <path d="M19170 5375 c0 -34 -1 -35 -37 -35 -45 -1 -181 -20 -348 -50 -66 -11-->
-<!-- -172 -30 -235 -41 -63 -11 -131 -23 -150 -26 -19 -2 -80 -13 -135 -23 -212-->
-<!-- -39 -387 -67 -710 -115 -60 -8 -135 -20 -165 -25 -77 -13 -338 -46 -510 -65-->
-<!-- -358 -38 -473 -46 -755 -52 -420 -8 -576 6 -1165 108 -36 6 -290 55 -565 109-->
-<!-- -559 109 -585 114 -775 141 -358 51 -390 53 -805 53 -394 0 -534 -8 -730 -43-->
-<!-- -27 -5 -86 -15 -130 -21 -69 -10 -267 -46 -430 -78 -60 -12 -341 -71 -555-->
-<!-- -118 -668 -144 -1031 -194 -1405 -194 -215 0 -370 13 -635 51 -307 45 -315 46-->
-<!-- -445 74 -437 95 -1157 242 -1250 256 -400 60 -442 63 -845 64 -433 0 -539 -8-->
-<!-- -910 -72 -126 -21 -533 -103 -740 -147 -794 -172 -1082 -215 -1500 -223 -359-->
-<!-- -7 -768 19 -1180 77 -74 10 -187 26 -250 35 -63 9 -160 24 -215 34 -55 10-->
-<!-- -158 29 -230 41 -252 43 -1114 222 -1293 268 l-72 18 0 -2688 0 -2688 9600 0-->
-<!--9600 0 0 2705 c0 2398 -2 2705 -15 2705 -10 0 -15 -11 -15 -35z"/>-->
-<!--          </g>-->
-
-<!--      </svg>-->
+        <!--      </svg>-->
 
 
-<!--  </div>-->
-<!--    </transition>-->
+        <!--  </div>-->
+        <!--    </transition>-->
     </div>
 </template>
 <script>
-  import NProgress from 'nprogress'
-  import 'nprogress/nprogress.css';
-  NProgress.configure({ showSpinner: false, speed:1000 });
-  import router from './router.js';
-  import store from "./store";
-  import axios from "axios";
-  const default_layout = 'default'
-	export default {
-    name: 'App',
-    data () {
-      return {
+    import NProgress from 'nprogress'
+    import 'nprogress/nprogress.css';
 
-      }
-    },
-        mounted () {
+    NProgress.configure({showSpinner: false, speed: 1000});
+    // import axios from "axios";
+
+    const default_layout = 'default'
+    export default {
+        name: 'App',
+        data() {
+            return {}
+        },
+        mounted() {
+            console.log('app mounted')
+            // this.getUser();
             this.onResize();
-            window.addEventListener('resize', this.onResize, { passive: true })
+            window.addEventListener('resize', this.onResize, {passive: true})
         },
-    computed: {
-      isLoggedIn : function(){ return this.$store.getters.isLoggedIn},
-      isAdmin : function(){ return this.$store.getters.isAdmin},
-        isManager : function(){ return this.$store.getters.isManager},
-        isMobile : function(){ return this.$store.getters.isMobile},
+        computed: {
+            isLoggedIn: function () {
+                return this.$store.getters.isLoggedIn
+            },
+            // isAdmin: function () {
+            //     return this.$store.getters.isAdmin
+            // },
+            // isManager: function () {
+            //     return this.$store.getters.isManager
+            // },
+            // isMobile: function () {
+            //     return this.$store.getters.isMobile
+            // },
 
-        preloader () {
-            return this.$store.getters.preloader;
-        },
-        layout() {
-          return (this.$route.meta.layout || default_layout )+ '-layout'
-        },
-        user() {
-            return this.$store.getters.user
-        },
-        fromRoute() {
-          return this.$store.getters.fromRoute
-        }
-    },
-    created: function () {
-        // if (this.isLoggedIn)
-        // {
-        //     this.$store.dispatch('refresh')
-        // }
-        this.checkAuth();
-        this.$store.commit('setPreloader', true);
-        this.$http.interceptors.request.use(config => {
-            // NProgress.start();
-            return config
-        })
-      this.$http.interceptors.response.use(undefined, function (err) {
-          // NProgress.done();
-          return new Promise(function (resolve, reject) {
-           // console.log(err)
-           // console.log(err.response)
-           // console.log(err.status)
-           // console.log( err.response.config)
-            // console.log(err.response.config.__isRetryRequest)&& !err.response.config.__retry
-            if (err.response.status === 401 && err.config && !err.response.config.__isRetryRequest) {
-                localStorage.removeItem('token');
-                localStorage.removeItem('admin');
-                localStorage.removeItem('manager');
-                // store.dispatch('logout');
-                // localStorage.removeItem('uid')
-                delete axios.defaults.headers.common['Authorization'];
-                location.reload();
-              // router.push('/login')
-              // store.dispatch('setMenu', false)
-              // store.dispatch('setShowForms', false)
+            preloader() {
+                return this.$store.getters.preloader;
+            },
+            // layout() {
+            //     return (this.$route.meta.layout || default_layout) + '-layout'
+            // },
+            user() {
+                return this.$store.getters.user
+            },
+            fromRoute() {
+                return this.$store.getters.fromRoute
             }
-            throw err;
-          });
-      });
+        },
+        created() {
+            // if (this.isLoggedIn)
+            // {
+            //     this.$store.dispatch('refresh')
+            // }
+            console.log('app created')
+            this.getUser();
+            this.$store.commit('setPreloader', true);
+            // this.$http.interceptors.request.use(config => {
+            //     // NProgress.start();
+            //     return config
+            // })
+            // this.$http.interceptors.response.use(undefined, function (err) {
+            //     // NProgress.done();
+            //     return new Promise(function (resolve, reject) {
+            //         // console.log(err)
+            //         // console.log(err.response)
+            //         // console.log(err.status)
+            //         // console.log( err.response.config)
+            //         // console.log(err.response.config.__isRetryRequest)&& !err.response.config.__retry
+            //         if (err.response.status === 401 && err.config && !err.response.config.__isRetryRequest) {
+            //             localStorage.removeItem('token');
+            //             // localStorage.removeItem('admin');
+            //             // localStorage.removeItem('manager');
+            //             // store.dispatch('logout');
+            //             // localStorage.removeItem('uid')
+            //             delete axios.defaults.headers.common['Authorization'];
+            //             // location.reload();
+            //             router.push('/login')
+            //             // store.dispatch('setMenu', false)
+            //             // store.dispatch('setShowForms', false)
+            //         }
+            //         throw err;
+            //     });
+            // });
 
-    // axios.interceptors.response.use(undefined, function (err) {
-    //   if (err.response.status === 401 && err.config) {
-    //     logout()
-        // console
-        // this.$store.dispatch('logout')
-        //   .then(() => {
-        //     console.log('here')
-        //     router.push('/')
-        //     store.dispatch('setMenu', false)
-        //     store.dispatch('setShowForms', false)
-        //   })
-      // }
-      // return new Promise(function (resolve, reject) {
-      //  console.log(err.response)
-      //   if (err.response.status === 401 && err.config) {
-      //     this.$store.dispatch('logout')
-      //     .then(() => {
-      //       console.log('here')
-      //       this.$router.push('/')
-      //       this.$store.dispatch('setMenu', false)
-      //       this.$store.dispatch('setShowForms', false)
-      //     })
-      //   }
-      //   throw err;
-      // });
-    // });
+            // axios.interceptors.response.use(undefined, function (err) {
+            //   if (err.response.status === 401 && err.config) {
+            //     logout()
+            // console
+            // this.$store.dispatch('logout')
+            //   .then(() => {
+            //     console.log('here')
+            //     router.push('/')
+            //     store.dispatch('setMenu', false)
+            //     store.dispatch('setShowForms', false)
+            //   })
+            // }
+            // return new Promise(function (resolve, reject) {
+            //  console.log(err.response)
+            //   if (err.response.status === 401 && err.config) {
+            //     this.$store.dispatch('logout')
+            //     .then(() => {
+            //       console.log('here')
+            //       this.$router.push('/')
+            //       this.$store.dispatch('setMenu', false)
+            //       this.$store.dispatch('setShowForms', false)
+            //     })
+            //   }
+            //   throw err;
+            // });
+            // });
 
-    },
-    methods: {
-        async checkAuth() {
-           await this.$store.dispatch('checkAuth').then(resp => {
-                if(resp.data.status) {
-                    this.getUser();
-                }
-                else {
+        },
+        methods: {
+            async checkAuth() {
+                await this.$store.dispatch('checkAuth').then(resp => {
+                    if (resp.data.status) {
+                        this.getUser();
+                    } else {
                         this.$store.commit('logout')
                         localStorage.removeItem('token')
                         localStorage.removeItem('admin')
                         localStorage.removeItem('manager')
                         delete axios.defaults.headers.common['Authorization']
-                }
-                // this.getUser();
-            })
-        },
-        async getUser() {
-            if (!this.user) {
-                await this.$store.dispatch('getUser').then(() => {
-                    this.loadChat()
+                    }
+                    // this.getUser();
                 })
+            },
+            async getUser() {
+                console.log('getUser');
+                // if (!this.user) {
+                await this.$store.dispatch('getUser')
+                    //     .then(() => {
+                    //     // this.loadChat()
+                    // })
+                // } else {
+                //     // this.loadChat()
+                // }
+            },
+            async loadChat() {
+                await this.$store.dispatch('loadUserChats').then(() => {
+                })
+            },
+            onResize() {
+                this.$store.dispatch('setAppMode', window.innerWidth < 900)
+                // this.isMobile = window.innerWidth < 600
+            },
+            closeMenu() {
+                this.isActive = false;
+                this.showForms = false;
+            },
+            logout: function () {
+                this.$store.dispatch('logout')
+                    .then(() => {
+                        this.$router.push('/')
+                        this.$store.dispatch('setMenu', false)
+                        this.$store.dispatch('setShowForms', false)
+                    })
             }
-            else {
-                this.loadChat()
+        },
+        beforeDestroy() {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('resize', this.onResize, {passive: true})
             }
-        },
-        async loadChat() {
-            await this.$store.dispatch('loadUserChats').then(()=>{
-            })
-        },
-        onResize () {
-            this.$store.dispatch('setAppMode', window.innerWidth < 900)
-            // this.isMobile = window.innerWidth < 600
-        },
-        closeMenu() {
-            this.isActive = false;
-            this.showForms = false;
-        },
-        logout: function () {
-            this.$store.dispatch('logout')
-            .then(() => {
-                this.$router.push('/')
-                this.$store.dispatch('setMenu', false)
-                this.$store.dispatch('setShowForms', false)
-            })
-        }
-    },
-    beforeDestroy () {
-        if (typeof window !== 'undefined') {
-            window.removeEventListener('resize', this.onResize, {passive: true})
         }
     }
-  }
 </script>
 <style lang="scss">
 
 
-button:focus {
-  text-decoration:none !important;
-  outline:none !important;
-  box-shadow: none !important;
-}
-a:focus {
-  text-decoration:none !important;
-  outline:none !important;
-}
-a {
-  text-decoration:none !important;
-  outline:none !important;
-}
+    button:focus {
+        text-decoration: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    a:focus {
+        text-decoration: none !important;
+        outline: none !important;
+    }
+
+    a {
+        text-decoration: none !important;
+        outline: none !important;
+    }
+
     .my-style {
         padding: 10px;
         margin: 0 5px 5px;
@@ -359,7 +380,7 @@ a {
         color: #ffffff;
         background: #44A4FC;
         border-left: 5px solid #187FE7;
-        border-radius:20px;
+        border-radius: 20px;
 
         &.warn {
             background: #ffb648;
@@ -375,6 +396,7 @@ a {
             background: #68CD86;
             border-left-color: #42A85F;
         }
+
         &.travel {
             background: #0d274b;
             border-left-color: #f08b23;
@@ -386,42 +408,53 @@ a {
         .desktop {
             display: flex !important;
         }
+
         .tablet {
             display: none;
         }
+
         .mobile {
             display: none;
         }
     }
+
     @media screen and (max-width: 992px) {
         .desktop {
             display: none !important;
         }
+
         .tablet {
             display: flex !important;
         }
+
         .mobile {
             display: none;
         }
     }
+
     @media screen and (max-width: 576px) {
         .desktop {
             display: none !important;
         }
+
         .tablet {
             display: none !important;
         }
+
         .mobile {
             display: flex !important;
         }
     }
+
     #nprogress .bar {
         background: #f08b23 !important;
     }
+
     #nprogress .peg {
         box-shadow: 0 0 10px #f08b23, 0 0 5px #f08b23 !important;
     }
-    .night{
+
+    .night {
         background-color: #fff;
         background: #4396ff;
         /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%230d29ee;%7D.b%7Bfill:%230724c0;%7D.c%7Bfill:%233b3b3b;%7D.d%7Bfill:none;%7D%3C/style%3E%3C/defs%3E%3Cpath class='a' d='M1595.76,265c0,2.87-.08,3-3.08,3-3.74.08-15.06,1.69-29,4.22-5.49.93-14.31,2.53-19.56,3.46s-10.9,1.94-12.48,2.19-6.66,1.1-11.24,1.94c-17.65,3.29-32.22,5.66-59.1,9.71-5,.67-11.24,1.69-13.74,2.11-6.41,1.1-28.14,3.88-42.45,5.48-29.8,3.21-39.38,3.89-62.85,4.39-35,.68-48-.5-97-9.11-3-.51-24.14-4.64-47-9.2-46.53-9.2-48.7-9.62-64.51-11.9-29.81-4.31-32.47-4.47-67-4.47-32.8,0-44.46.67-60.77,3.63-2.25.42-7.16,1.26-10.82,1.77-5.75.84-22.23,3.88-35.8,6.58-5,1-28.38,6-46.2,10C857.57,300.82,827.35,305,796.22,305c-17.9,0-30.8-1.09-52.86-4.3-25.56-3.8-26.22-3.88-37.05-6.25-36.37-8-96.31-20.42-104-21.6-33.3-5.07-36.79-5.32-70.34-5.4-36,0-44.87.67-75.75,6.07-10.49,1.77-44.37,8.7-61.6,12.41-66.09,14.51-90.07,18.14-124.86,18.82-29.89.59-63.93-1.6-98.23-6.5-6.16-.84-15.57-2.19-20.81-3s-13.32-2-17.9-2.87S119.62,290,113.63,289c-21-3.63-92.74-18.74-107.64-22.62l-6-1.52V718.58H1598.26V490.29c0-202.38-.17-228.29-1.25-228.29C1596.18,262,1595.76,262.93,1595.76,265Z' transform='translate(1)'/%3E%3Cpath class='b' d='M1595.76,346c0,2.87-.08,3-3.08,3-3.74.08-15.06,1.69-29,4.22-5.49.93-14.31,2.53-19.56,3.46s-10.9,1.94-12.48,2.19-6.66,1.1-11.24,1.94c-17.65,3.3-32.22,5.66-59.1,9.71-5,.67-11.24,1.69-13.74,2.11-6.41,1.1-28.14,3.88-42.45,5.49-29.8,3.2-39.38,3.88-62.85,4.38-35,.68-48-.5-97-9.11-3-.51-24.14-4.64-47-9.2-46.53-9.2-48.7-9.62-64.51-11.9-29.81-4.3-32.47-4.47-67-4.47-32.8,0-44.46.67-60.77,3.63-2.25.42-7.16,1.26-10.82,1.77-5.75.84-22.23,3.88-35.8,6.58-5,1-28.38,6-46.2,10-55.6,12.15-85.82,16.37-116.95,16.37-17.9,0-30.8-1.09-52.86-4.3-25.56-3.8-26.22-3.88-37.05-6.25-36.37-8-96.31-20.42-104-21.6-33.3-5.07-36.79-5.32-70.34-5.4-36,0-44.87.67-75.75,6.07-10.49,1.78-44.37,8.7-61.6,12.41-66.09,14.52-90.07,18.14-124.86,18.82-29.89.59-63.93-1.6-98.23-6.5-6.16-.84-15.57-2.19-20.81-2.95s-13.32-2-17.9-2.87S119.62,371,113.63,370C92.65,366.4,20.89,351.29,6,347.41l-6-1.52V799.61H1598.26V571.31c0-202.38-.17-228.29-1.25-228.29C1596.18,343,1595.76,344,1595.76,346Z' transform='translate(1)'/%3E%3Cpath class='c' d='M1598.26,681.12h-3.33l-9.74,1.1c-5.41.59-12.4,1.6-15.65,2.19-6.41,1.27-20.56,3.8-32.88,5.91-4.33.76-11.65,2.11-16.23,3-12.82,2.36-31.47,5.4-53.28,8.77-88.9,13.76-141.18,16.38-188.54,9.37-22.56-3.37-28-4.39-78.75-14.43-54.19-10.72-59-11.56-89-15.28-14.9-1.85-71.42-2.11-85.74-.42-16.64,2-30.3,4.14-49.11,7.77-6.83,1.26-14.73,2.78-17.48,3.29s-11.07,2.28-18.48,3.88c-52.61,11.48-59.69,13-65.6,13.84-2.74.42-9.32,1.52-14.56,2.45-40.63,7.26-75.09,7.93-113.63,2.36-21.39-3.12-32-5.06-68.26-12.91-44.78-9.62-77.66-16-92-17.89-21.31-2.87-25-3-54.94-3-45.78,0-60.19,1.94-137.77,18.65-26.72,5.74-53.44,11.22-61.6,12.49-4.58.76-10.57,1.77-13.32,2.19-5.57.93-16.73,2.28-28.72,3.38-25.72,2.45-77.66-.17-118.62-5.91-6.82-1-17.56-2.53-23.72-3.37s-14.07-2.2-17.48-2.87-10.91-2-16.65-3c-19.06-3.46-62.1-12.32-91.57-18.91C16.4,682.46,10,681,7.49,680.52a30.41,30.41,0,0,1-6-1.69c-1.42-.76-1.5,2.37-1.5,60v60.77H1598.26v-62c0-61.44,1.66-47.47,0-47.47A17.5,17.5,0,0,0,1598.26,681.12Z' transform='translate(1)'/%3E%3C/svg%3E");*/
@@ -431,6 +464,7 @@ a {
         background-position: center;
         background-attachment: fixed;
     }
+
     .day {
         background-color: #fff;
         background: #fff;
@@ -440,10 +474,11 @@ a {
         background-position: center;
         background-attachment: fixed;
     }
+
     .evening {
         background-color: #fff;
         /*background: #5f6b9d;*/
-        background: rgb(95,107,157);
+        background: rgb(95, 107, 157);
         /*background: rgb(159,124,166);*/
 
         /*background: linear-gradient(to right, rgba(95,107,157,1) 0%, rgba(159,124,166,1) 100%);*/
@@ -454,6 +489,7 @@ a {
         background-position: center;
         background-attachment: fixed;
     }
+
     .morning {
         background-color: #fff;
         background: #f7f894;
@@ -462,101 +498,113 @@ a {
         background-position: center;
         background-attachment: fixed;
     }
+
     .day .social-buttons li a {
         color: #f8e300;
     }
+
     .night .social-buttons li a {
         color: #f7d208;
     }
+
     .night .menu-title span {
         color: #f7d208 !important;
     }
+
     .evening .social-buttons li a {
         color: #d1a0c0;
     }
+
     .evening .menu-title span {
         color: #d1a0c0 !important;
     }
+
     .btn.btn-pill {
-        border-radius: 30px; }
+        border-radius: 30px;
+    }
+
     .btnt {
         /*margin-top: calc(50% + 25px);*/
-    position: relative;
-    display: inline-block;
-    width: 277px;
-    height: 52px;
-    font-size: 1em;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: transparent;
-    cursor: pointer;
-    text-decoration:none;
-    font-family: 'Roboto', sans-serif;
-    font-weight:900;
-    font-size:17px;
-    letter-spacing: 0.045em;
-    outline: none;
-}
+        position: relative;
+        display: inline-block;
+        width: 277px;
+        height: 52px;
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 60px;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: transparent;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        font-size: 17px;
+        letter-spacing: 0.045em;
+        outline: none;
+    }
 
-.btnt:focus{outline:0}
+    .btnt:focus {
+        outline: 0
+    }
 
-.btnt svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /*width: 277px;*/
-    /*height: 62px;*/
-}
+    .btnt svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*width: 277px;*/
+        /*height: 62px;*/
+    }
 
-.btnt svg rect {
-    /*//stroke: #EC0033;*/
-    stroke-width: 4;
-    stroke-dasharray: 353, 0;
-    stroke-dashoffset: 0;
-    -webkit-transition: all 600ms ease;
-    transition: all 600ms ease;
-    width: 266px;
-    height: 50px;
-}
+    .btnt svg rect {
+        /*//stroke: #EC0033;*/
+        stroke-width: 4;
+        stroke-dasharray: 353, 0;
+        stroke-dashoffset: 0;
+        -webkit-transition: all 600ms ease;
+        transition: all 600ms ease;
+        width: 266px;
+        height: 50px;
+    }
 
-.btnt span{
-  /*background: rgb(255,130,130);
-  background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
-  background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
-  background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
-  */
-  /*background: white;*/
-    background:rgba(248,117,1,1);
-  /*  background: rgb(249,231,1);*/
-  /*  background: linear-gradient(to right, rgba(249,231,1,1) 0%, rgba(248,146,9,1) 50%, rgba(248,117,1,1) 100%);*/
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-/*.night .btnt span{*/
-/*    background: #0525ae;*/
-/*    !*background: linear-gradient(to right, rgba(0,134,249,1) 0%, rgba(13,41,238,1) 50%, rgba(2,23,89,1) 100%);*!*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*}*/
+    .btnt span {
+        /*background: rgb(255,130,130);
+        background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
+        background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+        background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+        */
+        /*background: white;*/
+        background: rgba(248, 117, 1, 1);
+        /*  background: rgb(249,231,1);*/
+        /*  background: linear-gradient(to right, rgba(249,231,1,1) 0%, rgba(248,146,9,1) 50%, rgba(248,117,1,1) 100%);*/
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-.btnt:hover svg rect {
-    stroke-width: 4;
-    stroke-dasharray: 196, 543;
-    stroke-dashoffset: 437;
-    /*stroke-dasharray: 196, 828;*/
-    /*stroke-dashoffset: 568;*/
-    /*width: 366px;*/
-    /*height: 70px;*/
-}
+    /*.night .btnt span{*/
+    /*    background: #0525ae;*/
+    /*    !*background: linear-gradient(to right, rgba(0,134,249,1) 0%, rgba(13,41,238,1) 50%, rgba(2,23,89,1) 100%);*!*/
+    /*    -webkit-background-clip: text;*/
+    /*    -webkit-text-fill-color: transparent;*/
+    /*}*/
+
+    .btnt:hover svg rect {
+        stroke-width: 4;
+        stroke-dasharray: 196, 543;
+        stroke-dashoffset: 437;
+        /*stroke-dasharray: 196, 828;*/
+        /*stroke-dashoffset: 568;*/
+        /*width: 366px;*/
+        /*height: 70px;*/
+    }
 
     @media (max-width: 448px) {
 
         .btnt {
             width: 100% !important;
         }
+
         /*.btnt svg {*/
         /*    width: 284px;*/
         /*}*/
@@ -564,6 +612,7 @@ a {
             /*width: 273px;*/
             display: none;
         }
+
         .btnt:hover svg rect {
             stroke-width: 4;
             stroke-dasharray: 353, 0;
@@ -603,24 +652,24 @@ a {
     }
 
     .fade-enter-active,
-.fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
+    .fade-leave-active {
+        transition-duration: 0.3s;
+        transition-property: opacity;
+        transition-timing-function: ease;
+    }
 
-.fade-enter,
-.fade-leave-active {
-  opacity: 0
-}
+    .fade-enter,
+    .fade-leave-active {
+        opacity: 0
+    }
 
-/*    .fade-enter-active, .fade-leave-active {*/
-/*        transition: opacity .5s;*/
-/*    }*/
-/*    .fade-enter, .fade-leave-to {*/
-/*        opacity: 0;*/
-/*        transform: translate(2em, 0);*/
-/*    }*/
+    /*    .fade-enter-active, .fade-leave-active {*/
+    /*        transition: opacity .5s;*/
+    /*    }*/
+    /*    .fade-enter, .fade-leave-to {*/
+    /*        opacity: 0;*/
+    /*        transform: translate(2em, 0);*/
+    /*    }*/
 
     /*.fade-enter-active {*/
     /*    transition: opacity 1s ease-out;*/
@@ -636,192 +685,196 @@ a {
     /*    transition: transform 1s;*/
     /*}*/
 
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition-duration: 0.5s;
-  transition-property: height, opacity, transform;
-  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  overflow: hidden;
-}
+    .slide-left-enter-active,
+    .slide-left-leave-active,
+    .slide-right-enter-active,
+    .slide-right-leave-active {
+        transition-duration: 0.5s;
+        transition-property: height, opacity, transform;
+        transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+        overflow: hidden;
+    }
 
-.slide-left-enter,
-.slide-right-leave-active {
-  opacity: 0;
-  transform: translate(2em, 0);
-}
+    .slide-left-enter,
+    .slide-right-leave-active {
+        opacity: 0;
+        transform: translate(2em, 0);
+    }
 
-.slide-left-leave-active,
-.slide-right-enter {
-  opacity: 0;
-  transform: translate(-2em, 0);
-}
+    .slide-left-leave-active,
+    .slide-right-enter {
+        opacity: 0;
+        transform: translate(-2em, 0);
+    }
 
-@media (max-width: 767px) {
-  .slider_area .single_slider {
-    height: auto;
-  }
-}
+    @media (max-width: 767px) {
+        .slider_area .single_slider {
+            height: auto;
+        }
+    }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .slider_area .single_slider {
-    height: 700px;
-  }
-}
+    @media (min-width: 768px) and (max-width: 991px) {
+        .slider_area .single_slider {
+            height: 700px;
+        }
+    }
 
-@media (max-width: 767px) {
-  .slider_area .single_slider .slider_text {
-    margin-top: 110px;
-    margin-bottom: 20px;
-  }
-}
+    @media (max-width: 767px) {
+        .slider_area .single_slider .slider_text {
+            margin-top: 110px;
+            margin-bottom: 20px;
+        }
+    }
 
 
-.slider_area .single_slider .slider_text h3 {
-  font-size: 2.5rem;
-text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-font-weight: 700;
+    .slider_area .single_slider .slider_text h3 {
+        font-size: 2.5rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        font-weight: 700;
 
-  margin-bottom: 40px;
-color: #fff;
-  /*font-family: "Roboto", sans-serif;line-height: 74px;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 74px;
-  margin-bottom: 40px;
-  color: #fff;*/
-}
+        margin-bottom: 40px;
+        color: #fff;
+        /*font-family: "Roboto", sans-serif;line-height: 74px;
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 74px;
+        margin-bottom: 40px;
+        color: #fff;*/
+    }
 
-@media (max-width: 767px) {
+    @media (max-width: 767px) {
 
-  .slider_area .single_slider .slider_text h3 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    line-height: 45px;
-  }
-}
+        .slider_area .single_slider .slider_text h3 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            line-height: 45px;
+        }
+    }
 
-@media (min-width: 768px) and (max-width: 991px) {
+    @media (min-width: 768px) and (max-width: 991px) {
 
-  .slider_area .single_slider .slider_text h3 {
-    font-size: 34px;
-    line-height: 1.4;
-    margin-bottom: 35px;
-  }
-}
+        .slider_area .single_slider .slider_text h3 {
+            font-size: 34px;
+            line-height: 1.4;
+            margin-bottom: 35px;
+        }
+    }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+    @media (min-width: 992px) and (max-width: 1200px) {
 
-  .slider_area .single_slider .slider_text h3 {
-    font-size: 40px;
-    line-height: 1.4;
-  }
-}
+        .slider_area .single_slider .slider_text h3 {
+            font-size: 40px;
+            line-height: 1.4;
+        }
+    }
 
-.slider_area .single_slider .slider_text p {
+    .slider_area .single_slider .slider_text p {
 
-font-size: 20px;
-  font-weight: 400;
-  color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        color: #fff;
 
-  margin-bottom: 24px;
-}
+        margin-bottom: 24px;
+    }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+    @media (min-width: 992px) and (max-width: 1200px) {
 
-  .slider_area .single_slider .slider_text p {
-    font-size: 16px;
-  }
-}
+        .slider_area .single_slider .slider_text p {
+            font-size: 16px;
+        }
+    }
 
-@media (max-width: 767px) {
+    @media (max-width: 767px) {
 
-  .slider_area .single_slider .slider_text p {
-    font-size: 16px;
-  }
-}
+        .slider_area .single_slider .slider_text p {
+            font-size: 16px;
+        }
+    }
 
-ul.social-buttons {
-  text-align: center;
-  /*margin-top: 60px !important;*/
-  /*margin-bottom: 0;*/
-  padding:0;
-  z-index: 1;
-}
+    ul.social-buttons {
+        text-align: center;
+        /*margin-top: 60px !important;*/
+        /*margin-bottom: 0;*/
+        padding: 0;
+        z-index: 1;
+    }
 
-ul.social-buttons li {
-  /*display: inline-block;*/
-    display: block;
-  margin: 0 10px;
-}
+    ul.social-buttons li {
+        /*display: inline-block;*/
+        display: block;
+        margin: 0 10px;
+    }
 
-ul.social-buttons li a {
-  width: 50px;
-  height: 50px;
-  display: block;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 30px;
-  line-height: 50px;
-  color: white;
-  background: #f08b23;
-  padding: 0px !important;
-}
+    ul.social-buttons li a {
+        width: 50px;
+        height: 50px;
+        display: block;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 30px;
+        line-height: 50px;
+        color: white;
+        background: #f08b23;
+        padding: 0px !important;
+    }
 
-/*Demo 1*/
-ul#demo1 li a {
-  transition: transform 0.2s linear;
-}
+    /*Demo 1*/
+    ul#demo1 li a {
+        transition: transform 0.2s linear;
+    }
 
-ul#demo1 li:hover a {
-  transform: translateY(-10px);
-}
+    ul#demo1 li:hover a {
+        transform: translateY(-10px);
+    }
 
     @media screen and (max-width: 448px) {
         ul.social-buttons {
             text-align: center;
             margin-top: 40px !important;
             margin-bottom: 0;
-            padding:0;
+            padding: 0;
             z-index: 1;
         }
     }
-/*Demo 2*/
-/*ul#demo2 li a {
-  transition: transform 0.5s ease-in-out;
-}
 
-ul#demo2 li:hover a {
-  transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
-}*/
-/*.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-}*/
+    /*Demo 2*/
+    /*ul#demo2 li a {
+      transition: transform 0.5s ease-in-out;
+    }
 
-.validate-error {
-    width: 100%;
-    margin-top: 0.25rem;
-    font-size: 80%;
-    color:#f23a2e;
-  }
-    .header_area.sticky {
+    ul#demo2 li:hover a {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }*/
+    /*.overlay {
+        height: 100%;
+        width: 0;
         position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }*/
+
+    .validate-error {
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #f23a2e;
+    }
+
+    .header_area.sticky {
+        position: sticky;
         top: 0;
         width: 100%;
+        height: 52px;
         left: 0;
         z-index: 4;
-        background:white;
+        background: white;
     }
+
     .header_area.sticky-border {
         box-shadow: 0px -4px 10px #f08b23;
         transition: all ease 0.3s;

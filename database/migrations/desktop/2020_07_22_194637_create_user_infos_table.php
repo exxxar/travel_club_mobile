@@ -16,25 +16,27 @@ class CreateUserInfosTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('user_infos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('UserId')->nullable();
-            $table->string('Phone')->unique();
-            $table->string('Email')->nullable();
-            $table->string('FullName')->default('');
-            $table->string('FirstName', 100)->default('');
-            $table->string('MiddleName', 100)->default('')->nullable();
-            $table->string('LastName', 100)->default('');
-            $table->integer('Age')->default(18);
-            $table->tinyInteger('Sex')->default(0);
-            $table->string('Birthday', 100)->default('')->nullable();
-            $table->string('Passport', 100)->default('')->nullable();
-            $table->text('Address')->nullable();
-            $table->json('City')->nullable();
-            $table->json('Department')->nullable();
-            $table->text('About')->nullable();
-            $table->unsignedInteger('ManagerId')->nullable();
-            $table->boolean('Promocode')->default(false)->nullable();
+            $table->unsignedBigInteger('user_id')->index()->nullable();
+            $table->foreign('user_id')->references('id')
+                ->on('users')->cascadeOnDelete();
+            $table->unsignedBigInteger('branch_id')->index()->nullable();
+            $table->foreign('branch_id')->references('id')
+                ->on('branches')->nullOnDelete();
+            $table->string('full_name')->nullable();
+            $table->tinyInteger('sex')->default(0)->comment('пол');
+            $table->date('birthday')->nullable()->comment('дата рождения');
+            $table->unsignedBigInteger('passport_id')->index()->nullable()->comment('id паспорта');
+            $table->unsignedBigInteger('international_passport_id')->index()->nullable()->comment('id загранпаспорт');
+            $table->text('comment')->nullable()->comment('комментарий'); //видит только менеджер
+            $table->json('params')->nullable();
+//            $table->string('Passport', 100)->default('')->nullable();
+//            $table->text('Address')->nullable();
+//            $table->json('City')->nullable();
+//            $table->json('Department')->nullable();
+//            $table->unsignedInteger('ManagerId')->nullable();
+//            $table->boolean('Promocode')->default(false)->nullable();
             $table->timestamps();
-            $table->softDeletes();
+//            $table->softDeletes();
         });
         Schema::enableForeignKeyConstraints();
     }

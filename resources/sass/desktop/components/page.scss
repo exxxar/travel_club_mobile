@@ -1,0 +1,98 @@
+#{'.'+$namespace}-page {
+    margin: 60px auto;
+    padding-bottom: 60px;
+    min-width: 0;
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 52px;
+        color: var(--#{$namespace}-secondary);
+        //font-size: 38px;
+        &::before, &::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--tc-primary);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px 0;
+        }
+    }
+
+    &__subtitle {
+        text-align: left;
+        font-weight: 700;
+        margin-bottom: 25px;
+        font-size: 1.6em;
+        color: var(--#{$namespace}-secondary);
+        position: relative;
+        &:before {
+            //position: absolute;
+            width: 30px;
+            height: 5px;
+            content: "";
+            background-color: var(--#{$namespace}-primary);
+            border-radius: 5px;
+            display: inline-block;
+            margin: 8px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #{'.'+$namespace}-page {
+        margin: 30px auto;
+        padding-bottom: 30px;
+
+        &__title {
+            font-weight: 700;
+            font-size: 35px;
+            margin-bottom: 35px;
+            & h1 {
+                font-size: 22px;
+            }
+            & h4 {
+                font-size: 18px;
+            }
+        }
+
+        &__subtitle {
+            //text-align: center;
+            //font-weight: 700;
+            margin-bottom: 17px;
+            //font-size: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #{'.'+$namespace}-page {
+        margin: 15px auto;
+        padding-bottom: 15px;
+
+        &__title {
+            font-weight: 700;
+            font-size: 25px;
+            margin-bottom: 25px;
+            & h1 {
+                font-size: 18px;
+            }
+            & h4 {
+                font-size: 14px;
+            }
+        }
+
+        &__subtitle {
+            font-size: 1.3em;
+            &:before {
+                width: 20px;
+                height: 4px;
+                content: "";
+                background-color: var(--#{$namespace}-primary);
+                border-radius: 4px;
+                display: inline-block;
+                margin: 6px;
+            }
+        }
+    }
+}

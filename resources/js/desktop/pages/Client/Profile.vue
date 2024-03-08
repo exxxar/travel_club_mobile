@@ -10,14 +10,14 @@
                         <div class="col-6 col-md-12 col-sm-6">
                             <div class="row align-items-center mx-auto mt-auto mb-3" style="width: 100%; height: 100%;">
                                 <div class="col-8 col-sm-8 col-md-5 col-lg-4 p-0">
-                                <div class="feature mr-4">
+                                <div class="feature me-4">
                                     <h4 class="feature-text">всего</h4>
                                     <h4 class="feature-text mb-0">туров</h4>
                                 </div>
                                 </div>
                                 <div class="col-4">
                                 <div class="count">
-                                    <div class="text-center m-auto" style="width: 100%; height: 100%;">{{user.tours_count}}</div>
+                                    <div class="text-center m-auto" style="width: 100%; height: 100%;">{{user.tours_count ? user.tours_count : 0}}</div>
                                 </div>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
 <!--                        <div class="col-6 col-md-12 col-sm-6">-->
 <!--                            <div class="row align-items-center mx-auto mt-auto mb-3" style="width: 100%; height: 100%;">-->
 <!--                                <div class="col-8 col-sm-8 col-md-5 col-lg-4 p-0">-->
-<!--                                    <div class="feature mr-4">-->
+<!--                                    <div class="feature me-4">-->
 <!--                                        <h4 class="feature-text">всего</h4>-->
 <!--                                        <h4 class="feature-text mb-0">перелётов</h4>-->
 <!--                                    </div>-->
@@ -45,7 +45,7 @@
                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                         <div class="col-12">
                             <div class="title">
-                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                     <span class="path1">
                                         <span class="path2"></span>
                                     </span>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="subtitle">{{info.Phone}}</div>
+                            <div class="subtitle">{{info.Phone ? info.Phone : ''}}</div>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                         <div class="col-12">
                             <div class="title">
-                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                     <span class="path1">
                                         <span class="path2"></span>
                                     </span>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="subtitle">{{info.City.city}}</div>
+                            <div class="subtitle">{{info.City.city ? info.City.city : '' }}</div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                         <div class="col-12">
                             <div class="title">
-                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                     <span class="path1">
                                         <span class="path2"></span>
                                     </span>
@@ -102,7 +102,7 @@
                     <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                         <div class="col-12">
                             <div class="title">
-                                <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                                <i class="icon-icon-list me-1" style="font-size: 11px;">
                                     <span class="path1">
                                         <span class="path2"></span>
                                     </span>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="subtitle">{{info.ManagerName}}</div>
+                            <div class="subtitle">{{info.ManagerName ? info.ManagerName : ''}}</div>
                         </div>
                     </div>
                 </div>

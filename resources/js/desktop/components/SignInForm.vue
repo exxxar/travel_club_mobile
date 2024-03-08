@@ -59,14 +59,14 @@
 <div class="row justify-content-center align-items-center">
 
 
-     <!--  <a class="btno ml-auto mt-auto" v-on:click="isActive = 'login'" v-if="isActive =='signup'">
+     <!--  <a class="btno ms-auto mt-auto" v-on:click="isActive = 'login'" v-if="isActive =='signup'">
       <svg>
         <rect x="0" y="0" fill="none" width="100px" height="50px"/>
       </svg>
         Войти
         <span class="underline"></span>
       </a> -->
-<button type="button" class="switcher btnt switcher-signup ml-auto mt-auto" v-on:click="isActive = 'login'" v-if="isActive =='signup'">
+<button type="button" class="switcher btnt switcher-signup ms-auto mt-auto" v-on:click="isActive = 'login'" v-if="isActive =='signup'">
   <svg width="277" height="62">
     <!-- <defs>
         <linearGradient id="grad1">
@@ -78,7 +78,7 @@
   </svg>
     <span>Войти <i class="icon icon-arrow-right"></i></span>
 </button>
-      <button type="button" class="switcher btnt switcher-signup ml-auto mt-auto" v-on:click="isActive = 'signup'" v-if="isActive =='login'">
+      <button type="button" class="switcher btnt switcher-signup ms-auto mt-auto" v-on:click="isActive = 'signup'" v-if="isActive =='login'">
         <svg width="277" height="62">
     <!-- <defs>
         <linearGradient id="grad1">

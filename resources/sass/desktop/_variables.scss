@@ -2,7 +2,7 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Roboto', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,3 +17,338 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+//base colors
+:root {
+    --b-white: #ffffff;
+    --b-white-soft: #f9f9f9;
+    --b-white-mute: #f1f1f1;
+    --b-black: #1a1a1a;
+    --b-black-pure: #000000;
+    --b-black-soft: #242424;
+    --b-black-mute: #2f2f2f;
+    --b-indigo: #213547;
+    //--b-indigo-soft: #476582;
+    --b-indigo-soft: #275997;
+    --b-indigo-light: #aac8e4;
+    --b-gray: #8e8e8e;
+    --b-gray-light-1: #aeaeae;
+    --b-gray-light-2: #c7c7c7;
+    --b-gray-light-3: #d1d1d1;
+    --b-gray-light-4: #e5e5e5;
+    --b-gray-light-5: #f2f2f2;
+    --b-gray-dark-1: #636363;
+    --b-gray-dark-2: #484848;
+    --b-gray-dark-3: #3a3a3a;
+    --b-gray-dark-4: #282828;
+    --b-gray-dark-5: #202020;
+    --b-divider-light-1: rgba(60, 60, 60, .29);
+    --b-divider-light-2: rgba(60, 60, 60, .12);
+    --b-divider-dark-1: rgba(84, 84, 84, .65);
+    --b-divider-dark-2: rgba(84, 84, 84, .48);
+    --b-text-light: var(--b-indigo);
+    --b-text-light-1: var(--b-indigo-soft);
+    --b-text-light-2: rgba(60, 60, 60, .7);
+    --b-text-light-3: rgba(60, 60, 60, .33);
+    --b-text-light-4: rgba(60, 60, 60, .18);
+    --b-text-light-code: var(--b-indigo-soft);
+    --b-text-dark: white;
+    --b-text-dark-1: rgba(255, 255, 255, .87);
+    --b-text-dark-2: rgba(235, 235, 235, .6);
+    --b-text-dark-3: rgba(235, 235, 235, .38);
+    --b-text-dark-4: rgba(235, 235, 235, .18);
+    --b-text-dark-code: var(--b-indigo-light);
+    --b-green: #42b883;
+    --b-green-light: #42d392;
+    --b-green-lighter: #35eb9a;
+    --b-green-dark: #33a06f;
+    --b-green-darker: #155f3e;
+    --b-blue: #3b8eed;
+    --b-blue-light: #549ced;
+    --b-blue-lighter: #d7eaff;
+    --b-blue-dark: #062348;
+    --b-blue-darker: #001025;
+    --b-yellow: #ffc517;
+    --b-yellow-light: #ffe417;
+    --b-yellow-lighter: #ffff17;
+    --b-yellow-dark: #e0ad15;
+    --b-yellow-darker: #bc9112;
+    --b-red: #ed3c50;
+    --b-red-light: #f43771;
+    --b-red-lighter: #fd1d7c;
+    --b-red-dark: #cd2d3f;
+    --b-red-darker: #ab2131;
+    --b-purple: #de41e0;
+    --b-purple-light: #e936eb;
+    --b-purple-lighter: #f616f8;
+    --b-purple-dark: #871971;
+    --b-purple-darker: #602960;
+    --b-pink: #E000A3;
+    --b-violet: #9620fd;
+    --b-violet-light: #a643fd;
+    --b-violet-lighter: #b767fd;
+    --b-violet-dark: #431790;
+    --b-violet-darker: #15052c;
+    //--b-orange: #ff9900;
+    --b-orange: #f08b23;
+    --b-orange-light: #ffe0a3;
+    --b-orange-lighter: #ffe0a3;
+    --b-orange-dark: #f08b23;
+    --b-orange-darker: #ed6427;
+    --b-neutral-darker: #a7a7a7;
+    --b-neutral-dark: #abadb4;
+    --b-neutral-default: #cdced2;
+    --b-neutral-light: #efeff0;
+    --b-neutral-lighter: #f4f5f5;
+}
+
+$namespace: 'tc';
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+$indents: (
+    none: 0,
+    small: 5px,
+    medium: 10px,
+    large: 15px,
+    xlarge: 20px,
+    xxlarge: 30px
+);
+//"Theme" dependant
+:root {
+    --#{$namespace}-bg: var(--b-white);
+    --#{$namespace}-bg-soft: var(--b-white-soft);
+    --#{$namespace}-bg-mute: var(--b-white-mute);
+
+    --#{$namespace}-divider: var(--b-divider-light-1);
+    --#{$namespace}-divider-light: var(--b-divider-light-2);
+    --#{$namespace}-divider-inverse: var(--b-divider-dark-1);
+    --#{$namespace}-divider-inverse-light: var(--b-divider-dark-2);
+
+    --#{$namespace}-text: var(--b-text-light);
+    --#{$namespace}-text-1: var(--b-text-light-1);
+    --#{$namespace}-text-2: var(--b-text-light-2);
+    --#{$namespace}-text-3: var(--b-text-light-3);
+    --#{$namespace}-text-4: var(--b-text-light-4);
+    --#{$namespace}-text-code: var(--b-text-light-code);
+    --#{$namespace}-text-inverse: var(--b-text-dark);
+    --#{$namespace}-text-inverse-1: var(--b-text-dark-1);
+    --#{$namespace}-text-inverse-2: var(--b-text-dark-2);
+    --#{$namespace}-text-inverse-3: var(--b-text-dark-3);
+    --#{$namespace}-text-inverse-4: var(--b-text-dark-4);
+
+    //--#{$namespace}-brand: var(--b-orange);
+    //--#{$namespace}-brand-light: var(--b-orange-light);
+    //--#{$namespace}-brand-dark: var(--b-orange-darker);
+    //--#{$namespace}-brand-highlight: var(--b-orange-dark);
+
+    --#{$namespace}-primary: var(--b-orange);
+    --#{$namespace}-primary-light: var(--b-orange-light);
+    --#{$namespace}-primary-lighter: var(--b-orange-lighter);
+    --#{$namespace}-primary-dark: var(--b-orange-darker);
+
+    --#{$namespace}-secondary: var(--b-blue-dark);
+    --#{$namespace}-secondary-light: var(--b-blue-lighter);
+    --#{$namespace}-secondary-lighter: #f4f4fb;
+    --#{$namespace}-secondary-dark: var(--b-blue-darker);
+
+    //--#{$namespace}-brand-bg-light: var(--b-white);
+    //--#{$namespace}-brand-bg-dark: var(--b-blue-darker);
+
+    --#{$namespace}-light-accent: var(--b-blue-lighter);
+    --#{$namespace}-light-shades: var(--b-blue-dark);
+
+    --#{$namespace}-dark-accent: var(--b-pink);
+    --#{$namespace}-dark-shades: var(--b-violet-darker);
+
+    --#{$namespace}-primary-100: var(--b-orange);
+    --#{$namespace}-primary-200: hsla(var(--b-orange), .1);
+    --#{$namespace}-primary-300: var(--b-orange);
+    --#{$namespace}-primary-400: var(--b-orange);
+    --#{$namespace}-primary-500: var(--b-orange);
+    --#{$namespace}-primary-600: var(--b-orange);
+
+    --#{$namespace}-surface-100: var(--b-white);
+    --#{$namespace}-surface-200: var(--b-white);
+    --#{$namespace}-surface-300: var(--b-white);
+    --#{$namespace}-surface-400: var(--b-white);
+    --#{$namespace}-surface-500: var(--b-white);
+    --#{$namespace}-surface-600: var(--b-blue-dark);
+}
+
+.dark-theme {
+    :root {
+        --#{$namespace}-bg: var(--b-white);
+        --#{$namespace}-bg-soft: var(--b-white-soft);
+        --#{$namespace}-bg-mute: var(--b-white-mute);
+
+        --#{$namespace}-divider: var(--b-divider-light-1);
+        --#{$namespace}-divider-light: var(--b-divider-light-2);
+        --#{$namespace}-divider-inverse: var(--b-divider-dark-1);
+        --#{$namespace}-divider-inverse-light: var(--b-divider-dark-2);
+
+        --#{$namespace}-text: var(--b-text-light);
+        --#{$namespace}-text-1: var(--b-text-light-1);
+        --#{$namespace}-text-2: var(--b-text-light-2);
+        --#{$namespace}-text-3: var(--b-text-light-3);
+        --#{$namespace}-text-4: var(--b-text-light-4);
+        --#{$namespace}-text-code: var(--b-text-light-code);
+        --#{$namespace}-text-inverse: var(--b-text-dark);
+        --#{$namespace}-text-inverse-1: var(--b-text-dark-1);
+        --#{$namespace}-text-inverse-2: var(--b-text-dark-2);
+        --#{$namespace}-text-inverse-3: var(--b-text-dark-3);
+        --#{$namespace}-text-inverse-4: var(--b-text-dark-4);
+
+        --#{$namespace}-primary: var(--b-orange);
+        --#{$namespace}-primary-light: var(--b-orange-light);
+        --#{$namespace}-primary-lighter: var(--b-orange-lighter);
+        --#{$namespace}-primary-dark: var(--b-orange-darker);
+
+        --#{$namespace}-secondary: var(--b-blue-dark);
+        --#{$namespace}-secondary-light: var(--b-blue-lighter);
+        --#{$namespace}-secondary-dark: var(--b-blue-darker);
+
+        --#{$namespace}-light-accent: var(--b-blue-lighter);
+        --#{$namespace}-light-shades: var(--b-blue-dark);
+
+        --#{$namespace}-dark-accent: var(--b-pink);
+        --#{$namespace}-dark-shades: var(--b-violet-darker);
+
+        --#{$namespace}-primary-100: var(--b-orange);
+        --#{$namespace}-primary-200: var(--b-orange);
+        --#{$namespace}-primary-300: var(--b-orange);
+        --#{$namespace}-primary-400: var(--b-orange);
+        --#{$namespace}-primary-500: var(--b-orange);
+        --#{$namespace}-primary-600: var(--b-orange);
+
+        --#{$namespace}-surface-100: var(--b-white);
+        --#{$namespace}-surface-200: var(--b-white);
+        --#{$namespace}-surface-300: var(--b-white);
+        --#{$namespace}-surface-400: var(--b-white);
+        --#{$namespace}-surface-500: var(--b-white);
+        --#{$namespace}-surface-600: var(--b-white);
+    }
+}
+
+/** SCSS DARK THEME PRIMARY COLORS */
+$primary-100: #ff9900;
+$primary-200: #ffa433;
+$primary-300: #ffb050;
+$primary-400: #ffbb6a;
+$primary-500: #ffc683;
+$primary-600: #ffd19c;
+
+/*
+Dark/Mixed - 100: For body background color
+Dark/Mixed - 200: For cards background color
+Dark/Mixed - 300: For chips buttons, dropdowns background color
+Dark/Mixed - 400: For sidebars, navbar background color
+Dark/Mixed - 500: For modal, dialogs background color
+Dark/Mixed - 600: For on background texts color
+*/
+/** SCSS DARK THEME SURFACE COLORS */
+$surface-100: #15052c;
+$surface-200: #2a1f40;
+$surface-300: #423756;
+$surface-400: #5a506c;
+$surface-500: #746b83;
+$surface-600: #8e869b;
+
+/** SCSS DARK THEME MIXED SURFACE COLORS */
+$surface-mixed-100: #2b152e;
+$surface-mixed-200: #402b42;
+$surface-mixed-300: #554257;
+$surface-mixed-400: #6c5a6d;
+$surface-mixed-500: #837384;
+$surface-mixed-600: #9a8e9b;
+
+/** EXAMPLES */
+//$color: $surface-600;
+//$background-color: $primary-300;
+
+
+$tc-theme-colors: (
+    "bg": var(--#{$namespace}-bg),
+    "body-bg": #f5f7fe,
+    "white": #ffffff,
+    "black": black,
+    //Main theme
+    "main-dark": #13161d,
+    "main-default": #2d3244,
+    "main-light": #373c4d,
+    "main-lighter": #dfe5ff,
+    // Primary
+    "indigo-dark": #2953ff,
+    "indigo-default": #2953ff,
+    "indigo-light": #29b1ff,
+    "indigo-lighter": #eef2ff,
+    // Red
+    "red-dark": #ac3f28,
+    "red-default": #ec4c27,
+    "red-light": #f9542e,
+    "red-lighter": #fef1ee,
+    //Green
+    "green-dark": #2fbb40,
+    "green-default": #2fbb40,
+    "green-light": #42c052,
+    "green-lighter": #effaf0,
+    //Yellow
+    "yellow-dark": #ffc515,
+    "yellow-default": #ffc515,
+    "yellow-light": #ffd863,
+    "yellow": #f8e8b8,
+    "yellow-lighter": #fff9e7,
+    //Blue
+    "blue-dark": #619BF2,
+    "blue-default": #29b1ff,
+    "blue-light": #50bfff,
+    "blue-lighter": #eef9ff,
+    // Neutral
+    "neutral-darker": #a7a7a7,
+    "neutral-dark": #abadb4,
+    "neutral-default": #cdced2,
+    "neutral-light": #efeff0,
+    "neutral-lighter": #f4f5f5,
+    //Pink
+    "pink-default": #ff41be,
+    "pink-light": #ff48c0,
+    "pink-lighter": #fff0fa,
+    //Purple
+    "purple-default": #7f30e1,
+    "purple-light": #7f30e1,
+    "purple-lighter": #f5effd,
+    //Orange
+    "orange-default": #fd7624,
+    "orange-lighter": #fff4ee,
+    //Teal
+    "teal-default": #2bd4a6,
+    "teal-lighter": #eefcf8,
+    'primary-default': var(--b-orange),
+    primary-light: var(--b-orange-light),
+    primary-lighter: var(--b-orange-lighter),
+    primary-dark: var(--b-orange-darker),
+    secondary-default: var(--b-blue-dark),
+    secondary-light: var(--b-blue-lighter),
+    secondary-lighter: var(--#{$namespace}-secondary-lighter),
+    secondary-dark: var(--b-blue-darker),
+
+    primary-100: var(--#{$namespace}-primary-100),
+    primary-200: var(--#{$namespace}-primary-200),
+    primary-300: var(--#{$namespace}-primary-300),
+    primary-400: var(--#{$namespace}-primary-400),
+    primary-500: var(--#{$namespace}-primary-500),
+    primary-600: var(--#{$namespace}-primary-600),
+
+    surface-100: var(--#{$namespace}-surface-100),
+    surface-200: var(--#{$namespace}-surface-200),
+    surface-300: var(--#{$namespace}-surface-300),
+    surface-400: var(--#{$namespace}-surface-400),
+    surface-500: var(--#{$namespace}-surface-500),
+    surface-600: var(--#{$namespace}-surface-600),
+);
+

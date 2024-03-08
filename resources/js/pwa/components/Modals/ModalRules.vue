@@ -1,11 +1,11 @@
 <template>
-    <div class="modal fade modalbox" id="RulesModal" data-backdrop="true" tabindex="-1" style="display: none;"
+    <div class="modal fade modalbox" id="RulesModal"  data-bs-backdrop="true" tabindex="-1" style="display: none;"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Политика защиты персональных данных</h5>
-                    <a href="javascript:;" data-dismiss="modal">Закрыть</a>
+                    <a href="javascript:;"  data-bs-dismiss="modal">Закрыть</a>
                 </div>
                 <div class="modal-body">
 

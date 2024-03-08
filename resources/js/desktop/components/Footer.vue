@@ -24,7 +24,7 @@
                         <h1>Готовы к незабываемым приключениям?</h1>
                     </div>
                     <div class="col-12">
-                        <button class="footer-btn" type="text" data-toggle="modal" data-target="#customPhoneModal">
+                        <button class="footer-btn" type="text" data-bs-toggle="modal" data-bs-target="#customPhoneModal">
                             Заказать звонок
                         </button>
                     </div>
@@ -127,7 +127,7 @@
 <!--                        <div class="col-12" style="background: #041e3f;border-top: 1px solid #d9d9d942;">-->
 <!--                            <div class="row w-100 m-auto align-items-center justify-content-center">-->
 <!--                                <a class="mx-auto my-2" target="_blank" href="https://donbassit.ru"-->
-<!--                                   style="color:white; font-family: 'Open Sans'; font-weight: 900"><img-->
+<!--                                   style="color:white; font-weight: 900"><img-->
 <!--                                    src="/images/do-it.png" class="mb-2" style="height: 20px;"/></a>-->
 <!--                            </div>-->
 <!--                        </div>&ndash;&gt;-->
@@ -138,7 +138,7 @@
         </section>
         <div class="zerogrid wrap-footer">
             <div class="row">
-                <div class="col-sm-4 footer-1">
+                <div class="col-12 col-md-4 footer-1">
                     <div class="wrap-col">
                         <h3 class="widget-title">О нас</h3>
                         <p class="text-white">Коллектив туристического агентства «TravelClub» рады приветствовать Вас на нашем сайте. Мы
@@ -152,7 +152,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-4 footer-2 d-flex justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 footer-2 d-flex justify-content-center">
                     <div class="wrap-col text-center">
                         <h3 class="widget-title">Контакты</h3>
                         <p  class="text-white">Телефоны:</p>
@@ -163,14 +163,26 @@
                         <strong style="color:#A9A9A9;">travelclubrnd@bk.ru</strong>
                     </div>
                 </div>
-                <div class="col-sm-4 footer-3 d-flex justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 footer-3 d-flex justify-content-center">
                     <div class="wrap-col text-center">
                         <h3 class="widget-title text-center">Мы в соцсетях</h3>
                         <ul class="social-buttons d-flex justify-content-center">
-<!--                            <li><a href="https://vk.com/rozovyi_slon_donetsk"><i class="fab fa-vk"></i></a></li>-->
-                            <li><a href="https://wa.me/79064167872"><i class="fab fa-whatsapp"></i></a></li>
-                            <li><a href="https://www.instagram.com/travelclub_tours/"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://t.me/travelclubtours"><i class="fab fa-telegram"></i></a></li>
+                            <!--                            <li><a href="https://vk.com/rozovyi_slon_donetsk"><i class="fab fa-vk"></i></a></li>-->
+                            <li>
+                                <a href="https://www.instagram.com/travelclub_tours/">
+                                    <base-icon name="Instagram"></base-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/travelclubtours">
+                                    <base-icon name="Telegram"></base-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/79064167872">
+                                    <base-icon name="WhatsApp"></base-icon>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

@@ -19,7 +19,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion1">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion1">
                             Is this PWA?
                         </button>
                     </div>
@@ -33,7 +33,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion3">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion3">
                             What CSS framework this theme use?
                         </button>
                     </div>
@@ -46,7 +46,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion4">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion4">
                             What can i do with this template?
                         </button>
                     </div>
@@ -59,7 +59,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion5">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion5">
                             Is this WordPress theme?
                         </button>
                     </div>
@@ -81,7 +81,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion6">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion6">
                             How can i buy this theme?
                         </button>
                     </div>
@@ -94,7 +94,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion7">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion7">
                             Do you accept refunds?
                         </button>
                     </div>
@@ -117,7 +117,7 @@
 
                 <div class="item">
                     <div class="accordion-header">
-                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#accordion8">
+                        <button class="btn collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#accordion8">
                             How can i contact to you?
                         </button>
                     </div>

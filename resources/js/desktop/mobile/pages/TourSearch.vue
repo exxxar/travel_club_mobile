@@ -3,7 +3,7 @@
         <div class="row w-100 m-auto">
             <div class="col-12 p-0 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Город вылета</h4>
                             <multiselect
@@ -21,13 +21,13 @@
                                 @input="chooseDepartCity"
                             >
                                 <template slot="singleLabel" slot-scope="props">
-                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                    <b :class="'tc-flag-'+props.option.Id"></b>
                                     <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
                                 </template>
                                 <template slot="option" slot-scope="props">
-                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                    <b :class="'tc-flag-'+props.option.Id"></b>
                                     <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
@@ -35,7 +35,7 @@
                             </multiselect>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Страна отдыха</h4>
                             <multiselect
@@ -53,13 +53,13 @@
                                 @input="chooseResortCountry"
                             >
                                 <template slot="singleLabel" slot-scope="props">
-                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                    <b :class="'tc-flag-'+props.option.Id"></b>
                                     <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
                                 </template>
                                 <template slot="option" slot-scope="props">
-                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                    <b :class="'tc-flag-'+props.option.Id"></b>
                                     <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
@@ -98,7 +98,7 @@
             </div>
             <div class="col-12 p-0 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Кол-во ночей (от)</h4>
                             <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Кол-во ночей (до)</h4>
                             <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -140,7 +140,7 @@
             </div>
             <div class="col-12 p-0 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Курорт</h4>
                             <multiselect
@@ -165,7 +165,7 @@
                             </multiselect>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Отель</h4>
                             <multiselect
@@ -212,7 +212,7 @@
             </div>
             <div class="col-12 p-0 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Питание</h4>
                             <multiselect
@@ -256,7 +256,7 @@
                             </multiselect>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Категория</h4>
                             <multiselect
@@ -311,7 +311,7 @@
             </div>
             <div class="col-12 p-0 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto w-100 h-100">
                             <h4 class="multiselect-title">Взрослые</h4>
                             <div class="row qty align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -325,7 +325,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto w-100 h-100">
                             <h4 class="multiselect-title">Дети</h4>
                             <div class="row qty align-items-center justify-content-center m-auto" style="width: 100%;">

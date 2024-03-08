@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="modal fade modalbox show"
-             :id="'ModalForm'+tour[0]" data-backdrop="static"
+             :id="'ModalForm'+tour[0]"  data-bs-backdrop="static"
              tabindex="-1" role="dialog"
              aria-modal="true"
         >
@@ -9,7 +9,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Купить тур №{{tour[0]}}</h5>
-                        <a href="javascript:;" data-dismiss="modal" style="text-decoration: none">Закрыть</a>
+                        <a href="javascript:;"  data-bs-dismiss="modal" style="text-decoration: none">Закрыть</a>
                     </div>
                     <div class="modal-body">
                         <div class="start-form">
@@ -158,7 +158,7 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row mx-auto mb-2 align-items-center justify-content-center">
-                            <button class="btn btn-block btn-lg" @click="buy" data-toggle="modal" :data-target="'#ModalForm'+tour[0]">Купить</button>
+                            <button class="btn btn-block btn-lg" @click="buy"  data-bs-toggle="modal" :data-bs-target="'#ModalForm'+tour[0]">Купить</button>
                         </div>
                     </div>
                 </div>
@@ -498,7 +498,7 @@
                 });
                 // this.$store.dispatch('saveTourOrder', this.order);
 
-                $('#ModalForm'+this.tour[0]).modal('hide');
+                this.$store.dispatch('closeModal', '#ModalForm'+this.tour[0]);
                 this.sendMessage("Тур успешно заказан. Ожидайте, наш менеждер свяжется с Вами");
                 this.$store.dispatch('changeTour', []);
             },

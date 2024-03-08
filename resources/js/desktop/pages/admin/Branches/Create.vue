@@ -18,13 +18,13 @@
                             :allow-empty="false"
                         >
                             <template slot="singleLabel" slot-scope="props">
-                                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                <b :class="'tc-flag-'+props.option.Id"></b>
                                 <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
                             </template>
                             <template slot="option" slot-scope="props">
-                                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                <b :class="'tc-flag-'+props.option.Id"></b>
                                 <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
@@ -60,7 +60,7 @@
                     </b-button>
                     <b-button
                         variant="primary"
-                        class="float-right mr-2 btn-travel"
+                        class="float-right me-2 btn-travel"
                         @click="cancel"
                     >
                         Отмена

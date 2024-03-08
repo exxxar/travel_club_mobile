@@ -66,6 +66,14 @@
         width: calc(100% + 16px);
         margin-left: -16px
     }
+    .landing-employees {
+        min-width: 0px;
+    }
+    .landing-employees .story-blocks {
+        width: 100%;
+        min-width: 0px;
+        margin-left: 0px;
+    }
 
     .story-blocks .item {
         padding-top: 5px;

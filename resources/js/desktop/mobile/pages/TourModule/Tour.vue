@@ -21,13 +21,13 @@
                                 @input="chooseResortCountry"
                             >
                                 <template slot="singleLabel" slot-scope="props">
-                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                    <b :class="'tc-flag-'+props.option.Id"></b>
                                     <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
                                 </template>
                                 <template slot="option" slot-scope="props">
-                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                    <b :class="'tc-flag-'+props.option.Id"></b>
                                     <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-12 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-12 pl-0 pr-1">
+                    <div class="col-12 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Курорт</h4>
                             <multiselect
@@ -64,7 +64,7 @@
                             </multiselect>
                         </div>
                     </div>
-                    <div class="col-12 pl-1 pr-0">
+                    <div class="col-12 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Отель</h4>
                             <multiselect
@@ -160,7 +160,7 @@
             </div>
             <div class="col-12 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Ночей от</h4>
                             <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Ночей до</h4>
                             <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -202,7 +202,7 @@
             </div>
 <!--            <div class="col-12 mt-2">-->
 <!--                <div class="row align-items-center justify-content-center m-auto w-100 h-100">-->
-<!--                    <div class="col-6 pl-0 pr-1">-->
+<!--                    <div class="col-6 ps-0 pe-1">-->
 <!--                        <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                            <h4 class="multiselect-title">Питание</h4>-->
 <!--                            <multiselect-->
@@ -246,7 +246,7 @@
 <!--                            </multiselect>-->
 <!--                        </div>-->
 <!--                    </div>-->
-<!--                    <div class="col-6 pl-1 pr-0">-->
+<!--                    <div class="col-6 ps-1 pe-0">-->
 <!--                        <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                            <h4 class="multiselect-title">Категория</h4>-->
 <!--                            <multiselect-->
@@ -302,7 +302,7 @@
 
             <div class="col-12 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
                             <h4 class="multiselect-title">Цена от</h4>
                             <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;height: 100%;">
@@ -310,7 +310,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto w-100 h-100">
                             <h4 class="multiselect-title">Цена до</h4>
                             <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;height: 100%;">
@@ -322,7 +322,7 @@
             </div>
             <div class="col-12 mt-2">
                 <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                    <div class="col-6 pl-0 pr-1">
+                    <div class="col-6 ps-0 pe-1">
                         <div class="row align-items-center justify-content-center m-auto w-100 h-100">
                             <h4 class="multiselect-title">Взрослые</h4>
                             <div class="row qty align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -336,7 +336,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 pl-1 pr-0">
+                    <div class="col-6 ps-1 pe-0">
                         <div class="row align-items-center justify-content-center m-auto w-100 h-100">
                             <h4 class="multiselect-title">Дети</h4>
                             <div class="row qty align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -375,13 +375,13 @@
 <!--                                    @input="chooseResortCountry"-->
 <!--                                >-->
 <!--                                    <template slot="singleLabel" slot-scope="props">-->
-<!--                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                        <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                        <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
 <!--                                    </template>-->
 <!--                                    <template slot="option" slot-scope="props">-->
-<!--                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                        <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                        <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
@@ -588,7 +588,7 @@
 <!--            </div>-->
 <!--        </div>-->
         <div class="appBottomMenu">
-            <div class="item pl-4 pr-2 ml-0 mr-auto">
+            <div class="item ps-4 pe-2 ms-0 mr-auto">
                 <div class="col">
                     <div class="row">
                         <div class="ell mr-1"></div>
@@ -597,7 +597,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn item mr-0 ml-auto pl-2 pr-2" :disabled="isCountriesLoading||isCitiesLoading || isHotelsLoading || isTourOperatorsLoading">
+            <button class="btn item mr-0 ms-auto ps-2 pe-2" :disabled="isCountriesLoading||isCitiesLoading || isHotelsLoading || isTourOperatorsLoading">
                 <div class="col">
                     <div class="action-button" @click="nextStep">
                         <div class="icon icon-keyboard_arrow_right"></div>

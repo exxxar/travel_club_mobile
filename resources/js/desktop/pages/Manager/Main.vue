@@ -69,7 +69,7 @@
                                         </span>
                                     </template>
                                 </multiselect>
-                                <div class="text-center ml-auto mr-auto mt-3" v-if="message_type.value=='one'">
+                                <div class="text-center ml-auto me-auto mt-3" v-if="message_type.value=='one'">
                                     <b-form-input
                                         type="text"
                                         placeholder="Введите номер телефона клиента"
@@ -83,7 +83,7 @@
                                     </b-form-input>
 
                                 </div>
-                                <div class="ml-auto mr-auto" v-if="message_type.value=='file'">
+                                <div class="ml-auto me-auto" v-if="message_type.value=='file'">
                                     <div class="row">
                                         <div class="col-lg-12 my-1">
                                             <div class="filezone" v-if="file==null">
@@ -151,7 +151,7 @@
                 <ValidationObserver v-slot="{ invalid }">
                     <card v-if="user != null && info != null">
                         <div class="row p-2 m-auto">
-                            <div class="col-md-4 pr-md-1">
+                            <div class="col-md-4 pe-md-1">
                                 <ValidationProvider name="lastName" rules="required" v-slot="{ errors }" style="width:100%;">
                                     <b-form-group label="Фамилия" label-size="sm" class="mb-0">
                                         <b-form-input label="Фамилия"
@@ -177,7 +177,7 @@
                                     <span class="validate-error">{{ errors[0] }}</span>
                                 </ValidationProvider>
                             </div>
-                            <div class="col-md-4 pl-md-1">
+                            <div class="col-md-4 ps-md-1">
                                 <b-form-group label="Отчество" label-size="sm" class="mb-0">
                                     <b-form-input label="Отчество"
                                                 v-model="info.MiddleName"
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <div class="row p-2 m-auto">
-<!--                            <div class="col-md-4 pr-md-1">-->
+<!--                            <div class="col-md-4 pe-md-1">-->
 <!--                                <ValidationProvider name="login" rules="required" v-slot="{ errors }" style="width:100%;">-->
 <!--                                    <b-form-input label="Логин"-->
 <!--                                                placeholder="Логин"-->
@@ -201,7 +201,7 @@
 <!--                                    <span class="validate-error">{{ errors[0] }}</span>-->
 <!--                                </ValidationProvider>-->
 <!--                            </div>-->
-                            <div class="col-md-4 pr-md-1">
+                            <div class="col-md-4 pe-md-1">
                                 <ValidationProvider name="email" rules="required|email" v-slot="{ errors }" style="width:100%;">
                                     <b-form-group label="Email" label-size="sm" class="mb-0">
                                         <b-form-input label="Email"
@@ -231,7 +231,7 @@
                             </div>
                         </div>
                         <div class="row p-2 m-auto">
-                            <div class="col-md-4 pr-md-1">
+                            <div class="col-md-4 pe-md-1">
                                 <ValidationProvider name="City" rules="required" v-slot="{ errors }" style="width:100%;">
                                     <b-form-group label="Город" label-size="sm" class="mb-0">
                                         <multiselect
@@ -297,7 +297,6 @@
                         <b-button class="btn btn-travel float-right" slot="footer" @click="updateInfo" :disabled="loading || invalid">
                             <div class="row align-items-center m-auto w-100 h-100">
                                 <span v-if="loading" role="status" aria-hidden="true" class="spinner-border spinner-border-sm mx-2"></span>
-                                <span v-if="loading" class="sr-only">Loading...</span>
                                 Сохранить
                             </div>
                         </b-button>

@@ -4,10 +4,10 @@
             <div class="col-2 p-0">
                 <div class="actions">
                     <button class="play" v-if="!isPlaying" @click="play">
-                        <i class="icon-play cil-media-play"> </i>
+                        <base-icon name="Play"></base-icon>
                     </button>
                     <button class="pause" v-if="isPlaying" @click="pause">
-                        <i class="icon-pause cil-media-pause"></i>
+                        <base-icon name="Pause"></base-icon>
                     </button>
                 </div>
             </div>

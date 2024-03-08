@@ -60,7 +60,7 @@
                 </div>
                 <div v-if="props.row.message_type === 'Заявка менеджера'">
                     <div class="row w-100 p-2 m-auto">
-                        <div class="col-md-4 pr-md-1">
+                        <div class="col-md-4 pe-md-1">
                             <b-input-group label="Фамилия">
                                 {{props.row.expand.user.info.LastName}}
                             </b-input-group>
@@ -70,7 +70,7 @@
                                 {{props.row.expand.user.info.FirstName}}
                             </b-input-group>
                         </div>
-                        <div class="col-md-4 pl-md-1">
+                        <div class="col-md-4 ps-md-1">
                             <b-input-group label="Отчество">
                                 {{props.row.expand.user.info.MiddleName}}
                             </b-input-group>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="row w-100 p-2 m-auto">
-                        <div class="col-md-4 pr-md-1">
+                        <div class="col-md-4 pe-md-1">
                             <b-input-group label="Город">
                                 {{props.row.expand.user.info.City.city}}
                             </b-input-group>

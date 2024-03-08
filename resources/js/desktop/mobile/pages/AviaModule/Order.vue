@@ -63,7 +63,7 @@
 <!--                </div>-->
             </div>
             <div class="appBottomMenu">
-                <div class="item pl-4 pr-2 ml-0 mr-auto">
+                <div class="item ps-4 pe-2 ml-0 mr-auto">
                     <div class="col">
                         <div class="row">
                             <div class="ell mr-1"></div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn item mr-0 ml-auto pl-2 pr-2">
+                <button class="btn item mr-0 ml-auto ps-2 pe-2">
                     <div class="col">
                         <div class="action-button" @click="onSubmit" :disabled="invalid||loading">
                             <div class="icon icon-keyboard_arrow_right" v-if="!loading"></div>

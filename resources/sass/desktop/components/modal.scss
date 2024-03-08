@@ -1,0 +1,218 @@
+.tc-modal {
+    & .modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        min-height: calc(100vh - 1rem);
+    }
+
+    & .tc-modal-content {
+        background: white;
+        border-radius: 25px;
+        padding: 0;
+        position: relative;
+
+        & .tc-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 50px 50px 0 50px;
+
+            &__title, & .tc-modal__title {
+                font-weight: 700;
+                color: var(--tc-secondary);
+                font-size: 22px;
+            }
+
+            &__title-promo {
+                font-weight: 900;
+                text-align: center;
+                margin: auto;
+                color: var(--tc-primary);
+                text-transform: uppercase;
+            }
+
+            & .tc-close-button {
+                //position: absolute;
+                //top: 25px;
+                //right: 25px;
+                //width: 13px;
+                //height: 13px;
+                //padding: 0;
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                padding: 6px;
+            }
+        }
+
+        & .tc-modal-body {
+            padding: 0 50px;
+            gap: 25px;
+            display: flex;
+            flex-direction: column;
+
+            & .tc-search {
+                padding: 10px;
+                background: $body-bg;
+
+                & .tc-search__input {
+
+                }
+
+                & .tc-search__button {
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        & .tc-modal-footer {
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & .tc-modal-next {
+                font-size: 12px;
+                font-family: $font-family-sans-serif;
+                font-weight: 500;
+                color: rgb(45, 50, 68);
+                text-transform: uppercase;
+                line-height: 1.833;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                cursor: pointer;
+                padding-left: 0;
+                padding-right: 0;
+
+                & svg {
+                    transform: rotate(270deg);
+                }
+            }
+
+            & .tc-modal-delete {
+                width: 70px;
+                height: 70px;
+                padding: 23px;
+            }
+
+            & .tc-modal-save {
+                height: 70px;
+                font-size: 16px;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .tc-modal {
+        & .modal-dialog {
+            margin: 20% auto auto auto;
+        }
+
+        & .tc-modal-content {
+            border-radius: 18px 0 18px 18px;
+
+            & .tc-modal-header {
+                & .tc-close-button {
+                    position: absolute;
+                    top: -40px;
+                    right: -1px;
+                    padding: 0;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 13px 13px 0 0;
+                    background: $body-bg;
+
+                    & svg path {
+                        fill: (--tc-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .tc-modal {
+        & .tc-modal-wrapper {
+            display: flex;
+            flex-flow: column-reverse;
+        }
+
+        & .tc-modal-footer {
+            border-radius: 0;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .tc-modal {
+        & .modal-dialog {
+            margin: 20% auto auto auto;
+        }
+
+        & .tc-modal-wrapper {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 20px;
+            margin: auto;
+        }
+
+        & .tc-modal-content {
+            width: 100%;
+
+            & .tc-modal-body {
+                gap: 25px;
+                padding: 0 25px;
+            }
+
+            & .tc-modal-header {
+                padding: 25px;
+                margin: 0;
+
+                &__title, & .tc-modal__title {
+                    font-size: 15px;
+                }
+            }
+
+            & .tc-modal-footer {
+                padding: 25px;
+
+                & .tc-modal-delete {
+                    width: 54px;
+                    height: 54px;
+                    padding: 18px;
+
+                    & svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                & .tc-modal-save {
+                    height: 54px;
+                    font-size: 12px;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .tc-modal {
+        & .modal-dialog-centered {
+            min-height: calc(100vh - 3.5rem);
+        }
+    }
+}

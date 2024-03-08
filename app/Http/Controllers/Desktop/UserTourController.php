@@ -8,11 +8,14 @@ use App\Http\Requests\UserTourUpdateRequest;
 use App\Http\Resources\UserTour as UserTourResource;
 use App\Http\Resources\UserTourCollection;
 use App\UserTour;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class UserTourController extends Controller
 {
@@ -22,17 +25,74 @@ class UserTourController extends Controller
      */
     public function index(Request $request)
     {
-        $userTours = UserTour::all();
+        $key='user_id';
+        if(request()->get('dashboard_user_id'))
+        {
+            $key = Auth::user()->hasRole(['manager', 'admin']) ? 'manager_id' : 'user_id';
+        }
 
-        return new UserTourCollection($userTours);
+        $userTours = UserTour::withCount(['documents', 'review'])
+            ->when(request()->get('user_id'), function (Builder $query) {
+                $query->where('user_id', request()->get('user_id'));
+            })
+            ->when(request()->get('manager_id'), function (Builder $query) {
+                $query->where('manager_id', request()->get('manager_id'));
+            })
+            ->when(request()->get('dashboard_user_id'), function (Builder $query) use ($key) {
+                $query->where($key, request()->get('dashboard_user_id'));
+            })
+            ->when(request()->get('search'), function (Builder $query) {
+                $query->where('title', 'like', '%' . request()->get('search') . '%');
+            })
+            ->when(request()->get('limit'), function (Builder $query) {
+                $query->limit(request()->get('limit'));
+            });
+
+        $orderByCol = request()->get('order_by', 'created_at');
+        $orderDirection = request()->get('order_direction', 'DESC');
+
+        $userTours->orderBy($orderByCol, $orderDirection);
+
+        return new UserTourCollection($userTours->paginate(request()->get('limit',2)));
     }
 
     /**
      * @param \App\Http\Requests\UserTourStoreRequest $request
-     * @return \App\Http\Resources\UserTour
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
+        try {
+            $validator = Validator::make(request()->all(), [
+                'title' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return response()->json(['message' => $validator->messages()], 501);
+            }
+
+//            $userTour = UserTour::firstOrCreated([
+//                'user_id' => $request->user_id,
+//                'manager_id' => $request->manager_id,
+//                'title' => $request->title
+//            ]);
+            $userTour = new UserTour();
+            foreach (request()->all() as $key => $value) {
+                Log::info($key . ' '.$value);
+                if (in_array($key, $userTour->getFillable())) {
+                    $userTour->$key = $value;
+                }
+            }
+            $userTour->save();
+            return response()
+                ->json([
+                    "message" => "Тур успешно создан",
+                    'userTour' => new UserTourResource($userTour)
+                ], 201);
+        }
+        catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+        /*
         $userTour = json_decode($request->UserTour, true);
 //        array_map('unlink', glob(storage_path("app/public/users/*")));
 //        $user_path = Hash::make('user'.$userTour['UserId']);
@@ -90,16 +150,20 @@ class UserTourController extends Controller
                 "status" => 200,
                 'tour' => $userTour
             ]);
+        */
     }
 
     /**
      * @param \Illuminate\Http\Request $request
      * @param \App\UserTour $userTour
-     * @return \App\Http\Resources\UserTour
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show(Request $request, UserTour $userTour)
+    public function show(UserTour $userTour)
     {
-        return new UserTourResource($userTour);
+        return response()
+            ->json([
+                'userTour' => new UserTourResource($userTour)
+            ], 200);
     }
 
     public function save($id, Request $request)
@@ -107,9 +171,9 @@ class UserTourController extends Controller
         $param = $request->get("param");
         $value = $request->get("value");
 
-        $tour = UserTour::withTrashed()->find($id);
-        $tourInfo = $tour->TourInfo;
-        $tourInfo[$param] = $value;
+        $tour = UserTour::find($id);
+//        $tourInfo = $tour->TourInfo;
+        $tour->{$param} = $value;
 
         $tour->save();
 
@@ -117,7 +181,7 @@ class UserTourController extends Controller
             ->json([
                 'tour' => $tour,
                 "message" => "Изменения сохранены",
-            ], 200);
+            ], 201);
 
     }
 
@@ -177,10 +241,34 @@ class UserTourController extends Controller
     /**
      * @param \App\Http\Requests\UserTourUpdateRequest $request
      * @param \App\UserTour $userTour
-     * @return \App\Http\Resources\UserTour
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request)
     {
+        try {
+            $validator = Validator::make(request()->all(), [
+                'id' => 'required|integer',
+            ]);
+            if ($validator->fails()) {
+                return response()->json(['message' => $validator->messages()], 501);
+            }
+            $userTour = UserTour::find($request->id);
+            foreach (request()->all() as $key => $value) {
+                if (in_array($key, $userTour->getFillable())) {
+                    $userTour->$key = $value;
+                }
+            }
+            $userTour->save();
+            return response()
+                ->json([
+                    "message" => "Тур успешно обновлён",
+                    'userTour' => new UserTourResource($userTour)
+                ], 201);
+        }
+        catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+        /*
 //        $userTour->update($request->validated());
         $editUserTour = json_decode($request->UserTour, true);
         $userTour = UserTour::findOrFail($editUserTour['id']);
@@ -239,6 +327,9 @@ class UserTourController extends Controller
             "tour" => $userTour
         ], 200);
 //        return new UserTourResource($userTour);
+        */
+
+
     }
 
     /**
@@ -250,19 +341,46 @@ class UserTourController extends Controller
     {
 //        $userTour->delete();
         $userTour = UserTour::findOrFail($id);
-        $TourInfo = $userTour->TourInfo;
-        if(count($TourInfo->files))
-        {
-            foreach ($TourInfo->files as $file) {
-                $rest = substr($file->path, 8);
-                Storage::delete($rest);
-            }
-        }
+//        $TourInfo = $userTour->TourInfo;
+//        if(count($TourInfo->files))
+//        {
+//            foreach ($TourInfo->files as $file) {
+//                $rest = substr($file->path, 8);
+//                Storage::delete($rest);
+//            }
+//        }
 
         $userTour->delete();
 
         return response()->noContent(200);
     }
+
+    public function search(Request $request) {
+
+        $userTours = UserTour::select([
+            'id',
+            'user_id',
+            'manager_id',
+            'title'
+        ])
+            ->when(request()->get('user_id'), function (Builder $query) {
+                $query->where('user_id', request()->get('user_id'));
+            })
+            ->when(request()->get('manager_id'), function (Builder $query) {
+                $query->where('manager_id', request()->get('manager_id'));
+            })
+            ->when(request()->get('search'), function (Builder $query) {
+                $query->where('title', 'like', '%' . request()->get('search') . '%');
+            });
+
+        $orderByCol = request()->get('order_by', 'created_at');
+        $orderDirection = request()->get('order_direction', 'DESC');
+
+        $userTours->orderBy($orderByCol, $orderDirection);
+
+        return $userTours->paginate(request()->get('limit',20));
+    }
+
     public function updateArchive(Request $request) {
         $userTour = UserTour::findOrFail($request->id);
         $userTour->Archive = $request->Archive;
@@ -279,42 +397,42 @@ class UserTourController extends Controller
             "tour" => $userTour
         ], 200);
     }
-    public function files() {
-        if(Auth::check()) {
-            $files=[];
-            $userTours = UserTour::where('UserId', Auth::user()->id)->get();
-            foreach ($userTours as $userTour) {
-                $TourInfo = $userTour->TourInfo;
-                if (count($TourInfo['files'])) {
-                    foreach ($TourInfo['files'] as $file) {
-                        array_push($files, $file);
-                    }
-                }
-            }
-            return response()->json([
-                "files" => $files
-            ], 200);
-        }
-        return response()->json(['error' => 'Unauthorized'], 401);
-    }
-    public function forceDelete($id)
-    {
-        $userTour = UserTour::withTrashed()->find($id);
-        if (!is_null($userTour)) {
-            $TourInfo = $userTour->TourInfo;
-            if(count($TourInfo->files))
-            {
-                foreach ($TourInfo->files as $file) {
-                    $rest = substr($file->path, 8);
-                    Storage::delete($rest);
-                }
-            }
-            $userTour->forceDelete();
-        }
-
-        return response()
-            ->json([
-                "message" => "Тур пользователя успешно полностью удалён",
-            ], 200);
-    }
+//    public function files() {
+//        if(Auth::check()) {
+//            $files=[];
+//            $userTours = UserTour::where('UserId', Auth::user()->id)->get();
+//            foreach ($userTours as $userTour) {
+//                $TourInfo = $userTour->TourInfo;
+//                if (count($TourInfo['files'])) {
+//                    foreach ($TourInfo['files'] as $file) {
+//                        array_push($files, $file);
+//                    }
+//                }
+//            }
+//            return response()->json([
+//                "files" => $files
+//            ], 200);
+//        }
+//        return response()->json(['error' => 'Unauthorized'], 401);
+//    }
+//    public function forceDelete($id)
+//    {
+//        $userTour = UserTour::withTrashed()->find($id);
+//        if (!is_null($userTour)) {
+//            $TourInfo = $userTour->TourInfo;
+//            if(count($TourInfo->files))
+//            {
+//                foreach ($TourInfo->files as $file) {
+//                    $rest = substr($file->path, 8);
+//                    Storage::delete($rest);
+//                }
+//            }
+//            $userTour->forceDelete();
+//        }
+//
+//        return response()
+//            ->json([
+//                "message" => "Тур пользователя успешно полностью удалён",
+//            ], 200);
+//    }
 }

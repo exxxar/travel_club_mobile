@@ -1,0 +1,113 @@
+#{'.'+$namespace} {
+    &-wrapper {
+        display: flex;
+        //align-items: center;
+        flex-flow: row wrap;
+        gap: map-get($indents, 'medium');
+
+        &-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-flow: row wrap;
+        }
+
+        &-vertical {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        &-column {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            //width: 100%;
+            gap: map-get($indents, 'medium') 0;
+
+            &-reverse {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column-reverse;
+                width: 100%;
+            }
+        }
+
+        &-nowrap {
+            flex-wrap: nowrap !important;
+        }
+    }
+    @include up-all() using($key, $value) {
+        &-wrapper#{$key} {
+            display: flex;
+            align-items: center;
+            flex-flow: row wrap;
+
+            &-between {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-flow: row wrap;
+            }
+
+            &-column {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                //width: 100%;
+                gap: map-get($indents, 'medium') 0;
+            }
+
+            &-column-reverse {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column-reverse;
+                width: 100%;
+            }
+
+            &-nowrap {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+    @include down-all() using($key, $value) {
+        &-wrapper#{$key} {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            flex-flow: row wrap;
+
+            &-between {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-flow: row wrap;
+            }
+
+            &-column {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                //width: 100%;
+                gap: 10px 0;
+            }
+
+            &-column-reverse {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column-reverse;
+                width: 100%;
+            }
+
+            &-nowrap {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+}

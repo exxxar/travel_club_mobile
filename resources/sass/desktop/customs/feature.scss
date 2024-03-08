@@ -1,0 +1,40 @@
+#{'.'+$namespace}-feature {
+    margin: map-get($indents, 'small') 0;
+    &__title {
+        font-size: 14px;
+        font-family: $font-family-sans-serif;
+        color: var(--#{$namespace}-text-1);
+        font-weight: 600;
+        line-height: 14px;
+        text-align: left;
+        margin-bottom: map-get($indents, 'small');
+    }
+    &__subtitle {
+        font-size: 12px;
+        font-family: $font-family-sans-serif;
+        color: var(--#{$namespace}-text-2);
+        font-weight: 600;
+        line-height: 12px;
+        text-align: left;
+        margin-bottom: map-get($indents, 'small');
+    }
+    &__text {
+        font-size: 14px;
+        font-family: $font-family-sans-serif;
+        color: var(--#{$namespace}-secondary);
+        text-align: left;
+    }
+
+    &_row {
+        display: flex;
+        gap: map-get($indents, 'small');
+        justify-content: space-between;
+        align-items: center;
+        & #{'.'+$namespace}-feature__title {
+            margin-bottom: 0;
+        }
+        & #{'.'+$namespace}-feature__text {
+            margin-bottom: 0;
+        }
+    }
+}

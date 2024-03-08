@@ -1,23 +1,23 @@
 <template>
-    <div class="modal fade modalbox" id="ContactModal" data-backdrop="true" tabindex="-1" style="display: none;"
+    <div class="modal fade modalbox" id="ContactModal"  data-bs-backdrop="true" tabindex="-1" style="display: none;"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Наши контакты</h5>
-                    <a href="javascript:;" rel="noreferrer" data-dismiss="modal">Закрыть</a>
+                    <a href="javascript:;" rel="noreferrer"  data-bs-dismiss="modal">Закрыть</a>
                 </div>
                 <div class="modal-body">
                     <phone-by-city-form></phone-by-city-form>
                     <ul class="nav nav-tabs style1" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" rel="noreferrer" data-toggle="tab" href="#home-1" role="tab"
+                            <a class="nav-link active" rel="noreferrer"  data-bs-toggle="tab" href="#home-1" role="tab"
                                aria-selected="true">
                                 Донецк
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" rel="noreferrer" href="#home-2" role="tab" aria-selected="false">
+                            <a class="nav-link"  data-bs-toggle="tab" rel="noreferrer" href="#home-2" role="tab" aria-selected="false">
                                 Ростов-на-Дону
                             </a>
                         </li>
@@ -29,7 +29,7 @@
                                 <button class="btn btn-link" @click="showOnMap(1)" rel="noreferrer">Показать на карте</button>
                             </p>
                             <p>+7 949 235-33-22
-                                <span class="ml-2"><i class="fab fa-whatsapp"></i></span>
+                                <span class="ms-2"><i class="fab fa-whatsapp"></i></span>
                             </p>
                             <h4> Режим работы:</h4>
                             <p> Пн-Птн 10 00 – 18 00</p>

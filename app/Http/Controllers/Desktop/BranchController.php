@@ -18,7 +18,7 @@ class BranchController extends Controller
     }
     public function get($id)
     {
-        $branch = Branch::whereId($id)->first();
+        $branch = Branch::find($id);
         return response()->json([
             "branch" => $branch
         ], 200);

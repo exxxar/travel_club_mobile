@@ -1,0 +1,28 @@
+// Fonts
+//@font-face {
+//    font-family: "Bello Pro"; /* Имя шрифта */
+//    src: url('/fonts/BelloPro.otf'); /* Путь к файлу со шрифтом */
+//    font-display: swap;
+//}
+
+@font-face {
+    font-family: "VAGWorld-Bold"; /* Имя шрифта */
+    src: url('/fonts/vag-world-bold.ttf'); /* Путь к файлу со шрифтом */
+    font-display: swap;
+}
+
+@mixin font($font-file, $font-weight,$font-style: normal) {
+    @font-face {
+        font-family: 'Roboto';
+        font-style: $font-style;
+        font-weight: $font-weight;
+        font-display: swap;
+        src: url('/fonts/Roboto-' + $font-file + '.ttf') format('ttf'),
+    }
+}
+@include font(Black,900);
+@include font(Bold,700);
+@include font(Medium,500);
+@include font(Regular,400);
+@include font(Light,300);
+@include font(Thin,100);

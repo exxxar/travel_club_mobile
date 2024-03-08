@@ -1,0 +1,33 @@
+@include svg-color('primary', '', 'light', 'dark',);
+@include svg-color('secondary', '', 'light', 'dark',);
+
+@include svg-color('main', '', 'light', 'lighter');
+@include svg-color('green', '', 'light', 'lighter');
+@include svg-color('red', '', 'light', 'lighter');
+@include svg-color('blue', '', 'light', 'lighter');
+@include svg-color('yellow', '', 'light', 'lighter');
+@include svg-color('purple', '', 'light', 'lighter');
+@include svg-color('pink', '', 'light', 'lighter');
+@include svg-color('orange', '', 'lighter');
+@include svg-color('teal', '', 'lighter');
+@include setColorSvg('fill', 'white', '');
+@include setColorSvg('stroke', 'white', '');
+@include setColorSvg('stroke', 'black', '');
+#{'.'+$namespace} {
+    &-rotate-270 {
+        transform: rotate(270deg);
+    }
+    &-rotate-180 {
+        transform: rotate(180deg);
+    }
+    &-rotate-90 {
+        transform: rotate(90deg) !important;
+    }
+    &-mirror-vertical {
+        transform: scale(-1 , 1)
+    }
+    &-mirror-horizontal {
+        transform: scale(1, -1)
+    }
+}
+

@@ -1,99 +1,57 @@
 <template>
-    <div class="card-body">
-        <h5 class="modal-title" style="font-family: Open Sans;font-weight: 900;text-align: center;margin: auto;color: #f08b23;text-transform: uppercase;">Запишите голосовое сообщение</h5>
-
-<!--        <h4 class="text-center" style="color: #0f213d; font-family: 'Bello Pro'">Запишите голосовое сообщение</h4>-->
-        <div class="step1" v-if="!step">
-            <div class="d-flex justify-content-center mt-2">
-                <vue-record-audio :mode="'press'" @stream="onStream" @result="onResult"/>
-            </div>
-            <div class="row w-100 m-auto d-flex justify-content-center mt-2" v-if="recordings.length>0">
-                <div class="col-12 p-0">
-                    <div class="recorded-audio">
-                        <div v-for="(record, index) in recordings" :key="index" class="recorded-item justify-content-between">
-                            <div class="audio-container w-100">
-<!--                                <audio :src="record.src" controls/>-->
-                                <audio-player :audio="record" class="w-100"></audio-player>
-                            </div>
-                            <div>
-                                <button @click="removeRecord(index)" class="btn btn-primary" style="padding: 10px !important;max-width:50px">
-                                    <b-icon icon="trash" scale="2"></b-icon>
-                                </button>
+    <base-modal id="customVoiceModal" title="Запишите голосовое сообщение" :close_button_disabled="loading"
+                title_class="tc-modal__title-promo">
+        <template #body>
+            <template v-if="!step">
+                <div class="d-flex justify-content-center mt-2">
+                    <VueRecordAudio :mode="'press'" @stream="onStream" @result="onResult" title="Нажмите, чтобы начать запись. Нажмите повторно, чтобы закончить"/>
+                </div>
+                <div class="row w-100 m-auto d-flex justify-content-center mt-2" v-if="recordings.length>0">
+                    <div class="col-12 p-0">
+                        <div class="recorded-audio">
+                            <div v-for="(record, index) in recordings" class="recorded-item justify-content-between">
+                                <div class="audio-container w-100">
+                                    <!--                                <audio :src="record.src" controls/>-->
+                                    <audio-player :audio="record" class="w-100" :key="index"></audio-player>
+                                </div>
+                                <div>
+                                    <base-button @click="removeRecord(index)" icon="Trash" title="Удалить запись" :stroke="true" fill="transparent"></base-button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </template>
+            <template v-else>
+                <base-input v-model="name" name="name" label="Ваше имя" rules="required">
+                    <template #icon>
+                        <base-icon name="User" color="secondary"/>
+                    </template>
+                </base-input>
+                <base-input v-model="phone" name="phone" label="Ваш номер телефона" rules="required|phone"
+                            :mask="['+# ### ### ####','+## ### ### ####', '+## ### #### ####']"
+                >
+                    <template #icon>
+                        <base-icon name="Phone" color="secondary"/>
+                    </template>
+                </base-input>
+                <base-select name="messenger" v-model="selected" label="Через какие мессенджеры лучше связаться с Вами?"
+                             :options="options" option_label="text" :reduce="item=>item.value"
+                ></base-select>
+            </template>
+        </template>
+        <template #footer="{invalid}">
+            <div class="tc-wrapper tc-wrapper-nowrap w-100">
+                <base-button v-if="step" @click="step=false" class="w-100" :disabled="loading">Назад</base-button>
+                <base-button v-if="!step" @click="step=true" class="w-100" :disabled="recordings.length==0">Далее</base-button>
+                <base-button v-if="step" @click="send" class="w-100" :loading="loading" :disabled="invalid||loading">Отправить</base-button>
             </div>
-            <div class="row d-flex justify-content-center mt-2">
-                <div class="col-12 col-sm-12 col-md-12">
-                    <button @click="step=true" class="w-100 btn btn-primary" style="cursor: pointer" :disabled="recordings.length==0">Далее</button>
-                </div>
-            </div>
-        </div>
-        <div class="step2" v-if="step">
-            <div class="row mb-2">
-                <div class="col-12">
-                    <div class="form-group bmd-form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                    <span class="input-group-text">
-<!--                                      <i class="material-icons">person</i>-->
-                                      <i class="icon-person" style="font-size: 25px;color: #0d274b;"></i>
-                                    </span>
-                            </div>
-                            <input type="text" class="form-control" v-model="name" placeholder="Ваше имя" required/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-12">
-                    <div class="form-group bmd-form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text">
-<!--                              <i class="material-icons">phone</i>-->
-                              <i class="icon-phone" style="font-size: 25px;color: #0d274b;"></i>
-                            </span>
-                            </div>
-                            <input type="text" class="form-control" v-model="phone" placeholder="Ваш номер телефона"
-                                   pattern="[\+]\d{2} [\(]\d{3}[\)] \d{3}[\-]\d{2}[\-]\d{2}"
-                                   v-mask="['+# (###) ###-##-##','+## (###) ###-##-##']"
-                                   required/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2" style="color:#0d274b">
-                <b-form-group label="Через какие мессенджеры лучше связаться с Вами?">
-                    <b-form-checkbox-group
-                        id="checkbox-group-1"
-                        v-model="selected"
-                        :options="options"
-                        name="flavour-1"
-                    >
-                    </b-form-checkbox-group>
-                </b-form-group>
-            </div>
-            <div class="row d-flex justify-content-center mt-2">
-                <div class="col-6 col-sm-6 col-md-6">
-                    <button @click="step=false" class="w-100 btn btn-primary">Назад</button>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6">
-                    <button @click="send" class="w-100 btn btn-primary ">Отправить</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
+        </template>
+    </base-modal>
 </template>
 
 <script>
-    import {mask} from 'vue-the-mask';
     export default {
-        // props: ["phone"],
         data() {
             return {
                 name:'',
@@ -106,40 +64,38 @@
                 selected: [],
                 options: [
                     { text: 'Telegram', value: 'Telegram' },
-                    { text: 'Viber', value: 'Viber' },
+                    // { text: 'Viber', value: 'Viber' },
                     { text: 'WhatsApp', value: 'WhatsApp' },
-                ]
+                ],
+                loading: false
             }
         },
         methods: {
-            send() {
-                if (this.phone == null)
-                    return;
-
+            async send() {
+                this.loading = true;
                 let formData = new FormData();
                 formData.append("name", this.name);
                 formData.append("phone", this.phone);
                 formData.append('messengers', this.selected.toString());
 
-                for (var i = 0; i < this.recordings.length; i++) {
+                for (let i = 0; i < this.recordings.length; i++) {
                     let file = this.recordings[i].data;
-                    console.log(file);
                     formData.append('files[' + i + ']', file);
                 }
 
-                axios.post('/sendVoiceCallback', formData, {
+                await axios.post('/sendVoiceCallback', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         },
                     }
-                ).then(function () {
-                    this.recordings = []
-                    this.sendMessage("Сообщение успешно отправлено");
-
+                ).then(resp => {
+                    this.recordings = [];
+                    this.$store.commit('closeModal', '#customVoiceModal');
+                    this.$store.dispatch('sendNotification', {message: 'Сообщение успешно отправлено'});
                 })
-                    .catch(function () {
+                    .finally(() => {
+                        this.loading = false;
                     });
-                $('#customVoiceModal').modal('hide')
             },
             removeRecord(index) {
                 this.recordings.splice(index, 1)
@@ -170,16 +126,10 @@
             incrementSeconds() {
                 this.seconds += 1;
             },
-            sendMessage(message) {
-                this.$notify({
-                    group: 'info',
-                    type: 'travel',
-                    title: 'Отправка сообщений TravelClub',
-                    text: message
-                });
-            },
-        },
-        directives: {mask}
+            callback(event) {
+                console.log(event);
+            }
+        }
     }
 </script>
 

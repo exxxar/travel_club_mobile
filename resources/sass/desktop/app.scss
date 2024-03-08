@@ -1,13 +1,53 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'resources/sass/desktop/_variables';
-
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+@import "./base/font.scss";
+// Variables
+@import './_variables.scss';
+@import './functions.scss';
+@import './mixins.scss';
 
+//Base
+@import "./base/gap.scss";
+@import "./base/wrapper.scss";
+@import "./base/width.scss";
+@import "./base/svg.scss";
+@import "./base/text.scss";
+@import "./base/background.scss";
+@import "./base/padding.scss";
+@import "./base/margin.scss";
+@import "./base/display.scss";
+@import "./base/hover.scss";
+
+//Components
+@import "./components/card.scss";
+@import "./components/button.scss";
+@import "./components/input.scss";
+@import "./components/select.scss";
+//@import "./components/checkbox.scss";
+@import "./components/modal.scss";
+@import "./components/badge.scss";
+@import "./components/page.scss";
+@import "./components/flag.scss";
+@import "./components/sidebar.scss";
+@import "./components/row.scss";
+@import "./components/collapse.scss";
+@import "./components/dropdown.scss";
+@import "./components/navbar.scss";
+@import "./components/pagination.scss";
+@import "./components/table.scss";
+
+#{'.'+$namespace} {
+    @import "./components/header.scss";
+}
+//Customs
 @import "landing.scss";
+@import "./customs/feature.scss";
+@import "./customs/list.scss";
+@import "./customs/article.scss";
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 .travel-news-btn {
     cursor: pointer;
@@ -58,7 +98,14 @@
     }
 }
 
-
+.tc-circle {
+    background: var(--tc-primary);
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    margin: 2px 0;
+}
 
 
 /////////////////////////////

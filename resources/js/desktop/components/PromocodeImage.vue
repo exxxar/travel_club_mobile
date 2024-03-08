@@ -768,7 +768,7 @@ EWAAwQuNJ651A+QAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 279 190)">
         // }
     }
 </script>
-<style>
+<style scoped>
     .title2 {
         fill:#FFFFFF;
         font-family:VAGWorld-Bold, VAG World;

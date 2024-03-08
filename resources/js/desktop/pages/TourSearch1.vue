@@ -20,13 +20,13 @@
                         @input="chooseDepartCity"
                     >
                         <template slot="singleLabel" slot-scope="props">
-                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                            <b :class="'tc-flag-'+props.option.Id"></b>
                             <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
                         </template>
                         <template slot="option" slot-scope="props">
-                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                            <b :class="'tc-flag-'+props.option.Id"></b>
                             <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
@@ -121,13 +121,13 @@
                         @input="chooseResortCountry"
                     >
                         <template slot="singleLabel" slot-scope="props">
-                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                            <b :class="'tc-flag-'+props.option.Id"></b>
                             <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
                         </template>
                         <template slot="option" slot-scope="props">
-                            <b  v-if="props.option.Id" :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                            <b  v-if="props.option.Id" :class="'tc-flag-'+props.option.Id"></b>
                             <span class="option__desc" v-if="props.option.Id" style="font-size: 14px">
                                 <span class="option__title" style="font-size: 14px">{{ props.option.Name }}</span>
                             </span>

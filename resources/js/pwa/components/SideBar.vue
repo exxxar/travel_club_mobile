@@ -1,6 +1,6 @@
 <template>
     <!-- App Sidebar -->
-    <div class="modal panelbox panelbox-left" id="sidebarPanel" data-backdrop="true" tabindex="-1" role="dialog">
+    <div class="modal panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body p-0">
@@ -10,7 +10,7 @@
                         <a :href="$baseUrl" class="image-wrapper">
                             <img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged">
                         </a>
-                        <div class="in" data-toggle="modal" data-target="#ContactModal">
+                        <div class="in"  data-bs-toggle="modal" data-bs-target="#ContactModal">
                             <strong>Travel Club</strong>
                             <div class="text-muted">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -19,7 +19,7 @@
 
                             </div>
                         </div>
-                        <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal"
+                        <a href="javascript:;" class="close-sidebar-button" data-bs-dismiss="modal"
                            aria-label="Закрыть боковое меню">
                             <i class="fas fa-times"></i>
                         </a>
@@ -49,12 +49,12 @@
                             </a>
                         </li>
                         <li>
-                            <a :href="$baseUrl+'/m/flies'" class="item" aria-label="Доступные перелеты">
+                            <a :href="$baseUrl+'/m/hot-tours'" class="item" aria-label="Горячие туры">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-plane-departure"></i>
                                 </div>
                                 <div class="in">
-                                    <div>Подобрать авиабилеты</div>
+                                    <div>Горячие туры</div>
                                 </div>
                             </a>
                         </li>
@@ -66,14 +66,13 @@
                                 </div>
                                 <div class="in">
                                     <div>Подобрать туры по России</div>
-
                                 </div>
                             </a>
                         </li>
 
 
                         <li>
-                            <a href="#contact" data-target="#ContactModal" data-toggle="modal" class="item"
+                            <a href="javascript:;" data-bs-target="#ContactModal"  data-bs-toggle="modal" class="item"
                                aria-label="Форма контактной информации">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-address-book"></i>
@@ -86,8 +85,8 @@
                         </li>
 
                         <li>
-                            <a href="#contact" data-toggle="modal" aria-label="О Travel Club"
-                               data-target="#AboutModal" class="item">
+                            <a href="javascript:;"  data-bs-toggle="modal" aria-label="О Travel Club"
+                               data-bs-target="#AboutModal" class="item">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-address-book"></i>
                                 </div>
@@ -97,22 +96,22 @@
                             </a>
                         </li>
 
+<!--                        <li>-->
+<!--                            <a href="javascript:;" data-bs-toggle="modal" aria-label="Комментарии и отзывы"-->
+<!--                               data-bs-target="#CommentsModal" class="item">-->
+<!--                                <div class="icon-box bg-orange">-->
+<!--                                    <i class="far fa-comment"></i>-->
+<!--                                </div>-->
+<!--                                <div class="in">-->
+<!--                                    <div>Комментарии и отзывы</div>-->
+
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+
                         <li>
-                            <a href="#omments" data-toggle="modal" aria-label="Комментарии и отзывы"
-                               data-target="#CommentsModal" class="item">
-                                <div class="icon-box bg-orange">
-                                    <i class="far fa-comment"></i>
-                                </div>
-                                <div class="in">
-                                    <div>Комментарии и отзывы</div>
-
-                                </div>
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="item"
+                            <a href="#rules" data-bs-target="#RulesModal"  data-bs-toggle="modal" class="item"
                                aria-label="Политика конфиденциальности">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-landmark"></i>
@@ -147,7 +146,6 @@
                                        id="darkmodeswitch-2">
                                 <label class="custom-control-label" for="darkmodeswitch-2"></label>
                             </div>
-
                         </div>
 
 
@@ -203,8 +201,6 @@
         },
         mounted() {
             try {
-
-
                 window.addEventListener('beforeinstallprompt', (e) => {
                     // Prevent the mini-infobar from appearing on mobile
                     e.preventDefault();

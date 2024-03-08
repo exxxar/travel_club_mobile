@@ -9,7 +9,7 @@
                             <div class="in">
                                 <img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged w24 rounded">
                                 <strong>Travel Club</strong>
-                                <span class="ml-1">сейчас</span>
+                                <span class="ms-1">сейчас</span>
                             </div>
                             <a href="#" class="close-button" @click="props.close">
                                 <i class="fas fa-times-circle"></i>

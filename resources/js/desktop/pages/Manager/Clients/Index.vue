@@ -11,13 +11,13 @@
                     :totalRows="clientsTotalRows"
                 />
             </b-tab>
-            <b-tab title="Удаленные">
-                <user-table
-                    :users="deleted_clients"
-                    :loading="loading"
-                    :totalRows="deletedClientsTotalRows"
-                />
-            </b-tab>
+<!--            <b-tab title="Удаленные">-->
+<!--                <user-table-->
+<!--                    :users="deleted_clients"-->
+<!--                    :loading="loading"-->
+<!--                    :totalRows="deletedClientsTotalRows"-->
+<!--                />-->
+<!--            </b-tab>-->
         </b-tabs>
     </b-container>
 </template>
@@ -64,9 +64,9 @@
                 this.loading=true;
                 await this.$store.dispatch('setClients').then(resp =>{
                     this.$store.commit('setClients', resp.data.users);
-                    this.$store.commit('setDeletedClients', resp.data.deleted_users);
+                    // this.$store.commit('setDeletedClients', resp.data.deleted_users);
                     this.clientsTotalRows =  resp.data.users.length;
-                    this.deletedUsersTotalRows =  resp.data.deleted_users.length;
+                    // this.deletedUsersTotalRows =  resp.data.deleted_users.length;
                     this.loading = false;
                 })
             },

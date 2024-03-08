@@ -4,8 +4,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Установить на телефон</h5>
-                    <a href="javascript:;" class="close-button" data-dismiss="modal">
-                        <a href="javascript:;" data-dismiss="modal">Закрыть</a>
+                    <a href="javascript:;" class="close-button"  data-bs-dismiss="modal">
+                        <a href="javascript:;"  data-bs-dismiss="modal">Закрыть</a>
                     </a>
                 </div>
                 <div class="modal-body">

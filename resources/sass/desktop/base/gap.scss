@@ -1,0 +1,28 @@
+@include set-property('gap', 'gap', $indents, true, !important);
+@include set-property('gap-row','row-gap', $indents, true, !important, true) using ($key, $value) {
+    column-gap: 0;
+};
+@include set-property('gap-column','column-gap', $indents, true,!important, true)  using ($key, $value){
+    row-gap: 0;
+};
+@include up_all() using ($key, $value) {
+    @include set-property('gap'+$key,'gap', $indents, true, !important);
+    @include set-property('gap'+$key+'-row','row-gap', $indents, true, !important, true) using ($key, $value) {
+        column-gap: 0;
+    };
+    @include set-property('gap'+$key+'-column','column-gap', $indents, true, !important, true) using ($key, $value) {
+        row-gap: 0;
+    };
+}
+@include down_all() using ($key, $value){
+    @include set-property('gap'+$key,'gap', $indents,  true, !important);
+    @include set-property('gap'+$key+'-row','row-gap', $indents, true, !important, true) using ($key, $value) {
+        column-gap: 0;
+    };
+    @include set-property('gap'+$key+'-column','column-gap', $indents, true, !important, true) using ($key, $value) {
+        row-gap: 0;
+    };
+}
+
+
+

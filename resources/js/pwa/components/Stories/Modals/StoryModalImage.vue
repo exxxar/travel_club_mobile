@@ -1,7 +1,7 @@
 <template>
     <div class="modal fade stories with-story-bar show" :id="'StoryDefault'+index"
 
-         data-backdrop="true" tabindex="-1"
+          data-bs-backdrop="true" tabindex="-1"
          aria-modal="true" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -17,7 +17,7 @@
                             <span class="text-muted">{{time}}</span>
                         </div>
                     </a>
-                    <a href="#" data-dismiss="modal" class="close-stories">
+                    <a href="#"  data-bs-dismiss="modal" class="close-stories">
                         <i class="far fa-times-circle"></i>
                     </a>
                 </div>

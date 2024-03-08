@@ -8,13 +8,13 @@
                 <div class="col-12 col-md-12 col-sm-12">
                     <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row" style="height:100px;width:100%;">
                         <div class="col-md-7 p-0">
-                            <div class="row mr-auto ml-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
+                            <div class="row mr-auto ms-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
                                 <h1 class="title-1">Подберите тур</h1>
                                 <img src="/images/blue-brush.svg" class="blue-brush" style="position: absolute;"/>
                             </div>
                         </div>
                         <div class="col-md-7 p-0">
-                            <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
+                            <div class="row ms-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
                                 <h1 class="title-2">с <span>TravelClub</span></h1>
                                 <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
                             </div>

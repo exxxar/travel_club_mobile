@@ -1,0 +1,92 @@
+.tc-collapse {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    & .tc-collapse__body + .tc-collapse__header {
+        & .tc-collapse__button .tc-button__icon {
+            -webkit-transition: -webkit-transform 0.1s ease-in-out;
+            -ms-transition: -ms-transform 0.1s ease-in-out;
+            transition: transform 0.1s ease-in-out;
+        }
+    }
+
+    & .tc-collapse__body.show + .tc-collapse__header {
+        & .tc-collapse__button .tc-button__icon {
+            transform: rotate(-180deg);
+            -webkit-transition: -webkit-transform 0.2s ease-in-out;
+            -ms-transition: -ms-transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+
+    & .tc-collapse__body.collapsing + .tc-collapse__header {
+        & .tc-collapse__button .tc-button__icon {
+            transform: rotate(-180deg);
+            -webkit-transition: -webkit-transform 0.2s ease-in-out;
+            -ms-transition: -ms-transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+
+    &__title {
+        color: var(--tc-secondary);
+        font-weight: 700;
+    }
+
+    &_check {
+        border-radius: 13px;
+        border: 2px solid var(--tc-primary-light);
+        padding: 7px;
+        & .tc-check__input {
+            width: 30px;
+            height: 30px;
+        }
+        //& .tc-collapse__header {
+        //    padding: 7px 0 7px 7px;
+        //}
+        & .tc-collapse__title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+        & .tc-collapse__button {
+            padding: 0 8px;
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .tc-collapse {
+        &__title {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        &_check {
+            gap: 6px;
+            & .tc-collapse {
+                &__title {
+                    font-size: 12px;
+                    font-weight: 600;
+                    word-break: break-word;
+                    &-wrapper {
+                        gap: 6px;
+                    }
+                }
+
+                &__subtitle {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

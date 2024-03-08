@@ -87,19 +87,20 @@ class TourController extends Controller
     }
     public function getCountries($town_id = '0')
     {
-        if( $town_id == 0 || $town_id == '0')
-        {
-//            $response = Http::get('https://module.sletat.ru/Main.svc/GetCountries');
-            $res = Country::all();
-        }
-        else {
-            $response = Http::get('https://module.sletat.ru/Main.svc/GetCountries?townFromId='.$town_id);
-            $res = $response->json()["GetCountriesResult"]["Data"];
-        }
+//        if( $town_id == 0 || $town_id == '0')
+//        {
+////            $response = Http::get('https://module.sletat.ru/Main.svc/GetCountries');
+//            $res = Country::all();
+//        }
+//        else {
+//            $response = Http::acceptJson()->get('https://module.sletat.ru/Main.svc/GetCountries?townFromId='.$town_id);
+            $response = file_get_contents('https://module.sletat.ru/Main.svc/GetCountries?townFromId='.$town_id);
+            $res = json_decode($response, true)["GetCountriesResult"]["Data"];
+//        }
 
 
         return response()->json([
-            "res" => $res
+            "res" => $res,
         ], 200);
     }
 

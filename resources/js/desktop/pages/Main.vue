@@ -1,48 +1,48 @@
 <template>
-  <div style="height: 100%; width: 100%; overflow: hidden;" class="ml-auto mr-auto">
+  <div style="height: 100%; width: 100%; overflow: hidden;" class="ms-auto mr-auto">
       <div class="container">
-          <div v-if="time=='evening'" class="row align-items-center justify-content-center mr-auto ml-auto desktop" style="width: 100%; height: 100px">
+          <div v-if="time=='evening'" class="row align-items-center justify-content-center mr-auto ms-auto desktop" style="width: 100%; height: 100px">
               <img src="images/sun1.png" class="mr-3" style="width: 100px; height: 100px; margin-left: auto;">
               <h4 style="color: white;margin-right: auto;font-weight: bold">Добрый вечер!</h4>
           </div>
-          <div v-if="time=='night'" class="row align-items-center justify-content-center mr-auto ml-auto desktop" style="width: 100%; height: 100px">
+          <div v-if="time=='night'" class="row align-items-center justify-content-center mr-auto ms-auto desktop" style="width: 100%; height: 100px">
               <img src="images/moon.png" class="mr-3" style="width: 70px; height: 70px; margin-left: auto;">
               <h4 style="color: white;margin-right: auto;font-weight: bold">Доброй ночи!</h4>
           </div>
-          <div v-if="time=='day'" class="row align-items-center justify-content-center mr-auto ml-auto desktop" style="width: 100%; height: 100px">
+          <div v-if="time=='day'" class="row align-items-center justify-content-center mr-auto ms-auto desktop" style="width: 100%; height: 100px">
               <img src="images/sun.png" class="mr-3" style="width: 100px; height: 100px; margin-left: auto;">
               <h4 style="color: white;margin-right: auto;font-weight: bold">Добрый день!</h4>
           </div>
-          <div v-if="time=='morning'" class="row align-items-center justify-content-center mr-auto ml-auto desktop" style="width: 100%; height: 100px">
+          <div v-if="time=='morning'" class="row align-items-center justify-content-center mr-auto ms-auto desktop" style="width: 100%; height: 100px">
               <img src="images/sun.png" class="mr-3" style="width: 100px; height: 100px; margin-left: auto;">
               <h4 style="color: white;margin-right: auto;font-weight: bold">Доброе утро!</h4>
           </div>
-        <div class="row mr-auto ml-auto desktop" style="width: 100%;">
-            <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ml-auto">
+        <div class="row mr-auto ms-auto desktop" style="width: 100%;">
+            <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ms-auto">
                 <router-link to="/step1">
-                    <div class="bg-panel ml-auto mr-auto day-theme"  style="height: 460px; max-width: 300px; position: relative;">
+                    <div class="bg-panel ms-auto mr-auto day-theme"  style="height: 460px; max-width: 300px; position: relative;">
                         <h1>Подобрать путешествие</h1>
                         <img src="images/1_1.png" style="position:absolute; bottom: 0;width: 100%;">
                     </div>
                 </router-link>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ml-auto">
+            <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ms-auto">
                 <a href="https://www.ozon.travel/">
-                    <div class="bg-panel ml-auto mr-auto day-theme"  style="height: 460px; max-width: 300px; position: relative;">
+                    <div class="bg-panel ms-auto mr-auto day-theme"  style="height: 460px; max-width: 300px; position: relative;">
                         <h1>Подобрать авиабилеты</h1>
                         <img src="images/2_2.png" style="position:absolute; bottom: 0;width: 100%;">
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ml-auto">
-                <div class="bg-panel ml-auto mr-auto day-theme"  style="height: 460px; max-width: 300px; position: relative;">
+            <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ms-auto">
+                <div class="bg-panel ms-auto mr-auto day-theme"  style="height: 460px; max-width: 300px; position: relative;">
                     <h1>Подобрать отель</h1>
                     <img src="images/3.png" style="position:absolute; bottom: 0;width: 100%;">
                 </div>
             </div>
 
-<!--        <div class="col-10 ml-auto mr-auto">-->
-<!--          <div class="row mr-auto ml-auto">-->
+<!--        <div class="col-10 ms-auto mr-auto">-->
+<!--          <div class="row mr-auto ms-auto">-->
 <!--            <div class="col-md-4">-->
 <!--                <div class="bg-panel" style="background:orange; height: 500px; width: 100%;">-->
 <!--&lt;!&ndash;<div style="bottom: 0; height:100%; background: url('images/1_1.png')"></div>&ndash;&gt;-->
@@ -64,12 +64,12 @@
 <!--          </div>-->
 <!--        </div>-->
       </div>
-          <div class="row mr-auto ml-auto mobile" style="width: 100%;">
-              <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ml-auto">
-          <hooper class="mr-auto ml-auto" style="height: 100%; max-width: 300px; width: 100%; box-shadow: 0px 3px 15px #0000006b; -moz-box-shadow: 0px 3px 15px #0000006b; -webkit-box-shadow: 0px 3px 15px #0000006b;">
+          <div class="row mr-auto ms-auto mobile" style="width: 100%;">
+              <div class="col-md-6 col-lg-4 col-sm-10 mt-3 mr-auto ms-auto">
+          <hooper class="mr-auto ms-auto" style="height: 100%; max-width: 300px; width: 100%; box-shadow: 0px 3px 15px #0000006b; -moz-box-shadow: 0px 3px 15px #0000006b; -webkit-box-shadow: 0px 3px 15px #0000006b;">
               <slide>
                   <router-link to="/step1">
-                      <div class="bg-panel ml-auto mr-auto day-theme" style="height: 460px; max-width: 300px; position: relative;">
+                      <div class="bg-panel ms-auto mr-auto day-theme" style="height: 460px; max-width: 300px; position: relative;">
                           <h1>Подобрать путешествие</h1>
                           <img src="images/1_1.png" style="position:absolute; bottom: 0;width: 100%;">
                       </div>
@@ -77,14 +77,14 @@
               </slide>
               <slide>
                   <a href="https://www.ozon.travel/">
-                      <div class="bg-panel ml-auto mr-auto day-theme" style="height: 460px; max-width: 300px; position: relative;">
+                      <div class="bg-panel ms-auto mr-auto day-theme" style="height: 460px; max-width: 300px; position: relative;">
                           <h1>Подобрать авиабилеты</h1>
                           <img src="images/2_2.png" style="position:absolute; bottom: 0;width: 100%;">
                       </div>
                   </a>
               </slide>
               <slide>
-                  <div class="bg-panel ml-auto mr-auto day-theme" style="height: 460px; max-width: 300px; position: relative;">
+                  <div class="bg-panel ms-auto mr-auto day-theme" style="height: 460px; max-width: 300px; position: relative;">
                       <h1>Подобрать отель</h1>
                       <img src="images/3.png" style="position:absolute; bottom: 0;width: 100%;">
                   </div>

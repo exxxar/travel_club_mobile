@@ -3,10 +3,10 @@
         <side-bar :backgroundColor="'travel'">
             <template slot="links">
                 <sidebar-link to="/admin/" :name="'Главная панель'" icon="icon icon-home"/>
-                <sidebar-link to="/admin/branches" :name="'Филиалы'" icon="icon icon-building"/>
+<!--                <sidebar-link to="/admin/branches" :name="'Филиалы'" icon="icon icon-building"/>-->
                 <sidebar-link to="/admin/users" :name="'Пользователи'" icon="icon icon-people"/>
                 <sidebar-link to="/admin/orders" :name="'Заказы'" :icon="'icon icon-list-alt'"/>
-                <!--                <sidebar-link to="/admin/profile" :name="'Мой профиль'" icon="icon icon-person"/>-->
+                <sidebar-link to="/admin/profile" :name="'Мой профиль'" icon="icon icon-person"/>
                 <sidebar-link to="/admin/messages" :name="'Сообщения'" :icon="'icon icon-message'"/>
                 <sidebar-link to="/admin/todos" :name="'Задачи'" :icon="'icon-check-square-o'"/>
                 <sidebar-link to="/admin/chats" :name="'Чаты'" :icon="'icon icon-chat'"/>

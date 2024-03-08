@@ -11,22 +11,27 @@
                 <i class="fas fa-route"></i>
             </div>
         </a>
-<!--        <a href="#sidebar" class="item" data-target="#sidebarPanel" data-toggle="modal"  aria-label="боковая панель">-->
-<!--            <div class="col">-->
-<!--                <i class="fas fa-bars"></i>-->
-<!--                &lt;!&ndash;<span class="badge badge-danger">5</span>&ndash;&gt;-->
-<!--            </div>-->
-<!--        </a>-->
-        <a href="/m/adventure" class="item" aria-label="Перелеты">
+        <a href="/m/hot-tours" class="item" aria-label="Горячие туры">
+            <div class="col">
+                <i class="fas fa-plane-departure"></i>
+            </div>
+        </a>
+        <a href="/m/adventure" class="item" aria-label="Туры по России">
             <div class="col">
                 <i class="fab fa-fly"></i>
             </div>
         </a>
-        <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel"  aria-label="Боковая панель">
+        <div class="item" data-bs-target="#sidebarPanel" data-bs-toggle="modal"  aria-label="боковая панель">
             <div class="col">
                 <i class="fas fa-bars"></i>
+                <!--<span class="badge badge-danger">5</span>-->
             </div>
-        </a>
+        </div>
+<!--        <a href="javascript:;" class="item"  data-bs-toggle="modal" data-bs-target="#sidebarPanel"  aria-label="Боковая панель">-->
+<!--            <div class="col">-->
+<!--                <i class="fas fa-bars"></i>-->
+<!--            </div>-->
+<!--        </a>-->
     </div>
     <!-- * App Bottom Menu -->
 </template>

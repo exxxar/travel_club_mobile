@@ -255,7 +255,8 @@
                 this.$store.dispatch('deleteModuleOrder', row.id)
                     .then(response => {
                         row.isLoading = false;
-                        this.sendMessage('Заказ успешно удалён');
+                        this.$store.dispatch('sendNotification',
+                            {message: 'Заказ успешно удалён'});
                     });
             },
             editOrder(row) {

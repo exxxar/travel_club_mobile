@@ -186,7 +186,7 @@
                 </button>
                 <input type="number" class="form-control" name="qty" v-model="adults" step="1" min="1"
                        @change="changeAdults">
-                <button type="button" class="btn btn-orange ml-1"
+                <button type="button" class="btn btn-orange ms-1"
                         @click="incrementAdults()">+
                 </button>
             </div>
@@ -200,7 +200,7 @@
                 </button>
                 <input type="number" class="form-control" name="qty" v-model="children_under_12" step="1" min="0"
                        @change="changeChildrenUnder12">
-                <button type="button" class="btn btn-orange ml-1"
+                <button type="button" class="btn btn-orange ms-1"
                         @click="incrementChildrenUnder12()">+
                 </button>
             </div>
@@ -214,7 +214,7 @@
                 </button>
                 <input type="number" class="form-control" name="qty" v-model="children_under_2" step="1" min="0"
                        @change="changeChildrenUnder2">
-                <button type="button" class="btn btn-orange ml-1"
+                <button type="button" class="btn btn-orange ms-1"
                         @click="incrementChildrenUnder2()">+
                 </button>
             </div>

@@ -4,7 +4,7 @@
             <div class="col-8">
                 <ValidationObserver v-slot="{ invalid }">
                     <div class="row w-100 m-auto">
-                        <div class="col-md-6 pr-md-1">
+                        <div class="col-md-6 pe-md-1">
                             <ValidationProvider name="name" rules="required" v-slot="{ errors }" style="width: 100%;">
                                 <b-form-group class="mb-0" label="Имя" label-size="sm">
                                     <b-form-input type="text" class="travel-input" v-model="editItem.name" placeholder="Имя" required>
@@ -13,7 +13,7 @@
                                 <span class="validate-error">{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
-                        <div class="col-md-6 pl-md-1">
+                        <div class="col-md-6 ps-md-1">
                             <ValidationProvider name="phone" rules="required|phone" v-slot="{ errors }" style="width:100%;">
                                 <b-form-group class="mb-0" label="Телефон" label-size="sm">
                                     <b-form-input type="text" class=" travel-input"
@@ -62,13 +62,13 @@
                                     @input="chooseEditResortCountry"
                                 >
                                     <template slot="singleLabel" slot-scope="props">
-                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                        <b :class="'tc-flag-'+props.option.Id"></b>
                                         <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>
                                     </template>
                                     <template slot="option" slot-scope="props">
-                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                        <b :class="'tc-flag-'+props.option.Id"></b>
                                         <span class="option__desc">
                                 <span class="option__title">{{ props.option.Name }}</span>
                             </span>

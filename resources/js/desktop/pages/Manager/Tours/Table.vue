@@ -7,16 +7,16 @@
                     label-cols-sm="3"
                     label-align-sm="right"
                     label-size="sm"
-                    label-for="sortBySelect1"
+                    label-for="order_bySelect1"
                     class="mb-0"
                 >
                     <b-input-group size="sm">
-                        <b-form-select v-model="sortBy" id="sortBySelect1" :options="sortOptions" class="w-75">
+                        <b-form-select v-model="order_by" id="order_bySelect1" :options="sortOptions" class="w-75">
                             <template v-slot:first>
                                 <option value="">-- none --</option>
                             </template>
                         </b-form-select>
-                        <b-form-select v-model="sortDesc" size="sm" :disabled="!sortBy" class="w-25">
+                        <b-form-select v-model="sortDesc" size="sm" :disabled="!order_by" class="w-25">
                             <option :value="false">Asc</option>
                             <option :value="true">Desc</option>
                         </b-form-select>
@@ -89,9 +89,9 @@
             :per-page="perPage"
             :filter="filter"
             :filterIncludedFields="filterOn"
-            :sort-by.sync="sortBy"
+            :sort-by.sync="order_by"
             :sort-desc.sync="sortDesc"
-            :sort-direction="sortDirection"
+            :sort-direction="order_direction"
             @filtered="onFiltered"
             :busy="loading"
             empty-text="Нет записей для отображения"
@@ -137,13 +137,13 @@
 <!--                        @input="save($event,data.item.id,'country')"-->
 <!--                    >-->
 <!--                        <template slot="singleLabel" slot-scope="props">-->
-<!--                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                            <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                            <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
 <!--                        </template>-->
 <!--                        <template slot="option" slot-scope="props">-->
-<!--                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                            <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                            <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
@@ -226,13 +226,13 @@
 <!--                        @input="save($event,data.item.id,'country')"-->
 <!--                    >-->
 <!--                        <template slot="singleLabel" slot-scope="props">-->
-<!--                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                            <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                            <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
 <!--                        </template>-->
 <!--                        <template slot="option" slot-scope="props">-->
-<!--                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                            <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                            <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
@@ -337,13 +337,13 @@
 <!--                                    @input="save($event,row.item.id,'country')"-->
 <!--                                >-->
 <!--                                    <template slot="singleLabel" slot-scope="props">-->
-<!--                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                        <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                        <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
 <!--                                    </template>-->
 <!--                                    <template slot="option" slot-scope="props">-->
-<!--                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                        <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                        <span class="option__desc">-->
 <!--                                <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                            </span>-->
@@ -639,27 +639,27 @@
         },
         data() {
             return {
-                sortBy: 'id',
+                order_by: 'id',
                 sortDesc: false,
                 // totalRows: 1,
                 currentPage: 1,
                 perPage: 5,
-                sortDirection: 'asc',
+                order_direction: 'asc',
                 filter: null,
                 filterOn: [],
 
                 pageOptions: [5, 10, 15, 25, 50, 100],
 
                 fields: [
-                    {key: 'id', label: 'ID', sortable: true, sortDirection: 'desc'},
-                    {key: 'created_at', label: 'Дата создания', sortable: true, sortDirection: 'desc'},
-                    // {key: 'TourInfo.date_range', label: 'Даты тура', sortable: true, sortDirection: 'desc'},
-                    {key: 'TourInfo.date_range.start', label: 'С', sortable: true, sortDirection: 'desc'},
-                    {key: 'TourInfo.date_range.end', label: 'По', sortable: true, sortDirection: 'desc'},
-                    {key: 'TourInfo.country.Name', label: 'Страна', sortable: true, sortDirection: 'desc'},
-                    {key: 'TourInfo.resort.Name', label: 'Курорт', sortable: true, sortDirection: 'desc'},
-                    {key: 'TourInfo.price', label: 'Цена', sortable: true, sortDirection: 'desc'},
-                    {key: 'TourInfo.paid', label: 'Выплачено', sortable: true, sortDirection: 'desc'},
+                    {key: 'id', label: 'ID', sortable: true, order_direction: 'desc'},
+                    {key: 'created_at', label: 'Дата создания', sortable: true, order_direction: 'desc'},
+                    // {key: 'TourInfo.date_range', label: 'Даты тура', sortable: true, order_direction: 'desc'},
+                    {key: 'TourInfo.date_range.start', label: 'С', sortable: true, order_direction: 'desc'},
+                    {key: 'TourInfo.date_range.end', label: 'По', sortable: true, order_direction: 'desc'},
+                    {key: 'TourInfo.country.Name', label: 'Страна', sortable: true, order_direction: 'desc'},
+                    {key: 'TourInfo.resort.Name', label: 'Курорт', sortable: true, order_direction: 'desc'},
+                    {key: 'TourInfo.price', label: 'Цена', sortable: true, order_direction: 'desc'},
+                    {key: 'TourInfo.paid', label: 'Выплачено', sortable: true, order_direction: 'desc'},
                     {key: 'action1', label: 'Показать'},
                     {key: 'action2', label: 'Действия'}
                 ],

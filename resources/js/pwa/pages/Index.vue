@@ -13,8 +13,8 @@
             </div>
 
             <div>
-                <button type="button" class="btn btn-orange rounded mr-1" data-toggle="modal" aria-label="О Travel Club"
-                        data-target="#AboutModal">О нас
+                <button type="button" class="btn btn-orange rounded mr-1"  data-bs-toggle="modal" aria-label="О Travel Club"
+                        data-bs-target="#AboutModal">О нас
                 </button>
             </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="item">
                     <div class="card card-with-red-line pulse" text="Скоро">
-                        <a href="https://travel-club.tours/m/flies" class="travel-card"
+                        <a href="https://travel-club.tours/m/hot-tours" class="travel-card"
                            aria-label="Горячие туры">
                             <img v-lazy="'/img/travel/2.png'" class="card-img-top" alt="image">
                         </a>
@@ -120,7 +120,7 @@
 
                         Вам также будут доступны реальные отзывы на каждый объект размещения.
                     </p>
-                    <a href="https://travel-club.tours/m/tour-search" class="btn btn-orange w-100"
+                    <a href="https://travel-club.tours/m/tours" class="btn btn-orange w-100"
                        aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
@@ -140,7 +140,7 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="https://travel-club.tours/m/avia-search" class="btn btn-orange w-100"
+                    <a href="https://travel-club.tours/m/hot-tours" class="btn btn-orange w-100"
                        aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
@@ -160,7 +160,7 @@
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>
-                    <a href="https://travel-club.tours/m/tour-search" class="btn btn-orange w-100"
+                    <a href="https://travel-club.tours/m/russia-tours" class="btn btn-orange w-100"
                        aria-label="Начать прямо сейчас">
                         <i class="fas fa-arrow-right mr-2"></i>
                         НАЧАТЬ ПРЯМО СЕЙЧАС
@@ -205,7 +205,7 @@
             </div>
 
 
-            <button type="button" class="btn btn-orange rounded mt-5" data-toggle="modal" data-target="#ContactModal"
+            <button type="button" class="btn btn-orange rounded mt-5"  data-bs-toggle="modal" data-bs-target="#ContactModal"
                     aria-label="Модальное окно контактов">
                 Наши контакты
             </button>
@@ -235,7 +235,8 @@
                 eventBus.$emit("left-swipe");
             },
             swipeHandlerBottomTop() {
-                $(".stories").modal("hide");
+                this.$store.dispatch('closeModal', '.stories');
+                // $(".stories").modal("hide");
                 /*
                               this.$notify({
                                   title: 'Максим',

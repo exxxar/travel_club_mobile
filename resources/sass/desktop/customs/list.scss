@@ -1,0 +1,19 @@
+#{'.'+$namespace} {
+    &-list {
+        &__item {
+            padding: 8px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            border-bottom: 1px solid var(--#{$namespace}-secondary-lighter);
+
+            & .handle {
+                cursor:move;
+            }
+            & .ghost {
+                opacity: 0.5;
+                background: #c8ebfb;
+            }
+        }
+    }
+}

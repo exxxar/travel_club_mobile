@@ -1,10 +1,9 @@
 <template>
-    <div style="width: 100%; height: 100vh; background: #f08b23">
-        <notifications :position="'top left'" :group="'info'" classes="my-style"></notifications>
-        <div class="row m-auto justify-content-center align-items-center" style="width: 100%; min-height: 100%; background: #f08b23">
-            <div class="row m-auto justify-content-center align-items-center" style="width: 100%;height: 100%;background: #f08b23">
+    <div style="width: 100%; background: #f08b23">
+<!--        <div class="row m-auto justify-content-center align-items-center" style="width: 100%; min-height: 100%; background: #f08b23">-->
+<!--            <div class="row m-auto justify-content-center align-items-center" style="width: 100%;height: 100%;background: #f08b23">-->
                 <div class="container">
-                    <div class="row m-auto justify-content-center align-items-center w-100">
+                    <div class="tc-row m-auto h-100 justify-content-center align-items-center">
                         <div class="col-sm-12 col-md-4 col-lg-6 p-0 mx-auto">
     <!--                        <img src="/images/5.png" v-if="step1"/>-->
                             <div class="row m-auto justify-content-center align-items-center w-100 h-100">
@@ -14,30 +13,14 @@
                            <!--                        <img src="/images/5.png" v-if="step2"/>-->
                         </div>
                         <div class="col-sm-12 col-md-8 col-lg-6 p-0 mx-auto">
-                            <div class="card card-signin my-5" style="max-height: none">
-                                <div class="card-body">
-                                    <div class="row m-auto justify-content-center align-items-center" v-show="step1" style="width: 100%; height: 100%;">
-                                        <div class="col-12 col-md-12 col-sm-12 p-0">
-                                            <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row" style="height:100px;width:100%;">
-                                                <div class="col-md-10 p-0">
-                                                    <div class="row mr-auto ml-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
-                                                        <h1 class="title-1"><span>П</span>рисоединись</h1>
-                                                        <img src="/images/blue-brush.svg" class="blue-brush" style="position: absolute;"/>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-7 p-0">
-                                                    <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:280px;">
-                                                        <h1 class="title-2">к <span>TravelClub Family</span></h1>
-                                                        <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="tc-card card-signin my-5" style="max-height: none">
+
+                                    <h4 class="tc-card__title text-center mb-3" v-show="step1">Присоединись к Travel<span class="tc-text-primary">Club</span></h4>
+
                                     <div class="row mx-auto mb-3 justify-content-center align-items-center" v-show="step2" style="width: 100%; height: 100%;">
                                         <div class="col-6 col-md-6 col-sm-6 p-0">
-                                            <div class="action-button" @click="prevStep">
-                                                <div class="icon icon-keyboard_arrow_left"></div>
+                                            <div class="action-button tc-cursor-pointer" @click="prevStep">
+                                                <base-icon name="ArrowRight" class="tc-rotate-180"/>
                                             </div>
                                         </div>
                                         <div class="col-6 col-md-6 col-sm-6 p-0">
@@ -45,258 +28,134 @@
                                         </div>
                                     </div>
                                     <div class="form-signin" v-show="step1">
-                                        <ValidationObserver v-slot="{ invalid }">
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">Email</h4>
-                                                <ValidationProvider name="email" rules="required|email" v-slot="{ errors }" style="width: 100%;text-align: center; margin-bottom: 17px">
-                                                    <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;height: 100%;">
-                                                        <input type="text" class="multiselect__input travel-text-control form-control" v-model="email" placeholder="Email">
-                                                    </div>
-                                                    <span class="validate-error">{{ errors[0] }}</span>
-                                                </ValidationProvider>
-                                            </div>
+                                        <ValidationObserver v-slot="{ invalid }" tag="div" class="tc-wrapper-column">
+                                            <base-input v-model="email" name="email" label="Email" rules="required|email"></base-input>
+                                            <base-input v-model="password" :type="passwords_types.password" name="password"
+                                                        label="Пароль" rules="required|min:8"
+                                                        v-on:keyup.enter="nextStep(invalid)"
+                                                        @click-group-item="switchVisibility('password')"
+                                                        group_item_action
+                                            >
+                                                <template #icon>
+                                                    <base-icon :name="passwords_types.password === 'password' ? 'Eye':'EyeSlash'"
+                                                               color="secondary"/>
+                                                </template>
+                                            </base-input>
+                                            <base-input v-model="confirm_password" :type="passwords_types.confirm" name="confirm_password"
+                                                        label="Подтверждение пароля" @click-group-item="switchVisibility('confirm')"
+                                                        :rules="'required|min:8|confirmed:password'"
+                                                        group_item_action
+                                                        v-on:keyup.enter="nextStep(invalid)"
+                                            >
+                                                <template #icon>
+                                                    <base-icon :name="passwords_types.confirm === 'password' ? 'Eye':'EyeSlash'"
+                                                               color="secondary"
+                                                    />
+                                                </template>
+                                            </base-input>
 
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">Пароль</h4>
-                                                <ValidationProvider name="password" rules="required|min:6|password:@confirm_password" v-slot="{ errors }" style="width:100%; text-align: center;">
-                                                    <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                        <input :type="passwordFieldType" class="multiselect__input travel-text-control form-control"
-                                                               v-model="password"
-                                                               placeholder="Пароль"
-                                                               v-on:keyup.enter="nextStep"
-                                                        >
-                                                        <button v-if="passwordFieldType === 'password'" type="password" class="btn-visibility icon icon-eye"  @click="switchVisibility"></button>
-                                                        <button v-else type="password" class="btn-visibility icon icon-eye-slash" @click="switchVisibility"></button>
-                                                    </div>
-                                                    <span class="validate-error">{{ errors[0] }}</span>
-                                                </ValidationProvider>
-                                            </div>
-
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">Подтверждение пароля</h4>
-                                                <ValidationProvider name="confirm_password" rules="required|password:@password" v-slot="{ errors }" style="width:100%; text-align: center;">
-                                                    <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                        <input :type="passwordFieldType1" class="multiselect__input travel-text-control form-control"
-                                                               v-model="confirm_password"
-                                                               placeholder="Пароль"
-                                                               v-on:keyup.enter="nextStep"
-                                                        >
-                                                        <button v-if="passwordFieldType1 === 'password'" type="password" class="btn-visibility icon icon-eye"  @click="switchVisibility1"></button>
-                                                        <button v-else type="password" class="btn-visibility icon icon-eye-slash" @click="switchVisibility1"></button>
-                                                    </div>
-                                                    <span class="validate-error">{{ errors[0] }}</span>
-                                                </ValidationProvider>
-                                            </div>
-                                            <button class="btn btn-lg btn-travel btn-block text-uppercase mt-3 mx-auto mb-2" :disabled="invalid" @click="nextStep">Далее</button>
+                                            <base-button class="text-uppercase mt-3 mx-auto mb-2" :disabled="invalid" @click="nextStep(invalid)">Далее</base-button>
                                             <p class="text-center m-auto">Уже есть аккаунт? <router-link to="/login" style="color: #f8a105">Войти</router-link> </p>
                                         </ValidationObserver>
                                     </div>
                                     <div class="form-signin" v-show="step2">
-                                        <ValidationObserver v-slot="{ invalid }">
+                                        <ValidationObserver v-slot="{ invalid }" tag="div" class="tc-wrapper-column">
+                                            <base-input v-model="last_name" name="last_name" label="Фамилия" rules="required"></base-input>
+                                            <base-input v-model="first_name" name="first_name" label="Имя" rules="required"></base-input>
+                                            <base-input v-model="middle_name" name="middle_name" label="Отчество" rules="required"></base-input>
+                                            <base-input v-model="phone" name="phone" label="Номер телефона" rules="required|phone"  :mask="['+# ### ### ####','+## ### ### ####', '+## ### #### ####',]"></base-input>
 
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">* Фамилия</h4>
-                                                    <ValidationProvider name="lastName" rules="required" v-slot="{ errors }" style="width: 100%;text-align: center; margin-bottom: 17px">
-                                                        <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                            <input
-                                                                v-model="LastName"
-                                                                placeholder="Фамилия"
-                                                                class="multiselect__input travel-text-control form-control"
-                                                            >
-                                                        </div>
-                                                        <span class="validate-error">{{ errors[0] }}</span>
-                                                    </ValidationProvider>
-                                            </div>
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">* Имя</h4>
-                                                    <ValidationProvider name="firstName" rules="required" v-slot="{ errors }" style="width: 100%;text-align: center; margin-bottom: 17px">
-                                                        <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                            <input
-                                                                v-model="FirstName"
-                                                                placeholder="Имя"
-                                                                class="multiselect__input travel-text-control form-control"
-                                                            >
-                                                        </div>
-                                                        <span class="validate-error">{{ errors[0] }}</span>
-                                                    </ValidationProvider>
-                                                </div>
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">Отчество</h4>
-                                                <span style="width: 100%; text-align: center; margin-bottom: 17px;">
-                                                    <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                        <input
-                                                            v-model="MiddleName"
-                                                            placeholder="Отчество"
-                                                            class="multiselect__input travel-text-control form-control"
-                                                        >
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">* Номер телефона</h4>
-                                                <ValidationProvider name="phone" rules="required|phone" v-slot="{ errors }" style="width: 100%;text-align: center; margin-bottom: 17px">
-                                                    <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                        <input type="text" class="multiselect__input travel-text-control form-control"
-                                                               v-model="Phone"
-                                                               v-mask="['+# (###) ###-##-##','+## (###) ###-##-##']"
-                                                               placeholder="Номер телефона"
-                                                               required
-                                                        >
-                                                    </div>
-                                                    <span class="validate-error">{{ errors[0] }}</span>
-                                                </ValidationProvider>
-                                            </div>
-
-                                            <button class="btn btn-lg btn-travel btn-block text-uppercase text-center mt-3 mx-auto mb-2" :disabled="invalid" @click="signup">
-                                                <div class="row align-items-center justify-content-center m-auto w-100 h-100">
-                                                    <span v-if="loading" role="status" aria-hidden="true" class="spinner-border spinner-border-sm mx-2"></span>
-                                                    <span v-if="loading" class="sr-only">Loading...</span>
+                                            <base-button class="text-uppercase text-center mt-3 mx-auto mb-2" :disabled="invalid||loading" :loading="loading" @click="signup">
                                                     Зарегистрироваться
-                                                </div>
-                                            </button>
+                                            </base-button>
                                             <p class="text-center m-auto">Уже есть аккаунт? <router-link to="/login" style="color: #f8a105">Войти</router-link> </p>
                                         </ValidationObserver>
                                     </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </template>
 
 <script>
-    import {mask} from 'vue-the-mask'
     export default {
         name: "SignUp",
         data: () => ({
-            // login:'',
             email:'',
             password:'',
             confirm_password:'',
-            wrongCredentials:'',
-            passwordFieldType: 'password',
-            passwordFieldType1: 'password',
             step1:true,
             step2: false,
-            FullName:'',
-            FirstName:'',
-            MiddleName:'',
-            LastName:'',
-            Phone:'',
-            loading: false
+            first_name:'',
+            middle_name:'',
+            last_name:'',
+            phone:'',
+            loading: false,
+            passwords_types: {
+                password: 'password',
+                confirm: 'password',
+            },
+            manager: false
         }),
         computed: {
             isLoggedIn: function () {
                 return this.$store.getters.isLoggedIn
             },
-            isAdmin: function () {
-                return this.$store.getters.isAdmin
-            },
-            isManager: function () {
-                return this.$store.getters.isManager
+        },
+        watch: {
+            '$route.query.role': function(newVal, oldVal) {
+                if(newVal==='manager') {
+                    this.manager = true;
+                }
             },
         },
         mounted() {
             if(this.isLoggedIn)
             {
-                if (this.isAdmin == true) {
-                    this.$router.push('/admin')
-                }
-                else if(this.isManager == true) {
-                    this.$router.push('/manager')
-                }
-                else {
-                    this.$router.push('/client')
-                }
+                this.$router.push('/dashboard')
             }
         },
         methods: {
-            switchVisibility() {
-                this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+            switchVisibility(type) {
+                this.passwords_types[type] = this.passwords_types[type] === "password" ? "text" : "password";
             },
-            switchVisibility1() {
-                this.passwordFieldType1 = this.passwordFieldType1 === 'password' ? 'text' : 'password'
-            },
-            nextStep() {
-              this.step1=false;
-              this.step2=true;
-            },
-            prevStep() {
-                this.step1=true;
-                this.step2=false;
-            },
-            async signup() {
-                this.wrongCredentials = '';
-
-                if(this.email !=''){
-                    this.FullName= this.LastName+' '+ this.FirstName+' '+this.MiddleName;
-                    var promo = localStorage.getItem('promo');
-                    if(promo === 'true')
-                    {
-                        promo=1;
-                    }
-                    else {
-                        promo=0;
-                    }
-                    let data = {
-                        // login: this.login,
-                        email: this.email,
-                        password: this.password,
-                        FullName:this.FullName,
-                        FirstName:this.FirstName,
-                        MiddleName:this.MiddleName,
-                        LastName:this.LastName,
-                        Phone:this.Phone,
-                        Promocode: localStorage.getItem('promo')
-                    }
-                    this.loading = true;
-                    await this.$store.dispatch('register', data)
-                        .then(() => {
-                            this.loading = false;
-                            localStorage.setItem('promo', false);
-                            // this.$store.dispatch('getUser')
-                            if (this.isAdmin == true) {
-                                this.$router.push('/admin')
-                            }
-                            else if(this.isManager == true) {
-                                this.$router.push('/manager')
-                            }
-                            else {
-                                this.$router.push('/client')
-                            }
-                            // this.$store.commit('setMenu', false)
-                        })
-                        .catch(err => {
-                            this.loading = false;
-                            if (err.response != undefined) {
-                                if (err.response.data.error)
-                                {
-                                    this.wrongCredentials = 'Неверные учетные данные'
-                                    this.sendMessage(this.wrongCredentials);
-
-                                }
-                            }
-                            else {
-                                this.wrongCredentials = 'Произошла ошибка, попробуйте снова'
-                                this.sendMessage(this.wrongCredentials);
-                            }
-
-                        })
+            nextStep(invalid) {
+                if(!this.loading && !invalid) {
+                    this.step1 = false;
+                    this.step2 = true;
                 }
             },
-            sendMessage(message) {
-                this.$notify({
-                    group: 'info',
-                    type: 'error',
-                    title: 'Сообщение от TravelClub',
-                    text: message
-                });
+            prevStep() {
+                if(!this.loading) {
+                    this.step1=true;
+                    this.step2=false;
+                }
+            },
+            async signup() {
+                let data = {
+                    email: this.email,
+                    password: this.password,
+                    first_name: this.first_name,
+                    middle_name: this.middle_name,
+                    last_name: this.last_name,
+                    phone: this.phone,
+                    manager: this.manager,
+                }
+                this.loading = true;
+                await this.$store.dispatch('register', data)
+                    .then(() => {
+                        this.loading = false;
+                    })
+                    .catch(err => {
+                        this.loading = false;
+                    })
+
             },
         },
-        directives: {mask}
     }
 </script>
 

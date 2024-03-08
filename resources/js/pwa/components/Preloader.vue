@@ -3153,11 +3153,13 @@
                 is_hidden: false,
             }
         },
-        mounted() {
+        created() {
             let timeout = setTimeout(() => {
                 this.is_hidden = true;
                 clearTimeout(timeout);
             }, this.time)
+        },
+        mounted() {
         },
         name: "Preloader"
     }

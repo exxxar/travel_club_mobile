@@ -83,7 +83,7 @@
                             <span class="validate-error">{{ errors[0] }}</span>
                         </ValidationProvider>
                     </div>
-                    <div class="col-md-12 pr-md-1">
+                    <div class="col-md-12 pe-md-1">
                         <ValidationProvider name="City" rules="required" v-slot="{ errors }" style="width:100%;">
                             <b-form-group label="Город" label-size="sm" class="mb-0">
                                 <multiselect

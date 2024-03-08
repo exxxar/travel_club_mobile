@@ -47,7 +47,7 @@
             </div>
 
 
-            <button type="button" class="btn btn-orange rounded mt-5" data-toggle="modal" data-target="#ContactModal"
+            <button type="button" class="btn btn-orange rounded mt-5"  data-bs-toggle="modal" data-bs-target="#ContactModal"
                     aria-label="Модальное окно контактов">
                 Наши контакты
             </button>

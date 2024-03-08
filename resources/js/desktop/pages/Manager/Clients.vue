@@ -6,7 +6,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="newUserTourModalBoxLabel">Создать клиента</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close"  data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -66,7 +66,7 @@
                                             <span class="validate-error">{{ errors[0] }}</span>
                                         </ValidationProvider>
                                     </div>
-                                    <div class="col-md-12 pr-md-1">
+                                    <div class="col-md-12 pe-md-1">
                                         <ValidationProvider name="City" rules="required" v-slot="{ errors }" style="width:100%;">
                                             <div class="form-group mb-0">
                                                 <label class="control-label">Город</label>
@@ -173,7 +173,6 @@
                                     <button type="submit" class="btn btn btn-travel" style="width: 100%" :disabled="invalid||loading" @click="saveClient">
                                         <div class="row align-items-center justify-content-center m-auto w-100 h-100 text-center">
                                             <span v-if="loading" class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
-                                            <span v-if="loading" class="sr-only">Loading...</span>
                                             Сохранить
                                         </div>
                                     </button>
@@ -186,7 +185,7 @@
 <!--            <modal :id="'newClientModalBox'" :title="'Создать клиента'">-->
 <!--                <template slot="body">-->
 <!--                    <div class="row">-->
-<!--                        <div class="col-md-4 pr-md-1">-->
+<!--                        <div class="col-md-4 pe-md-1">-->
 <!--                            <ValidationProvider name="lastName" rules="required" v-slot="{ errors }" style="width:100%;">-->
 <!--                                <base-input label="Фамилия"-->
 <!--                                            v-model="newClient.LastName"-->
@@ -208,7 +207,7 @@
 <!--                                <span class="validate-error">{{ errors[0] }}</span>-->
 <!--                            </ValidationProvider>-->
 <!--                        </div>-->
-<!--                        <div class="col-md-4 pl-md-1">-->
+<!--                        <div class="col-md-4 ps-md-1">-->
 <!--                            <base-input label="Отчество"-->
 <!--                                        v-model="newClient.MiddleName"-->
 <!--                                        placeholder="Отчество"-->
@@ -218,7 +217,7 @@
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                    <div class="row">-->
-<!--                        <div class="col-md-6 pl-md-1">-->
+<!--                        <div class="col-md-6 ps-md-1">-->
 <!--                            <ValidationProvider name="phone" rules="required|phone" v-slot="{ errors }" style="width:100%;">-->
 <!--                                <base-input label="Телефон"-->
 <!--                                            placeholder="Телефон"-->
@@ -377,7 +376,7 @@
         methods:
             {
                 addClient: function(){
-                    $('#newClientModalBox').modal('show')
+                    this.$store.dispatch('openModal', '#newClientModalBox')
                 },
                 saveClient: function(){
                     this.loading = true;
@@ -388,7 +387,7 @@
                         .then(response => {
                             this.loading = false;
                             this.sendMessage('Клиент успешно сохранён')
-                            $('#newClientModalBox').modal('hide')
+                            this.$store.dispatch('closeModal', '#newClientModalBox');
                     });
 
                 },

@@ -2,7 +2,7 @@
     <!-- chat footer -->
     <div class="chatFooter">
         <form>
-            <a href="javascript:;" class="btn btn-icon btn-secondary rounded" data-toggle="modal" data-target="#addActionSheet">
+            <a href="javascript:;" class="btn btn-icon btn-secondary rounded" data-bs-toggle="modal" data-bs-target="#addActionSheet">
                 <ion-icon name="add"></ion-icon>
             </a>
             <div class="form-group boxed">

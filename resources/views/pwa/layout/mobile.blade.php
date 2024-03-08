@@ -59,7 +59,7 @@
     @laravelPWA
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ env("APP_DEBUG")?asset('/css/pwa/app.css'):asset('/css/pwa/app.min.css') }}?ver={{env("APP_VERSION")}}">
+    <link rel="stylesheet" href="{{ env("APP_DEBUG")?mix('/css/pwa/app.css'):mix('/css/pwa/app.min.css') }}">
     <link rel="stylesheet" href="{{ env("APP_DEBUG")?asset('/css/pwa/theme.css'):asset('/css/pwa/theme.min.css') }}?ver={{env("APP_VERSION")}}">
 
 </head>
@@ -68,21 +68,24 @@
 
 
 <div id="app">
-
+{{--    <div id="appCapsule">--}}
+    @yield("before-content")
     @yield("content")
-
+    @yield("after-content")
+{{--            </div>--}}
     <sidebar></sidebar>
 
     <travel-notification></travel-notification>
 
     <modals-block></modals-block>
 </div>
-<script src="{{env("APP_DEBUG")?asset('/js/pwa/app.js'):asset('/js/pwa/app.min.js')}}?ver={{env("APP_VERSION")}}" defer></script>
-<script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}" defer></script>
 
 @yield("scripts")
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{env("APP_DEBUG")?mix('/js/pwa/app.js'):mix('/js/pwa/app.min.js')}}" async></script>
+{{--<script src="{{asset('/js/assets/app.js')}}?ver={{env("APP_VERSION")}}" defer></script>--}}
 
-<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" defer></script>
+
 </body>
 
 </html>

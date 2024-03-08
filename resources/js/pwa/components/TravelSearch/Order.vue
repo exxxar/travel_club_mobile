@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="input-wrapper mt-2 d-flex justify-content-center" >
-                <a href="#rules" data-target="#RulesModal" data-toggle="modal" class="btn btn-link mr-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
+                <a href="#rules" data-bs-target="#RulesModal"  data-bs-toggle="modal" class="btn btn-link mr-1 mb-1" title="Пользовательское соглашение" aria-label="Пользовательское соглашение">
                     <i class="icon ion-ios-filing"></i>
                     Пользовательское соглашение!
                 </a>

@@ -1,13 +1,12 @@
 <template>
     <div>
         <div class="section">
-            <div class="section-title text-center blue-brush w-100">
-                <h1 class="text-center w-100">Дбро пожаловать</h1>
+            <div class="section-title text-center w-100">
+                <h1 class="text-center w-100">Добро пожаловать</h1>
 
             </div>
-            <div class="section-title text-center orange-brush w-100">
-                <h1 class="text-center w-100">модуль подбора туров</h1>
-
+            <div class="section-title text-center w-100">
+                <h1 class="text-center w-100">в модуль подбора туров</h1>
             </div>
         </div>
 
@@ -20,7 +19,7 @@
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     .orange-brush {
         background: url('/img/travel/orange-brush.svg') no-repeat;

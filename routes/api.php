@@ -63,12 +63,12 @@ Route::prefix("pwa")->group(function () {
         //AviaModule
         Route::get('getAviaCities/{term}', 'AviaController@getAviaCities');
 
-        Route::get('tours', 'TourController@all');
+        Route::get('tours', 'UserTourController@index');
         Route::get('popularTours', 'TourController@getPopularTours');
-        Route::get('tours/{id}', 'TourController@get');
-        Route::post('tours/new', 'TourController@new');
-        Route::post('tours/update', 'TourController@update');
-        Route::post('tours/delete/{id}', 'TourController@delete');
+        Route::get('tours/{id}', 'UserTourController@get');
+        Route::post('tours/new', 'UserTourController@store');
+        Route::post('tours/update', 'UserTourController@update');
+        Route::post('tours/delete/{id}', 'UserTourController@delete');
         Route::get('getTours', 'TourController@testGetTours');
         Route::post('sendTourSearchOrder', 'TourController@sendTourSearchOrder');
         Route::post('saveTourOrder', 'TourController@saveTourOrder');
@@ -119,12 +119,12 @@ Route::prefix("desktop")->group(function () {
         Route::post('sendHotelModuleOrder', 'ModuleOrderController@sendHotelModuleOrder');
 
 
-        Route::get('tours', 'TourController@all');
-        Route::get('popularTours', 'TourController@getPopularTours');
-        Route::get('tours/{id}', 'TourController@get');
-        Route::post('tours/new', 'TourController@new');
-        Route::post('tours/update', 'TourController@update');
-        Route::post('tours/delete/{id}', 'TourController@delete');
+        Route::get('tours', 'UserTourController@index');
+        Route::get('popularTours', 'UserTourController@getPopularTours');
+        Route::get('tours/{userTour}', 'UserTourController@show');
+        Route::post('tours/new', 'UserTourController@store');
+        Route::post('tours/update', 'UserTourController@update');
+        Route::post('tours/delete/{id}', 'UserTourController@delete');
         Route::get('getTours', 'TourController@testGetTours');
         Route::post('sendTourSearchOrder', 'TourController@sendTourSearchOrder');
         Route::post('saveTourOrder', 'TourController@saveTourOrder');
@@ -150,88 +150,188 @@ Route::prefix("desktop")->group(function () {
             Route::post('call-reset', 'AuthController@callResetPassword');
 
             // Below mention routes are available only for the authenticated users.
-            Route::middleware('auth:api')->group(function () {
-                // Get user info
-                Route::get('user', 'AuthController@user');
-                // Logout user from application
-                Route::post('logout', 'AuthController@logout');
+            Route::middleware( 'jwt.auth')->group(function () {
+//                Route::middleware('auth:api')->group(function () {
+                    // Get user info
+                    Route::post('user', 'AuthController@user');
+                    // Logout user from application
+                    Route::post('logout', 'AuthController@logout');
 
-                //Message
-                Route::get('messages', 'MessageController@all');
-                Route::get('messages/{id}', 'MessageController@get');
-                Route::post('messages/new', 'MessageController@new');
-                Route::post('messages/update', 'MessageController@update');
-                Route::post('messages/delete/{id}', 'MessageController@delete');
-                Route::post('messages/restore/{id}', 'MessageController@restore');
-                Route::post('messages/forceDelete/{id}', 'MessageController@forceDelete');
+                    //Message
+                    Route::get('messages', 'MessageController@all');
+                    Route::get('messages/{id}', 'MessageController@get');
+                    Route::post('messages/new', 'MessageController@new');
+                    Route::post('messages/update', 'MessageController@update');
+                    Route::post('messages/delete/{id}', 'MessageController@delete');
+                    Route::post('messages/restore/{id}', 'MessageController@restore');
+                    Route::post('messages/forceDelete/{id}', 'MessageController@forceDelete');
 
-                //ModuleOrders
-                Route::get('moduleOrders', 'ModuleOrderController@all');
-                Route::get('moduleOrders/{id}', 'ModuleOrderController@get');
-                Route::post('moduleOrders/new', 'ModuleOrderController@new');
-                Route::post('moduleOrders/update', 'ModuleOrderController@update');
-                Route::post('moduleOrders/delete/{id}', 'ModuleOrderController@delete');
-                Route::post('moduleOrders/restore/{id}', 'UserController@restore');
-                Route::post('moduleOrders/forceDelete/{id}', 'UserController@forceDelete');
+                    //ModuleOrders
+                    Route::get('moduleOrders', 'ModuleOrderController@all');
+                    Route::get('moduleOrders/{id}', 'ModuleOrderController@get');
+                    Route::post('moduleOrders/new', 'ModuleOrderController@new');
+                    Route::post('moduleOrders/update', 'ModuleOrderController@update');
+                    Route::post('moduleOrders/delete/{id}', 'ModuleOrderController@delete');
+                    Route::post('moduleOrders/restore/{id}', 'UserController@restore');
+                    Route::post('moduleOrders/forceDelete/{id}', 'UserController@forceDelete');
 
-                //Chats
-                Route::get('chats', 'ChatController@all');
-                Route::get('loadClientChat', 'ChatController@loadClientChat');
-                Route::post('sendChatMessage', 'ChatController@new');
-                Route::post('newChat', 'ChatController@newChat');
+                    //Chats
+                    Route::get('chats', 'ChatController@all');
+                    Route::get('loadClientChat', 'ChatController@loadClientChat');
+                    Route::post('sendChatMessage', 'ChatController@new');
+                    Route::post('newChat', 'ChatController@newChat');
 
-                Route::get('statistics', 'UserController@statistics');
-                Route::get('files', 'UserTourController@files');
+                    Route::get('statistics', 'UserController@statistics');
+                    Route::get('files', 'UserTourController@files');
 
-                Route::prefix('client')->group(function () {
+                    Route::prefix('documents')->group(function () {
+                        Route::get('/', 'UserDocumentController@all');
+                        Route::get('/{id}', 'UserDocumentController@get');
+                        Route::post('/new', 'UserDocumentController@new');
+                        Route::post('/update', 'UserDocumentController@update');
+                        Route::post('/delete/{id}', 'UserDocumentController@delete');
+                    });
 
-                });
-                Route::prefix('manager')->group(function () {
-                    Route::get('managers', 'ManagerController@all');
-                    Route::get('clients', 'ManagerController@clients');
-                    Route::get('clients/{id}', 'ClientController@get');
-                    Route::post('clients/user-tour/new', 'UserTourController@store');
-                    Route::post('clients/user-tour/update', 'UserTourController@update');
-                    Route::post('clients/user-tour/save', 'UserTourController@save');
-                    Route::post('clients/user-tour/saveTourInfo', 'UserTourController@saveTourInfo');
-                    Route::post('clients/user-tour/updateArchive', 'UserTourController@updateArchive');
-                    Route::post('clients/user-tour/updateReview', 'UserTourController@updateReview');
-                    Route::post('clients/user-tour/delete/{id}', 'UserTourController@destroy');
-                    Route::post('clients/user-tour/forceDelete/{id}', 'UserTourController@forceDelete');
-                    Route::post('clients/user-info/new', 'UserInfoController@store');
-                    Route::post('clients/user-info/update', 'UserInfoController@update');
-                    Route::post('clients/user-info/delete/{id}', 'UserInfoController@destroy');
+                    Route::prefix('reviews')->group(function () {
+                        Route::get('/', 'ReviewController@all');
+                        Route::get('/{id}', 'ReviewController@get');
+                        Route::post('/create', 'ReviewController@create');
+                        Route::put('/update/{id}', 'ReviewController@update');
+                        Route::put('/save/{id}', 'ReviewController@save');
+                        Route::post('/delete/{id}', 'ReviewController@delete');
+                    });
 
-                    Route::post('uploadPhones', 'ManagerController@uploadPhones');
+                    Route::prefix('articles')->group(function () {
+                        Route::get('/', 'ArticleController@all');
+                        Route::get('/{article}', 'ArticleController@get');
+                        Route::post('/create', 'ArticleController@create');
+                        Route::post('/update', 'ArticleController@update');
+                        Route::post('/delete/{article}', 'ArticleController@delete');
+                        Route::post('/file/create', 'ArticleController@saveArticleFile');
+                        Route::post('/file/delete', 'ArticleController@deleteArticleFile');
+                    });
 
-                    Route::get('getPhones', 'ManagerController@getPhones');
-                    Route::post('sendSmsMessage', 'ManagerController@sendSmsMessage');
+                    Route::prefix('client')->group(function () {
+
+                    });
+
+                    Route::prefix('manager')->group(function () {
+                        Route::get('managers', 'ManagerController@all');
+                        Route::get('clients', 'ManagerController@clients');
+                        Route::get('clients/{id}', 'ClientController@get');
+                        Route::post('clients/user-tour/new', 'UserTourController@store');
+                        Route::post('clients/user-tour/update', 'UserTourController@update');
+                        Route::post('clients/user-tour/save', 'UserTourController@save');
+                        Route::post('clients/user-tour/saveTourInfo', 'UserTourController@saveTourInfo');
+                        Route::post('clients/user-tour/updateArchive', 'UserTourController@updateArchive');
+                        Route::post('clients/user-tour/updateReview', 'UserTourController@updateReview');
+                        Route::post('clients/user-tour/delete/{id}', 'UserTourController@destroy');
+                        Route::post('clients/user-tour/forceDelete/{id}', 'UserTourController@forceDelete');
+                        Route::post('clients/user-info/new', 'UserInfoController@store');
+                        Route::post('clients/user-info/update', 'UserInfoController@update');
+                        Route::post('clients/user-info/delete/{id}', 'UserInfoController@destroy');
+
+                        Route::post('uploadPhones', 'ManagerController@uploadPhones');
+
+                        Route::get('getPhones', 'ManagerController@getPhones');
+                        Route::post('sendSmsMessage', 'ManagerController@sendSmsMessage');
 //          Route::apiResource('user-info', 'UserInfoController');
 //          Route::apiResource('user-tour', 'UserTourController');
-                });
-                Route::prefix('admin')->group(function () {
-                    Route::prefix('users')->group(function () {
-                        Route::get('/', 'UserController@all');
-                        Route::get('/{id}', 'UserController@get');
-                        Route::post('/new', 'UserController@new');
-                        Route::put('/{id}', 'UserController@update');
-                        Route::put('/user-info/{id}', 'UserInfoController@save');
-                        Route::delete('/{id}', 'UserController@delete');
-                        Route::post('/restore/{id}', 'UserController@restore');
-                        Route::post('/forceDelete/{id}', 'UserController@forceDelete');
                     });
+                    Route::prefix('admin')->group(function () {
+                        Route::prefix('users')->group(function () {
+                            Route::get('/', 'UserController@all');
+                            Route::get('/search', 'UserController@search');
+                            Route::get('/{id}', 'UserController@get');
+                            Route::post('/new', 'UserController@new');
+                            Route::put('/{id}', 'UserController@update');
+                            Route::put('/user-info/{id}', 'UserInfoController@save');
+                            Route::delete('/{id}', 'UserController@delete');
+                            Route::post('/restore/{id}', 'UserController@restore');
+                            Route::post('/forceDelete/{id}', 'UserController@forceDelete');
 
-                    Route::prefix('branches')->group(function () {
-                        Route::get('/', 'BranchController@all');
-                        Route::get('/{id}', 'BranchController@get');
-                        Route::post('/new', 'BranchController@new');
-                        Route::put('/{id}', 'BranchController@update');
-                        Route::delete('/{id}', 'BranchController@delete');
+                        });
+
+                        Route::prefix('branches')->group(function () {
+                            Route::get('/', 'BranchController@all');
+                            Route::get('/{id}', 'BranchController@get');
+                            Route::post('/new', 'BranchController@new');
+                            Route::put('/{id}', 'BranchController@update');
+                            Route::delete('/{id}', 'BranchController@delete');
+                        });
                     });
-                });
+//                });
             });
         });
 
+    });
+});
+
+Route::prefix("api")->group(function () {
+
+    Route::prefix('auth')->group(function () {
+        Route::post('register', 'AuthController@register');
+        Route::post('login', 'AuthController@login');
+        Route::get('refresh', 'AuthController@refresh');
+        Route::post('checkAuth', 'AuthController@checkAuth');
+        // Send reset password mail
+        Route::post('reset-password', 'AuthController@sendPasswordResetLink');
+        // handle reset password form process
+        Route::post('call-reset', 'AuthController@callResetPassword');
+    });
+
+    Route::middleware( 'jwt.auth')->group(function () {
+//        Route::middleware('auth:api')->group(function () {
+
+        //<editor-fold desc="Auth">
+        Route::post('user', 'AuthController@user');
+        Route::post('logout', 'AuthController@logout');
+        //</editor-fold>
+
+        //<editor-fold desc="Users">
+        Route::prefix('users')->group(function () {
+            Route::get('/', 'UserController@all');
+            Route::get('/{id}', 'UserController@get');
+            Route::post('/create', 'UserController@create');
+            Route::put('/update', 'UserController@update');
+            Route::delete('/delete/{id}', 'UserController@delete');
+            Route::post('/restore/{id}', 'UserController@restore');
+            Route::post('/forceDelete/{id}', 'UserController@forceDelete');
+        });
+        //</editor-fold>
+
+        //<editor-fold desc="Tours">
+        Route::prefix('tours')->group(function () {
+            Route::get('/', 'UserTourController@all');
+            Route::get('/{userTour}', 'UserTourController@get');
+            Route::post('/create', 'UserTourController@create');
+            Route::post('/update', 'UserTourController@update');
+            Route::post('/delete/{userTour}', 'UserTourController@delete');
+        });
+        //</editor-fold>
+
+        //<editor-fold desc="Documents">
+        Route::prefix('documents')->group(function () {
+            Route::get('/', 'UserDocumentController@all');
+            Route::get('/{id}', 'UserDocumentController@get');
+            Route::post('/create', 'UserDocumentController@create');
+            Route::post('/update', 'UserDocumentController@update');
+            Route::post('/delete/{id}', 'UserDocumentController@delete');
+        });
+        //</editor-fold>
+
+        //<editor-fold desc="Reviews">
+        Route::prefix('reviews')->group(function () {
+            Route::get('/', 'ReviewController@all');
+            Route::get('/{id}', 'ReviewController@get');
+            Route::post('/create', 'ReviewController@create');
+            Route::post('/update', 'ReviewController@update');
+            Route::post('/save/{id}', 'ReviewController@save');
+            Route::post('/delete/{id}', 'ReviewController@delete');
+        });
+        //</editor-fold>
+
+//    });
     });
 });
 

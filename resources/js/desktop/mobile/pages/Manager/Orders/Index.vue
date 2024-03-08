@@ -27,7 +27,7 @@
                             <span class="sr-only">Loading...</span>
                         </div>
                     </button>
-                    <button v-if="!props.row.isLoading" class="btn waves-effect" style="outline: none;" data-toggle="modal" data-target="#editModalBox"
+                    <button v-if="!props.row.isLoading" class="btn waves-effect" style="outline: none;"  data-bs-toggle="modal" data-bs-target="#editModalBox"
                             @click="editOrder(props.row)"
                     >
                         <i class="material-icons" style="color: #0d274b;" >edit</i>
@@ -309,7 +309,7 @@
         },
         methods: {
             addOrder: function(){
-                $('#newOrderModalBox').modal('show')
+                this.$store.dispatch('openModal', '#newOrderModalBox')
             },
             deleteOrder(row) {
                 this.$store.dispatch('deleteModuleOrder', row.id)

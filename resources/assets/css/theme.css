@@ -27,7 +27,8 @@ body {
 a {
     transition: 0.2s all;
     color: #1E74FD;
-    outline: 0 !important
+    outline: 0 !important;
+    text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
@@ -6398,6 +6399,9 @@ body.dark-mode-active .card .card-title {
 body.dark-mode-active .card .card-subtitle {
     color: #fff
 }
+body.dark-mode-active .card .card-text {
+    color: #fff;
+}
 
 body.dark-mode-active .card .card-header {
     border-bottom-color: rgba(255, 255, 255, 0.1);
@@ -6621,6 +6625,13 @@ body.dark-mode-active .form-group.boxed .form-control, body.dark-mode-active .fo
     color: #fff;
     background: #1B283B;
     border-color: #1B283B
+}
+body.dark-mode-active .form-group.basic .form-control::placeholder, body.dark-mode-active .form-group.basic .custom-select::placeholder {
+    color: #586d7f
+}
+
+body.dark-mode-active .form-group.boxed .form-control::placeholder, body.dark-mode-active .form-group.boxed .custom-select::placeholder {
+    color: #586d7f;
 }
 
 body.dark-mode-active .input-group .input-group-text {

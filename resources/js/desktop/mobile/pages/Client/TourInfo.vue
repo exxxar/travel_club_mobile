@@ -1,7 +1,7 @@
 <template>
     <div id="tour-info" class="mx-auto mt-4" style="margin-bottom: 70px" v-show="!load">
         <div class="modal fade modalbox show"
-             id="reviewModalBox" data-backdrop="static"
+             id="reviewModalBox"  data-bs-backdrop="static"
              tabindex="-1" role="dialog"
              aria-modal="true"
         >
@@ -9,7 +9,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Оставить отзыв</h5>
-                        <a href="javascript:;" data-dismiss="modal" style="text-decoration: none">Закрыть</a>
+                        <a href="javascript:;"  data-bs-dismiss="modal" style="text-decoration: none">Закрыть</a>
                     </div>
                     <div class="modal-body" style="overflow: hidden;">
                         <div class="start-form">
@@ -42,7 +42,7 @@
                                         <div class="input-wrapper">
                                             <ValidationProvider name="review" rules="required" v-slot="{ errors }" style="width: 95%;">
                                                 <textarea rows="8" cols="80"
-                                                          class="form-control pl-2 pr-4"
+                                                          class="form-control ps-2 pe-4"
                                                           placeholder="Начните писать здесь..."
                                                           v-model="review"
                                                           style="min-height: 100px; border-radius: 20px; border: 2px solid #063065;"
@@ -97,7 +97,7 @@
                 <slide>
                     <div class="row w-100 m-auto">
                         <div class="col-12 text-center">
-                            <button class="btn btn-tour-info" :disabled="invalid" data-toggle="modal" data-target="#reviewModalBox"><i class="fas fa-comment-dots"></i></button>
+                            <button class="btn btn-tour-info" :disabled="invalid"  data-bs-toggle="modal" data-bs-target="#reviewModalBox"><i class="fas fa-comment-dots"></i></button>
                         </div>
                         <div class="col-12 btn-tour-info-title">
                             Отзыв
@@ -116,7 +116,7 @@
                         <div class="row align-items-center w-100 m-auto">
                             <div class="col-12">
                                 <div class="row align-items-center w-100 m-auto">
-                                    <b class="mr-3" style="border: 1px solid #063065" :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+tour.TourInfo.country.Id"></b>
+                                    <b class="mr-3" style="border: 1px solid #063065" :class="'tc-flag-'+tour.TourInfo.country.Id"></b>
                                     <div class="subtitle">{{tour.TourInfo.country.Name}}</div>
                                 </div>
                             </div>
@@ -489,7 +489,7 @@
                     this.loading = false
                 })
                 this.loading = false
-                $('#reviewModalBox').modal('hide')
+                this.$store.dispatch('closeModal', '#reviewModalBox');
             },
             sendMessage(message) {
                 this.$notify({

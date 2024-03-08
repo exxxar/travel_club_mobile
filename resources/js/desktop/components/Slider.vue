@@ -7,13 +7,13 @@
             <span class="bm-cross-button cross-style" @click="closeMenu" :class="{ hidden: !crossIcon }">
 <!--                <span v-for="(x, index) in 2" :key="x" class="bm-cross" :style="{ position: 'absolute', width: '3px', height: '30px',transform: index === 1 ? 'rotate(45deg)' : 'rotate(-45deg)'}">-->
 <!--                </span>-->
-                <span class="icon-close" style="font-size: 30px;padding-left: 2px;padding-right: 2px; color:white"></span>
+                 <base-icon name="Cancel" width="25" height="25" color="white"></base-icon>
             </span>
         </div>
 
-        <div ref="bmBurgerButton"  @click="openMenu" :class="{ hidden: !burgerIcon }">
+        <div ref="bmBurgerButton"  @click="openMenu" :class="{ hidden: !burgerIcon }" style="cursor: pointer">
 <!--            <span class="bm-burger-bars line-style" :style="{top:20 * (index * 2) + '%'}" v-for="(x, index) in 3" :key="index"></span>-->
-            <a class="float-right" style="cursor:pointer;"><img src="/images/menu3.png" style="width: 30px; " @click="openMenu()"/></a>
+            <base-icon name="Menu" width="25" height="25" color="secondary"></base-icon>
         </div>
         <div id="slider-overlay"></div>
     </div>

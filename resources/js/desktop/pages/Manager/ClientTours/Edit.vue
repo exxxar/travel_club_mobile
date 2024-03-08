@@ -19,13 +19,13 @@
                         @input="chooseEditResortCountry"
                     >
                         <template slot="singleLabel" slot-scope="props">
-                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                            <b :class="'tc-flag-'+props.option.Id"></b>
                             <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
                         </template>
                         <template slot="option" slot-scope="props">
-                            <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                            <b :class="'tc-flag-'+props.option.Id"></b>
                             <span class="option__desc">
                                         <span class="option__title">{{ props.option.Name }}</span>
                                     </span>
@@ -277,7 +277,6 @@
                         <button type="submit" class="btn btn-travel" style="width: 100%" @click="updateClientTour" :disabled="invalid||loading">
                             <div class="row align-items-center justify-content-center m-auto w-100 h-100 text-center">
                                 <span v-if="loading" role="status" aria-hidden="true" class="spinner-border spinner-border-sm mx-2"></span>
-                                <span v-if="loading" class="sr-only">Loading...</span>
                                 Сохранить
                             </div>
                         </button>

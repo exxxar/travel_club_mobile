@@ -1,6 +1,6 @@
 <template>
     <div class="item story-item" v-bind:class="{opened:isOpened}" @click="isOpened = true">
-        <a href="#" data-toggle="modal" data-component="stories" data-time="5000" :data-target="'#StoryDefault'+index">
+        <a href="#"  data-bs-toggle="modal" data-component="stories" data-time="5000" :data-bs-target="'#StoryDefault'+index">
             <img v-if="image" v-lazy="image" alt="alt" class="imaged w-100 rounded">
             <img v-else src="/img/travel/logo-1.png" class="imaged w-100 rounded" alt="логотип">
         </a>

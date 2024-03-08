@@ -1,6 +1,6 @@
 <template>
     <div class="modal fade modalbox show"
-         id="editModalBox" data-backdrop="static"
+         id="editModalBox"  data-bs-backdrop="static"
          tabindex="-1" role="dialog"
          aria-modal="true"
          v-if="editItem!=null || editItem!=undefined"
@@ -9,14 +9,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Редактировать</h5>
-                    <a href="javascript:;" data-dismiss="modal" style="text-decoration: none">Закрыть</a>
+                    <a href="javascript:;"  data-bs-dismiss="modal" style="text-decoration: none">Закрыть</a>
                 </div>
                 <div class="modal-body">
                     <div class="start-form" style="margin-bottom: 110px">
                         <div class="section mx-auto">
                             <ValidationObserver v-slot="{ invalid }">
                                 <div class="row w-100 m-auto">
-                                    <div class="col-md-6 pr-md-1">
+                                    <div class="col-md-6 pe-md-1">
                                         <label class="control-label">Имя</label>
                                         <ValidationProvider name="name" rules="required" v-slot="{ errors }" style="width: 100%;text-align: center;">
                                             <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -25,7 +25,7 @@
                                             <span class="validate-error">{{ errors[0] }}</span>
                                         </ValidationProvider>
                                     </div>
-                                    <div class="col-md-6 pl-md-1">
+                                    <div class="col-md-6 ps-md-1">
                                         <label class="control-label">Телефон</label>
                                         <ValidationProvider name="phone" rules="required|phone" v-slot="{ errors }" style="width:100%;text-align: center;">
                                             <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">
@@ -71,13 +71,13 @@
                                             @input="chooseEditResortCountry"
                                         >
                                             <template slot="singleLabel" slot-scope="props">
-                                                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                                <b :class="'tc-flag-'+props.option.Id"></b>
                                                 <span class="option__desc">
                                                     <span class="option__title">{{ props.option.Name }}</span>
                                                 </span>
                                             </template>
                                             <template slot="option" slot-scope="props">
-                                                <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>
+                                                <b :class="'tc-flag-'+props.option.Id"></b>
                                                 <span class="option__desc">
                                                     <span class="option__title">{{ props.option.Name }}</span>
                                                 </span>
@@ -629,7 +629,7 @@
                     .then(response => {
                         this.sendMessage('Заказ успешно обновлён');
                         this.loading = false;
-                        $('#editModalBox').modal('hide');
+                        this.$store.dispatch('closeModal', '#editModalBox');
                     });
                 this.loading = false;
                 // this.sendMessage('Заказ успешно coxранён');

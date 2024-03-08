@@ -57,7 +57,6 @@ class TourController extends Controller
 
     public function getToursByHotels(Request $request)
     {
-
         $adults = $request->adults ?? 0;
         $children = $request->children ?? 0;
         $night_from = $request->nights_from ?? 1;

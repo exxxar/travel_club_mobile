@@ -4,20 +4,25 @@
     :type="tag === 'button' ? nativeType : ''"
     :disabled="disabled || loading"
     @click="handleClick"
-    class="btn"
+    class="tc-button"
     :class="[
-      {'btn-round': round},
-      {'btn-block': block},
-      {'btn-icon btn-fab': icon},
-      {[`btn-${type}`]: type},
-      {[`btn-${size}`]: size},
-      {'btn-simple': simple},
-      {'btn-link': link},
-      {'disabled': disabled && tag !== 'button'}
+      {'tc-button-round': round},
+      {'tc-button-icon': icon},
+      // {[`tc-bg-${type}`]: type},
+      {[`tc-bg-${bg}`]: bg},
+      {[`tc-text-${text}`]: text},
+      {[`tc-button-${size}`]: size},
+      // {'btn-simple': simple},
+      {'tc-button-link': link},
+      {'tc-button_disabled': loading || disabled }
     ]">
+<!--      (disabled && tag !== 'button')-->
     <slot name="loading">
-      <i v-if="loading" class="fas fa-spinner fa-spin"></i>
+        <span v-if="loading" class="spinner-border spinner-border-sm" role="status"></span>
     </slot>
+      <slot name="icon" v-if="typeof icon != 'boolean'">
+          <base-icon v-if="icon && !loading" :name="icon"></base-icon>
+      </slot>
     <slot></slot>
   </component>
 </template>
@@ -31,14 +36,28 @@ export default {
       description: "Button html tag"
     },
     round: Boolean,
-    icon: Boolean,
-    block: Boolean,
+    // icon: Boolean,
+    icon: {
+        type: [String, Boolean],
+        default: "",
+        description: ""
+    },
     loading: Boolean,
     disabled: Boolean,
-    type: {
+    // type: {
+    //   type: String,
+    //   default: "default",
+    //   description: "Button type (primary|secondary|danger etc)"
+    // },
+    bg: {
       type: String,
-      default: "default",
-      description: "Button type (primary|secondary|danger etc)"
+      default: "primary",
+      description: "Button background (primary|secondary|danger etc)"
+    },
+    text: {
+      type: String,
+      default: "",
+      description: "Button text color (primary|secondary|danger etc)"
     },
     nativeType: {
       type: String,
@@ -48,18 +67,18 @@ export default {
     size: {
       type: String,
       default: "",
-      description: "Button size (sm|lg)"
+      description: "Button size (small|lg)"
     },
-    simple: {
-      type: Boolean,
-      description: "Whether button is simple (outlined)"
-    },
+    // simple: {
+    //   type: Boolean,
+    //   description: "Whether button is simple (outlined)"
+    // },
     link: {
       type: Boolean,
       description: "Whether button is a link (no borders or background)"
     },
   },
-  methods: {
+    methods: {
     handleClick(evt) {
       this.$emit("click", evt);
     }

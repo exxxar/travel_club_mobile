@@ -27,7 +27,7 @@
             <p class="text-center">
                 Не получилось определиться самому? Оформи заявку и наш менеджер тебе поможет!
             </p>
-            <a class="btn btn-orange w-100" href="https://travel-club.tours/m/tour-search">
+            <a class="btn btn-orange w-100" href="/m/tour-search">
                 Оформить заявку
             </a>
 

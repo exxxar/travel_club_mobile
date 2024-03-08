@@ -5,7 +5,9 @@
                 <div class="card card-signup card-plain">
                     <div class="modal-header">
                         <div class="card-header card-header-primary text-center">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons" style="color:#fff !important; outline: none !important;">clear</i></button>
+                            <button type="button" class="close"  data-bs-dismiss="modal" aria-hidden="true">
+                                <i class="material-icons" style="color:#fff !important; outline: none !important;">clear</i>
+                            </button>
                             <h4 class="card-title">{{title}}</h4>
                         </div>
                     </div>
@@ -35,7 +37,7 @@
 
 <style>
     .modal-travel {
-        font-family: "Open Sans" !important;
+        font-family: "Roboto",sans-serif !important;
         /*max-width: 360px !important;*/
         font-weight: 900;
         margin-top:130px;
@@ -301,7 +303,7 @@
         color: #fff !important;
         font-size: 18px !important;
         font-weight: 900 !important;
-        font-family: "Open Sans" !important;
+        font-family: "Roboto", sans-serif !important;
         text-transform: uppercase;
         /*font-family: Roboto Slab,Times New Roman,serif;*/
         margin-top:10px !important;

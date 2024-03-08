@@ -1,11 +1,11 @@
 <template>
-    <div class="modal fade modalbox" id="CommentsModal" data-backdrop="true" tabindex="-1" style="display: none;"
+    <div class="modal fade modalbox" id="CommentsModal"  data-bs-backdrop="true" tabindex="-1" style="display: none;"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Комментарии и отзывы</h5>
-                    <a href="javascript:;" data-dismiss="modal">Закрыть</a>
+                    <a href="javascript:;"  data-bs-dismiss="modal">Закрыть</a>
                 </div>
                 <div class="modal-body" style="padding:0px;">
 

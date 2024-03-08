@@ -1,12 +1,9 @@
 <template>
     <div class="item story-item" v-bind:class="{opened:isOpened}" @click="isOpened = true">
-        <a href="#" data-toggle="modal" data-component="employees" data-time="5000" :data-target="'#EmployeeDefault'+index">
+        <a href="#" data-bs-toggle="modal" data-component="employees" data-time="5000" :data-bs-target="'#EmployeeDefault'+index">
             <img v-if="image" :src="image" alt="alt" class="imaged w-100 rounded">
             <img v-else src="/img/travel/logo-1.png" class="imaged w-100 rounded" alt="логотип">
         </a>
-
-
-
     </div>
 </template>
 <script>
@@ -20,11 +17,19 @@
     }
 </script>
 <style lang="scss">
+
     .story-item {
         padding: 10px !important;
         height:80px !important;
         width: 80px !important;
-
+        /*min-height: 80px !important;*/
+        /*min-width: 80px !important;*/
+        /*max-width: 300px !important;*/
+        /*max-height: 300px !important;*/
+        .landing-employees & {
+            height:auto !important;
+            width: auto !important;
+        }
         &.opened {
             a {
                 img {

@@ -7,16 +7,16 @@
                     label-cols-sm="3"
                     label-align-sm="right"
                     label-size="sm"
-                    label-for="sortBySelect1"
+                    label-for="order_bySelect1"
                     class="mb-0"
                 >
                     <b-input-group size="sm">
-                        <b-form-select v-model="sortBy" id="sortBySelect1" :options="sortOptions" class="w-75">
+                        <b-form-select v-model="order_by" id="order_bySelect1" :options="sortOptions" class="w-75">
                             <template v-slot:first>
                                 <option value="">-- none --</option>
                             </template>
                         </b-form-select>
-                        <b-form-select v-model="sortDesc" size="sm" :disabled="!sortBy" class="w-25">
+                        <b-form-select v-model="sortDesc" size="sm" :disabled="!order_by" class="w-25">
                             <option :value="false">Asc</option>
                             <option :value="true">Desc</option>
                         </b-form-select>
@@ -89,9 +89,9 @@
             :per-page="perPage"
             :filter="filter"
             :filterIncludedFields="filterOn"
-            :sort-by.sync="sortBy"
+            :sort-by.sync="order_by"
             :sort-desc.sync="sortDesc"
-            :sort-direction="sortDirection"
+            :sort-direction="order_direction"
             @filtered="onFiltered"
             :busy="loading"
             empty-text="Нет записей для отображения"
@@ -115,22 +115,22 @@
             </template>
             <template v-slot:cell(action1)="data">
                 <b-input-group size="sm">
-                    <b-button @click="data.toggleDetails" class="w-100 btn btn-travel mr-1 mb-1 btn-travel">
+                    <b-button @click="data.toggleDetails" class="w-100 btn btn-travel me-1 mb-1 btn-travel">
                         {{ data.detailsShowing ? 'Свернуть' : 'Развернуть' }}
                     </b-button>
                 </b-input-group>
             </template>
             <template v-slot:cell(action2)="data">
                 <b-input-group size="sm" >
-                    <b-button v-if="data.item.deleted_at==null" @click="remove(data.item.id)" class="btn btn-info mr-1 mb-1 btn-travel w-100"
+                    <b-button v-if="data.item.deleted_at==null" @click="remove(data.item.id)" class="btn btn-info me-1 mb-1 btn-travel w-100"
                               :disabled="data.item.id===null">
                         Удалить
                     </b-button>
-                    <b-button v-else @click="restore(data.item.id)" class="btn btn-info mr-1 mb-1 btn-travel w-100"
+                    <b-button v-else @click="restore(data.item.id)" class="btn btn-info me-1 mb-1 btn-travel w-100"
                               :disabled="data.item.id===null">
                         Восстановить
                     </b-button>
-                    <b-button v-if="data.item.deleted_at!=null" @click="destroy(data.item.id)" class="btn btn-info mr-1 mb-1 btn-travel w-100"
+                    <b-button v-if="data.item.deleted_at!=null" @click="destroy(data.item.id)" class="btn btn-info me-1 mb-1 btn-travel w-100"
                               :disabled="data.item.id===null">
                         Удалить
                     </b-button>
@@ -150,7 +150,7 @@
                         </div>
                         <div v-if="row.item.message_type === 'Заявка менеджера' && row.item.user!=null && isAdmin">
                             <div class="row w-100 p-2 m-auto">
-                                <div class="col-md-4 pr-md-1">
+                                <div class="col-md-4 pe-md-1">
                                     <b-input-group label="Фамилия">
                                         {{row.item.user.info.LastName}}
                                     </b-input-group>
@@ -160,7 +160,7 @@
                                         {{row.item.user.info.FirstName}}
                                     </b-input-group>
                                 </div>
-                                <div class="col-md-4 pl-md-1">
+                                <div class="col-md-4 ps-md-1">
                                     <b-input-group label="Отчество">
                                         {{row.item.user.info.MiddleName}}
                                     </b-input-group>
@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="row w-100 p-2 m-auto">
-                                <div class="col-md-4 pr-md-1">
+                                <div class="col-md-4 pe-md-1">
                                     <b-input-group label="Город">
                                         {{row.item.user.info.City.city}}
                                     </b-input-group>
@@ -229,11 +229,11 @@
         },
         data() {
             return {
-                sortBy: 'id',
+                order_by: 'id',
                 sortDesc: false,
                 currentPage: 1,
                 perPage: 5,
-                sortDirection: 'asc',
+                order_direction: 'asc',
                 filter: null,
                 filterOn: [],
                 pageOptions: [5, 10, 15, 25, 50, 100],
@@ -244,11 +244,11 @@
                     {tag:'Заявка менеджера', style:'background:#0d274b; color:white;'},
                 ],
                 fields: [
-                    {key: 'id', label: 'ID', sortable: true, sortDirection: 'desc'},
-                    {key: 'created_at', label: 'Дата', sortable: true, sortDirection: 'desc'},
-                    {key: 'name', label: 'Имя', sortable: true, sortDirection: 'desc'},
-                    {key: 'phone', label: 'Телефон', sortable: true, sortDirection: 'desc'},
-                    {key: 'message_type', label: 'Тип сообщения', sortable: true, sortDirection: 'desc'},
+                    {key: 'id', label: 'ID', sortable: true, order_direction: 'desc'},
+                    {key: 'created_at', label: 'Дата', sortable: true, order_direction: 'desc'},
+                    {key: 'name', label: 'Имя', sortable: true, order_direction: 'desc'},
+                    {key: 'phone', label: 'Телефон', sortable: true, order_direction: 'desc'},
+                    {key: 'message_type', label: 'Тип сообщения', sortable: true, order_direction: 'desc'},
                     {key: 'action1', label: 'Показать'},
                     {key: 'action2', label: 'Действия'}
                 ],

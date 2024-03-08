@@ -3,7 +3,7 @@
         <div class="row w-100 m-auto align-items-center justify-content-center">
 
             <div class="container" style="min-height: 700px;">
-                <iframe src="/sletat-ru" style="border:none; width: 100%; height:100%; min-height: 700px;" title="Туры по России"></iframe>
+                <iframe :src="$baseUrl+'/sletat-ru'" style="border:none; width: 100%; height:100%; min-height: 700px;" title="Туры по России"></iframe>
                 <!--                <div class="s-partnership" style="display:none;margin-top:60px;min-height: 200px">d4nkQzPS4yIglQZgPqBun3HHLdRjZQH4ZfuI%2BTKaYkI%3D</div>-->
             </div>
 
@@ -15,11 +15,11 @@
                         <promocode-image title1="Оформи" title2="тур" pos="310"></promocode-image>
                     </div>
                     <div class="col-md-6">
-                        <div class="row family-row family-description m-auto" style="width: 80%; color: #062348;font-size: 17px;font-weight: 900; font-family:'Open Sans';">
+                        <div class="row family-row family-description m-auto" style="width: 80%; color: #062348;font-size: 17px;font-weight: 900;">
                             <p class="text-center">
                                 Не получилось определиться самому? Оформи заявку и наш менеджер тебе поможет!
                             </p>
-                            <b-button class="btn-travel btn-group-lg mt-2 mx-auto" href="/tour-module">
+                            <b-button class="btn-travel btn-group-lg mt-2 mx-auto d-flex" href="/tour-module">
                                 Оформить заявку
                             </b-button>
                         </div>

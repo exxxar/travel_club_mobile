@@ -126,7 +126,7 @@
 <!--                            <div class="col-12 p-0">-->
 
 <!--                                <div class="row mx-auto mb-2 align-items-center justify-content-center">-->
-<!--                                    <button class="btn btn-block btn-lg" @click="buy" data-toggle="modal" data-target="#tourOrderModal">Купить</button>-->
+<!--                                    <button class="btn btn-block btn-lg" @click="buy"  data-bs-toggle="modal" data-bs-target="#tourOrderModal">Купить</button>-->
 <!--                                </div>-->
 <!--                            </div>-->
 <!--                        </div>-->
@@ -556,7 +556,8 @@
                 });
                 // this.$store.dispatch('saveTourOrder', this.order);
 
-                $('#tourOrderModal').modal('hide');
+
+                this.$store.dispatch('closeModal', '#tourOrderModal');
                 this.sendMessage("Тур успешно заказан. Ожидайте, наш менеждер свяжется с Вами");
                 this.$store.dispatch('changeTour', []);
             },

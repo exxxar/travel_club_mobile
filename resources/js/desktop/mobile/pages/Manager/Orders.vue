@@ -5,13 +5,13 @@
 <!--                <template slot="body">-->
 <!--                    <div v-if="editItem.order_type=='Тур'">-->
 <!--                        <div class="row">-->
-<!--                            <div class="col-md-6 pr-md-1">-->
+<!--                            <div class="col-md-6 pe-md-1">-->
 <!--                                <label class="control-label">Имя</label>-->
 <!--                                <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                                    <input type="text" class="multiselect__input price" v-model="editItem.name" placeholder="Имя" required>-->
 <!--                                </div>-->
 <!--                            </div>-->
-<!--                            <div class="col-md-6 pl-md-1">-->
+<!--                            <div class="col-md-6 ps-md-1">-->
 <!--                                <label class="control-label">Телефон</label>-->
 <!--                                <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                                    <input type="text" class=" multiselect__input price"-->
@@ -54,13 +54,13 @@
 <!--                                    @input="chooseEditResortCountry"-->
 <!--                                >-->
 <!--                                    <template slot="singleLabel" slot-scope="props">-->
-<!--                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                        <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                        <span class="option__desc">-->
 <!--                                            <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                                        </span>-->
 <!--                                    </template>-->
 <!--                                    <template slot="option" slot-scope="props">-->
-<!--                                        <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                        <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                        <span class="option__desc">-->
 <!--                                            <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                                        </span>-->
@@ -281,13 +281,13 @@
 <!--            <modal :id="'newOrderModalBox'" :title="'Создать заказ'">-->
 <!--            <template slot="body">-->
 <!--                <div class="row">-->
-<!--                    <div class="col-md-6 pr-md-1">-->
+<!--                    <div class="col-md-6 pe-md-1">-->
 <!--                        <label class="control-label">Имя</label>-->
 <!--                        <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                            <input type="text" class="multiselect__input price " v-model="newItem.name" placeholder="Имя" required>-->
 <!--                        </div>-->
 <!--                    </div>-->
-<!--                    <div class="col-md-6 pl-md-1">-->
+<!--                    <div class="col-md-6 ps-md-1">-->
 <!--                        <label class="control-label">Телефон</label>-->
 <!--                        <div class="row multiselect__tags align-items-center justify-content-center m-auto" style="width: 100%;">-->
 <!--                            <input type="text" class=" multiselect__input price "-->
@@ -350,13 +350,13 @@
 <!--                                @input="chooseNewResortCountry"-->
 <!--                            >-->
 <!--                                <template slot="singleLabel" slot-scope="props">-->
-<!--                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                    <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                    <span class="option__desc">-->
 <!--                                            <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                                        </span>-->
 <!--                                </template>-->
 <!--                                <template slot="option" slot-scope="props">-->
-<!--                                    <b :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+props.option.Id"></b>-->
+<!--                                    <b :class="'tc-flag-'+props.option.Id"></b>-->
 <!--                                    <span class="option__desc">-->
 <!--                                            <span class="option__title">{{ props.option.Name }}</span>-->
 <!--                                        </span>-->
@@ -601,7 +601,7 @@
                                 <span class="sr-only">Loading...</span>
                             </div>
                         </button>
-                        <button v-if="!props.row.isLoading" class="btn waves-effect" style="outline: none;" data-toggle="modal" data-target="#editModalBox"
+                        <button v-if="!props.row.isLoading" class="btn waves-effect" style="outline: none;"  data-bs-toggle="modal" data-bs-target="#editModalBox"
                                 @click="editOrder(props.row)"
                         >
                             <i class="material-icons" style="color: #0d274b;" >edit</i>
@@ -980,7 +980,7 @@
         methods:
         {
             addOrder: function(){
-                $('#newOrderModalBox').modal('show')
+                this.$store.dispatch('openModal', '#newOrderModalBox')
             },
             saveOrder: function(){
                 this.$store.dispatch('newModuleOrder', this.newItem)
@@ -989,7 +989,7 @@
 
                         this.newItem={};
                     });
-                $('#newOrderModalBox').modal('hide')
+                this.$store.dispatch('closeModal', '#newOrderModalBox');
             },
             deleteOrder(row) {
                 this.$store.dispatch('deleteModuleOrder', row.id)
@@ -1010,7 +1010,7 @@
                     .then(response => {
                         this.sendMessage('Заказ успешно обновлён');
                         this.editItem={};
-                        $('#editModalBox').modal('hide');
+                        this.$store.dispatch('closeModal', '#editModalBox');
                     });
 
                 // this.sendMessage('Заказ успешно coxранён');

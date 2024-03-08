@@ -5,7 +5,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="reviewModalBoxLabel">Оставить отзыв</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close"  data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -31,7 +31,6 @@
                                 <button type="submit" class="btn btn-travel" style="width: 100%" @click="addReview" :disabled="loading">
                                     <div class="row align-items-center m-auto w-100 h-100">
                                         <span v-if="loading" class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
-                                        <span v-if="loading" class="sr-only">Loading...</span>
                                        Отправить
                                     </div>
                                 </button>
@@ -42,10 +41,10 @@
             </div>
         </div>
         <div class="row align-items-center m-auto" style="width: 100%; height: 100%;">
-            <button class="btn btn-tour-info" @click="toBalance"><i class="fas fa-wallet mr-2"></i>Баланс</button>
-            <button class="btn btn-tour-info" v-if="!tour.Archive" @click="addToArchive(tour)"><i class="fas fa-archive mr-2"></i>Отправить в архив</button>
-            <button class="btn btn-tour-info" v-else @click="returnFromArchive(tour)"><i class="fas fa-archive mr-2"></i>Вернуть из архива</button>
-            <button class="btn btn-tour-info" :disabled="invalid" data-toggle="modal" data-target="#reviewModalBox"><i class="fas fa-comment-dots mr-2"></i>Написать отзыв</button>
+            <button class="btn btn-tour-info" @click="toBalance"><i class="fas fa-wallet me-2"></i>Баланс</button>
+            <button class="btn btn-tour-info" v-if="!tour.Archive" @click="addToArchive(tour)"><i class="fas fa-archive me-2"></i>Отправить в архив</button>
+            <button class="btn btn-tour-info" v-else @click="returnFromArchive(tour)"><i class="fas fa-archive me-2"></i>Вернуть из архива</button>
+            <button class="btn btn-tour-info" :disabled="invalid" data-bs-toggle="modal" data-bs-target="#reviewModalBox"><i class="fas fa-comment-dots me-2"></i>Написать отзыв</button>
         </div>
         <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
             <div class="col-md-6 p-0">
@@ -57,7 +56,7 @@
                         <div class="row align-items-center w-100 m-auto">
                             <div class="col-12">
                                 <div class="row align-items-center w-100 m-auto">
-                                    <b class="mr-3" style="border: 1px solid #063065" :class="'slsf-country-to__select-flag flag-ui_narrowtpl_flags_20x13_'+tour.TourInfo.country.Id"></b>
+                                    <b class="me-3" style="border: 1px solid #063065" :class="'tc-flag-'+tour.TourInfo.country.Id"></b>
                                     <div class="subtitle">{{tour.TourInfo.country.Name}}</div>
                                 </div>
                             </div>
@@ -90,7 +89,7 @@
                 <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                     <div class="col-12">
                         <div class="title">
-                            <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                            <i class="icon-icon-list me-1" style="font-size: 11px;">
                                 <span class="path1">
                                     <span class="path2"></span>
                                 </span>
@@ -111,7 +110,7 @@
                 <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                     <div class="col-12">
                         <div class="title">
-                            <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                            <i class="icon-icon-list me-1" style="font-size: 11px;">
                                 <span class="path1">
                                     <span class="path2"></span>
                                 </span>
@@ -128,7 +127,7 @@
                 <div class="row align-items-center justify-content-center m-auto" style="width: 100%; height: 100%;">
                     <div class="col-12">
                         <div class="title">
-                            <i class="icon-icon-list mr-1" style="font-size: 11px;">
+                            <i class="icon-icon-list me-1" style="font-size: 11px;">
                                 <span class="path1">
                                     <span class="path2"></span>
                                 </span>
@@ -156,7 +155,7 @@
             </div>
             <div class="col-md-5 col-sm-12 m-auto">
 <!--                <span class="white&#45;&#45;text active-tour ml-5" style="background:#062348; font-size: 18px;position: absolute">-->
-<!--                    <div class="icon icon-calendar mr-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}-->
+<!--                    <div class="icon icon-calendar me-2"></div>{{tour.StartAt | moment("DD.MM")}} - {{tour.EndAt | moment("DD.MM")}}-->
 <!--                </span>-->
                 <add-to-calendar title="Тур"
                                  :location="tour.TourInfo.resort.Name + ', ' + tour.TourInfo.country.Name"
@@ -394,7 +393,8 @@
                 this.$store.dispatch('updateArchive', data).then(()=> {
                     console.log('updateArchive', 'true')
                     tour.Archive=true;
-                    this.sendMessage('Тур успешно перемещен в архив');
+                    this.$store.dispatch('sendNotification',
+                        {message: 'Тур успешно перемещен в архив'});
                 })
             },
             returnFromArchive(tour) {
@@ -406,7 +406,8 @@
                 }
                 this.$store.dispatch('updateArchive', data).then(()=> {
                     tour.Archive=false;
-                    this.sendMessage('Тур успешно перемещен из архива');
+                    this.$store.dispatch('sendNotification',
+                        { message: 'Тур успешно перемещен из архива'});
                 })
             },
             async addReview() {
@@ -423,11 +424,12 @@
                     this.tour.Comment.push(data);
                 }
                 await this.$store.dispatch('updateReview', this.tour).then(()=> {
-                    this.sendMessage('Новый отзыв успешно добавлен');
+                    this.$store.dispatch('sendNotification',
+                        {message: 'Новый отзыв успешно добавлен'});
                     this.loading = false
                 })
                 this.loading = false
-                $('#reviewModalBox').modal('hide')
+                this.$store.dispatch('closeModal', '#reviewModalBox');
             },
             sendMessage(message) {
                 this.$notify({

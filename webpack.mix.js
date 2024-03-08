@@ -18,7 +18,7 @@ if (mix.inProduction()) {
     mix.webpackConfig({
         plugins: [
             new CompressionPlugin({
-                filename: '[path].br[query]',
+                filename: '[file].br[query]',
                 algorithm: 'brotliCompress',
                 test: /\.(js|css|html|svg)$/,
                 compressionOptions: {level: 11},
@@ -44,25 +44,22 @@ mix.webpackConfig({
     }
 });
 
-
 mix
 
     .js('resources/js/desktop/app.js', 'public/js/desktop').vue()
     .sass('resources/sass/desktop/app.scss', 'public/css/desktop/app.css')
     .options({
         processCssUrls: false
-    });
-
+    }).version();
 
 mix
     .js('resources/js/pwa/app.js', 'public/js/pwa').vue()
-    .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css');
-
-
-mix
-    .js('resources/js/admin/app.js', 'public/js/admin').vue()
-    .sass('resources/sass/admin/app.scss', 'public/css/admin/app.css');
-
+    .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css').version();
+//
+// mix
+//     .js('resources/js/admin/app.js', 'public/js/admin').vue()
+//     .sass('resources/sass/admin/app.scss', 'public/css/admin/app.css');
+//
 
 /*mix
     .sass('resources/sass/desktop/black-them.scss', 'public/css/black-them.css');*/
@@ -77,7 +74,7 @@ mix.copy("resources/assets/css/theme.css", "public/css/pwa");
 mix.copy("resources/assets/css/tour-search.css", "public/css/pwa");
 
 mix.copyDirectory('resources/assets/img', 'public/img');
-mix.copyDirectory('resources/assets/css/inc', 'public/css/inc');
+// mix.copyDirectory('resources/assets/css/inc', 'public/css/inc');
 
 if (mix.inProduction()) {
 

@@ -6,14 +6,14 @@ use App\ChatMessage;
 use App\Conversation;
 use App\Participant;
 use App\UserInfo;
-use App\UserTour;
+use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
  use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 //use Auth;
 use Telegram\Bot\Laravel\Facades\Telegram;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use App\User;
 //use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 //use Illuminate\Foundation\Auth\ResetsPasswords;
@@ -21,21 +21,57 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Password;
 
+
 class AuthController extends Controller
 {
 //    use SendsPasswordResetEmails;
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['only' => ['user', 'logout' ]]);
+        $this->middleware('jwt.auth', ['only' => ['user', 'logout' ]]);
+//        $this->middleware('auth:api', ['only' => ['user', 'logout' ]]);
+
 //         ['except' => ['login', 'register','checkAuth', 'sendPasswordResetLink','callResetPassword' ]
     }
      public function login(Request $request)
     {
+        try {
+            $credentials = $request->only('email', 'password');
+//            $token = $this->guard()->attempt($credentials);
+            $token = null;
+            $token = auth()->attempt($credentials);
+//            $newToken = auth()->refresh();
+//            $token = $this->guard()->tokenById(1);
+            if ($token) {
+
+//                $user = User::with(['info', 'documents'])->whereId(Auth::id())->first();
+                $user = User::find(Auth::id())->load('roles');
+//                $info = UserInfo::where('user_id', $user->id)->first();
+//                $user->info = $info;
+//                if($user->role=='client')
+//                {
+//                    $tours = UserTour::where('UserId', $user->id)->get();
+//                    $tours_count = UserTour::where('UserId', $user->id)->count();
+//                    $user->tours = $tours;
+//                    $user->tours_count = $tours_count;
+//                    $archive = UserTour::where('UserId', $user->id)->where('Archive', true)->get();
+//                    $user->archive = $archive;
+//                }
+                return response()->json(['status' => 'success', 'token'=> $token, 'user'=>$user ], 200)
+                    ->header('Authorization', "Bearer ".$token);
+            }
+            return response()->json([ 'status' => 'error', 'error' => 'Invalid Credentials'], 405);
+        }
+        catch (\Exception $e)
+        {
+            return response()->json([ 'status' => 'error', 'error' => $e->getMessage()], 500);
+        }
+        /*
 //        $credentials = $request->only('login', 'password');
         $credentials = $request->only('email', 'password');
-
-        if ($token = $this->guard()->attempt($credentials)) {
+         try {
+             $token = $this->guard()->attempt($credentials);
+             if ($token) {
 //            $user = User::find(Auth::user()->id);
 //            if(Auth::user()->role == 'client')
 //            {
@@ -53,10 +89,10 @@ class AuthController extends Controller
 //                $user->isManagerForCount = $user->isManagerFor->count();
 //            }
 
-            $user = Auth::user();
+                 $user = Auth::user();
             $info = UserInfo::where('UserId', $user->id)->first();
             $user->info = $info;
-            if($user->role=='client')
+            if($user->hasRole('user'))
             {
                 $tours = UserTour::where('UserId', $user->id)->get();
                 $tours_count = UserTour::where('UserId', $user->id)->count();
@@ -79,20 +115,22 @@ class AuthController extends Controller
 
 //             $user->remember_token = $token;
 //             $user->save();
-            // $t = auth()->login($user);
-            // $test = Auth::check();'test'=>$test
-            return response()->json(['status' => 'success', 'token'=> $token, 'user'=>$user ], 200)->header('Authorization', "Bearer ".$token);
-        }
-        return response()->json([ 'status' => 'error', 'error' => 'Invalid Credentials'], 405);
+                 // $t = auth()->login($user);
+                 // $test = Auth::check();'test'=>$test
+                 return response()->json(['status' => 'success', 'token'=> $token, 'user'=>$user ], 200)->header('Authorization', "Bearer ".$token);
+             }
+             return response()->json([ 'status' => 'error', 'error' => 'Invalid Credentials'], 405);
+         }
+         catch (\Exception $e) {
+             return response()->json([ 'status' => 'error', 'error' => $e->getMessage()], 500);
+         }*/
     }
 
     public function register(Request $request)
     {
         $v = Validator::make($request->all(), [
-//            'name' => 'required',
-//            'login' => 'required|unique:users|min:3',
             'email' => 'required|unique:users|email',
-            'password'  => 'required|min:6',
+            'password'  => 'required|min:8',
         ]);
         if ($v->fails())
         {
@@ -103,48 +141,56 @@ class AuthController extends Controller
         }
 
         $user = new User();
-//        $user->name = $request->name;
-//        $user->login = $request->login;
-        $user->email = $request->email;
+        foreach (request()->all() as $key => $value) {
+            if (in_array($key, $user->getFillable())) {
+                $user->$key = $value;
+            }
+        }
         $user->password = bcrypt($request->password);
         $user->save();
-        $userInfo = UserInfo::create([
-            'UserId' => $user->id,
-            'FullName' => $request->FullName,
-            'FirstName' => $request->FirstName,
-            'MiddleName' => $request->MiddleName,
-            'LastName' => $request->LastName,
-            'Phone' => $request->Phone,
-            'Promocode' => $request->Promocode=='true' ? 1 : 0
-        ]);
-        $userInfo->save();
-        $conversation = Conversation::create([
-            'manager_title' => 'Клиент '.$request->FullName,
-            'client_title' => 'Администратор сайта',
-            'creator_id' => 1
-        ]);
-        $paticipant_manager = Participant::create([
-            'conversation_id'=>$conversation->id,
-            'user_id'=> 1,
-            'status'=>''
-        ]);
-        $paticipant_client = Participant::create([
-            'conversation_id'=>$conversation->id,
-            'user_id'=>$user->id,
-            'status'=>''
-        ]);
-        $objDateTime = new DateTime('NOW');
-        $first_message =  ChatMessage::create([
-            'conversation_id' => $conversation->id,
-            'sender_id' => 1,
-            'date' => $objDateTime,
-            'message_text' => 'Здравствуйте, Вас приветствует турагенство TravelClub! Эта беседа с администратором сайта, здесь Вы сможете задать любые интересующие Вас вопросы.'
-        ]);
-        $text = "*Зарегистрирован новый пользователь*\n";
+        $user->assignRole('user');
+//        $userInfo = UserInfo::create([
+//            'UserId' => $user->id,
+//            'FullName' => $request->FullName,
+//            'FirstName' => $request->FirstName,
+//            'MiddleName' => $request->MiddleName,
+//            'LastName' => $request->LastName,
+//            'Phone' => $request->Phone,
+////            'Promocode' => $request->Promocode=='true' ? 1 : 0
+//        ]);
+//        $userInfo->save();
+//        $conversation = Conversation::create([
+//            'manager_title' => 'Клиент '.$request->FullName,
+//            'client_title' => 'Администратор сайта',
+//            'creator_id' => 1
+//        ]);
+//        $paticipant_manager = Participant::create([
+//            'conversation_id'=>$conversation->id,
+//            'user_id'=> 1,
+//            'status'=>''
+//        ]);
+//        $paticipant_client = Participant::create([
+//            'conversation_id'=>$conversation->id,
+//            'user_id'=>$user->id,
+//            'status'=>''
+//        ]);
+//        $objDateTime = new DateTime('NOW');
+//        $first_message =  ChatMessage::create([
+//            'conversation_id' => $conversation->id,
+//            'sender_id' => 1,
+//            'date' => $objDateTime,
+//            'message_text' => 'Здравствуйте, Вас приветствует турагенство TravelClub! Эта беседа с администратором сайта, здесь Вы сможете задать любые интересующие Вас вопросы.'
+//        ]);
+        $manager = $request->get('manager', false);
+        if($manager) {
+            $user->assignRole('manager');
+        }
+        $whom = $manager ? 'менеджер' : 'пользователь';
+        $text = "*Зарегистрирован новый ".$whom."*\n";
         $text .= "*ID:* ".$user->id."\n"
-            ."*Имя:* ".$request->FullName."\n"
+            ."*Имя:* ".$user->full_name."\n"
             ."*Email:* ".$request->email."\n"
-            ."*Телефон:* ".$request->Phone."\n";
+            ."*Телефон:* ".$request->phone."\n";
 //        if($request->Promocode == true)
 //        {
 //            $text .= "*Промокод: * Да\n";
@@ -153,48 +199,49 @@ class AuthController extends Controller
 //            $text .= "*Промокод: * Нет\n";
 //        }
 
-        Telegram::sendMessage([
-//            'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
-            'chat_id' => '-1001370191765',
-            'parse_mode' => 'Markdown',
-            'text' => sprintf($text),
-            'disable_notification' => 'false'
-        ]);
-        $params = array(
-            'name' => $request->FullName,
-            'phone' => $request->Phone,
-            'email' => '',
-            'source' => 'Зарегистрирован новый пользователь на сайте',
-            'fields' => array(
-                array(
-                    'name' => 'Параметры',
-                    'values' => array($text)
-                ),
-            )
-        );
-        $api_key = '3Dd6Nag08Plq74HKzYqE80xCrf1QE8nfxoQF6rKh9em7ke902sk0W0YM2UtkIpOb';
-        $url = "https://travel-club.moidokumenti.ru/api/add-lead";
-        $request1 = array(
-            'params' => json_encode($params),
-            'key' => $api_key
-        );
+//        Telegram::sendMessage([
+////            'chat_id' => env("TELEGRAM_CHANNEL_MAIN"),
+//            'chat_id' => '-1001370191765',
+//            'parse_mode' => 'Markdown',
+//            'text' => sprintf($text),
+//            'disable_notification' => 'false'
+//        ]);
+//        $params = array(
+//            'name' => $request->FullName,
+//            'phone' => $request->Phone,
+//            'email' => '',
+//            'source' => 'Зарегистрирован новый пользователь на сайте',
+//            'fields' => array(
+//                array(
+//                    'name' => 'Параметры',
+//                    'values' => array($text)
+//                ),
+//            )
+//        );
+//        $api_key = '3Dd6Nag08Plq74HKzYqE80xCrf1QE8nfxoQF6rKh9em7ke902sk0W0YM2UtkIpOb';
+//        $url = "https://travel-club.moidokumenti.ru/api/add-lead";
+//        $request1 = array(
+//            'params' => json_encode($params),
+//            'key' => $api_key
+//        );
 
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 600);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $request1);
-        $result = curl_exec($ch);
-        curl_close($ch);
+//        $ch = curl_init($url);
+//        curl_setopt($ch, CURLOPT_URL, $url);
+//        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        curl_setopt($ch, CURLOPT_TIMEOUT, 600);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, $request1);
+//        $result = curl_exec($ch);
+//        curl_close($ch);
 
         $this->login($request);
 
        return response()->json([
             'status' => 'success',
-            'user'=>$user
-           ], 200);
+            'message' => 'Регистрация прошла успешно',
+            'user'=> $user->load('roles')
+           ], 201);
    }
 
     /**
@@ -211,8 +258,30 @@ class AuthController extends Controller
     /**
      * Get authenticated user
      */
-    public function user(Request $request)
+    public function user()
     {
+//        if(Auth::check()) {
+//            $user = Auth::user();
+//            $user->info = $user->info()->first();
+//
+//            if($user->role=='client')
+//            {
+//                $tours = UserTour::where('UserId', $user->id)->get();
+//                $tours_count = UserTour::where('UserId', $user->id)->count();
+//                //                $info = UserInfo::where('UserId', $user->id)->first();
+//                $user->tours = $tours;
+//                $user->tours_count = $tours_count;
+//                $archive = UserTour::where('UserId', $user->id)->where('Archive', true)->get();
+//                $user->archive = $archive;
+//            }
+            return response()->json([
+                'status' => 'success',
+                'user' => User::find(Auth::id())->load('roles'),
+//                'info' => $user->info
+            ]);
+//        }
+//        return response()->json(['error' => 'Unauthorized'], 401);
+        /*
         // $us = auth()->user();
          if(Auth::check()) {
             $user = Auth::user();
@@ -221,7 +290,7 @@ class AuthController extends Controller
             $user->info = $user->info()->first();
     //        $user->archive = $user->archive();
 
-            if($user->role=='client')
+            if($user->hasRole('user'))
             {
                 $tours = UserTour::where('UserId', $user->id)->get();
                 $tours_count = UserTour::where('UserId', $user->id)->count();
@@ -259,7 +328,7 @@ class AuthController extends Controller
         //     'status' => 'error',
         //     'user' => $us
         // ]);
-
+*/
     }
     public function checkAuth(Request $request)
     {
@@ -300,7 +369,7 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        if ($token = $this->guard()->refresh()) {
+        if ($token = auth()->refresh()) {
             return response()
                 ->json(['status' => 'success','token'=> $token], 200)
                 ->header('Authorization',  "Bearer ".$token);

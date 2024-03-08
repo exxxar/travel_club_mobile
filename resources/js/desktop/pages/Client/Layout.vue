@@ -1,14 +1,15 @@
 <template>
     <div class="white-content wrapper">
-        <side-bar :backgroundColor="'travel'">
+        <side-bar :backgroundColor="'vue'">
             <template slot="links">
                 <sidebar-link to="/client/" :name="'Главная'" icon="icon-home"/>
                 <sidebar-link to="/client/profile" :name="'Мой профиль'" icon="icon-person"/>
-                <sidebar-link to="/client/archive" :name="'Архив туров'" icon="icon-archive"/>
-                <sidebar-link to="/client/chats" :name="'Чаты'" icon="icon icon-chat"/>
+                <sidebar-link to="/client/archive" :name="'Мои туры'" icon="icon-archive"/>
+<!--                <sidebar-link to="/client/archive" :name="'Архив туров'" icon="icon-archive"/>-->
+<!--                <sidebar-link to="/client/chats" :name="'Чаты'" icon="icon icon-chat"/>-->
 
                 <!--                <sidebar-link to="/client/orders" :name="'История заказов'" icon="icon-list-alt"/>-->
-                <!--                <sidebar-link to="/client/profile" :name="'Мои отзывы'" icon="icon-review"/>-->
+                                <sidebar-link to="/client/reviews" :name="'Мои отзывы'" icon="icon-review"/>
 <!--                <sidebar-link to="/icons" :name="'Messages'" icon="tim-icons icon-atom"/>-->
 <!--                <sidebar-link to="/icons" :name="'Tasks'" icon="tim-icons icon-atom"/>-->
 <!--                <sidebar-link to="/icons" :name="'Calendar'" icon="tim-icons icon-atom"/>-->

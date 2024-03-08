@@ -15,11 +15,11 @@ class CreateBranchesTable extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
-            $table->string('country')->nullable();
-            $table->string('country_alias')->nullable();
-            $table->string('city')->nullable();
-            $table->string('city_title')->nullable();
-            $table->json('departments')->nullable();
+            $table->string('country')->nullable()->comment('страна');
+            $table->string('city')->nullable()->comment('город');
+            $table->string('address')->nullable()->comment('адрес');
+            //расписание
+            $table->json('params')->nullable()->comment('доп.параметры');
             $table->timestamps();
         });
     }

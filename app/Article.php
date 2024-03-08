@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    //
-
     protected $fillable = [
         'content',
         'title',
@@ -17,6 +15,20 @@ class Article extends Model
     ];
 
     protected $casts = [
-        "publish_at"=>"datetime"
+        "publish_at"=>"'datetime:d.m.Y H:i",
+        'created_at' => 'datetime:d.m.Y H:i',
+        'updated_at' => 'datetime:d.m.Y H:i',
     ];
+
+
+    public function files()
+    {
+        return $this->hasMany(ArticleFile::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(ArticleFile::class, 'article_id', 'id')->select(['id', 'storage_link', 'preview']);
+    }
+
 }

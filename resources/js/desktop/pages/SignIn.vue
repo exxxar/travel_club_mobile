@@ -1,76 +1,72 @@
 <template>
-    <div style="width: 100%; height: 100vh; background: #f08b23">
-        <div class="row m-auto justify-content-center align-items-center" style="width: 100%; min-height: 100%; background: #f08b23">
-            <div class="row m-auto justify-content-center align-items-center" style="width: 100%;height: 100%;background: #f08b23">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                            <div class="card card-signin my-5">
-                                <div class="card-body">
-                                    <div class="row m-auto justify-content-center align-items-center" style="width: 100%; height: 100%;">
-                                        <div class="col-12 col-md-12 col-sm-12 p-0">
-                                            <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row" style="height:100px;width:100%;">
-                                                <div class="col-md-10 p-0">
-                                                    <div class="row mr-auto ml-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
-                                                        <h1 class="title-1"><span>Д</span>обро пожаловать</h1>
-                                                        <img src="/images/blue-brush.svg" class="blue-brush" style="position: absolute;"/>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-7 p-0">
-                                                    <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:280px;">
-                                                        <h1 class="title-2">в <span>TravelClub Family</span></h1>
-                                                        <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-signin">
-                                        <ValidationObserver v-slot="{ invalid }">
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">Email</h4>
-                                                <ValidationProvider name="email" rules="required" v-slot="{ errors }" style="width: 100%;text-align: center; margin-bottom: 17px">
-                                                    <div class="row align-items-center justify-content-center m-auto" style="width: 100%;height: 100%;">
-                                                        <b-form-input type="text" class="travel-input travel-text-control" v-model="email" placeholder="Email"></b-form-input>
-                                                    </div>
-                                                    <span class="validate-error">{{ errors[0] }}</span>
-                                                </ValidationProvider>
-                                            </div>
+    <div style="width: 100%; height: calc(100vh - 50px); background: #f08b23">
+<!--        <div class="row m-auto justify-content-center align-items-center" style="width: 100%; min-height: 100%; background: #f08b23">-->
+<!--            <div class="row m-auto justify-content-center align-items-center" style="width: 100%;height: 100%;background: #f08b23">-->
+<!--                <div class="container">-->
+                    <div class="tc-wrapper m-auto h-100">
+                        <div class="col-sm-9 col-md-7 col-lg-5 col-xl-4 mx-auto">
+                            <div class="tc-card card-signin my-5">
+                                <h4 class="tc-card__title text-center mb-3">Добро пожаловать в Travel<span class="tc-text-primary">Club</span></h4>
+<!--                                <div class="card-body">-->
+<!--                                    <div class="row m-auto justify-content-center align-items-center" style="width: 100%; height: 100%;">-->
+<!--                                        <div class="col-12 col-md-12 col-sm-12 p-0">-->
+<!--&lt;!&ndash;                                            <div class="row align-items-center justify-content-center mx-auto mb-3 travel-card-title-row" style="height:100px;width:100%;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <div class="col-md-10 p-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <div class="row me-auto ms-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <h1 class="title-1"><span>Д</span>обро пожаловать</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <img src="/images/blue-brush.svg" class="blue-brush" style="position: absolute;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <div class="col-md-7 p-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <div class="row ms-auto me-0 my-auto travel-card-title" style="position:relative;height:50px;width:280px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <h1 class="title-2">в <span>TravelClub Family</span></h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-signin">-->
+                                        <ValidationObserver v-slot="{ invalid }" tag="div" class="tc-wrapper-column tc-gap-medium">
+                                            <base-input
+                                                v-model="email"
+                                                name="email"
+                                                :rules="'required|email'"
+                                                label="Email"
+                                                :disabled="loading"
+                                                no_group_item
+                                            />
+                                            <base-input
+                                                v-model="password"
+                                                name="password"
+                                                :type="passwordFieldType"
+                                                label="Пароль"
+                                                :disabled="loading"
+                                                @click-group-item="switchVisibility"
+                                                :rules="'required|min:8'"
+                                                group_item_action
+                                            >
+                                                <template #icon>
+                                                    <base-icon :name="passwordFieldType === 'password' ? 'Eye':'EyeSlash'"
+                                                               color="secondary"></base-icon>
+                                                </template>
+                                            </base-input>
 
-                                            <div class="form-label-group">
-                                                <h4 class="multiselect-title">Пароль</h4>
-                                                <ValidationProvider name="password" rules="required" v-slot="{ errors }" style="width:100%; text-align: center;">
-                                                    <div class="row align-items-center justify-content-center m-auto" style="width: 100%;">
-                                                        <b-form-input :type="passwordFieldType" class="travel-input travel-text-control"
-                                                               v-model="password"
-                                                               placeholder="Пароль"
-                                                               v-on:keyup.enter="signin"
-                                                        ></b-form-input>
-                                                        <button v-if="passwordFieldType === 'password'" type="password" class="btn-visibility icon icon-eye"  @click="switchVisibility"></button>
-                                                        <button v-else type="password" class="btn-visibility icon icon-eye-slash" @click="switchVisibility"></button>
-                                                    </div>
-                                                    <span class="validate-error">{{ errors[0] }}</span>
-                                                </ValidationProvider>
-                                            </div>
-
-                                            <button class="btn btn-lg btn-travel btn-block text-uppercase mt-3 mx-auto mb-2" :disabled="invalid" @click="signin">
-                                                <div class="row align-items-center justify-content-center m-auto w-100 h-100">
+                                            <button class="tc-button text-uppercase mt-3 mx-auto mb-2" :disabled="invalid||loading" @click="signin">
                                                     <span v-if="loading" role="status" aria-hidden="true" class="spinner-border spinner-border-sm mx-2"></span>
-                                                    <span v-if="loading" class="sr-only">Loading...</span>
                                                     Войти
-                                                </div>
                                             </button>
                                             <p class="text-center m-auto">Нет аккаунта? <router-link to="/signup" style="color: #f8a105">Зарегистрироваться</router-link> </p>
                                             <p class="text-center m-auto">Забыли пароль? <router-link to="/reset-password" style="color: #f8a105">Сменить пароль</router-link> </p>
                                         </ValidationObserver>
-                                    </div>
-                                </div>
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </template>
 
@@ -88,25 +84,11 @@
             isLoggedIn: function () {
                 return this.$store.getters.isLoggedIn
             },
-            isAdmin: function () {
-                return this.$store.getters.isAdmin
-            },
-            isManager: function () {
-                return this.$store.getters.isManager
-            },
         },
         mounted() {
             if(this.isLoggedIn)
             {
-                if (this.isAdmin == true) {
-                    this.$router.push('/admin')
-                }
-                else if(this.isManager == true) {
-                    this.$router.push('/manager')
-                }
-                else {
-                    this.$router.push('/client')
-                }
+                this.$router.push('/dashboard')
             }
         },
         methods: {
@@ -114,49 +96,20 @@
                 this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
             },
             async signin() {
-                this.wrongCredentials = '';
-                if(this.email !=''){
-                    this.loading = true;
-                    let data = {
-                        email: this.email,
-                        password: this.password,
-                    }
-                    await this.$store.dispatch('login', data)
-                        .then(resp => {
-                            this.loading = false;
-                            if(resp.data.status == 'success') {
-                                if (this.isAdmin == true) {
-                                    this.$router.push('/admin')
-                                }
-                                else if(this.isManager == true) {
-                                    this.$router.push('/manager')
-                                }
-                                else {
-                                    this.$router.push('/client')
-                                }
-                            }
-                            else {
-                                this.wrongCredentials = 'Неверные учетные данные'
-                                this.sendMessage(this.wrongCredentials);
-                            }
-                        })
-                        .catch(err => {
-                            this.loading = false;
-                            if (err.response != undefined) {
-                                if (err.response.data.error)
-                                {
-                                    this.wrongCredentials = 'Неверные учетные данные'
-                                    this.sendMessage(this.wrongCredentials);
+                this.loading = true;
+                let data = {
+                    email: this.email,
+                    password: this.password,
+                };
+                await this.$store.dispatch('login', data)
+                    .then(resp => {
+                        this.loading = false;
+                        this.$router.push('/dashboard')
+                    })
+                    .catch(err => {
+                        this.loading = false;
+                    })
 
-                                }
-                            }
-                            else {
-                                this.wrongCredentials = 'Произошла ошибка, попробуйте снова'
-                                this.sendMessage(this.wrongCredentials);
-                            }
-
-                        })
-                }
             },
             sendMessage(message) {
                 this.$notify({

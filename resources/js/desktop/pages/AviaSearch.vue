@@ -12,11 +12,11 @@
                         <promocode-image title1="Оформи" title2="полёт" pos="238"></promocode-image>
                     </div>
                     <div class="col-md-6">
-                        <div class="row family-row family-description m-auto" style="width: 80%; color: #062348;font-size: 17px;font-weight: 900; font-family:'Open Sans';">
+                        <div class="row family-row family-description m-auto" style="width: 80%; color: #062348;font-size: 17px;font-weight: 900;">
                             <p class="text-center">
                                 Не получилось определиться самому? Оформи заявку и наш менеджер тебе поможет!
                             </p>
-                            <b-button class="btn-travel btn-group-lg mt-2 mx-auto" href="/avia-module">
+                            <b-button class="btn-travel btn-group-lg mt-2 mx-auto d-flex" href="/avia-module">
                                 Оформить заявку
                             </b-button>
                         </div>
@@ -49,7 +49,7 @@
         background: #f08b23;
         color: white;
         text-transform: uppercase;
-        font-family: "Open Sans";
+        font-family: "Roboto", sans-serif;
         font-weight: 900;
         font-size: 20px;
         outline: none;

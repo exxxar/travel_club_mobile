@@ -1,6 +1,6 @@
 <template>
     <div class="modal employees stories with-story-bar show" :id="'EmployeeDefault'+index"
-         data-backdrop="false"
+          data-bs-backdrop="false"
          tabindex="-1"
          aria-modal="true" role="dialog">
         <div class="modal-dialog" role="document">
@@ -40,7 +40,8 @@
 
         methods:{
             hide(){
-                $(".employees").modal("hide");
+                // $(".employees").modal("hide");
+                this.$store.dispatch('closeModal', '.employees');
             }
         }
 

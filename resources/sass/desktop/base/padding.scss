@@ -1,0 +1,38 @@
+@include set-property('p','padding', $indents, true, !important);
+@include set-property('pr','padding-right', $indents, true,!important);
+@include set-property('pl','padding-left', $indents, true,!important);
+@include set-property('pe','padding-right', $indents, true,!important);
+@include set-property('ps','padding-left', $indents, true,!important);
+@include set-property('pt','padding-top', $indents, true,!important);
+@include set-property('pb','padding-bottom', $indents, true,!important);
+@include set-property('px','padding', $indents, true, !important, true, true) using ($key, $value) {
+    padding-right: $value !important;
+    padding-left: $value !important;
+};
+@include up-all() using ($key, $value) {
+    @include set-property('pr'+$key,'padding-right', $indents, true,!important);
+    @include set-property('pl'+$key,'padding-left', $indents, true,!important);
+    @include set-property('pe'+$key,'padding-right', $indents, true,!important);
+    @include set-property('ps'+$key,'padding-left', $indents, true,!important);
+    @include set-property('pt'+$key,'padding-top', $indents, true,!important);
+    @include set-property('pb'+$key,'padding-bottom', $indents, true,!important);
+    @include set-property('px'+$key,'padding', $indents, true, !important, true, true) using ($key, $value) {
+        padding-right: $value !important;
+        padding-left: $value !important;
+    };
+}
+
+@include down-all() using ($key, $value){
+    @include set-property('pr'+$key,'padding-right', $indents, true,!important);
+    @include set-property('pl'+$key,'padding-left', $indents, true,!important);
+    @include set-property('pe'+$key,'padding-right', $indents, true,!important);
+    @include set-property('ps'+$key,'padding-left', $indents, true,!important);
+    @include set-property('pt'+$key,'padding-top', $indents, true,!important);
+    @include set-property('pb'+$key,'padding-bottom', $indents, true,!important);
+    @include set-property('px'+$key,'padding', $indents, true, !important, true, true) using ($key, $value) {
+        padding-right: $value !important;
+        padding-left: $value !important;
+    };
+}
+
+
