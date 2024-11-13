@@ -32,7 +32,7 @@
                     links: [
                         // {name: 'Главная', url: '/', icon: "icon-home"},
                         // {name: 'Подобрать путешествие', url: '/tours', icon: "far fa-compass"},
-                        // {name: 'Подобрать горячие туры', url: '/hot-tours', icon: "fas fa-plane-departure"},
+                        // {name: 'Подобрать горящие туры', url: '/hot-tours', icon: "fas fa-plane-departure"},
                         // {name: 'Подобрать туры по России', url: '/russia-tours', icon: "fas fa-map-marked-alt"},
                         {
                             path: '/',
@@ -54,7 +54,7 @@
                             path: '/hot-tours',
                             icon: 'Location',
                             code: "AviaSearch",
-                            label: "Подобрать горячие туры",
+                            label: "Подобрать горящие туры",
                             color: 'primary',
                             type: 'ordinary'
                         },

@@ -2,7 +2,7 @@
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 150 800 600" style="enable-background:new 0 0 800 800;" xml:space="preserve">
 <g id="promocode">
-	<path style="fill:#FF931E;stroke:#1B1464;stroke-miterlimit:10;" d="M773,560H27c-14.9,0-27-12.2-27-27V419c0-14.9,12.1-27,27-27
+	<path class="tc-fill-primary" style="stroke:#1B1464;stroke-miterlimit:10;" d="M773,560H27c-14.9,0-27-12.2-27-27V419c0-14.9,12.1-27,27-27
 		h746c14.8,0,27,12.1,27,27v114C800,547.8,787.8,560,773,560z"/>
     <text
         transform="matrix(1 0 0 1 150 521.2852)"

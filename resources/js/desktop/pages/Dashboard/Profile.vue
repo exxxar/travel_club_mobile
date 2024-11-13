@@ -5,7 +5,7 @@
         </h1>
         <div class="tc-row tc-row-medium tc-gap-row-xxlarge">
             <div class="col-12 col-lg-6">
-                <ValidationObserver v-slot="{ invalid }" tag="div" class="tc-card tc-wrapper-column tc-gap-column-medium h-100">
+                <ValidationObserver v-slot="{ invalid }" ref="fio" tag="div" class="tc-card tc-wrapper-column tc-gap-column-medium h-100">
                     <h3 class="tc-card__title">Ваши данные</h3>
                     <base-input
                         v-model="edit_user.last_name"
@@ -37,24 +37,21 @@
                         :disabled="!edit_user_mode"
                         no_group_item
                     />
-                    <div class="tc-wrapper-between">
-                        <button type="button" class="tc-button" @click="cancel"
-                                :disabled="loading" v-if="edit_user_mode"
-                        >
+                    <div class="tc-wrapper justify-content-end">
+                        <base-button @click="cancel" :disabled="loading" v-if="edit_user_mode">
                             <!--                                <base-icon :name="'Cancel'" :width="'22px'" :height="'22px'" color="red"></base-icon>-->
                             Отмена
-                        </button>
-                        <button type="button" class="tc-button tc-button_save" @click="save"
+                        </base-button>
+                        <base-button @click="save" :loading="loading"
                                 :disabled="invalid||loading" v-if="edit_user_mode"
                         >
-                            <span v-if="loading" class="spinner-border spinner-border-sm" role="status"></span>
                             Сохранить
-                        </button>
-                        <button type="button" class="tc-button ml-auto tc-button_save" v-show="!edit_user_mode"
+                        </base-button>
+                        <base-button v-show="!edit_user_mode"
                                 :disabled="loading" @click="edit_user_mode=true"
                         >
                             Редактировать
-                        </button>
+                        </base-button>
                     </div>
                 </ValidationObserver>
             </div>
@@ -104,12 +101,10 @@
                                        color="secondary"></base-icon>
                         </template>
                     </base-input>
-                    <div class="tc-card__footer tc-wrapper-between">
-                        <button type="button" class="tc-button tc-button_save ml-auto"
-                                :disabled="invalid" @click="changePassword"
-                        >
+                    <div class="tc-card__footer tc-wrapper justify-content-end">
+                        <base-button :disabled="invalid" @click="changePassword">
                             Сохранить
-                        </button>
+                        </base-button>
                     </div>
                 </ValidationObserver>
             </div>
@@ -119,7 +114,7 @@
                     <div class="tc-row tc-gap-down-md-row-medium align-items-end">
                         <div class="col-12 col-md-8 tc-px-down-md-none tc-ps-none">
                             <base-input
-                                v-model="user.email"
+                                v-model="edit_user.email"
                                 :name="'email'"
                                 type="email"
                                 :rules="'required|email'"
@@ -130,10 +125,10 @@
                             </base-input>
                         </div>
                         <div class="col-12 col-md-4 tc-px-down-md-none tc-pe-none">
-                            <button class="tc-button tc-button_plump float-right tc-w-down-sm-100"
-                                    @click="editContact('email')">
-                                {{user.email ? 'Изменить' : 'Привязать'}}
-                            </button>
+                            <base-button class="tc-button_plump float-right tc-w-100"
+                                    @click="changeContact('email')">
+                                {{edit_user.email ? 'Изменить' : 'Привязать'}}
+                            </base-button>
                         </div>
                     </div>
                 </div>
@@ -144,32 +139,36 @@
                     <div class="tc-row tc-gap-down-md-row-medium">
                         <div class="col-12 col-md-8 tc-px-down-md-none tc-ps-none">
                             <base-input
-                                v-model="user.phone"
+                                v-model="edit_user.phone"
                                 :name="'phone'"
                                 type="tel"
                                 :rules="'required|phone'"
-                                :placeholder="'+7 495 000-00-00'"
+                                :placeholder="'+7 495 000 0000'"
                                 icon_name="Smartphone" icon_color="primary"
-                                :mask="['+# ### ### ####','+## ### ### ####', '+## ### #### ####',]"
+                                :mask="'+# ### ### ####'"
                                 disabled
                             />
                         </div>
                         <div class="col-12 col-md-4 tc-px-down-md-none tc-pe-none">
-                            <button class="tc-button tc-button_plump float-right tc-w-down-sm-100"
-                                    @click="editContact('phone')">
-                                {{user.phone ? 'Изменить' : 'Привязать'}}
-                            </button>
+                            <base-button class="tc-button_plump float-right tc-w-100"
+                                    @click="changeContact('phone')"
+                            >
+                                {{edit_user.phone ? 'Изменить' : 'Привязать'}}
+                            </base-button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <modal-change-contact ref="changeContactModal"/>
     </div>
 </template>
 
 <script>
+    import ModalChangeContact from "./Profile/ModalChangeContact";
     export default {
         name: "Profile",
+        components: {ModalChangeContact},
         data() {
             return {
                 passwords: {
@@ -192,7 +191,6 @@
                 edit_user_mode: false,
                 loading: false,
                 password_loading: false,
-                edit_password_mode: false,
                 grantTypes: [
                     {title: 'Email', value: 'email'},
                     {title: 'Телефон', value: 'phone'},
@@ -228,7 +226,6 @@
                                 this.$refs.change_password.reset();
                             }
                         });
-                        this.edit_password_mode = false;
                         this.edit_user = JSON.parse(JSON.stringify(this.user));
                         this.passwords = {
                             newPassword: '',
@@ -255,19 +252,40 @@
                         this.loading = false;
                     })
             },
-            cancel() {
+            cancel(ref='fio') {
                 this.edit_user_mode = false;
                 this.edit_user = JSON.parse(JSON.stringify(this.user));
+                requestAnimationFrame(() => {
+                    if (this.$refs[ref]) {
+                        this.$refs[ref].reset();
+                    }
+                });
             },
             switchVisibility(type) {
                 this.passwords_types[type] = this.passwords_types[type] === "password" ? "text" : "password";
             },
-            editContact(type) {
-                // this.$store.dispatch('sendNotification',
-                //     'Отзыв успешно отправлен');
-                // this.$store.dispatch('sendNotification',
-                //     {message: 'Отзыв '});
+            changeContact(type) {
+                console.log(this.$refs, this.$refs.changeContactModal);
+                if(this.$refs.changeContactModal) {
+                    this.$refs.changeContactModal.setType(type);
+                }
+                this.$store.commit('openModal', '#changeContactModal')
             },
+            // changeContact(type) {
+            //     this.loading = true;
+            //     let payload = this.edit_user;
+            //     payload.contact = type;
+            //     this.$store.dispatch('changeContact', payload)
+            //         .then(resp => {
+            //             this.loading = false;
+            //             // this.$store.dispatch('sendNotification',
+            //             //     {message: 'Ваши данные успешно обновлены'});
+            //             this.cancel();
+            //         })
+            //         .catch(error => {
+            //             this.loading = false;
+            //         })
+            // },
         }
     }
 </script>

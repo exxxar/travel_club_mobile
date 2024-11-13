@@ -7,7 +7,7 @@
 
                 <h6 class="card-subtitle">Будь в тренде с нами</h6>
                 <h5 class="card-title mb-2 d-flex align-items-center justify-content-between">
-                    Актуальные новости TravelClub
+                    Актуальные новости ВПУТЬ
                 </h5>
 
         <news-item-block :article="article"/>

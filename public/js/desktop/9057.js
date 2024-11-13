@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[9057],{39057:(s,t,a)=>{a.r(t),a.d(t,{default:()=>n});const e={name:"Chats"};const n=(0,a(14486).A)(e,(function(){var s=this._self._c;return s("div",[s("chat-list")],1)}),[],!1,null,"31baaaa1",null).exports}}]);
+//# sourceMappingURL=9057.js.map

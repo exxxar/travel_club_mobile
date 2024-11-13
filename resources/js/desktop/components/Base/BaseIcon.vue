@@ -9,11 +9,11 @@
         <title>{{name}} icon</title>
         <slot/>
     </svg>
-    <component v-else v-bind:is="icon" v-bind="attributes"></component>
+    <component v-else-if="icon" v-bind:is="icon" v-bind="attributes"></component>
 </template>
 <script>
     export default {
-        name: "Icon",
+        name: "BaseIcon",
         props: {
             name: String,
             size: {
@@ -51,18 +51,40 @@
             stroke: {
                 type: [String,Boolean],
                 default: false
-            }
+            },
+            path_name:{
+                type:Boolean,
+                default: false
+            },
         },
         data: () => ({
             icon: null,
+            extic: 'vue',
             // attributes: null
         }),
-        created() {
-            this.icon = () => import('../Icons/' + this.name + '.vue');
+        async created() {
+            if(this.path_name == true) {
+                this.extic = 'svg';
+                // let svg_tmp = await import('@public/'+this.name+'.'+this.extic);
+                // console.log('svg_tmp', svg_tmp)
+                this.icon = () => import('@public/'+this.name+'.'+this.extic);
+                // this.icon = <template>${svg_tmp}</template>
+            }
+            else {
+                this.extic = 'vue';
+                this.icon = () => import('@icon/'+this.name+'.'+this.extic);
+            }
         },
         watch: {
             name() {
-                this.icon = () => import('../Icons/' + this.name + '.vue');
+                if(this.path_name == true) {
+                    // this.extic = 'svg';
+                    this.icon = () => import('@public/'+this.name+'.'+this.extic);
+                }
+                else {
+                    this.extic = 'vue';
+                    this.icon = () => import('@icon/'+this.name+'.'+this.extic);
+                }
             }
         },
         computed: {
@@ -70,28 +92,32 @@
             //     return () => import('../Icons/'+this.name+'.vue')
             // }
             attributes() {
-                let attributes = this.$props;
+                let attributes = this.$props ? this.$props : [];
+                if(this.name=='blue-brush') {
+                    console.log(attributes)
+                }
+
                 for (let propName in attributes) {
                     if (attributes[propName] === null || attributes[propName] === undefined || attributes[propName] === '') {
                         delete attributes[propName];
                     }
                 }
-               attributes['aria-labelledby'] = this.name;
+                attributes['aria-labelledby'] = this.name;
                 attributes.role = "presentation";
-                if(typeof this.fill == 'boolean' && this.fill) {
-                    if(!attributes.class) attributes.class='';
+                if (typeof this.fill == 'boolean' && this.fill) {
+                    if (!attributes.class) attributes.class = '';
                     attributes.class = 'tc-fill tc-fill-' + this.color;
                     delete attributes['fill'];
                 }
                 else {
-                    attributes.fill = this.fill
+                    attributes['fill'] = this.fill+' ';
                 }
                 // if (this.stroke) {
                 //     attributes.class += 'tc-stroke tc-stroke-' + this.color;
                 // }
-                if(typeof this.stroke == 'boolean' && this.stroke) {
-                    if(!attributes.class) attributes.class='';
-                    attributes.class +='tc-stroke tc-stroke-'+this.color;
+                if (typeof this.stroke == 'boolean' && this.stroke) {
+                    if (!attributes.class) attributes.class = '';
+                    attributes.class += 'tc-stroke tc-stroke-' + this.color;
                     delete attributes['stroke'];
                 }
                 else {
@@ -100,16 +126,11 @@
                 // if(this.fill) {
                 //     attributes.class +=' tc-fill'+this.color;
                 // }
+                delete attributes['path_name'];
                 delete attributes['size'];
                 return attributes
             }
         }
     }
 </script>
-<style scoped>
-    svg {
-        display: inline-block;
-        vertical-align: baseline;
-        /*margin-bottom: -4px; !* yes, I'm that particular about formatting *!*/
-    }
-</style>
+

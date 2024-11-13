@@ -1,12 +1,8 @@
 {
-    "/js/desktop/app.js": "/js/desktop/app.js?id=61f39dbc989090a58be230f256f7c747",
-    "/js/pwa/app.js": "/js/pwa/app.js?id=6950e250cd0c0158de22dd1572a703c7",
-    "/css/pwa/app.css": "/css/pwa/app.css?id=fb62a5fc7eb3a571aef08aa780d6056e",
-    "/css/desktop/app.css": "/css/desktop/app.css?id=084b1e91da5fc7705d96e8154d63278b",
-    "/css/assets/app.css": "/css/assets/app.css?id=7b3c73bf6f0d0dc6a81a9aaa69f22a7a",
-    "/js/pwa/jquery-3.4.1.min.js": "/js/pwa/jquery-3.4.1.min.js?id=220afd743d9e9643852e31a135a9f3ae",
-    "/css/pwa/theme.css": "/css/pwa/theme.css?id=ae2b33a349b75e25ef04fbfc2101895d",
-    "/css/pwa/tour-search.css": "/css/pwa/tour-search.css?id=95b8859231e2d3af59188ec7b6d8bead",
+    "/js/desktop/app.js": "/js/desktop/app.js?id=c057c218373015e37c451caa30fe5a72",
+    "/css/desktop/app.css": "/css/desktop/app.css?id=cd5b51dd05570caafdbd0378b7279c41",
+    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=cd5b51dd05570caafdbd0378b7279c41",
+    "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=c057c218373015e37c451caa30fe5a72",
     "/img/employees/1.jpg": "/img/employees/1.jpg?id=d9aa55ee3747d065c306be0e3903d0ec",
     "/img/employees/2.jpg": "/img/employees/2.jpg?id=a072eac11bd64598d6369533fea1d2aa",
     "/img/employees/3.jpg": "/img/employees/3.jpg?id=91a45111259a37cc578f6a2aa2e7f273",
@@ -87,13 +83,5 @@
     "/img/travel/test1.jpg": "/img/travel/test1.jpg?id=3fb4e4bdd6ba2cf8cc400e99991f4bd7",
     "/img/travel/ukraine0.png": "/img/travel/ukraine0.png?id=e89573849d54061f04186162b3801271",
     "/img/travel/ukraine1.png": "/img/travel/ukraine1.png?id=d16f900b4b6d08f2f261d040da6f5a9f",
-    "/img/travel/wturizm.svg": "/img/travel/wturizm.svg?id=6f46def5718c1835b13607f69ebc0d0d",
-    "/js/pwa/app.min.js": "/js/pwa/app.min.js?id=6950e250cd0c0158de22dd1572a703c7",
-    "/css/pwa/app.min.css": "/css/pwa/app.min.css?id=fb62a5fc7eb3a571aef08aa780d6056e",
-    "/css/pwa/theme.min.css": "/css/pwa/theme.min.css?id=ae2b33a349b75e25ef04fbfc2101895d",
-    "/css/assets/app.min.css": "/css/assets/app.min.css?id=7b3c73bf6f0d0dc6a81a9aaa69f22a7a",
-    "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=61f39dbc989090a58be230f256f7c747",
-    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=084b1e91da5fc7705d96e8154d63278b",
-    "/js/admin/app.min.js": "/js/admin/app.min.js?id=25cde35552a40d0e89c32fa68be63548",
-    "/css/admin/app.min.css": "/css/admin/app.min.css?id=800e1fc632c9bee9d839fd7663dfbc7a"
+    "/img/travel/wturizm.svg": "/img/travel/wturizm.svg?id=6f46def5718c1835b13607f69ebc0d0d"
 }

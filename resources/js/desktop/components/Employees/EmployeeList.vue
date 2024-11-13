@@ -5,12 +5,15 @@
         <h4 class="section-title text-center" style="justify-content: center;" v-if="visible_title">Сотрудники</h4>
         <p class="text-center" v-if="visible_title">Немного о наших коллегах</p>
 
-        <carousel :items="4" :nav="false" :dots="false" class="story-blocks">
-            <div @click="show(index+1)" v-for="(employee, index) in filteredEmployees">
+<!--        <carousel :items="4" :nav="false" :dots="false" class="story-blocks">-->
+        <div class="story-blocks my-auto justify-content-center ">
+            <template @click="show(index+1)" v-for="(employee, index) in filteredEmployees">
                 <employee :index="index+1" :image="employee.image"/>
-            </div>
+            </template>
+        </div>
 
-        </carousel>
+
+<!--        </carousel>-->
 
         <employee-modals :active="active_index" :city="city"/>
     </div>
@@ -63,17 +66,25 @@
 </script>
 <style lang="scss">
     .story-blocks {
-        width: calc(100% + 16px);
-        margin-left: -16px
+        gap: 5px;
+        margin: auto;
+        flex-wrap: wrap;
+        display: flex;
+        //display: flex;
+        //width: calc(100% + 16px);
+        //margin-left: -16px
     }
 
     .story-blocks .item {
+        flex: 1 1 auto !important;
         padding-top: 5px;
-        padding-bottom: 5px
+        padding-bottom: 5px;
+        max-width: 25%;
+        max-height: 20vh;
     }
 
     .story-blocks .item img {
-        box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #ec4433;
+        box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px var(--tc-primary);
     }
 
     .story-blocks .seen img {

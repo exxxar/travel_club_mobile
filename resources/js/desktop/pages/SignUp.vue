@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="form-signin" v-show="step1">
                                         <ValidationObserver v-slot="{ invalid }" tag="div" class="tc-wrapper-column">
-                                            <base-input v-model="email" name="email" label="Email" rules="required|email"></base-input>
+                                            <base-input v-model="email" name="email" label="Email" rules="required|email" icon_name="Email" icon_color="secondary"/>
                                             <base-input v-model="password" :type="passwords_types.password" name="password"
                                                         label="Пароль" rules="required|min:8"
                                                         v-on:keyup.enter="nextStep(invalid)"

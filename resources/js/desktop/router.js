@@ -793,9 +793,9 @@ let router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    if (to.matched.some(record => record.meta.preloader)) {
-        store.commit('setPreloader', true)
-    }
+    // if (to.matched.some(record => record.meta.preloader)) {
+    //     store.commit('setPreloader', true)
+    // }
     if (to.matched.some(record => record.meta.requiresAuth)) {
         /* If we will do admin page */
         console.log('store.getters.isLoggedIn', store.getters.isLoggedIn)

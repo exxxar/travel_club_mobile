@@ -11,7 +11,7 @@
                 <i class="fas fa-route"></i>
             </div>
         </a>
-        <a href="/m/hot-tours" class="item" aria-label="Горячие туры">
+        <a href="/m/hot-tours" class="item" aria-label="Горящие туры">
             <div class="col">
                 <i class="fas fa-plane-departure"></i>
             </div>

@@ -1,5 +1,6 @@
 // Body
 $body-bg: #f8fafc;
+$body-bg-secondary: #f2f2f2;
 
 // Typography
 $font-family-sans-serif: 'Roboto', sans-serif;
@@ -117,7 +118,8 @@ $indents: (
     medium: 10px,
     large: 15px,
     xlarge: 20px,
-    xxlarge: 30px
+    xxlarge: 30px,
+    max: 45px,
 );
 //"Theme" dependant
 :root {
@@ -147,10 +149,13 @@ $indents: (
     //--#{$namespace}-brand-dark: var(--b-orange-darker);
     //--#{$namespace}-brand-highlight: var(--b-orange-dark);
 
-    --#{$namespace}-primary: var(--b-orange);
+    //--#{$namespace}-primary: var(--b-orange);
+    //--#{$namespace}-primary: rgb(251,98,40);
+    --#{$namespace}-primary: #DD0024;
     --#{$namespace}-primary-light: var(--b-orange-light);
     --#{$namespace}-primary-lighter: var(--b-orange-lighter);
-    --#{$namespace}-primary-dark: var(--b-orange-darker);
+    //--#{$namespace}-primary-dark: var(--b-orange-darker);
+    --#{$namespace}-primary-dark: #DD0024;
 
     --#{$namespace}-secondary: var(--b-blue-dark);
     --#{$namespace}-secondary-light: var(--b-blue-lighter);
@@ -179,7 +184,23 @@ $indents: (
     --#{$namespace}-surface-400: var(--b-white);
     --#{$namespace}-surface-500: var(--b-white);
     --#{$namespace}-surface-600: var(--b-blue-dark);
+
+    //--#{$namespace}-primary-gradient: linear-gradient( 25deg, var(--tc-primary-dark) 0%, var(--tc-primary) 100%);
+    //--#{$namespace}-primary-gradient-0: linear-gradient( 0deg, var(--tc-primary-dark) 0%, var(--tc-primary) 100%);
+    //--#{$namespace}-primary-gradient-180: linear-gradient( 180deg, var(--tc-primary-dark) 0%, var(--tc-primary) 100%);
+
+    --#{$namespace}-primary-gradient: linear-gradient( 25deg, var(--tc-primary-dark) 0%, #ffbf00 80%);
+    //--#{$namespace}-primary-gradient-0: linear-gradient( 0deg, var(--tc-primary-dark) 0%, #ffbf00 80%);
+    //--#{$namespace}-primary-gradient-180: linear-gradient( 180deg, var(--tc-primary-dark) 0%, #ffbf00 80%);
+    --#{$namespace}-primary-gradient-0: linear-gradient(0deg, #dd0024 35%, #ed3226 55%, #f95b28 75%, #ffc100 101%);
+    --#{$namespace}-primary-gradient-180: linear-gradient(180deg, #dd0024 35%, #ed3226 55%, #f95b28 75%, #ffc100 101%);
 }
+
+//$gradient: linear-gradient( 25deg, rgb(221,0,36) 0%, rgb(251,98,40) 100%);
+//$gradient_180: linear-gradient(180deg, rgb(221,0,36) 0%, var(--tc-primary) 85%);
+//$gradient_0: linear-gradient(0deg, rgb(221,0,36) 0%, rgb(251,98,40) 85%);
+$gradient_180: linear-gradient(180deg, #e17e4e, #ffbf00);
+$gradient_0: linear-gradient(0deg, #e17e4e, #ffbf00);
 
 .dark-theme {
     :root {
@@ -328,7 +349,7 @@ $tc-theme-colors: (
     //Teal
     "teal-default": #2bd4a6,
     "teal-lighter": #eefcf8,
-    'primary-default': var(--b-orange),
+    'primary-default': var(--#{$namespace}-primary),
     primary-light: var(--b-orange-light),
     primary-lighter: var(--b-orange-lighter),
     primary-dark: var(--b-orange-darker),

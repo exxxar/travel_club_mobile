@@ -133,7 +133,7 @@
                     background: $body-bg;
 
                     & svg path {
-                        fill: (--tc-primary);
+                        fill: var(--tc-primary);
                     }
                 }
             }

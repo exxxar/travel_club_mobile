@@ -26,7 +26,7 @@
 
 
             <div class="form-group mb-2">
-                <mobile-voice-callback-form :phone="phone" :cansend="cansend"></mobile-voice-callback-form>
+<!--                <mobile-voice-callback-form :phone="phone" :cansend="cansend"></mobile-voice-callback-form>-->
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary me-1 mb-1 w-100">

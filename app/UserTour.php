@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 
 class UserTour extends Model
@@ -84,7 +85,7 @@ class UserTour extends Model
 
     public function shortManager()
     {
-        return $this->belongsTo(User::class, 'manager_id')->select(['id', 'first_name', 'middle_name', 'last_name']);
+        return $this->belongsTo(User::class, 'manager_id')->select(['id', 'first_name', 'middle_name', 'last_name', DB::raw('CONCAT_WS(" ",last_name,first_name,middle_name) as full_name')]);
     }
 
 }

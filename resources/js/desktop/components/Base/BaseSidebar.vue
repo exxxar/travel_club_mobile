@@ -7,13 +7,13 @@
                 <slot name="logo">
                     <a href="/">
                         <h5 style="z-index: 1; color:#0d274b;font-weight:900;" class="float-left menu-title">
-                            Travel<span style="color: #f08b23;">Club</span>
+                            В<span class="tc-text-primary">ПУТЬ</span>
                         </h5>
                     </a>
                 </slot>
 
                 <button type="button" class="tc-button tc-sidebar__button" data-bs-toggle="offcanvas" :data-bs-target="'#'+target" aria-label="Close">
-                    <base-icon :name="'Cancel'" :width="'13px'" :height="'13px'" color="secondary"></base-icon>
+                    <base-icon :name="'Cancel'" :width="'13px'" :height="'13px'" color="white"></base-icon>
                 </button>
             </slot>
         </div>

@@ -18,6 +18,14 @@
                 <slot name="filters" v-bind:params="params" v-if="!no_filters">
                     <div class="icon panel-white__icon" v-if="params.filterOptions.length>0">
                         <filter-block :fields="params.filterOptions" :params="params"></filter-block>
+<!--                        варианты сложных фильтров
+                                показывать в отдельном сайд баре
+                                показывать в большом дробдауне на всю таблицу
+                                показывать в сайдбаре внедренное в тело основной части с крестиком
+                                показывать в модальном окне
+                                на иконке всегда показывать сколько фильтров включено
+                                возможно период и дату можно вынести в отдельную кнопку / поле
+-->
                     </div>
                     <div class="icon panel-white__icon" v-if="params.sortOptions.length>0">
                         <sort-block :fields="params.sortOptions" v-model="params" @input="applySort"></sort-block>

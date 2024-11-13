@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Travel Club</title>
+    <title>ВПУТЬ</title>
     <!-- Fonts -->
 
     <link rel="shortcut icon" href="{{asset('images/icons/icon-72x72.png')}}">
@@ -24,7 +24,7 @@
     <link href="{{asset('images/icons/splash-750x1334.png')}}" sizes="750x1334" rel="apple-touch-startup-image"/>
     <link href="{{asset('images/icons/splash-640x1136.png')}}" sizes="640x1136" rel="apple-touch-startup-image"/>
 
-    @laravelPWA
+{{--    @laravelPWA--}}
 
     <link rel="stylesheet" href="{{mix('css/desktop/app.css')}}">
 
@@ -108,8 +108,8 @@
 {{--<script src="https://front.sletat.ru/modules/module6/latest/module.js" async defer></script>--}}
 {{--<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async defer></script>--}}
 {{--<script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" async defer></script>--}}
-{{--<script src="{{getenv("MIX_APP_DEBUG")==true ? asset('/js/desktop/app.js') : asset('/js/desktop/app.min.js')}}?ver={{getenv("APP_VERSION")}}" async defer></script>--}}
-<script src="{{ mix('/js/desktop/app.js') }}" async></script>
+{{--<script src="{{getenv("MIX_APP_DEBUG")==true ? mix('js/desktop/app.js') : mix('js/desktop/app.min.js')}}?ver={{getenv("APP_VERSION")}}" async></script>--}}
+<script src="{{ mix('js/desktop/app.min.js') }}" async defer></script>
 </body>
 
 

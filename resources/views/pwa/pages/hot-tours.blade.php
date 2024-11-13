@@ -1,7 +1,7 @@
 @extends('pwa.layout.mobile')
 
 @section('before-content')
-    <preloader :time="3500"></preloader>
+{{--    <preloader :time="3500"></preloader>--}}
 
     <header-block></header-block>
 

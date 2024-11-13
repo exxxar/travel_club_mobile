@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[6904],{66904:(s,t,e)=>{e.r(t),e.d(t,{default:()=>l});const n={name:"Todos"};const l=(0,e(14486).A)(n,(function(){return(0,this._self._c)("to-do-list")}),[],!1,null,"55873313",null).exports}}]);
+//# sourceMappingURL=6904.js.map

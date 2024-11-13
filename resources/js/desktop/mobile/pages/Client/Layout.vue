@@ -10,8 +10,8 @@
         </div>
     </div>
 </template>
-<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">
-</style>
+<!--<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">-->
+<!--</style>-->
 <script>
     export default {
         methods: {

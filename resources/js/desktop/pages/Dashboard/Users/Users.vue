@@ -22,7 +22,7 @@
                                 <base-icon name="Pencil" color="blue"/>
                             </base-button>
                             <base-button @click="remove(item.id)" icon bg="red-lighter" title="Удалить" class="tc-button-icon-small">
-                                <base-icon name="Trash" color="red" :stroke="true" fill="transparent"/>
+                                <base-icon name="Trash" color="red" :stroke="true" />
                             </base-button>
                         </div>
                     </template>
@@ -34,7 +34,7 @@
                     :loading="loading" :title="'Создать ' + ($is('manager') ? 'клиента' : 'пользователя')"
                 >
                     <span style="vertical-align: middle">
-                        <base-icon name="Plus" v-if="!loading"></base-icon>
+                        <base-icon name="Plus" v-if="!loading"/>
                     </span>
                     <span class="tc-d-down-md-none">
                         Создать {{$is('manager') ? 'клиента' : 'пользователя'}}

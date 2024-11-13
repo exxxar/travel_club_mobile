@@ -16,6 +16,7 @@
                     :clearable="clearable"
                     :searchable="searchable"
                     :filterable="filterable"
+                    :selectable="selectable"
                     :taggable="taggable"
                     :push-tags="pushTags"
                     :disabled="disabled"
@@ -201,6 +202,14 @@
             filterable: {
                 type: Boolean,
                 default: false
+            },
+            selectable: {
+                type: Function,
+                /**
+                 * @param {Object|String} option
+                 * @return {boolean}
+                 */
+                default: option => true,
             },
             pushTags: {
                 type: Boolean,

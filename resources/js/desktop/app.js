@@ -136,11 +136,11 @@ Vue.component('slide', Slide);
 Vue.component('hooper-pagination', HooperPagination );
 Vue.component('hooper-navigation',  HooperNavigation);
 
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
+// import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Vue.use(BootstrapVue);
+// Vue.use(IconsPlugin);
 
 import Fuse from 'fuse.js';
 Vue.prototype.$search = function (term, list, options) {
@@ -154,16 +154,16 @@ Vue.prototype.$search = function (term, list, options) {
 import Notifications from 'vue-notification'
 Vue.use(Notifications);
 //
-import VueRecord from '@codekraft-studio/vue-record'
-Vue.use(VueRecord)
-import AudioRecorder from 'vue-audio-recorder'
-Vue.use(AudioRecorder);
+// import VueRecord from '@codekraft-studio/vue-record'
+// Vue.use(VueRecord)
+// import AudioRecorder from 'vue-audio-recorder'
+// Vue.use(AudioRecorder);
+//
+// import VueEllipseProgress from 'vue-ellipse-progress';
+// Vue.use(VueEllipseProgress);
 
-import VueEllipseProgress from 'vue-ellipse-progress';
-Vue.use(VueEllipseProgress);
-
-var AddToCalendar = require('vue-add-to-calendar');
-Vue.use(AddToCalendar);
+// var AddToCalendar = require('vue-add-to-calendar');
+// Vue.use(AddToCalendar);
 
 import vSelect from 'vue-select';
 Vue.component('v-select', vSelect);
@@ -171,9 +171,9 @@ Vue.component('v-select', vSelect);
 import "vue-multiselect/dist/vue-multiselect.min.css"
 import Multiselect from 'vue-multiselect'
 Vue.component('multiselect', Multiselect);
-
-import KProgress from 'k-progress';
-Vue.component('k-progress', KProgress);
+//
+// import KProgress from 'k-progress';
+// Vue.component('k-progress', KProgress);
 
 import InfiniteLoading from 'vue-infinite-loading';
 Vue.component('infinite-loading', InfiniteLoading);
@@ -366,8 +366,8 @@ Vue.component('CardArticle', require('./pages/Dashboard/News/Card.vue').default)
 
 import TourCard from "./components/TourCard.vue";
 Vue.component("tour-card", TourCard);
-import MobileTourCard from "./mobile/components/TourCard.vue";
-Vue.component("mobile-tour-card", MobileTourCard);
+// import MobileTourCard from "./mobile/components/TourCard.vue";
+// Vue.component("mobile-tour-card", MobileTourCard);
 
 import AudioPlayer from "./components/AudioPlayer.vue";
 Vue.component('audio-player', AudioPlayer);
@@ -380,33 +380,33 @@ Vue.component('default-layout', DesktopLayout);
 import LandingLayout from './components/LandingLayout.vue';
 Vue.component('LandingLayout', LandingLayout);
 //mobile-layouts
-import MobileLayout from './mobile/pages/MobileLayout.vue';
-Vue.component('mobile-layout', MobileLayout);
-import TourModuleLayout from './mobile/pages/TourModuleLayout.vue';
-Vue.component('tour-module-layout', TourModuleLayout);
-import AviaModuleLayout from './mobile/pages/AviaModuleLayout.vue';
-Vue.component('avia-module-layout', AviaModuleLayout);
-import ClientLayout from './mobile/pages/ClientLayout.vue';
-Vue.component('client-layout', ClientLayout);
-import ManagerLayout from './mobile/pages/ManagerLayout.vue';
-Vue.component('manager-layout', ManagerLayout);
-import AdminLayout from './mobile/pages/AdminLayout.vue';
-Vue.component('admin-layout', AdminLayout);
+// import MobileLayout from './mobile/pages/MobileLayout.vue';
+// Vue.component('mobile-layout', MobileLayout);
+// import TourModuleLayout from './mobile/pages/TourModuleLayout.vue';
+// Vue.component('tour-module-layout', TourModuleLayout);
+// import AviaModuleLayout from './mobile/pages/AviaModuleLayout.vue';
+// Vue.component('avia-module-layout', AviaModuleLayout);
+// import ClientLayout from './mobile/pages/ClientLayout.vue';
+// Vue.component('client-layout', ClientLayout);
+// import ManagerLayout from './mobile/pages/ManagerLayout.vue';
+// Vue.component('manager-layout', ManagerLayout);
+// import AdminLayout from './mobile/pages/AdminLayout.vue';
+// Vue.component('admin-layout', AdminLayout);
 //</editor-fold>
 
 //<editor-fold desc="MobileMenus">
-import MobileMenu from './mobile/components/MobileMenu.vue';
-Vue.component('mobile-menu', MobileMenu );
-import TourModuleMenu from './mobile/components/TourModuleMenu.vue';
-Vue.component('tour-module-menu', TourModuleMenu);
-import AviaModuleMenu from './mobile/components/AviaModuleMenu.vue';
-Vue.component('avia-module-menu', AviaModuleMenu);
-import ClientMenu from './mobile/components/ClientMenu.vue';
-Vue.component('client-menu', ClientMenu );
-import ManagerMenu from './mobile/components/ManagerMenu.vue';
-Vue.component('manager-menu', ManagerMenu);
-import AdminMenu from './mobile/components/AdminMenu.vue';
-Vue.component('admin-menu', AdminMenu);
+// import MobileMenu from './mobile/components/MobileMenu.vue';
+// Vue.component('mobile-menu', MobileMenu );
+// import TourModuleMenu from './mobile/components/TourModuleMenu.vue';
+// Vue.component('tour-module-menu', TourModuleMenu);
+// import AviaModuleMenu from './mobile/components/AviaModuleMenu.vue';
+// Vue.component('avia-module-menu', AviaModuleMenu);
+// import ClientMenu from './mobile/components/ClientMenu.vue';
+// Vue.component('client-menu', ClientMenu );
+// import ManagerMenu from './mobile/components/ManagerMenu.vue';
+// Vue.component('manager-menu', ManagerMenu);
+// import AdminMenu from './mobile/components/AdminMenu.vue';
+// Vue.component('admin-menu', AdminMenu);
 //</editor-fold>
 
 Vue.component('employee-list', require('./components/Employees/EmployeeList.vue').default);

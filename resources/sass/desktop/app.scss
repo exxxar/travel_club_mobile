@@ -46,7 +46,13 @@
 @import "./customs/article.scss";
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--bs-body-font-family);
+    //background-color: $body-bg-secondary !important;
+}
+
+img,
+svg {
+    vertical-align: initial;
 }
 
 .travel-news-btn {
@@ -107,6 +113,9 @@ body {
     margin: 2px 0;
 }
 
+.tc-cursor-pointer {
+    cursor: pointer !important;
+}
 
 /////////////////////////////
 //button-5
@@ -132,4 +141,10 @@ body {
 
 .phone-by-city p {
     color: white;
+}
+
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: calc(1.375rem + 1.2vw) !important;
+    }
 }

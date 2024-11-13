@@ -76,11 +76,6 @@
                 return this.$store.getters.fromRoute
             }
         },
-        watch: {
-            theme: function () {
-                this.changeTheme()
-            }
-        },
         methods:
         {
             back() {
@@ -109,26 +104,6 @@
                         this.closeMenu()
                         this.$router.push('/login')
                     })
-            },
-            changeTheme() {
-                let cssId = 'myCss';  // you could encode the css path itself to generate id..
-                if (!document.getElementById(cssId)&&!this.theme) {
-                    let head = document.getElementsByTagName('head')[0];
-                    let link = document.createElement('link');
-                    link.id = cssId;
-                    link.rel = 'stylesheet';
-                    link.type = 'text/css';
-                    link.href = '/css/black-them.css';
-                    link.media = 'all';
-                    head.appendChild(link);
-
-                    localStorage.setItem("theme", "dark")
-
-                } else {
-                    document.getElementById(cssId).remove();
-                    localStorage.setItem("theme", "light")
-
-                }
             },
         }
     }

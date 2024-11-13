@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('jwt.auth')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::prefix("admin")->group(function () {
@@ -286,6 +286,8 @@ Route::prefix("api")->group(function () {
         //<editor-fold desc="Auth">
         Route::post('user', 'AuthController@user');
         Route::post('logout', 'AuthController@logout');
+        Route::post('changePassword', 'AuthController@changePassword');
+        Route::post('changeContact', 'AuthController@changeContact');
         //</editor-fold>
 
         //<editor-fold desc="Users">

@@ -8,12 +8,12 @@
 
         <div class="header-large-title d-flex justify-content-between align-items-center">
             <div>
-                <h1 class="title">Travel<span style="color:orange;font-weight:bold;">Club</span></h1>
+                <h1 class="title">В<span style="color:orange;font-weight:bold;">ПУТЬ</span></h1>
                 <h4 class="subtitle">Добро пожаловать к нам!</h4>
             </div>
 
             <div>
-                <button type="button" class="btn btn-orange rounded mr-1"  data-bs-toggle="modal" aria-label="О Travel Club"
+                <button type="button" class="btn btn-orange rounded mr-1"  data-bs-toggle="modal" aria-label="О ВПУТЬ"
                         data-bs-target="#AboutModal">О нас
                 </button>
             </div>
@@ -55,11 +55,11 @@
                 <div class="item">
                     <div class="card card-with-red-line pulse" text="Скоро">
                         <a href="https://travel-club.tours/m/hot-tours" class="travel-card"
-                           aria-label="Горячие туры">
+                           aria-label="Горящие туры">
                             <img v-lazy="'/img/travel/2.png'" class="card-img-top" alt="image">
                         </a>
                         <div class="card-body pt-2">
-                            <h4 class="mb-0 text-center text-uppercase">Горячие туры</h4>
+                            <h4 class="mb-0 text-center text-uppercase">Горящие туры</h4>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                 <img v-lazy="'/img/travel/s1.png'" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h6 class="card-subtitle">Путешествуй</h6>
-                    <h5 class="card-title">С TravelClub</h5>
+                    <h5 class="card-title">С ВПУТЬ</h5>
                     <p class="card-text">
                         Данный раздел позволяет сделать подбор пакетного тура по всему миру от ведущих туристических
                         операторов.
@@ -134,7 +134,7 @@
                 <img v-lazy="'/img/travel/s2.png'" class="card-img-top" alt="image">
                 <div class="card-body">
                     <h6 class="card-subtitle">Летай</h6>
-                    <h5 class="card-title">С TravelClub</h5>
+                    <h5 class="card-title">С ВПУТЬ</h5>
                     <p class="card-text">
                         В данном разделе Вы сможете приобрести авиабилет в любую точку.
 
@@ -156,7 +156,7 @@
                     <h6 class="card-subtitle">Туры</h6>
                     <h5 class="card-title">По России</h5>
                     <p class="card-text">
-                        Путешествуй с Travel Club по всей России.
+                        Путешествуй с ВПУТЬ по всей России.
 
                         Возможна оплата онлайн или сделать заказ с сайта.
                     </p>

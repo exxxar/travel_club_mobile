@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 
 /*
@@ -35,26 +36,38 @@ mix.disableNotifications();
 
 mix.webpackConfig({
     resolve: {
-        extensions: ['.*','.js', '.vue', '.jpg', '.png', '.css', '.svg', '.mp3', '.scss'],
+        extensions: ['.*', '.js', '.vue', '.jpg', '.png', '.css', '.svg', '.mp3', '.scss'],
         alias: {
             '@': __dirname + '/resources',
-            '~': __dirname + '/public',
+            '@icon': path.resolve(__dirname, 'resources/js/desktop/components/Icons'),
+            '@public': path.resolve(__dirname, 'public/images'),
             // '^':__dirname + '/storage/app/public'
         }
     }
 });
 
-mix
+mix.js('resources/js/desktop/app.js', 'public/js/desktop')
+    .vue()
+    .sass("resources/sass/desktop/app.scss", "public/css/desktop").options({
+    processCssUrls: false,
+    postCss: [
+        require('autoprefixer')({
+            // browserslist: ['defaults'],
+        })
+    ]
+})
+    .sourceMaps().minify(['public/css/desktop/app.css', 'public/js/desktop/app.js']).version();
 
-    .js('resources/js/desktop/app.js', 'public/js/desktop').vue()
-    .sass('resources/sass/desktop/app.scss', 'public/css/desktop/app.css')
-    .options({
-        processCssUrls: false
-    }).version();
-
-mix
-    .js('resources/js/pwa/app.js', 'public/js/pwa').vue()
-    .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css').version();
+// mix
+//     .js('resources/js/desktop/app.js', 'public/js/desktop').vue()
+//     .sass('resources/sass/desktop/app.scss', 'public/css/desktop/app.css')
+//     .options({
+//         processCssUrls: false
+//     });
+//
+// mix
+//     .js('resources/js/pwa/app.js', 'public/js/pwa').vue()
+//     .sass('resources/sass/pwa/app.scss', 'public/css/pwa/app.css').version();
 //
 // mix
 //     .js('resources/js/admin/app.js', 'public/js/admin').vue()
@@ -65,29 +78,29 @@ mix
     .sass('resources/sass/desktop/black-them.scss', 'public/css/black-them.css');*/
 
 
-mix.copy('resources/assets/css/style.css', 'public/css/assets/app.css');
+// mix.copy('resources/assets/css/style.css', 'public/css/assets/app.css');
 
 
-mix.copy('resources/assets/js/lib/jquery-3.4.1.min.js', 'public/js/pwa');
-mix.copy("resources/assets/css/theme.css", "public/css/pwa");
+// mix.copy('resources/assets/js/lib/jquery-3.4.1.min.js', 'public/js/pwa');
+// mix.copy("resources/assets/css/theme.css", "public/css/pwa");
 
-mix.copy("resources/assets/css/tour-search.css", "public/css/pwa");
+// mix.copy("resources/assets/css/tour-search.css", "public/css/pwa");
 
 mix.copyDirectory('resources/assets/img', 'public/img');
 // mix.copyDirectory('resources/assets/css/inc', 'public/css/inc');
 
-if (mix.inProduction()) {
-
-    mix.minify('public/js/pwa/app.js');
-    mix.minify('public/css/pwa/app.css');
-    mix.minify('public/css/pwa/theme.css');
-    mix.minify('public/css/assets/app.css');
-
-    mix.minify('public/js/desktop/app.js');
-    mix.minify('public/css/desktop/app.css');
-
-    mix.minify('public/js/admin/app.js');
-    mix.minify('public/css/admin/app.css');
-}
-
-mix.version();
+// if (mix.inProduction()) {
+//
+//     // mix.minify('public/js/pwa/app.js');
+//     // mix.minify('public/css/pwa/app.css');
+//     // mix.minify('public/css/pwa/theme.css');
+//     // mix.minify('public/css/assets/app.css');
+//
+//     mix.minify('public/js/desktop/app.js');
+//     mix.minify('public/css/desktop/app.css');
+//     //
+//     // mix.minify('public/js/admin/app.js');
+//     // mix.minify('public/css/admin/app.css');
+// }
+//
+// mix.version();

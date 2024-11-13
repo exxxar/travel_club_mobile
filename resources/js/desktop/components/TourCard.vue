@@ -575,7 +575,7 @@
 </script>
 
 <style scoped>
-    @import url("https://travel-club.tours/css/tour-search1.css");
+    /*@import url("https://travel-club.tours/css/tour-search1.css");*/
 
     .btn {
         background: #0f213d;

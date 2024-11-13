@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Travel Club</title>
+    <title>ВПУТЬ</title>
     <!-- Fonts -->
 
     <link rel="shortcut icon" href="{{asset('images/icons/icon-72x72.png')}}">
@@ -35,7 +35,7 @@
 <body>
 
 <div id="landing">
-    <preloader :time="3000"></preloader>
+{{--    <preloader :time="3000"></preloader>--}}
     <landing-layout>
         @yield('before-content')
         @yield("content")
@@ -103,7 +103,7 @@
 {{--<script id="__biletix__wl__script" src="https://ps.biletix.ru/static/wl/build/biletix_wl.min.js" async></script>--}}
 {{--<script type="text/javascript" charset="utf-8" src="https://stells.info/assets/js/partner.fire.js" async></script>--}}
 {{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
-<script src="{{ mix('/js/desktop/app.min.js') }}" async></script>
+<script src="{{ mix('/js/desktop/app.js') }}" async></script>
 
 {{--<script src="{{getenv("MIX_APP_DEBUG")==true ? asset('/js/desktop/app.js') : asset('/js/desktop/app.min.js')}}?ver={{getenv("APP_VERSION")}}" async defer></script>--}}
 </body>

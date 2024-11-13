@@ -11,7 +11,7 @@
                             <img v-lazy="'/img/travel/logo-1.png'" alt="image" class="imaged">
                         </a>
                         <div class="in"  data-bs-toggle="modal" data-bs-target="#ContactModal">
-                            <strong>Travel Club</strong>
+                            <strong>ВПУТЬ</strong>
                             <div class="text-muted">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span v-if="selected">{{selected.item.name}}</span>
@@ -49,12 +49,12 @@
                             </a>
                         </li>
                         <li>
-                            <a :href="$baseUrl+'/m/hot-tours'" class="item" aria-label="Горячие туры">
+                            <a :href="$baseUrl+'/m/hot-tours'" class="item" aria-label="Горящие туры">
                                 <div class="icon-box bg-orange">
                                     <i class="fas fa-plane-departure"></i>
                                 </div>
                                 <div class="in">
-                                    <div>Горячие туры</div>
+                                    <div>Горящие туры</div>
                                 </div>
                             </a>
                         </li>
@@ -85,7 +85,7 @@
                         </li>
 
                         <li>
-                            <a href="javascript:;"  data-bs-toggle="modal" aria-label="О Travel Club"
+                            <a href="javascript:;"  data-bs-toggle="modal" aria-label="О ВПУТЬ"
                                data-bs-target="#AboutModal" class="item">
                                 <div class="icon-box bg-orange">
                                     <i class="far fa-address-book"></i>

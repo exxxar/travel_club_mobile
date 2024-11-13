@@ -10,7 +10,7 @@
                     <base-icon name="Download" title="Скачать" color="primary"/>
                 </base-button>
                 <base-button v-role="'manager|admin'" icon bg="red-lighter" title="Удалить">
-                    <base-icon name="Trash" title="Удалить" color="red" :stroke="true" fill="transparent"/>
+                    <base-icon name="Trash" title="Удалить" color="red" :stroke="true" />
                 </base-button>
             </div>
         </div>
@@ -20,16 +20,16 @@
             <div class="tc-wrapper tc-gap-medium tc-gap-down-sm-small align-items-center">
                 <span class="tc-circle"></span>
                 <router-link :to="'/dashboard/users/'+item.user_id" class="tc-card__subtitle" >
-                    Клиент: {{item.user.full_name | empty_filter}}
+                    Клиент: {{(item.user ? item.user.full_name : '') | empty_filter}}
                 </router-link>
                 <span class="tc-circle"></span>
                 <router-link :to="'/dashboard/users/'+item.manager_id" class="tc-card__subtitle">
-                    Менеджер: {{item.manager.full_name | empty_filter}}
+                    Менеджер: {{(item.manager ? item.manager.full_name : '') | empty_filter}}
                 </router-link>
                 <span class="tc-circle"></span>
                 <template v-if="item.user_tour_id">
                     <router-link :to="'/dashboard/tour/'+item.user_tour_id" class="tc-card__subtitle">
-                        Тур: {{item.tour.title | empty_filter}}
+                        Тур: {{(item.tour ? item.tour.title: '') | empty_filter}}
                     </router-link>
                     <span class="tc-circle"></span>
                 </template>

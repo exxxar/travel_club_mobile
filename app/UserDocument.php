@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class UserDocument extends Model
 {
@@ -26,7 +27,7 @@ class UserDocument extends Model
 
     public function shortUser()
     {
-        return $this->belongsTo(User::class, 'user_id')->select(['id', 'first_name', 'middle_name', 'last_name']);
+        return $this->belongsTo(User::class, 'user_id')->select(['id', 'first_name', 'middle_name', 'last_name', DB::raw('CONCAT_WS(" ",last_name,first_name,middle_name) as full_name')]);
     }
 
     public function user()
@@ -36,7 +37,7 @@ class UserDocument extends Model
 
     public function shortManager()
     {
-        return $this->belongsTo(User::class, 'manager_id')->select(['id', 'first_name', 'middle_name', 'last_name']);
+        return $this->belongsTo(User::class, 'manager_id')->select(['id', 'first_name', 'middle_name', 'last_name', DB::raw('CONCAT_WS(" ",last_name,first_name,middle_name) as full_name')]);
     }
 
     public function manager()

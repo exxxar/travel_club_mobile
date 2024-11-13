@@ -81,7 +81,7 @@
             </div>
 
             <div class="form-group mb-2">
-                <voice-callback-form :phone="phone" :cansend="cansend"></voice-callback-form>
+<!--                <voice-callback-form :phone="phone" :cansend="cansend"></voice-callback-form>-->
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-orange mr-1 mb-1 w-100">

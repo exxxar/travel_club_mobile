@@ -3,9 +3,11 @@
         <slot name="menu">
             <slot name="logo">
                 <a href="/">
-                    <h4 style="z-index: 1; color:#0d274b;font-weight:900;" class="float-left menu-title">
-                        Travel<span style="color: #f08b23;">Club</span>
-                    </h4>
+                    <!--                    <img src="/images/logo.svg" style="height: 40px"/>-->
+                    <base-icon name="Logo" width="" height="45px"/>
+                    <!--                    <h4 style="z-index: 1; color:#0d274b;font-weight:900;" class="float-left menu-title">-->
+                    <!--                        В<span style="color: #f08b23;">ПУТЬ</span>-->
+                    <!--                    </h4>-->
                 </a>
             </slot>
 
@@ -27,27 +29,42 @@
             <!--                    </div>-->
 
             <div class="d-flex">
-<!--                <div class="" @click="setTheme('light')">light</div>-->
-<!--                <div class="" @click="setTheme('dark')">dark</div>-->
+                <!--                <div class="" @click="setTheme('light')">light</div>-->
+                <!--                <div class="" @click="setTheme('dark')">dark</div>-->
                 <slot name="socials" v-if="!no_socials">
                     <div class="d-flex desktop me-3">
-                        <div>
-                            <div class="banner pulse text-uppercase px-3 me-3"
-                                 style="color:white; background: #c30000; border-radius:10px; font-weight: 600;">
-                                мы в соц.сетях
-                            </div>
-                        </div>
+                        <!--                        <div>-->
+                        <!--                            <div class="banner pulse text-uppercase px-3 me-3"-->
+                        <!--                                 style="color:white; background: #c30000; border-radius:10px; font-weight: 600;">-->
+                        <!--                                мы в соц.сетях-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
-                        <!--          <a href="#" class="icon icon-vk ml-auto mr-3" target="_blank" style="color: #f08b23; font-size: 25px; text-decoration: none"></a>-->
-                        <a href="https://www.instagram.com/travelclub_tours" target="_blank" class="ms-3">
-                            <base-icon name="Instagram" color="primary" height="25" width="25"/>
+<!--                                  <a href="#" class="icon icon-vk ml-auto mr-3" target="_blank" style="color: #f08b23; font-size: 25px; text-decoration: none"></a>-->
+<!--                        <a href="https://www.instagram.com/travelclub_tours" target="_blank" class="ms-3">-->
+<!--                            <base-icon name="Instagram" color="primary" height="25" width="25"/>-->
+<!--                        </a>-->
+                        <a href="https://instagram.com/put_club" target="_blank" class="ms-3">
+                            <base-icon name="Instagram" color="primary" height="20" width="20"/>
                         </a>
-                        <a href="https://t.me/travelclubtours" target="_blank" class="ms-3 mr-auto">
-                            <base-icon name="Telegram" color="primary" height="25" width="25"/>
+                        <a href="https://t.me/put_club" target="_blank" class="ms-3 mr-auto" title="Telegram">
+                            <base-icon name="Telegram" color="primary" height="20" width="20"/>
                         </a>
-                        <a href="https://wa.me/79064167872" target="_blank" class="ms-3 mr-auto">
-                            <base-icon name="WhatsApp" color="primary" height="25" width="25"/>
+                        <a href="https://vk.com/put_club" target="_blank" class="ms-3 mr-auto" title="VK">
+                            <base-icon name="Vk" color="primary" height="20" width="20"/>
                         </a>
+                        <a href="https://youtube.com/@put_club" target="_blank" class="ms-3 mr-auto" title="YouTube">
+                            <base-icon name="Youtube" color="primary" height="20" width="20"/>
+                        </a>
+                        <a href="https://www.tiktok.com/@put_club" target="_blank" class="ms-3 mr-auto" title="TikTok">
+                            <base-icon name="TikTok" color="primary" height="20" width="20"/>
+                        </a>
+                        <a href="https://dzen.ru/put_club" target="_blank" class="ms-3 mr-auto" title="Dzen">
+                            <base-icon name="Dzen" color="primary" height="20" width="20"/>
+                        </a>
+<!--                        <a href="https://wa.me/79064167872" target="_blank" class="ms-3 mr-auto">-->
+<!--                            <base-icon name="WhatsApp" color="primary" height="25" width="25"/>-->
+<!--                        </a>-->
                     </div>
                 </slot>
                 <slot name="user-controls"></slot>
@@ -173,7 +190,7 @@
                     path: '/hot-tours',
                     icon: 'Location',
                     code: "AviaSearch",
-                    label: "Подобрать горячие туры",
+                    label: "Подобрать горящие туры",
                     color: 'primary',
                     type: 'ordinary'
                 },
@@ -207,32 +224,8 @@
                 return this.$store.getters.showForms
             },
         },
-        watch: {
-            theme: function () {
-                this.changeTheme()
-            }
-        },
         methods:
             {
-                changeTheme() {
-                    let cssId = 'myCss';  // you could encode the css path itself to generate id..
-                    if (!document.getElementById(cssId) && !this.theme) {
-                        let head = document.getElementsByTagName('head')[0];
-                        let link = document.createElement('link');
-                        link.id = cssId;
-                        link.rel = 'stylesheet';
-                        link.type = 'text/css';
-                        link.href = '/css/black-them.css';
-                        link.media = 'all';
-                        head.appendChild(link);
-
-                        localStorage.setItem("theme", "dark")
-
-                    } else {
-                        document.getElementById(cssId).remove();
-                        localStorage.setItem("theme", "light")
-                    }
-                },
                 openForms() {
                     this.$store.commit('setShowForms', true)
                 },

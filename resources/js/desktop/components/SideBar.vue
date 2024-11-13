@@ -134,6 +134,6 @@
         }
     };
 </script>
-<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">
+<style scoped lang="scss">
 
 </style>

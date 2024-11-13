@@ -12,7 +12,6 @@
             color: var(--#{$namespace}-secondary);
             font-weight: 700;
         }
-
         &__subtitle {
             font-size: 12px;
             font-weight: 500;
@@ -23,6 +22,11 @@
             font-size: 14px;
             //color: find-color("secondary", "surface", 'text');
             color: var(--#{$namespace}-secondary);
+        }
+        &__body {
+            padding: map-get($indents, 'max');
+            font-weight: 700;
+            text-align: justify;
         }
     }
 }

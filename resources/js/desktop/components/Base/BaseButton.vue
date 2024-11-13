@@ -7,7 +7,7 @@
     class="tc-button"
     :class="[
       {'tc-button-round': round},
-      {'tc-button-icon': icon},
+      {'tc-button-icon': icon && !$slots.default},
       // {[`tc-bg-${type}`]: type},
       {[`tc-bg-${bg}`]: bg},
       {[`tc-text-${text}`]: text},
@@ -21,7 +21,7 @@
         <span v-if="loading" class="spinner-border spinner-border-sm" role="status"></span>
     </slot>
       <slot name="icon" v-if="typeof icon != 'boolean'">
-          <base-icon v-if="icon && !loading" :name="icon"></base-icon>
+          <base-icon v-if="icon && !loading" :name="icon" v-bind="icon_params"></base-icon>
       </slot>
     <slot></slot>
   </component>
@@ -41,6 +41,8 @@ export default {
         type: [String, Boolean],
         default: "",
         description: ""
+    },
+      icon_params: {
     },
     loading: Boolean,
     disabled: Boolean,

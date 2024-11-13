@@ -1,5 +1,5 @@
 <template>
-    <div style="position: relative" v-if="fields.length > 0">
+    <div class="tc-dropdown" style="position: relative" v-if="fields.length > 0">
         <div class="filter-dropdown-menu__button" type="button" id="dropdownFilterButton" ref="drop"
              data-bs-toggle="dropdown"
              data-bs-auto-close="outside"
@@ -8,26 +8,23 @@
         >
             <base-icon name="Filter" color="secondary" size="20px" title="Фильтры"/>
         </div>
-        <div class="dropdown-menu filter-dropdown-menu" aria-labelledby="dropdownFilterButton" id="dropmenu">
-            <div class="filter-dropdown-menu__title">
-                Фильтр
+        <div class="dropdown-menu filter-dropdown-menu tc-dropdown__menu" aria-labelledby="dropdownFilterButton" id="dropmenu">
+            <div class="tc-dropdown__subtitle">
+                Фильтры
             </div>
             <div class="filter-dropdown-menu__select-wrapper" v-for="item in fields">
                 <div class="filter-dropdown-menu__select-label">
                     {{item.label}}
                 </div>
-                <div class="row w-100 align-items-center mx-auto" v-for="(slct, index) in select_arr[item.key]" :key="index">
+                <div class="tc-row align-items-center justify-content-center" v-for="(slct, index) in select_arr[item.key]" :key="index">
                     <div class="col-10 p-0">
-                        <select class="form-select filter-dropdown-menu__select my-3"
-                                v-model="select_arr[item.key][index]"
-                                aria-label="..."
-                        >
-                            <option :value="option" v-for="(option, ind) in item.filterable_fields" :key="ind"
-                                    :disabled="isSelected(item.key,option)"
-                            >
-                                {{option.text}}
-                            </option>
-                        </select>
+                        <base-select
+                            :name="'filter_'+item.key+'_'+index"
+                            v-model="select_arr[item.key][index]"
+                            option_label="text"
+                            :options="item.filterable_fields"
+                            :selectable="filter_option => !isSelected(item.key,filter_option)"
+                        />
                     </div>
                     <div class="col-2 p-1">
                         <div
@@ -64,7 +61,7 @@
                     </div>
                 </div>
                 <div type="button" class="icon panel-white__icon mx-auto"
-                     v-if="item.multiple && (!select_arr[item.key] || select_arr[item.key].length===0 || select_arr[item.key].length !== item.filterable_fields.length)"
+                     v-if="!select_arr[item.key] || select_arr[item.key].length===0 || (item.multiple&&select_arr[item.key].length !== item.filterable_fields.length)"
                      @click="addSelect(item.key)"
                 >
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,21 +70,20 @@
                     </svg>
                 </div>
             </div>
-            <div class="row w-100 mx-auto align-items-center justify-content-center">
-                <button
-                    type="button"
-                    class="button-white mx-1"
+            <div class="tc-wrapper tc-wrapper-nowrap tc-gap-small">
+                <base-button
+                    class="tc-w-100"
                     @click="reset"
                 >
                     Сбросить
-                </button>
-                <button
+                </base-button>
+                <base-button
                     type="button"
-                    class="button-primary mx-1"
+                    class="tc-w-100"
                     @click="submit"
                 >
                     Применить
-                </button>
+                </base-button>
             </div>
         </div>
     </div>
@@ -136,7 +132,7 @@
                     // this.select_arr[key] = [];
                 }
                 let len = this.select_arr[key].length;
-                Vue.set(this.select_arr[key], len, len );
+                Vue.set(this.select_arr[key], len, '' );
             },
         }
     }

@@ -8,12 +8,20 @@
                     <defs>
                         <path id="gentle-wave"
                               d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                        <linearGradient id="header-shape-gradient" x1="0%" y1="0%" x2="0%" y2="30%">
+                            <stop offset="0%" stop-color="rgb(255, 231, 0)" />
+                            <stop offset="100%" stop-color="rgb(255, 191, 0)" />
+                        </linearGradient>
                     </defs>
                     <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,153, 0.7)"/>
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,204,102, 0.6)"/>
-                        <!--<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,153, 0.7)" />-->
-                        <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(255,153,0, 1)"/>
+                        <use class="gentle-wave-1" xlink:href="#gentle-wave" x="48" y="0"/>
+                        <use class="gentle-wave-2" xlink:href="#gentle-wave" x="48" y="3"/>
+                        <use class="gentle-wave-3" xlink:href="#gentle-wave" x="48" y="6"/>
+
+<!--                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,153, 0.7)"/>-->
+<!--                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,204,102, 0.6)"/>-->
+<!--                        &lt;!&ndash;<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,153, 0.7)" />&ndash;&gt;-->
+<!--                        <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(255,153,0, 1)"/>-->
                     </g>
                 </svg>
             </div>
@@ -21,10 +29,10 @@
             <div class="footer-content flex">
                 <div class="row mb-5">
                     <div class="col-12 mb-3">
-                        <h1>Готовы к незабываемым приключениям?</h1>
+                        <h1 style="text-transform: uppercase; font-weight: 900;">Готовы к незабываемым приключениям?</h1>
                     </div>
                     <div class="col-12">
-                        <button class="footer-btn" type="text" data-bs-toggle="modal" data-bs-target="#customPhoneModal">
+                        <button class="footer-btn" data-bs-toggle="modal" data-bs-target="#customPhoneModal">
                             Заказать звонок
                         </button>
                     </div>
@@ -38,7 +46,7 @@
                               d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
                     </defs>
                     <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="1" fill="#062348"/>
+                        <use xlink:href="#gentle-wave" x="48" y="1" fill="#001025"/>
                     </g>
                 </svg>
 <!--                <div class="row w-100 footer-last m-auto">-->
@@ -140,66 +148,95 @@
             <div class="row">
                 <div class="col-12 col-md-4 footer-1">
                     <div class="wrap-col">
-                        <h3 class="widget-title">О нас</h3>
-                        <p class="text-white">Коллектив туристического агентства «TravelClub» рады приветствовать Вас на нашем сайте. Мы
+                        <h3 class="widget-title tc-text-primary">О нас</h3>
+                        <p class="text-white">Коллектив туристического агентства «ВПУТЬ» рады приветствовать Вас на нашем сайте. Мы
                             поможем сделать Ваш долгожданный отпуск полным красочных впечатлений и ярких
                             воспоминаний. </p>
                         <p  class="text-white">Это может быть горящий тур в Египет, Турцию, Тунис, ОАЭ, Черногорию, Хорватию, Италию,
                             Болгарию, если Вы хотите понежиться под теплыми лучами солнца и поплавать в море. </p>
-                        <ul class="quicklinks w-100 d-flex justify-content-end">
-                            <!-- <li><a href="about.html">Подробнее</a></li>-->
-                            <li><a target="_blank" href="https://yandex.ru/maps/142/donetsk/house/bulvar_pushkina_23/Z04YfgdiSEwDQFpifXxxc3VgYg==/?from=api-maps&ll=37.802265%2C48.002741&origin=jsapi21&z=18.9">Мы на карте</a></li>
-                        </ul>
+<!--                        <ul class="quicklinks w-100 d-flex justify-content-end">-->
+<!--                            &lt;!&ndash; <li><a href="about.html">Подробнее</a></li>&ndash;&gt;-->
+<!--                            <li><a target="_blank" href="https://yandex.ru/maps/142/donetsk/house/bulvar_pushkina_23/Z04YfgdiSEwDQFpifXxxc3VgYg==/?from=api-maps&ll=37.802265%2C48.002741&origin=jsapi21&z=18.9">Мы на карте</a></li>-->
+<!--                        </ul>-->
+                        <p class="tc-text-primary tc-cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalAccountDetails">Реквизиты</p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 footer-2 d-flex justify-content-center">
                     <div class="wrap-col text-center">
-                        <h3 class="widget-title">Контакты</h3>
-                        <p  class="text-white">Телефоны:</p>
-                        <strong style="font-size: 18px;color:#A9A9A9;">+7 (949) 235-33-22</strong>
-                        <p class="text-white">Адрес:</p>
-                        <strong style="color:#A9A9A9;">г.Донецк, Бульвар Пушкина, 23</strong>
-                        <p class="text-white">Email:</p>
-                        <strong style="color:#A9A9A9;">travelclubrnd@bk.ru</strong>
+                        <h3 class="widget-title tc-text-primary">Контакты</h3>
+                        <div class="mb-2">
+                            <div class="text-white">Телефон:</div>
+                            <a href="tel:+74951299996" style="font-size: 18px;color:#A9A9A9;"><strong>8 (495) 129-99-96</strong></a>
+                        </div>
+                        <div class="mb-2">
+                            <div class="text-white">Адреса:</div>
+                            <strong style="color:#A9A9A9;">г. Ростов-на-Дону, ул. Горького 140</strong> <br>
+                            <strong style="color:#A9A9A9;">г. Краснодар, ул. Длинная, 100, оф. 203</strong> <br>
+                            <strong style="color:#A9A9A9;">г. Донецк, бульвар Пушкина, 23</strong>
+                        </div>
+                        <div class="mb-2">
+                            <div class="text-white">Email:</div>
+                            <a href="mailto:putclub@mail.ru" style="color:#A9A9A9;"><strong >putclub@mail.ru</strong></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 footer-3 d-flex justify-content-center">
                     <div class="wrap-col text-center">
-                        <h3 class="widget-title text-center">Мы в соцсетях</h3>
-                        <ul class="social-buttons d-flex justify-content-center">
-                            <!--                            <li><a href="https://vk.com/rozovyi_slon_donetsk"><i class="fab fa-vk"></i></a></li>-->
+                        <h3 class="widget-title tc-text-primary text-center">Мы в соцсетях</h3>
+                        <ul class="social-buttons d-flex justify-content-center tc-wrapper">
                             <li>
-                                <a href="https://www.instagram.com/travelclub_tours/">
-                                    <base-icon name="Instagram"></base-icon>
+                                <a href="https://instagram.com/put_club">
+                                    <base-button icon="Instagram" :icon_params="icon_params"/>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://t.me/travelclubtours">
-                                    <base-icon name="Telegram"></base-icon>
+                                <a href="https://t.me/put_club">
+                                    <base-button icon="Telegram" :icon_params="icon_params"/>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://wa.me/79064167872">
-                                    <base-icon name="WhatsApp"></base-icon>
+                                <a href="https://vk.com/put_club">
+                                    <base-button icon="Vk" :icon_params="icon_params"/>
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://youtube.com/@put_club">
+                                    <base-button icon="Youtube" :icon_params="icon_params"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@put_club">
+                                    <base-button icon="TikTok" :icon_params="icon_params"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dzen.ru/put_club">
+                                    <base-button icon="Dzen" :icon_params="icon_params"/>
+                                </a>
+                            </li>
+<!--                            <li>-->
+<!--                                <a href="https://wa.me/79064167872">-->
+<!--                                    <base-icon name="WhatsApp"></base-icon>-->
+<!--                                </a>-->
+<!--                            </li>-->
                         </ul>
                     </div>
 
                 </div>
             </div>
-
         </div>
-        <div class="bottom-footer">
-        <div class="copyright">
-            www.travel-club.tours&nbsp;|&nbsp; 2017 – {{new Date() | moment('YYYY')}}
-        </div>
-    </div>
+<!--        <div class="bottom-footer">-->
+<!--        <div class="copyright">-->
+<!--            &nbsp; 2017 – {{new Date() | moment('YYYY')}}-->
+<!--        </div>-->
+<!--    </div>-->
     </footer>
 </template>
 <script>
     export default {
-
+        data: () => ({
+            icon_params:{size:'100%'}
+        }),
     }
 </script>
 <style scoped lang="scss">
@@ -230,11 +267,11 @@
     footer .widget-title {
         text-transform: capitalize;
         margin-bottom: 30px;
-        color: #ed6427;
+        /*color: #ed6427;*/
     }
 
     footer .wrap-footer {
-        padding: 70px 60px 0;
+        padding: 70px 60px;
     }
 
     footer .brand-footer {

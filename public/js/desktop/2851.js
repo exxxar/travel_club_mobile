@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[2851],{12851:(s,e,t)=>{t.r(e),t.d(e,{default:()=>l});const n={name:"Todos"};const l=(0,t(51900).Z)(n,(function(){return(0,this._self._c)("to-do-list")}),[],!1,null,"161eda50",null).exports}}]);

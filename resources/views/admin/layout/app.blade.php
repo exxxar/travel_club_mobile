@@ -20,8 +20,8 @@
     <link rel="shortcut icon" href="{{asset('img/icons/icon-72x72.png')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet"
-          href="{{ env("APP_DEBUG")?asset('/css/admin/app.css'):asset('/css/admin/app.min.css') }}?ver={{env("APP_VERSION")}}">
+{{--    <link rel="stylesheet"--}}
+{{--          href="{{ env("APP_DEBUG")?asset('/css/admin/app.css'):asset('/css/admin/app.min.css') }}?ver={{env("APP_VERSION")}}">--}}
 
 
 </head>
@@ -33,8 +33,8 @@
     @yield("content")
 </div>
 
-<script src="{{env("APP_DEBUG")?asset('/js/admin/app.js'):asset('/js/admin/app.min.js')}}?ver={{env("APP_VERSION")}}"
-        defer></script>
+{{--<script src="{{env("APP_DEBUG")?asset('/js/admin/app.js'):asset('/js/admin/app.min.js')}}?ver={{env("APP_VERSION")}}"--}}
+{{--        defer></script>--}}
 
 </body>
 

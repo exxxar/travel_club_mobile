@@ -14,10 +14,10 @@
                     {{title}}
                 </a>
             </slot>
-            <navbar-toggle-button :toggled="toggled"
-                                  :target="contentId"
-                                  @click.native.stop="toggled = !toggled">
-            </navbar-toggle-button>
+<!--            <navbar-toggle-button :toggled="toggled"-->
+<!--                                  :target="contentId"-->
+<!--                                  @click.native.stop="toggled = !toggled">-->
+<!--            </navbar-toggle-button>-->
 
             <slot name="container-after"></slot>
 
@@ -31,14 +31,14 @@
     </nav>
 </template>
 <script>
-import { FadeTransition } from "vue2-transitions";
-import NavbarToggleButton from "./NavbarToggleButton";
+// import { FadeTransition } from "vue2-transitions";
+// import NavbarToggleButton from "./NavbarToggleButton.vue";
 
 export default {
   name: "base-nav",
   components: {
-    FadeTransition,
-    NavbarToggleButton
+    // FadeTransition,
+    // NavbarToggleButton
   },
   props: {
     type: {

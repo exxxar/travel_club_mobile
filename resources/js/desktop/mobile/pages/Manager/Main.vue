@@ -504,9 +504,9 @@
 
     }
 </script>
-<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">
+<!--<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">-->
 
-</style>
+<!--</style>-->
 <style scoped>
     .card {
         margin-top: 0 !important;

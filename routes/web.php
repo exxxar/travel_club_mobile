@@ -42,18 +42,18 @@ Route::view("/russia-tours", "desktop.russia-tours");
 
 
 Route::get('/', function (Request $request) {
-    if (Agent::isMobile())
-        return view('pwa.pages.index');
+//    if (Agent::isMobile())
+//        return view('pwa.pages.index');
 
 //    $articles = \App\Article::where("publish_at", "<=", Carbon::now("+3:00"))
 //        ->orderBy("id","desc")->paginate(20);,compact("articles")
 
     return view('desktop.welcome');
 })->name("desktop");
-
-Route::get('/offline', function () {
-    return view("pwa.pages.maintenance");
-})->name("offline");
+//
+//Route::get('/offline', function () {
+//    return view("pwa.pages.maintenance");
+//})->name("offline");
 
 Route::group(["prefix" => "/admin"], function () {
     Route::get("/news","ArticleController@index");

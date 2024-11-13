@@ -4,7 +4,7 @@
         <template #body>
             <template v-if="!step">
                 <div class="d-flex justify-content-center mt-2">
-                    <VueRecordAudio :mode="'press'" @stream="onStream" @result="onResult" title="Нажмите, чтобы начать запись. Нажмите повторно, чтобы закончить"/>
+<!--                    <VueRecordAudio :mode="'press'" @stream="onStream" @result="onResult" title="Нажмите, чтобы начать запись. Нажмите повторно, чтобы закончить"/>-->
                 </div>
                 <div class="row w-100 m-auto d-flex justify-content-center mt-2" v-if="recordings.length>0">
                     <div class="col-12 p-0">

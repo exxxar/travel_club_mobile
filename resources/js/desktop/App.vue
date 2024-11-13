@@ -73,7 +73,7 @@
         <notifications :position="'top left'" classes="my-style"></notifications>
         <!--  <main-menu></main-menu>-->
 <!--        <transition name="fade">-->
-            <preloader v-show="preloader"></preloader>
+<!--            <preloader v-show="preloader"></preloader>-->
 <!--        </transition>-->
 <!--        <div style="min-height: 100vh">-->
 <!--            &lt;!&ndash;        <div class="col-md-2 d-none d-md-block">&ndash;&gt;-->
@@ -799,24 +799,24 @@
         z-index: 1;
     }
 
-    ul.social-buttons li {
+    /*ul.social-buttons li {*/
         /*display: inline-block;*/
-        display: block;
-        margin: 0 10px;
-    }
+        /*display: block;*/
+        /*margin: 0 10px;*/
+    /*}*/
 
-    ul.social-buttons li a {
-        width: 50px;
-        height: 50px;
-        display: block;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 30px;
-        line-height: 50px;
-        color: white;
-        background: #f08b23;
-        padding: 0px !important;
-    }
+    /*ul.social-buttons li a {*/
+    /*    width: 50px;*/
+    /*    height: 50px;*/
+    /*    display: block;*/
+    /*    border-radius: 50px;*/
+    /*    text-decoration: none;*/
+    /*    font-size: 30px;*/
+    /*    line-height: 50px;*/
+    /*    color: white;*/
+    /*    background: #f08b23;*/
+    /*    padding: 0px !important;*/
+    /*}*/
 
     /*Demo 1*/
     ul#demo1 li a {

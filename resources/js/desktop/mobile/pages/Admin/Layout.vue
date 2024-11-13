@@ -10,9 +10,9 @@
         </div>
     </div>
 </template>
-<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">
+<!--<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">-->
 
-</style>
+<!--</style>-->
 <script>
     // import "@/sass/black-dashboard.scss"
     export default {

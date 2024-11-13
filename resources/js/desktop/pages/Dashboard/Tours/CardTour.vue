@@ -33,7 +33,7 @@
             <div class="tc-wrapper tc-wrapper-nowrap justify-content-end mt-auto tc-gap-medium tc-gap-down-sm-small">
                 <div class="tc-wrapper tc-wrapper-nowrap tc-gap-medium tc-gap-down-sm-small me-sm-auto tc-me-down-sm-none">
                     <base-button v-role="'manager|admin'" icon bg="red-lighter" title="Удалить" @click="removeTour">
-                        <base-icon name="Trash" title="Удалить" color="red" :stroke="true" fill="transparent"/>
+                        <base-icon name="Trash" title="Удалить" color="red" :stroke="true"/>
                     </base-button>
                     <base-button  v-role="'manager|admin'" @click="editTour" icon bg="blue-lighter" size="small" title="Редактировать">
                         <base-icon name="Pencil" color="blue"/>

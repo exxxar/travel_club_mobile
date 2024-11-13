@@ -28,8 +28,6 @@
         </div>
     </div>
 </template>
-<style scoped lang="scss" src="@/sass/desktop/black-dashboard.scss">
-</style>
 <script>
     // import "@/sass/black-dashboard.scss";
     // import TopNavbar from "./TopNavbar.vue";

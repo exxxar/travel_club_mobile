@@ -129,78 +129,108 @@
             }
         }
     }
+
+    &__subtitle {
+        text-align: left;
+        font-weight: 700;
+        font-size: 1.1em;
+        line-height: 18px;
+        color: var(--#{$namespace}-secondary);
+        position: relative;
+        padding: 10px;
+        &:before {
+            width: 30px;
+            height: 5px;
+            content: "";
+            background-color: var(--#{$namespace}-primary);
+            border-radius: 5px;
+            display: inline-block;
+            margin: 3px;
+        }
+    }
 }
 
 .filter-dropdown-menu {
-    background-color: $white;
-    padding: 18px 20px 28px 20px;
+    background-color: #fff;
+    padding: 20px !important;
     width: 356px;
+    height: -moz-fit-content;
     height: fit-content;
-    box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.06);
-    border-radius: 20px;
-    border: none;
-    //margin-right: 18px;
-    //margin-bottom: 58px;
-    //flex-direction: column;
-    //align-items: center;
+    /* box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.06); */
+    border-radius: 20px !important;
+    border: none !important;
     top: 15px !important;
-    left: -95px !important;
-
-    &:not(.show):hover {
-        display: none !important;
-    }
-    .filter-dropdown-menu__title {
-        font-family: Nunito;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0.10000000149011612px;
-    }
-    .filter-dropdown-menu__select {
-        border-radius: 10px !important;
-        background-color: $white;
-        border: 1px solid #DBDDE0 !important;
-        height: 38px;
-        width: 100%;
-    }
-    .filter-dropdown-menu__select .dropdown-menu {
-        position: absolute !important;
-        background: $white !important;
-        box-shadow: 0px 10px 24px rgba(16, 30, 115, 0.13) !important;
-        border-radius: 20px !important;
-    }
-    .filter-dropdown-menu__select-label {
-        font-family: Nunito;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.10000000149011612px;
-        text-align: left;
-    }
-    .filter-dropdown-menu__select .vs__dropdown-toggle {
-        border-radius: 10px !important;
-        border: 1px solid #DBDDE0 !important;
-    }
-    .filter-dropdown-menu__select .vs__actions {
-        position: relative;
-    }
-    .filter-dropdown-menu__select .vs__clear {
-        position: absolute;
-        left: 34px;
-    }
-    .filter-dropdown-menu__select-wrapper {
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-    .filter-dropdown-menu__select-wrapper.options {
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
+/* left: -95px !important;*/
+/*
+background-color: $white;
+padding: 18px 20px 28px 20px;
+width: 356px;
+height: fit-content;
+box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.06);
+border-radius: 20px;
+border: none;
+//margin-right: 18px;
+//margin-bottom: 58px;
+//flex-direction: column;
+//align-items: center;
+top: 15px !important;
+left: -95px !important;
+*/
+&:not(.show):hover {
+    display: none !important;
+}
+.filter-dropdown-menu__title {
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.10000000149011612px;
+}
+.filter-dropdown-menu__select {
+    border-radius: 10px !important;
+    background-color: $white;
+    border: 1px solid #DBDDE0 !important;
+    height: 38px;
+    width: 100%;
+}
+.filter-dropdown-menu__select .dropdown-menu {
+    position: absolute !important;
+    background: $white !important;
+    box-shadow: 0px 10px 24px rgba(16, 30, 115, 0.13) !important;
+    border-radius: 20px !important;
+}
+.filter-dropdown-menu__select-label {
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+}
+.filter-dropdown-menu__select .vs__dropdown-toggle {
+    border-radius: 10px !important;
+    border: 1px solid #DBDDE0 !important;
+}
+.filter-dropdown-menu__select .vs__actions {
+    position: relative;
+}
+.filter-dropdown-menu__select .vs__clear {
+    position: absolute;
+    left: 34px;
+}
+.filter-dropdown-menu__select-wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.filter-dropdown-menu__select-wrapper.options {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
 }
 .filter-dropdown-menu__button {
-    width: 100%;
-    height: 100%;
-    padding: 5px 10px;
+width: 100%;
+height: 100%;
+padding: 5px 10px;
 }
