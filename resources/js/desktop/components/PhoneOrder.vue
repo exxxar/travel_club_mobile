@@ -41,9 +41,11 @@
                         phone: this.phone,
                     }).then(resp => {
                          this.$store.commit('closeModal', '#customPhoneModal');
-                         this.$store.dispatch('sendNotification', {message: 'Заявка на перезвон успешно отправлена!'});
-                     }).finally(() => {
+                         this.$store.dispatch('sendNotification', {type:'success', message: 'Заявка на звонок успешно отправлена!'});
                          this.loading = false;
+                     }).catch(error => {
+                         this.loading = false;
+                         this.$store.dispatch('sendNotification', {type: 'error', message: 'Произошла ошибка!'});
                      });
             },
         }

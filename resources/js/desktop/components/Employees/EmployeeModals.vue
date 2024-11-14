@@ -1,8 +1,8 @@
 <template>
     <div>
-
+        <!--            v-if="current"-->
+        {{current}}
         <EmploeeModalImage
-            v-if="current"
             :index="current"
             :image="filteredEmployees[current-1].image"
             :time="filteredEmployees[current-1].time"
@@ -66,6 +66,7 @@
         watch: {
             active(newValue, oldValue) {
                 this.current = newValue
+                console.log(newValue)
                 this.start()
 
             }
@@ -73,7 +74,7 @@
         methods: {
             close(){
                 // $(".employees").modal("hide");
-                this.$store.dispatch('closeModal', '.employees');
+                this.$store.commit('closeModal', '#EmployeeDefault');
             },
             swipeHandler() {
                 console.log("testttt")
@@ -95,9 +96,15 @@
 
                         if (this.current < this.employees.length - 1) {
                             this.current += 1;
-                            this.$store.dispatch('openModal', '#EmployeeDefault' + this.current)
+                            console.log('this.current +1', this.current)
+                            this.$nextTick(() => {
+                                this.$store.commit('openModal', '#EmployeeDefault')
+                            })
+
                         } else {
-                            this.$store.dispatch('closeModal', '#EmployeeDefault' + this.current)
+                            this.$nextTick(() => {
+                                this.$store.commit('closeModal', '#EmployeeDefault')
+                            })
                             // $('#EmployeeDefault' + this.current).modal('hide');
                             this.current = null
                             clearInterval(this.interval)

@@ -35,6 +35,19 @@ mix.disableNotifications();
 
 
 mix.webpackConfig({
+    // output: {
+    //     chunkFilename: 'js/chunks/[name].js?id=[chunkhash]',
+    //     publicPath: '/',
+    // },
+    // output: {
+    //     path: '/dist',
+    //     filename: '[name].js',
+    //     chunkFilename: 'js/[id].[chunkhash].js',
+    //     publicPath: 'http://test-task/',
+    // },
+    // module: {
+    //     exprContextCritical: false
+    // },
     resolve: {
         extensions: ['.*', '.js', '.vue', '.jpg', '.png', '.css', '.svg', '.mp3', '.scss'],
         alias: {

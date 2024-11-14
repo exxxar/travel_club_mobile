@@ -7,8 +7,8 @@
 
 <!--        <carousel :items="4" :nav="false" :dots="false" class="story-blocks">-->
         <div class="story-blocks my-auto justify-content-center ">
-            <template @click="show(index+1)" v-for="(employee, index) in filteredEmployees">
-                <employee :index="index+1" :image="employee.image"/>
+            <template v-for="(employee, index) in filteredEmployees">
+                <employee  @click="show(index+1)" :index="index+1" :image="employee.image"/>
             </template>
         </div>
 
@@ -56,7 +56,12 @@
         },
         methods: {
             show(index) {
-                this.active_index = index
+                console.log('show', index)
+                this.active_index = index;
+                this.$nextTick(() => {
+                    this.$store.commit('openModal', '#EmployeeDefault')
+                })
+
             }
         },
         components: {

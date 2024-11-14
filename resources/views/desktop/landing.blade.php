@@ -36,6 +36,7 @@
 
 <div id="landing">
 {{--    <preloader :time="3000"></preloader>--}}
+    <notifications :position="'top right'" classes="my-style"></notifications>
     <landing-layout>
         @yield('before-content')
         @yield("content")

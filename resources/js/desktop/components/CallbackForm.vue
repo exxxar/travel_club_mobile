@@ -60,13 +60,15 @@
                         name: this.name,
                         phone: this.phone,
                         message: this.message,
-                        question_type: this.question_types[this.type]
+                        question_type: this.type
                     })
                     .then(response => {
                         this.$store.commit('closeModal', '#contactModalBox');
-                        this.$store.dispatch('sendNotification', {message: 'Сообщение успешно отправлено'});
-                    }).finally(() => {
+                        this.$store.dispatch('sendNotification', {type:'success', message: 'Сообщение успешно отправлено'});
                         this.loading = false;
+                    }).catch(error => {
+                        this.loading = false;
+                        this.$store.dispatch('sendNotification', {type: 'error', message: 'Произошла ошибка!'});
                     });
             },
         }

@@ -1,6 +1,6 @@
 <template>
-    <div class="item story-item" v-bind:class="{opened:isOpened}" @click="isOpened = true">
-        <a href="#" data-bs-toggle="modal" data-component="employees" data-time="5000" :data-bs-target="'#EmployeeDefault'+index">
+    <div class="item story-item">
+        <a @click="show(index)" data-component="employees" data-time="5000">
             <img v-if="image" :src="image" alt="alt" class="imaged w-100 rounded">
             <img v-else src="/img/travel/logo-1.png" class="imaged w-100 rounded" alt="логотип">
         </a>
@@ -12,6 +12,13 @@
         data() {
             return {
                 isOpened: false
+            }
+        },
+        methods: {
+            show(index) {
+                console.log('show', index)
+                this.active_index = index
+                this.$store.commit('openModal', '#EmployeeDefault')
             }
         }
     }

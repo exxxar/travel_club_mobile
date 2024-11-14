@@ -25,7 +25,7 @@ export default {
            this._vm.$notify({
                 // group: 'message',
                 type: typeof payload === 'object' && payload.type ? payload.type : "travel",
-                title: typeof payload === 'object' && payload.title ? payload.title : "Сообщение от TravelClub",
+                title: typeof payload === 'object' && payload.title ? payload.title : "Сообщение от ВПУТЬ",
                 text: typeof payload === 'object' && payload.message ? payload.message : payload,
                 duration: payload.duration|5000
             });
@@ -33,7 +33,7 @@ export default {
         sendAuthNotification({commit}, payload) {
             this._vm.$notify({
                 type: 'error',
-                title: 'TravelClub',
+                title: 'ВПУТЬ',
                 text: 'Необходима авторизация',
                 duration: 5000
             });

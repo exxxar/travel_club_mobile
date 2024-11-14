@@ -148,7 +148,7 @@
         .waves {
             height: 50px;
             min-height: 50px;
-            margin-bottom: 0px;
+            /*margin-bottom: 0px;*/
         }
         .footer-content {
             height: 30vh;

@@ -1,19 +1,19 @@
 <template>
-    <div class="modal employees stories with-story-bar show" :id="'EmployeeDefault'+index"
-          data-bs-backdrop="false"
-         tabindex="-1"
-         aria-modal="true" role="dialog">
+    <div class="modal employees stories with-story-bar" tabindex="-1"
+         :id="'EmployeeDefault'" aria-hidden="true"
+         data-bs-backdrop="static" data-bs-keyboard="false"  role="dialog"
+    >
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" v-if="index != null">
                 <div class="story-bar"></div>
                 <div class="story-image">
-                    <img :src="image" alt="image">
+                    <img v-if="image" :src="image" alt="image">
                 </div>
                 <div class="modal-header">
                     <a href="#" class="profile-detail">
                         <img src="/img/travel/logo-1.png" alt="avatar" class="imaged w36 rounded mr-1" style="width:50px;">
                         <div>
-                            <h4>Travel Club Family</h4>
+                            <h4>ВПУТЬ Family</h4>
                             <span class="text-muted">{{time}}</span>
                         </div>
                     </a>
@@ -41,7 +41,7 @@
         methods:{
             hide(){
                 // $(".employees").modal("hide");
-                this.$store.dispatch('closeModal', '.employees');
+                this.$store.dispatch('closeModal', '#EmployeeDefault');
             }
         }
 

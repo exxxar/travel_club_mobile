@@ -26,7 +26,7 @@
         width: 80px !important;
 
         &.opened {
-            a {
+            div {
                 img {
                     box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #e1e1e1;
                 }
@@ -34,7 +34,7 @@
 
         }
 
-        a {
+        div {
             img {
                 object-fit: cover;
                 width: 100%;

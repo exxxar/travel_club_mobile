@@ -1,7 +1,7 @@
 <template>
     <LandingLayout>
         <section id="home" style="height: 100vh; width: 100%;" class="ms-auto me-auto parallax">
-            <div class="container mt-auto mb-auto" style="height: 100%;">
+            <div class="container-lg mt-auto mb-auto" style="height: 100%;">
                 <div class="tc-row m-auto desktop" style="height: 100%; width: 90%;">
                     <div class="col-12 col-md-6 col-lg-4 col-sm-10 m-auto">
                         <a href="/tours">
@@ -100,7 +100,7 @@
             </div>
         </section>
         <section id="welcome" class="mb-5">
-            <div class="container m-auto" style="height: 100%;">
+            <div class="container-lg m-auto" style="height: 100%;">
                 <div class="tc-row m-auto" style="height: 100%; width: 100%; ">
                     <div class="col-12 col-md-6 order-2 order-md-1">
                         <div class="m-auto" style="width: 100%; height: 100%;">
@@ -135,7 +135,7 @@
             </div>
         </section>
         <section id="why" class="my-5">
-            <div class="container m-auto" style="height: 100%;">
+            <div class="container-lg m-auto" style="height: 100%;">
                 <div class="tc-row m-auto" style="height: 100%; width: 100%; ">
                     <div class="col-12 col-md-6 col-sm-12">
                         <div class="mx-auto mt-4 mb-3 tc-landing-card tc-card__body tc-card__text">
@@ -172,7 +172,7 @@
                 </div>
             </div>
         </section>
-        <div class="container">
+        <div class="container-lg">
 
             <!--
                            <section id="news" class="desktop mb-5" style="height:100%;">

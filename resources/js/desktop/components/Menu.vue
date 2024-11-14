@@ -205,7 +205,7 @@
             ]
         }),
         created() {
-            this.locationByIp()
+            // this.locationByIp()
         },
         computed: {
             isLoggedIn: function () {
