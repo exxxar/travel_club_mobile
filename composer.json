@@ -21,7 +21,6 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
-        "marvin255/sletatru": "^0.1.2",
         "mpdf/mpdf": "^8.0",
         "silviolleite/laravelpwa": "^2.0",
         "spatie/laravel-permission": "^5.11",
