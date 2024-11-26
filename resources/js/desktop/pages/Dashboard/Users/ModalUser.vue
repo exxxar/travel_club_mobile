@@ -31,7 +31,7 @@
 <!--            />-->
 <!--            <div class="row w-100 mx-automy-3">-->
 <!--                <p class="text-center">Пароль для входа в систему созданного пользователя:-->
-<!--                    <span style="font-weight: 700; color: #f8a105">TravelClub</span>-->
+<!--                    <span style="font-weight: 700; color: #f8a105">ВПУТЬ</span>-->
 <!--                </p>-->
 <!--            </div>-->
         </template>

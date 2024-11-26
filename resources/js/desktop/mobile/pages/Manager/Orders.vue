@@ -1019,7 +1019,7 @@
                 this.$notify({
                     group: 'info',
                     type: 'travel',
-                    title: 'Сообщение от TravelClub',
+                    title: 'Сообщение от ВПУТЬ',
                     text: message
                 });
             },

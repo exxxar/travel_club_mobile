@@ -161,7 +161,7 @@
                                  :location="tour.TourInfo.resort.Name + ', ' + tour.TourInfo.country.Name"
                                  :start="start"
                                  :end="end"
-                                 details="Тур от TravelClub"
+                                 details="Тур от ВПУТЬ"
                                  inline-template
                 >
                     <div class="calendars row w-100 m-auto">
@@ -435,7 +435,7 @@
                 this.$notify({
                     group: 'info',
                     type: 'travel',
-                    title: 'Сообщение от TravelClub',
+                    title: 'Сообщение от ВПУТЬ',
                     text: message
                 });
             },

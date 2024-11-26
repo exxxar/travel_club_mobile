@@ -19,7 +19,7 @@
 <!--&lt;!&ndash;                                                </div>&ndash;&gt;-->
 <!--&lt;!&ndash;                                                <div class="col-md-7 p-0">&ndash;&gt;-->
 <!--&lt;!&ndash;                                                    <div class="row ms-auto me-0 my-auto travel-card-title" style="position:relative;height:50px;width:280px;">&ndash;&gt;-->
-<!--&lt;!&ndash;                                                        <h1 class="title-2">в <span>TravelClub Family</span></h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <h1 class="title-2">в <span>ВПУТЬ Family</span></h1>&ndash;&gt;-->
 <!--&lt;!&ndash;                                                        <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
 <!--&lt;!&ndash;                                                </div>&ndash;&gt;-->
@@ -115,7 +115,7 @@
                 this.$notify({
                     group: 'info',
                     type: 'error',
-                    title: 'Сообщение от TravelClub',
+                    title: 'Сообщение от ВПУТЬ',
                     text: message
                 });
             },

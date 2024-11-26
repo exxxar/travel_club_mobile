@@ -5,7 +5,7 @@
                 <div class="m-auto v-card elevation-24" style="max-height:700px; min-height:450px; border-radius: 20px;">
                     <div class="row m-auto justify-content-center align-items-center" style="width: 100%;height: 100%;">
                         <div class="col-md-12 p-0 text-center">
-                            <img class="img-404 mx-auto mt-3 mb-3" src="/images/TravelClub-404.png">
+                            <img class="img-404 mx-auto mt-3 mb-3" src="/images/ВПУТЬ-404.png">
                         </div>
                         <div class="col-md-12 mb-5 p-0 text-center">
                             <h1 class="m-auto" style="color: #f8a105; font-weight: 900; text-transform: uppercase">Страница не найдена</h1>

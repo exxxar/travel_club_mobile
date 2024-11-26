@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-md-7 p-0">
                                 <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:250px;">
-                                    <h1 class="title-2">с <span>TravelClub</span></h1>
+                                    <h1 class="title-2">с <span>ВПУТЬ</span></h1>
                                     <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
                                 </div>
                             </div>

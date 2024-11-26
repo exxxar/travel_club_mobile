@@ -506,7 +506,7 @@
                 this.$notify({
                     group: 'info',
                     type: 'travel',
-                    title: 'Отправка сообщений TravelClub',
+                    title: 'Отправка сообщений ВПУТЬ',
                     text: message
                 });
             },

@@ -327,7 +327,7 @@
                 phone:'',
                 phones: [],
                 file: null,
-                message: 'Сообщение от TravelClub: ',
+                message: 'Сообщение от ВПУТЬ: ',
                 email:'',
                 info:null,
             }
@@ -480,7 +480,7 @@
                 this.$notify({
                     group: 'info',
                     type: type,
-                    title: 'Сообщение от TravelClub',
+                    title: 'Сообщение от ВПУТЬ',
                     text: message
                 });
             },

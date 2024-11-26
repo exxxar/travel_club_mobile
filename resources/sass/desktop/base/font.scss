@@ -6,6 +6,11 @@
 //}
 
 @font-face {
+    font-family: "bewlaybr1cyrillic"; /* Имя шрифта */
+    src: url('/fonts/bewlaybr1cyrillic.otf'); /* Путь к файлу со шрифтом */
+    font-display: swap;
+}
+@font-face {
     font-family: "VAGWorld-Bold"; /* Имя шрифта */
     src: url('/fonts/vag-world-bold.ttf'); /* Путь к файлу со шрифтом */
     font-display: swap;

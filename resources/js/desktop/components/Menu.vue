@@ -4,10 +4,9 @@
             <slot name="logo">
                 <a href="/">
                     <!--                    <img src="/images/logo.svg" style="height: 40px"/>-->
-                    <base-icon name="Logo" width="" height="45px"/>
-                    <!--                    <h4 style="z-index: 1; color:#0d274b;font-weight:900;" class="float-left menu-title">-->
-                    <!--                        В<span style="color: #f08b23;">ПУТЬ</span>-->
-                    <!--                    </h4>-->
+                    <h4 style="font-family: bewlaybr1cyrillic; margin: 0; font-size: 2.5rem;" class="float-left menu-title tc-text-primary">
+                        В ПУТЬ
+                    </h4>
                 </a>
             </slot>
 
@@ -151,7 +150,7 @@
                 {name: 'Подобрать авиабилеты', scroll: '#avia', icon: "fas fa-plane-departure"},
                 // {name: 'Подобрать отель', scroll: '#hotel', icon: "fas fa-hotel"},
                 {name: 'Подобрать туры по России', scroll: '#russia', icon: "fas fa-map-marked-alt"},
-                // {name: 'TravelClub Family', scroll: '#family', icon: "fas fa-users"},
+                // {name: 'ВПУТЬ Family', scroll: '#family', icon: "fas fa-users"},
                 {name: 'Контакты', scroll: '#contacts', icon: "fas fa-address-book"},
             ],
             client_links: [

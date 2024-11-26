@@ -163,7 +163,7 @@
         methods:{
             sendMessage(message) {
                 this.$notify({
-                    title: 'TravelClub',
+                    title: 'ВПУТЬ',
                     text: message,
                     group: 'main'
                 });

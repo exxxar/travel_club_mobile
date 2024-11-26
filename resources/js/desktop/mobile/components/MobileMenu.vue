@@ -56,7 +56,7 @@
                 {name: 'Подобрать авиабилеты', scroll: '#avia', icon:"fas fa-plane-departure"},
                 // {name: 'Подобрать отель', scroll: '#hotel', icon:"fas fa-hotel"},
                 {name: 'Подобрать туры по России', scroll: '#russia', icon: "fas fa-map-marked-alt"},
-                {name: 'TravelClub Family', scroll: '#family', icon:"fas fa-users"},
+                {name: 'ВПУТЬ Family', scroll: '#family', icon:"fas fa-users"},
                 {name: 'Контакты', scroll: '#contacts', icon:"fas fa-address-book"},
             ],
             module_tour_links: [

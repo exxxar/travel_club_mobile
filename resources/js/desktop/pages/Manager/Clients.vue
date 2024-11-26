@@ -162,7 +162,7 @@
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <p>Пароль для входа в систему созданного пользователя: <span style="font-weight: 700; color: #f8a105">TravelClub</span></p>
+                                    <p>Пароль для входа в систему созданного пользователя: <span style="font-weight: 700; color: #f8a105">ВПУТЬ</span></p>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -412,7 +412,7 @@
                     this.$notify({
                         group: 'info',
                         type: 'travel',
-                        title: 'Сообщение от TravelClub',
+                        title: 'Сообщение от ВПУТЬ',
                         text: message
                     });
                 },

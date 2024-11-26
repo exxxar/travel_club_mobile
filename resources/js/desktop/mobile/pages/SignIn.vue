@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-md-7 p-0">
                                 <div class="row ml-auto mr-0 my-auto travel-card-title" style="position:relative;height:50px;width:280px;">
-                                    <h1 class="title-2">в <span>TravelClub Family</span></h1>
+                                    <h1 class="title-2">в <span>ВПУТЬ Family</span></h1>
                                     <img src="/images/orange-brush.svg" class="orange-brush" style="position: absolute;"/>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                 this.$notify({
                     group: 'info',
                     type: 'error',
-                    title: 'Сообщение от TravelClub',
+                    title: 'Сообщение от ВПУТЬ',
                     text: message
                 });
             },

@@ -18,7 +18,7 @@ axios.interceptors.response.use(
         if((response.status === 201 || response.status === 501 ) && response.data.message) {
             app.$notify({
                 type: response.status=== 201 ? 'success': 'error',
-                title: 'TravelClub',
+                title: 'ВПУТЬ',
                 text: response.data.message,
                 duration: 5000
             });
@@ -35,7 +35,7 @@ axios.interceptors.response.use(
                 if (error.response.data.code !== 401 && error.response.data.detail) {
                     app.$notify({
                         type: 'error',
-                        title: 'TravelClub',
+                        title: 'ВПУТЬ',
                         text: error.response.data.detail,
                         duration: 5000
                     });

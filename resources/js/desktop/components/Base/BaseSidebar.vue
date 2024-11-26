@@ -6,7 +6,7 @@
             <slot name="header">
                 <slot name="logo">
                     <a href="/">
-                        <h5 style="z-index: 1; color:#0d274b;font-weight:900;" class="float-left menu-title">
+                        <h5 style="z-index: 1; color:#0d274b;font-family: bewlaybr1cyrillic; margin: 0; font-size: 2.5rem;" class="float-left menu-title">
                             В<span class="tc-text-primary">ПУТЬ</span>
                         </h5>
                     </a>

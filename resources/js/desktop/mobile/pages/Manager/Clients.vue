@@ -170,7 +170,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="row w-100 m-auto">
-                                                    <p>Пароль для входа в систему созданного пользователя: <span style="font-weight: 700; color: #f8a105">TravelClub</span></p>
+                                                    <p>Пароль для входа в систему созданного пользователя: <span style="font-weight: 700; color: #f8a105">ВПУТЬ</span></p>
                                                 </div>
                                             </div>
                                             <div class="col-12 contact-btn form-button-group">
@@ -354,7 +354,7 @@
                     this.$notify({
                         group: 'info',
                         type: 'travel',
-                        title: 'Сообщение от TravelClub',
+                        title: 'Сообщение от ВПУТЬ',
                         text: message
                     });
                 },
