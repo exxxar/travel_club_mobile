@@ -1,0 +1,24 @@
+.tc-privacy {
+    .tc-page__subtitle {
+        margin-top: 25px;
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .tc-page__subtitle {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+    }
+}
+
+.tc-privacy__text_md {
+    font-size: 20px;
+    line-height: 1.55;
+}
+.tc-privacy__text {
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-align: justify;
+}

@@ -158,7 +158,10 @@
 <!--                            &lt;!&ndash; <li><a href="about.html">Подробнее</a></li>&ndash;&gt;-->
 <!--                            <li><a target="_blank" href="https://yandex.ru/maps/142/donetsk/house/bulvar_pushkina_23/Z04YfgdiSEwDQFpifXxxc3VgYg==/?from=api-maps&ll=37.802265%2C48.002741&origin=jsapi21&z=18.9">Мы на карте</a></li>-->
 <!--                        </ul>-->
-                        <p class="tc-text-primary tc-cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalAccountDetails">Реквизиты</p>
+                        <p class="text-white text-bold" style="font-size:12px;">
+                            ИП:<span style="color:#A9A9A9;"> КЛИМЕНКО М. М.</span> ИНН:<span style="color:#A9A9A9;"> 616814736851</span> ОГРНИП:<span style="color:#A9A9A9;"> 323930100748573</span>
+                        </p>
+                        <p class="tc-text-primary tc-cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalAccountDetails">Полные Реквизиты</p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 footer-2 d-flex justify-content-center">
@@ -176,60 +179,85 @@
                         </div>
                         <div class="mb-2">
                             <div class="text-white">Email:</div>
-                            <a href="mailto:putclub@mail.ru" style="color:#A9A9A9;"><strong >putclub@mail.ru</strong></a>
+                            <a href="mailto:putclub@mail.ru" style="color:#A9A9A9;"><strong>hello@putclub.ru</strong></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 footer-3 d-flex justify-content-center">
-                    <div class="wrap-col text-center">
-                        <h3 class="widget-title tc-text-primary text-center">Мы в соцсетях</h3>
-                        <ul class="social-buttons d-flex justify-content-center tc-wrapper">
-                            <li>
-                                <a href="https://instagram.com/put_club">
-                                    <base-button icon="Instagram" :icon_params="icon_params"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://t.me/put_club">
-                                    <base-button icon="Telegram" :icon_params="icon_params"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://vk.com/put_club">
-                                    <base-button icon="Vk" :icon_params="icon_params"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://youtube.com/@put_club">
-                                    <base-button icon="Youtube" :icon_params="icon_params"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.tiktok.com/@put_club">
-                                    <base-button icon="TikTok" :icon_params="icon_params"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://dzen.ru/put_club">
-                                    <base-button icon="Dzen" :icon_params="icon_params"/>
-                                </a>
-                            </li>
-<!--                            <li>-->
-<!--                                <a href="https://wa.me/79064167872">-->
-<!--                                    <base-icon name="WhatsApp"></base-icon>-->
-<!--                                </a>-->
-<!--                            </li>-->
-                        </ul>
+                <div class="col-12 col-sm-6 col-md-4 footer-3">
+                    <div class="d-flex justify-content-center">
+                        <div class="wrap-col text-center">
+                            <h3 class="widget-title tc-text-primary text-center">Мы в соцсетях</h3>
+                            <ul class="social-buttons d-flex justify-content-center tc-wrapper">
+                                <li>
+                                    <a href="https://instagram.com/put_club">
+                                        <base-button icon="Instagram" :icon_params="icon_params"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://t.me/put_club">
+                                        <base-button icon="Telegram" :icon_params="icon_params"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://vk.com/put_club">
+                                        <base-button icon="Vk" :icon_params="icon_params"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://youtube.com/@put_club">
+                                        <base-button icon="Youtube" :icon_params="icon_params"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.tiktok.com/@put_club">
+                                        <base-button icon="TikTok" :icon_params="icon_params"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://dzen.ru/put_club">
+                                        <base-button icon="Dzen" :icon_params="icon_params"/>
+                                    </a>
+                                </li>
+                                <!--                            <li>-->
+                                <!--                                <a href="https://wa.me/79064167872">-->
+                                <!--                                    <base-icon name="WhatsApp"></base-icon>-->
+                                <!--                                </a>-->
+                                <!--                            </li>-->
+                            </ul>
+                        </div>
                     </div>
-
+<!--                    <div class="tc-wrapper_column justify-content-center">-->
+<!--                        <div class="wrap-col text-center">-->
+<!--                        <p class="text-white text-bold">-->
+<!--                            ИП:<span style="color:#A9A9A9;"> КЛИМЕНКО М. М.</span>-->
+<!--                        </p>-->
+<!--                        <p class="text-white text-bold">-->
+<!--                            ИНН:<span style="color:#A9A9A9;"> 616814736851</span>-->
+<!--                        </p>-->
+<!--                        <p class="text-white text-bold">ОГРНИП:<span style="color:#A9A9A9;"> 323930100748573</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
-<!--        <div class="bottom-footer">-->
-<!--        <div class="copyright">-->
-<!--            &nbsp; 2017 – {{new Date() | moment('YYYY')}}-->
-<!--        </div>-->
-<!--    </div>-->
+        <div class="bottom-footer text-center pt-0 pb-2 wrap-footer">
+            <div class="tc-wrapper-between tc-wrapper-down-sm-column">
+                <p>
+                    <a class="tc-footer__politics-link" href="/privacy">
+                        Политика обработки персональных данных
+                    </a>
+                </p>
+                <p class="tc-footer__politics-copyright" style="color:#ed6427;">
+                    Все права защищены © ВПУТЬ, {{new Date() | moment('YYYY')}}</p>
+<!--                <div class="tc-footer__politics-links">-->
+
+<!--                    <a class="bkt-footer__politics-link" href="/terms">Пользовательское соглашение</a>-->
+<!--                </div>-->
+            </div>
+<!--            <div class="copyright">-->
+<!--                &nbsp; 2017 – {{new Date() | moment('YYYY')}}-->
+<!--            </div>-->
+        </div>
     </footer>
 </template>
 <script>

@@ -76,6 +76,16 @@ let router = new VueRouter({
                     component: () => import('./pages/RussiaTourSearch.vue'),
                     meta: {preloader: true},
                 },
+                {
+                    path: "privacy",
+                    name: "privacy",
+                    components: {
+                        default: () => import('./pages/PrivacyPolicy.vue')
+                    },
+                    meta: {
+                        requiresAuth: false,
+                    }
+                },
             ]
         },
         {

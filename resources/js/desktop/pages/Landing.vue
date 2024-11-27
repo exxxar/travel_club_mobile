@@ -109,7 +109,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-sm-12 m-auto order-1 order-md-2">
                         <div class="mx-auto mt-4 mb-3 tc-landing-card tc-card__body tc-card__text">
-                            <div class="landing-title" style="position: relative;width: 80%;margin: auto;">
+                            <div class="landing-title" style="position: relative; margin: auto;">
                                 <h1 style="">О нас
                                     <span>В<span class="accent">ПУТЬ</span></span>
                                 </h1>
